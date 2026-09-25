@@ -12,13 +12,19 @@ namespace ArcaneArchive.Player
 
         [Header("Movement")]
         [SerializeField, Min(0f)] private float walkSpeed = 4f;
-        [SerializeField, Min(0f)] private float sprintSpeed = 7f;
+        [SerializeField, Min(1f)] private float sprintMultiplier = 1.5f;
         [SerializeField, Min(0f)] private float jumpSpeed = 7f;
         [SerializeField] private float gravity = -20f;
+
+        [Header("Crouch")]
+        [SerializeField, Min(0.1f)] private float crouchHeight = 1f;
+        [SerializeField, Min(0f)] private float crouchTransitionSpeed = 8f;
+        [SerializeField] private LayerMask ceilingLayers = Physics.DefaultRaycastLayers;
 
         [Header("Ground Check")]
         [SerializeField, Min(0f)] private float groundCheckOriginHeight = 0.15f;
         [SerializeField, Min(0f)] private float groundCheckDistance = 0.35f;
+        [SerializeField] private LayerMask groundLayers = Physics.DefaultRaycastLayers;
 
         [Header("Look")]
         [SerializeField, Min(0f)] private float mouseSensitivity = 0.08f;
@@ -30,8 +36,12 @@ namespace ArcaneArchive.Player
         private InputAction lookAction;
         private InputAction sprintAction;
         private InputAction jumpAction;
+        private InputAction crouchAction;
         private float verticalVelocity;
         private float pitch;
+        private float standingHeight;
+        private Vector3 standingCenter;
+        private Vector3 standingCameraLocalPosition;
         private bool isOnGroundSurface;
         private bool wasOnGroundSurface;
         private bool jumpConsumed;
@@ -41,6 +51,14 @@ namespace ArcaneArchive.Player
         private void Awake()
         {
             characterController = GetComponent<CharacterController>();
+            standingHeight = characterController.height;
+            standingCenter = characterController.center;
+
+            if (cameraPivot != null)
+            {
+                standingCameraLocalPosition = cameraPivot.localPosition;
+            }
+
             ConfigureActions();
         }
 
@@ -71,6 +89,7 @@ namespace ArcaneArchive.Player
                 return;
             }
 
+            UpdateCrouch();
             UpdateLook();
             UpdateMovement();
         }
@@ -99,6 +118,7 @@ namespace ArcaneArchive.Player
             lookAction = playerActions.FindAction("Look", throwIfNotFound: true);
             sprintAction = playerActions.FindAction("Sprint", throwIfNotFound: true);
             jumpAction = playerActions.FindAction("Jump", throwIfNotFound: true);
+            crouchAction = playerActions.FindAction("Crouch", throwIfNotFound: true);
         }
 
         private void HandleCursorLock()
@@ -148,12 +168,12 @@ namespace ArcaneArchive.Player
         private bool IsGroundSurfaceBelowPlayer()
         {
             Vector3 origin = transform.position + Vector3.up * groundCheckOriginHeight;
-            if (!Physics.Raycast(origin, Vector3.down, out RaycastHit hit, groundCheckDistance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
-            {
-                return false;
-            }
-
-            return hit.collider.GetComponentInParent<GroundSurface>() != null;
+            return Physics.Raycast(
+                origin,
+                Vector3.down,
+                groundCheckDistance,
+                groundLayers,
+                QueryTriggerInteraction.Ignore);
         }
 
         private void UpdateLook()
@@ -169,11 +189,71 @@ namespace ArcaneArchive.Player
             transform.Rotate(Vector3.up * lookInput.x);
         }
 
+        private void UpdateCrouch()
+        {
+            bool isBelowStandingHeight = characterController.height < standingHeight - 0.01f;
+            bool wantsToCrouch = crouchAction.IsPressed() ||
+                                 (isBelowStandingHeight && !HasStandingClearance());
+            float minimumHeight = characterController.radius * 2f;
+            float targetHeight = wantsToCrouch
+                ? Mathf.Clamp(crouchHeight, minimumHeight, standingHeight)
+                : standingHeight;
+            float heightDifference = standingHeight - targetHeight;
+            float maxDelta = crouchTransitionSpeed * Time.deltaTime;
+
+            characterController.height = Mathf.MoveTowards(
+                characterController.height,
+                targetHeight,
+                maxDelta);
+            characterController.center = Vector3.MoveTowards(
+                characterController.center,
+                standingCenter - Vector3.up * (heightDifference * 0.5f),
+                maxDelta);
+
+            if (cameraPivot != null)
+            {
+                cameraPivot.localPosition = Vector3.MoveTowards(
+                    cameraPivot.localPosition,
+                    standingCameraLocalPosition - Vector3.up * heightDifference,
+                    maxDelta);
+            }
+        }
+
+        private bool HasStandingClearance()
+        {
+            Vector3 scale = transform.lossyScale;
+            float radiusScale = Mathf.Max(Mathf.Abs(scale.x), Mathf.Abs(scale.z));
+            float heightScale = Mathf.Abs(scale.y);
+            float radius = Mathf.Max(0.01f, (characterController.radius - characterController.skinWidth) * radiusScale);
+            float height = Mathf.Max(standingHeight * heightScale, radius * 2f);
+            float halfSegment = Mathf.Max(0f, height * 0.5f - radius);
+            Vector3 center = transform.TransformPoint(standingCenter);
+            Vector3 lowerPoint = center - transform.up * halfSegment + transform.up * characterController.skinWidth;
+            Vector3 upperPoint = center + transform.up * halfSegment - transform.up * characterController.skinWidth;
+
+            Collider[] overlaps = Physics.OverlapCapsule(
+                lowerPoint,
+                upperPoint,
+                radius,
+                ceilingLayers,
+                QueryTriggerInteraction.Ignore);
+
+            foreach (Collider overlap in overlaps)
+            {
+                if (overlap != characterController && !overlap.transform.IsChildOf(transform))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void UpdateMovement()
         {
             Vector2 moveInput = moveAction.ReadValue<Vector2>();
             Vector3 movement = transform.right * moveInput.x + transform.forward * moveInput.y;
-            float speed = sprintAction.IsPressed() ? sprintSpeed : walkSpeed;
+            float speed = sprintAction.IsPressed() ? walkSpeed * sprintMultiplier : walkSpeed;
             characterController.Move(movement.normalized * (speed * Time.deltaTime));
         }
     }
