@@ -7,11 +7,20 @@ lixiang/
 ├── README.md          # 所有版本的索引与改动摘要
 ├── AGENTS.md          # 成员和 AI 的版本上传规则
 ├── ARCHITECTURE.md    # 归档结构与项目逻辑
-└── 1.0.1/             # 可由 Unity Hub 独立打开的完整工程
+├── 1.0.1/             # 可由 Unity Hub 独立打开的完整工程
+│   ├── Assets/
+│   ├── Packages/
+│   ├── ProjectSettings/
+│   ├── Docs/
+│   ├── README.md
+│   └── AGENTS.md
+└── 1.0.2/             # 1.0.1 的完整副本，附中央大厅 Blender 挖空样板
     ├── Assets/
     ├── Packages/
     ├── ProjectSettings/
     ├── Docs/
+    ├── Blender/        # 可编辑 .blend、预览和建模检查报告
+    ├── Tools/Blender/  # 挖空与预览重建脚本
     ├── README.md
     └── AGENTS.md
 ```
@@ -30,3 +39,8 @@ lixiang/
 项目设计目标是“导入资料 → 生成书籍 → 归档书架 → 检索定位 → 打开阅读”。计划由 `UploadStation` 将文件写入 `Application.persistentDataPath`，`LibraryDatabase` 管理 `KnowledgeBook` 元数据，`BookShelf` 与 `BookView` 呈现书籍，`SearchStation` 定位并高亮，`ReadingPanel` 显示或打开内容。这些模块在 `1.0.1` 中尚未实现，不能把设计文档当作已有功能。字段、交互和验收标准见 [1.0.1 技术设计](1.0.1/Docs/TechnicalDesign.md) 与 [实施路线图](1.0.1/Docs/ImplementationRoadmap.md)。
 
 后续版本更新此文件时，应以该版实际代码和场景为依据调整“已实现”部分，并在对应版本 README 记录架构变化。
+
+## 1.0.2 已实现与待接入内容
+
+- **已实现：** 独立复制 `1.0.1` Unity 工程；新增 White Castle 中央大厅挖空的 Blender 工作文件、结构预览和重建脚本。原始 FBX 保留在同版 `Assets/_WhiteCastle/Meshes/`。
+- **规划中：** 清理伸入大厅的装饰网格，完成室内材质、门框、楼梯和碰撞，并将最终模型导出后接入 Unity 场景。`1.0.2` 的 Unity 场景和运行逻辑仍与 `1.0.1` 相同。
