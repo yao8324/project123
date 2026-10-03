@@ -1,0 +1,3144 @@
+{
+  "authorization": "maynooth和校标直接贴上去，不要后面的白版，做一个金色镶边的效果",
+  "removed_white_panel_objects": [
+    "EX11_EmblemWall",
+    "COL_EX11_EmblemWall"
+  ],
+  "modified_source_objects": [
+    "MN01_Shield_Back",
+    "MN02_Panel_Book",
+    "MN03_Panel_Dial",
+    "MN04_Panel_Frond",
+    "MN05_Panel_Tower",
+    "MN06_Shield_Rim",
+    "MN06_Divider_V",
+    "MN06_Divider_H",
+    "MN07_Book_Left",
+    "MN07_Book_Right",
+    "MN07_Book_Edge_L",
+    "MN07_Book_Edge_R",
+    "MN07_Book_Fan_1",
+    "MN07_Book_Fan_2",
+    "MN07_Book_Fan_3",
+    "MN08_Dial_Plate",
+    "MN08_Dial_Rim",
+    "MN08_Gnomon_Light",
+    "MN08_Gnomon_Shadow",
+    "MN08_Gnomon_Edge",
+    "MN09_Frond_Stem",
+    "MN09_Leaf_01_L",
+    "MN09_Leaf_01_R",
+    "MN09_Leaf_02_L",
+    "MN09_Leaf_02_R",
+    "MN09_Leaf_03_L",
+    "MN09_Leaf_03_R",
+    "MN09_Leaf_04_L",
+    "MN09_Leaf_04_R",
+    "MN09_Leaf_05_L",
+    "MN09_Leaf_05_R",
+    "MN09_Leaf_06_L",
+    "MN09_Leaf_06_R",
+    "MN09_Leaf_07_L",
+    "MN09_Leaf_07_R",
+    "MN09_Leaf_08_L",
+    "MN09_Leaf_08_R",
+    "MN09_Leaf_09_L",
+    "MN09_Leaf_09_R",
+    "MN09_Leaf_10_L",
+    "MN09_Leaf_10_R",
+    "MN09_Leaf_11_L",
+    "MN09_Leaf_11_R",
+    "MN09_Leaf_12_L",
+    "MN09_Leaf_12_R",
+    "MN10_Tower",
+    "MN10_Tower_Outline",
+    "MN10_Triangle_01",
+    "MN10_Triangle_02",
+    "MN11_Maynooth_EditableText",
+    "EX11_EmblemWall",
+    "COL_EX11_EmblemWall"
+  ],
+  "supplied_crest_colors_retained": true,
+  "construction": "Supplied crest X/Z silhouette retained; depth conforms to apse curvature. Original editable lettering source is hidden; thin curved gold lettering is an actual mesh. No rectangular replacement plaque.",
+  "projection_radius_m": 11.72,
+  "expected_protected_after": {
+    "MN00_Emblem_Root": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [],
+      "hide_render": false
+    },
+    "MN01_Shield_Back": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Backplate_Dark.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "1d334d76a3a91bc75e73d8d83adfe2d58bda7401174a2914d9d81383ed3703bb"
+    },
+    "MN02_Panel_Book": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Navy.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "9fb8986ac78c4fc02825cb8a2d13dbed40edccdde1e7b24d9db30d71a54c7c17"
+    },
+    "MN03_Panel_Dial": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Ochre.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "f36f5a4481efcd22a897982e2ddb6429e52d6ed3eaa0a955f6f791633c3e94ce"
+    },
+    "MN04_Panel_Frond": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Teal.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "b59aabe83237d2a8ee842724c3f379d6ab48cb007b343672cba983019da43b12"
+    },
+    "MN05_Panel_Tower": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Burgundy.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "208cc25b61ecf534b60e3fa61eb840a3bc69081d609e20eed1588ac4b1ccc988"
+    },
+    "MN06_Shield_Rim": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN06_Divider_V": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN06_Divider_H": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Left": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "dbecaaf334b03e41255936b9cbdcf1ef0892acd8917500201088dfe866280eb9"
+    },
+    "MN07_Book_Right": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "f530645b5867ac66438423bbe711359312ca25b90108d8e9d00db349d7379f6a"
+    },
+    "MN07_Book_Edge_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Edge_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fold": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fan_1": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fan_2": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fan_3": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Plate": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "669ed360268584bad1e50c6e9860961c9a84cd05096e4b45ff8dcb2f462fffbb"
+    },
+    "MN08_Dial_Rim": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_00": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_01": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_02": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_03": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_04": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_05": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_06": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_07": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Gnomon_Light": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "919efa222c28eae82bcb6778d1e8703c5fdd5e19a57c5aa8e8ea3892825e06de"
+    },
+    "MN08_Gnomon_Shadow": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "6f4d19b02c1503f7b2b015ab0c69c5d5e97dcc851992aa6f80456ed3ff806fd5"
+    },
+    "MN08_Gnomon_Edge": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN09_Frond_Stem": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN09_Leaf_01_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "4f5bbd166c45b2cec512564d04f34478eb3a4f4bf655ac39408821cc25bc0bec"
+    },
+    "MN09_Leaf_01_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "62ca338e66e28aa7f30fa301963bac56aca777a13f66e58d0d1ad113fb688cf8"
+    },
+    "MN09_Leaf_02_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "67e5a7b77e272285a9ec9e0782748b041a98922babf13e29973338a4d7d1b01b"
+    },
+    "MN09_Leaf_02_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "191a474c73f8ea6d709ac199dfcfcc35399500c79ed60ef8359b2b53d72fcb5e"
+    },
+    "MN09_Leaf_03_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "5827a11506100219afa34a5cbad7d6a0f3b208db1232761bceb0e4b77a2aa446"
+    },
+    "MN09_Leaf_03_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "c089ceaf279bc513ca0a53d3ebb659ed1459ad94c3aba975c3970965ce606eb6"
+    },
+    "MN09_Leaf_04_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "50268daac0ed55945e67d3c1420adc84daa1d4c5dbc517142e3f25f857302b9c"
+    },
+    "MN09_Leaf_04_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "14003969d30847100d9f04816e696a898f8399a21b0d5a4368efcf6bcc0cbfbc"
+    },
+    "MN09_Leaf_05_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "e99a610ca59ddabb6577b80e8539101121d3139b1bc64a790359fba9889fcb47"
+    },
+    "MN09_Leaf_05_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "6f7ed37e035e42bbfdbfad89355efcb817f897e7fc8ebcd61870054340984e50"
+    },
+    "MN09_Leaf_06_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "9c35b18b327f6dc14a1101356ad98f9ed402d3b2b9ec7a1988837eb97c603845"
+    },
+    "MN09_Leaf_06_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "b4d358051790180759c9bb19f9692949b9338d92237251e1781fd1bb7ebd068e"
+    },
+    "MN09_Leaf_07_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "5e0296a8c6cbc62026b8ec0f5cc72775ed4fa53a14937bc9877198ad7a93be42"
+    },
+    "MN09_Leaf_07_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "308bbcef8c8ebc2c37a7926d8db3b906acc7a0c355f9713daa26a43946a97afa"
+    },
+    "MN09_Leaf_08_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "720237a07e96ffacb8840f9c570b95e787a4ad7a2eb3367ef6f4b024a57ecf40"
+    },
+    "MN09_Leaf_08_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "10b110c072479da60286efad6dacdd74449ba780fcd8f80ce3e43669e6c02a02"
+    },
+    "MN09_Leaf_09_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "328fcfe7d93d5d0ee20140d7cf918124e4a872fe33c8145e641ded978b700221"
+    },
+    "MN09_Leaf_09_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "a8d34d7b511c3fef7ad7ebc777c08a308ad9a49556fe4523b64814099979b686"
+    },
+    "MN09_Leaf_10_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "a280b847f9cb1dba648866cad0df8e1bcaf5da05ed5d8b95ea6173e94409c9d0"
+    },
+    "MN09_Leaf_10_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "721e5e6f4f84450254d041692a93a462d1ec5f79d1a8922c30151e39d94fc029"
+    },
+    "MN09_Leaf_11_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "dce4e2224eace87ebfb82da21733ceb7c83082701dfae900491e75b519103a18"
+    },
+    "MN09_Leaf_11_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "11c921074f18bd59b921a6467fc4296550c3542d0c0ad753cc4b7970fd40f469"
+    },
+    "MN09_Leaf_12_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "b188f434b5c3f3f509e97a687617cf2c2afd3d2142d7cb522c8ed92bb4903adc"
+    },
+    "MN09_Leaf_12_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "ff9aafce61b07dbe275d0f6871bf3504dc02cdd8a66409225e08eb3b5f6d2f39"
+    },
+    "MN10_Tower": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "1049e1e683a2bbf0c8b02cce8d77e0b2f82bedacfc67b9b6d883358e308e9850"
+    },
+    "MN10_Tower_Outline": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false
+    },
+    "MN10_Triangle_01": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "9661821d67bea0a819887329f9f6ff13ee4b1d4d2a3a970761ae2f74f172ccd5"
+    },
+    "MN10_Triangle_02": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "V6_Emblem_BurnishedGold"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "a56ad0e9fda4adf39a611f7bd09b5058e674ee86be8ec678c12e8c09e79c7af3"
+    },
+    "MN11_Maynooth_EditableText": {
+      "matrix": [
+        1.69865,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -1.69865,
+        50.790001,
+        0.0,
+        1.69865,
+        -0.0,
+        12.620001,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": true
+    },
+    "MN12_Mount_Datum": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [],
+      "hide_render": false
+    },
+    "EX11_EmblemWall": null,
+    "COL_EX11_EmblemWall": null
+  },
+  "before": {
+    "MN00_Emblem_Root": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [],
+      "hide_render": false
+    },
+    "MN01_Shield_Back": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Backplate_Dark.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "9b680bcb0c92937ccbda8403676dcec6d23f3e544a7d1027f53842a4398bc100"
+    },
+    "MN02_Panel_Book": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Navy.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "a839b7354688da02e2a26da9a95ca3f226ecc8332463a954110a5758bf389ddf"
+    },
+    "MN03_Panel_Dial": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Ochre.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "e3be4796de8851cde1b3fc5b694ddc1a0e5925fd02da915c1d826b2c2d9ac558"
+    },
+    "MN04_Panel_Frond": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Teal.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "019bed7ab9c2b7571344f2071b0dd3e6f7d0ec0ddcecbe80b4d7f7ae49b1f857"
+    },
+    "MN05_Panel_Tower": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Enamel_Burgundy.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "e8bca6215bb20182a16bd79f4c0ca7e796cd122e45b39523193909361628e72c"
+    },
+    "MN06_Shield_Rim": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN06_Divider_V": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN06_Divider_H": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Left": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Satin.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "5dcdbbf09295d5c4b1bcb98fc4c36d8d5582b69f8229f621e58a63731c459e7b"
+    },
+    "MN07_Book_Right": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "bcadea44418ddd4c04c4b29ffd32659b70e40ae9f9b2ae9be132e38a8fe77f9b"
+    },
+    "MN07_Book_Edge_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Edge_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fold": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fan_1": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fan_2": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN07_Book_Fan_3": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Plate": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Satin.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "e3440221e7bc49ca46b89a41698edbf5bc6fd3bf87d06c630422b58663e9ac0e"
+    },
+    "MN08_Dial_Rim": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_00": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_01": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_02": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_03": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_04": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_05": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_06": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Dial_Tick_07": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false
+    },
+    "MN08_Gnomon_Light": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "dd9b157b1e81d35c61719978b931c37c89ee61c002787b9683a7073796037617"
+    },
+    "MN08_Gnomon_Shadow": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Shadow.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "de3be899f47b5c6199ec1692fc0462c1ef68a28cfed2c0835ad35d1d32e0f812"
+    },
+    "MN08_Gnomon_Edge": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN09_Frond_Stem": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN09_Leaf_01_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "39999078cb73bf851400140e277eb9f76ee352e8c4a478704ec4b0332fdb0ff6"
+    },
+    "MN09_Leaf_01_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "c47a9f7fbbcdf074c8be2d2263dcb0d7762de196cec64b47072ccf46caf2a817"
+    },
+    "MN09_Leaf_02_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "11d7ca6ad86930f0d1f95d4ce7ebe151e55c8ca253e7b701f0e9c3ef34c11a77"
+    },
+    "MN09_Leaf_02_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "cec9c89db9b51bddc36249a0699432150ea46e39f9550da6bfd805093c1657d3"
+    },
+    "MN09_Leaf_03_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "065e68794067ea1ff10aab6f8e71717afbe7315642fcadbf840af578968cd238"
+    },
+    "MN09_Leaf_03_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "e56e93812c9039fcfc95ac21fd2f8eb9801348c9d36ccba3103c663cdaf1a168"
+    },
+    "MN09_Leaf_04_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "7e4627da3b1d65ce018458132dd53cbdb3afe3a4d696d809ff2826b2e4ed3940"
+    },
+    "MN09_Leaf_04_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "578b0705c0c053dfb488f9abd03631b452c57d46609cc30976d37ce8e7da9e92"
+    },
+    "MN09_Leaf_05_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "b7e4b66463a75d3e6978afec998ee0a2e509991e4032787c7fcce24e8e295bd5"
+    },
+    "MN09_Leaf_05_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "c4f9ca7fe9aa2adf0cfa3953fd1a19f94c1c3b4b71939b13533aab1433493b28"
+    },
+    "MN09_Leaf_06_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "4d17dc1f7d06544e42ca326cc0f5e7336e94a30c16b73fe32f836e4436a3dc13"
+    },
+    "MN09_Leaf_06_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "46cf0cd4401f0ba5e5ec9404b567b691688ed751a01f299bed330160f95a8ae1"
+    },
+    "MN09_Leaf_07_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "93cf8c7834161396c220354192179fc0f0dee7417a1812fe5d0d9d977ee12ec2"
+    },
+    "MN09_Leaf_07_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "26a5087dd03a211b2e9fc71c0403fd70a76d2ad020b2044b55e282067f512f98"
+    },
+    "MN09_Leaf_08_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "cf2f6290e3993aa93e924b0cedacd2be7cd937565697088264760ed416cab335"
+    },
+    "MN09_Leaf_08_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "39a390e7677607fa7a02ad15c0e2c06b0ab1c9e32569fadb7c19693ad2a167fe"
+    },
+    "MN09_Leaf_09_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "e50291d70b5addde359b2b5747da5d303edd8da108d20b8af8c2a90d2c4a0dab"
+    },
+    "MN09_Leaf_09_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "64df099ebda9d8472ed6441214c7ce28ce42b4c3f73cfae83dee7ad268dffbef"
+    },
+    "MN09_Leaf_10_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "4a4c126680c029a41c1cc08e1aa793937f67952c362295bc9db9ba4ed6a4317f"
+    },
+    "MN09_Leaf_10_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "bfa2031e4781c58ede89c6b613ddba8c41004a2c7f3db520cdfce5f4658084ea"
+    },
+    "MN09_Leaf_11_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "eac8eae55dc1b7983e4fec64fec425486596c28d885c13a9cac32f35fdc0df5e"
+    },
+    "MN09_Leaf_11_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "a309816c018d061acc962ac3af1217ace545a066c73d1713c3e12a8602707754"
+    },
+    "MN09_Leaf_12_L": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "009aa3f0be2c89995570d1e8e5e83deece3ac263bf6f23bcb8be6f84ca255c14"
+    },
+    "MN09_Leaf_12_R": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "ca2314a5925d3dd228e9641a82c6296b1492fe3fb7535b964f54b4d9ba71382b"
+    },
+    "MN10_Tower": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Satin.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "545398dc3e5ec428f2e8b9a3d2370dd8c2f72834d682b5a066df890ffc4d57c4"
+    },
+    "MN10_Tower_Outline": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN10_Triangle_01": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "53c379ffb394bad332aa883e87f0d66ed725219ac82b90f4af29ed8ac86ce983"
+    },
+    "MN10_Triangle_02": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "c224d03d431fa4a2f05d8299874114cd04b389f93351995d5c3ce0179ad6d102"
+    },
+    "MN11_Maynooth_EditableText": {
+      "matrix": [
+        1.69865,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -1.69865,
+        50.790001,
+        0.0,
+        1.69865,
+        -0.0,
+        12.620001,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MN_Gold_Edges.001"
+      ],
+      "hide_render": false
+    },
+    "MN12_Mount_Datum": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        50.950001,
+        0.0,
+        0.0,
+        1.0,
+        12.6,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [],
+      "hide_render": false
+    },
+    "EX11_EmblemWall": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        51.150002,
+        0.0,
+        0.0,
+        1.0,
+        15.4,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MAT_V2_Ivory_Carving"
+      ],
+      "hide_render": false,
+      "geometry_sha256": "08b233fb0b444f36317db113f1c2ffc4565f8fc5321362418893b5261cd95cec"
+    },
+    "COL_EX11_EmblemWall": {
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "materials": [
+        "MAT_V2_Ivory_Carving"
+      ],
+      "hide_render": true,
+      "geometry_sha256": "08b233fb0b444f36317db113f1c2ffc4565f8fc5321362418893b5261cd95cec"
+    }
+  },
+  "new_objects": [
+    "V6_Maynooth_GoldWallLetters",
+    "V6_Emblem_OuterGoldFillet",
+    "V6_Emblem_ConcealedMounts"
+  ],
+  "editable_text_source": {
+    "body": "Maynooth",
+    "parent": "MN00_Emblem_Root",
+    "matrix_basis": [
+      1.69865,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.0,
+      -1.69865,
+      -0.16,
+      0.0,
+      1.69865,
+      -0.0,
+      0.02,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "materials": [
+      "MN_Gold_Edges.001"
+    ]
+  }
+}

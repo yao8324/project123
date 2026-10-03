@@ -1,0 +1,9 @@
+{
+  "source": "Blender/MilanLibrary_Magic_V6/MilanLibrary_Magic_V6_Assembly.blend",
+  "sourceObjects": 21439,
+  "triangleCount": 15770344,
+  "sampleStep": 0.25,
+  "duration": 10,
+  "frame": 35,
+  "axis": "Blender(x,y,z) -> Unity(x,z,y), winding reversed"
+}

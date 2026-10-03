@@ -1,0 +1,69 @@
+{
+  "progress": "final_render_progress.json",
+  "renders": [
+    {
+      "camera": "CAM_V6_Overview",
+      "file": "Evidence/10_Final_Overview.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    },
+    {
+      "camera": "CAM_V6_Workzones",
+      "file": "Evidence/11_Final_Workzones.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    },
+    {
+      "camera": "CAM_V6_Upload",
+      "file": "Evidence/12_Final_Upload.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    },
+    {
+      "camera": "CAM_V6_Search",
+      "file": "Evidence/13_Final_Search.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    },
+    {
+      "camera": "CAM_V6_ShelfMagic",
+      "file": "Evidence/14_Final_ShelfMagic.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    },
+    {
+      "camera": "CAM_V6_BookSpines",
+      "file": "Evidence/15_Final_BookSpines.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    },
+    {
+      "camera": "CAM_V6_Entrance",
+      "file": "Evidence/16_Final_Entrance.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    },
+    {
+      "camera": "CAM_V6_Emblem",
+      "file": "Evidence/17_Final_Emblem.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    }
+  ]
+}

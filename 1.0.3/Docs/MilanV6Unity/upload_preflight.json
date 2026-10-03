@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "unity_compile_and_import": true,
+  "meta_pairs_complete": true,
+  "duplicate_asset_guids": [],
+  "missing_meta": [],
+  "previous_gameplay_source_preserved": true,
+  "native_blender_checksums_pass": true,
+  "version_pending": false,
+  "version": "1.0.3",
+  "remark": "新版图书馆建模",
+  "check_phase": "pre_commit"
+}

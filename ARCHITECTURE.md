@@ -4,23 +4,18 @@
 
 ```text
 lixiang/
-├── README.md          # 所有版本的索引与改动摘要
-├── AGENTS.md          # 成员和 AI 的版本上传规则
+├── README.md          # 版本索引与改动摘要
+├── AGENTS.md          # 版本上传规则
 ├── ARCHITECTURE.md    # 归档结构与项目逻辑
-├── 1.0.1/             # 可由 Unity Hub 独立打开的完整工程
-│   ├── Assets/
-│   ├── Packages/
-│   ├── ProjectSettings/
-│   ├── Docs/
-│   ├── README.md
-│   └── AGENTS.md
-└── 1.0.2/             # 1.0.1 的完整副本，附中央大厅 Blender 挖空样板
-    ├── Assets/
+├── 1.0.1/             # 初始完整 Unity 工程
+├── 1.0.2/             # 完整工程与 White Castle 挖空样板
+└── 1.0.3/             # 新版图书馆建模，独立 Unity 6000.3.25f1 工程
+    ├── Assets/        # V6 场景、原始网格、材质、Visuals 脚本及旧版资源
     ├── Packages/
     ├── ProjectSettings/
-    ├── Docs/
-    ├── Blender/        # 可编辑 .blend、预览和建模检查报告
-    ├── Tools/Blender/  # 挖空与预览重建脚本
+    ├── Docs/          # 项目设计、Unity 实景和验证报告
+    ├── Blender/       # V6 原生模型、重建快照、模块、贴图及实景
+    ├── Tools/         # 模型导出与历史重建工具
     ├── README.md
     └── AGENTS.md
 ```
@@ -44,3 +39,17 @@ lixiang/
 
 - **已实现：** 独立复制 `1.0.1` Unity 工程；新增 White Castle 中央大厅挖空的 Blender 工作文件、结构预览和重建脚本。原始 FBX 保留在同版 `Assets/_WhiteCastle/Meshes/`。
 - **规划中：** 清理伸入大厅的装饰网格，完成室内材质、门框、楼梯和碰撞，并将最终模型导出后接入 Unity 场景。`1.0.2` 的 Unity 场景和运行逻辑仍与 `1.0.1` 相同。
+
+
+## 1.0.3 已实现：新版图书馆建模
+
+- **独立归档：** 基于远端 `1.0.2`，保留其第一人称控制器和输入绑定；新增用户确认的 V6 美术资源及依赖，不覆盖旧版本目录。
+- **场景与资产：** `Assets/Scenes/MilanLibrary_Magic_V6.unity` 成为首个启动场景，原 LibraryMain 保留。V6 包括哥特式完整外观、木作室内、上传与检索工作区、书架和金边 Maynooth 校标；889 个网格渲染对象、67 种材质、97 盏灯光、47 组变换动画。原生 Blender 模型与重建资料位于 `Blender/MilanLibrary_Magic_V6/`。
+- **导入链路：** `MilanMeshImporter` 将 `.mlmesh` 数据导入 Unity Mesh；`MilanV6SceneBuilder` 配置场景、URP 材质、灯光和截图；`MilanMagicMotion` 在运行时播放采样的变换动画。网格和原生 Blender 文件通过版本内 Git LFS 规则管理。
+- **验证：** `MilanArchiveValidation` 在独立工程内实际导入、编译、打开场景和生成截图；1,025 项依赖无缺失，缺失脚本、材质、网格均为 0，动画和上一版蹲下输入检查通过。详见 [1.0.3 实景与验证](1.0.3/Docs/MilanV6Unity/Review.html)。
+
+## 1.0.3 仍需实现与验证
+
+- 全精度约 1,577 万三角面，仍需 LOD、遮挡和目标设备性能测试；已通过的场景验证不表示设备性能达标。
+- Unity URP 实时灯光与 Blender Cycles 的间接光不同；本次迁移了变换动画，灯光强度和材质微闪驱动仍为静态基准值。
+- 上传、检索、书籍归档和阅读仍是规划中的业务模块。本版工作区、魔法书与书架属于美术展示，没有实现资料业务闭环。
