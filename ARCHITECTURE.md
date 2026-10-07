@@ -9,7 +9,8 @@ lixiang/
 ├── ARCHITECTURE.md    # 归档结构与项目逻辑
 ├── 1.0.1/             # 初始完整 Unity 工程
 ├── 1.0.2/             # 完整工程与 White Castle 挖空样板
-└── 1.0.3/             # 新版图书馆建模，独立 Unity 6000.3.25f1 工程
+├── 1.0.3/             # 新版图书馆建模（保留原样）
+└── 1.0.4/       # GlassFloor 候选修订，独立 Unity 6000.3.25f1 工程
     ├── Assets/        # V6 场景、原始网格、材质、Visuals 脚本及旧版资源
     ├── Packages/
     ├── ProjectSettings/
@@ -53,3 +54,27 @@ lixiang/
 - 全精度约 1,577 万三角面，仍需 LOD、遮挡和目标设备性能测试；已通过的场景验证不表示设备性能达标。
 - Unity URP 实时灯光与 Blender Cycles 的间接光不同；本次迁移了变换动画，灯光强度和材质微闪驱动仍为静态基准值。
 - 上传、检索、书籍归档和阅读仍是规划中的业务模块。本版工作区、魔法书与书架属于美术展示，没有实现资料业务闭环。
+
+## 1.0.4 已实现：GlassFloor 候选修订
+
+使用上传者提供并已本机验证的独立完整工程；旧版本目录不改写。当前场景仍为 MilanLibrary_Magic_V6，新增入口二楼144㎡连续木楼板并保留中央挑空，修复彩窗发光纹样链路。此前窗洞与复合桌台碰撞、中央门通行/四门关闭、连续石质前坡、Esc 点击恢复、右下手部与六动画均纳入本版。默认 Balanced 720p，F8/F9 切换，E 业务交互暂停。
+
+### 内部结构与职责
+
+- `Core`：UIInputStateManager 协调玩家与菜单输入。
+- `Player`：FirstPersonController 控制移动/支撑/重力/蹲跳；FirstPersonViewModel 管理手部状态，安全传送与复位由恢复流程调用。
+- `Interaction`：保留交互接口与历史检测实现；V6 当前不启用 E 门或书籍业务。
+- `Knowledge`：预留数据模块，未实现资料闭环。
+- `UI`：RecoveryMenu 提供 Esc 释放鼠标、按钮回出生点及继续。
+- `Visuals`：变换动画和画质；Editor 下为网格导入、建场、刷新、验证；AcceptanceTestOnly 保存自动虚拟输入/截图/诊断，正常构建不启用诊断。
+- `Assets/Art/MilanLibraryV6` 与 `Assets/Art/Characters/FirstPersonMage` 分别保存建筑导出资产与第一人称手部。
+- `Packages` 与 `ProjectSettings` 完整保留；依赖 URP17.3.0、InputSystem1.20.0、uGUI2.0.0，以及原有 Git 包和锁定解析。
+- `Blender/MilanLibrary_Magic_V6` 保留 Assembly → CloudRepair → PlaytestReview → GlassFloorReview 原生依赖链；`Tools/MilanV6` 提供修复、碰撞角色约定、导出和手部重建。Texture_Credits 明确外部贴图与原项目素材来源。
+
+完整目录表、操作和命令见 [本版 README](1.0.4/README.md)。每个版本的运行资源不依赖仓库其他版本目录。
+
+### 验证与未完成项
+
+本輪真实 Controller/InputSystem 虚拟输入回归107/107，新增楼面60/61，14,400支撑射线无缺失；最终66张离屏截图、64次材质耗时采样，最终轮次Console零错误。macOS Universal构建0错误/1个Cloud符号上传警告，签名与ZIP CRC已核验。发布整理3272个代码/资源/设置/工具文件与验收工程逐一SHA256相同，未再做游戏修改。详细证据见 [本轮验证](1.0.4/Docs/GlassFloorReview_20261007/VERIFICATION.md)。
+
+**未完成：**约1.23m中庭护栏可冲刺跳越，因此不是全部防跌落通过。部分窗内侧视角被书架遮挡；玻璃为实时近似，不含物理折射或光谱透射。未完成本轮真人输入与standalone FPS验收。资料导入、书籍生成、检索和阅读仍是规划项，不将环境展示当业务功能。
