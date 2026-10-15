@@ -1,0 +1,56 @@
+{
+  "views": [
+    {
+      "name": "side_inner",
+      "position": [
+        -10.7,
+        7.6,
+        21
+      ],
+      "target": [
+        -12,
+        8,
+        21
+      ]
+    },
+    {
+      "name": "side_oblique",
+      "position": [
+        -10.4,
+        7.7,
+        19.8
+      ],
+      "target": [
+        -12,
+        8,
+        21
+      ]
+    },
+    {
+      "name": "front_outer",
+      "position": [
+        0,
+        15,
+        -6
+      ],
+      "target": [
+        0,
+        15,
+        -3.18
+      ]
+    },
+    {
+      "name": "side_outer",
+      "position": [
+        -14.2,
+        8.5,
+        27
+      ],
+      "target": [
+        -12,
+        8.5,
+        27
+      ]
+    }
+  ]
+}
