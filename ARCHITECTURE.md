@@ -1,16 +1,31 @@
 # 版本归档与 Unity 项目架构
 
+## 1.0.5 开发中：环境交互与 UI
+
+基于 1.0.4 的独立工程，位于 dev/1.0.5 分支的 1.0.5/；旧版本只读。主场景为 MilanLibrary_Magic_V6，LibraryMain 仍在 Build Settings 第二项启用。
+
+- **Core / Player：** LibraryInputBindings 管理运行时克隆的 Input Actions、按键换绑、冲突检查和 persistentDataPath/input-bindings.json；FirstPersonController 读取同一套输入，并提供灵敏度和输入禁用接口。
+- **UI：** RecoveryMenu 统一处理 Esc、主面板、世界提示及玩家输入状态；设置页实际调用 MilanQualityOptions 和玩家灵敏度接口。默认高画质，画质和灵敏度仅本次运行生效；按键覆盖跨运行保存。旧 UIInputStateManager 不承担当前主场景第二套菜单输入。
+- **Interaction / Knowledge：** BookPreviewInteractor 执行 3 米中心射线、0.15 秒空射线容差和遮挡/超距清除；DemoBookTarget 通过 IInteractable 呈现 DemoBookRecord。统一交互体覆盖魔法书、底座和法阵。DemoBookRecord 是演示数据，不是用户馆藏数据库。
+- **入口环境：** AutomaticEntranceDoor 管理双扇自动门、接近/离开阈值及通行保护；GrandEntranceBuilder 是编辑器生成工具，最终高度适配、封口与灯光另有场景修订。主场景及 Assets/Art/Models/GrandEntrance 保存成品；不能通过重跑旧建场流程假定还原全部最新调整。
+- **Visuals：** 保留 URP 场景、魔法变换动画与第一人称手部；本版修订地毯重叠、展示位置、动画节奏和入口结构。
+
+**未实现：** LibraryDatabase、KnowledgeBook 正式存储、UploadStation、SearchStation 与真实阅读服务；用户馆藏保持空状态。深入探索/Boss 战只有 UI 入口，AI/RAG、多人同样尚未实现。P0 仍优先资料闭环。
+
+当前说明见 [1.0.5 README](1.0.5/README.md)、[馆藏契约](1.0.5/Docs/CollectionUIDesign.md)、[更新日志](1.0.5/CHANGELOG.md)。UIReview 内为各次功能验证记录，较早原型说明不覆盖后续修订；本次上传准备未重跑 Unity 功能回归。
+
 ## 分支结构
 
 ```text
-lixiang/
+repository/           # 当前开发分支 dev/1.0.5；归档分支 lixiang
 ├── README.md          # 版本索引与改动摘要
 ├── AGENTS.md          # 版本上传规则
 ├── ARCHITECTURE.md    # 归档结构与项目逻辑
 ├── 1.0.1/             # 初始完整 Unity 工程
 ├── 1.0.2/             # 完整工程与 White Castle 挖空样板
 ├── 1.0.3/             # 新版图书馆建模（保留原样）
-└── 1.0.4/       # GlassFloor 候选修订，独立 Unity 6000.3.25f1 工程
+├── 1.0.4/             # GlassFloor 历史基线，保留原样
+└── 1.0.5/             # 当前独立 Unity 6000.3.25f1 开发工程
     ├── Assets/        # V6 场景、原始网格、材质、Visuals 脚本及旧版资源
     ├── Packages/
     ├── ProjectSettings/
@@ -18,6 +33,8 @@ lixiang/
     ├── Blender/       # V6 原生模型、重建快照、模块、贴图及实景
     ├── Tools/         # 模型导出与历史重建工具
     ├── README.md
+    ├── CHANGELOG.md
+    ├── CONTRIBUTING.md
     └── AGENTS.md
 ```
 
