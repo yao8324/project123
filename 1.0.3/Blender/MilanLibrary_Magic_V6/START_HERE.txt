@@ -1,0 +1,12 @@
+魔法图书馆 V6｜打开顺序
+
+1. 打开 Review.html，查看八张真实场景图和改动说明。
+2. 打开 MilanLibrary_Magic_V6_Assembly.blend。主场景 MilanLibrary_Final，主相机 CAM_V6_Overview；文件已包含完整馆体和 V6 改动。
+3. 时间轴播放 1–240 帧，24 fps。材质和辉光使用 Cycles、AgX、Full_Collection 视图层及已配置的合成器；实体视图用于编辑。
+4. File > Append：Exports/V6_Updated_Workstations.blend 中 V6_EXPORT_Updated_Workstations 是两个完整新版工作台；V6_ShelfMagic_Overlay.blend 中 V6_EXPORT_ShelfMagic_Overlay 是书架魔法叠加组件。V6_DirectMountedEmblem.blend 中 V6_EXPORT_DirectMountedEmblem 为贴墙金边校标组件。模块已包含于完整 Assembly，不要再向它重复追加。
+5. full_scene_inventory.csv / full_module_manifest.json 是完整模型清单，包含隐藏对象；V6_new_objects.csv 是本次新增艺术对象。删除记录、改动记录见 Audit。export_manifest.json 说明三份模块的范围。
+6. MilanLibrary_Magic_V6_Before.blend 是修改前快照。原始 V5 位于相邻目录并保持原文件。
+7. 验证和实际限制见 Validation_Report.txt。文件校验值见 FILE_SHA256.json；包外另有 ZIP 校验文件。
+
+重建：先复制整个交付目录，再用独立 Blender 运行 Scripts/rebuild_native.py。它从 Before.blend 开始，并会重写所在目录的 V6 Assembly。逐阶段脚本已实际执行，整套一键重建未在第二目录完整复跑。
+坐标：米，Z 向上，正门朝 -Y。材质与原生动画已打包；未声称 Unity 导入或设备性能已通过。

@@ -1,0 +1,16 @@
+{
+    "scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+    "pipeline": "MilanV6_URP",
+    "renderers": 889,
+    "missingMeshes": 0,
+    "missingMaterials": 0,
+    "unsupportedShaders": 0,
+    "missingScripts": 0,
+    "colliders": 335,
+    "lights": 97,
+    "animations": 47,
+    "triangles": 15770344,
+    "camera": true,
+    "player": true,
+    "inputAsset": true
+}

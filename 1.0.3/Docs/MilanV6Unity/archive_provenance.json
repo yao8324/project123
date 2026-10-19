@@ -1,0 +1,26 @@
+{
+  "base_ref": "origin/lixiang",
+  "base_commit": "743fb68bdeb56dc4b18ce5cfc630fc473472b246",
+  "previous_version": "1.0.2",
+  "version": "1.0.3",
+  "type": "美术集成修订版",
+  "approved_scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+  "source_policy": "tracked previous version plus approved V6 allowlist",
+  "native_source_zip_sha256": "81cdaf157209a9cc036b7bf5168dcf7723dbcbf39c8f3f11d3fcfafc4e19327f",
+  "preserved_remote_improvements": [
+    "FirstPersonController",
+    "InputSystem_Actions"
+  ],
+  "excluded": [
+    "Library",
+    "Temp",
+    "Logs",
+    "Obj",
+    "Build",
+    "Builds",
+    "UserSettings",
+    "IDE generated files",
+    "unrelated dirty working files"
+  ],
+  "remark": "新版图书馆建模"
+}

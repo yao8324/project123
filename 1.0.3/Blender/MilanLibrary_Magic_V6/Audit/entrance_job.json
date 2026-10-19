@@ -1,0 +1,13 @@
+{
+  "progress": "entrance_render_progress.json",
+  "renders": [
+    {
+      "camera": "CAM_V6_Entrance",
+      "file": "Evidence/16_Final_Entrance.png",
+      "width": 1800,
+      "height": 1200,
+      "samples": 64,
+      "frame": 35
+    }
+  ]
+}

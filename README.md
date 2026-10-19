@@ -1,94 +1,35 @@
-# Arcane Archive 魔法图书馆
+# Arcane Archive 魔法图书馆 · 版本归档
 
-“虚拟环境设计”课程项目：一个可第一人称漫游的魔法图书馆个人知识库。用户将在图书馆中导入资料、将资料映射为书籍、归档至书架，并通过检索台找到和阅读内容。
+本分支按版本目录保存完整、相互独立的 Unity 工程。**用 Unity Hub 打开具体版本文件夹，不要打开本分支根目录。**
 
-## 当前 Demo
+当前开发分支为 **dev/1.0.5**，工程入口为 [1.0.5/README.md](1.0.5/README.md)；1.0.4 为上一版本基线。1.0.5 保持开发中修订版状态，源码归档不代表稳定版或运行包发布。
 
-- Unity 版本：`6000.3.24f1`（Unity 6.3 LTS）
-- 渲染管线：URP 17.3.0
-- 启动场景：`Assets/Scenes/LibraryMain.unity`
-- 已完成：第一人称移动、视角、冲刺、跳跃、基础世界交互、UI 输入状态管理，以及 WhiteCastle + Stylized Library 的魔法图书馆环境。
-- 环境包括：南侧入口、四周石质城堡墙、高窗、火盆、中央阅读区、两侧书架、上传区、检索台和北侧壁炉。
+上传新版本前，成员和 AI 必须先阅读 [协作规则](AGENTS.md) 与 [架构说明](ARCHITECTURE.md)。每个已发布版本保持原样；新版本建立新目录，并同步更新此索引及该版本的 README。
 
-## 打开项目
+## 版本索引
 
-1. 使用 Unity Hub 添加本仓库根目录。
-2. 使用 Unity `6000.3.24f1` 打开项目。
-3. 打开 `Assets/Scenes/LibraryMain.unity`。
-4. 点击 Play 运行。
+| 版本 | 日期 | 类型 | 主要改动 | 已知限制 |
+| --- | --- | --- | --- | --- |
+| [1.0.1](1.0.1/README.md) | 2026-09-25 | 1.0 系列修订版 | 建立魔法图书馆 Unity 工程和环境场景；完善玩家落地、冲刺、蹲下及滚轮输入绑定。 | `Previous`/`Next` 尚未接入业务功能；资料导入、书架、检索与阅读闭环尚未实现。 |
+| [1.0.2](1.0.2/README.md) | 2026-09-27 | 1.0 系列修订版 | 归档完整 Unity 工程，加入 White Castle 中央大厅挖空 Blender 样板、预览和重建脚本。 | 尚未导回 Unity；装饰网格可能伸入大厅，室内材质与碰撞待完成。 |
+| [1.0.3](1.0.3/README.md) | 2026-10-03 | 美术集成修订版 | 新版图书馆建模：完整 V6 Unity 场景、哥特式外观、木作室内、魔法动画和 Blender 源模型。 | 全精度场景尚未进行性能优化；上传、检索和阅读业务闭环未接入。 |
+| [1.0.4](1.0.4/README.md) | 2026-10-07 | 候选修订版 | GlassFloor：彩窗纹样发光修复、入口二楼144㎡木楼板；纳入窗洞/桌台/主门前坡/恢复菜单/手部修订，补齐源码依赖与内部结构。 | 中庭栏杆可被冲刺跳越；资料业务闭环未接入；未完成真人输入及本轮 standalone 帧率验收。 |
+| [1.0.5](1.0.5/README.md) | 2026-10-15 | 开发中修订版 | 基于 1.0.4；统一 Esc UI、可用画质/灵敏度、按键换绑、连续书籍提示、金紫自动大门及环境修订。 | 资料业务与 Boss 战未接入；尚无本版独立构建和完整平台回归。 |
 
-## 操作方式
+`1.0.1` 是本归档结构中的首个完整快照，来源于 GitHub `lixiang` 分支提交 [`a276850`](https://github.com/yao8324/project123/commit/a2768501da05a6f91c87cd9b17922be7556b9010)。该提交原本将工程放在分支根目录，而 `1.0.1/` 仅存放版本说明；归档时将工程归入同一版本目录。`1.0.2` 从 `1.0.1` 完整复制后添加城堡挖空建模样板。
 
-| 操作 | 按键 |
-| --- | --- |
-| 移动 | WASD |
-| 视角 | 鼠标 |
-| 冲刺 | Shift |
-| 跳跃 | Space |
-| 世界交互 | E |
-| 打开/关闭最小测试面板 | Esc |
-| 解锁鼠标 | Esc |
-| 重新锁定鼠标 | 鼠标左键 |
+`1.0.3` 以远端 `1.0.2` 为基础集成新版图书馆。使用 Unity `6000.3.25f1` 打开 `1.0.3/`，场景为 `Assets/Scenes/MilanLibrary_Magic_V6.unity`。大型网格与原生 Blender 文件使用 Git LFS，克隆后请执行 `git lfs pull`。
 
-## 当前场景布局
+## 版本编号约定
 
-- 南侧入口与出生点：`(0, 0, -10)`，面朝北。
-- 上传区：左前方，约 `(-7, 0, -4)`。
-- 课程资料与个人资料书架：西侧，约 `X = -11.5`。
-- 代码与参考资料书架：东侧，约 `X = 11.5`。
-- 中央长桌和地毯：约 `(0, 0, -0.5)`。
-- 检索台：北侧中央，约 `(0, 0, 7)`。
-- 北侧壁炉、高窗和石墙位于检索台后方。
+- `0.0.x`：测试版；`0.x.0`：稳定小版本；`x.0.0`：稳定大版本。
+- `1.0.0` 之后兼容标准语义版本号，例如 `1.0.2`、`1.1.0`、`2.0.0`。
+- 版本号必须严格递增，且不得复用。当前最新开发修订为 `1.0.5`；建立后续独立版本时应使用更高编号。
 
-## 目录说明
+每个版本目录至少包含 `Assets/`、`Packages/`、`ProjectSettings/`、`Docs/`、`README.md` 和对应项目配置。Unity 生成的缓存和个人设置不属于版本内容。
 
-```text
-Assets/
-├── Scenes/             # Unity 场景
-├── Scripts/            # Core、Player、Interaction、Knowledge、UI、Visuals 模块
-├── Prefabs/            # 项目自建 Prefab
-├── ScriptableObjects/  # 数据资产
-├── Art/                # 项目美术资源
-├── _WhiteCastle/       # 城堡建筑素材
-└── Stylized_Library/   # 图书馆室内素材（场景统一使用 Prefabs/URP）
+## 当前入口
 
-Docs/                   # 策划、技术设计、阶段记录与截图
-AGENTS.md               # 协作约束
-```
+开发 1.0.5 时使用 Unity **6000.3.25f1** 打开 [1.0.5/](1.0.5/README.md)，启动场景为 `Assets/Scenes/MilanLibrary_Magic_V6.unity`。先执行 `git lfs pull` 获取大型资源，避免仅下载指针造成模型缺失。操作、验证边界和已知问题见版本 README；首次上传步骤见 [协作说明](1.0.5/CONTRIBUTING.md)，本次检查见 [上传准备检查](1.0.5/Docs/ReleaseReadiness.md)。
 
-## 开发约定
-
-- 所有新场景、Prefab、材质、脚本和文档均保存在本 Unity 项目内。
-- 书籍信息须数据驱动，不能把书名、关键词、文件路径或书架位置硬编码到场景物体。
-- 用户导入文件写入 `Application.persistentDataPath`，不能写入 `Assets`。
-- 新的 Stylized Library 实例使用 `Assets/Stylized_Library/Prefabs/URP/`。
-- 不删除现有 Package、场景或 ProjectSettings 文件，除非先确认。
-- 修改 C# 后须等待 Unity 编译完成并检查 Console Error。
-
-## GitHub 协作
-
-每次开始前先同步远端：
-
-```bash
-git pull --rebase origin main
-```
-
-完成修改后，检查、提交并推送：
-
-```bash
-git status
-git add Assets Docs README.md AGENTS.md .gitignore
-git commit -m "feat: describe your change"
-git push origin main
-```
-
-提交信息使用 Conventional Commits，例如：
-
-```text
-feat: add upload station layout
-fix: prevent player from jumping in midair
-docs: update environment setup notes
-chore: update gitignore
-```
-
-Unity 项目不提交 `Library`、`Temp`、`Logs`、`Obj`、`Build`、`Builds` 或 `UserSettings`；这些目录已由 `.gitignore` 忽略。
+需要历史基线时打开 [1.0.4/](1.0.4/README.md)。其内部版本 2026.10.7.2、包哈希和构建验收仅属于 1.0.4。运行包不包含在 Git 源码中，分支更新不代表 GitHub Release 已发布。

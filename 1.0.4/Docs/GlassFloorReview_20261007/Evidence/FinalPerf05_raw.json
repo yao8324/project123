@@ -1,0 +1,326 @@
+{
+    "scope": "Offscreen Unity Play Mode A/B, same source scene and camera; timings include synchronous GPU readback, not standalone FPS.",
+    "errors": 0,
+    "rows": [
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 247.2615
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 15.762
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 14.9029
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 15.5372
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 14.712800000000002
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 14.1521
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 13.5846
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_inner",
+            "renderReadbackMs": 14.443800000000002
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 39.1037
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 18.8713
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 12.6325
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 18.1975
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 22.456
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 19.193
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 12.3094
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_oblique",
+            "renderReadbackMs": 14.3003
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 158.1951
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 47.0737
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 84.1468
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 23.5244
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 25.1761
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 31.9825
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 44.542100000000008
+        },
+        {
+            "variant": "legacy_white",
+            "view": "front_outer",
+            "renderReadbackMs": 36.0711
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 31.1446
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 27.2556
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 29.761300000000003
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 24.9932
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 28.469900000000004
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 27.709200000000004
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 23.719900000000004
+        },
+        {
+            "variant": "legacy_white",
+            "view": "side_outer",
+            "renderReadbackMs": 30.6749
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 14.158700000000002
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 14.5942
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 13.547600000000001
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 13.3115
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 8.2124
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 10.131300000000002
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 13.871400000000002
+        },
+        {
+            "variant": "baseline",
+            "view": "side_inner",
+            "renderReadbackMs": 14.3528
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 12.4351
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 15.796800000000001
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 22.604300000000003
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 11.773
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 14.322000000000001
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 21.9217
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 20.6082
+        },
+        {
+            "variant": "baseline",
+            "view": "side_oblique",
+            "renderReadbackMs": 12.7741
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 53.372400000000009
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 32.5539
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 24.3218
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 24.1565
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 33.4968
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 39.5653
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 29.864
+        },
+        {
+            "variant": "baseline",
+            "view": "front_outer",
+            "renderReadbackMs": 43.3786
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 36.763400000000007
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 23.548000000000003
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 24.2502
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 37.3198
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 23.427
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 29.776100000000004
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 36.383900000000007
+        },
+        {
+            "variant": "baseline",
+            "view": "side_outer",
+            "renderReadbackMs": 23.669
+        }
+    ]
+}

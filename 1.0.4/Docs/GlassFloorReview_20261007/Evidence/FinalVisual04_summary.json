@@ -1,0 +1,336 @@
+{
+    "scope": "Offscreen Unity Play Mode A/B, same source scene and camera; timings include synchronous GPU readback, not standalone FPS.",
+    "errors": 0,
+    "rows": [
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_outside",
+            "renderReadbackMs": 368.19210000000006
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_inside",
+            "renderReadbackMs": 50.591
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_001_outside",
+            "renderReadbackMs": 49.267300000000009
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_001_inside",
+            "renderReadbackMs": 9.5863
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_002_outside",
+            "renderReadbackMs": 49.9975
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_002_inside",
+            "renderReadbackMs": 14.5229
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_003_outside",
+            "renderReadbackMs": 40.206500000000009
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_003_inside",
+            "renderReadbackMs": 39.9825
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_004_outside",
+            "renderReadbackMs": 41.1006
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_004_inside",
+            "renderReadbackMs": 16.9316
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_005_outside",
+            "renderReadbackMs": 36.375800000000008
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_005_inside",
+            "renderReadbackMs": 8.9176
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_006_outside",
+            "renderReadbackMs": 33.7127
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_006_inside",
+            "renderReadbackMs": 11.5245
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_007_outside",
+            "renderReadbackMs": 31.689200000000004
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_007_inside",
+            "renderReadbackMs": 8.637400000000002
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_008_outside",
+            "renderReadbackMs": 33.5741
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_008_inside",
+            "renderReadbackMs": 14.8435
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_009_outside",
+            "renderReadbackMs": 28.8089
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_009_inside",
+            "renderReadbackMs": 11.438
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_010_outside",
+            "renderReadbackMs": 40.9833
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_010_inside",
+            "renderReadbackMs": 14.4663
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_011_outside",
+            "renderReadbackMs": 35.5698
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_011_inside",
+            "renderReadbackMs": 10.4847
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_012_outside",
+            "renderReadbackMs": 37.049600000000008
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_012_inside",
+            "renderReadbackMs": 15.7565
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_013_outside",
+            "renderReadbackMs": 51.3768
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_013_inside",
+            "renderReadbackMs": 13.357000000000001
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_014_outside",
+            "renderReadbackMs": 51.681000000000008
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_014_inside",
+            "renderReadbackMs": 12.530800000000001
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_015_outside",
+            "renderReadbackMs": 36.6513
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_015_inside",
+            "renderReadbackMs": 7.6555
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_016_outside",
+            "renderReadbackMs": 27.5146
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_016_inside",
+            "renderReadbackMs": 7.9664
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_017_outside",
+            "renderReadbackMs": 47.668800000000008
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_017_inside",
+            "renderReadbackMs": 10.958300000000002
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_018_outside",
+            "renderReadbackMs": 35.1126
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_018_inside",
+            "renderReadbackMs": 7.678
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_019_outside",
+            "renderReadbackMs": 23.4796
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_019_inside",
+            "renderReadbackMs": 9.379000000000002
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_020_outside",
+            "renderReadbackMs": 32.6363
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_020_inside",
+            "renderReadbackMs": 15.933800000000002
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_021_outside",
+            "renderReadbackMs": 34.8359
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_021_inside",
+            "renderReadbackMs": 9.105
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_022_outside",
+            "renderReadbackMs": 39.3243
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_022_inside",
+            "renderReadbackMs": 10.8168
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_023_outside",
+            "renderReadbackMs": 35.7566
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_023_inside",
+            "renderReadbackMs": 8.4847
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_024_outside",
+            "renderReadbackMs": 43.659600000000008
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_024_inside",
+            "renderReadbackMs": 13.7123
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_025_outside",
+            "renderReadbackMs": 32.1946
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_025_inside",
+            "renderReadbackMs": 9.0969
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_026_outside",
+            "renderReadbackMs": 40.6376
+        },
+        {
+            "variant": "baseline",
+            "view": "GF21_FiguralGlazing_026_inside",
+            "renderReadbackMs": 14.8819
+        },
+        {
+            "variant": "baseline",
+            "view": "west_first_upper",
+            "renderReadbackMs": 13.9139
+        },
+        {
+            "variant": "baseline",
+            "view": "west_recess_upper",
+            "renderReadbackMs": 12.9795
+        },
+        {
+            "variant": "baseline",
+            "view": "east_recess_upper",
+            "renderReadbackMs": 13.2781
+        },
+        {
+            "variant": "baseline",
+            "view": "west_recess_outside",
+            "renderReadbackMs": 35.8004
+        },
+        {
+            "variant": "baseline",
+            "view": "west_repeated_lower",
+            "renderReadbackMs": 12.2527
+        },
+        {
+            "variant": "baseline",
+            "view": "apse_upper",
+            "renderReadbackMs": 12.2865
+        },
+        {
+            "variant": "baseline",
+            "view": "front_full",
+            "renderReadbackMs": 51.3278
+        },
+        {
+            "variant": "baseline",
+            "view": "front_oblique",
+            "renderReadbackMs": 34.9026
+        },
+        {
+            "variant": "baseline",
+            "view": "floor_front_toward_entry",
+            "renderReadbackMs": 17.474700000000003
+        },
+        {
+            "variant": "baseline",
+            "view": "floor_entry_to_atrium",
+            "renderReadbackMs": 43.126200000000007
+        },
+        {
+            "variant": "baseline",
+            "view": "floor_west_join",
+            "renderReadbackMs": 21.373900000000004
+        },
+        {
+            "variant": "baseline",
+            "view": "floor_apse",
+            "renderReadbackMs": 28.8583
+        }
+    ]
+}
