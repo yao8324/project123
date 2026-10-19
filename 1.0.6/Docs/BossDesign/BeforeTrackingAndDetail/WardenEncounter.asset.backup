@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454de3bb10d75f24a81cf84481674cb8, type: 3}
+  m_Name: WardenEncounter
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneArchive.Core.BossDefinition
+  displayName: "\u7F04\u9ED8\u5178\u72F1\u957F \xB7 \u7EF4\u7EB6"
+  health: 1000
+  playerHealth: 100
+  boltDamage: 20
+  empoweredDamage: 80
+  shotInterval: 0.32
+  projectileSpeed: 8
+  volleyDamage: 10
+  waveDamage: 22
+  sealDamage: 25
+  absorbWindow: 0.65
+  absorbCooldown: 2.5
+  hurtProtection: 0.7
+  volleyWarning: 1.1
+  waveWarning: 1.4
+  sealWarning: 1.5
+  waveSpeed: 4
+  sealRadius: 1.6
+  laserChargeTime: 2.2
+  laserLockTime: 0.65
+  laserDuration: 1.3
+  laserTickInterval: 0.22
+  laserDamage: 14
+  laserRadius: 0.3
+  laserRange: 32
+  moveSpeed: 2.4
+  repositionTime: 2.8
+  preferredMinDistance: 6.5
+  preferredMaxDistance: 9.5
+  guardCapacity: 100
+  guardHoldDrain: 7
+  guardRegen: 26
+  guardRegenDelay: 1.25
+  guardDamageCost: 1.5
+  guardBreakTime: 1.8
+  absorbGuardCost: 8
+  shotSound: {fileID: 8300000, guid: 390eb23d6effd754db9f04bcf1332d84, type: 3}
+  warningSound: {fileID: 8300000, guid: fef608caaecbace4ea0c68483fdfca16, type: 3}
+  impactSound: {fileID: 8300000, guid: 79dc1977b36b95a40b212291b3856733, type: 3}
+  absorbSound: {fileID: 8300000, guid: 498e217ab2abcda469d0cd6847b3578b, type: 3}

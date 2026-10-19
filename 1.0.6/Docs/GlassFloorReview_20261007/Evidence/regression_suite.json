@@ -1,0 +1,1791 @@
+{
+  "cases": [
+    {
+      "id": "GF21_FiguralGlazing_floor0",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 0.08,
+        "z": 3.0000001019221667
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 3.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_001_floor0",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 0.08,
+        "z": 9.000000101922167
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 9.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_001_floor6",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 6.08,
+        "z": 9.000000101922167
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 9.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_002_floor0",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 0.08,
+        "z": 21.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 21.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_002_floor6",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 6.08,
+        "z": 21.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 21.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_003_floor0",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 0.08,
+        "z": 27.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 27.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_003_floor6",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 6.08,
+        "z": 27.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 27.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_004_floor0",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 0.08,
+        "z": 33.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 33.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_004_floor6",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 6.08,
+        "z": 33.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 33.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_005_floor0",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 0.08,
+        "z": 39.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 39.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_005_floor6",
+      "kind": "window",
+      "start": {
+        "x": -11.030000114440918,
+        "y": 6.08,
+        "z": 39.00000010192217
+      },
+      "origin": {
+        "x": -12.380000114440918,
+        "y": 0,
+        "z": 39.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 7.549790126404332e-08
+      },
+      "yaw": -90.0000043257111,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_006_floor0",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 0.08,
+        "z": 3.000000262854698
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 3.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_007_floor0",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 0.08,
+        "z": 9.000000262854698
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 9.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_007_floor6",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 6.08,
+        "z": 9.000000262854698
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 9.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_008_floor0",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 0.08,
+        "z": 21.000000262854698
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 21.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_008_floor6",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 6.08,
+        "z": 21.000000262854698
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 21.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_009_floor0",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 0.08,
+        "z": 27.000000262854698
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 27.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_009_floor6",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 6.08,
+        "z": 27.000000262854698
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 27.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_010_floor0",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 0.08,
+        "z": 33.0000002628547
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 33.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_010_floor6",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 6.08,
+        "z": 33.0000002628547
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 33.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_011_floor0",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 0.08,
+        "z": 39.0000002628547
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 39.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_011_floor6",
+      "kind": "window",
+      "start": {
+        "x": 11.030000114440918,
+        "y": 6.08,
+        "z": 39.0000002628547
+      },
+      "origin": {
+        "x": 12.380000114440918,
+        "y": 0,
+        "z": 39.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": 1.9470718370939721e-07
+      },
+      "yaw": 90.00001115589987,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_012_floor0",
+      "kind": "window",
+      "start": {
+        "x": 10.850289180874825,
+        "y": 0.08,
+        "z": 43.42846871763468
+      },
+      "origin": {
+        "x": 12.188739776611328,
+        "y": 0,
+        "z": 43.604679107666016
+      },
+      "normal": {
+        "x": -0.9914448857307434,
+        "y": 0,
+        "z": -0.13052621483802795
+      },
+      "yaw": 82.49999889732793,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_012_floor6",
+      "kind": "window",
+      "start": {
+        "x": 10.850289180874825,
+        "y": 6.08,
+        "z": 43.42846871763468
+      },
+      "origin": {
+        "x": 12.188739776611328,
+        "y": 0,
+        "z": 43.604679107666016
+      },
+      "normal": {
+        "x": -0.9914448857307434,
+        "y": 0,
+        "z": -0.13052621483802795
+      },
+      "yaw": 82.49999889732793,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_013_floor0",
+      "kind": "window",
+      "start": {
+        "x": 10.110860699415207,
+        "y": 0.08,
+        "z": 46.18805483579636
+      },
+      "origin": {
+        "x": 11.358098030090332,
+        "y": 0,
+        "z": 46.70467758178711
+      },
+      "normal": {
+        "x": -0.9238795042037964,
+        "y": 0,
+        "z": -0.38268351554870605
+      },
+      "yaw": 67.49999497605123,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_013_floor6",
+      "kind": "window",
+      "start": {
+        "x": 10.110860699415207,
+        "y": 6.08,
+        "z": 46.18805483579636
+      },
+      "origin": {
+        "x": 11.358098030090332,
+        "y": 0,
+        "z": 46.70467758178711
+      },
+      "normal": {
+        "x": -0.9238795042037964,
+        "y": 0,
+        "z": -0.38268351554870605
+      },
+      "yaw": 67.49999497605123,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_014_floor0",
+      "kind": "window",
+      "start": {
+        "x": 8.68239289522171,
+        "y": 0.08,
+        "z": 48.662234264612195
+      },
+      "origin": {
+        "x": 9.753419876098633,
+        "y": 0,
+        "z": 49.48406219482422
+      },
+      "normal": {
+        "x": -0.7933533191680908,
+        "y": 0,
+        "z": -0.6087614297866821
+      },
+      "yaw": 52.499999227873246,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_014_floor6",
+      "kind": "window",
+      "start": {
+        "x": 8.68239289522171,
+        "y": 6.08,
+        "z": 48.662234264612195
+      },
+      "origin": {
+        "x": 9.753419876098633,
+        "y": 0,
+        "z": 49.48406219482422
+      },
+      "normal": {
+        "x": -0.7933533191680908,
+        "y": 0,
+        "z": -0.6087614297866821
+      },
+      "yaw": 52.499999227873246,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_015_floor0",
+      "kind": "window",
+      "start": {
+        "x": 6.662234264612198,
+        "y": 0.08,
+        "z": 50.68239098787308
+      },
+      "origin": {
+        "x": 7.484062194824219,
+        "y": 0,
+        "z": 51.75341796875
+      },
+      "normal": {
+        "x": -0.6087614297866821,
+        "y": 0,
+        "z": -0.7933533191680908
+      },
+      "yaw": 37.500000772126754,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_015_floor6",
+      "kind": "window",
+      "start": {
+        "x": 6.662234264612198,
+        "y": 6.08,
+        "z": 50.68239098787308
+      },
+      "origin": {
+        "x": 7.484062194824219,
+        "y": 0,
+        "z": 51.75341796875
+      },
+      "normal": {
+        "x": -0.6087614297866821,
+        "y": 0,
+        "z": -0.7933533191680908
+      },
+      "yaw": 37.500000772126754,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_016_floor0",
+      "kind": "window",
+      "start": {
+        "x": 4.18805535286665,
+        "y": 0.08,
+        "z": 52.11085974574089
+      },
+      "origin": {
+        "x": 4.704678058624268,
+        "y": 0,
+        "z": 53.358097076416016
+      },
+      "normal": {
+        "x": -0.38268348574638367,
+        "y": 0,
+        "z": -0.9238795042037964
+      },
+      "yaw": 22.50000344638083,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_016_floor6",
+      "kind": "window",
+      "start": {
+        "x": 4.18805535286665,
+        "y": 6.08,
+        "z": 52.11085974574089
+      },
+      "origin": {
+        "x": 4.704678058624268,
+        "y": 0,
+        "z": 53.358097076416016
+      },
+      "normal": {
+        "x": -0.38268348574638367,
+        "y": 0,
+        "z": -0.9238795042037964
+      },
+      "yaw": 22.50000344638083,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_017_floor0",
+      "kind": "window",
+      "start": {
+        "x": -4.188055916130542,
+        "y": 0.08,
+        "z": 52.11085950434208
+      },
+      "origin": {
+        "x": -4.704678058624268,
+        "y": 0,
+        "z": 53.358097076416016
+      },
+      "normal": {
+        "x": 0.38268306851387024,
+        "y": 0,
+        "z": -0.9238796830177307
+      },
+      "yaw": -22.499977439728532,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_017_floor6",
+      "kind": "window",
+      "start": {
+        "x": -4.188055916130542,
+        "y": 6.08,
+        "z": 52.11085950434208
+      },
+      "origin": {
+        "x": -4.704678058624268,
+        "y": 0,
+        "z": 53.358097076416016
+      },
+      "normal": {
+        "x": 0.38268306851387024,
+        "y": 0,
+        "z": -0.9238796830177307
+      },
+      "yaw": -22.499977439728532,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_018_floor0",
+      "kind": "window",
+      "start": {
+        "x": -6.662234264612198,
+        "y": 0.08,
+        "z": 50.68239098787308
+      },
+      "origin": {
+        "x": -7.484062194824219,
+        "y": 0,
+        "z": 51.75341796875
+      },
+      "normal": {
+        "x": 0.6087614297866821,
+        "y": 0,
+        "z": -0.7933533191680908
+      },
+      "yaw": -37.500000772126754,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_018_floor6",
+      "kind": "window",
+      "start": {
+        "x": -6.662234264612198,
+        "y": 6.08,
+        "z": 50.68239098787308
+      },
+      "origin": {
+        "x": -7.484062194824219,
+        "y": 0,
+        "z": 51.75341796875
+      },
+      "normal": {
+        "x": 0.6087614297866821,
+        "y": 0,
+        "z": -0.7933533191680908
+      },
+      "yaw": -37.500000772126754,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_019_floor0",
+      "kind": "window",
+      "start": {
+        "x": -8.682393297553062,
+        "y": 0.08,
+        "z": 48.662233701348306
+      },
+      "origin": {
+        "x": -9.753419876098633,
+        "y": 0,
+        "z": 49.48406219482422
+      },
+      "normal": {
+        "x": 0.7933530211448669,
+        "y": 0,
+        "z": -0.6087618470191956
+      },
+      "yaw": -52.499969867347126,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_019_floor6",
+      "kind": "window",
+      "start": {
+        "x": -8.682393297553062,
+        "y": 6.08,
+        "z": 48.662233701348306
+      },
+      "origin": {
+        "x": -9.753419876098633,
+        "y": 0,
+        "z": 49.48406219482422
+      },
+      "normal": {
+        "x": 0.7933530211448669,
+        "y": 0,
+        "z": -0.6087618470191956
+      },
+      "yaw": -52.499969867347126,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_020_floor0",
+      "kind": "window",
+      "start": {
+        "x": -10.110860699415207,
+        "y": 0.08,
+        "z": 46.18805483579636
+      },
+      "origin": {
+        "x": -11.358098030090332,
+        "y": 0,
+        "z": 46.70467758178711
+      },
+      "normal": {
+        "x": 0.9238795042037964,
+        "y": 0,
+        "z": -0.38268351554870605
+      },
+      "yaw": -67.49999497605123,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_020_floor6",
+      "kind": "window",
+      "start": {
+        "x": -10.110860699415207,
+        "y": 6.08,
+        "z": 46.18805483579636
+      },
+      "origin": {
+        "x": -11.358098030090332,
+        "y": 0,
+        "z": 46.70467758178711
+      },
+      "normal": {
+        "x": 0.9238795042037964,
+        "y": 0,
+        "z": -0.38268351554870605
+      },
+      "yaw": -67.49999497605123,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "GF21_FiguralGlazing_021_floor0",
+      "kind": "window",
+      "start": {
+        "x": -10.850289341807365,
+        "y": 0.08,
+        "z": 43.42846793308854
+      },
+      "origin": {
+        "x": -12.188739776611328,
+        "y": 0,
+        "z": 43.604679107666016
+      },
+      "normal": {
+        "x": 0.9914447665214539,
+        "y": 0,
+        "z": -0.13052679598331451
+      },
+      "yaw": -82.49996499349851,
+      "minimumInside": 0.48,
+      "screenshot": false
+    },
+    {
+      "id": "GF21_FiguralGlazing_021_floor6",
+      "kind": "window",
+      "start": {
+        "x": -10.850289341807365,
+        "y": 6.08,
+        "z": 43.42846793308854
+      },
+      "origin": {
+        "x": -12.188739776611328,
+        "y": 0,
+        "z": 43.604679107666016
+      },
+      "normal": {
+        "x": 0.9914447665214539,
+        "y": 0,
+        "z": -0.13052679598331451
+      },
+      "yaw": -82.49996499349851,
+      "minimumInside": 0.48,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_001_side0_-1",
+      "kind": "table",
+      "start": {
+        "x": -6.525,
+        "y": 0.08,
+        "z": 46.0
+      },
+      "origin": {
+        "x": -5.875,
+        "y": 0,
+        "z": 46.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": -0.0
+      },
+      "yaw": 90.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_001_side0_1",
+      "kind": "table",
+      "start": {
+        "x": -3.475,
+        "y": 0.08,
+        "z": 46.0
+      },
+      "origin": {
+        "x": -4.125,
+        "y": 0,
+        "z": 46.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 0.0
+      },
+      "yaw": -90.0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_001_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": -5.0,
+        "y": 0.08,
+        "z": 44.90000001192093
+      },
+      "origin": {
+        "x": -5.0,
+        "y": 0,
+        "z": 45.55000001192093
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_001_side1_1",
+      "kind": "table",
+      "start": {
+        "x": -5.0,
+        "y": 0.08,
+        "z": 47.09999998807907
+      },
+      "origin": {
+        "x": -5.0,
+        "y": 0,
+        "z": 46.44999998807907
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_002_side0_-1",
+      "kind": "table",
+      "start": {
+        "x": 3.475,
+        "y": 0.08,
+        "z": 46.0
+      },
+      "origin": {
+        "x": 4.125,
+        "y": 0,
+        "z": 46.0
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": -0.0
+      },
+      "yaw": 90.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_002_side0_1",
+      "kind": "table",
+      "start": {
+        "x": 6.525,
+        "y": 0.08,
+        "z": 46.0
+      },
+      "origin": {
+        "x": 5.875,
+        "y": 0,
+        "z": 46.0
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 0.0
+      },
+      "yaw": -90.0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_002_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": 5.0,
+        "y": 0.08,
+        "z": 44.90000001192093
+      },
+      "origin": {
+        "x": 5.0,
+        "y": 0,
+        "z": 45.55000001192093
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_002_side1_1",
+      "kind": "table",
+      "start": {
+        "x": 5.0,
+        "y": 0.08,
+        "z": 47.09999998807907
+      },
+      "origin": {
+        "x": 5.0,
+        "y": 0,
+        "z": 46.44999998807907
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_003_side0_-1",
+      "kind": "table",
+      "start": {
+        "x": -6.724999809265137,
+        "y": 0.08,
+        "z": 20.30000114440918
+      },
+      "origin": {
+        "x": -6.074999809265137,
+        "y": 0,
+        "z": 20.30000114440918
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": -0.0
+      },
+      "yaw": 90.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_003_side0_1",
+      "kind": "table",
+      "start": {
+        "x": -3.674999809265137,
+        "y": 0.08,
+        "z": 20.30000114440918
+      },
+      "origin": {
+        "x": -4.324999809265137,
+        "y": 0,
+        "z": 20.30000114440918
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 0.0
+      },
+      "yaw": -90.0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_003_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": -5.199999809265137,
+        "y": 0.08,
+        "z": 19.20000115633011
+      },
+      "origin": {
+        "x": -5.199999809265137,
+        "y": 0,
+        "z": 19.85000115633011
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_003_side1_1",
+      "kind": "table",
+      "start": {
+        "x": -5.199999809265137,
+        "y": 0.08,
+        "z": 21.40000113248825
+      },
+      "origin": {
+        "x": -5.199999809265137,
+        "y": 0,
+        "z": 20.75000113248825
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_004_side0_-1",
+      "kind": "table",
+      "start": {
+        "x": -7.324999713897705,
+        "y": 0.08,
+        "z": 8.40000057220459
+      },
+      "origin": {
+        "x": -6.674999713897705,
+        "y": 0,
+        "z": 8.40000057220459
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": -0.0
+      },
+      "yaw": 90.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_004_side0_1",
+      "kind": "table",
+      "start": {
+        "x": -4.274999713897705,
+        "y": 0.08,
+        "z": 8.40000057220459
+      },
+      "origin": {
+        "x": -4.924999713897705,
+        "y": 0,
+        "z": 8.40000057220459
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 0.0
+      },
+      "yaw": -90.0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_004_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": -5.799999713897705,
+        "y": 0.08,
+        "z": 7.300000584125518
+      },
+      "origin": {
+        "x": -5.799999713897705,
+        "y": 0,
+        "z": 7.950000584125519
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_004_side1_1",
+      "kind": "table",
+      "start": {
+        "x": -5.799999713897705,
+        "y": 0.08,
+        "z": 9.500000560283661
+      },
+      "origin": {
+        "x": -5.799999713897705,
+        "y": 0,
+        "z": 8.850000560283661
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_005_side0_-1",
+      "kind": "table",
+      "start": {
+        "x": 3.674999809265137,
+        "y": 0.08,
+        "z": 20.30000114440918
+      },
+      "origin": {
+        "x": 4.324999809265137,
+        "y": 0,
+        "z": 20.30000114440918
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": -0.0
+      },
+      "yaw": 90.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_005_side0_1",
+      "kind": "table",
+      "start": {
+        "x": 6.724999809265137,
+        "y": 0.08,
+        "z": 20.30000114440918
+      },
+      "origin": {
+        "x": 6.074999809265137,
+        "y": 0,
+        "z": 20.30000114440918
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 0.0
+      },
+      "yaw": -90.0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_005_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": 5.199999809265137,
+        "y": 0.08,
+        "z": 19.20000115633011
+      },
+      "origin": {
+        "x": 5.199999809265137,
+        "y": 0,
+        "z": 19.85000115633011
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_005_side1_1",
+      "kind": "table",
+      "start": {
+        "x": 5.199999809265137,
+        "y": 0.08,
+        "z": 21.40000113248825
+      },
+      "origin": {
+        "x": 5.199999809265137,
+        "y": 0,
+        "z": 20.75000113248825
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_006_side0_-1",
+      "kind": "table",
+      "start": {
+        "x": 4.274999713897705,
+        "y": 0.08,
+        "z": 8.40000057220459
+      },
+      "origin": {
+        "x": 4.924999713897705,
+        "y": 0,
+        "z": 8.40000057220459
+      },
+      "normal": {
+        "x": -1.0,
+        "y": 0,
+        "z": -0.0
+      },
+      "yaw": 90.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_006_side0_1",
+      "kind": "table",
+      "start": {
+        "x": 7.324999713897705,
+        "y": 0.08,
+        "z": 8.40000057220459
+      },
+      "origin": {
+        "x": 6.674999713897705,
+        "y": 0,
+        "z": 8.40000057220459
+      },
+      "normal": {
+        "x": 1.0,
+        "y": 0,
+        "z": 0.0
+      },
+      "yaw": -90.0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_006_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": 5.799999713897705,
+        "y": 0.08,
+        "z": 7.300000584125518
+      },
+      "origin": {
+        "x": 5.799999713897705,
+        "y": 0,
+        "z": 7.950000584125519
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_006_side1_1",
+      "kind": "table",
+      "start": {
+        "x": 5.799999713897705,
+        "y": 0.08,
+        "z": 9.500000560283661
+      },
+      "origin": {
+        "x": 5.799999713897705,
+        "y": 0,
+        "z": 8.850000560283661
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "V5_DeskConsole_R04_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": -5.800000309944153,
+        "y": 0.08,
+        "z": 12.598000072956074
+      },
+      "origin": {
+        "x": -5.800000309944153,
+        "y": 0,
+        "z": 13.248000072956074
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "V5_DeskConsole_R04_side1_1",
+      "kind": "table",
+      "start": {
+        "x": -5.800000309944153,
+        "y": 0.08,
+        "z": 15.338001009941104
+      },
+      "origin": {
+        "x": -5.800000309944153,
+        "y": 0,
+        "z": 14.688001009941104
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "V5_DeskConsole_R03_side1_-1",
+      "kind": "table",
+      "start": {
+        "x": 5.800000309944153,
+        "y": 0.08,
+        "z": 12.598000072956074
+      },
+      "origin": {
+        "x": 5.800000309944153,
+        "y": 0,
+        "z": 13.248000072956074
+      },
+      "normal": {
+        "x": -0.0,
+        "y": 0,
+        "z": -1.0
+      },
+      "yaw": 0.0,
+      "screenshot": false
+    },
+    {
+      "id": "V5_DeskConsole_R03_side1_1",
+      "kind": "table",
+      "start": {
+        "x": 5.800000309944153,
+        "y": 0.08,
+        "z": 15.338001009941104
+      },
+      "origin": {
+        "x": 5.800000309944153,
+        "y": 0,
+        "z": 14.688001009941104
+      },
+      "normal": {
+        "x": 0.0,
+        "y": 0,
+        "z": 1.0
+      },
+      "yaw": -180.0,
+      "screenshot": false
+    },
+    {
+      "id": "closed_door_-12",
+      "kind": "closed_door",
+      "start": {
+        "x": -12,
+        "y": 0.1,
+        "z": -6.2
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "closed_door_-6",
+      "kind": "closed_door",
+      "start": {
+        "x": -6,
+        "y": 0.1,
+        "z": -6.2
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "closed_door_6",
+      "kind": "closed_door",
+      "start": {
+        "x": 6,
+        "y": 0.1,
+        "z": -6.2
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "closed_door_12",
+      "kind": "closed_door",
+      "start": {
+        "x": 12,
+        "y": 0.1,
+        "z": -6.2
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "central_main_door_both_directions",
+      "kind": "main_door",
+      "start": {
+        "x": 0,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "front_width_-18.5",
+      "kind": "ramp",
+      "start": {
+        "x": -18.5,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "front_width_-17",
+      "kind": "ramp",
+      "start": {
+        "x": -17,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_-14",
+      "kind": "ramp",
+      "start": {
+        "x": -14,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_-8",
+      "kind": "ramp",
+      "start": {
+        "x": -8,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_-2",
+      "kind": "ramp",
+      "start": {
+        "x": -2,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_2",
+      "kind": "ramp",
+      "start": {
+        "x": 2,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_8",
+      "kind": "ramp",
+      "start": {
+        "x": 8,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_14",
+      "kind": "ramp",
+      "start": {
+        "x": 14,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_17",
+      "kind": "ramp",
+      "start": {
+        "x": 17,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": false
+    },
+    {
+      "id": "front_width_18.5",
+      "kind": "ramp",
+      "start": {
+        "x": 18.5,
+        "y": -0.52,
+        "z": -10.2
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "apron_side_-1",
+      "kind": "ramp",
+      "start": {
+        "x": -20.2,
+        "y": -0.52,
+        "z": -4
+      },
+      "yaw": 90,
+      "screenshot": true
+    },
+    {
+      "id": "apron_side_1",
+      "kind": "ramp",
+      "start": {
+        "x": 20.2,
+        "y": -0.52,
+        "z": -4
+      },
+      "yaw": -90,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_001_top_support",
+      "kind": "support",
+      "start": {
+        "x": -5.0,
+        "y": 0.9074999856948852,
+        "z": 46.0
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_002_top_support",
+      "kind": "support",
+      "start": {
+        "x": 5.0,
+        "y": 0.9074999856948852,
+        "z": 46.0
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_003_top_support",
+      "kind": "support",
+      "start": {
+        "x": -5.199999809265137,
+        "y": 0.9074999856948852,
+        "z": 20.30000114440918
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_004_top_support",
+      "kind": "support",
+      "start": {
+        "x": -5.799999713897705,
+        "y": 0.9074999856948852,
+        "z": 8.40000057220459
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_005_top_support",
+      "kind": "support",
+      "start": {
+        "x": 5.199999809265137,
+        "y": 0.9074999856948852,
+        "z": 20.30000114440918
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "IV4_W04_Table_WalnutJoinery_006_top_support",
+      "kind": "support",
+      "start": {
+        "x": 5.799999713897705,
+        "y": 0.9074999856948852,
+        "z": 8.40000057220459
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "V5_DeskConsole_R04_top_support",
+      "kind": "support",
+      "start": {
+        "x": -5.800000190734863,
+        "y": 1.139999942779541,
+        "z": 13.968000411987305
+      },
+      "yaw": 0,
+      "screenshot": true
+    },
+    {
+      "id": "V5_DeskConsole_R03_top_support",
+      "kind": "support",
+      "start": {
+        "x": 5.800000190734863,
+        "y": 1.139999942779541,
+        "z": 13.968000411987305
+      },
+      "yaw": 0,
+      "screenshot": true
+    }
+  ]
+}

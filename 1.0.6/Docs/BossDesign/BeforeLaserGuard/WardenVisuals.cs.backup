@@ -1,0 +1,35 @@
+using UnityEngine;
+
+namespace ArcaneArchive.Visuals
+{
+    /// <summary>Articulated mesh rig, driven only by encounter time (including pause).</summary>
+    public sealed class WardenVisuals : MonoBehaviour
+    {
+        public Transform floatingBody, mask, leftArm, rightArm, leftWing, rightWing, chestCover;
+        public Transform[] crownSegments;
+        private float time;
+        public void Present(float dt, int phase, int attack, bool warning, bool vulnerable, bool defeated)
+        {
+            time += dt;
+            float breath = Mathf.Sin(time * .85f);
+            floatingBody.localPosition = new Vector3(0, .10f * breath, 0);
+            floatingBody.localRotation = Quaternion.Euler(0, 0, breath * 1.3f);
+            float arms = warning ? (attack == 1 ? -65 : -35) : -8;
+            leftArm.localRotation = Quaternion.Slerp(leftArm.localRotation, Quaternion.Euler(arms, 0, 16 + breath * 2), dt * 4);
+            rightArm.localRotation = Quaternion.Slerp(rightArm.localRotation, Quaternion.Euler(arms, 0, -16 - breath * 2), dt * 4);
+            float spread = phase == 2 ? 24 : 5;
+            leftWing.localRotation = Quaternion.Euler(0, 8 + breath * 3, spread + breath * 2);
+            rightWing.localRotation = Quaternion.Euler(0, -8 - breath * 3, -spread - breath * 2);
+            mask.localRotation = Quaternion.Euler(breath * 2, 0, warning ? 0 : breath * 3);
+            chestCover.localRotation = Quaternion.Slerp(chestCover.localRotation, Quaternion.Euler(0, vulnerable ? -108 : -8, 0), dt * 5);
+            for (int i = 0; i < crownSegments.Length; i++)
+            {
+                float a = i * (360f / crownSegments.Length);
+                crownSegments[i].localRotation = Quaternion.Euler(0, 0, a + (warning ? 0 : Mathf.Sin(time * .45f + i) * 4));
+                crownSegments[i].localPosition = new Vector3(0, 3.9f, -.23f - (phase == 2 ? .10f * Mathf.Sin(time + i) : 0));
+            }
+            if (defeated) floatingBody.localScale = Vector3.Lerp(floatingBody.localScale, new Vector3(.7f, .18f, .7f), dt * 1.6f);
+            else floatingBody.localScale = Vector3.one;
+        }
+    }
+}

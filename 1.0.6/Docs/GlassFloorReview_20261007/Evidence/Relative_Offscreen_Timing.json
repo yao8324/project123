@@ -1,0 +1,26 @@
+{
+  "scope": "Same final DXT1 texture, same scene/camera; compare only EmissionMap binding. Median 6 after dropping first 2 of 8 samples, 4 warmup frames each. Timings include GPU readback, are not standalone FPS.",
+  "errors": 0,
+  "rows": [
+    {
+      "view": "side_inner",
+      "legacy_white": 14.578,
+      "baseline": 13.43
+    },
+    {
+      "view": "side_oblique",
+      "legacy_white": 16.249,
+      "baseline": 17.465
+    },
+    {
+      "view": "front_outer",
+      "legacy_white": 34.027,
+      "baseline": 31.68
+    },
+    {
+      "view": "side_outer",
+      "legacy_white": 28.09,
+      "baseline": 27.013
+    }
+  ]
+}

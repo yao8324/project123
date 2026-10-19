@@ -1,0 +1,31 @@
+{
+    "step": 100,
+    "failure": "",
+    "checks": [
+        "PASS: Existing menu enters upgraded encounter",
+        "PASS: Boss travels through pursuit and orbit before second attack",
+        "PASS: Held right mouse blocks real laser damage and spends guard",
+        "PASS: Sustained laser exhausts guard, breaks shield and damages player",
+        "PASS: Pause freezes active laser, guard and health",
+        "PASS: Release exits broken state and regenerates guard",
+        "PASS: Return between laser scenarios",
+        "PASS: Fresh laser scenario resets guard",
+        "PASS: Fresh session has full guard and no break state",
+        "PASS: Sprint sideways outruns tracking laser without damage",
+        "PASS: Firing beam visibly tracks a moving player",
+        "PASS: Tracking obeys angular speed limit without snapping",
+        "PASS: Return between laser scenarios",
+        "PASS: Fresh laser scenario resets guard",
+        "PASS: Fresh session has full guard and no break state",
+        "PASS: World collider stops beam rendering and damage",
+        "PASS: Return works after laser encounter",
+        "PASS: No laser objects remain after return",
+        "PASS: Original library position restored"
+    ],
+    "playerHealth": 100.0,
+    "guard": 100.0,
+    "bossTravel": 4.44013786315918,
+    "battleTime": 9.333598136901856,
+    "maxTrackingAngle": 10.196842193603516,
+    "maxTurnSpeed": 10.000293731689454
+}
