@@ -2,7 +2,9 @@
 
 本分支按版本目录保存完整、相互独立的 Unity 工程。**用 Unity Hub 打开具体版本文件夹，不要打开本分支根目录。**
 
-当前开发分支为 **dev/1.0.5**，工程入口为 [1.0.5/README.md](1.0.5/README.md)；1.0.4 为上一版本基线。1.0.5 保持开发中修订版状态，源码归档不代表稳定版或运行包发布。
+当前归档版本为 **1.0.6**，工程位于 **`lixiang` 分支的 `1.0.6/` 目录**，上一归档版本为 1.0.5。`1.0.6` 是版本目录名，不是新的 Git 分支。
+
+本版包含第一人称魔法图书馆、设置与交互 UI，以及“缄默典狱长”的可玩 Boss 战，属于**开发中修订版**。用户资料导入、检索和阅读闭环仍待接入，尚未发布本版独立运行包。
 
 上传新版本前，成员和 AI 必须先阅读 [协作规则](AGENTS.md) 与 [架构说明](ARCHITECTURE.md)。每个已发布版本保持原样；新版本建立新目录，并同步更新此索引及该版本的 README。
 
@@ -14,7 +16,10 @@
 | [1.0.2](1.0.2/README.md) | 2026-09-27 | 1.0 系列修订版 | 归档完整 Unity 工程，加入 White Castle 中央大厅挖空 Blender 样板、预览和重建脚本。 | 尚未导回 Unity；装饰网格可能伸入大厅，室内材质与碰撞待完成。 |
 | [1.0.3](1.0.3/README.md) | 2026-10-03 | 美术集成修订版 | 新版图书馆建模：完整 V6 Unity 场景、哥特式外观、木作室内、魔法动画和 Blender 源模型。 | 全精度场景尚未进行性能优化；上传、检索和阅读业务闭环未接入。 |
 | [1.0.4](1.0.4/README.md) | 2026-10-07 | 候选修订版 | GlassFloor：彩窗纹样发光修复、入口二楼144㎡木楼板；纳入窗洞/桌台/主门前坡/恢复菜单/手部修订，补齐源码依赖与内部结构。 | 中庭栏杆可被冲刺跳越；资料业务闭环未接入；未完成真人输入及本轮 standalone 帧率验收。 |
-| [1.0.5](1.0.5/README.md) | 2026-10-15 | 开发中修订版 | 基于 1.0.4；统一 Esc UI、可用画质/灵敏度、按键换绑、连续书籍提示、金紫自动大门及环境修订。 | 资料业务与 Boss 战未接入；尚无本版独立构建和完整平台回归。 |
+| [1.0.5](1.0.5/README.md) | 2026-10-15 | 开发中修订版的历史归档 | 基于 1.0.4；统一 Esc UI、可用画质/灵敏度、按键换绑、连续书籍提示、金紫自动大门及环境修订。 | 该次归档未接入资料业务与 Boss 战；尚无本版独立构建和完整平台回归。 |
+| [1.0.6](1.0.6/README.md) | 2026-10-19 | 战斗玩法修订版 | 纳入试玩反馈修复和禁书守卫可玩首版；感知走位、蓄力激光、禁页齐射、环波、不规则紫红裂地、冲撞、分件施法动作、弱追踪飞弹、格挡条、胜负与重试。 | 源工程已有 77 项 Play Mode 检查通过；新目录独立导入、独立构建及目标设备性能仍需验收，资料业务闭环未接入。 |
+
+上表日期为各版本归档整理日期，不表示已发布 GitHub Release 或独立运行包。`1.0.1/`～`1.0.5/` 保留历史内容，后续战斗开发成果收录于 `1.0.6/`。
 
 `1.0.1` 是本归档结构中的首个完整快照，来源于 GitHub `lixiang` 分支提交 [`a276850`](https://github.com/yao8324/project123/commit/a2768501da05a6f91c87cd9b17922be7556b9010)。该提交原本将工程放在分支根目录，而 `1.0.1/` 仅存放版本说明；归档时将工程归入同一版本目录。`1.0.2` 从 `1.0.1` 完整复制后添加城堡挖空建模样板。
 
@@ -24,12 +29,59 @@
 
 - `0.0.x`：测试版；`0.x.0`：稳定小版本；`x.0.0`：稳定大版本。
 - `1.0.0` 之后兼容标准语义版本号，例如 `1.0.2`、`1.1.0`、`2.0.0`。
-- 版本号必须严格递增，且不得复用。当前最新开发修订为 `1.0.5`；建立后续独立版本时应使用更高编号。
+- 版本号必须严格递增，且不得复用。当前最新归档版本为 `1.0.6`；新增后续版本前，以远端最新 `lixiang` 为准核对版本号。
 
 每个版本目录至少包含 `Assets/`、`Packages/`、`ProjectSettings/`、`Docs/`、`README.md` 和对应项目配置。Unity 生成的缓存和个人设置不属于版本内容。
 
 ## 当前入口
 
-开发 1.0.5 时使用 Unity **6000.3.25f1** 打开 [1.0.5/](1.0.5/README.md)，启动场景为 `Assets/Scenes/MilanLibrary_Magic_V6.unity`。先执行 `git lfs pull` 获取大型资源，避免仅下载指针造成模型缺失。操作、验证边界和已知问题见版本 README；首次上传步骤见 [协作说明](1.0.5/CONTRIBUTING.md)，本次检查见 [上传准备检查](1.0.5/Docs/ReleaseReadiness.md)。
+1. 使用 GitHub Desktop 克隆仓库并选择 **`lixiang`** 分支；已有本地仓库时先同步远端。大型模型与 Blender 文件使用 Git LFS，需下载资源实体。
+2. 使用 Unity Hub 添加仓库内的 **`1.0.6/`**，Unity 版本为 **6000.3.25f1**（Unity 6.3 LTS）。
+3. 等待资源导入、Package 解析和脚本编译完成，打开 **`Assets/Scenes/MilanLibrary_Magic_V6.unity`**，检查 Console 后进入 Play Mode。
+4. 按 **Esc → 深入探索 → 深入探索** 进入 Boss 战；也可靠近魔法书按 E，在功能概述中进入。战斗支持暂停、胜负、重试与返回图书馆。
+
+首次通过命令行下载可使用：
+
+```powershell
+git lfs install
+git clone --branch lixiang --single-branch https://github.com/yao8324/project123.git
+cd project123
+git lfs pull
+```
+
+GitHub Desktop 添加外层 Git 仓库，Unity Hub 添加里面的版本工程。较早文档中保留的 `1.0.5`、`dev/1.0.5` 标记属于开发来源；当前克隆分支与打开目录以本页的 **`lixiang` / `1.0.6`** 为准。
+
+## 1.0.6 功能与验证
+
+- **漫游与界面：** 保留图书馆环境、第一人称移动、跳跃、冲刺、蹲下、Esc 菜单、画质和灵敏度设置、按键换绑及自动魔法大门。
+- **试玩反馈修复：** 补齐座椅碰撞，修订两侧楼梯窗框、入口二楼内侧突出构件及横穿彩窗的石质腰线。见 [试玩反馈修复记录](1.0.6/Docs/PlaytestFeedback_20261016/README.md)。
+- **Boss 战：** Boss 按间隔感知与位置记忆选择接近、后撤或侧移，施法末段锁定方向，收招保留反击窗口；五种攻击配合抬手、挥臂、托举和前倾动作。玩家使用秘文弹、吞印、格挡与强化攻击，双方飞弹仅有限追踪。
+- **资料业务：** 馆藏仍只代表用户导入资料，装饰书与战斗数据不计入馆藏。文件导入、正式数据库、检索与阅读、AI/RAG、多人尚未实现。
+
+战斗参数、动作与验证证据见 [战斗细化记录](1.0.6/Docs/BossDesign/CombatPolish20261019.md)、[Boss 实现和验证](1.0.6/Docs/BossDesign/ImplementationAndVerification.md) 与 [设计评审](1.0.6/Docs/BossDesign/WardenDesignReview.md)。
+
+2026-10-19 **源工程**验证记录为战斗专项 39 项、激光/格挡专项 19 项、基础闭环 19 项通过，合计 77 项；记录中的最终 Console 为 0 Error、0 Warning。复制后的 `1.0.6/` 尚无独立导入、standalone 构建及目标设备性能验收记录，本次 README 更新没有重新运行 Unity 测试。Boss 动作采用分件 Transform 动画，未使用完整蒙皮骨骼；数值仍需真人试玩平衡。
 
 需要历史基线时打开 [1.0.4/](1.0.4/README.md)。其内部版本 2026.10.7.2、包哈希和构建验收仅属于 1.0.4。运行包不包含在 Git 源码中，分支更新不代表 GitHub Release 已发布。
+
+## 文件保留与 GitHub Desktop 更新
+
+版本工程需要保留 `Assets/`（含配套 `.meta`）、`Packages/`、`ProjectSettings/`、`Docs/`、`Blender/`、`Tools/`，以及版本内 `.gitattributes`、`.gitignore` 和说明文档。`Library/`、`Temp/`、`Logs/`、`Obj/`、`Build/`、`Builds/`、`UserSettings/` 与 IDE 缓存已配置忽略，不属于源码归档。`ProjectSettings/` 必须保留。
+
+已有此仓库时，在 GitHub Desktop 中更新：
+
+1. 确认 `Current repository` 为本仓库，`Current branch` 为 **`lixiang`**。先提交或妥善保存本地工作，再 `Fetch origin`；需要拉取时使用 `Pull origin`，解决冲突后继续合并。
+2. 检查 Changes 中的文件和差异。仅更新外层说明时应只提交相应文档；新版本工程应放在同名版本目录，不覆盖历史版本。
+3. 填写 Conventional Commits 信息并点击 **`Commit to lixiang`**。本次文档更新可使用 `docs: update root README for 1.0.6`；Commit 只保存在本机。
+4. 点击 **`Push origin`**，等待 Git 与 LFS 上传结束。若远端有新提交，先正常同步并处理冲突，不强推。
+5. 在 [GitHub 的 lixiang 分支](https://github.com/yao8324/project123/tree/lixiang) 刷新页面，确认版本目录、版本索引与 README 已更新。查看 `main` 分支不会显示此次 `lixiang` 的更新。
+
+本项目存在超过 100 MiB 的 FBX/Blender 文件，上传大型资源时必须保留 LFS 配置。可在 `Repository → Open in Terminal` 打开的仓库终端检查：
+
+   ```powershell
+   git lfs install --local
+   git lfs pull
+   git check-attr filter -- 1.0.6/Assets/_WhiteCastle/Meshes/Test2.fbx
+   ```
+
+最后一条命令应显示 `filter: lfs`。`git lfs pull` 下载远端已有资源，新资源随 Push 上传。Git 不记录空目录，归档必须包含实际工程文件。历史重建脚本和未完成的整理助手不是打开或上传工程的必要步骤。
