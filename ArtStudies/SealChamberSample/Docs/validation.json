@@ -1,0 +1,12 @@
+{
+  "unity": "6000.3.24f1",
+  "missingMeshes": 0,
+  "missingMaterialsOrShaders": 0,
+  "missingScripts": 0,
+  "renderers": 17,
+  "triangles": 15532,
+  "colliders": 3,
+  "realtimeLightsInPrefab": 1,
+  "flatFloorSamplesPassed": 64,
+  "flatFloorSamplesTotal": 64
+}
