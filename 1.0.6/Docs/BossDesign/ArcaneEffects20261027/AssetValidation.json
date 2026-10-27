@@ -1,0 +1,76 @@
+{
+  "prefabs": 12,
+  "renderers": 521,
+  "issues": [],
+  "clips": [
+    {
+      "name": "AA_Defeat",
+      "length": 3.20000029
+    },
+    {
+      "name": "AA_FractureRaise",
+      "length": 1.60000014
+    },
+    {
+      "name": "AA_FractureRelease",
+      "length": 1.4000001
+    },
+    {
+      "name": "AA_Glide",
+      "length": 1.2
+    },
+    {
+      "name": "AA_Idle",
+      "length": 2.80000019
+    },
+    {
+      "name": "AA_Intro",
+      "length": 2.2
+    },
+    {
+      "name": "AA_LaserChannel",
+      "length": 1.30000007
+    },
+    {
+      "name": "AA_LaserCharge",
+      "length": 1.80000007
+    },
+    {
+      "name": "AA_PhaseBreak",
+      "length": 2.2
+    },
+    {
+      "name": "AA_Recovery",
+      "length": 1.13333344
+    },
+    {
+      "name": "AA_RushDrive",
+      "length": 0.6
+    },
+    {
+      "name": "AA_RushWindup",
+      "length": 1.33333337
+    },
+    {
+      "name": "AA_Stagger",
+      "length": 0.6666667
+    },
+    {
+      "name": "AA_VolleyRelease",
+      "length": 1.13333344
+    },
+    {
+      "name": "AA_VolleyWindup",
+      "length": 1.26666677
+    },
+    {
+      "name": "AA_WaveRelease",
+      "length": 1.26666677
+    },
+    {
+      "name": "AA_WaveWindup",
+      "length": 1.06666672
+    }
+  ],
+  "sceneDirty": false
+}

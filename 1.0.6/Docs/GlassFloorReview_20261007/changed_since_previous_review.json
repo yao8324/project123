@@ -1,0 +1,8 @@
+[
+  "Assets/Art/MilanLibraryV6/manifest.json",
+  "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+  "Assets/Scripts/Visuals/AcceptanceTestOnly/ReviewPlayTests.cs",
+  "Assets/Scripts/Visuals/Editor/MilanV6SceneBuilder.cs",
+  "Tools/MilanV6/export_scene.py",
+  "Tools/MilanV6/rebuild_repaired_scene.py"
+]
