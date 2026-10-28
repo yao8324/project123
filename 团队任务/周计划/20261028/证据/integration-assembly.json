@@ -1,0 +1,23 @@
+{
+  "unity": "6000.3.25f1",
+  "originalRootChildren": [
+    "Architecture",
+    "Lighting",
+    "PlayerSpawn",
+    "CombatEffects",
+    "Spell bloom",
+    "ForbiddenWardenRigged"
+  ],
+  "radius": 14.0,
+  "oldPoints": 8,
+  "importedPoints": 6,
+  "enabledPointLights": 6,
+  "floorStrategy": "Removed old Architecture and all of its colliders; imported one art hall at local identity.",
+  "preservedReferences": {
+    "spawn": "PlayerSpawn",
+    "boss": "ForbiddenWardenRigged",
+    "effects": "CombatEffects",
+    "model": "ForbiddenWardenRigged"
+  },
+  "limitation": "Temporary integration candidate. No production script, original source project, or remote game asset changed."
+}
