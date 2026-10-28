@@ -1,0 +1,11 @@
+{
+  "unity": "6000.3.25f1",
+  "floorPassed": 2017,
+  "clearancePassed": 2017,
+  "total": 2017,
+  "renderers": 311,
+  "missingMeshes": 0,
+  "invalidMaterials": 0,
+  "missingScripts": 0,
+  "limitation": "Editor Physics probes after import into target project; not human play or target-device performance."
+}
