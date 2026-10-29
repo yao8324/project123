@@ -1,0 +1,20 @@
+{
+  "version": "v0.1.0",
+  "date": "2026-10-29",
+  "sources": {
+    "main": "ac240efe0c34adf1f1cc3f698b891f284c27cd26",
+    "program": "2cd80fe0418d6d2665cc2d588e83f76d439cfd10",
+    "art": "314f2140232f198c4b533fab9664a3da228d2ef8",
+    "planner": "213a09620e44cc1fdf49e2c9a6f09a503f12f547",
+    "codex/team-submit": "83469bc7e62008b14dd6b96e02b978cb3bab9b0d"
+  },
+  "runtime_project": "1.0.6",
+  "source_art_project": "ArtStudies/SealChamberSample",
+  "installed_art": "1.0.6/Assets/Art/SealChamberStudy",
+  "arena_prefab_sha256": "f58dca8a5e3480170fc74c1146396e84c406237f48b34116378cbaa1cbf7df3b",
+  "arena_change": "Replace Architecture; preserve actors, spawn and effects; disable old 8 point lights, retain imported 6.",
+  "production_gameplay_scripts_changed": false,
+  "new_editor_validation_runner": "Assets/Scripts/Visuals/Editor/MainV1AcceptanceBatch.cs",
+  "new_story_flow_implemented": false,
+  "source_release_only": true
+}

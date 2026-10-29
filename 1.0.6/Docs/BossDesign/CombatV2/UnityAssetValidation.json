@@ -1,0 +1,15 @@
+{
+  "project": "E:/课程/大三上/虚拟环境设计/小组作业/Unity项目/githubclone/project123/1.0.6/Assets",
+  "date": "2026-10-24T11:38:14",
+  "scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+  "sceneDirty": false,
+  "roots": [
+    "Visitor — WASD + Mouse",
+    "Milan Library — Magic V6"
+  ],
+  "prefabCount": 9,
+  "meshReferenceCount": 480,
+  "arena": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/SealChamberRigged.prefab",
+  "issues": [],
+  "oldAssetsInActiveDependencies": []
+}

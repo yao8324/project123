@@ -1,0 +1,32 @@
+{
+  "controller": {
+    "radius": 0.28,
+    "height": 1.75,
+    "skinWidth": 0.08
+  },
+  "airbornePause": {
+    "controlledSetup": "Real controller placed 1.2m airborne with zero vertical velocity before opening actual menu",
+    "startY": 1.275,
+    "endY": 0.07499999,
+    "deltaY": -1.2,
+    "battleTimeDelta": 0.0,
+    "isPaused": true
+  },
+  "muzzleWall": {
+    "cameraToMuzzleBlockedByWall": true,
+    "muzzleDistance": 0.5500002,
+    "wallDistance": 0.35,
+    "wallThickness": 0.08,
+    "spawnedBeyondWall": true
+  },
+  "absorbWall": {
+    "projectileBehindWall": true,
+    "absorbStarted": true,
+    "beforePower": 0.0,
+    "afterPower": 25.0,
+    "powerDelta": 25.0,
+    "setup": "Injected one ordinary enemy projectile to isolate actual TickShots/CanAbsorb production methods; real wall collider."
+  },
+  "unity": "6000.3.25f1",
+  "testKind": "Controlled runtime edge-case reproduction, not manual play."
+}
