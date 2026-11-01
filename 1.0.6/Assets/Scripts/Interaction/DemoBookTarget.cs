@@ -14,7 +14,7 @@ namespace ArcaneArchive.Interaction
             {
                 if(!record)return "";
                 var bindings=FindFirstObjectByType<ArcaneArchive.Core.LibraryInputBindings>();
-                return record.title+"\n["+(bindings?bindings.Display("Interact"):"E")+"] 查看馆藏";
+                return record.title+"\n["+(bindings?bindings.Display("Interact"):"E")+"] "+(record.opensTrial?"查看封印试炼":"查看书籍介绍");
             }
         }
         public void Interact(PlayerInteractor interactor)

@@ -1,0 +1,12 @@
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var p=e.GetComponent<ArcaneArchive.Player.FirstPersonController>();var d=p.Dash;var m=e.GetComponent<ArcaneArchive.Player.PlayerMelee>();var c=e.Combat;var controller=e.GetComponent<CharacterController>();var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();
+var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+System.Action<string,object> set=(n,v)=>e.GetType().GetField(n,flags).SetValue(e,v);
+System.Action<string,object[]> call=(n,a)=>e.GetType().GetMethod(n,flags).Invoke(e,a);
+System.Action<ArcaneArchive.Core.BossEncounter.State> state=s=>call("SetState",new object[]{s});
+System.Action<Vector3> place=position=>{controller.enabled=false;e.transform.SetPositionAndRotation(position,Quaternion.identity);controller.enabled=true;Physics.SyncTransforms();p.GetType().GetField("<IsGrounded>k__BackingField",flags).SetValue(p,true);};
+System.Action reset=()=>{d.Cancel(true);menu.Resume();set("focusLost",false);p.SetGameplayInputEnabled(true);c.ResetCombat(e);call("ClearAttacks",new object[0]);state(ArcaneArchive.Core.BossEncounter.State.Observe);set("combatTime",0f);e.Arena.boss.position=new Vector3(160,0,0);e.Arena.boss.rotation=Quaternion.Euler(0,180,0);place(new Vector3(160,.08f,-4.5f));};
+System.Action<float> step=dt=>{d.Tick(dt);CollisionFlags collision;d.Move(out collision);Physics.SyncTransforms();};
+System.Action strike=()=>{set("attack",5);state(ArcaneArchive.Core.BossEncounter.State.Attack);set("stateTime",e.definition.meleeImpact);set("meleeResolved",false);call("TickMeleeStrike",new object[0]);d.ConfirmPerfect();};
+
+uint before=d.PerfectSequence;call("SweepBoss",new object[]{Vector3.back,4.8f,true});d.ConfirmPerfect();bool ok=d.PerfectSequence==before+1;reset();return (ok?"PASS ":"FAIL ")+"boss capsule rush";

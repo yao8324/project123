@@ -1,0 +1,50 @@
+[
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "sha256": "72C935CAF7B12BB831CC5ECE552FF74557626FBCEBE68A86D68BB8C9F021434C"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+    "sha256": "7CDF862B1E96547CF121B7DF59EF57311E73C1E9B4634E99264A7FDB7B8C7EFA"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossDefinition.cs",
+    "sha256": "25B0BF4A5F21E85A99FDD2801587A6C74FA39E5E46A92EA8472B5F437FC58DA8"
+  },
+  {
+    "path": "Assets/Scripts/Core/LibraryInputBindings.cs",
+    "sha256": "05AF81D88082582BC8B6A60529E61E173EC4D27260DB24D141A2CA6FD30CBCBD"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerCombat.cs",
+    "sha256": "79DAD33254C54B3137E4990C98C8EF35E9D3E2B249C43340617398A519F0F56B"
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryMenu.cs",
+    "sha256": "3B8B238B836CE20E45508F71A131B29774A87CD06CA1B1C19AA5A84D20478F2F"
+  },
+  {
+    "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+    "sha256": "87D1C360453DB0CF9F10F0D9FFBAF8736B09EC6F057B6878215D02EDFD0FD739"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenAnimationDriver.cs",
+    "sha256": "B19C597C15EB33C28C9A91E32460FDFE6E360296A12550F0E9DEE8A7522B68A4"
+  },
+  {
+    "path": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+    "sha256": "950F717642D64086E0A882BA6E30D34AB68E581C2BFF729999A6DA770EF5E142"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/ForbiddenWardenRigged.prefab",
+    "sha256": "24F6EEE50727E77492A25CE522BD9B00E81F185CD437FD110D8374A59237F9B0"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/SealChamberRigged.prefab",
+    "sha256": "2963AD4DF95E3EF677C84B5B97B51DD73150A331E14C13B9F29DE86C6954EEF6"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/WardenEncounter.asset",
+    "sha256": "F24341ABE27B1DC88534FD8C17A9B3C6939A24E92A424F1220FE34D6D471214C"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "version": "1.0.6",
+  "targetBranch": "program",
+  "sourceBase": "lixiang 6c4127678e534be70aa78968f672d5e5ac2d94b9 plus user-authorized working changes",
+  "teamBase": "main ac240efe0c34adf1f1cc3f698b891f284c27cd26",
+  "files": 4227,
+  "bytes": 2229831171,
+  "missingMeta": [],
+  "orphanMeta": [],
+  "duplicateGUIDs": [],
+  "largeFileAttributes": [
+    "1.0.6/Blender/MilanLibrary_Magic_V6/MilanLibrary_Magic_V6_Assembly.blend: filter: lfs",
+    "1.0.6/Blender/MilanLibrary_Magic_V6/MilanLibrary_Magic_V6_CloudRepair.blend: filter: lfs",
+    "1.0.6/Blender/MilanLibrary_Magic_V6/MilanLibrary_Magic_V6_GlassFloorReview.blend: filter: lfs",
+    "1.0.6/Blender/MilanLibrary_Magic_V6/MilanLibrary_Magic_V6_PlaytestReview.blend: filter: lfs",
+    "1.0.6/Assets/_WhiteCastle/Meshes/Test2.fbx: filter: lfs"
+  ],
+  "projectEssentials": {
+    "Packages/manifest.json": true,
+    "Packages/packages-lock.json": true,
+    "ProjectSettings/ProjectVersion.txt": true,
+    "Assets/Scenes/MilanLibrary_Magic_V6.unity": true
+  },
+  "stagedScopeChecked": true,
+  "excludedCachesChecked": true,
+  "credentialPatternMatches": 0,
+  "whitespaceNote": "Full initial import reports pre-existing whitespace, predominantly Unity YAML empty serialized values; current modified core scripts passed git diff --check. No mass formatting of historical assets."
+}

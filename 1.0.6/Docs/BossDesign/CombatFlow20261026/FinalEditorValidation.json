@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-26",
+  "console": {
+    "success": true,
+    "message": "Retrieved 0 log entries.",
+    "data": []
+  },
+  "state": {
+    "success": true,
+    "message": "Code executed successfully.",
+    "data": {
+      "result": {
+        "compiling": false,
+        "updating": false,
+        "play": false,
+        "scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+        "dirty": false,
+        "virtualTestDevices": []
+      },
+      "compiler": "codedom"
+    }
+  },
+  "lineAndGuardChecks": 30,
+  "motionChecks": 25,
+  "standaloneBuildTested": false
+}

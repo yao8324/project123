@@ -1,31 +1,16 @@
 {
-    "step": 100,
-    "failure": "",
+    "step": -1,
+    "failure": "System.InvalidOperationException: Held right mouse blocks real laser damage and spends guard\r\n  at ArcaneArchive.Visuals.Editor.BossLaserGuardAcceptance.Check (System.Boolean ok, System.String label) [0x0001f] in E:\\课程\\大三上\\虚拟环境设计\\小组作业\\Unity项目\\githubclone\\project123\\1.0.6\\Assets\\Scripts\\Visuals\\Editor\\BossLaserGuardAcceptance.cs:39 \r\n  at ArcaneArchive.Visuals.Editor.BossLaserGuardAcceptance.Tick () [0x001ab] in E:\\课程\\大三上\\虚拟环境设计\\小组作业\\Unity项目\\githubclone\\project123\\1.0.6\\Assets\\Scripts\\Visuals\\Editor\\BossLaserGuardAcceptance.cs:87 ",
     "checks": [
         "PASS: Existing menu enters upgraded encounter",
-        "PASS: Boss travels through pursuit and orbit before second attack",
-        "PASS: Held right mouse blocks real laser damage and spends guard",
-        "PASS: Sustained laser exhausts guard, breaks shield and damages player",
-        "PASS: Pause freezes active laser, guard and health",
-        "PASS: Release exits broken state and regenerates guard",
-        "PASS: Return between laser scenarios",
-        "PASS: Fresh laser scenario resets guard",
-        "PASS: Fresh session has full guard and no break state",
-        "PASS: Sprint sideways outruns tracking laser without damage",
-        "PASS: Firing beam visibly tracks a moving player",
-        "PASS: Tracking obeys angular speed limit without snapping",
-        "PASS: Return between laser scenarios",
-        "PASS: Fresh laser scenario resets guard",
-        "PASS: Fresh session has full guard and no break state",
-        "PASS: World collider stops beam rendering and damage",
-        "PASS: Return works after laser encounter",
-        "PASS: No laser objects remain after return",
-        "PASS: Original library position restored"
+        "PASS: Boss travels through pursuit and orbit before second attack"
     ],
-    "playerHealth": 100.0,
-    "guard": 100.0,
-    "bossTravel": 4.44013786315918,
-    "battleTime": 9.333598136901856,
-    "maxTrackingAngle": 10.196842193603516,
-    "maxTurnSpeed": 10.000293731689454
+    "playerHealth": 76,
+    "guard": 100,
+    "bossTravel": 5.626707553863525,
+    "battleTime": 9.857731819152832,
+    "maxTrackingAngle": 0,
+    "maxTurnSpeed": 0,
+    "validationStatus": "Superseded physical-mouse input diagnostic from 2026-10-26; injected right button did not reach the InputAction. This is not a current gameplay regression verdict.",
+    "currentGuardValidation": "CombatFlow20261026/LineAndGuardAcceptance.json"
 }

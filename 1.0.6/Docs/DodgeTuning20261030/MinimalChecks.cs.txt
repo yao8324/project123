@@ -1,0 +1,47 @@
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var p=e.GetComponent<ArcaneArchive.Player.FirstPersonController>();var d=p.Dash;var m=e.GetComponent<ArcaneArchive.Player.PlayerMelee>();var c=e.Combat;var controller=e.GetComponent<CharacterController>();var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();
+var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+System.Action<string,object> set=(n,v)=>e.GetType().GetField(n,flags).SetValue(e,v);
+System.Action<string,object[]> call=(n,a)=>e.GetType().GetMethod(n,flags).Invoke(e,a);
+System.Action<ArcaneArchive.Core.BossEncounter.State> state=s=>call("SetState",new object[]{s});
+System.Action<Vector3> place=position=>{controller.enabled=false;e.transform.SetPositionAndRotation(position,Quaternion.identity);controller.enabled=true;Physics.SyncTransforms();p.GetType().GetField("<IsGrounded>k__BackingField",flags).SetValue(p,true);};
+System.Action reset=()=>{d.Cancel(true);menu.Resume();set("focusLost",false);p.SetGameplayInputEnabled(true);c.ResetCombat(e);call("ClearAttacks",new object[0]);state(ArcaneArchive.Core.BossEncounter.State.Observe);set("combatTime",0f);e.Arena.boss.position=new Vector3(160,0,0);e.Arena.boss.rotation=Quaternion.Euler(0,180,0);place(new Vector3(160,.08f,-4.5f));};
+System.Action<float> step=dt=>{d.Tick(dt);CollisionFlags collision;d.Move(out collision);Physics.SyncTransforms();};
+System.Action strike=()=>{set("attack",5);state(ArcaneArchive.Core.BossEncounter.State.Attack);set("stateTime",e.definition.meleeImpact);set("meleeResolved",false);call("TickMeleeStrike",new object[0]);d.ConfirmPerfect();};
+
+var results=new System.Collections.Generic.List<string>();System.Action<bool,string> check=(ok,n)=>results.Add((ok?"PASS ":"FAIL ")+n);
+try
+{
+    reset();var origin=e.transform.position;bool started=d.TryStart(Vector2.right);
+    for(int j=0;j<12;j++)step(.02f);
+    check(started && Mathf.Abs(Vector3.Distance(origin,e.transform.position)-4.8f)<.02f && !d.IsDashing &&
+        Mathf.Abs(m.Stamina-80)<.01f && !d.SlowActive,"dash travels 4.8m in 0.24s, costs 20, ordinary dash has no reward");
+    bool cooling=!d.TryStart(Vector2.right);d.Tick(.62f);
+    check(cooling && d.TryStart(Vector2.right),"repeat press blocked during cooldown, accepted after 0.85s");
+    reset();m.DrainStamina(81);
+    check(!d.TryStart(Vector2.right) && Mathf.Abs(m.Stamina-19)<.01f,"shared stamina still gates dash below 20");
+
+    reset();d.TryStart(Vector2.down);step(.2f);uint sequence=d.PerfectSequence;strike();
+    check(d.PerfectSequence==sequence+1 && d.SlowActive && Mathf.Abs(Time.timeScale-.25f)<.001f &&
+        Mathf.Abs(c.Health-e.definition.playerHealth)<.01f,"real melee dodge at 200ms now grants reward");
+    var fx=e.GetComponent<ArcaneArchive.Visuals.DashAfterimageVfx>();fx.enabled=false;fx.Trigger();
+    d.Tick(.44f);bool held=Mathf.Abs(Time.timeScale-.25f)<.001f;
+    for(int j=0;j<14;j++)fx.Present(.045f);d.Tick(.19f);
+    check(held && d.SlowActive && Time.timeScale>.25f && Time.timeScale<1 && fx.LiveEchoCount>0,
+        "hold lasts 0.45s; slow time and spectral echoes still active at 0.63s");
+    d.Tick(.121f);
+    check(!d.SlowActive && Mathf.Abs(Time.timeScale-1)<.001f && Mathf.Abs(Time.fixedDeltaTime-.02f)<.0001f,
+        "reward restores time and physics after 0.75s");fx.Clear();fx.enabled=true;
+
+    reset();d.TryStart(Vector2.down);step(.221f);sequence=d.PerfectSequence;strike();
+    check(d.PerfectSequence==sequence && !d.SlowActive,"221ms is outside new 220ms window; no automatic reward");
+    reset();d.TryStart(Vector2.up);step(.08f);sequence=d.PerfectSequence;strike();
+    check(d.PerfectSequence==sequence && !d.SlowActive && c.Health<e.definition.playerHealth,
+        "dash into actual melee still takes damage and receives no reward");
+    reset();d.TryStart(Vector2.down);step(.2f);strike();bool rewardStarted=d.SlowActive;menu.Open();
+    check(rewardStarted && !d.SlowActive && Mathf.Abs(Time.timeScale-1)<.001f,
+        "Esc cleans extended reward immediately");
+}
+finally{reset();}
+var folder=System.IO.Path.Combine(System.IO.Directory.GetParent(Application.dataPath).FullName,"Docs/DodgeTuning20261030");
+var report=string.Join("\n",results.ToArray());System.IO.File.WriteAllText(folder+"/MinimalChecks.txt",report,new System.Text.UTF8Encoding(false));return report;

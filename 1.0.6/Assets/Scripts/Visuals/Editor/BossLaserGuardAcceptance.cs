@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Linq;
 using ArcaneArchive.Core;
 using ArcaneArchive.Player;
 using ArcaneArchive.UI;
@@ -32,7 +33,7 @@ namespace ArcaneArchive.Visuals.Editor
             e=UnityEngine.Object.FindFirstObjectByType<BossEncounter>();player=e.GetComponent<FirstPersonController>();menu=e.GetComponent<RecoveryMenu>();combat=e.Combat;
             if(e.IsActive)e.ReturnToLibrary();originalPosition=e.transform.position;
             checks.Clear();failure=null;maxTrackingAngle=maxTurnSpeed=0;started=EditorApplication.timeSinceStartup;frame=-1;
-            menu.ShowPage(RecoveryMenu.Page.DeepExplore);menu.StartEncounter();Check(e.IsActive,"Existing menu enters upgraded encounter");
+            menu.ShowBook(UnityEngine.Object.FindObjectsByType<ArcaneArchive.Interaction.DemoBookTarget>(FindObjectsSortMode.None).First(t=>t.Record&&t.Record.opensTrial).Record);menu.StartEncounter();Check(e.IsActive,"Hall book enters upgraded encounter");
             Step(0);InputSystem.onBeforeUpdate+=InjectMouse;EditorApplication.update+=Tick;return Status;
         }
         public static void Stop(){EditorApplication.update-=Tick;InputSystem.onBeforeUpdate-=InjectMouse;Release();if(UnityEngine.InputSystem.Mouse.current!=null)InputSystem.QueueStateEvent(UnityEngine.InputSystem.Mouse.current,new MouseState());inputScope?.Dispose();inputScope=null;if(wall)UnityEngine.Object.Destroy(wall);if(running)Application.runInBackground=wasBackground;running=false;}

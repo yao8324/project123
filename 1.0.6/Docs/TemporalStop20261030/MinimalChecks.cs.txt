@@ -1,0 +1,46 @@
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var p=e.GetComponent<ArcaneArchive.Player.FirstPersonController>();var d=p.Dash;var m=e.GetComponent<ArcaneArchive.Player.PlayerMelee>();var c=e.Combat;var controller=e.GetComponent<CharacterController>();var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();
+var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+System.Action<string,object> set=(n,v)=>e.GetType().GetField(n,flags).SetValue(e,v);
+System.Action<string,object[]> call=(n,a)=>e.GetType().GetMethod(n,flags).Invoke(e,a);
+System.Action<ArcaneArchive.Core.BossEncounter.State> state=s=>call("SetState",new object[]{s});
+System.Action<Vector3> place=position=>{controller.enabled=false;e.transform.SetPositionAndRotation(position,Quaternion.identity);controller.enabled=true;Physics.SyncTransforms();p.GetType().GetField("<IsGrounded>k__BackingField",flags).SetValue(p,true);};
+System.Action reset=()=>{d.Cancel(true);menu.Resume();set("focusLost",false);p.SetGameplayInputEnabled(true);c.ResetCombat(e);call("ClearAttacks",new object[0]);state(ArcaneArchive.Core.BossEncounter.State.Observe);set("combatTime",0f);e.Arena.boss.position=new Vector3(160,0,0);e.Arena.boss.rotation=Quaternion.Euler(0,180,0);place(new Vector3(160,.08f,-4.5f));};
+System.Action<float> step=dt=>{d.Tick(dt);CollisionFlags collision;d.Move(out collision);Physics.SyncTransforms();};
+System.Action strike=()=>{set("attack",5);state(ArcaneArchive.Core.BossEncounter.State.Attack);set("stateTime",e.definition.meleeImpact);set("meleeResolved",false);call("TickMeleeStrike",new object[0]);d.ConfirmPerfect();};
+
+var results=new System.Collections.Generic.List<string>();System.Action<bool,string> check=(ok,n)=>results.Add((ok?"PASS ":"FAIL ")+n);
+try
+{
+    reset();d.TryStart(Vector2.up);step(.08f);bool ordinary=!d.RewardProtected;strike();
+    check(ordinary && c.Health<e.definition.playerHealth && !d.SlowActive,"ordinary dash is vulnerable and cannot award itself");
+    reset();d.TryStart(Vector2.down);step(.2f);uint before=d.PerfectSequence;strike();
+    check(d.PerfectSequence==before+1 && d.RewardProtected && Mathf.Abs(Time.timeScale-.05f)<.001f,
+        "verified perfect dodge grants protection and 5% world speed");
+    float health=c.Health;bool attacking=m.TryLightAttack();int action=m.Action;float stamina=m.Stamina;
+    bool a=c.ReceiveHit(12,e.Arena.boss.position,true);bool b=c.TakeDamage(14);bool z=c.ReceiveHit(23,e.Arena.boss.position,true,-1,true);
+    check(attacking && !a && !b && !z && c.Health==health && m.Stamina==stamina && m.Action==action,
+        "protected follow-up projectile, ground and melee hits cause no health loss, stamina loss or interruption");
+    d.Tick(.29f);c.TakeDamage(9);
+    check(d.RewardProtected && c.Health==health,"protection still active at 290ms real time");
+    d.Tick(.011f);bool damage=c.TakeDamage(7);
+    check(!d.RewardProtected && damage && Mathf.Abs(c.Health-(health-7))<.001f && d.SlowActive,
+        "protection expires at 300ms even though world remains near-stopped");
+    var echo=e.GetComponent<ArcaneArchive.Visuals.DodgeWorldEchoes>();
+    var pulse=e.GetComponent<ArcaneArchive.Visuals.TemporalStopPulse>();
+    Vector3 fixedPoint=echo.GhostPosition(2);
+    check(echo.GhostCount==4 && Vector3.Distance(fixedPoint,d.SamplePath(.54f))<.001f,
+        "four world silhouettes use actually traversed path points");
+    place(e.transform.position+Vector3.right*1.5f);e.transform.rotation=Quaternion.Euler(0,80,0);
+    check(Vector3.Distance(fixedPoint,echo.GhostPosition(2))<.001f,"world silhouettes remain fixed when player moves/turns");
+    d.Tick(.45f);echo.Present(.8f);
+    check(!d.SlowActive && !d.RewardProtected && Mathf.Abs(Time.timeScale-1)<.001f && Mathf.Abs(Time.fixedDeltaTime-.02f)<.0001f && echo.Visible,
+        "0.75s restores world clock; coloured trail can linger beyond the time reward");
+    echo.Present(1.101f);check(!echo.Visible,"world ghosts clear after 1.10s real time");
+    reset();d.TryStart(Vector2.down);step(.2f);strike();bool award=d.RewardProtected;menu.Open();
+    check(award && !d.RewardProtected && !d.SlowActive && !echo.Visible && !pulse.Visible && Mathf.Abs(Time.timeScale-1)<.001f,
+        "Esc clears invulnerability, grey-wave state, ground pulse and world ghosts");
+}
+finally{reset();}
+var report=string.Join("\n",results.ToArray());var folder=System.IO.Path.Combine(System.IO.Directory.GetParent(Application.dataPath).FullName,"Docs/TemporalStop20261030");
+System.IO.File.WriteAllText(folder+"/MinimalChecks.txt",report,new System.Text.UTF8Encoding(false));return report;

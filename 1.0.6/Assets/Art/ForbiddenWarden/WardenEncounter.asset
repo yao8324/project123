@@ -18,56 +18,91 @@ MonoBehaviour:
   boltDamage: 20
   empoweredDamage: 80
   shotInterval: 0.32
-  projectileSpeed: 8
+  projectileSpeed: 22
   volleyDamage: 10
   waveDamage: 22
   sealDamage: 25
+  volleyCount: 6
+  volleyPhaseTwoCount: 8
+  volleyInterval: 0.05
+  volleyReleaseDelay: 0.2
+  volleyHaloRadius: 1.35
   absorbWindow: 0.65
   absorbCooldown: 2.5
   hurtProtection: 0.7
-  volleyWarning: 1.1
-  waveWarning: 1.4
+  bossScale: 0.82
+  volleyRetreatDistance: 4.2
+  spellRibbon: {fileID: 2100000, guid: 8eac07fbdf792ce42a844d97817b7778, type: 2}
+  spellParticle: {fileID: 2100000, guid: d45e1ff5c78d6b7488df21214d45684a, type: 2}
+  waveSurface: {fileID: 2100000, guid: dc1c1b7cac522e9428599758e8da59fa, type: 2}
+  volleyWarning: 1.25
+  waveWarning: 1.15
   sealWarning: 1.5
   waveSpeed: 4
   sealRadius: 1.6
-  laserChargeTime: 2.2
+  laserChargeTime: 2.25
   laserLockTime: 0.65
   laserDuration: 1.3
   laserTickInterval: 0.22
   laserDamage: 14
   laserRadius: 0.3
   laserRange: 32
-  laserTrackingSpeed: 10
+  laserTrackingSpeed: 0
   laserTrackingDelay: 0.18
-  moveSpeed: 2.4
-  repositionTime: 2.8
+  moveSpeed: 3.1
+  repositionTime: 1.35
   preferredMinDistance: 6.5
   preferredMaxDistance: 9.5
-  perceptionInterval: 0.7
+  perceptionInterval: 0.5
   visionAngle: 210
-  bodyTurnSpeed: 65
-  fractureWarning: 2
-  fractureRadius: 1.9
-  fractureDamage: 25
-  rushWarning: 1.65
-  rushLockTime: 0.6
-  rushSpeed: 11.5
+  bodyTurnSpeed: 110
+  fractureWarning: 1.6
+  fractureDamage: 18
+  fractureLeadTime: 0.65
+  fractureInterval: 0.16
+  fractureFadeTime: 0.9
+  fractureWidth: 1.8
+  fracturePhaseTwoWidth: 2.2
+  fractureTravelSpeed: 10.5
+  fractureTurnSpeed: 135
+  fractureDuration: 4.2
+  standardRecovery: 0.95
+  heavyRecovery: 1.15
+  rushWarning: 1.35
+  rushLockTime: 0.5
+  rushSpeed: 75
+  rushWakeDuration: 0.85
   rushDistance: 11
   rushDamage: 32
-  rushRecovery: 2.4
-  enemyHomingSpeed: 10
+  rushRecovery: 1.45
+  enemyHomingSpeed: 95
   playerHomingSpeed: 16
-  enemyHomingBudget: 12
+  enemyHomingBudget: 85
   playerHomingBudget: 9
+  enemyHomingDelay: 0.04
+  enemyHomingDuration: 1.8
+  enemyHomingCommitDistance: 1.7
   playerAcquireAngle: 15
   projectileHomingDelay: 0.12
   guardCapacity: 100
-  guardHoldDrain: 18
-  guardRegen: 26
-  guardRegenDelay: 1.5
-  guardDamageCost: 2.8
-  guardBreakTime: 1.8
-  absorbGuardCost: 14
+  guardHoldDrain: 12
+  guardRegen: 12
+  guardRegenDelay: 2.4
+  guardDamageCost: 1.45
+  guardBreakTime: 1.6
+  absorbGuardCost: 10
+  meleeWarning: 0.78
+  meleeDuration: 0.72
+  meleeImpact: 0.22
+  meleeReach: 4.8
+  meleeArc: 160
+  meleeDamage: 23
+  meleeRecovery: 0.85
+  meleeAdvanceDistance: 1.2
+  meleeTurnSpeed: 240
+  meleeCooldown: 4
+  poiseCapacity: 100
+  staggerDuration: 0.9
   shotSound: {fileID: 8300000, guid: 390eb23d6effd754db9f04bcf1332d84, type: 3}
   warningSound: {fileID: 8300000, guid: fef608caaecbace4ea0c68483fdfca16, type: 3}
   impactSound: {fileID: 8300000, guid: 79dc1977b36b95a40b212291b3856733, type: 3}

@@ -6,10 +6,13 @@ namespace ArcaneArchive.Visuals
     {
         public Transform spawn, boss;
         public WardenVisuals model;
-        public GameObject pageProjectile, ringEffect, sealEffect, boltEffect, impactEffect;
+        public GameObject pageProjectile, ringEffect, boltEffect, impactEffect;
         public LaserBeamVisuals laserEffect;
         public GroundFractureVisuals fractureEffect;
         public RushTelegraphVisuals rushEffect;
+        public WardenVolleyVisuals volleyEffect;
+        public WardenRushWake rushWakeEffect;
+        public WardenPageImpact pageImpactEffect;
         public Transform effectRoot;
         public float radius = 14;
 

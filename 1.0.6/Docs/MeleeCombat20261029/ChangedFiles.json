@@ -1,0 +1,452 @@
+[
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/ForbiddenWardenRigged.prefab",
+    "sha256": "AC8701D92C07D6A6E5FC75B25C820ABA5498FF449911EFF6671E5E6927490451",
+    "bytes": 118687
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield.meta",
+    "sha256": "A7D4399D9FA19B43C09287F6F06F3747F089DDA5D73BE23AA4D4F068C3517ABC",
+    "bytes": 172
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations.meta",
+    "sha256": "208264D55CAA5C464BE149B43DFF65EFDC20DB92CEFC2E40B0F4472C0F31C47D",
+    "bytes": 172
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeStrike.anim",
+    "sha256": "30F933E67557E16052ADE8D07D60AE5CE3414A8EE1E2330D76CFB5794584E0BF",
+    "bytes": 1833082
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeStrike.anim.meta",
+    "sha256": "AC347DC7510F0E880275F9048909C00F396C5AC9CBFDD294C8EBFE3119D5C59B",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeWindup.anim",
+    "sha256": "06F90B7FD18004D1C41DAE94B684ABA72FCD30B7652CB1289793938F0240CE37",
+    "bytes": 2217099
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeWindup.anim.meta",
+    "sha256": "E6AF1793333828B41B9E64870272F490584E3D37F0EE953E977DBF4A6DF2901E",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/BladeLight.shader",
+    "sha256": "717B1C9465208141932252FAE8C3348D8161E49785BB85AF7FF17A5D3B6FCC04",
+    "bytes": 1235
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/BladeLight.shader.meta",
+    "sha256": "D87182F023E635CB582784DB3906717AE8E42F0162466FF0DAE2DFCB904E2D2B",
+    "bytes": 204
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials.meta",
+    "sha256": "724F5F934A0B6B5E1F9D202FC3131B7EC54EC597745F05989CE65710610A9C75",
+    "bytes": 172
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/AntiqueGold.mat",
+    "sha256": "F733E0D8DC4035AEFF89CE0AAC384348D85BF0817042D66E3AD7B5E48D84F48C",
+    "bytes": 3866
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/AntiqueGold.mat.meta",
+    "sha256": "6DD34F276E25093E3A0896A43D6137F3A26F2351BEF97D0143CA646D514437B3",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/BlackenedSteel.mat",
+    "sha256": "9EB92677BC54846172BC7A644A0B75A501E18DE7E21F36BFBBFA1D43535581B1",
+    "bytes": 3883
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/BlackenedSteel.mat.meta",
+    "sha256": "DB0A1D4A5C2392073E0258CC5316BD1BCB547D960397486AAEC01BEC6D93B6FB",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/CharcoalLeather.mat",
+    "sha256": "3BE265437061D4CDDA9E330982191059BA6C3BD8751813DC99EE22970B3BCE3F",
+    "bytes": 3856
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/CharcoalLeather.mat.meta",
+    "sha256": "E27FD8B68FF8FFB0875E3CA633D6D40DA1D7D31237AE905A55C033DA4E7796B5",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/HonedSteel.mat",
+    "sha256": "4DFCA2C2A06820B1881C87F250BE91C830A0F47754A1F7A68AB67D52FFFA88D6",
+    "bytes": 3852
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/HonedSteel.mat.meta",
+    "sha256": "1A547B3915A6467DBC3BC151377900FC19D2D72B20E685C6DB04B8C0A292EF29",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/IvorySeal.mat",
+    "sha256": "2611A4D33433740E26AADBA38F3BBFAB056AB46DF09A5E8FE26F4E4004D44BE2",
+    "bytes": 3859
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/IvorySeal.mat.meta",
+    "sha256": "3272E4CBF6984999F040517744C4B7FD05C7AE3EDAAED66EE7F34CAF383D33B5",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/ObsidianAmethyst.mat",
+    "sha256": "F434DFD3B3D08BAECF2D697A969AA055BD5D0FBD767DA710FF647EAD2FE357BB",
+    "bytes": 3864
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/ObsidianAmethyst.mat.meta",
+    "sha256": "7EFCFD9E32F77F7058EBB51DF058A50897F1148C0202B67C62E4F30CCC2A8FA5",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/OxbloodLeather.mat",
+    "sha256": "9D18F13713461D92DFDD094BB1A6595263423D01CFF0CC76EC1743F57CC9D520",
+    "bytes": 3862
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/OxbloodLeather.mat.meta",
+    "sha256": "E27A97037E8E032C67B0F5E569E5762A7AB11693ED177525C20B1ABCA308F958",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/PolishedGold.mat",
+    "sha256": "670FCD5819D46CE263D6ED5FA6D6C464B9A9091A605746BD8991931F7C42773A",
+    "bytes": 3860
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/PolishedGold.mat.meta",
+    "sha256": "53606F59C4F4068D1600779AD6D393EC3FE450C245C58B5E34B558FDCCA59A5B",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Recess.mat",
+    "sha256": "A44ED54D5B43F73DC6AF57C12FFE6F5B780024166A5D2E76E7758B5B74A29682",
+    "bytes": 3853
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Recess.mat.meta",
+    "sha256": "0ECB8D1D7E8345202360488F1999B10422A823D47BC3CBBBCDAFE74E4C139EA6",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/SealVioletLight.mat",
+    "sha256": "2A92F0624F63A081ACB92CDB956CB408D25C1FDB28852DFAE71CA1AF8FFCB806",
+    "bytes": 808
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/SealVioletLight.mat.meta",
+    "sha256": "3A446066932CCD0774E94334D6FAB94341B31EA62CADFE13251F0B80487CF488",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/SwordGoldLight.mat",
+    "sha256": "877D6854166F792F308BD24F83EEB65873DCC3A56B802BD44578C6FCBD8421AD",
+    "bytes": 806
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/SwordGoldLight.mat.meta",
+    "sha256": "D9896D0AD5C63FDAE87689A0AF5C4906D8C07EA1CF8944CEEA404E17340A731D",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/VioletSeal.mat",
+    "sha256": "48E9BC7E091D2A1368712A78F3302F2F5653D993DE11DE71A95C21AC817D4D82",
+    "bytes": 3857
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/VioletSeal.mat.meta",
+    "sha256": "813A1DCC6DB706B910EFC0CB69C5D8D4922A022F36DF1BB5D8E7E292B5972996",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/WaxedThread.mat",
+    "sha256": "02B17F715734458EC012782C45B8207F2FE58BD89F39052CD65BE8BD0C9C6BFC",
+    "bytes": 3868
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/WaxedThread.mat.meta",
+    "sha256": "D49FA070068540235BF52106FDE1A136F1F2BE0E2BF204E70420D5D25B6122BC",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models.meta",
+    "sha256": "F7716083C70EA4476C378F639356119B638E47878A9C5F97846DB209D99C11C9",
+    "bytes": 172
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Grip_Hand_R_Stylized_FixedGrip.asset",
+    "sha256": "9A5F54173BC6117C933FE2BF44416DB28EC23DD99CEA685DEF02FFCC402A5807",
+    "bytes": 215913
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Grip_Hand_R_Stylized_FixedGrip.asset.meta",
+    "sha256": "BDFA1CC8AF944E1011292238D544041F130BEA307AE48A79192433A8DF3E966E",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Grip_Robe_And_Wand_Weighted.asset",
+    "sha256": "5857D06D2433C07E011F1010CA2DF9D94B120197B362B7AD783F428373F7C46E",
+    "bytes": 163446
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Grip_Robe_And_Wand_Weighted.asset.meta",
+    "sha256": "AE2AAAC79046A09D9A324BCBDCEAA9E36FD2D2CC5FAE278A8F6A6475614C351B",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Oathbreaker_Sword_v1.fbx",
+    "sha256": "654964B202D460B689D8335701E66EEB3B9BECE809BE3947A2C9AE4FE89CFE94",
+    "bytes": 479164
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Oathbreaker_Sword_v1.fbx.meta",
+    "sha256": "48D5777C3CF6C0F72B5F8F8D6C492E07B77ED5DE52E9EC94650819DD0EB213B8",
+    "bytes": 2891
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/VeiledEye_Shield_v1.fbx",
+    "sha256": "D2D774115129FF571C3A12F4C1C3D757B0BD324F94EB3BDCE8BF1E4E7BC34A33",
+    "bytes": 1753020
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/VeiledEye_Shield_v1.fbx.meta",
+    "sha256": "842A6FBE302A9031A6F36479B0093CBA8F868BD428C2F817653AF9DBE972828B",
+    "bytes": 2891
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset",
+    "sha256": "6EAC34DEB4D6162A16E006093339A97378EB67DD81A28EEBCB5CAEAE46DC4362",
+    "bytes": 2624
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset.meta",
+    "sha256": "1FC541C99F587A84A09D494AE053F1066633D8A627FD6D82B2DB3179DBCA2E4F",
+    "bytes": 189
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs.meta",
+    "sha256": "AF4C4BE2E19806B3F3FA75A10FFC4383CDB3B283F7BABB583CF17495EEF410EC",
+    "bytes": 172
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/GripHand.prefab",
+    "sha256": "3CC7FE7DE219185039E09B3008C4F2BE8F7A36BBB474F24E7E856BFCD73B4DE7",
+    "bytes": 6511
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/GripHand.prefab.meta",
+    "sha256": "29241879B53256E39C157557D519DB55B83F34B6A809F10621EAC41507306212",
+    "bytes": 154
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/Oathbreaker_Sword.prefab",
+    "sha256": "A725392C5DBB1B0E744334FCC1CE417B41750CAF7DA4B01C368A955D25AE0D22",
+    "bytes": 11258
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/Oathbreaker_Sword.prefab.meta",
+    "sha256": "DFE90614230ADA404DD37A0445612BACB84773FF8E5327B6321554138321BF94",
+    "bytes": 154
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/VeiledEye_Shield.prefab",
+    "sha256": "DA3C547ED95EEEF3290AB0FD76CDB19F56FFB16AE02245A84B0EEA4EB41334B0",
+    "bytes": 12588
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/VeiledEye_Shield.prefab.meta",
+    "sha256": "6DB7B2C205BB3F8DAFD76C0E2D607D88505F35E1228907E3963033715DDEA4E9",
+    "bytes": 154
+  },
+  {
+    "path": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+    "sha256": "6A34D60205D12FAC0CE3A01E355D0426E1F9E92909D5B782E6004B4640D59008",
+    "bytes": 3695912
+  },
+  {
+    "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+    "sha256": "AE357DBEC436C1BBF62E9FD5EC457A867CA28DDEC249BA257D70E2EEDEC9FA2A",
+    "bytes": 13660
+  },
+  {
+    "path": "Assets/Scripts/Core/BossDefinition.cs",
+    "sha256": "19DC00E71795A10E0673D90FB1927DFCAB6B854F7CBBC716A6CBDD0D92279A77",
+    "bytes": 3838
+  },
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "sha256": "F7E492375476335C2A5967991C3E4DBFE6C9F05E721C494E8EDA09EDB931A04C",
+    "bytes": 25647
+  },
+  {
+    "path": "Assets/Scripts/Core/BossMeleeCombat.cs",
+    "sha256": "CEF64D2BB9557DF6F13B0E8479E98919A82DD316F9EDEBA7ABEBD44FA1A1BD2D",
+    "bytes": 4218
+  },
+  {
+    "path": "Assets/Scripts/Core/BossMeleeCombat.cs.meta",
+    "sha256": "E618541BB85C39913AACCFC6C948135F4E778900783953C4F1861F231DEDC841",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Core/LibraryInputBindings.cs",
+    "sha256": "5305985BB6467C6F8F572A00521A4E408EAC4F4630F4C3BBE3D511CE534D09F7",
+    "bytes": 13506
+  },
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs",
+    "sha256": "E03B9EE425E72EE5A2D41F1B930A81B4DEF8F6C7FA097B0AAE6BAB89B0237AF7",
+    "bytes": 2320
+  },
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs.meta",
+    "sha256": "0586357A0717E78D18209BCE2F41165F26B363838027737B2D5EF47A4DB243E3",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerCombat.cs",
+    "sha256": "100EE1B6BF78BEB1E371363FC3C34249C86269C61660A261233497210FC03A79",
+    "bytes": 8044
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerMelee.cs",
+    "sha256": "D2EEB48DEDC86CC974765318D98F0CE7AEE3AB08893CB8C9314A587B2A0039BC",
+    "bytes": 7827
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerMelee.cs.meta",
+    "sha256": "62654AE56BDD9805A5C6244B535F3C7EDA8A5BFC94D36C1D9B2329BBE32F0F89",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Player/SwordShieldView.cs",
+    "sha256": "B85ED4D1D50435F569669B96C2F920211F8CF0FFE7A5F11E9B338303B1B5A86A",
+    "bytes": 7027
+  },
+  {
+    "path": "Assets/Scripts/Player/SwordShieldView.cs.meta",
+    "sha256": "B5A2F1FD6D956EF8D24BC8062B8A548889AE6CFEE8C16BB47063F49B65538071",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+    "sha256": "8DFFFB3DDCE03861A9E3186641368199A684B89EAEF4FC892247BF8387A8C795",
+    "bytes": 8164
+  },
+  {
+    "path": "Assets/Scripts/UI/EquipmentPreview.cs",
+    "sha256": "4AAA1D83DE47EE85EA4B1E24772DF7AD957FCDDE5BE390E87C9AAA0C8E61E90E",
+    "bytes": 3764
+  },
+  {
+    "path": "Assets/Scripts/UI/EquipmentPreview.cs.meta",
+    "sha256": "A22DF13BA9D560530BC24D8D7259B93D74035F7A2551B4AB2B87C6832ADEBF76",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryEquipment.cs",
+    "sha256": "BA032701651057BC27991368CF0405A5ABF9DA2827586638A9F4598594DE417B",
+    "bytes": 3606
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryEquipment.cs.meta",
+    "sha256": "6FC35BB0440490CE34A0D279510F231DA7D851A85D9338F80E4A9EC94FB0B0D5",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryMenu.cs",
+    "sha256": "57F521EBFE95215CDDF7B6E11589F5D9C6C5EBF51F1811B91F0041D2E6834BCC",
+    "bytes": 36512
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BladeRibbon.cs",
+    "sha256": "0597737CF99D8C19B14C43AB9E5C233A3612F6F76C265250DEEE02791010E20C",
+    "bytes": 2348
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BladeRibbon.cs.meta",
+    "sha256": "ABA676F01174611A96ECAF5A513627DE178EEEBADBAA2ECCFD6C83CF61A94126",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/SwordShieldSetup.cs",
+    "sha256": "25F9D400B310807436D19C930B1471AC67B1579D6F8779CCF95AB3047DFB59FA",
+    "bytes": 18736
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/SwordShieldSetup.cs.meta",
+    "sha256": "DD7715766DF2ADE1902659A409094350B71FE512871E53A3F0CB48154AE341A9",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Visuals/MeleeEffects.cs",
+    "sha256": "77F5832C9ABDBBA0CF450B071A56D3624E924EBEA89D1E8BDF67B5FC909CA467",
+    "bytes": 4320
+  },
+  {
+    "path": "Assets/Scripts/Visuals/MeleeEffects.cs.meta",
+    "sha256": "E46971FC530CB3C8B2D4EA78D4E8935FB484EB25BEC03BE4E097408B4B26DDE8",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenAnimationDriver.cs",
+    "sha256": "968B60E92B79A269BA9C59D26B47DA35A44E37D72C920634BF0B08EFD939E4F1",
+    "bytes": 8717
+  },
+  {
+    "path": "Assets/UI/Fonts/BossChineseSDF.asset",
+    "sha256": "067456B6AAFCE7BB7FBE83D366AFE6A76B6356252655E16E01F7676FFD8128FC",
+    "bytes": 8684302
+  },
+  {
+    "path": "Assets/UI/Fonts/MeleeChineseSupplement.asset",
+    "sha256": "635E29043869B0453462881D8AB7F2DACCB62A3E556C3C9D9671361878DCE065",
+    "bytes": 2127708
+  },
+  {
+    "path": "Assets/UI/Fonts/MeleeChineseSupplement.asset.meta",
+    "sha256": "8D9686126A4B13F051C4901348653B987DFB691DA9B718B260CFA53ABBC2981B",
+    "bytes": 189
+  },
+  {
+    "path": "Blender/PlayerSwordShield/Oathbreaker_Sword_v1.blend",
+    "sha256": "7F2465850A53CE4155EB92F5F4D357F7050B7849915190ED01C3EB608EEB66E1",
+    "bytes": 448140
+  },
+  {
+    "path": "Blender/PlayerSwordShield/README.md",
+    "sha256": "1247D86FE5A940FF8CA75D29BDB0255361091420FE19B1C341C9578E38097DFC",
+    "bytes": 5927
+  },
+  {
+    "path": "Blender/PlayerSwordShield/VeiledEye_Shield_v1.blend",
+    "sha256": "6B2BB206384E3169FD608E8B6C3113DDE715887DE5579033A7A4F6303A518579",
+    "bytes": 1327912
+  },
+  {
+    "path": "CHANGELOG.md",
+    "sha256": "6E133CA9785DFEB1549317E9F9D94E322E4DCA6F2FC4DABB5752B250B65D2EF8",
+    "bytes": 9712
+  },
+  {
+    "path": "Docs/InteractionPolicy20261028/README.md",
+    "sha256": "6B31275AAABF783B52400EDBAA874793A5093FC1FAEFDCDDAF92A68F7F9D606E",
+    "bytes": 1159
+  },
+  {
+    "path": "README.md",
+    "sha256": "ECF5D29312645605A8EA8B2CC485B3CDAB11C2FA4006DD8F5D72D88D45FFC48C",
+    "bytes": 13117
+  }
+]

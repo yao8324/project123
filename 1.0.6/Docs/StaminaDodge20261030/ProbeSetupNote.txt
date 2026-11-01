@@ -1,0 +1,1 @@
+The initial wall-negative probe ran after a CodeDom local-variable name collision prevented its prerequisite setup. Its result in FirstProbeRun.txt is invalid. Corrected fixture names and reran only the affected wall probes; production scripts were unchanged.

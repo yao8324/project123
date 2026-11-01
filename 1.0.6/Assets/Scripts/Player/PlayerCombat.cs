@@ -6,113 +6,128 @@ namespace ArcaneArchive.Player
     [RequireComponent(typeof(FirstPersonController))]
     public sealed class PlayerCombat : MonoBehaviour
     {
-        private FirstPersonController player;
-        private BossEncounter encounter;
-        private float shotCooldown, absorbCooldown, absorbRemaining, invulnerability;
-        private bool waitForRelease;
-        private float guardRegenDelay, guardBreakRemaining;
-        private bool guardReleaseRequired;
+        FirstPersonController player;
+        PlayerMelee melee;
+        BossEncounter encounter;
+        float parryRemaining,parryCooldown,shotCooldown,absorbCooldown,absorbRemaining,invulnerability,guardBreakRemaining;
+        bool waitForRelease,guardReleaseRequired;
+        public bool ParryReady => parryRemaining>0;
         public float Health { get; private set; }
         public float Power { get; private set; }
         public float AbsorbCooldown => absorbCooldown;
-        public bool Absorbing => absorbRemaining > 0;
-        public float Guard { get; private set; }
+        public bool Absorbing => absorbRemaining>0;
+        // Compatibility accessor only: there is one resource, owned by PlayerMelee.
+        public float Guard => melee?melee.Stamina:0;
         public bool Guarding { get; private set; }
-        public bool GuardBroken => guardBreakRemaining > 0;
+        public bool GuardBroken => guardBreakRemaining>0;
         public float GuardBreakRemaining => guardBreakRemaining;
         public bool GuardNeedsRelease => guardReleaseRequired;
+
         public void ResetCombat(BossEncounter owner)
         {
-            player = GetComponent<FirstPersonController>(); encounter = owner;
-            Health = owner.Definition.playerHealth; Power = 0;
-            Guard=owner.Definition.guardCapacity; Guarding=false;guardReleaseRequired=false;
-            guardRegenDelay=guardBreakRemaining=0;
-            shotCooldown = absorbCooldown = absorbRemaining = invulnerability = 0;
-            waitForRelease = true;
+            player=GetComponent<FirstPersonController>();encounter=owner;melee=GetComponent<PlayerMelee>();
+            Guarding=false;guardReleaseRequired=false;guardBreakRemaining=0;
+            if(melee)melee.ResetCombat();
+            Health=owner.Definition.playerHealth;Power=0;
+            parryRemaining=parryCooldown=shotCooldown=absorbCooldown=absorbRemaining=invulnerability=0;
+            waitForRelease=true;
         }
-        public void SuppressUntilReleased() { waitForRelease=true;Guarding=false;absorbRemaining=0; }
+        public void SuppressUntilReleased()
+        {waitForRelease=true;Guarding=false;absorbRemaining=parryRemaining=0;if(melee)melee.SuppressUntilReleased();}
         public void Tick(float dt)
         {
-            shotCooldown = Mathf.Max(0, shotCooldown - dt);
-            absorbCooldown = Mathf.Max(0, absorbCooldown - dt);
-            absorbRemaining = Mathf.Max(0, absorbRemaining - dt);
-            invulnerability = Mathf.Max(0, invulnerability - dt);
-            guardBreakRemaining=Mathf.Max(0,guardBreakRemaining-dt);
-            guardRegenDelay=Mathf.Max(0,guardRegenDelay-dt);
-            Guarding=false;
-            var bindings = player.Bindings;
-            if (!bindings || !player.GameplayInputEnabled || !player.CursorIsLocked || bindings.SuppressInputThisFrame) return;
-            var fire = bindings.AttackAction; var absorb = bindings.AbsorbAction;
+            if(!encounter || encounter.IsPaused)return;
+            if(melee)melee.Advance(dt);
+            parryRemaining=Mathf.Max(0,parryRemaining-dt);parryCooldown=Mathf.Max(0,parryCooldown-dt);
+            shotCooldown=Mathf.Max(0,shotCooldown-dt);absorbCooldown=Mathf.Max(0,absorbCooldown-dt);
+            absorbRemaining=Mathf.Max(0,absorbRemaining-dt);invulnerability=Mathf.Max(0,invulnerability-dt);
+            guardBreakRemaining=Mathf.Max(0,guardBreakRemaining-dt);Guarding=false;
+            var bindings=player.Bindings;
+            if(!bindings || !player.GameplayInputEnabled || !player.CursorIsLocked || bindings.SuppressInputThisFrame)return;
+            var fire=bindings.AttackAction;var absorb=bindings.AbsorbAction;
             if(!absorb.IsPressed())guardReleaseRequired=false;
-            if (waitForRelease)
+            if(waitForRelease){if(!fire.IsPressed() && !absorb.IsPressed())waitForRelease=false;return;}
+            if(melee && absorb.IsPressed() && melee.CanGuard)melee.CancelRecoveryForGuard();
+            if(absorb.WasPressedThisFrame() && (!melee || melee.CanGuard))
             {
-                if (!fire.IsPressed() && !absorb.IsPressed()) waitForRelease = false;
-                return;
+                TryAbsorb();
+                if(melee && encounter.CanFight && !GuardBroken && !guardReleaseRequired && Guard>0 && parryCooldown<=0)
+                {parryRemaining=melee.loadout.parryWindow;parryCooldown=.65f;}
             }
-            if (absorb.WasPressedThisFrame()) TryAbsorb();
-            Guarding=encounter.CanFight && absorb.IsPressed() && !GuardBroken && !guardReleaseRequired && Guard>0;
+            if(absorb.IsPressed() && !GuardBroken && !guardReleaseRequired && Guard<=0)BreakGuard();
+            Guarding=encounter.CanFight && melee && melee.CanGuard && absorb.IsPressed() && !GuardBroken && !guardReleaseRequired && Guard>0;
             if(Guarding)
             {
-                Guard=Mathf.Max(0,Guard-encounter.Definition.guardHoldDrain*dt);
-                guardRegenDelay=encounter.Definition.guardRegenDelay;
+                melee.DrainStamina(encounter.Definition.guardHoldDrain*dt);
                 if(Guard<=0)BreakGuard();
             }
-            else if(guardRegenDelay<=0 && !GuardBroken)
-                Guard=Mathf.Min(encounter.Definition.guardCapacity,Guard+encounter.Definition.guardRegen*dt);
-            if (fire.IsPressed() && !Guarding) TryFire();
+            if(melee)melee.ReadInput();else if(fire.IsPressed() && !Guarding)TryFire();
         }
         public bool TryFire()
         {
-            if (!encounter || !encounter.CanFight || shotCooldown > 0 || Guarding) return false;
-            bool empowered = Power >= 100;
-            encounter.FirePlayerBolt(empowered ? encounter.Definition.empoweredDamage : encounter.Definition.boltDamage, empowered);
-            if (empowered) Power = 0;
-            shotCooldown = encounter.Definition.shotInterval;
-            return true;
+            if(!encounter || !encounter.CanFight || shotCooldown>0 || Guarding)return false;
+            if(melee)return melee.TryLightAttack();
+            bool empowered=Power>=100;
+            encounter.FirePlayerBolt(empowered?encounter.Definition.empoweredDamage:encounter.Definition.boltDamage,empowered);
+            if(empowered)Power=0;shotCooldown=encounter.Definition.shotInterval;return true;
         }
         public bool TryAbsorb()
         {
-            if (!encounter || !encounter.CanFight || absorbCooldown > 0 || GuardBroken || guardReleaseRequired || Guard<encounter.Definition.absorbGuardCost) return false;
-            Guard-=encounter.Definition.absorbGuardCost;guardRegenDelay=encounter.Definition.guardRegenDelay;
-            absorbRemaining = encounter.Definition.absorbWindow;
-            absorbCooldown = encounter.Definition.absorbCooldown;
-            encounter.PlaySound(encounter.Definition.absorbSound, .4f);
-            return true;
+            if(!encounter || !encounter.CanFight || !melee || absorbCooldown>0 || GuardBroken || guardReleaseRequired)return false;
+            if(!melee.TrySpendStamina(encounter.Definition.absorbGuardCost))return false;
+            absorbRemaining=encounter.Definition.absorbWindow;absorbCooldown=encounter.Definition.absorbCooldown;
+            encounter.PlaySound(encounter.Definition.absorbSound,.4f);return true;
         }
         public bool CanAbsorb(Vector3 projectile)
         {
-            if (!Absorbing) return false;
-            var camera = encounter.View;
-            var delta = projectile - camera.transform.position;
-            return delta.sqrMagnitude <= 4 && Vector3.Dot(camera.transform.forward, delta.normalized) > .70f;
+            if(!Absorbing)return false;
+            var delta=projectile-encounter.View.transform.position;
+            return delta.sqrMagnitude<=4 && Vector3.Dot(encounter.View.transform.forward,delta.normalized)>.70f;
         }
-        public void AbsorbHit() { Power = Mathf.Min(100, Power + 25); encounter.Feedback("吞印成功  +25", .7f); }
-        public bool TakeDamage(float damage) => ReceiveHit(damage,Vector3.zero,false);
-        public bool ReceiveHit(float damage,Vector3 source,bool blockable,float hitProtection=-1)
+        public void AbsorbHit(){Power=Mathf.Min(100,Power+25);encounter.Feedback("吞印成功  +25",.7f);}
+        public bool TakeDamage(float damage)=>ReceiveHit(damage,Vector3.zero,false);
+        public bool ReceiveHit(float damage,Vector3 source,bool blockable,float hitProtection=-1,bool parryable=false)
         {
-            if (!encounter || !encounter.CanFight || invulnerability > 0 || damage <= 0) return false;
+            if(!encounter || !encounter.CanFight || damage<=0)return false;
+            // Reward protection is real-time and begins only after a verified successful dodge.
+            if(player.Dash && player.Dash.RewardProtected)return false;
+            if(player.Dash)player.Dash.RegisterContact();
+            if(invulnerability>0)return false;
             if(blockable && Guarding && Vector3.Dot(encounter.View.transform.forward,(source-encounter.View.transform.position).normalized)>=.5f)
             {
-                float cost=damage*encounter.Definition.guardDamageCost;
-                guardRegenDelay=encounter.Definition.guardRegenDelay;
-                if(Guard>cost)
+                if(parryable && parryRemaining>0 && melee)
                 {
-                    Guard-=cost;invulnerability=.10f;
-                    encounter.Feedback("格挡成功",.45f);encounter.PlaySound(encounter.Definition.absorbSound,.15f);return false;
+                    parryRemaining=0;invulnerability=.18f;Power=Mathf.Min(100,Power+20);
+                    // A perfect parry refunds once into the shared pool.
+                    melee.Parried();encounter.StaggerBoss(true);encounter.Feedback("完美弹反 · 恢复体力",1.1f);return false;
+                }
+                if(melee && melee.view)melee.view.Impact(false);
+                float cost=damage*encounter.Definition.guardDamageCost;
+                if(Guard>=cost)
+                {
+                    melee.DrainStamina(cost);invulnerability=.10f;
+                    if(Guard<=0)BreakGuard();else encounter.Feedback("格挡成功 · 消耗体力",.45f);
+                    encounter.PlaySound(encounter.Definition.absorbSound,.15f);return false;
                 }
                 float fraction=Guard/Mathf.Max(.01f,cost);
-                damage*=1-fraction*.8f;BreakGuard();
+                damage*=1-fraction;BreakGuard();
             }
-            Health = Mathf.Max(0, Health - damage); invulnerability = hitProtection>=0 ? hitProtection : encounter.Definition.hurtProtection;
-            encounter.PlayerHurt();
-            if (Health <= 0) encounter.Finish(false);
-            return true;
+            Health=Mathf.Max(0,Health-damage);invulnerability=hitProtection>=0?hitProtection:encounter.Definition.hurtProtection;
+            if(melee)melee.Interrupt();encounter.PlayerHurt();if(Health<=0)encounter.Finish(false);return true;
         }
-        private void BreakGuard()
+        public void EndCombat()
         {
-            Guard=0;Guarding=false;absorbRemaining=0;guardReleaseRequired=true;
-            guardBreakRemaining=encounter.Definition.guardBreakTime;guardRegenDelay=encounter.Definition.guardRegenDelay;
-            encounter.Feedback("护盾破碎 · 松开防御键，移动躲避",1.8f);
+            Guarding=false;absorbRemaining=parryRemaining=guardBreakRemaining=0;guardReleaseRequired=false;
+            if(melee)melee.ResetCombat();
+        }
+        public void ConsumePower(){Power=0;}
+        public void RestoreGuard(float amount){if(melee)melee.RestoreStamina(amount);}
+        void BreakGuard()
+        {
+            if(melee)melee.DrainStamina(melee.Stamina);
+            Guarding=false;absorbRemaining=parryRemaining=0;guardReleaseRequired=true;
+            guardBreakRemaining=melee?melee.ExhaustionRemaining:encounter.Definition.guardBreakTime;
+            encounter.Feedback("体力耗尽 · 松开防御键，移动躲避",1.8f);
         }
     }
 }

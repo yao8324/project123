@@ -1,0 +1,272 @@
+{
+  "meshes": [
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0490.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0490_repaired.mlmesh",
+      "reason": "Recess window surround clear of both stair flights"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0501.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0501_repaired.mlmesh",
+      "reason": "Recess window surround clear of both stair flights"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0212.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0212_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0214.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0214_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0216.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0216_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0218.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0218_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0220.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0220_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0222.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0222_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0224.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0224_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0226.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0226_repaired.mlmesh",
+      "reason": "Interrupt string courses at stained-glass openings"
+    },
+    {
+      "source": "Assets/Art/Models/GrandEntrance/mesh_0390_GrandPortal.asset",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0390_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/Models/GrandEntrance/mesh_0391_GrandPortal.asset",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0391_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0392.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0392_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/Models/GrandEntrance/mesh_0394_GrandPortal.asset",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0394_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/Models/GrandEntrance/mesh_0395_GrandPortal.asset",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0395_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0396.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0396_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0481.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0481_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/Models/GrandEntrance/mesh_0482_GrandPortal.asset",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0482_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/Models/GrandEntrance/mesh_0483_GrandPortal.asset",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0483_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0484.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0484_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0537.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0537_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    },
+    {
+      "source": "Assets/Art/MilanLibraryV6/Meshes/mesh_0538.mlmesh",
+      "variant": "Assets/Art/MilanLibraryV6/PlaytestRepairs20261016/mesh_0538_repaired.mlmesh",
+      "reason": "Recess facade ends behind upper entrance interior wall"
+    }
+  ],
+  "chairs": [
+    {
+      "center": [
+        -5.0,
+        0.48999999463558197,
+        45.29499816894531
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4199981689453125
+      ],
+      "mesh": 689
+    },
+    {
+      "center": [
+        -5.0,
+        0.48999999463558197,
+        46.70500183105469
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4199981689453125
+      ],
+      "mesh": 689
+    },
+    {
+      "center": [
+        5.0,
+        0.48999999463558197,
+        45.29499816894531
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4199981689453125
+      ],
+      "mesh": 692
+    },
+    {
+      "center": [
+        5.0,
+        0.48999999463558197,
+        46.70500183105469
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4199981689453125
+      ],
+      "mesh": 692
+    },
+    {
+      "center": [
+        -5.199999809265137,
+        0.48999999463558197,
+        19.574999809265137
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 695
+    },
+    {
+      "center": [
+        -5.199999809265137,
+        0.48999999463558197,
+        21.02500057220459
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 695
+    },
+    {
+      "center": [
+        -5.799999713897705,
+        0.48999999463558197,
+        7.674998760223389
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 698
+    },
+    {
+      "center": [
+        -5.799999713897705,
+        0.48999999463558197,
+        9.125
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 698
+    },
+    {
+      "center": [
+        5.199999809265137,
+        0.48999999463558197,
+        19.574999809265137
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 701
+    },
+    {
+      "center": [
+        5.199999809265137,
+        0.48999999463558197,
+        21.02500057220459
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 701
+    },
+    {
+      "center": [
+        5.799999713897705,
+        0.48999999463558197,
+        7.674998760223389
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 704
+    },
+    {
+      "center": [
+        5.799999713897705,
+        0.48999999463558197,
+        9.125
+      ],
+      "size": [
+        0.4549999237060547,
+        0.06999996304512024,
+        0.4200000762939453
+      ],
+      "mesh": 704
+    }
+  ]
+}

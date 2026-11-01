@@ -11,9 +11,9 @@ using TMPro;
 namespace ArcaneArchive.UI
 {
     [DefaultExecutionOrder(-100), DisallowMultipleComponent]
-    public sealed class RecoveryMenu : MonoBehaviour
+    public sealed partial class RecoveryMenu : MonoBehaviour
     {
-        public enum Page { Explore, Menu, Help, Settings, Gallery, Book, Reading, Upload, Search, Exit, DeepExplore, BattleResult, CombatControls }
+        public enum Page { Explore, Menu, Help, Settings, Gallery, Book, Reading, Upload, Search, Exit, DeepExplore, BattleResult, CombatControls, Equipment }
         private ArcaneArchive.Core.BossEncounter Encounter => GetComponent<ArcaneArchive.Core.BossEncounter>();
         [SerializeField] private FirstPersonController player;
         [SerializeField] private Vector3 spawnPosition = new Vector3(0,.08f,7.8f);
@@ -80,6 +80,7 @@ namespace ArcaneArchive.UI
             var controls=player.Bindings;
             if(controls && !controls.SuppressInputThisFrame &&
                 (controls.MenuAction.WasPressedThisFrame() || Keyboard.current?.escapeKey.wasPressedThisFrame==true))HandleEscape();
+            if(controls && !controls.SuppressInputThisFrame && controls.EquipmentAction.WasPressedThisFrame())ToggleEquipment();
             if(qualityHintObject)qualityHintObject.SetActive(!IsOpen && Time.unscaledTime<qualityHintUntil);
             if(CurrentPage==Page.Settings && displayedQuality!=QualitySettings.GetQualityLevel())RefreshQualitySelection();
         }
@@ -101,8 +102,9 @@ namespace ArcaneArchive.UI
             switch(CurrentPage)
             {
                 case Page.Explore:Open();break;
-                case Page.Menu:case Page.Book:Resume();break;
-                case Page.Reading:case Page.DeepExplore:if(selectedBook)ShowBook(selectedBook);else Open();break;
+                case Page.Menu:case Page.Book:case Page.DeepExplore:Resume();break;
+                case Page.Reading:if(selectedBook)ShowBook(selectedBook);else Open();break;
+                case Page.Equipment:if(equipmentFromMenu)Open();else Resume();break;
                 case Page.Upload:case Page.Search:ShowPage(Page.Gallery);break;
                 default:Open();break;
             }
@@ -113,6 +115,8 @@ namespace ArcaneArchive.UI
             if(Encounter && Encounter.IsFinished){ShowPage(Page.BattleResult);return;}
             if(!IsOpen)return;
             if(player.Bindings)player.Bindings.Cancel();
+            selectedBook=null;
+            var melee=GetComponent<PlayerMelee>();if(melee)melee.SuppressUntilReleased();
             overlay.SetActive(false);CurrentPage=Page.Explore;HidePrompt();crosshair.SetActive(true);
             if(viewmodel)viewmodel.SetActive(viewWasActive);
             player.WaitForReleasedControls();player.SetGameplayInputEnabled(true);syncCursor=true;
@@ -128,12 +132,14 @@ namespace ArcaneArchive.UI
         public void HidePrompt(){if(promptObject && promptObject.activeSelf)promptObject.SetActive(false);}
         public void ShowBook(DemoBookRecord book)
         {
-            if(!book)return;selectedBook=book;ShowPage(Page.Book);
+            if(!book)return;selectedBook=book;ShowPage(book.opensTrial?Page.DeepExplore:Page.Book);
         }
         public void ShowPage(Page page)
         {
             if(page==Page.Explore){Resume();return;}
             if(player.Bindings)player.Bindings.Cancel();
+            if(page==Page.DeepExplore && (!selectedBook || !selectedBook.opensTrial))page=Page.Menu;
+            if(page==Page.Menu)selectedBook=null;
             if((page==Page.Book||page==Page.Reading)&&!selectedBook)page=Page.Gallery;
             if(!IsOpen&&viewmodel)viewWasActive=viewmodel.activeSelf;
             player.SetGameplayInputEnabled(false);player.SetCursorLocked(false);syncCursor=false;
@@ -143,10 +149,10 @@ namespace ArcaneArchive.UI
             body=Panel(overlay.transform,"Page_"+page,Vector2.zero,new Vector2(980,580),brass);
             var inner=Panel(body.transform,"Inner",Vector2.zero,new Vector2(976,576),ink);
             Label(inner.transform,"ARCANE ARCHIVE",new Vector2(-270,246),new Vector2(350,42),25,brass);
-            Label(inner.transform,Encounter && Encounter.IsActive ? "禁书档案  /  封印试炼" : "魔法图书馆  /  UI 展示版",new Vector2(245,246),new Vector2(350,36),17,paper);
+            Label(inner.transform,page==Page.Equipment ? "行者档案  /  剑盾装备" : Encounter && Encounter.IsActive ? "禁书档案  /  封印试炼" : "魔法图书馆  /  UI 展示版",new Vector2(245,246),new Vector2(350,36),17,paper);
             Panel(inner.transform,"Rule",new Vector2(0,211),new Vector2(880,1),brass);
             footer=Label(inner.transform,"界面演示 · 资料功能待接入",new Vector2(0,-256),new Vector2(800,28),15,new Color(.7f,.66f,.57f));
-            if(page!=Page.Menu && page!=Page.BattleResult)Button(inner.transform,"返回",new Vector2(-378,-205),new Vector2(130,40),HandleEscape);
+            if(page!=Page.Menu && page!=Page.BattleResult && page!=Page.Equipment)Button(inner.transform,"返回",new Vector2(-378,-205),new Vector2(130,40),HandleEscape);
             if(page!=Page.BattleResult)Button(inner.transform,"×",new Vector2(450,246),new Vector2(40,36),Resume);
             switch(page)
             {
@@ -162,6 +168,7 @@ namespace ArcaneArchive.UI
                 case Page.Exit:BuildExit(inner.transform);break;
                 case Page.BattleResult:BuildBattleResult(inner.transform);break;
                 case Page.CombatControls:BuildCombatControls(inner.transform);break;
+                case Page.Equipment:BuildEquipment(inner.transform);break;
             }
             if(EventSystem.current)EventSystem.current.SetSelectedGameObject(null);
         }
@@ -169,12 +176,13 @@ namespace ArcaneArchive.UI
         {
             if(Encounter && Encounter.IsActive)
             {
-                Label(p,"封印厅 · 战斗暂停",new Vector2(0,132),new Vector2(760,50),32,brass);
-                Button(p,"继续战斗",new Vector2(0,52),new Vector2(330,44),Resume);
-                Button(p,"战斗按键",new Vector2(0,-2),new Vector2(330,44),()=>ShowPage(Page.CombatControls));
-                Button(p,"设置",new Vector2(0,-56),new Vector2(330,44),()=>ShowPage(Page.Settings));
-                Button(p,"放弃并返回图书馆",new Vector2(0,-110),new Vector2(330,44),()=>Encounter.ReturnToLibrary());
-                footer.text="暂停期间停止攻击与伤害 · Esc 继续";
+                Label(p,"封印厅 · 战斗暂停",new Vector2(0,153),new Vector2(760,50),32,brass);
+                Button(p,"继续战斗",new Vector2(0,90),new Vector2(330,44),Resume);
+                Button(p,"属性与装备  [I]",new Vector2(0,36),new Vector2(330,44),()=>{equipmentFromMenu=true;ShowPage(Page.Equipment);});
+                Button(p,"战斗按键",new Vector2(0,-18),new Vector2(330,44),()=>ShowPage(Page.CombatControls));
+                Button(p,"设置",new Vector2(0,-72),new Vector2(330,44),()=>ShowPage(Page.Settings));
+                Button(p,"放弃并返回图书馆",new Vector2(0,-126),new Vector2(330,44),()=>Encounter.ReturnToLibrary());
+                footer.text="暂停期间冻结角色与战斗 · Esc 继续";
                 return;
             }
             Label(p,"知识成书，\n归藏于此。",new Vector2(-245,70),new Vector2(350,160),37,paper);
@@ -185,7 +193,7 @@ namespace ArcaneArchive.UI
             Button(p,"设置预览",new Vector2(235,-8),new Vector2(330,44),()=>ShowPage(Page.Settings));
             RespawnButton=Button(p,"返回大厅入口",new Vector2(235,-62),new Vector2(330,44),ReturnToSpawn);
             Button(p,"退出应用",new Vector2(235,-116),new Vector2(330,44),()=>ShowPage(Page.Exit));
-            GildedExploreButton(p,new Vector2(-245,-185),()=>ShowPage(Page.DeepExplore));
+            Button(p,"属性与装备  [I]",new Vector2(235,-170),new Vector2(330,44),()=>{equipmentFromMenu=true;ShowPage(Page.Equipment);});
             footer.text="Esc 继续探索  ·  返回入口沿用原有恢复功能";
         }
         private void ReturnToSpawn()
@@ -210,7 +218,7 @@ namespace ArcaneArchive.UI
             BindingButton(move.transform,"Left",256,92);
             BindingButton(move.transform,"Right",364,92);
             InfoRow(p,"HelpRow_1","环视","鼠标",74,38);
-            string[] actions={"冲刺","跳跃","蹲下","查看演示书籍","返回 / 菜单","重新锁定鼠标"};
+            string[] actions={"突进 / 奔跑","跳跃","蹲下","查看演示书籍","返回 / 菜单","重新锁定鼠标"};
             string[] ids={"Sprint","Jump","Crouch","Interact","Menu","Relock"};
             for(int i=0;i<ids.Length;i++)
             {
@@ -229,7 +237,8 @@ namespace ArcaneArchive.UI
         }
         private void BindingButton(Transform parent,string id,float x,float width)
         {
-            var button=Button(parent,"",new Vector2(x,0),new Vector2(width,34),()=>{if(bindings)bindings.Begin(id);});
+            var button=Button(parent,"",new Vector2(x,0),new Vector2(width,34),null);
+            if(bindings && !bindings.IsReadOnly(id))button.onClick.AddListener(()=>bindings.Begin(id));
             button.name="Bind_"+id;
             var label=button.GetComponentInChildren<TMP_Text>();
             label.enableAutoSizing=true;label.fontSizeMin=14;label.fontSizeMax=18;
@@ -248,10 +257,11 @@ namespace ArcaneArchive.UI
                 if(visual.id=="Backward")text="后 · "+text;
                 if(visual.id=="Left")text="左 · "+text;
                 if(visual.id=="Right")text="右 · "+text;
-                visual.label.text=text;
-                visual.button.interactable=!bindings.IsRebinding;
+                bool readOnly=bindings.IsReadOnly(visual.id);
+                visual.label.text=text+(readOnly?"（固定）":"");
+                visual.button.interactable=!readOnly&&!bindings.IsRebinding;
             }
-            footer.text=bindings.Status??"点击右侧按键换绑 · Esc 取消 · F8 / F9 保留";
+            footer.text=bindings.Status??"点击可用按键换绑 · 鼠标左右键固定 · Esc 取消";
         }
         private void BuildSettings(Transform p)
         {
@@ -336,7 +346,7 @@ namespace ArcaneArchive.UI
         private void BuildGallery(Transform p)
         {
             Label(p,"我的馆藏",new Vector2(0,166),new Vector2(760,44),30,brass);
-            Label(p,"用户导入的资料  ·  当前 0 份",new Vector2(0,132),new Vector2(760,28),18,new Color(.78f,.74f,.65f));
+            Label(p,"用户导入的资料  ·  当前 0 份",new Vector2(0,153),new Vector2(760,28),18,new Color(.78f,.74f,.65f));
             InfoRow(p,"CollectionImport","导入资料","查看导入流程  >",90,44,()=>ShowPage(Page.Upload));
             InfoRow(p,"CollectionSearch","检索馆藏","标题 / 文件名 / 关键词  >",46,44,()=>ShowPage(Page.Search));
             var header=Panel(p,"CollectionHeader",new Vector2(0,2),new Vector2(820,36),new Color(.18f,.15f,.12f,.32f));
@@ -358,19 +368,18 @@ namespace ArcaneArchive.UI
         }
         private void BuildBook(Transform p)
         {
-            Label(p,"功能概述",new Vector2(0,166),new Vector2(800,48),30,brass);
-            var cover=Panel(p,"ArchiveTome",new Vector2(-310,-10),new Vector2(190,270),new Color(.16f,.075f,.095f));
+            Label(p,selectedBook.title,new Vector2(0,166),new Vector2(800,48),30,brass);
+            var cover=Panel(p,"ArchiveTome",new Vector2(-310,-10),new Vector2(190,270),selectedBook.coverColor);
             Panel(cover.transform,"GiltTop",new Vector2(0,123),new Vector2(164,1),brass);
             Panel(cover.transform,"GiltBottom",new Vector2(0,-123),new Vector2(164,1),brass);
             Label(cover.transform,"ARCANE\nARCHIVE",new Vector2(0,67),new Vector2(160,85),22,brass);
-            Label(cover.transform,"知 识\n与\n禁 忌",new Vector2(0,-43),new Vector2(160,130),26,paper);
-            Label(p,"收藏知识，探索未知",new Vector2(113,95),new Vector2(570,44),25,brass);
-            var description=Label(p,"导入你的资料，将知识化为魔法书籍，\n在图书馆中归档、检索与阅读。\n\n步入书廊深处，探索未知的魔幻与恐怖，\n揭开被封存的秘密，迎接黑暗中的强敌。",new Vector2(113,-5),new Vector2(570,154),21,paper);
+            Label(cover.transform,selectedBook.title,new Vector2(0,-43),new Vector2(160,130),26,paper);
+            Label(p,selectedBook.category+" · "+selectedBook.fileType,new Vector2(113,95),new Vector2(570,44),25,brass);
+            var description=Label(p,selectedBook.summary+"\n\n关键词："+selectedBook.keywords,new Vector2(113,-5),new Vector2(570,154),21,paper);
             description.alignment=TextAlignmentOptions.Center;
-            GildedExploreButton(p,new Vector2(113,-151),StartEncounter);
-            Button(p,"我的馆藏",new Vector2(-85,-151),new Vector2(160,40),()=>ShowPage(Page.Gallery));
-            Button(p,"返回探索",new Vector2(311,-151),new Vector2(160,40),Resume);
-            footer.text="馆藏服务待接入 · 深入探索开启封印厅试炼";
+            Button(p,"阅读预览",new Vector2(-35,-151),new Vector2(230,44),()=>ShowPage(Page.Reading));
+            Button(p,"返回书廊",new Vector2(261,-151),new Vector2(230,44),Resume);
+            footer.text="演示书籍 · 当前内容为阅读预览";
         }
         private Button GildedExploreButton(Transform parent,Vector2 position,UnityEngine.Events.UnityAction action)
         {
@@ -392,7 +401,7 @@ namespace ArcaneArchive.UI
         private void BuildDeepExplore(Transform p)
         {
             Label(p,"封印之下",new Vector2(0,153),new Vector2(800,55),33,brass);
-            Label(p,"书廊尽头，有些知识从未等待被发现。",new Vector2(0,85),new Vector2(820,45),23,paper);
+            Label(p,selectedBook.title+" · 封印之书",new Vector2(0,85),new Vector2(820,45),23,paper);
             InfoRow(p,"UnknownWorld","未知领域","探索被封存的魔法回廊",14,54);
             InfoRow(p,"BossEncounter","禁忌试炼","缄默典狱长 · 维纶",-40,54);
             Label(p,"当封印开启，你面对的将不只是书中的故事。",new Vector2(0,-106),new Vector2(820,42),20,new Color(.78f,.66f,.57f));
@@ -401,6 +410,8 @@ namespace ArcaneArchive.UI
         }
         public void StartEncounter()
         {
+            if(CurrentPage!=Page.DeepExplore || !selectedBook || !selectedBook.opensTrial)
+            {if(footer)footer.text="请从大厅封印之书进入试炼";return;}
             if(!Encounter || !Encounter.Begin())footer.text="封印厅暂不可用，请检查战斗资源";
         }
         private void BuildBattleResult(Transform p)
@@ -421,9 +432,9 @@ namespace ArcaneArchive.UI
             }
             bindingVisuals.Clear();
             Label(p,"战斗按键",new Vector2(0,155),new Vector2(800,50),30,brass);
-            var fire=InfoRow(p,"AttackBinding","秘文弹","",75,64);BindingButton(fire.transform,"Attack",280,220);
-            var absorb=InfoRow(p,"AbsorbBinding","吞印 / 按住格挡","",11,64);BindingButton(absorb.transform,"Absorb",280,220);
-            Label(p,"按下吞印，按住格挡正面攻击；松开恢复格挡条。\n持续持盾与受击消耗较大，耗尽破防，持盾不能射击。\n激光横移，环波跳跃，离开紫红裂纹；冲撞锁线后侧闪。",new Vector2(0,-100),new Vector2(850,105),18,paper);
+            var fire=InfoRow(p,"AttackBinding","剑术连斩","",90,52);BindingButton(fire.transform,"Attack",280,220);
+            var absorb=InfoRow(p,"AbsorbBinding","举盾 / 弹反 / 吞印","",38,52);BindingButton(absorb.transform,"Absorb",280,220);
+            Label(p,"1 破誓重斩   2 缄眼盾击   3 踏影突刺   4 回旋封印\n左键三段连斩；右键举盾瞬间可弹反近战，按住格挡。\n攻击、格挡、吞印共用体力；停手后恢复。I 查看属性。\n激光横移，环波跳跃，裂地侧移；冲撞锁线后侧闪。",new Vector2(0,-90),new Vector2(850,150),18,paper);
             RefreshBindingLabels();
         }
         private void BuildReading(Transform p)

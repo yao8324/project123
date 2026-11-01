@@ -1,0 +1,30 @@
+newmtl Leather
+Kd 0.105 0.076 0.063
+Ks 0.2 0.2 0.2
+Ns 40
+
+newmtl Palm
+Kd 0.055 0.039 0.039
+Ks 0.2 0.2 0.2
+Ns 40
+
+newmtl Steel
+Kd 0.18 0.19 0.215
+Ks 0.2 0.2 0.2
+Ns 40
+
+newmtl Gold
+Kd 0.48 0.29 0.1
+Ks 0.2 0.2 0.2
+Ns 40
+
+newmtl Thread
+Kd 0.34 0.25 0.15
+Ks 0.2 0.2 0.2
+Ns 40
+
+newmtl Seal
+Kd 0.26 0.055 0.46
+Ks 0.2 0.2 0.2
+Ns 40
+

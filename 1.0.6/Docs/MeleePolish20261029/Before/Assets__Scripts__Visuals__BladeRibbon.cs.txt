@@ -1,0 +1,46 @@
+using UnityEngine;
+using UnityEngine.Rendering;
+
+namespace ArcaneArchive.Visuals
+{
+    public sealed class BladeRibbon : MonoBehaviour
+    {
+        const int Count=18;
+        readonly Vector3[] roots=new Vector3[Count], tips=new Vector3[Count];
+        readonly float[] ages=new float[Count];
+        readonly Vector3[] vertices=new Vector3[Count*2];
+        readonly Color[] colors=new Color[Count*2];
+        Mesh mesh;
+        int samples;
+        public void Initialize(Material material)
+        {
+            mesh=new Mesh{name="Live sword ribbon"};mesh.MarkDynamic();
+            gameObject.AddComponent<MeshFilter>().sharedMesh=mesh;
+            var r=gameObject.AddComponent<MeshRenderer>();r.sharedMaterial=material;r.shadowCastingMode=ShadowCastingMode.Off;r.receiveShadows=false;
+            var uv=new Vector2[Count*2];var tri=new int[(Count-1)*6];
+            for(int i=0;i<Count;i++){uv[i*2]=new Vector2(i/(float)(Count-1),0);uv[i*2+1]=new Vector2(i/(float)(Count-1),1);}
+            for(int i=0;i<Count-1;i++){int j=i*6,v=i*2;tri[j]=v;tri[j+1]=v+1;tri[j+2]=v+2;tri[j+3]=v+1;tri[j+4]=v+3;tri[j+5]=v+2;}
+            mesh.vertices=vertices;mesh.uv=uv;mesh.colors=colors;mesh.triangles=tri;
+        }
+        public void ResetTrail() { samples=0;if(mesh){System.Array.Clear(colors,0,colors.Length);mesh.colors=colors;} }
+        public void Tick(float dt,bool emitting,Vector3 bladeBase,Vector3 bladeTip)
+        {
+            if(!mesh)return;
+            for(int i=0;i<samples;i++)ages[i]+=dt;
+            if(emitting)
+            {
+                for(int i=Count-1;i>0;i--){roots[i]=roots[i-1];tips[i]=tips[i-1];ages[i]=ages[i-1];}
+                roots[0]=transform.InverseTransformPoint(bladeBase);tips[0]=transform.InverseTransformPoint(bladeTip);ages[0]=0;samples=Mathf.Min(Count,samples+1);
+            }
+            for(int i=0;i<Count;i++)
+            {
+                int slot=Mathf.Clamp(i,0,Mathf.Max(0,samples-1));
+                vertices[i*2]=roots[slot];vertices[i*2+1]=tips[slot];
+                float a=i<samples?Mathf.Clamp01(1-ages[slot]/.16f):0;
+                colors[i*2]=new Color(.76f,.40f,1,a*.08f);colors[i*2+1]=new Color(1,.82f,.42f,a*.82f);
+            }
+            mesh.vertices=vertices;mesh.colors=colors;mesh.RecalculateBounds();
+        }
+        void OnDestroy(){if(mesh)Destroy(mesh);}
+    }
+}

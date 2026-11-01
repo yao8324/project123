@@ -1,0 +1,56 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'>
+<circle cx='128' cy='128' r='117' fill='#110D15' opacity='1'/>
+<circle cx='128' cy='128' r='110' fill='#1A141F' opacity='1'/>
+<circle cx='128' cy='128' r='100' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='97' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='94' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='91' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='88' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='85' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='82' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='79' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='76' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='73' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='70' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='67' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='64' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='61' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='58' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='55' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='52' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='49' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='46' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='43' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='40' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='37' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='34' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='31' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='28' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='25' fill='#FFA63D' opacity='0.01'/>
+<circle cx='128' cy='128' r='22' fill='#FFA63D' opacity='0.01'/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.52' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' points='239,128 238.578,137.674 237.314,147.275 235.218,156.729 232.306,165.964 228.6,174.911 224.129,183.5 218.926,191.667 213.031,199.349 206.489,206.489 199.349,213.031 191.667,218.926 183.5,224.129 174.911,228.6 165.964,232.306 156.729,235.218 147.275,237.314 137.674,238.578 128,239 118.326,238.578 108.725,237.314 99.271,235.218 90.036,232.306 81.089,228.6 72.5,224.129 64.333,218.926 56.651,213.031 49.511,206.489 42.969,199.349 37.074,191.667 31.871,183.5 27.4,174.911 23.694,165.964 20.782,156.729 18.686,147.275 17.422,137.674 17,128 17.422,118.326 18.686,108.725 20.782,99.271 23.694,90.036 27.4,81.089 31.871,72.5 37.074,64.333 42.969,56.651 49.511,49.511 56.651,42.969 64.333,37.074 72.5,31.871 81.089,27.4 90.036,23.694 99.271,20.782 108.725,18.686 118.326,17.422 128,17 137.674,17.422 147.275,18.686 156.729,20.782 165.964,23.694 174.911,27.4 183.5,31.871 191.667,37.074 199.349,42.969 206.489,49.511 213.031,56.651 218.926,64.333 224.129,72.5 228.6,81.089 232.306,90.036 235.218,99.271 237.314,108.725 238.578,118.326 239,128 '/>
+<polyline fill='none' stroke='#FFA63D' opacity='0.45' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round' points='41.397,78 46.037,70.71 51.289,63.849 57.113,57.466 63.467,51.61 70.302,46.324 77.569,41.648 85.212,37.617 93.174,34.26 101.396,31.604 109.817,29.667 118.374,28.464 127.003,28.005 135.639,28.292 144.218,29.324 152.676,31.092 160.95,33.584 168.977,36.781 176.699,40.659 184.057,45.189 190.997,50.338 197.466,56.066 '/>
+<polyline fill='none' stroke='#FFA63D' opacity='0.45' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round' points='214.603,178 209.963,185.29 204.711,192.151 198.887,198.534 192.533,204.39 185.698,209.676 178.431,214.352 170.788,218.383 162.826,221.74 154.604,224.396 146.183,226.333 137.626,227.536 128.997,227.995 120.361,227.708 111.782,226.676 103.324,224.908 95.051,222.416 87.023,219.219 79.301,215.341 71.943,210.811 65.003,205.662 58.534,199.934 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='230,128 236,128 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='200.125,200.125 204.368,204.368 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='128,230 128,236 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='55.875,200.125 51.632,204.368 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='26,128 20,128 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='55.875,55.875 51.632,51.632 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='128,26 128,20 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='0.6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' points='200.125,55.875 204.368,51.633 '/>
+<polyline fill='none' stroke='#FFA63D' opacity='0.18' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' points='76.877,144.445 74.139,139.616 71.823,134.571 69.946,129.347 68.521,123.981 67.56,118.514 67.069,112.984 67.051,107.433 67.507,101.901 68.433,96.427 69.823,91.053 71.666,85.817 73.95,80.757 76.657,75.91 79.767,71.313 83.259,66.997 87.106,62.995 91.28,59.336 95.752,56.046 100.487,53.15 '/>
+<polyline fill='none' stroke='#FFA63D' opacity='1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' points='75.708,142.5 73.191,137.687 71.085,132.68 69.404,127.514 68.16,122.227 67.362,116.854 67.016,111.433 67.123,106.002 67.683,100.599 68.693,95.262 70.145,90.028 72.028,84.933 74.331,80.013 77.036,75.302 80.125,70.834 83.576,66.64 87.365,62.748 91.466,59.186 95.851,55.979 100.487,53.15 '/>
+<polygon fill='#F2E8CC' opacity='1' points='117,62 139,62 142,139 128,181 114,139 '/>
+<polygon fill='#E3A34A' opacity='1' points='117,62 127,73 128,181 114,139 '/>
+<polyline fill='none' stroke='#FFFAE8' opacity='1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' points='131,73 133,139 128,166 '/>
+<polygon fill='#E3A34A' opacity='1' points='91,53 105,48 119,52 137,52 151,48 165,53 153,65 136,60 120,60 103,65 '/>
+<polygon fill='#753D29' opacity='1' points='120,29 136,29 136,49 120,49 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' points='120,32 136,32 120,40 136,40 '/>
+<polygon fill='#F2E8CC' opacity='1' points='128,19 138,26 128,32 118,26 '/>
+<polyline fill='none' stroke='#FFA63D' opacity='0.3' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' points='82,190 106,185 113,199 130,188 140,201 153,187 176,190 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' points='82,190 106,185 113,199 130,188 140,201 153,187 176,190 '/>
+<polyline fill='none' stroke='#F2E8CC' opacity='1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' points='91,165 104,177 '/>
+<polyline fill='none' stroke='#F2E8CC' opacity='1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' points='165,162 152,175 '/>
+<polyline fill='none' stroke='#E3A34A' opacity='1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' points='128,204 128,215 '/>
+</svg>

@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-19",
+  "prefabs": [
+    "Assets/Art/ForbiddenWarden/Prefabs/ChargedLaser.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/ForbiddenPage.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/ForbiddenWarden.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/FracturedGround.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/RunicBolt.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/RunicRing.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/RushTelegraph.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/SealChamber.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/SealImpact.prefab",
+    "Assets/Art/ForbiddenWarden/Prefabs/SealPillars.prefab"
+  ],
+  "shaders": [
+    "Universal Render Pipeline/Unlit",
+    "Universal Render Pipeline/Lit"
+  ],
+  "ChineseGlyphsChecked": 143,
+  "scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+  "sceneDirty": false,
+  "playing": false,
+  "inputSettings": "PointersAndKeyboardsRespectGameViewFocus",
+  "problems": []
+}

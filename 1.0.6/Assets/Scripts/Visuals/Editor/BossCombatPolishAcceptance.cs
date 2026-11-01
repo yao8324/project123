@@ -82,38 +82,39 @@ namespace ArcaneArchive.Visuals.Editor
                         if(t>.65f)
                         {Check(Vector3.Distance(position,player.transform.position)>1,"Player can flank during recovery");Check(Quaternion.Angle(rotation,e.Arena.boss.rotation)<.05f,"Boss does not auto-track player during recovery");NewSession(2);Step(10);}break;
                     case 10:
-                        if(Warning(2,1.53f))
+                        if(Warning(2,.8f) && e.Arena.effectRoot.GetComponentsInChildren<GroundFractureVisuals>().Length>0)
                         {
-                            hp=combat.Health;Check(e.Arena.effectRoot.GetComponentsInChildren<GroundFractureVisuals>().Length==3,"Three irregular fracture patches replace pillars");
-                            Check(Vector3.Dot(e.Arena.model.leftArm.localRotation*Vector3.down,Vector3.up)>.1f && Vector3.Dot(e.Arena.model.rightArm.localRotation*Vector3.down,Vector3.up)>.1f,"Fracture charge lifts both arms");
+                            hp=combat.Health;Check(e.Arena.effectRoot.GetComponentsInChildren<GroundFractureVisuals>().Length>=1,"Pursuing fracture starts with an independent warning");
                             Capture("fracture_warning");Step(11);
                         }break;
                     case 11:
-                        if(t<.64f)Keys(Key.S,Key.LeftShift);else Keys();
-                        if(e.CurrentState==BossEncounter.State.Attack && e.AttackElapsed>.55f)
+                        OrbitRifts();
+                        if(e.CurrentState==BossEncounter.State.Attack && e.AttackElapsed>.2f)
                         {
-                            var f=e.Arena.effectRoot.GetComponentsInChildren<GroundFractureVisuals>()[0];slab=f.slabs[0];
-                            Check(f.slabs.Length>=12 && f.slabs.Any(s=>s.localPosition.y>.06f),"Irregular slabs lift during eruption");
+                            var f=e.Arena.effectRoot.GetComponentsInChildren<GroundFractureVisuals>().OrderByDescending(x=>x.EruptionAge).First();slab=f.slabs[0];
+                            Check(ArmsRaised(.1f),"Fracture channel keeps both arms raised");
+                            Check(f.slabs.Length==2 && f.slabs.Any(s=>s.localPosition.y>.03f),"Small fragments lift along the linear fracture");
                             Check(combat.Health==hp,"Leaving locked fracture avoids ground damage");Capture("fracture_eruption");
                             Step(12);menu.Open();clock=e.BattleTime;slabPosition=slab.localPosition;
                         }break;
                     case 12:
                         if(t>.55f){Check(e.BattleTime==clock && Vector3.Distance(slab.localPosition,slabPosition)<.0001f,"Pause freezes fracture animation and combat clock");menu.Resume();Step(13);}break;
                     case 13:
+                        if(t>.12f)OrbitRifts();else Keys();
                         if(e.CurrentState==BossEncounter.State.Recovery)
                         {Check(combat.Health==hp && player.IsGrounded,"Fracture dodge retains health and intact floor collision");NewSession(2);Step(20);}break;
                     case 20:
-                        if(Warning(2,1.5f)){hp=combat.Health;Step(21);}break;
+                        if(Warning(2,.7f)){hp=combat.Health;Step(21);}break;
                     case 21:
-                        if(e.CurrentState==BossEncounter.State.Recovery)
-                        {Check(Mathf.Abs(hp-combat.Health-e.Definition.fractureDamage)<.01f,"Standing in fracture takes one real ground hit");NewSession(3);Step(30);}break;
+                        if(e.FractureHitCount==1)
+                        {Check(Mathf.Abs(hp-combat.Health-e.Definition.fractureDamage)<.01f,"Standing through the first fracture takes one real ground hit");NewSession(3);Step(30);}break;
                     case 30:
                         if(Warning(4,1.12f)){direction=e.RushDirection;hp=combat.Health;Capture("rush_windup");Step(31);}break;
                     case 31:
                         if(t<.7f)Keys(Key.A,Key.LeftShift);else Keys();
                         CheckDirection();
-                        if(e.CurrentState==BossEncounter.State.Attack && e.AttackElapsed>.2f)
-                        {Check(Mathf.DeltaAngle(0,e.Arena.model.floatingBody.localEulerAngles.x)>15,"Rush leans body into forward motion");Capture("rush_attack");Step(32);}break;
+                        if(e.CurrentState==BossEncounter.State.Recovery && e.LastRushDuration>0)
+                        {Check(e.LastRushDuration<=.28f && e.RushTravel>0 && e.RushWake,"Rush completes quickly and leaves a world-space wake");Capture("rush_attack");Step(32);}break;
                     case 32:
                         CheckDirection();
                         if(e.CurrentState==BossEncounter.State.Recovery)
@@ -133,8 +134,8 @@ namespace ArcaneArchive.Visuals.Editor
                         if(e.CurrentState==BossEncounter.State.Recovery)
                         {Check(e.RushTravel<3 && e.RushHitCount==0 && combat.Health==hp,"Solid obstacle stops rush and protects player");UnityEngine.Object.Destroy(wall);wall=null;NewSession(1);Step(60);}break;
                     case 60:
-                        if(Warning(3,1.85f))
-                        {Check(Vector3.Dot(e.Arena.model.leftArm.localRotation*Vector3.down,Vector3.up)>.25f && Vector3.Dot(e.Arena.model.rightArm.localRotation*Vector3.down,Vector3.up)>.25f,"Laser charge raises both arms above shoulder line");Capture("laser_raised_arms");Step(61);Keys(Key.D,Key.LeftShift);}break;
+                        if(Warning(3,e.Definition.laserChargeTime-.15f))
+                        {Check(ArmsRaised(.25f),"Laser charge raises both arms above shoulder line");Capture("laser_raised_arms");Step(61);Keys(Key.D,Key.LeftShift);}break;
                     case 61:
                         if(t<.85f)Keys(Key.D,Key.LeftShift);else Keys();
                         if(e.CurrentState==BossEncounter.State.Recovery){NewSession(0);Step(70);}break;
@@ -162,6 +163,22 @@ namespace ArcaneArchive.Visuals.Editor
             catch(Exception ex){failure=ex.ToString();step=-1;Write();Stop();menu.Open();Debug.LogError("[Combat polish acceptance] "+ex.Message);}
         }
         static void CheckDirection(){if(Vector3.Angle(direction,e.RushDirection)>.05f)throw new InvalidOperationException("Locked rush bends toward player");}
+        static void OrbitRifts()
+        {
+            Vector3 toward=e.Arena.transform.position-player.transform.position;toward.y=0;
+            player.transform.rotation=Quaternion.LookRotation(toward);Keys(Key.D);
+        }
+        static bool ArmsRaised(float threshold)
+        {
+            var model=e.Arena.model;
+            if(model.animatedRig)
+            {
+                // Imported bones use Blender axes; inspect world hand height rather than legacy Euler angles.
+                float shoulders=model.mask.position.y-.5f;
+                return model.animatedRig.leftHand.position.y>shoulders && model.animatedRig.rightHand.position.y>shoulders;
+            }
+            return Vector3.Dot(model.leftArm.localRotation*Vector3.down,Vector3.up)>threshold && Vector3.Dot(model.rightArm.localRotation*Vector3.down,Vector3.up)>threshold;
+        }
         static void Write(){Directory.CreateDirectory("Docs/BossDesign");File.WriteAllText("Docs/BossDesign/CombatPolishAcceptance.json",Status);Debug.Log("[Combat polish acceptance] "+Status);}
     }
 }

@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-29",
+  "unity": "6000.3.25f1",
+  "scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+  "compilation": "passed",
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "missingSceneScripts": 0,
+  "sceneSaved": true,
+  "playModeStopped": true,
+  "verificationScope": "Minimal functional smoke and selected Game View poses; no full regression or standalone build.",
+  "records": [
+    "MinimalSmoke.json",
+    "PauseSmoke.json",
+    "CloseCombatSmoke.json"
+  ],
+  "missingDeliverableFiles": []
+}

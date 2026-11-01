@@ -21,7 +21,7 @@
         "PASS: Standing in fracture takes one real ground hit",
         "PASS: Return between scenarios",
         "PASS: Enter fresh encounter",
-        "PASS: Rush leans body into forward motion",
+        "PASS: Rush plays its forward-motion pose",
         "PASS: Side dodge avoids committed rush with substantial travel",
         "PASS: Return between scenarios",
         "PASS: Enter fresh encounter",
@@ -44,6 +44,6 @@
     ],
     "health": 100.0,
     "guard": 100.0,
-    "enemyTurn": 9.107582092285157,
-    "playerTurn": 4.534445762634277
+    "enemyTurn": 8.667898178100586,
+    "playerTurn": 4.54269552230835
 }

@@ -1,0 +1,10 @@
+{
+    "result": "Succeeded",
+    "outputPath": "/Users/jack/Desktop/虚拟环境团队/Local_Acceptance_20261007/CandidateProject/Builds/GlassFloor_20261007/MilanLibrary_GlassFloor.app",
+    "unityVersion": "6000.3.25f1",
+    "totalBytes": 1496061758,
+    "errors": 0,
+    "warnings": 1,
+    "seconds": 19.076679,
+    "diagnosticHooksEnabled": false
+}

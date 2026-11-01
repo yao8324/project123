@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39c02d8645f6bb4686e7270139201a8, type: 3}
+  m_Name: OathboundLoadout
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneArchive.Core.MeleeLoadout
+  swordName: "\u9006\u8A93\u5251"
+  shieldName: "\u7F04\u773C\u76FE"
+  swordDescription: "\u65E7\u91D1\u94ED\u6587\u5C01\u7F04\u9ED1\u94A2\u5251\u950B\u3002\u8FDE\u7EED\u6325\u65A9\u7D2F\u79EF\u5931\u8861\uFF0C\u7B2C\u4E09\u51FB\u66F4\u6C89\u3002"
+  shieldDescription: "\u7F04\u773C\u6CE8\u89C6\u6B63\u9762\u6765\u88AD\u3002\u4E3E\u76FE\u77AC\u95F4\u53EF\u5F39\u53CD\u8FD1\u6218\uFF0C\u957F\u6309\u6D88\u8017\u683C\u6321\u503C\u3002"
+  swordPrefab: {fileID: 8991461735263491896, guid: c1dc1c8882a10fc4892124e727e115ec, type: 3}
+  shieldPrefab: {fileID: 1153604848907017550, guid: 06a5d5bc9e2b4524e97cc6a55528c971, type: 3}
+  goldEffect: {fileID: 2100000, guid: a15a687517f95034185144db836afd96, type: 2}
+  violetEffect: {fileID: 2100000, guid: c66fb962852669c40977d8f661289d77, type: 2}
+  maxStamina: 100
+  staminaRegen: 22
+  staminaRegenDelay: 0.8
+  lightDamage: 30
+  lightCost: 8
+  lightReach: 2.8
+  lightDuration: 0.63
+  parryWindow: 0.22
+  parryRefund: 18
+  skills:
+  - title: "\u7834\u8A93\u91CD\u65A9"
+    description: "\u84C4\u529B\u5288\u65A9\u6B63\u9762\u654C\u4EBA\uFF0C\u9020\u6210\u5927\u91CF\u5931\u8861\u3002"
+    damage: 82
+    stamina: 24
+    cooldown: 4
+    duration: 1.05
+    impactTime: 0.43
+    reach: 3.1
+    arc: 95
+    poiseDamage: 48
+  - title: "\u7F04\u773C\u76FE\u51FB"
+    description: "\u8FD1\u8EAB\u76FE\u51FB\u6253\u65AD\u65BD\u6CD5\uFF0C\u5E76\u6062\u590D\u5C11\u91CF\u683C\u6321\u503C\u3002"
+    damage: 26
+    stamina: 18
+    cooldown: 6
+    duration: 0.72
+    impactTime: 0.28
+    reach: 2.4
+    arc: 85
+    poiseDamage: 100
+  - title: "\u8E0F\u5F71\u7A81\u523A"
+    description: "\u5411\u524D\u8E0F\u6B65\u7A81\u523A\uFF1B\u9047\u5899\u505C\u6B62\uFF0C\u523A\u4E2D\u6B63\u524D\u65B9\u654C\u4EBA\u3002"
+    damage: 58
+    stamina: 22
+    cooldown: 5
+    duration: 0.82
+    impactTime: 0.4
+    reach: 3.2
+    arc: 48
+    poiseDamage: 32
+  - title: "\u56DE\u65CB\u5C01\u5370"
+    description: "\u6325\u5251\u73AF\u65A9\u5468\u8EAB\uFF0C\u7D2B\u91D1\u5251\u5F27\u6495\u88C2\u8FD1\u5904\u5C01\u5370\u3002"
+    damage: 68
+    stamina: 32
+    cooldown: 9
+    duration: 1.12
+    impactTime: 0.48
+    reach: 3.3
+    arc: 360
+    poiseDamage: 42

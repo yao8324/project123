@@ -52,3 +52,6 @@
 *.blend2
 __pycache__/
 *.pyc
+
+# Local rollback archive for the 2026-10-27 effect work (source assets are tracked normally).
+/Docs/BossDesign/ArcaneEffects20261027/BeforeRitualEffects.zip

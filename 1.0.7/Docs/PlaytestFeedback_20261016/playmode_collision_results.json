@@ -1,0 +1,346 @@
+[
+  {
+    "test": "seat_lateral",
+    "mesh": 689,
+    "z": 45.295,
+    "side": -1.0,
+    "distance": 0.5275502,
+    "pass": true,
+    "position": "(-5.528, 0.357, 45.270)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 689,
+    "z": 45.295,
+    "side": 1.0,
+    "distance": 0.527549744,
+    "pass": true,
+    "position": "(-4.472, 0.357, 45.270)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 689,
+    "z": 46.705,
+    "side": -1.0,
+    "distance": 0.527549744,
+    "pass": true,
+    "position": "(-5.528, 0.357, 46.730)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 689,
+    "z": 46.705,
+    "side": 1.0,
+    "distance": 0.5275502,
+    "pass": true,
+    "position": "(-4.472, 0.357, 46.730)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 692,
+    "z": 45.295,
+    "side": -1.0,
+    "distance": 0.5275502,
+    "pass": true,
+    "position": "(4.472, 0.357, 45.270)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 692,
+    "z": 45.295,
+    "side": 1.0,
+    "distance": 0.5275502,
+    "pass": true,
+    "position": "(5.528, 0.357, 45.270)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 692,
+    "z": 46.705,
+    "side": -1.0,
+    "distance": 0.5275502,
+    "pass": true,
+    "position": "(4.472, 0.357, 46.730)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 692,
+    "z": 46.705,
+    "side": 1.0,
+    "distance": 0.527549744,
+    "pass": true,
+    "position": "(5.528, 0.357, 46.730)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 695,
+    "z": 19.575,
+    "side": -1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(-5.736, 0.075, 19.568)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 695,
+    "z": 19.575,
+    "side": 1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(-4.664, 0.075, 19.568)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 695,
+    "z": 21.0250015,
+    "side": -1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(-5.736, 0.075, 21.032)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 695,
+    "z": 21.0250015,
+    "side": 1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(-4.664, 0.075, 21.032)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 698,
+    "z": 7.67499876,
+    "side": -1.0,
+    "distance": 0.5357065,
+    "pass": true,
+    "position": "(-6.336, 0.075, 7.668)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 698,
+    "z": 7.67499876,
+    "side": 1.0,
+    "distance": 0.5357065,
+    "pass": true,
+    "position": "(-5.264, 0.075, 7.668)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 698,
+    "z": 9.125,
+    "side": -1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(-6.336, 0.075, 9.132)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 698,
+    "z": 9.125,
+    "side": 1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(-5.264, 0.075, 9.132)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 701,
+    "z": 19.575,
+    "side": -1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(4.664, 0.075, 19.568)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 701,
+    "z": 19.575,
+    "side": 1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(5.736, 0.075, 19.568)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 701,
+    "z": 21.0250015,
+    "side": -1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(4.664, 0.075, 21.032)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 701,
+    "z": 21.0250015,
+    "side": 1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(5.736, 0.075, 21.032)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 704,
+    "z": 7.67499876,
+    "side": -1.0,
+    "distance": 0.5357065,
+    "pass": true,
+    "position": "(5.264, 0.075, 7.668)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 704,
+    "z": 7.67499876,
+    "side": 1.0,
+    "distance": 0.5357065,
+    "pass": true,
+    "position": "(6.336, 0.075, 7.668)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 704,
+    "z": 9.125,
+    "side": -1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(5.264, 0.075, 9.132)"
+  },
+  {
+    "test": "seat_lateral",
+    "mesh": 704,
+    "z": 9.125,
+    "side": 1.0,
+    "distance": 0.535707,
+    "pass": true,
+    "position": "(6.336, 0.075, 9.132)"
+  },
+  {
+    "test": "stairs_up",
+    "side": -1.0,
+    "target": "(-13.40, 20.30)",
+    "steps": 145,
+    "pass": true,
+    "position": "(-13.400, 3.075, 20.250)"
+  },
+  {
+    "test": "stairs_up",
+    "side": -1.0,
+    "target": "(-15.40, 20.30)",
+    "steps": 39,
+    "pass": true,
+    "position": "(-15.349, 3.075, 20.299)"
+  },
+  {
+    "test": "stairs_up",
+    "side": -1.0,
+    "target": "(-15.40, 13.00)",
+    "steps": 145,
+    "pass": true,
+    "position": "(-15.400, 6.075, 13.049)"
+  },
+  {
+    "test": "stairs_up",
+    "side": -1.0,
+    "target": "(-10.60, 12.60)",
+    "steps": 95,
+    "pass": true,
+    "position": "(-10.670, 6.075, 12.607)"
+  },
+  {
+    "test": "stairs_down",
+    "side": -1.0,
+    "target": "(-15.40, 13.00)",
+    "steps": 94,
+    "pass": true,
+    "position": "(-15.354, 6.075, 12.996)"
+  },
+  {
+    "test": "stairs_down",
+    "side": -1.0,
+    "target": "(-15.40, 20.30)",
+    "steps": 145,
+    "pass": true,
+    "position": "(-15.400, 3.075, 20.246)"
+  },
+  {
+    "test": "stairs_down",
+    "side": -1.0,
+    "target": "(-13.40, 20.30)",
+    "steps": 39,
+    "pass": true,
+    "position": "(-13.450, 3.075, 20.299)"
+  },
+  {
+    "test": "stairs_down",
+    "side": -1.0,
+    "target": "(-13.40, 13.00)",
+    "steps": 145,
+    "pass": true,
+    "position": "(-13.400, 0.075, 13.049)"
+  },
+  {
+    "test": "stairs_up",
+    "side": 1.0,
+    "target": "(13.40, 20.30)",
+    "steps": 145,
+    "pass": true,
+    "position": "(13.400, 3.075, 20.250)"
+  },
+  {
+    "test": "stairs_up",
+    "side": 1.0,
+    "target": "(15.40, 20.30)",
+    "steps": 39,
+    "pass": true,
+    "position": "(15.349, 3.075, 20.299)"
+  },
+  {
+    "test": "stairs_up",
+    "side": 1.0,
+    "target": "(15.40, 13.00)",
+    "steps": 145,
+    "pass": true,
+    "position": "(15.400, 6.075, 13.049)"
+  },
+  {
+    "test": "stairs_up",
+    "side": 1.0,
+    "target": "(10.60, 12.60)",
+    "steps": 95,
+    "pass": true,
+    "position": "(10.670, 6.075, 12.607)"
+  },
+  {
+    "test": "stairs_down",
+    "side": 1.0,
+    "target": "(15.40, 13.00)",
+    "steps": 94,
+    "pass": true,
+    "position": "(15.354, 6.075, 12.996)"
+  },
+  {
+    "test": "stairs_down",
+    "side": 1.0,
+    "target": "(15.40, 20.30)",
+    "steps": 145,
+    "pass": true,
+    "position": "(15.400, 3.075, 20.246)"
+  },
+  {
+    "test": "stairs_down",
+    "side": 1.0,
+    "target": "(13.40, 20.30)",
+    "steps": 39,
+    "pass": true,
+    "position": "(13.450, 3.075, 20.299)"
+  },
+  {
+    "test": "stairs_down",
+    "side": 1.0,
+    "target": "(13.40, 13.00)",
+    "steps": 145,
+    "pass": true,
+    "position": "(13.400, 0.075, 13.049)"
+  }
+]

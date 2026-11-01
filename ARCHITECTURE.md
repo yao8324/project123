@@ -1,8 +1,35 @@
 # 版本归档与 Unity 项目架构
 
-## 1.0.5 开发中：环境交互与 UI
+## 当前准备归档的 1.0.7
 
-基于 1.0.4 的独立工程，位于 dev/1.0.5 分支的 1.0.5/；旧版本只读。主场景为 MilanLibrary_Magic_V6，LibraryMain 仍在 Build Settings 第二项启用。
+2026-11-01，按用户明确指定，将 `project123-submit-program-20261027/1.0.6/` 独立复制到本工作树 `1.0.7/`，目标为用户选定的 `lixiang` 历史归档分支。源码结构、场景、Package 和资源 GUID 保持源工程状态；此操作没有新增运行功能。Unity Hub 打开 `1.0.7/`，使用 Unity 6000.3.25f1，入口为 `Assets/Scenes/MilanLibrary_Magic_V6.unity`。
+
+- **源工程已实现：** 图书馆漫游、UI、书籍预览、自动门，以及骨骼 Boss、五种攻击、扩域裂地、瞬冲残影、头顶禁页环列、吞印、格挡、胜负与重试。
+- **资源组织：** `Assets/` 与 `.meta`、`Packages/`、`ProjectSettings/`、`Docs/`、`Blender/`、`Tools/` 均位于 `1.0.7/` 内，不共享其他版本目录。大型资源沿用版本内 Git LFS 配置。
+- **仍规划中或待验收：** 用户资料闭环、AI/RAG、多人、独立运行包与目标设备性能。本次不纳入另一个 `project123/1.0.6/` 工作区中的后续近战、体力和闪避修改，也不声明已集成团队 main v0.1.0。
+- **本轮验证边界：** 复制与静态归档检查；没有重新运行 Unity、Play Mode 或构建。详见 [1.0.7 README](1.0.7/README.md) 与 [归档检查](1.0.7/Docs/ArchivePreparation_20261101.md)。
+
+以下各版本章节保留为历史背景。
+
+## 历史 1.0.6：骨骼 Boss 与战斗表现
+
+2026-10-27 更新：新增 `BossRitualEffects` 分离头顶待发禁页、冲撞拖尾与命中表现的生命周期。`WardenVolleyVisuals` 生成无伤害环列，第二次挥手时把同一批物体交给飞弹逻辑；`WardenRushWake` 用共享简化网格与世界空间光带记录真实冲撞路径，收招后独立消散；`WardenPageImpact` 区分撞击散开和吞印收束。飞弹拖尾按战斗时间与距离截断。裂地两阶段宽度为 1.8／2.2 米，BoxCast 覆盖整条危险带，命中余量按世界空间计算。新资源与参数由 `WardenRitualBuilder` 更新，场景和玩家输入沿用现有结构。最新检查见 [ArcaneEffects20261027](1.0.6/Docs/BossDesign/ArcaneEffects20261027/README.md)。
+
+2026-10-26 更新：动画混合保留当前完整权重并继续推进退出动作；裂地持续施法动作循环。Boss 的收招不再等待弹体销毁；观察、预警和收招时长已缩短。裂地由战斗时钟推进有限转向的线头，每 0.2 秒接续一段固定裂纹；近身锁向、实体墙停止，分段预警、单次命中与回收。`GroundFractureVisuals` 处理细线、裂光、碎屑和能量丝，Shader 不读取全局时间。格挡恢复参数为 12 点/秒、2.5 秒延迟。最新参数与验收见 [CombatFlow20261026](1.0.6/Docs/BossDesign/CombatFlow20261026/README.md)。
+
+当前工作树属于 `lixiang`，Unity Hub 打开 `1.0.6/`。2026-10-24 经用户明确允许更新当前归档；`1.0.1/`～`1.0.5/` 保留历史状态。入口为 `Assets/Scenes/MilanLibrary_Magic_V6.unity`，没有新增输入系统、场景或 Package。
+
+- **已实现战斗：** `BossEncounter` 管理感知、走位、预警、五种攻击、二阶段、胜负与返回；`PlayerCombat` 管理秘文弹、吞印和格挡。伤害与攻击时序由战斗层决定。
+- **新动画：** `WardenVisuals` 作为桥接，`WardenAnimationDriver` 使用 Playables 采样 85 骨骼、17 段 FBX 动作，按战斗状态同步，不使用 Root Motion 或动画伤害事件。`Stagger` 为预留新动作，当前未接入受击状态。
+- **新特效：** `WardenSpellMotion`、`LaserBeamVisuals`、`GroundFractureVisuals` 呈现金紫法环、禁页、激光、裂地和冲撞。共用战斗时钟，暂停冻结；`WardenArenaPostProcessing` 在进入/退出时保存并恢复相机设置。
+- **资源：** 新成品位于 `Assets/Art/ForbiddenWarden/CombatV2/`；主场景引用 `SealChamberRigged.prefab`。原生 Blender 文件位于 `Blender/WardenCombatV2/`，FBX 与 Blender 使用 Git LFS。旧测试资源中无引用的 138 项及 3 个旧生成工具已删除，在用竞技场结构与碰撞保留。
+- **验证：** 当前目录通过 33 项表现检查、39 项战斗回归和资源引用检查。代码清单、截图、删除清单及未验收项见 [CombatV2](1.0.6/Docs/BossDesign/CombatV2/README.md)。自动输入测试属于 Editor 工具，不进入运行包。
+
+**仍规划中：** 用户资料业务闭环、AI/RAG、多人；本轮没有新增近战伤害或剑盾战斗。独立构建、LOD 和目标设备性能验收尚未完成。
+
+## 1.0.5 历史基线：环境交互与 UI
+
+基于 1.0.4 的独立工程，历史开发来源是 dev/1.0.5，现归档在 lixiang 的 1.0.5/；以下描述只对应这一历史版本。主场景为 MilanLibrary_Magic_V6，LibraryMain 仍在 Build Settings 第二项启用。
 
 - **Core / Player：** LibraryInputBindings 管理运行时克隆的 Input Actions、按键换绑、冲突检查和 persistentDataPath/input-bindings.json；FirstPersonController 读取同一套输入，并提供灵敏度和输入禁用接口。
 - **UI：** RecoveryMenu 统一处理 Esc、主面板、世界提示及玩家输入状态；设置页实际调用 MilanQualityOptions 和玩家灵敏度接口。默认高画质，画质和灵敏度仅本次运行生效；按键覆盖跨运行保存。旧 UIInputStateManager 不承担当前主场景第二套菜单输入。
@@ -17,7 +44,7 @@
 ## 分支结构
 
 ```text
-repository/           # 当前开发分支 dev/1.0.5；归档分支 lixiang
+repository/           # 当前分支 lixiang
 ├── README.md          # 版本索引与改动摘要
 ├── AGENTS.md          # 版本上传规则
 ├── ARCHITECTURE.md    # 归档结构与项目逻辑
@@ -25,7 +52,9 @@ repository/           # 当前开发分支 dev/1.0.5；归档分支 lixiang
 ├── 1.0.2/             # 完整工程与 White Castle 挖空样板
 ├── 1.0.3/             # 新版图书馆建模（保留原样）
 ├── 1.0.4/             # GlassFloor 历史基线，保留原样
-└── 1.0.5/             # 当前独立 Unity 6000.3.25f1 开发工程
+├── 1.0.5/             # UI 与环境交互历史版本
+├── 1.0.6/             # 原有工作区，本次不改动
+└── 1.0.7/             # 指定源工程的独立 Unity 6000.3.25f1 快照
     ├── Assets/        # V6 场景、原始网格、材质、Visuals 脚本及旧版资源
     ├── Packages/
     ├── ProjectSettings/

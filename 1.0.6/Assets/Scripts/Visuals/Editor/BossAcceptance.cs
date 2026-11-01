@@ -42,7 +42,7 @@ namespace ArcaneArchive.Visuals.Editor
             checks.Clear();seen.Clear();failure=null;sawDamage=sawPhase2=sawJump=sawAbsorb=false;maxY=0;
             reportPath="PlayModeAcceptance.json";
             origin=player.transform.position;started=EditorApplication.timeSinceStartup;frame=-1;
-            menu.ShowPage(RecoveryMenu.Page.DeepExplore);Click("DeepExploreButton");
+            menu.ShowBook(UnityEngine.Object.FindObjectsByType<ArcaneArchive.Interaction.DemoBookTarget>(FindObjectsSortMode.None).First(t=>t.Record&&t.Record.opensTrial).Record);Click("DeepExploreButton");
             Check(e.IsActive && !e.libraryEnvironment.activeSelf,"Button enters arena and hides library");
             Step(0);EditorApplication.update+=Tick;return Status;
         }
