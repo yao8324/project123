@@ -49,6 +49,8 @@
 
 ## 图片与续做
 
+[九个镜头预演及完整取景参数](Previsualization/README.md)：使用实际大厅和既有相机设置，九个目标视野/遮挡检查通过；8张无重复图片覆盖开场、封档、灾后、低视角睁眼、站起、侧门、返回和两处近景。属于编辑器相机观察，不是完整时序过场或额外玩家站位验收。
+
 [实景灾前](Stage2/Captures/01_production_intact.png) · [封档后](Stage2/Captures/03_production_sealed.png) · [受袭后](Stage2/Captures/04_production_disturbed.png) · [侧门](Stage2/Captures/05_production_side_door.png) · [维护厅出口](Stage2/Captures/06_production_hall_exit.png) · [第三次返回](Stage2/Captures/07_return_to_workstation_3.png)
 
 制作源 `Assets/Scripts/Visuals/Editor/ArchiveWorkstationBuilder.cs`；重建菜单 `Art Studies / Archive / Build workstation candidate`；出图菜单 `Capture workstation candidate`。独立验证工具保存为[ArchiveRuntimeStage2.cs.txt](ArchiveRuntimeStage2.cs.txt)，仅放入测试副本Assets/Editor运行，不导入正式工程。

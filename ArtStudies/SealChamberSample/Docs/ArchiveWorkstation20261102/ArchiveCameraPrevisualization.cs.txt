@@ -1,0 +1,98 @@
+// Editor-only camera proof. Copy into Assets/Editor of the disposable runtime validation project.
+// Uses the actual library, art prefab and camera settings. Does not save the shared scene or implement a cutscene.
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.Rendering;
+using IMMonster.SceneArt;
+using Object=UnityEngine.Object;
+
+public static class ArchiveCameraPrevisualization
+{
+    const string Output="ArchiveCameraEvidence";
+    [Serializable] public class Pose
+    {
+        public string id,label,scope,imageFile;
+        public Vector3 eye,target,euler;
+        public bool disturbed,sealedState,targetInView,unobstructed;
+        public float fieldOfView;
+        public string[] blockers;
+    }
+    [Serializable] class Report
+    {
+        public bool passed;
+        public string unity,pipeline,scope="Editor-rendered camera study in the actual library; not Play Mode, a timed story cutscene or a controller placement test";
+        public int width=1600,height=900;
+        public Pose[] poses;
+    }
+    public static void Run()
+    {
+        if(EditorApplication.isPlaying)throw new InvalidOperationException("Exit Play Mode first");
+        Directory.CreateDirectory(Output+"/Captures");
+        File.WriteAllText(Output+"/camera-validation.json","{\"passed\":false,\"status\":\"In progress\"}");
+        EditorSceneManager.OpenScene("Assets/ArtValidation/ArchiveStage2Scene.unity");
+        var art=Object.FindFirstObjectByType<ArchiveWorkstationArt>();
+        var camera=Camera.main;
+        if(!art || !camera)throw new InvalidOperationException("Missing candidate or production camera");
+        float originalFov=camera.fieldOfView;ShaderUtil.allowAsyncCompilation=false;
+        var captureHashes=new Dictionary<string,string>();
+        var poses=new List<Pose>
+        {
+            Shot("01_work_intact","Opening work",new Vector3(5.2f,1.68f,7.1f),new Vector3(5.405f,.89f,8.205f),false,false,"Eye-level study above the independently verified work feet",originalFov),
+            Shot("02_work_sealed","Seal completed, same view",new Vector3(5.2f,1.68f,7.1f),new Vector3(5.405f,.89f,8.205f),false,true,"Same framing; state difference only",originalFov),
+            Shot("03_work_disturbed","After incident, same view",new Vector3(5.2f,1.68f,7.1f),new Vector3(5.405f,.89f,8.205f),true,true,"Same framing; no identity confirmation",originalFov),
+            Shot("04_awaken_low","Proposed low awakening view",new Vector3(5.05f,1.10f,7.0f),new Vector3(5.405f,.89f,8.205f),true,true,"Camera animation proposal only; do not place or scale the character capsule to this eye point",originalFov),
+            Shot("05_recover_standing","Proposed standing recovery",new Vector3(5.05f,1.68f,7.0f),new Vector3(5.405f,.89f,8.205f),true,true,"Shares the verified awakening XZ foot location",originalFov),
+            Shot("06_side_door_direction","Side-door direction from aisle",new Vector3(6,1.68f,3.1f),new Vector3(6,2.1f,.2f),true,true,"Static direction study; no floor arrows, UI or input takeover",originalFov),
+            Shot("07_return_same_work","Return to recognizable work area",new Vector3(5.2f,1.68f,7.1f),new Vector3(5.405f,.89f,8.205f),true,true,"Same camera as opening; still stops before body reveal",originalFov),
+            Shot("08_seal_detail","Seal filigree detail",new Vector3(5.03f,1.15f,7.95f),new Vector3(5.17f,.89f,8.205f),false,true,"Art macro only; not a validated player standing location",48),
+            Shot("09_badge_reverse","Post-incident badge reverse detail",new Vector3(5.04f,1.17f,8.32f),new Vector3(5.06f,.8992f,8.61f),true,true,"Art macro only; identity print disabled",48)
+        };
+        try
+        {
+            foreach(var pose in poses)
+            {
+                art.SetDisturbed(pose.disturbed);art.SetArchiveSealed(pose.sealedState);
+                camera.transform.SetPositionAndRotation(pose.eye,Quaternion.LookRotation(pose.target-pose.eye,Vector3.up));
+                camera.fieldOfView=pose.fieldOfView;camera.aspect=1600f/900;pose.euler=camera.transform.eulerAngles;
+                Physics.SyncTransforms();
+                var viewport=camera.WorldToViewportPoint(pose.target);
+                pose.targetInView=viewport.z>camera.nearClipPlane && viewport.x>.05f && viewport.x<.95f && viewport.y>.05f && viewport.y<.95f;
+                float distance=Vector3.Distance(pose.eye,pose.target);
+                pose.blockers=Physics.RaycastAll(pose.eye,(pose.target-pose.eye).normalized,Mathf.Max(0,distance-.045f),Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)
+                    .Where(hit=>!hit.collider.transform.IsChildOf(camera.transform.root)).Select(hit=>hit.collider.name).Distinct().ToArray();
+                pose.unobstructed=pose.blockers.Length==0;
+                if(!pose.targetInView || !pose.unobstructed)throw new Exception(pose.id+" target blocked or out of frame: "+string.Join(",",pose.blockers));
+                if(pose.disturbed && art.disturbedProps.GetComponentsInChildren<TextMesh>().Any(t=>t.transform.parent && t.transform.parent.name=="BadgePrint"))
+                    throw new Exception("Active identity print in post-incident camera state");
+                pose.imageFile=Capture(camera,pose.id,captureHashes);
+                Debug.Log("[ArchiveCamera] PASS "+pose.id);
+            }
+            File.WriteAllText(Output+"/camera-validation.json",JsonUtility.ToJson(new Report{passed=true,unity=Application.unityVersion,pipeline=GraphicsSettings.currentRenderPipeline?.name,poses=poses.ToArray()},true));
+        }
+        finally{EditorSceneManager.OpenScene("Assets/ArtValidation/ArchiveStage2Scene.unity");}
+    }
+    static Pose Shot(string id,string label,Vector3 eye,Vector3 target,bool disturbed,bool sealedState,string scope,float fov)
+        =>new Pose{id=id,label=label,eye=eye,target=target,disturbed=disturbed,sealedState=sealedState,scope=scope,fieldOfView=fov};
+    static string Capture(Camera camera,string id,Dictionary<string,string> captureHashes)
+    {
+        var previous=camera.targetTexture;var active=RenderTexture.active;
+        var rt=new RenderTexture(1600,900,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);rt.Create();
+        var texture=new Texture2D(1600,900,TextureFormat.RGB24,false);
+        try
+        {
+            camera.targetTexture=rt;for(int i=0;i<4;i++)camera.Render();RenderTexture.active=rt;
+            texture.ReadPixels(new Rect(0,0,1600,900),0,0);texture.Apply();
+            var bytes=texture.EncodeToPNG();string hash;
+            using(var sha=System.Security.Cryptography.SHA256.Create())hash=BitConverter.ToString(sha.ComputeHash(bytes));
+            if(captureHashes.TryGetValue(hash,out string existing))return existing;
+            string filename="Captures/"+id+".png";
+            File.WriteAllBytes(Output+"/"+filename,bytes);captureHashes.Add(hash,filename);return filename;
+        }
+        finally{camera.targetTexture=previous;RenderTexture.active=active;rt.Release();Object.DestroyImmediate(rt);Object.DestroyImmediate(texture);}
+    }
+}

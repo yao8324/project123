@@ -1,0 +1,42 @@
+[
+  {
+    "path": "Captures/01_work_intact.png",
+    "bytes": 2189081,
+    "sha256": "84bf2a85e054e67385a09811c2abed088ffdc1f14cb63d7924447366b6eb80ca"
+  },
+  {
+    "path": "Captures/02_work_sealed.png",
+    "bytes": 2191153,
+    "sha256": "e3098245b45e8e30d288a7c1063fb47a405a5768e3420802a17a1d395299e9e9"
+  },
+  {
+    "path": "Captures/03_work_disturbed.png",
+    "bytes": 2191074,
+    "sha256": "3e2a366f01e9624dd474d4e576523eea96df9b266a78688790964d5816c9c84e"
+  },
+  {
+    "path": "Captures/04_awaken_low.png",
+    "bytes": 2110609,
+    "sha256": "6d0692d919d039012aaec504b7ba7bf025a7aa230edf32ddc39c5964cf867959"
+  },
+  {
+    "path": "Captures/05_recover_standing.png",
+    "bytes": 2203339,
+    "sha256": "f558b0e024a2dc830fb65ed128da74a851f52042e2936aa99f3a8ab4d1b280cb"
+  },
+  {
+    "path": "Captures/06_side_door_direction.png",
+    "bytes": 1513580,
+    "sha256": "9fe1071429ebfa20a6e141611d2cb3b97152f756608c5190abf9cb2864397d5d"
+  },
+  {
+    "path": "Captures/08_seal_detail.png",
+    "bytes": 1354372,
+    "sha256": "6631f5d876b7a29d4a1e6e72c5f9f9d720421b43f7bcbc51e3e91a467080876e"
+  },
+  {
+    "path": "Captures/09_badge_reverse.png",
+    "bytes": 1767157,
+    "sha256": "fa80b9ca0603f0c6cc821e01f82e504a95f1d8fce1bbf7254ebbb7730800f124"
+  }
+]
