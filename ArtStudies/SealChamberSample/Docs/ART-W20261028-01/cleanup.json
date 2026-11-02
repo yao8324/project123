@@ -1,0 +1,52 @@
+{
+  "deleted": [
+    {
+      "path": "D:\\project123\\ArtStudies\\SealChamberSample\\Library",
+      "bytes": 1592284306,
+      "reason": "regenerable editor cache/settings"
+    },
+    {
+      "path": "D:\\project123\\ArtStudies\\SealChamberSample\\Logs",
+      "bytes": 181,
+      "reason": "regenerable editor cache/settings"
+    },
+    {
+      "path": "D:\\project123\\ArtStudies\\SealChamberSample\\UserSettings",
+      "bytes": 59732,
+      "reason": "regenerable editor cache/settings"
+    },
+    {
+      "path": "D:\\project123\\ArtStudies\\SealChamberSample\\build-study.log",
+      "bytes": 30060,
+      "reason": "superseded local build log"
+    },
+    {
+      "path": "D:\\project123\\ArtStudies\\SealChamberSample\\editor-study.log",
+      "bytes": 520,
+      "reason": "superseded local build log"
+    },
+    {
+      "path": "D:\\project123\\ArtStudies\\SealChamberSample\\layout-build.log",
+      "bytes": 25019,
+      "reason": "superseded local build log"
+    },
+    {
+      "path": "D:\\project123\\ArtStudies\\SealChamberSample\\layout-capture.log",
+      "bytes": 19334,
+      "reason": "superseded local build log"
+    },
+    {
+      "path": "D:\\project123-art-validation-W20261028",
+      "bytes": 6318281409,
+      "reason": "task-created disposable validation project and intermediate capture frames; final evidence exported"
+    }
+  ],
+  "deletedBytes": 7910700561,
+  "preserved": [
+    "All historical samples, sources, prefabs, meta, captures, package/settings files",
+    "Other members files and active WPS lock file",
+    "Existing unrelated ShaderGraphSettings whitespace edit"
+  ],
+  "unusedWeeklyMaterialsAndMeshes": [],
+  "unityInstallerRemoved": true
+}

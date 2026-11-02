@@ -1,0 +1,148 @@
+{
+    "task": "ART-W20261028-01",
+    "runtimeProject": "1.0.6",
+    "requiredUnity": "6000.3.25f1",
+    "testedUnity": "6000.3.24f1 (user authorized installed version)",
+    "groundY": 0.0,
+    "flatRadius": 14.0,
+    "anchors": [
+        {
+            "id": "MAINTENANCE_TO_ARCHIVE",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -15.100000381469727
+            },
+            "localForward": {
+                "x": -8.742277657347586e-8,
+                "y": 0.0,
+                "z": -1.0
+            }
+        },
+        {
+            "id": "MAINT_NODE_01",
+            "localPosition": {
+                "x": 10.267190933227539,
+                "y": 0.0,
+                "z": 10.267190933227539
+            },
+            "localForward": {
+                "x": 0.7071068286895752,
+                "y": 0.0,
+                "z": 0.7071067094802856
+            }
+        },
+        {
+            "id": "MAINT_NODE_02",
+            "localPosition": {
+                "x": 10.267190933227539,
+                "y": 0.0,
+                "z": -10.267190933227539
+            },
+            "localForward": {
+                "x": 0.7071068286895752,
+                "y": 0.0,
+                "z": -0.7071069478988648
+            }
+        },
+        {
+            "id": "MAINT_NODE_03",
+            "localPosition": {
+                "x": -14.520000457763672,
+                "y": 0.0,
+                "z": 1.7314927447387164e-7
+            },
+            "localForward": {
+                "x": -1.0000001192092896,
+                "y": 0.0,
+                "z": -1.1920928955078126e-7
+            }
+        },
+        {
+            "id": "PlayerSpawn_Reference",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.019999999552965165,
+                "z": -10.0
+            },
+            "localForward": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1.0
+            }
+        },
+        {
+            "id": "BossSpawn_Reference_NoActor",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 4.0
+            },
+            "localForward": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1.0
+            }
+        },
+        {
+            "id": "CombatArea_Radius14m",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "localForward": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1.0
+            }
+        },
+        {
+            "id": "STORY_MAINTENANCE_ENTER_Spawn",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.07999999821186066,
+                "z": -13.300000190734864
+            },
+            "localForward": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1.0
+            }
+        },
+        {
+            "id": "STORY_ARCHIVE_RETURN_Exit",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.07999999821186066,
+                "z": -16.899999618530275
+            },
+            "localForward": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1.0
+            }
+        },
+        {
+            "id": "ArchiveSideDoor_Link",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -15.100000381469727
+            },
+            "localForward": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1.0
+            }
+        }
+    ],
+    "archiveKitWorldPosition": {
+        "x": 6.0,
+        "y": 0.0,
+        "z": -0.20000000298023225
+    },
+    "archiveKitYaw": 180.0,
+    "archiveDoor": "Exterior_V3_DarkHistoricalDoorWood_385 (right inner side door x=6)",
+    "note": "Anchors are relative to MaintenanceHall root. Archive kit uses the existing right side door, not the front entrance. Bind input and story states in program. RequestInteraction does not advance story or teleport. Keep old eight point lights disabled; candidate contains six lights."
+}

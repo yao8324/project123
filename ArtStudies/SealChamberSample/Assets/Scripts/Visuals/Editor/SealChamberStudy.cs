@@ -10,7 +10,7 @@ using UnityEngine.Rendering.Universal;
 using Object = UnityEngine.Object;
 
 // Standalone art study. Generates only its own assets; no dependency on the game scripts.
-public static class SealChamberStudy
+public static partial class SealChamberStudy
 {
     const string Root = "Assets/Art/SealChamberStudy";
     static Material stone, stoneLight, mortar, dark, brass, patina, glow, violet;

@@ -1,0 +1,362 @@
+[
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials.meta",
+    "bytes": 172,
+    "sha256": "09b130135dbf0a6e886c8148303838a5d718af8a83765fbe238a5ada0221eb0f"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes.meta",
+    "bytes": 172,
+    "sha256": "951dfe32d69bad1c3b68a33fed3c3bdb27b71c9bf7fd0487d08035568544aa2e"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs.meta",
+    "bytes": 172,
+    "sha256": "9cd01e11df371fc438ca862a4a5b3f04d179dd242b676e649de94b8e1fcdabb6"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Scenes.meta",
+    "bytes": 172,
+    "sha256": "7003cbb8c2de8cc87045c144a555bdd3fe7ad841d6548d27de40216d6ea2c61a"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Archive_Cord_Blue.mat",
+    "bytes": 3847,
+    "sha256": "ebbd4f5093f45e3e897c153f4a51846cac8b043aa00b0914572f4c8bd07220d1"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Archive_Cord_Blue.mat.meta",
+    "bytes": 188,
+    "sha256": "af5881d1d656fb7c494312c14900b0ee3df7d75d04391c62ed761ff45ec94002"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Archive_Ink.mat",
+    "bytes": 3834,
+    "sha256": "3066b4d9bdc7eec1debb1f0454b96cb6ded19b3197bfe2738f226e3379cf28ac"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Archive_Ink.mat.meta",
+    "bytes": 188,
+    "sha256": "cd0e6cdaf2fdd49ba2a07893528e6b44732d21deec1b5db0ac3c59c3e394733b"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Archive_Paper.mat",
+    "bytes": 3831,
+    "sha256": "2743b9f18250e910dfeee009dce85ffb7aec5b603cb3460da4c6443956de5812"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Archive_Paper.mat.meta",
+    "bytes": 188,
+    "sha256": "8e72384090e31e1115c3726ef58d04c50bbc2ee0109f71ed5d3cc46864b72eb1"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Node_Cyan.mat",
+    "bytes": 3848,
+    "sha256": "20abb5625b3431a0ea157f5cff9bd332d5253e769f991ef8c054a6cae758c3f1"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Materials/Node_Cyan.mat.meta",
+    "bytes": 188,
+    "sha256": "67b8ae19804eeae354fc91b6c0f635c83139bce24bcf1fe2e10e29fb3db13983"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveEntry_06_OxidisedBrass.asset",
+    "bytes": 6451,
+    "sha256": "44dc369bcfc587af029fdb965334c85fcb42020189968666f9f350306cbc6203"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveEntry_06_OxidisedBrass.asset.meta",
+    "bytes": 188,
+    "sha256": "44cf2405fe97b6a962aa5f654759a991213ba729b739a418a0605cc2bef19126"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_04_Obsidian.asset",
+    "bytes": 6429,
+    "sha256": "0c460c070318705298a6692c18902380b515713c35a96d9754d3e44e4041c3b9"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_04_Obsidian.asset.meta",
+    "bytes": 188,
+    "sha256": "2f41396b97c0eeda7659c348920790b3a3824eb66309b441fa042f86c3458e06"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_Archive_Cord_Blue.asset",
+    "bytes": 6491,
+    "sha256": "08dc4faf6987d815d28844ba127891e9cf1b6e8d5bd5725fdcdf8dc3b0aaaeaf"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_Archive_Cord_Blue.asset.meta",
+    "bytes": 188,
+    "sha256": "427a85c5ea03fc4e2c5546d8f15467e33eddc1d866fad25d619fa36db2fa04a9"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_Archive_Ink.asset",
+    "bytes": 24348,
+    "sha256": "4840b7982259975a8bd6f7f3b86ea517aabcc3fe8b92399b52e995b4a4cd40c0"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_Archive_Ink.asset.meta",
+    "bytes": 188,
+    "sha256": "58d32e61f3af0ecb5946ee81b64baa40fb0a3c096452058f30cf983d3077b943"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_Archive_Paper.asset",
+    "bytes": 15388,
+    "sha256": "f1fc97110487499194496807b556256ffbfe3e9fff2cdc1d9344c8f683bace4d"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ArchiveRecord_Archive_Paper.asset.meta",
+    "bytes": 188,
+    "sha256": "7b818315d55fd237914e7c0ef73c2b22a44d7c50e19b62b2000f86bf0eb81975"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/BlueArchiveCord_Archive_Cord_Blue.asset",
+    "bytes": 448729,
+    "sha256": "179dc50993abaf2a86299d5e1325ce7379e9c8d10f43c17cd68b78eef8bc1b1b"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/BlueArchiveCord_Archive_Cord_Blue.asset.meta",
+    "bytes": 188,
+    "sha256": "06a3a9d7c6b478ab79135f79432e5936143a56517b14caa03b8aefc1e09b7803"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ElaineBadge_05_AgedBrass.asset",
+    "bytes": 6432,
+    "sha256": "7cc9d42b6c5d23abaaf13a417605e2575e155bec10dce452fa05671d00c1e431"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ElaineBadge_05_AgedBrass.asset.meta",
+    "bytes": 188,
+    "sha256": "d5ed04529945d3d84c3ad5b5bcf1be4120f48cf7513cb24a0084d0f9cd8c6522"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ElaineBadge_Archive_Cord_Blue.asset",
+    "bytes": 6459,
+    "sha256": "62316e0119b2a4f3649e892b52c3b384b3e379d784596d79b3b0069c75c49296"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ElaineBadge_Archive_Cord_Blue.asset.meta",
+    "bytes": 188,
+    "sha256": "c9f4773b51dbf3c6c3405635c99bd50aa93deef037fe06bac3b60d4cdc19fc6b"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ElaineBadge_Archive_Paper.asset",
+    "bytes": 6447,
+    "sha256": "9e82809efe8bb07f65d7207d152bc500dd0760e004cf82b71e0cd522b4181d34"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/ElaineBadge_Archive_Paper.asset.meta",
+    "bytes": 188,
+    "sha256": "04e9d691e2f9f05fe399dd3d9c0971430c36718cb7a3e27031f682846078bf89"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_01_AgedLimestone.asset",
+    "bytes": 18338,
+    "sha256": "7b44e9685906c12b3a9a85ae641aeb801ca679a4c8f652cb1f0d1cd7183536b7"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_01_AgedLimestone.asset.meta",
+    "bytes": 188,
+    "sha256": "6f045b4f2117c2b35c2b3428c3bc5e4351ba0d5d2d81e9482b12d01dc31b09e2"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_02_CutStone.asset",
+    "bytes": 12425,
+    "sha256": "215630994a58549d5ed26eab681c930a6e683999f3ae754144b6284544f74cdd"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_02_CutStone.asset.meta",
+    "bytes": 188,
+    "sha256": "36481a3e504d1702db9363ab1c0626dac8c14c2e048d0380980d30b81f5fc618"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_04_Obsidian.asset",
+    "bytes": 7108,
+    "sha256": "32596f428f9a3da3340fe586187c16f623674a67030a7b022f473065f9f28967"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_04_Obsidian.asset.meta",
+    "bytes": 188,
+    "sha256": "66b236e91b1d4b71067109884105d85ea7b962bbf3edb588a335540d6a4ce2b5"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_05_AgedBrass.asset",
+    "bytes": 9439,
+    "sha256": "d99e5018bef1d981c503d5d895d948293f48cbe9d4cdf30ed2e0855201ae161f"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_05_AgedBrass.asset.meta",
+    "bytes": 188,
+    "sha256": "661533f6e4482230ee4c1f6d7507149a81e5f0ae9809d4b695df5f8e889e5f2e"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_06_OxidisedBrass.asset",
+    "bytes": 6467,
+    "sha256": "a3249802a2cd20c06948a2c3ee9fdda4d12704651c075f2877ee0abffb3e7dd6"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_06_OxidisedBrass.asset.meta",
+    "bytes": 188,
+    "sha256": "f0334ba38c92cbf55649a57fa09354b08d88406ee864d1b800c36b3775f64880"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/PassageApron.asset",
+    "bytes": 6610,
+    "sha256": "170998cb0d72effb05c7d4e01c444dd1c9b8b3844495e005fa81a00ed040e281"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/PassageApron.asset.meta",
+    "bytes": 188,
+    "sha256": "8794e710997895da7c2be826456fc6e6f2fd4b21e7ec1fcd80437067fe5d8cd5"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_04_Obsidian.asset",
+    "bytes": 6422,
+    "sha256": "48207833536e859884339c6e0db34c911cccbb7229dd4b2dc34c41601a134f30"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_04_Obsidian.asset.meta",
+    "bytes": 188,
+    "sha256": "314008a2b4abceec5ee4243fde361f5ff6925a2e1480ea6f13ed989546b19bf9"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_05_AgedBrass.asset",
+    "bytes": 46493,
+    "sha256": "2df5afe5fa06c30eeaa2b83db75694dbad9da528644de9c8ff162e965f2bb5ee"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_05_AgedBrass.asset.meta",
+    "bytes": 188,
+    "sha256": "a5c96d8f67bb54a46b297e34568a9ba19f826bbfcd84f8a08c6b1b5cd4530905"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_06_OxidisedBrass.asset",
+    "bytes": 9429,
+    "sha256": "4034c76fd732a0867e0761540aa87d136247ef0ea0a8c12a041644aa8dd0f5b2"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_06_OxidisedBrass.asset.meta",
+    "bytes": 188,
+    "sha256": "6c6b9139fb18756d704525ad8c4ce95281eda857560035f50ac186efc7ecfa5b"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_Node_Cyan.asset",
+    "bytes": 12411,
+    "sha256": "fd87aa1f1026d54bb063071d0621e4a1d06f24cba6b83634d885e23ff32ac737"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/SupplyNode_Node_Cyan.asset.meta",
+    "bytes": 188,
+    "sha256": "3dcfa704c1a85143dddcb73d87dcf40ee5e40c8fdb1b86c0c027ba263a0a3e24"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/ArchiveEntryKit.prefab",
+    "bytes": 9223,
+    "sha256": "3dfb9cfb3a27063eb63dcebafd0446470dfcee8be1d1c788f53b61e46ba4f400"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/ArchiveEntryKit.prefab.meta",
+    "bytes": 154,
+    "sha256": "7177494b673c806ec92d935698d9bb412b2d20ad021afea409711b8feef4532a"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/ArchiveRecord.prefab",
+    "bytes": 11563,
+    "sha256": "1140a60005a91863b1916a3702746b200ef680bd7a5902da5f715a8ea9c77215"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/ArchiveRecord.prefab.meta",
+    "bytes": 154,
+    "sha256": "373fd2bbbbd6e3f7b2d27dabb0bf69a451f9608a4066227eecadb2075af90589"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/BlueArchiveCord.prefab",
+    "bytes": 3581,
+    "sha256": "68eed82b1501298f596f2c00984c2df47944bdf794bb711dcb45798d104164fd"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/BlueArchiveCord.prefab.meta",
+    "bytes": 154,
+    "sha256": "8290ca6965d20c44c9444b6430047a8053b949ba3f471ef9b6d6be0843024ac9"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/ElaineWorkBadge.prefab",
+    "bytes": 12824,
+    "sha256": "a8a43ce456eee2ce59c5eb11140eec18295ae478a367dbf3f61dab74eab3ec1e"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/ElaineWorkBadge.prefab.meta",
+    "bytes": 154,
+    "sha256": "0aa633f47b37134f7fa19823f99b58f18c153a8d6a02cd94f25f3b6bbe010e02"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenanceHall.prefab",
+    "bytes": 113708,
+    "sha256": "14a6df88132e6f563a19eb57b928dda4978ff57ebe5855712299be180ef3341c"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenanceHall.prefab.meta",
+    "bytes": 154,
+    "sha256": "ed0bfa756a2fb5845cdeed041c58958a1a7112a9155fa686e932fee694ce67da"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenancePassage.prefab",
+    "bytes": 31165,
+    "sha256": "3927dfec788171a72f1f90659402db2c6ccff8defd6984dac2b218a8f6a8125b"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenancePassage.prefab.meta",
+    "bytes": 154,
+    "sha256": "91c8e57d3fa6dd92bf3b9d0a60f5a963fa949ab34e552b30809c3c383183c37a"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/SupplyNode.prefab",
+    "bytes": 17608,
+    "sha256": "f93c2bd4e97c47eb39cd28277136a7c90cc7579dad3a9b4f4e1da0b13eee5946"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/SupplyNode.prefab.meta",
+    "bytes": 154,
+    "sha256": "a6bef5fe04452e9bd8cab634a788c679254796956bc53c1a7dfada28e9680db0"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Scenes/MaintenanceArtReview.unity",
+    "bytes": 133256,
+    "sha256": "52002e1564daa7b470a50cdec22bbf6cfec22c74791b5983909f9cb835ce7e23"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Scenes/MaintenanceArtReview.unity.meta",
+    "bytes": 155,
+    "sha256": "d882c6febee6bc1269abb00f347f5b50189ad0c404c6513f3ecdf9a333e6dd8e"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/Scripts/MaintenanceArtAnchor.cs",
+    "bytes": 1635,
+    "sha256": "d0de8ed04fb58aa9045e4a4945ab6c42465ee932c1cf0f9dc4ac82b904e49e1e"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/Scripts/MaintenanceArtAnchor.cs.meta",
+    "bytes": 59,
+    "sha256": "22f0ef4a571d2049c28db05b0060eecd451c74bd1715f1ed3a7b51dcc7d21b47"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/MaintenanceArtBuilder.cs",
+    "bytes": 22678,
+    "sha256": "421525f5563087c11bc6e3acadede14f335746758948fd1ec42ad94de51276dc"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028.meta",
+    "bytes": 172,
+    "sha256": "ce27bbcfcdc0f272cce87d4781db2fcc9f2c3686a10f19365bf32b534b8ffee5"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/Scripts.meta",
+    "bytes": 172,
+    "sha256": "240813c9228cded748ea7ef7c7402959979aadd1cad6f74b7cc9c33776100546"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/MaintenanceArtBuilder.cs.meta",
+    "bytes": 59,
+    "sha256": "b5cd8e4c885c42715888565a1499584ef787e044d7eeb11adb822eff414093c6"
+  }
+]

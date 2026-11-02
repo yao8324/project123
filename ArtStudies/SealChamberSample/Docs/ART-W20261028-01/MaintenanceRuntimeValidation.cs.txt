@@ -1,0 +1,257 @@
+// Copy to Assets/Editor ONLY in a disposable 1.0.6 validation project.
+// This is a test driver, not production story code. Uses existing input/controller/arena.
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using ArcaneArchive.Core;
+using ArcaneArchive.Player;
+using ArcaneArchive.UI;
+using ArcaneArchive.Visuals;
+using ArcaneArchive.Visuals.Editor;
+using ArcaneArchive.Interaction;
+using IMMonster.SceneArt;
+using Object=UnityEngine.Object;
+
+[InitializeOnLoad]
+public static class MaintenanceRuntimeValidation
+{
+    const string Flag="MaintenanceValidation.Active";
+    const string Art="Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/";
+    const string Out="ValidationEvidence";
+    static BossEncounter encounter;static FirstPersonController player;static RecoveryMenu menu;static Camera cam;
+    static GameObject hall,entry;static BossTestInputScope scope;static CharacterController cc;
+    static MaintenanceArtAnchor[] nodes;static readonly List<string> checks=new List<string>();
+    static readonly List<float> frameMs=new List<float>();static readonly List<string> times=new List<string>();
+    static int step,index,lastFrame=-1,videoFrame,wallIndex,roundTrip;static float since,started,lastCapture,maxJump,minFeet,maxSprint;
+    static Vector3 previous;static uint jumps;static int requests;static bool crouched;static string failure;
+    static RenderTexture rt;static Texture2D tex;
+    [Serializable] class Report
+    {
+        public string unity,device,cpu,pipeline,quality,failure,resolution="960x540 camera target",performanceLimit="Editor batch rendering on this machine; not standalone target-platform acceptance. Capture frames excluded from timing.";
+        public int step,videoFrames,frameSamples;public float elapsedSeconds,p50FrameMs,p95FrameMs,p99FrameMs,minFeetY,maxJumpY,maxSprintSpeed;
+        public string[] checks;
+    }
+    static bool initialised;
+    static double lastBootstrapLog;
+    static MaintenanceRuntimeValidation(){EditorApplication.update+=Bootstrap;}
+    static void Bootstrap()
+    {
+        if((SessionState.GetBool(Flag,false) || SessionState.GetInt("ArcaneArchive.RitualBatch",0)>0) && EditorApplication.isPlaying)
+        {if(EditorApplication.isPaused)EditorApplication.isPaused=false;EditorApplication.QueuePlayerLoopUpdate();}
+        if(SessionState.GetBool(Flag,false) && !initialised && EditorApplication.timeSinceStartup-lastBootstrapLog>5)
+        {lastBootstrapLog=EditorApplication.timeSinceStartup;Debug.Log("[MaintenanceValidation] Bootstrap playing="+EditorApplication.isPlaying+" changing="+EditorApplication.isPlayingOrWillChangePlaymode+" frame="+Time.frameCount);}
+        var readyPlayer=Object.FindFirstObjectByType<FirstPersonController>();
+        if(!initialised && SessionState.GetBool(Flag,false) && EditorApplication.isPlaying && !EditorApplication.isCompiling && readyPlayer && readyPlayer.Bindings!=null)
+        {initialised=true;Start();}
+    }
+    public static void Run()
+    {
+        Directory.CreateDirectory(Out+"/Frames");Directory.CreateDirectory(Out+"/Captures");
+        EditorSceneManager.OpenScene("Assets/Scenes/MilanLibrary_Magic_V6.unity");
+        var e=Object.FindFirstObjectByType<BossEncounter>();if(!e)throw new Exception("Production encounter missing");
+        Directory.CreateDirectory("Assets/ArtValidation");AssetDatabase.Refresh();
+        var arena=PrefabUtility.LoadPrefabContents(AssetDatabase.GetAssetPath(e.arenaPrefab));
+        try
+        {
+            var original=arena.GetComponentsInChildren<Transform>(true).First(t=>t.name=="WallBays_24").parent;
+            Object.DestroyImmediate(original.gameObject);
+            var candidate=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Art+"MaintenanceHall.prefab"),arena.transform);
+            candidate.transform.localPosition=Vector3.zero;candidate.transform.localRotation=Quaternion.identity;
+            var saved=PrefabUtility.SaveAsPrefabAsset(arena,"Assets/ArtValidation/ValidationArena.prefab");e.arenaPrefab=saved.GetComponent<BossArena>();
+        }
+        finally{PrefabUtility.UnloadPrefabContents(arena);}
+        entry=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Art+"ArchiveEntryKit.prefab"));
+        entry.transform.SetPositionAndRotation(new Vector3(6f,0,-.2f),Quaternion.Euler(0,180,0));
+        entry.transform.SetParent(e.libraryEnvironment.transform,true);
+        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),"Assets/ArtValidation/ValidationScene.unity");
+        Application.runInBackground=true;EditorWindow.GetWindow(typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView")).Focus();
+        SessionState.SetBool(Flag,true);EditorApplication.isPlaying=true;
+    }
+    public static void CaptureArchiveEntry()
+    {
+        Directory.CreateDirectory(Out+"/Captures");EditorSceneManager.OpenScene("Assets/ArtValidation/ValidationScene.unity");
+        var e=Object.FindFirstObjectByType<BossEncounter>();cam=e.GetComponentInChildren<Camera>();
+        e.transform.SetPositionAndRotation(new Vector3(6,.08f,1.4f),Quaternion.Euler(0,180,0));cam.transform.LookAt(new Vector3(6,2,-.2f));
+        rt=new RenderTexture(960,540,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);rt.Create();tex=new Texture2D(960,540,TextureFormat.RGB24,false);
+        Capture("01_existing_archive_side_door_final");Object.DestroyImmediate(tex);rt.Release();Object.DestroyImmediate(rt);
+    }
+    public static void RunCombatRegression()
+    {
+        CaptureArchiveEntry();
+        // Same production runner; the disposable copy loads its generated candidate scene.
+        WardenRitualBatch.Run();
+    }
+    static void Start()
+    {
+        try
+        {
+            scope=new BossTestInputScope();Application.runInBackground=true;Application.targetFrameRate=-1;QualitySettings.vSyncCount=0;
+            if(Keyboard.current==null)InputSystem.AddDevice<Keyboard>();
+            encounter=Object.FindFirstObjectByType<BossEncounter>();player=encounter.GetComponent<FirstPersonController>();menu=encounter.GetComponent<RecoveryMenu>();cc=player.GetComponent<CharacterController>();cam=encounter.View;
+            if(!player.GetComponent<PlayerInteractor>())player.gameObject.AddComponent<PlayerInteractor>();
+            entry=GameObject.Find("ArchiveEntrySignAndAnchors");
+            foreach(var id in new[]{"Forward","Backward","Left","Right","Sprint","Jump","Crouch"})
+            {var binding=player.Bindings.Find(id);binding.action.RemoveBindingOverride(binding.index);}
+            menu.Resume();player.SetGameplayInputEnabled(true);player.SetCursorLocked(true);
+            checks.Clear();times.Clear();frameMs.Clear();failure=null;started=Time.realtimeSinceStartup;
+            Physics.SyncTransforms();
+            foreach(float x in new[]{6f,5.6f,6.6f})foreach(float z in new[]{1.4f,2.4f,3.4f,4.4f})
+            {
+                var floor=Physics.Raycast(new Vector3(x,3,z),Vector3.down,out var hit,5)?hit.collider.name+" at "+hit.point:"NO FLOOR";
+                Debug.Log("[ArchiveSurvey] "+x+","+z+" "+floor+" overlap="+string.Join("|",Physics.OverlapCapsule(new Vector3(x,.38f,z),new Vector3(x,1.55f,z),.30f).Where(c=>c!=cc).Select(c=>c.name)));
+            }
+            Check(player.TryReturnToSpawn(new Vector3(6f,.08f,1.4f),Quaternion.Euler(0,180,0)),"Existing archive side-door return point is reachable");
+            rt=new RenderTexture(960,540,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);rt.Create();tex=new Texture2D(960,540,TextureFormat.RGB24,false);cam.targetTexture=rt;
+            started=Time.realtimeSinceStartup;lastCapture=started;minFeet=100;maxJump=0;maxSprint=0;videoFrame=0;
+            Check(true,"Uses original FirstPersonController with queued Input System keyboard; no replacement movement script");
+            Step(0);EditorApplication.update+=Tick;
+        }catch(Exception ex){Fail(ex);}
+    }
+    static void Check(bool ok,string text){if(!ok)throw new Exception(text);checks.Add("PASS: "+text);Debug.Log("[MaintenanceValidation] "+text);}
+    static void Step(int value){step=value;since=Time.realtimeSinceStartup;Keys();}
+    static void Keys(params Key[] keys){if(Keyboard.current!=null)InputSystem.QueueStateEvent(Keyboard.current,new KeyboardState(keys));}
+    static Vector3 Local(Vector3 value)=>hall.transform.TransformPoint(value);
+    static bool Walk(Vector3 target,bool sprint=false)
+    {
+        var delta=target-player.transform.position;delta.y=0;
+        if(delta.magnitude<.18f){Keys();return true;}
+        player.transform.rotation=Quaternion.LookRotation(delta);Keys(sprint?new[]{Key.W,Key.LeftShift}:new[]{Key.W});return false;
+    }
+    static void Spawn(Vector3 local,float yaw=0)
+    {Keys();Check(player.TryReturnToSpawn(Local(local),Quaternion.Euler(0,yaw,0)),"Clear spawn "+local);}
+    static void EnterHall()
+    {
+        Check(encounter.Begin(),"Production BossArena can instantiate the weekly hall in target URP pipeline");
+        hall=encounter.Arena.GetComponentsInChildren<Transform>(true).First(t=>t.name=="WallBays_24").parent.gameObject;
+        encounter.enabled=false;encounter.Arena.boss.gameObject.SetActive(false);
+        nodes=hall.GetComponentsInChildren<MaintenanceArtAnchor>().Where(a=>a.anchorId.StartsWith("MAINT_NODE_")).OrderBy(a=>a.anchorId).ToArray();
+        Check(nodes.Length==3,"Exactly three shared-module nodes");
+        foreach(var node in nodes){node.gameObject.AddComponent<MaintenanceValidationAdapter>().anchor=node;node.interactionRequested.AddListener(id=>requests++);}
+        Check(hall.GetComponentsInChildren<Light>().Count(l=>l.enabled)==6,"Candidate contains six enabled lights");
+        var oldPoints=encounter.Arena.transform.Find("Lighting").GetComponentsInChildren<Light>(true).Where(l=>l.type==LightType.Point).ToArray();
+        Check(oldPoints.Length==8 && oldPoints.All(l=>!l.enabled),"All eight historical arena point lights remain disabled; original directional lights preserved");
+        Spawn(new Vector3(0,.08f,-13.3f));
+    }
+    static void Aim(Vector3 target)
+    {
+        var delta=target-cam.transform.position;var look=Quaternion.LookRotation(delta);player.transform.rotation=Quaternion.Euler(0,look.eulerAngles.y,0);
+        var pitch=Mathf.DeltaAngle(0,look.eulerAngles.x);typeof(FirstPersonController).GetField("pitch",BindingFlags.NonPublic|BindingFlags.Instance).SetValue(player,pitch);
+        ((Transform)typeof(FirstPersonController).GetField("cameraPivot",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(player)).localRotation=Quaternion.Euler(pitch,0,0);
+    }
+    static void Capture(string name,bool video=false)
+    {
+        var old=cam.targetTexture;var active=RenderTexture.active;
+        try{cam.targetTexture=rt;cam.Render();RenderTexture.active=rt;tex.ReadPixels(new Rect(0,0,960,540),0,0);tex.Apply();File.WriteAllBytes(video?Out+"/Frames/"+videoFrame.ToString("D5")+".jpg":Out+"/Captures/"+name+".png",video?tex.EncodeToJPG(82):tex.EncodeToPNG());}
+        finally{cam.targetTexture=old;RenderTexture.active=active;}
+    }
+    static void Tick()
+    {
+        if(!EditorApplication.isPlaying || lastFrame==Time.frameCount)return;lastFrame=Time.frameCount;
+        try
+        {
+            float now=Time.realtimeSinceStartup,t=now-since;if(now-started>400)throw new TimeoutException("Step "+step);
+            if(menu.IsOpen)menu.Resume();if(encounter.IsPaused)encounter.SendMessage("OnApplicationFocus",true);player.SetCursorLocked(true);player.SetGameplayInputEnabled(true);
+            if(hall){minFeet=Mathf.Min(minFeet,player.transform.position.y);if(player.transform.position.y<-.1f)throw new Exception("Player fell through floor");}
+            if(step<90 && now-lastCapture>=.1f && videoFrame<900){Capture(null,true);times.Add(videoFrame+","+(now-started).ToString("F4",System.Globalization.CultureInfo.InvariantCulture)+","+step);videoFrame++;lastCapture=now;}
+            switch(step)
+            {
+                case 0:
+                    Aim(new Vector3(6f,2,-.2f));if(t>2){Capture("01_existing_archive_side_door");EnterHall();Step(1);}break;
+                case 1:
+                    if(t>1){Check(Vector3.Distance(player.transform.position,Local(new Vector3(0,0,-13.3f)))<.2f,"Hall entry spawn faces inward");Capture("02_hall_entry");Step(2);}break;
+                case 2:
+                    if(Walk(Local(new Vector3(0,0,-16.8f)))){Capture("03_short_transition");Step(3);}else if(t>8)throw new Exception("Door outbound blocked");break;
+                case 3:
+                    if(Walk(Local(new Vector3(0,0,-12.5f)),true)){Check(true,"Door threshold traversed both directions using real movement");index=0;Step(10);}else if(t>8)throw new Exception("Door inbound blocked");break;
+                case 10:
+                    var a=nodes[index];var target=a.transform.position-a.transform.forward*1.55f;
+                    if(Walk(target,true)){Aim(a.interactionPoint.position);Step(11);}else if(t>15)throw new Exception("Node approach blocked "+index);break;
+                case 11:
+                    Aim(nodes[index].interactionPoint.position);
+                    if(t>.5f && t<.75f)Keys(Key.E);else Keys();
+                    if(t>1)
+                    {
+                        Check(requests==index+1,"Node "+(index+1)+" reached and E interaction routed by production PlayerInteractor");
+                        Check(!nodes[index].IsStable,"Interaction callback does not auto-advance story");
+                        nodes[index].SetStable(true);Check(!nodes[index].RequestInteraction(player.transform.position),"Stable node rejects duplicate interaction");
+                        nodes[index].SetStable(false);Check(!nodes[index].RequestInteraction(nodes[index].transform.position+Vector3.up*20),"Distant interaction rejected");
+                        Capture("04_node_"+(index+1));index++;if(index<3)Step(10);else{wallIndex=0;Step(20);}
+                    }break;
+                case 20:
+                    if(wallIndex==24){wallIndex++;break;}
+                    if(wallIndex>=48){Spawn(new Vector3(0,.08f,-4));jumps=player.JumpSequence;Step(30);break;}
+                    Spawn(Quaternion.Euler(0,wallIndex*7.5f,0)*new Vector3(0,.08f,13.7f),wallIndex*7.5f);previous=player.transform.position;Step(21);break;
+                case 21:
+                    if(t<.25f)Keys();else Keys(Key.W,Key.LeftShift);
+                    if(t>1.0f)
+                    {
+                        var relative=hall.transform.InverseTransformPoint(player.transform.position);var radial=(Quaternion.Euler(0,wallIndex*7.5f,0)*Vector3.forward);
+                        float reach=Vector3.Dot(relative,radial);
+                        Check(reach<14.39f && reach>13.85f,"Wall/pier band blocks actual sprint capsule at sample "+wallIndex+" (r="+reach.ToString("F3")+")");previous=player.transform.position;Step(22);
+                    }break;
+                case 22:
+                    Keys(Key.W,Key.D);
+                    if(t>.32f){Check(Vector3.Distance(previous,player.transform.position)>.15f,"Can slide along wall/pier after contact at sample "+wallIndex);wallIndex++;Step(20);}break;
+                case 30:
+                    if(t>.35f)Keys(Key.W,Key.LeftShift);maxSprint=Mathf.Max(maxSprint,player.PlanarSpeed);
+                    if(t>1){Check(maxSprint>4.5f,"Original controller sprint measured above walking speed");Step(31);}break;
+                case 31:
+                    Keys(t<.15f?new[]{Key.Space}:new Key[0]);maxJump=Mathf.Max(maxJump,player.transform.position.y);
+                    if(t>1.8f){Check(player.JumpSequence>jumps && maxJump>.7f && player.IsGrounded,"Original jump rises and lands on continuous floor");Step(32);}break;
+                case 32:
+                    Keys(Key.C);crouched|=player.IsCrouching;
+                    if(t>1){Check(crouched && cc.height<1.2f,"Crouch reaches reduced capsule height");Step(33);}break;
+                case 33:
+                    Keys();if(t>1){Check(!player.IsCrouching && cc.height>1.7f,"Stand-up restores capsule without falling through seams");Capture("05_controller_checks");cc.enabled=false;player.transform.position=Local(new Vector3(0,2,-1));cc.enabled=true;Step(34);}break;
+                case 34:
+                    Keys();if(t>1.5f){Check(player.IsGrounded && player.transform.position.y<.12f,"Controlled two-metre drop lands using original gravity/collision");roundTrip=0;Step(40);}break;
+                case 40:
+                    Keys();Check(encounter.ReturnToLibrary(),"Roundtrip "+(roundTrip+1)+" returns to archive using production safe-return");Step(41);break;
+                case 41:
+                    if(t>1){Check(player.transform.position.x<30,"Archive return did not leave player at arena origin");roundTrip++;EnterHall();if(roundTrip<3)Step(42);else Step(50);}break;
+                case 42:
+                    if(t>.6f)Step(40);break;
+                case 50:
+                    // Record at least 90 seconds at 10 captured frames/s, then test live warnings.
+                    Aim(Local(new Vector3(Mathf.Sin(t*.18f)*10,2,Mathf.Cos(t*.18f)*10)));
+                    if(videoFrame>=900){encounter.Arena.boss.gameObject.SetActive(true);encounter.enabled=true;Step(60);}break;
+                case 60:
+                    Aim(encounter.Arena.boss.position+Vector3.up*2.2f);
+                    if(encounter.CurrentState==BossEncounter.State.Telegraph){Capture("06_boss_warning_and_silhouette");Check(true,"Live production Boss warning and silhouette captured in target pipeline");Step(61);}else if(t>15)throw new Exception("No live warning");break;
+                case 61:
+                    Aim(encounter.Arena.boss.position+Vector3.up*2.2f);
+                    if(t>2)Step(90);break;
+                case 90:
+                    // No screenshot encoding in this timing interval; Editor and capture overhead are distinct.
+                    if(encounter.IsFinished)encounter.Retry();
+                    Aim(encounter.Arena.boss.position+Vector3.up*2.2f);Keys(t%4<2?Key.A:Key.D);
+                    if(t>2)frameMs.Add(Time.unscaledDeltaTime*1000);
+                    if(t>12){Check(frameMs.Count>30,"Collected unthrottled target-pipeline frame timings without capture encoding");step=100;Write();Finish();}break;
+            }
+        }catch(Exception ex){Fail(ex);}
+    }
+    static float Percentile(float fraction){if(frameMs.Count==0)return 0;var a=frameMs.OrderBy(x=>x).ToArray();return a[Mathf.Min(a.Length-1,Mathf.FloorToInt(a.Length*fraction))];}
+    static void Write()
+    {
+        Directory.CreateDirectory(Out);
+        File.WriteAllText(Out+"/runtime-validation.json",JsonUtility.ToJson(new Report{unity=Application.unityVersion,device=SystemInfo.graphicsDeviceName,cpu=SystemInfo.processorType,pipeline=UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline?.name,quality=QualitySettings.names[QualitySettings.GetQualityLevel()],step=step,failure=failure,videoFrames=videoFrame,elapsedSeconds=Time.realtimeSinceStartup-started,frameSamples=frameMs.Count,p50FrameMs=Percentile(.5f),p95FrameMs=Percentile(.95f),p99FrameMs=Percentile(.99f),minFeetY=minFeet,maxJumpY=maxJump,maxSprintSpeed=maxSprint,checks=checks.ToArray()},true));
+        File.WriteAllLines(Out+"/capture-times.csv",new[]{"frame,realtimeSeconds,testStep"}.Concat(times));
+        File.WriteAllLines(Out+"/frame-times-ms.csv",new[]{"frameMs"}.Concat(frameMs.Select(f=>f.ToString("F4",System.Globalization.CultureInfo.InvariantCulture))));
+    }
+    static void Fail(Exception ex){failure=ex.ToString();step=-1;Debug.LogError(failure);Write();Finish();}
+    static void Finish(){Keys();scope?.Dispose();EditorApplication.update-=Tick;SessionState.SetBool(Flag,false);Debug.Log("[MaintenanceValidation] FINISHED "+step);EditorApplication.Exit(step==100?0:2);}
+}
+
+// Test-only adapter to the production interaction interface. Final story adapter remains program-owned.
+public class MaintenanceValidationAdapter:MonoBehaviour,IInteractable
+{
+    public MaintenanceArtAnchor anchor;public string InteractionPrompt=>anchor.displayLabel;
+    public void Interact(PlayerInteractor interactor){anchor.RequestInteraction(interactor.transform.position);}
+}
