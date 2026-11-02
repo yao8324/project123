@@ -1,0 +1,318 @@
+// Test harness: copy only into Assets/Editor of an independent 1.0.6 validation project.
+// Drives production movement and IInteractable with virtual devices. No production story implementation.
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using ArcaneArchive.Core;
+using ArcaneArchive.Player;
+using ArcaneArchive.UI;
+using ArcaneArchive.Visuals;
+using ArcaneArchive.Visuals.Editor;
+using ArcaneArchive.Interaction;
+using IMMonster.SceneArt;
+using Object=UnityEngine.Object;
+
+[InitializeOnLoad]
+public static class ArchiveRuntimeStage2
+{
+    const string Flag="Art.ArchiveStage2.Active";
+    const string Root="Assets/Art/SealChamberStudy/";
+    const string Out="ArchiveStage2Evidence";
+    static FirstPersonController player;static CharacterController cc;static Camera view;static RecoveryMenu menu;static BossEncounter encounter;
+    static ArchiveWorkstationArt workstation;static MaintenanceArtAnchor entrance;static BossArena arena;
+    static Keyboard keyboard;static Mouse mouse;static Key[] held=Array.Empty<Key>();static BossTestInputScope scope;
+    static readonly List<string> checks=new List<string>();static readonly List<string> requests=new List<string>();
+    static IEnumerator<Gate> sequence;static Gate gate;static bool started,finished,enterRequested,returnRequested;
+    static int frame=-1,captureIndex,roundTrip;static float startedAt,lastCapture,minY=100;static string scenario="Preparing",failure;
+    static bool ritualInputPrepared;
+    static RenderTexture target;static Texture2D texture;static StreamWriter trace,times;
+    static readonly BindingFlags Private=BindingFlags.Instance|BindingFlags.NonPublic;
+    sealed class Gate
+    {
+        public Func<bool> ready;public Action tick;public float deadline;
+        public Gate(Func<bool> condition,float timeout=8,Action update=null){ready=condition;tick=update;deadline=Time.realtimeSinceStartup+timeout;}
+    }
+    [Serializable] class Report
+    {
+        public bool complete;public string scenario,failure,unity,device,cpu,pipeline,quality,scope="Production scene/controller/input/interaction class with test-only event adapters and safe transfers; not the five-event story system or human playtest";
+        public int checksPassed,videoFrames,roundTrips;public float elapsedSeconds,minFeetY;public string[] checks,interactionRequests;
+    }
+    static ArchiveRuntimeStage2(){EditorApplication.update+=Bootstrap;}
+    static void Bootstrap()
+    {
+        bool own=SessionState.GetBool(Flag,false),ritual=SessionState.GetInt("ArcaneArchive.RitualBatch",0)>0;
+        if(!own && !ritual)return;
+        if(EditorApplication.isPlaying){if(EditorApplication.isPaused)EditorApplication.isPaused=false;EditorApplication.QueuePlayerLoopUpdate();}
+        if(ritual && !ritualInputPrepared && SessionState.GetInt("ArcaneArchive.RitualBatch",0)==2)
+        {
+            // Existing tests assume D and right mouse. Scope defaults to the disposable runtime action clone.
+            var controller=Object.FindFirstObjectByType<FirstPersonController>();
+            var testType=typeof(WardenRitualAcceptance);
+            var testKeyboard=(Keyboard)testType.GetField("testKeyboard",BindingFlags.Static|BindingFlags.NonPublic).GetValue(null);
+            var testMouse=(Mouse)testType.GetField("testMouse",BindingFlags.Static|BindingFlags.NonPublic).GetValue(null);
+            if(controller && controller.Bindings!=null && testKeyboard!=null && testMouse!=null)
+            {
+                string before="Right="+controller.Bindings.Find("Right").action.bindings[controller.Bindings.Find("Right").index].effectivePath+", Absorb="+controller.Bindings.AbsorbAction.bindings[0].effectivePath;
+                ((InputActionAsset)typeof(FirstPersonController).GetField("runtimeInputActions",Private).GetValue(controller)).devices=new InputDevice[]{testKeyboard,testMouse};
+                controller.Bindings.Find("Right").action.ApplyBindingOverride(controller.Bindings.Find("Right").index,"<Keyboard>/d");
+                controller.Bindings.AbsorbAction.ApplyBindingOverride(0,"<Mouse>/rightButton");
+                testKeyboard.MakeCurrent();testMouse.MakeCurrent();ritualInputPrepared=true;
+                Directory.CreateDirectory(Out);File.WriteAllText(Out+"/combat-input-scope.txt",before+"\nTest-only D/right-button defaults and virtual-device isolation applied to runtime clone. No binding file saved.\n");
+            }
+        }
+        if(!own)return;
+        var p=Object.FindFirstObjectByType<FirstPersonController>();
+        if(!started && EditorApplication.isPlaying && !EditorApplication.isCompiling && p && p.Bindings!=null){started=true;Start();}
+    }
+    public static void Run()
+    {
+        Directory.CreateDirectory(Out+"/Captures");Directory.CreateDirectory(Out+"/Frames");
+        EditorSceneManager.OpenScene("Assets/Scenes/MilanLibrary_Magic_V6.unity");
+        var original=Object.FindFirstObjectByType<BossEncounter>();if(!original)throw new Exception("Original player/encounter not found");
+        var overlay=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Root+"ArchiveWorkstation20261102/Prefabs/ArchiveWorkstation.prefab"));
+        overlay.transform.SetPositionAndRotation(new Vector3(5.8f,.836f,8.4f),Quaternion.identity);overlay.transform.SetParent(original.libraryEnvironment.transform,true);
+        var kit=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Root+"MaintenanceW20261028/Prefabs/ArchiveEntryKit.prefab"));
+        kit.transform.SetPositionAndRotation(new Vector3(6,0,-.2f),Quaternion.Euler(0,180,0));kit.transform.SetParent(original.libraryEnvironment.transform,true);
+        Directory.CreateDirectory("Assets/ArtValidation");AssetDatabase.Refresh();
+        var content=PrefabUtility.LoadPrefabContents(AssetDatabase.GetAssetPath(original.arenaPrefab));
+        try
+        {
+            var old=content.GetComponentsInChildren<Transform>(true).First(t=>t.name=="WallBays_24").parent;Object.DestroyImmediate(old.gameObject);
+            var hall=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Root+"MaintenanceW20261028/Prefabs/MaintenanceHall.prefab"),content.transform);hall.transform.localPosition=Vector3.zero;hall.transform.localRotation=Quaternion.identity;
+            original.arenaPrefab=PrefabUtility.SaveAsPrefabAsset(content,"Assets/ArtValidation/ArchiveStage2Arena.prefab").GetComponent<BossArena>();
+        }
+        finally{PrefabUtility.UnloadPrefabContents(content);}
+        SurveyPositions();EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),"Assets/ArtValidation/ArchiveStage2Scene.unity");
+        Application.runInBackground=true;EditorWindow.GetWindow(typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView")).Focus();
+        SessionState.SetBool(Flag,true);EditorApplication.isPlaying=true;
+    }
+    public static void RunHallProbe(){SessionState.SetBool(Flag+".HallProbe",true);Run();}
+    [Serializable] class PositionProbe {public Vector3 requested;public bool supported;public float floorY;public string floor;public string[] occupied;}
+    [Serializable] class PositionSurvey {public PositionProbe[] probes;}
+    static void SurveyPositions()
+    {
+        Physics.SyncTransforms();var controller=Object.FindFirstObjectByType<FirstPersonController>().GetComponent<CharacterController>();var rows=new List<PositionProbe>();
+        foreach(var point in new[]{new Vector3(5.8f,.08f,7.3f),new Vector3(5.2f,.08f,7.1f),new Vector3(5.05f,.08f,7),new Vector3(7.325f,.08f,6.9f),new Vector3(7.325f,.08f,10),new Vector3(4.275f,.08f,10),new Vector3(4.275f,.08f,6.9f),new Vector3(6,.08f,1.4f)})
+        {
+            bool supported=Physics.Raycast(point+Vector3.up,Vector3.down,out var hit,2,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore);
+            var feet=supported?new Vector3(point.x,hit.point.y+.08f,point.z):point;
+            float half=controller.height*.5f-controller.radius;var center=feet+controller.center;
+            var overlaps=Physics.OverlapCapsule(center-Vector3.up*half,center+Vector3.up*half,controller.radius+.02f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore).Where(c=>c!=controller&&!c.transform.IsChildOf(controller.transform)).Select(c=>c.name).Distinct().ToArray();
+            rows.Add(new PositionProbe{requested=point,supported=supported,floorY=supported?hit.point.y:-999,floor=supported?hit.collider.name:"NONE",occupied=overlaps});
+        }
+        File.WriteAllText(Out+"/position-survey.json",JsonUtility.ToJson(new PositionSurvey{probes=rows.ToArray()},true));
+    }
+    public static void RunCombatRegression()
+    {
+        EditorSceneManager.OpenScene("Assets/ArtValidation/ArchiveStage2Scene.unity");
+        SessionState.SetInt("ArcaneArchive.RitualBatch",1);SessionState.SetFloat("ArcaneArchive.RitualBatch.deadline",(float)EditorApplication.timeSinceStartup+360);
+        Application.runInBackground=true;EditorWindow.GetWindow(typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView")).Focus();EditorApplication.isPlaying=true;
+    }
+    static void Start()
+    {
+        try
+        {
+            startedAt=lastCapture=Time.realtimeSinceStartup;captureIndex=0;checks.Clear();requests.Clear();failure=null;
+            encounter=Object.FindFirstObjectByType<BossEncounter>();player=encounter.GetComponent<FirstPersonController>();cc=player.GetComponent<CharacterController>();view=encounter.View;menu=encounter.GetComponent<RecoveryMenu>();
+            workstation=Object.FindFirstObjectByType<ArchiveWorkstationArt>();entrance=Object.FindObjectsByType<MaintenanceArtAnchor>(FindObjectsSortMode.None).First(a=>a.anchorId=="ARCHIVE_TO_MAINTENANCE");
+            scope=new BossTestInputScope();keyboard=InputSystem.AddDevice<Keyboard>("ArchiveArtKeyboard");keyboard.MakeCurrent();mouse=InputSystem.AddDevice<Mouse>("ArchiveArtMouse");mouse.MakeCurrent();InputSystem.onBeforeUpdate+=Input;
+            ((InputActionAsset)typeof(FirstPersonController).GetField("runtimeInputActions",Private).GetValue(player)).devices=new InputDevice[]{keyboard,mouse};
+            foreach(string id in new[]{"Forward","Backward","Left","Right","Sprint","Jump","Crouch"}){var b=player.Bindings.Find(id);b.action.RemoveBindingOverride(b.index);}
+            if(!player.GetComponent<PlayerInteractor>())player.gameObject.AddComponent<PlayerInteractor>();
+            menu.Resume();player.SetGameplayInputEnabled(true);player.SetCursorLocked(true);Application.runInBackground=true;
+            QualitySettings.vSyncCount=0;Application.targetFrameRate=60;
+            target=new RenderTexture(1280,720,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);target.Create();texture=new Texture2D(1280,720,TextureFormat.RGB24,false);view.targetTexture=target;
+            trace=new StreamWriter(Out+"/trajectory.csv");trace.WriteLine("frame,realtime,scenario,x,y,z,grounded,crouching,sprinting,inputEnabled,waitForRelease,releaseFrames,moveValue,heldKeys,keyboard,actionEnabled");times=new StreamWriter(Out+"/capture-times.csv");times.WriteLine("frame,realtime,scenario");
+            foreach(var a in workstation.GetComponentsInChildren<MaintenanceArtAnchor>(true))Bind(a);
+            Bind(entrance);
+            sequence=SessionState.GetBool(Flag+".HallProbe",false)?HallProbe():Sequence();gate=null;EditorApplication.update+=Tick;
+        }catch(Exception ex){Fail(ex);}
+    }
+    static void Input()
+    {
+        if(finished || InputState.currentUpdateType!=InputUpdateType.Dynamic)return;
+        if(keyboard!=null && keyboard.added)InputSystem.QueueStateEvent(keyboard,new KeyboardState(held));
+        if(mouse!=null && mouse.added)InputSystem.QueueStateEvent(mouse,new MouseState());
+    }
+    static void Bind(MaintenanceArtAnchor anchor)
+    {
+        var adapter=anchor.gameObject.AddComponent<ArchiveStage2Adapter>();adapter.anchor=anchor;
+        anchor.interactionRequested.AddListener(id=>
+        {
+            requests.Add(id);Debug.Log("[ArchiveStage2] INTERACT "+id);
+            if(id=="ARCHIVE_TIE_CORD")workstation.SetArchiveSealed(true);
+            if(id=="ARCHIVE_TO_MAINTENANCE")enterRequested=true;
+            if(id=="MAINTENANCE_TO_ARCHIVE")returnRequested=true;
+        });
+    }
+    static void Check(bool condition,string message)
+    {if(!condition)throw new Exception(message);checks.Add(message);Debug.Log("[ArchiveStage2] PASS "+message);Write();}
+    static Gate Wait(float seconds,Action eachFrame=null)
+    {float until=Time.realtimeSinceStartup+seconds;return new Gate(()=>Time.realtimeSinceStartup>=until,seconds+3,eachFrame);}
+    static void Keys(params Key[] keys){held=keys;}
+    static void Spawn(Vector3 point,float yaw=0)
+    {
+        Keys();Physics.SyncTransforms();Check(player.TryReturnToSpawn(point,Quaternion.Euler(0,yaw,0)),"Safe player placement "+point);
+        Check(Vector2.Distance(new Vector2(player.transform.position.x,player.transform.position.z),new Vector2(point.x,point.z))<.15f,"Requested placement is clear without fallback offset; actual="+player.transform.position);
+    }
+    static Gate Walk(Vector3 point,string label,bool sprint=false)
+    {
+        scenario=label;
+        return new Gate(()=>{var delta=point-player.transform.position;delta.y=0;if(delta.magnitude<.17f){Keys();return true;}return false;},14,()=>
+        {var delta=point-player.transform.position;delta.y=0;if(delta.sqrMagnitude>.02f)player.transform.rotation=Quaternion.LookRotation(delta);Keys(sprint?new[]{Key.W,Key.LeftShift}:new[]{Key.W});});
+    }
+    static void Aim(Vector3 point)
+    {
+        var look=Quaternion.LookRotation(point-view.transform.position);player.transform.rotation=Quaternion.Euler(0,look.eulerAngles.y,0);float pitch=Mathf.DeltaAngle(0,look.eulerAngles.x);
+        typeof(FirstPersonController).GetField("pitch",Private).SetValue(player,pitch);
+        ((Transform)typeof(FirstPersonController).GetField("cameraPivot",Private).GetValue(player)).localRotation=Quaternion.Euler(pitch,0,0);
+    }
+    static MaintenanceArtAnchor WorkAnchor(string id)=>workstation.GetComponentsInChildren<MaintenanceArtAnchor>().Single(a=>a.anchorId==id);
+    static void CheckRay(MaintenanceArtAnchor anchor)
+    {
+        Physics.SyncTransforms();var ray=view.ViewportPointToRay(new Vector3(.5f,.5f));
+        bool hit=Physics.Raycast(ray,out var result,3,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Collide);
+        File.AppendAllText(Out+"/ray-observations.txt",scenario+" target="+anchor.anchorId+" hit="+(hit?result.collider.name:"NONE")+" distance="+(hit?result.distance:-1)+"\n");
+        if(!hit || result.collider.GetComponentInParent<MaintenanceArtAnchor>()!=anchor)
+            File.AppendAllText(Out+"/ray-observations.txt","origin="+ray.origin+" direction="+ray.direction+" camera="+view.transform.position+" near="+view.nearClipPlane+" ccCenter="+cc.center+" ccBounds="+cc.bounds+" ccHeight="+cc.height+" all="+string.Join("|",Physics.RaycastAll(ray,3,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Collide).OrderBy(h=>h.distance).Select(h=>h.collider.name+":"+h.distance+":"+h.collider.GetType().Name))+"\n");
+        Check(hit && result.collider.GetComponentInParent<MaintenanceArtAnchor>()==anchor,"First-person interaction ray reaches "+anchor.anchorId);
+    }
+    static IEnumerable<Gate> Interact(MaintenanceArtAnchor anchor,string label)
+    {
+        scenario=label;Keys();Aim(anchor.interactionPoint.position);yield return Wait(.25f,()=>Aim(anchor.interactionPoint.position));CheckRay(anchor);int before=requests.Count;
+        Keys(Key.E);yield return Wait(.10f,()=>Aim(anchor.interactionPoint.position));Keys();yield return Wait(.25f);
+        Check(requests.Count==before+1 && requests[requests.Count-1]==anchor.anchorId,"E press invokes exactly one callback for "+anchor.anchorId);
+    }
+    static void EnterMaintenance()
+    {
+        enterRequested=false;
+        arena=Object.Instantiate(encounter.arenaPrefab,new Vector3(160,0,0),Quaternion.identity);arena.name="ART_TEST_StoryGeometryInstance";
+        arena.boss.gameObject.SetActive(false);
+        foreach(var a in arena.GetComponentsInChildren<MaintenanceArtAnchor>())Bind(a);
+        Physics.SyncTransforms();Spawn(new Vector3(160,.08f,-13.3f));encounter.libraryEnvironment.SetActive(false);
+        Check(!encounter.IsActive && !arena.boss.gameObject.activeInHierarchy,"Maintenance geometry has no active hostile Boss or combat session");
+        Check(arena.GetComponentsInChildren<Light>().Count(l=>l.type==LightType.Point && l.enabled)==6,"Exactly six active maintenance point lights");
+    }
+    static void ReturnArchive()
+    {
+        returnRequested=false;encounter.libraryEnvironment.SetActive(true);Physics.SyncTransforms();Spawn(new Vector3(6,.08f,1.4f),0);
+        arena.gameObject.SetActive(false);Object.Destroy(arena.gameObject);arena=null;roundTrip++;
+    }
+    static IEnumerator<Gate> Sequence()
+    {
+        Check(UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline!=null,"Production render pipeline is active");
+        Check(Object.FindObjectsByType<FirstPersonController>(FindObjectsSortMode.None).Length==1,"One original player controller");
+        workstation.ResetPresentation();Spawn(new Vector3(5.2f,.08f,7.1f));yield return Wait(.6f);
+        scenario="Initial work area";Aim(workstation.transform.TransformPoint(new Vector3(-.41f,.05f,-.195f)));Capture("01_production_intact");
+        Check(workstation.GetComponentsInChildren<Collider>(true).All(c=>c.isTrigger),"Workstation adds no solid collision in the real room");
+        foreach(var anchor in workstation.GetComponentsInChildren<MaintenanceArtAnchor>().Where(a=>a.anchorId.StartsWith("ARCHIVE_RECORD_SLOT_")))
+        {
+            foreach(float x in new[]{-.14f,.14f})foreach(float z in new[]{-.18f,.18f})
+            {
+                var from=anchor.transform.TransformPoint(new Vector3(x,.006f,z));
+                Check(Physics.Raycast(from,Vector3.down,out var hit,.08f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore) && Mathf.Abs(hit.point.y-.836f)<.025f,"Actual production desk supports record corner "+anchor.anchorId);
+            }
+            foreach(var gate in Interact(anchor,"Read "+anchor.anchorId))yield return gate;
+        }
+        foreach(var gate in Interact(WorkAnchor("ARCHIVE_WORK_BADGE"),"Pre-attack work badge"))yield return gate;
+        Capture("02_production_badge");
+        foreach(var gate in Interact(WorkAnchor("ARCHIVE_TIE_CORD"),"Tie the archival seal"))yield return gate;
+        Check(workstation.IsArchiveSealed,"Cord presentation changes only after its interaction callback");
+        Capture("03_production_sealed");
+        scenario="Repeat sealed cord press";int requestCount=requests.Count;Keys(Key.E);yield return Wait(.1f);Keys();yield return Wait(.2f);
+        Check(requests.Count==requestCount,"Sealed cord no longer receives repeated loose-cord E input");
+        foreach(var p in new[]{new Vector3(5.2f,0,6.9f),new Vector3(7.325f,0,6.9f),new Vector3(7.325f,0,10.0f),new Vector3(4.275f,0,10.0f),new Vector3(4.275f,0,6.9f),new Vector3(5.2f,0,7.1f)})
+        {yield return Walk(p,"Walk around existing desk");Check(player.IsGrounded,"Grounded after desk-route segment");}
+        scenario="Crouch at desk";Keys(Key.C);yield return Wait(.6f);Check(player.IsCrouching,"Original controller crouches at the desk");Keys();yield return Wait(.6f);Check(!player.IsCrouching,"Original controller stands again at the desk");
+        workstation.SetDisturbed(true);Check(workstation.IsArchiveSealed,"Disaster transition preserves the completed seal");
+        Check(workstation.disturbedProps.transform.Find("ElaineBadge").GetComponentsInChildren<TextMesh>().Length==0,"No active badge identity print in post-awakening state");
+        scenario="Awakening position";Spawn(new Vector3(5.05f,.08f,7));yield return Wait(.4f);Aim(workstation.transform.TransformPoint(new Vector3(-.41f,.05f,-.195f)));Capture("04_production_disturbed");
+        for(int trip=0;trip<3;trip++)
+        {
+            yield return Walk(new Vector3(5.2f,0,7.1f),"Approach desk after awakening");
+            yield return Walk(new Vector3(5.2f,0,5),"Desk to side-door approach");yield return Walk(new Vector3(6,0,3),"Approach maintenance side door");yield return Walk(new Vector3(6,0,1.4f),"Side-door interaction position");
+            foreach(var gate in Interact(entrance,"Enter maintenance trip "+(trip+1)))yield return gate;
+            Check(enterRequested,"Entry marker requested transfer");Capture("05_production_side_door");EnterMaintenance();yield return Wait(.5f);
+            var nodes=arena.GetComponentsInChildren<MaintenanceArtAnchor>().Where(a=>a.anchorId.StartsWith("MAINT_NODE_")).OrderBy(a=>a.anchorId).ToArray();
+            Check(nodes.Length==3,"Three active maintenance nodes on trip "+(trip+1));
+            foreach(var node in nodes)
+            {
+                var approach=node.transform.position-node.transform.forward*1.55f;yield return Walk(approach,"Maintenance approach "+node.anchorId,true);
+                foreach(var gate in Interact(node,"Stabilize "+node.anchorId))yield return gate;
+                node.SetStable(true);Check(!node.RequestInteraction(player.transform.position),"Stable node rejects duplicate input");
+            }
+            yield return Walk(new Vector3(160,0,-13.3f),"Return to maintenance portal",true);
+            var exit=arena.GetComponentsInChildren<MaintenanceArtAnchor>().First(a=>a.anchorId=="MAINTENANCE_TO_ARCHIVE");
+            foreach(var gate in Interact(exit,"Leave maintenance trip "+(trip+1)))yield return gate;
+            Check(returnRequested,"Hall exit requested return");Capture("06_production_hall_exit");ReturnArchive();yield return Wait(.5f);
+            Check(Object.FindObjectsByType<BossArena>(FindObjectsSortMode.None).Length==0,"No arena instance survives return");
+            yield return Walk(new Vector3(6,0,3),"Return from side door");yield return Walk(new Vector3(5.2f,0,5),"Return along archive approach");yield return Walk(new Vector3(5.2f,0,7.1f),"Retrieve records at original desk");
+            Check(workstation.IsDisturbed && workstation.IsArchiveSealed,"Same disturbed desk and seal survive return");
+            foreach(var gate in Interact(WorkAnchor("ARCHIVE_RECORD_SLOT_01"),"Retrieve record after return"))yield return gate;
+            Check(workstation.GetComponentsInChildren<MaintenanceArtAnchor>().Count(a=>a.anchorId.StartsWith("ARCHIVE_RECORD_SLOT_"))==3,"Only three active record slots after return");
+            scenario="Roundtrip complete "+(trip+1);Aim(workstation.transform.TransformPoint(new Vector3(-.41f,.05f,-.195f)));Capture("07_return_to_workstation_"+(trip+1));
+        }
+        Check(Object.FindObjectsByType<FirstPersonController>(FindObjectsSortMode.None).Length==1,"No duplicate player after three full routes");
+        Check(!encounter.IsActive,"Legacy combat was never used as the story entrance");
+        finished=true;scenario="Complete";Write();Stop();
+    }
+    static IEnumerator<Gate> HallProbe()
+    {
+        scenario="Isolated hall movement probe";EnterMaintenance();yield return Wait(1f);
+        yield return Walk(new Vector3(160,0,-10),"Isolated hall forward input",true);
+        Check(player.IsGrounded,"Isolated original controller moves and remains grounded in hall");
+        scenario="Hall probe complete";finished=true;Write();Stop();
+    }
+    static void Tick()
+    {
+        if(!EditorApplication.isPlaying || finished || frame==Time.frameCount)return;frame=Time.frameCount;
+        try
+        {
+            if(Time.realtimeSinceStartup-startedAt>600)throw new TimeoutException("Overall route exceeded ten minutes");
+            if(menu.IsOpen)menu.Resume();player.SetCursorLocked(true);player.SetGameplayInputEnabled(true);
+            minY=Mathf.Min(minY,player.transform.position.y);if(player.transform.position.y<-.15f)throw new Exception("Player fell below the library/maintenance floor");
+            var action=(InputAction)typeof(FirstPersonController).GetField("moveAction",Private).GetValue(player);
+            var p=player.transform.position;trace.WriteLine(string.Join(",",Time.frameCount,(Time.realtimeSinceStartup-startedAt).ToString("F4"),scenario,p.x.ToString("F4"),p.y.ToString("F4"),p.z.ToString("F4"),player.IsGrounded,player.IsCrouching,player.IsSprinting,player.GameplayInputEnabled,typeof(FirstPersonController).GetField("waitForInputRelease",Private).GetValue(player),typeof(FirstPersonController).GetField("inputReleaseFrames",Private).GetValue(player),action.ReadValue<Vector2>().ToString().Replace(',',';'),string.Join("+",held),Keyboard.current?.name,action.enabled));
+            if(Time.realtimeSinceStartup-lastCapture>=.125f){Capture(null,true);times.WriteLine(captureIndex+","+(Time.realtimeSinceStartup-startedAt).ToString("F4")+","+scenario);captureIndex++;lastCapture=Time.realtimeSinceStartup;}
+            if(gate!=null)
+            {
+                gate.tick?.Invoke();if(Time.realtimeSinceStartup>gate.deadline)throw new TimeoutException("Blocked in "+scenario+" at "+player.transform.position);
+                if(!gate.ready())return;gate=null;
+            }
+            if(sequence.MoveNext())gate=sequence.Current;
+        }catch(Exception ex){Fail(ex);}
+    }
+    static void Capture(string name,bool video=false)
+    {
+        var previous=view.targetTexture;var active=RenderTexture.active;
+        try{view.targetTexture=target;view.Render();RenderTexture.active=target;texture.ReadPixels(new Rect(0,0,1280,720),0,0);texture.Apply();File.WriteAllBytes(video?Out+"/Frames/"+captureIndex.ToString("D5")+".jpg":Out+"/Captures/"+name+".png",video?texture.EncodeToJPG(80):texture.EncodeToPNG());}
+        finally{view.targetTexture=previous;RenderTexture.active=active;}
+    }
+    static void Write()
+    {
+        Directory.CreateDirectory(Out);File.WriteAllText(Out+"/runtime-validation.json",JsonUtility.ToJson(new Report{complete=finished&&string.IsNullOrEmpty(failure),scenario=scenario,failure=failure,unity=Application.unityVersion,device=SystemInfo.graphicsDeviceName,cpu=SystemInfo.processorType,pipeline=UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline?.name,quality=QualitySettings.names[QualitySettings.GetQualityLevel()],checksPassed=checks.Count,videoFrames=captureIndex,roundTrips=roundTrip,elapsedSeconds=Time.realtimeSinceStartup-startedAt,minFeetY=minY,checks=checks.ToArray(),interactionRequests=requests.ToArray()},true));trace?.Flush();times?.Flush();
+    }
+    static void Fail(Exception ex)
+    {
+        failure=ex.ToString();finished=true;Debug.LogError(failure);try{if(view && texture)Capture("FAILURE");Write();}finally{Stop();}
+    }
+    static void Stop()
+    {
+        Keys();InputSystem.onBeforeUpdate-=Input;EditorApplication.update-=Tick;scope?.Dispose();trace?.Dispose();times?.Dispose();SessionState.SetBool(Flag,false);
+        if(keyboard!=null && keyboard.added)InputSystem.RemoveDevice(keyboard);if(mouse!=null && mouse.added)InputSystem.RemoveDevice(mouse);
+        Debug.Log("[ArchiveStage2] FINISHED "+scenario);EditorApplication.Exit(string.IsNullOrEmpty(failure)?0:2);
+    }
+}
+
+public class ArchiveStage2Adapter:MonoBehaviour,IInteractable
+{
+    public MaintenanceArtAnchor anchor;public string InteractionPrompt=>anchor.displayLabel;
+    public void Interact(PlayerInteractor interactor){anchor.RequestInteraction(interactor.transform.position);}
+}

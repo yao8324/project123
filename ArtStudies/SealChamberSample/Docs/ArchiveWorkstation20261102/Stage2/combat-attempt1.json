@@ -1,0 +1,19 @@
+{
+    "complete": false,
+    "scenario": "Fast projectile absorption at low frame rate",
+    "failure": "System.InvalidOperationException: At 20 FPS actual right-click input absorbs fast pages without skipping the absorption segment\r\n  at ArcaneArchive.Visuals.Editor.WardenRitualAcceptance.Check (System.Boolean condition, System.String description) [0x00024] in D:\\codex-task-cache\\ArchiveRuntime20261102\\Assets\\Scripts\\Visuals\\Editor\\WardenRitualAcceptance.cs:73 \r\n  at ArcaneArchive.Visuals.Editor.WardenRitualAcceptance+<Run>d__44.MoveNext () [0x005a3] in D:\\codex-task-cache\\ArchiveRuntime20261102\\Assets\\Scripts\\Visuals\\Editor\\WardenRitualAcceptance.cs:155 \r\n  at ArcaneArchive.Visuals.Editor.WardenRitualAcceptance.Tick () [0x000fd] in D:\\codex-task-cache\\ArchiveRuntime20261102\\Assets\\Scripts\\Visuals\\Editor\\WardenRitualAcceptance.cs:119 ",
+    "checks": [
+        "PASS: First gesture produces six suspended harmless pages",
+        "PASS: All six pages are in the non-attacking crown state",
+        "PASS: Entire tilted crown floats above the head",
+        "PASS: Summoning itself does no damage",
+        "PASS: Pause freezes crown, pages and summoning pose",
+        "PASS: Second gesture releases the actual suspended objects in a burst",
+        "PASS: Phase one fires exactly six pages and clears the crown",
+        "PASS: Fast pages retain the bounded weak homing budget",
+        "PASS: Phase two presents eight suspended pages",
+        "PASS: Phase two releases all eight pages once"
+    ],
+    "rushSeconds": [],
+    "peakRiftSegments": 0
+}

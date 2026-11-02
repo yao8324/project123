@@ -1,0 +1,9 @@
+{
+  "resolution": "1280x720",
+  "capture": "Up to 8fps using real-time capture stamps; variable frame duration preserves route timing",
+  "sourceFrames": 479,
+  "elapsedSeconds": 75.7624282836914,
+  "audio": false,
+  "scope": "Production scene/controller/input/interaction class with test-only event adapters and safe transfers; not the five-event story system or human playtest",
+  "bytes": 23420784
+}

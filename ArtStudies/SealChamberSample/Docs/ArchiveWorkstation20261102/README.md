@@ -1,61 +1,56 @@
 # 档案工作区 · 用户追加美术候选（2026-11-02）
 
-本轮停在**第一阶段：可独立检查的工作台摆放与灾前/受袭后状态**。用户在维护厅交付后明确授权继续。此候选不冒充Client新派发任务，不改变ART-W20261028-01已提交待验收状态，也不表示正式采用或完整剧情已接入。
+当前完成第二阶段的**正式大厅独立副本摆放、真实角色交互及三次往返验证**。使用本机已有Unity6000.3.24f1、URP17.3.0；25版未复验。没有修改原运行工程 `1.0.6/` 的场景、程序、版本或包设置。此候选由用户追加授权，待Client检查，不改变原周任务的采用结论。
 
-使用现有Unity **6000.3.24f1**、URP **17.3.0**；没有安装新Unity。未修改 `1.0.6/` 的共享场景、桌子、展示装置或程序逻辑。
+策划依据已经重新通读，见[策划对照与场景边界](../../../../团队任务/场景/提交/策划对照与场景边界_20261102.md)。本周流程止于返回取记录；维护厅不是源石本体所在的最深封印室。
 
-## 已完成
+## 已完成与风格
 
-- 选择现有入口附近右侧阅读桌：`IV4_W04_Table` 的mesh_0685/0686/0687，桌面中心约 **(5.8,0.836,8.4)**。魔法书/地球仪展示台位于Z约13.3，未挪动或覆盖。
-- 一个工作区附加Prefab，复用上一轮档案夹、蓝绳、工作牌，只新增已封档绳结及少量散页。三份档案按I/II/III保留数据槽位，不擅自编写剧情正文。
-- 灾前摆放：三份档案有序排列，工作牌正面、松开的蓝绳。
-- 已封档表现：第一份档案上增加交叉蓝绳及绳结。表现切换不自动完成任务。
-- 受袭后摆放：档案轻微错位，少量纸页落在桌后，保持玩家正面接近方向；工作牌朝下并关闭背透姓名印字。已封档状态跨灾前/受袭后切换保留。
-- 预留工作视点、醒来观察点、返回取记录目标、后续绳结/工作牌近景点。醒来位置只是镜头候选，不是已验证的玩家出生点。
-- Inspector提供中文按钮，可查看灾前/受袭后摆放并切换蓝绳状态。预览场景附冷暖照明建议，交付附加Prefab中不含灯光或实体桌子/地板。
+- 附加Prefab放在现有右侧阅读桌mesh_0685/0686/0687上，根世界坐标 **(5.8,0.836,8.4)**，Y旋转0°、缩放1。保留原桌、椅、台灯、书堆、地毯及其碰撞。
+- 三个档案槽位缩放至0.72，避开原台灯和书堆；蓝绳挂在左前桌沿。实景发现原建议站位被Chair_11占用，工作脚点改为 **(5.2,0.08,7.1)**，并验证没有安全落点偏移。
+- 灾前/受袭后互斥摆放；散页位于桌后且高于原地毯；受袭后工作牌翻面并隐藏姓名印字。封档状态跨灾变切换和往返保留。
+- 复用原大厅的木作、红褐皮革、旧黄铜和暖纸材质/贴图。原库材质在独立制作工程按原路径、GUID镜像，见[逐文件来源与校验](material-reuse.json)；原游戏文件没有被改写。工作牌铜壳、档案封皮和纸张与既有环境同源。
+- 完成封档后出现小尺度暖金封印纹样，取自原有V5_Magic_Gold配色并降低发光强度；最大直径约4.2cm，无新灯光、粒子、计时或输入逻辑。它只作为封档结构候选，不解释为灵魂或任意能力。
+- 侧门及维护厅出口新增非阻挡射线目标，交互观察点Y=1.55，便于平视靠近；实体墙、门槛与中央通行区保留。
+- 中文Inspector按钮预演灾前、受袭后和封档状态。附加Prefab不包含参考桌、地板、运行灯光或第二套输入器。
 
-## 打开与查看
+## 打开与接入
 
-1. 用现有24版打开 `ArtStudies/SealChamberSample`。
-2. 打开 `Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes/ArchiveWorkstationReview.unity`。
-3. 选中 `ArchiveWorkstation_ArtCandidate`。Inspector顶部的中文按钮切换灾前、受袭后、封档状态；切换仅用于摆放预演。
-4. `REVIEW_ONLY_ExistingDeskReference` 是从现有桌子提取的局部比例参照，参考色材质不代表正式桌子的纹理调整。`REVIEW_ONLY_Lighting` 是预览照明。二者均不在附加Prefab内。
+用24版打开 `ArtStudies/SealChamberSample`，打开 `Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes/ArchiveWorkstationReview.unity`，选择ArchiveWorkstation_ArtCandidate。
 
-## 程序接入
+交付资产：`Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs/ArchiveWorkstation.prefab`。导入整个 `Assets/Art/SealChamberStudy/`，保持路径和meta；运行工程已有 `Assets/Art/MilanLibraryV6/` 依赖。制作工程的该材质镜像只用于独立制作可复现，不在运行工程再导入第二套GUID。
 
-主要资产：`Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs/ArchiveWorkstation.prefab`。
+`REVIEW_ONLY_ExistingDeskReference` 包含从原网格提取的局部桌椅/台灯/书堆/地毯参照；`REVIEW_ONLY_Lighting` 是预览照明。二者均不进入附加Prefab，也不覆盖正式大厅。
 
-根放到 **(5.8,0.836,8.4)**、Y旋转0°、缩放1，叠在**现有阅读桌上**。保留运行场景原桌子及碰撞，不导入第二张参考桌子/地板/预览灯。资源依赖上一轮 `MaintenanceW20261028` 道具与同根Scripts，必须保持路径和meta。
-
-交互使用沿用的 `MaintenanceArtAnchor`：
-
-| 锚点 | 用途 |
+| 锚点 | 程序接入用途 |
 | --- | --- |
-| ARCHIVE_RECORD_SLOT_01 / 02 / 03 | 绑定剧情成员提供的三份档案数据 |
-| ARCHIVE_TIE_CORD | 程序接收系蓝绳请求，完成条件满足后切换封档表现 |
-| ARCHIVE_WORK_BADGE | 开场工作牌观察点；不是醒来后的玩家身份确认 |
-| ARCHIVE_SEAL_COMPLETE_MARKER | 已封档视觉位置，无独立交互碰撞，不计作额外任务 |
+| ARCHIVE_RECORD_SLOT_01 / 02 / 03 | 绑定剧情成员的三份档案数据 |
+| ARCHIVE_TIE_CORD | 接收系绳请求，条件满足后切换封档表现 |
+| ARCHIVE_WORK_BADGE | 开场工作牌观察；醒来后不确认玩家身份 |
+| ARCHIVE_SEAL_COMPLETE_MARKER | 已封档视觉位置，无额外交互碰撞或任务计数 |
 
-灾前和受袭后各有同ID的锚点，但只有一组激活；不要同时打开两个状态根。道具使用Trigger作为射线目标，没有新增实体挡路碰撞。程序应使用原有统一交互入口适配，不能同时激活两套输入器。
+灾前和受袭后各有同ID锚点，但仅一组激活。道具Trigger用于射线，没有实体挡路碰撞。程序应适配统一交互入口，不能同时激活多套输入器。
 
-`ArchiveWorkstationArt.SetArchiveSealed(bool)`改变蓝绳表现；`SetDisturbed(bool)`改变摆放并保留封档状态；`ResetPresentation()`仅重置美术表现。它们均不传送、不推进事件、不改字幕/姓名、不改程序任务计数、不增删运行灯光。正式灾变灯光由程序绑定已有灯具，预览的冷暖色只是美术建议。
+`ArchiveWorkstationArt.SetArchiveSealed(bool)`切换封档表现；`SetDisturbed(bool)`切换摆放并保留封档状态；`ResetPresentation()`只重置美术表现。它们不传送、不推进剧情、不改字幕/姓名、不计任务、不增删灯光。正式灾变照明由程序绑定既有灯具。
 
-建议玩家工作位置约(5.8,0.08,7.3)，对应基线已有桌前接近方向；侧门返回点仍为(6,0.08,1.4)。下一阶段需在程序候选副本中做二者之间的实际通行和完整环境观察，本轮没有据此宣称路线已通过。
+工作脚点(5.2,0.08,7.1)，醒来候选脚点(5.05,0.08,7.0)，侧门安全返回(6,0.08,1.4)。摆放接口见[placement.json](placement.json)。
 
-## 验证与限制
+## 第二阶段验证
 
-见[validation.json](validation.json)和[逐条检查](validation-checks.txt)：24版编译、制作成功；99条美术检查通过，覆盖四种灾变/封档组合、活动槽位唯一性、三份档案中心及四角支撑、可交互距离、纸页不进入桌前接近方向、牌背朝上且无活动姓名印字、状态保留、无额外实体碰撞/灯光、无空网格。检查采用独立展示环境，不等同于生产控制器、完整故事或目标设备性能验收。
+- [静态106项](validation.json)：四种状态、活动槽位唯一、档案中心/四角支撑、距离、原台灯/书堆不重叠、无新增实体阻挡/灯光、散页高于地毯、工作位净空、姓名关闭及封档保留。
+- [正式大厅独立副本124项](Stage2/runtime-validation.json)：生产角色控制器、原Input System和PlayerInteractor类，真实E回调、绕桌六段、蹲起、醒来落点、侧门、非敌对维护厅三个节点及三次往返，最后返回取记录。一次E恰好一次回调，已稳定节点拒绝重复交互，只有一个玩家且无遗留厅实例。最低脚点Y约0.075。
+- [约76秒实景录像](Stage2/档案工作台_三次往返_实机验证.mp4)：1280×720，最多8fps采样，按真实时间戳保留路线时长，无音轨。479帧；详见[视频信息](Stage2/video-info.json)、[原始轨迹](Stage2/trajectory.csv)和[成功射线记录](Stage2/ray-observations.txt)。
+- 制作工程整个Assets的177份meta检查：缺失0、孤立0、重复GUID0；本轮拥有的材质/网格无未引用项，见[资产审计](asset-audit.json)。原有无关设置差异和WPS锁文件不纳入提交。
+- [最终资源既有战斗36/36通过](Stage2/combat-regression.json)，退出Play Mode且编译/场景脏状态正常。初次未隔离输入的运行停在右键吸收；默认D/右键路径核对正确，测试限定到虚拟设备并显式采用测试默认绑定后通过。初次失败原因未独立定性，不归因于美术，也不隐去失败报告，见[初次记录](Stage2/combat-attempt1.json)及[输入范围](Stage2/combat-input-scope.txt)。游戏及原回归类未修改，用户绑定文件未保存。
 
-待完成：正式大厅环境中的摆放复核；真实角色绕桌和工作台—侧门往返；完整开场镜头节奏与剧情/程序事件接线。遗体与伤口模型未制作，后续反转只预留观察点。三份正文仍待剧情成员交付。
+验证使用原大厅与控制器，额外适配器仅负责把美术锚点接到原交互类，并在测试中执行安全传送/非敌对厅实例。测试输入限制到虚拟设备，避免电脑上其他输入干扰。没有实现或替代五事件剧情、正式淡出加载、菜单过渡防重复、6–8分钟成片或人工试玩。RTX4060 Laptop/i7-14650HX、Ultra编辑器观察不代表独立包/目标设备性能达标。
 
-## 图片
+原PlayerInteractor在部分低头角度可能射中玩家自己的CharacterController；本轮侧门观察点提高到平视后通过，程序仍应针对统一交互排除自身碰撞做独立修复验收，不把当前三次通过认定为所有观察角都已修复。
 
-[灾前第一人称](Captures/01_intact_first_person.png) · [完成封档](Captures/02_seal_complete.png) · [受袭后同视角](Captures/03_disturbed_same_view.png) · [散页位置](Captures/04_disturbed_overview.png) · [工作牌和蓝绳近景](Captures/05_badge_and_cord.png)
+## 图片与续做
 
-## 制作与续做入口
+[实景灾前](Stage2/Captures/01_production_intact.png) · [封档后](Stage2/Captures/03_production_sealed.png) · [受袭后](Stage2/Captures/04_production_disturbed.png) · [侧门](Stage2/Captures/05_production_side_door.png) · [维护厅出口](Stage2/Captures/06_production_hall_exit.png) · [第三次返回](Stage2/Captures/07_return_to_workstation_3.png)
 
-- 运行组件：`Assets/Art/SealChamberStudy/Scripts/ArchiveWorkstationArt.cs`。
-- 制作源：`Assets/Scripts/Visuals/Editor/ArchiveWorkstationBuilder.cs`，以及同目录 `ArchiveWorkstationArtInspector.cs`。
-- 重建菜单：`Art Studies / Archive / Build workstation candidate`。读取仓库现有 `1.0.6/Assets/Art/MilanLibraryV6/Meshes/mesh_0685～0687.mlmesh` 提取局部参考；运行工程源文件只读。
-- 出图菜单：`Art Studies / Archive / Capture workstation candidate`，重建后建议新开一次编辑器出图。
-- 下一步先导入**附加Prefab**到程序独立预览副本，核对实际材质/环境、操作视线与绕桌路线，再扩大到灾后引导。不要把整套参考场景覆盖到正式大厅。
+制作源 `Assets/Scripts/Visuals/Editor/ArchiveWorkstationBuilder.cs`；重建菜单 `Art Studies / Archive / Build workstation candidate`；出图菜单 `Capture workstation candidate`。独立验证工具保存为[ArchiveRuntimeStage2.cs.txt](ArchiveRuntimeStage2.cs.txt)，仅放入测试副本Assets/Editor运行，不导入正式工程。
+
+下一步是程序/剧情绑定正文、任务完成条件、灾变、睁眼、淡出与返回事件，Client验收风格。场景成员按冻结要求修已有阻塞、补镜头与交接说明。遗体、伤口、复杂手部动画和最终战本轮不制作。

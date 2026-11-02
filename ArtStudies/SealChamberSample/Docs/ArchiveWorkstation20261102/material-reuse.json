@@ -1,0 +1,413 @@
+{
+  "policy": "Exact copies of existing material/texture files and metas, retaining paths and GUIDs; review source dependencies only; originals unchanged",
+  "files": [
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_4.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_4.mat",
+      "sha256": "faa0d9150374503154333cea5450602f3532004cff8fe05bea4270589b7b8d54",
+      "bytes": 4134
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_4.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_4.mat.meta",
+      "sha256": "339e34181e5f7604d382c0b371e7208067bbaf66e346240ea7c6954b9b039b92",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_5.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_5.mat",
+      "sha256": "b085485531238a20561ecf0d0bc6fab7be847b5cb460852cfac1a4d48f22f7e6",
+      "bytes": 4135
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_5.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_BookLeather_5.mat.meta",
+      "sha256": "340292d0d44ee729e9742fb338b6116de16d17db93550ae4226c4f0e944988d3",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Brass_HandledEdges.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Brass_HandledEdges.mat",
+      "sha256": "752fe5b9620d45beaae08d7a46519a4dd9e4cb0c8b6fcd06f6f70396f7f06663",
+      "bytes": 4137
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Brass_HandledEdges.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Brass_HandledEdges.mat.meta",
+      "sha256": "e2d7a009fd41e1f7bcacbd882434b4091591733d98f26142adf8409f6f9afbd7",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Faded_Tapestry.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Faded_Tapestry.mat",
+      "sha256": "9f1db41f37e44b215e61693af962859f892b080e133762c2494336b353e11e42",
+      "bytes": 4138
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Faded_Tapestry.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Faded_Tapestry.mat.meta",
+      "sha256": "838e23a9cc4ff8d9d2c7ab8113fc0236e0a711097adb6a90cc164d35a3853173",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Green_Glass.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Green_Glass.mat",
+      "sha256": "cb2963030341841528ee79380bf47c32384cf58c5b4230fb5c163e7f78450f4e",
+      "bytes": 4127
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Green_Glass.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Green_Glass.mat.meta",
+      "sha256": "9fc309f5281d281a6a41cc2b51ceb1af84805bcd41bf3f856000dd1cc03578c2",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Oxblood_Leather.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Oxblood_Leather.mat",
+      "sha256": "8bc8783a414090b917ce90a9beef0a0dc08d8d54e8d6f06e58aed70b6d99580b",
+      "bytes": 4131
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Oxblood_Leather.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Oxblood_Leather.mat.meta",
+      "sha256": "d5e4b598176d9bbf90c7f10f947b31bb8eb5134d9b2e629a628ceeea711f33a8",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Oxidised_Brass.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Oxidised_Brass.mat",
+      "sha256": "46a616b13acb0a61d7cfee5a1a02db50ff346f73e99b1bc16a59768488088c87",
+      "bytes": 4132
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Oxidised_Brass.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Oxidised_Brass.mat.meta",
+      "sha256": "80a46d9a8bb410b0f836cdda23203714fd461b3994f0f4cd96be46a6af32b111",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Warm_Flame.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Warm_Flame.mat",
+      "sha256": "fc91b58443a036a1fa90a190fbc60710b1a0c84c0ee0a582c8d2354929628ea0",
+      "bytes": 4165
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Warm_Flame.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Warm_Flame.mat.meta",
+      "sha256": "3a476a3dd8c1096edf7374e0973f12aaa5598d527cd342dcd6032af08a9e96ba",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Wax_Ivory.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Wax_Ivory.mat",
+      "sha256": "385d9f7839adb042e7354a7490cd0fbb45ba26155c549c3ce42a9cfcf2caf020",
+      "bytes": 4126
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/IV4_Wax_Ivory.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/IV4_Wax_Ivory.mat.meta",
+      "sha256": "e6812f91e9bd0f4f8257c61a3eea9b5990aeb18861a87a6505f95219f5877592",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/MAT_Old_Paper.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/MAT_Old_Paper.mat",
+      "sha256": "792659d69cac77476e3367fff5ae19edc735abf40ac71b54ad54dc2f4b991364",
+      "bytes": 3998
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/MAT_Old_Paper.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/MAT_Old_Paper.mat.meta",
+      "sha256": "0ae5d516cd4311ab13b621c39b797a9ca32e69e55557763030be1a3618f46875",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/MAT_Warm_Marble.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/MAT_Warm_Marble.mat",
+      "sha256": "8abdafb97fe550e14a96683a6fc24f2cea0b355c9ddf467985d3f27bb64cba29",
+      "bytes": 3997
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/MAT_Warm_Marble.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/MAT_Warm_Marble.mat.meta",
+      "sha256": "451d07aa0c0f77ccc8a1e39c5882909206dc88c270b18b2a874806bc053d113b",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/V5_Interior_Joinery.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/V5_Interior_Joinery.mat",
+      "sha256": "ec49af5bb7441e83b897ed46c8dfc0a5440e820c94939df417fa63a798083b6a",
+      "bytes": 4179
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/V5_Interior_Joinery.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/V5_Interior_Joinery.mat.meta",
+      "sha256": "1f9325da7a64ad2a3dc932a33f49ac564babdad9c8fe374e81b9eec63ae51312",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/V5_Magic_Gold.mat",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/V5_Magic_Gold.mat",
+      "sha256": "bc95bbebe60e6b6b6426a2218a98d5c0fbec3f390377b4950a44476848f7f1c8",
+      "bytes": 4014
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials/V5_Magic_Gold.mat.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials/V5_Magic_Gold.mat.meta",
+      "sha256": "21382c92c3249c7764797fdbdfda36c3817122ca3a381fa4cf7710a554f5918c",
+      "bytes": 196
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Materials.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Materials.meta",
+      "sha256": "19d0c245202272defcc1c665216a68605a1a42325aba2955d85c6bc324eb6517",
+      "bytes": 180
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_BaseColor.png",
+      "sha256": "5abebe7f08ccee2043faf8b4bdcb4ef70410e418bbbe0b297494da779c7b3848",
+      "bytes": 1020810
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_BaseColor.png.meta",
+      "sha256": "3122be2c1a70e8aa0f2fe310da1b57233ef80e48e5dd498f88b16f5791c01e56",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_Normal.png",
+      "sha256": "93337f9797bc32db2def348be3602ea3267367d2234914308b659030060153b3",
+      "bytes": 863235
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_4_Normal.png.meta",
+      "sha256": "91ba4130e1824566bb6214352fa22c82d4e221ff73a0d3fd18fe05d63f644ac9",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_BaseColor.png",
+      "sha256": "f443b12a18cf19ab89c4e9b61a6a39362d9d298ab836e22f5b0f985f9a1f60f5",
+      "bytes": 1055522
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_BaseColor.png.meta",
+      "sha256": "01b29e3acfce5f3eaeb5f733ee03045f37b4f103076d0f2bf372ad141f78e2db",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_Normal.png",
+      "sha256": "93337f9797bc32db2def348be3602ea3267367d2234914308b659030060153b3",
+      "bytes": 863235
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_BookLeather_5_Normal.png.meta",
+      "sha256": "7bcd35629808ba6cfb41e9ec0c5563e4f971887283b325b48fe4777e9819f06f",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_BaseColor.png",
+      "sha256": "ccd6e9d2e1c48f1abcc62c963b4cac9658f77dc080c04cb8e4c3cf778291230d",
+      "bytes": 880334
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_BaseColor.png.meta",
+      "sha256": "545401219500237e73f4928c48d33e6c9c4be61e74841502fdd89547918e9645",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_Normal.png",
+      "sha256": "9d635534e475c7dc60f869767dbd9b0f37a94ddd7aa9a7b98642a6bd4febe8bc",
+      "bytes": 15960
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Brass_HandledEdges_Normal.png.meta",
+      "sha256": "2b0fe847d4e8ca96ca50153b288759bdce1e576be150e28c124618c062c7c6f7",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_BaseColor.png",
+      "sha256": "34176b960a3eec6269e6f60900f2dd1f7a1cc1b2f4c6e6e2ce2fff5576c6a132",
+      "bytes": 1221208
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_BaseColor.png.meta",
+      "sha256": "3c732a611e100ffd175b3c0705527927d901182b3a42befb37fa7f2d5210588c",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_Normal.png",
+      "sha256": "16e84cb0d1a39059a6c29cc8458ae2a61f54476448cf6773983ca737136f29c7",
+      "bytes": 1221752
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Faded_Tapestry_Normal.png.meta",
+      "sha256": "4578103a5bf9d2d5c3c82805b1a7437d2c48fe0d929127d9f384ab57d18c13fe",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_BaseColor.png",
+      "sha256": "f31c8cae313017f423cb299c30dfcc70b4fed897fe7f71499d5c27ac8aaa4407",
+      "bytes": 669953
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_BaseColor.png.meta",
+      "sha256": "94a811efe4c2bc237f1c4d97a3eba40a3a73af0846873814def8f9a28fdfc702",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_Normal.png",
+      "sha256": "9d635534e475c7dc60f869767dbd9b0f37a94ddd7aa9a7b98642a6bd4febe8bc",
+      "bytes": 15960
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Green_Glass_Normal.png.meta",
+      "sha256": "8376979860e462d879d97445abd4f8841659ac845ea15c21826ee64df33e20fc",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_BaseColor.png",
+      "sha256": "18d179b0322e7e562669f7c203872bffd1c091353838abdd1e13785a329be9bf",
+      "bytes": 1157537
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_BaseColor.png.meta",
+      "sha256": "6fc8f98aa843db024780ebaaebcafd054fc8562faec350ee6ae40e47eded1c76",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_Normal.png",
+      "sha256": "16d164574238475ab335d9d326006c8b566fcf0d58200f32e44f6ca0dcb033f2",
+      "bytes": 924983
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxblood_Leather_Normal.png.meta",
+      "sha256": "c8d9997953109941b681c0f204036a892c97ef81becf4d3ffc81f5aef17a8516",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_BaseColor.png",
+      "sha256": "24bced365a3f0aaa88fac2efb4063a1d73dbd71acb405019d2de89e12f9399b3",
+      "bytes": 770479
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_BaseColor.png.meta",
+      "sha256": "53b80d936aa2116e27151d62a9868943a490a5ce6b05ddab1c3478b3d1cf2f3d",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_Normal.png",
+      "sha256": "9d635534e475c7dc60f869767dbd9b0f37a94ddd7aa9a7b98642a6bd4febe8bc",
+      "bytes": 15960
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Oxidised_Brass_Normal.png.meta",
+      "sha256": "8141c424bdbe0e35498319b9fdff7a743d515845e84998cd7ae0c0bde318694c",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_BaseColor.png",
+      "sha256": "c4ca2c26e6b96ed00ae4b15816f1ec8c5bd487b1f679c8c2cd63eb239bb86d98",
+      "bytes": 15961
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_BaseColor.png.meta",
+      "sha256": "410ae2636a7b93b0740634a7b262443109f420cfdf5734878ff3813992e0b9ad",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_Normal.png",
+      "sha256": "9d635534e475c7dc60f869767dbd9b0f37a94ddd7aa9a7b98642a6bd4febe8bc",
+      "bytes": 15960
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Warm_Flame_Normal.png.meta",
+      "sha256": "f6e1e8b2068677875b42378048a13daaeb4f2faba300e663c9b0cbc23e5589fb",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_BaseColor.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_BaseColor.png",
+      "sha256": "ff79f0c0bbb9e67d55e4b754773883326f20ede40f36ff43ef979e74bc97ae9f",
+      "bytes": 15963
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_BaseColor.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_BaseColor.png.meta",
+      "sha256": "31871682175837789c8886bd34c6bbb7f63ad904b6608fccd8963e316e878205",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_Normal.png",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_Normal.png",
+      "sha256": "9d635534e475c7dc60f869767dbd9b0f37a94ddd7aa9a7b98642a6bd4febe8bc",
+      "bytes": 15960
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_Normal.png.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/IV4_Wax_Ivory_Normal.png.meta",
+      "sha256": "53bf09e0a1f77357b54717fa2fe26899a2364048d0ec26b2944894b203d1eb87",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/wood_table_001_diff_2k.jpg",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/wood_table_001_diff_2k.jpg",
+      "sha256": "63ae5cd186197b40f18bc020fe2b652bb08df4d9fc6240c6cbf8a7e3bc32c096",
+      "bytes": 924532
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/wood_table_001_diff_2k.jpg.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/wood_table_001_diff_2k.jpg.meta",
+      "sha256": "de6bb7d89175b5833f55d8f8b28bbad983183a384cb879c713694d9769770f4e",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/wood_table_001_nor_gl_2k.jpg",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/wood_table_001_nor_gl_2k.jpg",
+      "sha256": "d56f02c911391267ddc6adc92e8a5bc29b9803196e8d57ad5b9702e6c842dc28",
+      "bytes": 385020
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures/wood_table_001_nor_gl_2k.jpg.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures/wood_table_001_nor_gl_2k.jpg.meta",
+      "sha256": "191edb7b552957f841e5f760f795fd7c7ecf384996c88f157cbe373e1799723f",
+      "bytes": 2769
+    },
+    {
+      "path": "Assets/Art/MilanLibraryV6/Textures.meta",
+      "source": "1.0.6/Assets/Art/MilanLibraryV6/Textures.meta",
+      "sha256": "df1f90091910626ea68d6b619422f7baebe2063570e8e1d6d435ece840a70b55",
+      "bytes": 180
+    }
+  ]
+}

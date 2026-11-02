@@ -20,6 +20,7 @@ Record corner supported: ARCHIVE_RECORD_SLOT_03
 Record corner supported: ARCHIVE_RECORD_SLOT_03
 Record interaction within range
 Presentation adds no solid blocker
+No active presentation overlaps the original lamp/book dressing
 Exclusive presentation state after=False, sealed=True
 Seal presentation preserved
 Exactly three unique active record slots
@@ -42,6 +43,7 @@ Record corner supported: ARCHIVE_RECORD_SLOT_03
 Record corner supported: ARCHIVE_RECORD_SLOT_03
 Record interaction within range
 Presentation adds no solid blocker
+No active presentation overlaps the original lamp/book dressing
 Exclusive presentation state after=True, sealed=False
 Seal presentation preserved
 Exactly three unique active record slots
@@ -68,6 +70,8 @@ Post-awakening badge faces down
 No active identity print behind post-awakening badge
 Loose sheets stay behind the desk approach
 Loose sheets stay behind the desk approach
+Loose sheets remain above the existing rug
+No active presentation overlaps the original lamp/book dressing
 Exclusive presentation state after=True, sealed=True
 Seal presentation preserved
 Exactly three unique active record slots
@@ -94,6 +98,9 @@ Post-awakening badge faces down
 No active identity print behind post-awakening badge
 Loose sheets stay behind the desk approach
 Loose sheets stay behind the desk approach
+Loose sheets remain above the existing rug
+No active presentation overlaps the original lamp/book dressing
 Disturbance does not erase completed seal presentation
 No extra production lights in overlay
 No missing or empty meshes
+Work view clears reference table and chair guards

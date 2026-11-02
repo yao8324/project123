@@ -1,8 +1,8 @@
 {
+  "scope": "Entire source project Assets for meta/GUID checks; owned weekly/workstation meshes/materials for serialized usage",
+  "metaCount": 177,
   "missingMeta": [],
   "orphanMeta": [],
   "duplicateGuid": {},
-  "deliveryPrefab": "ArchiveWorkstation.prefab",
-  "scope": "owned art root; review context kept separate from overlay",
-  "unreferencedMeshesAndMaterials": []
+  "unreferencedOwnedMeshesAndMaterials": []
 }

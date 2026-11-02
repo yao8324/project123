@@ -1,0 +1,94 @@
+{
+    "probes": [
+        {
+            "requested": {
+                "x": 5.800000190734863,
+                "y": 0.07999999821186066,
+                "z": 7.300000190734863
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": [
+                "Chair_11"
+            ]
+        },
+        {
+            "requested": {
+                "x": 5.199999809265137,
+                "y": 0.07999999821186066,
+                "z": 7.099999904632568
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": []
+        },
+        {
+            "requested": {
+                "x": 5.050000190734863,
+                "y": 0.07999999821186066,
+                "z": 7.0
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": []
+        },
+        {
+            "requested": {
+                "x": 7.324999809265137,
+                "y": 0.07999999821186066,
+                "z": 6.900000095367432
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": []
+        },
+        {
+            "requested": {
+                "x": 7.324999809265137,
+                "y": 0.07999999821186066,
+                "z": 10.0
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": []
+        },
+        {
+            "requested": {
+                "x": 4.275000095367432,
+                "y": 0.07999999821186066,
+                "z": 10.0
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": []
+        },
+        {
+            "requested": {
+                "x": 4.275000095367432,
+                "y": 0.07999999821186066,
+                "z": 6.900000095367432
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": []
+        },
+        {
+            "requested": {
+                "x": 6.0,
+                "y": 0.07999999821186066,
+                "z": 1.399999976158142
+            },
+            "supported": true,
+            "floorY": 0.0,
+            "floor": "Structure_MAT_Warm_Marble_206",
+            "occupied": []
+        }
+    ]
+}

@@ -1,9 +1,8 @@
 {
-  "scope": "owned Assets/Art/SealChamberStudy",
-  "metaCount": 97,
+  "scope": "Entire source project Assets for meta/GUID checks; owned weekly/workstation meshes/materials for serialized usage",
+  "metaCount": 177,
   "missingMeta": [],
   "orphanMeta": [],
   "duplicateGuid": {},
-  "emptyWeeklyMesh": [],
-  "unreferencedWeeklyMaterialsAndMeshes": []
+  "unreferencedOwnedMeshesAndMaterials": []
 }

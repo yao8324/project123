@@ -28,6 +28,7 @@ public static partial class SealChamberStudy
         cyan=WeeklyMat("Node_Cyan",new Color(.10f,.52f,.62f),.2f,.35f,true);
         blue=WeeklyMat("Archive_Cord_Blue",new Color(.035f,.16f,.43f),.04f,.15f);
         bone=WeeklyMat("Archive_Paper",new Color(.73f,.68f,.54f),0,.15f);
+        var existingPaper=ArchiveLibraryMaterial("MAT_Old_Paper");bone.CopyPropertiesFromMaterial(existingPaper);EditorUtility.SetDirty(bone);
         lettering=WeeklyMat("Archive_Ink",new Color(.025f,.035f,.05f),0,.1f);
         EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         // Scene changes unload transient meshes; create the procedural rod mesh afterwards.
@@ -60,7 +61,8 @@ public static partial class SealChamberStudy
         Node("ArchiveSideDoor_Link",refs,new Vector3(0,0,-15.1f));
         var exitAnchor=hall.transform.Find("MaintenancePassage").gameObject.AddComponent<MaintenanceArtAnchor>();
         exitAnchor.anchorId="MAINTENANCE_TO_ARCHIVE";exitAnchor.displayLabel="返回档案馆";
-        exitAnchor.interactionPoint=Node("ExitInteraction",exitAnchor.transform,new Vector3(0,1.0f,-.35f)).transform;
+        exitAnchor.interactionPoint=Node("ExitInteraction",exitAnchor.transform,new Vector3(0,1.55f,-.35f)).transform;
+        EnsureMaintenanceHitVolume(exitAnchor.transform,new Vector3(0,1.1f,-.35f),new Vector3(2.35f,2.2f,.08f));
         PrefabUtility.SaveAsPrefabAsset(hall,Work+"/Prefabs/MaintenanceHall.prefab");
         var entry=BuildArchiveEntryKit();
         // A separate review gallery keeps the foreshadowing props out of the central activity area.
@@ -80,6 +82,12 @@ public static partial class SealChamberStudy
         Debug.Log("[MaintenanceArt] BUILD_COMPLETE");
     }
     static Material LoadBase(string name)=>AssetDatabase.LoadAssetAtPath<Material>(Root+"/Materials/"+name+".mat");
+    static Material ArchiveLibraryMaterial(string name)
+    {
+        var material=AssetDatabase.LoadAssetAtPath<Material>("Assets/Art/MilanLibraryV6/Materials/"+name+".mat");
+        if(!material)throw new InvalidOperationException("Existing library material dependency missing: "+name);
+        return material;
+    }
     static Material WeeklyMat(string name,Color color,float metal,float smooth,bool emissive=false)
     {
         string path=Work+"/Materials/"+name+".mat";var mat=AssetDatabase.LoadAssetAtPath<Material>(path);
@@ -115,7 +123,8 @@ public static partial class SealChamberStudy
         var filters=root.GetComponentsInChildren<MeshFilter>();
         foreach(var group in filters.GroupBy(f=>f.GetComponent<MeshRenderer>().sharedMaterial))
         {
-            var mesh=new Mesh{indexFormat=IndexFormat.UInt32,name=prefix+"_"+group.Key.name};
+            string materialKey=prefix=="ArchiveRecord" && group.Key.name=="IV4_BookLeather_4"?"FolderCover":prefix=="ArchiveRecord" && group.Key.name=="IV4_Oxidised_Brass"?"Archive_Brass":prefix=="ElaineBadge" && group.Key.name=="IV4_Oxidised_Brass"?"BrassCase":group.Key.name;
+            var mesh=new Mesh{indexFormat=IndexFormat.UInt32,name=prefix+"_"+materialKey};
             mesh.CombineMeshes(group.Select(f=>new CombineInstance{mesh=f.sharedMesh,transform=root.worldToLocalMatrix*f.transform.localToWorldMatrix}).ToArray());
             string path=Work+"/Meshes/"+mesh.name+".asset";var saved=AssetDatabase.LoadAssetAtPath<Mesh>(path);
             if(saved){EditorUtility.CopySerialized(mesh,saved);Object.DestroyImmediate(mesh);mesh=saved;mesh.UploadMeshData(false);EditorUtility.SetDirty(mesh);}else AssetDatabase.CreateAsset(mesh,path);
@@ -177,7 +186,8 @@ public static partial class SealChamberStudy
         Box("Sign",p,new Vector3(0,2.85f,-.05f),new Vector3(1.7f,.40f,.07f),patina);
         WeeklyMerge(p,"ArchiveEntry");AddLabel("LOWER MAINTENANCE",p,new Vector3(0,2.85f,-.095f),.055f,bone);
         var anchor=g.AddComponent<MaintenanceArtAnchor>();anchor.anchorId="ARCHIVE_TO_MAINTENANCE";anchor.displayLabel="前往下层维护厅";
-        anchor.interactionPoint=Node("InteractionPoint",p,new Vector3(0,1.1f,-.4f)).transform;
+        anchor.interactionPoint=Node("InteractionPoint",p,new Vector3(0,1.55f,-.4f)).transform;
+        EnsureMaintenanceHitVolume(p,new Vector3(0,1.2f,-.36f),new Vector3(2.0f,2.4f,.08f));
         Node("ArchiveReturnSpawn",p,new Vector3(0,.08f,-1.6f)).transform.localRotation=Quaternion.Euler(0,180,0);return SaveWeekly(g,"ArchiveEntryKit",false);
     }
     static Mesh PassageApron()
@@ -190,6 +200,32 @@ public static partial class SealChamberStudy
             if(i<20){int k=i*2;t.AddRange(new[]{k,k+1,k+2,k+2,k+1,k+3});}
         }
         var m=new Mesh{name="PassageApron"};m.SetVertices(v);m.SetUVs(0,uv);m.SetTriangles(t,0);m.RecalculateNormals();return m;
+    }
+    static void EnsureMaintenanceHitVolume(Transform root,Vector3 center,Vector3 size)
+    {
+        var child=root.Find("InteractionHitVolume");var box=child?child.GetComponent<BoxCollider>():null;
+        if(!box)box=Node("InteractionHitVolume",root).AddComponent<BoxCollider>();
+        box.isTrigger=true;box.center=center;box.size=size;
+    }
+    [MenuItem("Art Studies/Maintenance/Update interaction targets only")]
+    public static void UpdateMaintenanceInteractionTargets()
+    {
+        if(EditorApplication.isPlaying || EditorSceneManager.GetActiveScene().isDirty)throw new InvalidOperationException("Exit Play Mode and save the current scene first.");
+        foreach(string name in new[]{"ArchiveEntryKit","MaintenanceHall"})
+        {
+            string path=Work+"/Prefabs/"+name+".prefab";var root=PrefabUtility.LoadPrefabContents(path);
+            try
+            {
+                if(name=="ArchiveEntryKit")EnsureMaintenanceHitVolume(root.transform,new Vector3(0,1.2f,-.36f),new Vector3(2.0f,2.4f,.08f));
+                else EnsureMaintenanceHitVolume(root.transform.Find("MaintenancePassage"),new Vector3(0,1.1f,-.35f),new Vector3(2.35f,2.2f,.08f));
+                PrefabUtility.SaveAsPrefabAsset(root,path);
+            }
+            finally{PrefabUtility.UnloadPrefabContents(root);}
+        }
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+        var hall=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Work+"/Prefabs/MaintenanceHall.prefab"));
+        ValidateMaintenance(hall);AssetDatabase.SaveAssets();EditorSceneManager.OpenScene(Work+"/Scenes/MaintenanceArtReview.unity");
+        Debug.Log("[MaintenanceArt] INTERACTION_TARGETS_UPDATED");
     }
     static GameObject BuildCord()
     {
@@ -206,7 +242,9 @@ public static partial class SealChamberStudy
     static GameObject BuildBadge()
     {
         var g=Node("ElaineWorkBadge");var p=g.transform;
-        Box("BrassCase",p,new Vector3(0,.009f,0),new Vector3(.19f,.018f,.27f),brass);
+        string oldCase=Work+"/Meshes/ElaineBadge_05_AgedBrass.asset",newCase=Work+"/Meshes/ElaineBadge_BrassCase.asset";
+        if(AssetDatabase.LoadAssetAtPath<Mesh>(oldCase) && !AssetDatabase.LoadAssetAtPath<Mesh>(newCase))AssetDatabase.MoveAsset(oldCase,newCase);
+        Box("BrassCase",p,new Vector3(0,.009f,0),new Vector3(.19f,.018f,.27f),ArchiveLibraryMaterial("IV4_Oxidised_Brass"));
         Box("IvoryInsert",p,new Vector3(0,.021f,0),new Vector3(.166f,.006f,.244f),bone);
         Box("BlueStripe",p,new Vector3(0,.025f,.084f),new Vector3(.166f,.003f,.022f),blue);
         WeeklyMerge(p,"ElaineBadge");
@@ -217,10 +255,16 @@ public static partial class SealChamberStudy
     static GameObject BuildRecord()
     {
         var g=Node("ArchiveRecord");var p=g.transform;
-        Box("LeatherFolder",p,new Vector3(0,.016f,0),new Vector3(.28f,.032f,.36f),dark);
+        string oldCover=Work+"/Meshes/ArchiveRecord_04_Obsidian.asset",newCover=Work+"/Meshes/ArchiveRecord_FolderCover.asset";
+        if(AssetDatabase.LoadAssetAtPath<Mesh>(oldCover) && !AssetDatabase.LoadAssetAtPath<Mesh>(newCover))AssetDatabase.MoveAsset(oldCover,newCover);
+        Box("LeatherFolder",p,new Vector3(0,.016f,0),new Vector3(.28f,.032f,.36f),ArchiveLibraryMaterial("IV4_BookLeather_4"));
         for(int i=0;i<4;i++)Box("Paper",p,new Vector3(0,.035f+i*.003f,0),new Vector3(.256f,.002f,.334f),bone);
-        for(int i=0;i<7;i++)Box("PrintedLine",p,new Vector3(-.01f,.049f,-.10f+i*.027f),new Vector3(i%3==0?.13f:.20f,.002f,.003f),lettering);
-        Box("BlueSeal",p,new Vector3(.095f,.05f,.125f),new Vector3(.038f,.004f,.038f),blue);
+        for(int i=0;i<7;i++)Box("PrintedLine",p,new Vector3(-.01f,.049f,-.10f+i*.027f),new Vector3(i%3==0?.13f:.20f,.0008f,.0012f),lettering);
+        var cornerMetal=ArchiveLibraryMaterial("IV4_Oxidised_Brass");
+        foreach(int x in new[]{-1,1})foreach(int z in new[]{-1,1})
+        {Box("CoverCorner",p,new Vector3(x*.111f,.034f,z*.172f),new Vector3(.051f,.004f,.009f),cornerMetal);Box("CoverCorner",p,new Vector3(x*.132f,.034f,z*.151f),new Vector3(.009f,.004f,.051f),cornerMetal);}
+        Band(Node("BlueWaxSeal",p,new Vector3(.095f,.051f,.125f)).transform,0,.020f,.004f,blue);
+        Band(Node("SealImpression",p,new Vector3(.095f,.054f,.125f)).transform,0,.0105f,.0015f,cornerMetal);
         return SaveWeekly(g,"ArchiveRecord");
     }
     static void SetupWeeklyReview()
@@ -236,7 +280,7 @@ public static partial class SealChamberStudy
     {
         var records=hall.GetComponentsInChildren<MaintenanceArtAnchor>().Select(a=>new AnchorRecord{id=a.anchorId,localPosition=a.transform.localPosition,localForward=a.transform.forward}).ToList();
         foreach(Transform m in hall.transform.Find("PlacementMarkers"))records.Add(new AnchorRecord{id=m.name,localPosition=m.localPosition,localForward=m.forward});
-        File.WriteAllText(Evidence+"/handoff.json",JsonUtility.ToJson(new Contract{anchors=records.ToArray()},true));
+        WriteArtText(Evidence+"/handoff.json",JsonUtility.ToJson(new Contract{anchors=records.ToArray()},true));
     }
     static void ValidateMaintenance(GameObject hall)
     {
@@ -244,20 +288,20 @@ public static partial class SealChamberStudy
         for(int i=0;i<24;i++)if(i!=12)foreach(float y in new[]{.25f,.7f,1.2f,1.7f,2.7f})foreach(float x in new[]{-1.0f,0,1.0f})
         {
             wallTests++;var q=Quaternion.Euler(0,i*15,0);var start=q*new Vector3(x,y,13.6f);var direction=q*Vector3.forward;
-            if(Physics.Raycast(start,direction,out var hit,3)&&Vector3.Dot(hit.point,direction)<14.57f)wallPassed++;
+            if(Physics.Raycast(start,direction,out var hit,3,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&Vector3.Dot(hit.point,direction)<14.57f)wallPassed++;
         }
         for(int i=0;i<360;i++)foreach(float radius in new[]{13.5f,14.0f,14.2f})
-        {floorTests++;var p=RadialPoint(radius,i);if(Physics.Raycast(p+Vector3.up*3,Vector3.down,out var hit,4)&&Mathf.Abs(hit.point.y)<.002f)floorPassed++;}
+        {floorTests++;var p=RadialPoint(radius,i);if(Physics.Raycast(p+Vector3.up*3,Vector3.down,out var hit,4,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&Mathf.Abs(hit.point.y)<.002f)floorPassed++;}
         for(int i=0;i<360;i++)
-        {clearTests++;var p=RadialPoint(14,i);if(!Physics.CheckCapsule(p+Vector3.up*.29f,p+Vector3.up*1.48f,.28f))clearPassed++;}
+        {clearTests++;var p=RadialPoint(14,i);if(!Physics.CheckCapsule(p+Vector3.up*.29f,p+Vector3.up*1.48f,.28f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore))clearPassed++;}
         int doorPass=0;
-        for(int i=0;i<17;i++){Vector3 p=new Vector3(0,0,-13.4f-i*.25f);if(!Physics.CheckCapsule(p+Vector3.up*.29f,p+Vector3.up*1.48f,.28f)&&Physics.Raycast(p+Vector3.up,Vector3.down,out var hit,2)&&Mathf.Abs(hit.point.y)<.002f)doorPass++;}
+        for(int i=0;i<17;i++){Vector3 p=new Vector3(0,0,-13.4f-i*.25f);if(!Physics.CheckCapsule(p+Vector3.up*.29f,p+Vector3.up*1.48f,.28f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&Physics.Raycast(p+Vector3.up,Vector3.down,out var hit,2,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&Mathf.Abs(hit.point.y)<.002f)doorPass++;}
         int missing=hall.GetComponentsInChildren<MeshFilter>().Count(m=>!m.sharedMesh||m.sharedMesh.vertexCount==0)+hall.GetComponentsInChildren<Renderer>().Sum(r=>r.sharedMaterials.Count(m=>!m||!m.shader));
         foreach(string path in AssetDatabase.FindAssets("t:Mesh",new[]{Work+"/Meshes"}).Select(AssetDatabase.GUIDToAssetPath))
             if(AssetDatabase.LoadAssetAtPath<Mesh>(path).vertexCount==0)throw new Exception("Empty deliverable mesh: "+path);
         int lights=hall.GetComponentsInChildren<Light>().Length;
         string report="{\"unity\":\""+Application.unityVersion+"\",\"wallEnvelopePassed\":"+wallPassed+",\"wallEnvelopeTotal\":"+wallTests+",\"outerFloorPassed\":"+floorPassed+",\"outerFloorTotal\":"+floorTests+",\"R14ClearPassed\":"+clearPassed+",\"R14ClearTotal\":"+clearTests+",\"doorPassed\":"+doorPass+",\"doorTotal\":17,\"missingReferences\":"+missing+",\"candidateLights\":"+lights+"}";
-        File.WriteAllText(Evidence+"/static-validation.json",report);
+        WriteArtText(Evidence+"/static-validation.json",report);
         if(wallPassed!=wallTests||floorPassed!=floorTests||clearPassed!=clearTests||doorPass!=17||missing!=0||lights!=6)throw new Exception("Maintenance geometry check failed: "+report);
     }
     [MenuItem("Art Studies/Maintenance/Capture weekly deliverable")]
@@ -277,10 +321,19 @@ public static partial class SealChamberStudy
         }
         finally{EditorSceneManager.OpenScene(Work+"/Scenes/MaintenanceArtReview.unity");}
     }
+    static void WriteArtText(string path,string text){WriteArtCapture(path,System.Text.Encoding.UTF8.GetBytes(text));}
+    static void WriteArtLines(string path,IEnumerable<string> lines){WriteArtText(path,string.Join(Environment.NewLine,lines)+Environment.NewLine);}
+    static void WriteArtCapture(string path,byte[] bytes)
+    {
+        // Replace the file atomically so an open image preview cannot leave a partial capture.
+        string temporary=path+".capture-tmp";
+        try{File.WriteAllBytes(temporary,bytes);if(File.Exists(path))File.Replace(temporary,path,null);else File.Move(temporary,path);}
+        finally{if(File.Exists(temporary))File.Delete(temporary);}
+    }
     static void WeeklyCapture(Camera c,string name)
     {
         var old=c.targetTexture;var active=RenderTexture.active;var rt=new RenderTexture(1600,900,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);
-        try{rt.Create();c.targetTexture=rt;for(int i=0;i<3;i++)c.Render();RenderTexture.active=rt;var tex=new Texture2D(1600,900,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,1600,900),0,0);tex.Apply();File.WriteAllBytes(Evidence+"/Captures/"+name+".png",tex.EncodeToPNG());Object.DestroyImmediate(tex);}
+        try{rt.Create();c.targetTexture=rt;for(int i=0;i<3;i++)c.Render();RenderTexture.active=rt;var tex=new Texture2D(1600,900,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,1600,900),0,0);tex.Apply();WriteArtCapture(Evidence+"/Captures/"+name+".png",tex.EncodeToPNG());Object.DestroyImmediate(tex);}
         finally{c.targetTexture=old;RenderTexture.active=active;rt.Release();Object.DestroyImmediate(rt);}
     }
 }

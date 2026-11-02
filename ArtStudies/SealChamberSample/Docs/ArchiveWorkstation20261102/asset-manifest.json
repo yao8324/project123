@@ -1,28 +1,23 @@
 [
   {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes.meta",
-    "bytes": 172,
-    "sha256": "e9e4d376c747945377cdd8b2e59f57a46b661969fb373db63b31050ed4b71705"
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Materials/Archive_Seal_Filigree.mat",
+    "bytes": 3894,
+    "sha256": "a1d9f48a0401ba9a9017286b84bf1830a6e6005ea497744f710783654775623a"
   },
   {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs.meta",
-    "bytes": 172,
-    "sha256": "b949c238cd84f08cdce45fea11ced387d3d216cf6eae367f14b76dfb8a65d55c"
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Materials/Archive_Seal_Filigree.mat.meta",
+    "bytes": 188,
+    "sha256": "0d5bb003841acdee4bb318f05a262589aa6adaddddbe10d7c89a9b68be539fa3"
   },
   {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext.meta",
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Materials.meta",
     "bytes": 172,
-    "sha256": "773e8a20a81df8640c9e3b95788006670bb3394d05e0a3cc21305dc937b5096b"
-  },
-  {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes.meta",
-    "bytes": 172,
-    "sha256": "d83dd812a5437688c6086dd2d30cc29aa3f2e0cf380b9fde80e6ea56c3fb6b77"
+    "sha256": "a970db7430ac8df5bc200a4f25e5fa5f7f4ab4b1e9bb1de3a9961fb27095abee"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Ink.asset",
-    "bytes": 63064,
-    "sha256": "5844d663ab8325b05444ae7190d8a6dd86d25f34aa441612d6a562aeb5df72bd"
+    "bytes": 63060,
+    "sha256": "d79744bf331a087440f54d3e4a7dab6a6e43870fc1315c680b91b59be4407769"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Ink.asset.meta",
@@ -31,8 +26,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Paper.asset",
-    "bytes": 18427,
-    "sha256": "fdcbdca365b9cb78f44f12c7a6867d33c06967a8749bd9ef03b23c78adf91318"
+    "bytes": 18423,
+    "sha256": "f04cada44477f3b4c0a8057fa10e8b435a6ea959e78bf695298e9624d794f7ad"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Paper.asset.meta",
@@ -41,8 +36,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/TiedSeal_Archive_Cord_Blue.asset",
-    "bytes": 321386,
-    "sha256": "faba9fb27f956a386edc0ffcbc2c807ed8dac06debf017761da4d718cf5b6711"
+    "bytes": 321396,
+    "sha256": "81c11c4b0e57b36bd9477f7d6e3c1ec5808cb4393d44875968ad7cb0169d8278"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/TiedSeal_Archive_Cord_Blue.asset.meta",
@@ -50,9 +45,24 @@
     "sha256": "be3c2f0d765f568cddec28cc532b069afd8b05d5da1b6415c27608d08856edde"
   },
   {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/TiedSeal_Archive_Seal_Filigree.asset",
+    "bytes": 316363,
+    "sha256": "a1156071c943c8e9225fd488ec4e79b32bbb5de84b889ea407e737224e3fe2f9"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/TiedSeal_Archive_Seal_Filigree.asset.meta",
+    "bytes": 188,
+    "sha256": "60d2264f3828a26b29e4d64032141fe797bf7a87a390fc8db7127df4870e3d6a"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes.meta",
+    "bytes": 172,
+    "sha256": "e9e4d376c747945377cdd8b2e59f57a46b661969fb373db63b31050ed4b71705"
+  },
+  {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs/ArchiveWorkstation.prefab",
-    "bytes": 118224,
-    "sha256": "b42c6d13705858ac677a3417c418c9a29a3c0f9455e79ed53dd1e70410d74c07"
+    "bytes": 136903,
+    "sha256": "234d1eed625c3fd3f6a424c07121b69cc349d265dec6dc488e5edf0ad1114dc5"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs/ArchiveWorkstation.prefab.meta",
@@ -60,29 +70,14 @@
     "sha256": "7430daf8fd775e15328a233ab838bddde88aaabf25c3c2cd16c935385b90ebf9"
   },
   {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskLeather.mat",
-    "bytes": 3844,
-    "sha256": "969ed7f6ee7b9dc3ea43a4fff82cafc5ba9b122de74bc29d85dc978b76f65491"
-  },
-  {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskLeather.mat.meta",
-    "bytes": 188,
-    "sha256": "0996946c1084a1bc00cf5a3f00af72d44bcd7b96729638f986d829b659bf72d2"
-  },
-  {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskWood.mat",
-    "bytes": 3852,
-    "sha256": "cd85cf00ecc532d0907e9505c81c74e2e3e2a8329e4df109794499e7e8f9a866"
-  },
-  {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskWood.mat.meta",
-    "bytes": 188,
-    "sha256": "2cf39d0453d79b411f9741821268184fceffcd37ff68a3d5825e4a0272ece30b"
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs.meta",
+    "bytes": 172,
+    "sha256": "b949c238cd84f08cdce45fea11ced387d3d216cf6eae367f14b76dfb8a65d55c"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_685.asset",
-    "bytes": 1236587,
-    "sha256": "53b0101b679c907346c034bff740965e72eced8c6abec6375b26c5a72bd981b0"
+    "bytes": 1665068,
+    "sha256": "c8c390a22a764013bcbd4b8ab35963c80838450b41e2a1a75aba0b6ecd502eea"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_685.asset.meta",
@@ -91,8 +86,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_686.asset",
-    "bytes": 19911,
-    "sha256": "aace87aabd931ea35745b4f2ce913d79fb243c80d819445b51c383ab656c2603"
+    "bytes": 26825,
+    "sha256": "902f77cca43093ca2ec73f948647113be6f241001cda6c0fbef91de5290198f7"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_686.asset.meta",
@@ -101,8 +96,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_687.asset",
-    "bytes": 10273,
-    "sha256": "a24e89761408045fb6358d032c587f2a3efe95b9dc40c790f10a198debe33591"
+    "bytes": 12322,
+    "sha256": "0ef8b78dccf6d4284fd65029409d043b8d5c7a486d2364afb63a9b2a46ac15cc"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_687.asset.meta",
@@ -110,14 +105,164 @@
     "sha256": "db87a82ed292ab7fbe0c59cc03c2409e58f53d38e3b6f96c5218f0606b7733bb"
   },
   {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_662.asset",
+    "bytes": 134724,
+    "sha256": "084dd8d1622b7dc92acc86fdeb3cf3ceaafc522c6f7539037bdb63f0ee97b440"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_662.asset.meta",
+    "bytes": 188,
+    "sha256": "6db6dbb52b55dc96090039b7964d37c673a3f9ab90490c2ea50016775b9e7146"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_663.asset",
+    "bytes": 776776,
+    "sha256": "03f7fb1426e4e8c7696b57f17d2e4885bf3b8058cf08a72b3bf71a6b8afc9d2c"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_663.asset.meta",
+    "bytes": 188,
+    "sha256": "a6061cdca3ab12b30b931cfccd24fa015d96ee3d63ede8ef2e83bb5f89d9a5eb"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_664.asset",
+    "bytes": 86332,
+    "sha256": "23971ce4d28c9d9c855edd96b8969d21929d90485c786f8f4586c47ff3c4195d"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_664.asset.meta",
+    "bytes": 188,
+    "sha256": "03d7c527ebf825baba54da606cdf32e0d06d546a860130372b4b9f0d55d6d2cf"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_665.asset",
+    "bytes": 13756,
+    "sha256": "bd0c2da22405e489c3c95e91a67b29b5b300f9f87379fcf1559f1aada72c475d"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_665.asset.meta",
+    "bytes": 188,
+    "sha256": "98938c30f49857ae4c157424876ca5f0f0efdc4236b0bb1c0970f1859278a8da"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_666.asset",
+    "bytes": 12032,
+    "sha256": "f523ee58634b8434e5b5de19b32ad00be2fabda3db5ce805d74cbd12bf70b3d1"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_666.asset.meta",
+    "bytes": 188,
+    "sha256": "a7c346c88f3f0fa9038f3e8ffe9e4b72c2f3ede203e172ed6d0ebdb6ee61169e"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_795.asset",
+    "bytes": 11270,
+    "sha256": "ccf814d970fc9d4613e0c65c19820aa34af0932fdca6d1e5257efce38b5341bb"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_795.asset.meta",
+    "bytes": 188,
+    "sha256": "1026517f1969e9dbd7c442e5d8027689e2b3abdce4d54e4c9010177f595ddda6"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_796.asset",
+    "bytes": 19052,
+    "sha256": "54ee62ad63dc8d9db736911e09eaa8bb50ca3fe36677508adbf1873f2b7f0cfa"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_796.asset.meta",
+    "bytes": 188,
+    "sha256": "e8c109d76a40797b7ddedf03f719d539bb378df5eb52dd7a48e79df5a1a9e82d"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_797.asset",
+    "bytes": 19044,
+    "sha256": "be48a2f704fc1f627ca8bc4d4b5a1bc7785f4b94b3d4f2752a4e18444b2d09fc"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_797.asset.meta",
+    "bytes": 188,
+    "sha256": "9ef4e100b488ad9aed8d0adef609bef480518d8a18433c5d9ab404dcd6cf201c"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_798.asset",
+    "bytes": 11276,
+    "sha256": "ba5105d04ea346edc9db3318dde968dfdd489992aab6f3490ffa637ff3bb96f6"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDressing_798.asset.meta",
+    "bytes": 188,
+    "sha256": "6f3645b2858b867f8a88f6aef1e3f6f22d3364ec0b074daae4092fd09f93ff1f"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingRug_805.asset",
+    "bytes": 6069,
+    "sha256": "a42b6d40d9b283fa7f98a2285608d853d19dda680a8de207f96d2a161089bdeb"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingRug_805.asset.meta",
+    "bytes": 188,
+    "sha256": "bd8c99a013b12d456ab497895e1a24758ee6d74c77589127ae16ce18d6b8cfba"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingRug_806.asset",
+    "bytes": 312238,
+    "sha256": "3a90f62dbff7a6a55c4b286e5f0bb6abd3150c77e806f1dee27ff9048bb5c031"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingRug_806.asset.meta",
+    "bytes": 188,
+    "sha256": "97b7afe0785a6440cbf759a423ecfc6029afb64df4262e3e92df191931743598"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingSeat_703.asset",
+    "bytes": 1557910,
+    "sha256": "3341b6f2d4e5d934d3d145630036d7622466455145d883f2e3007423e106f93f"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingSeat_703.asset.meta",
+    "bytes": 188,
+    "sha256": "69144793b8b4cef62e9204f84094d83b1cc609154848604a6b7ed118684fa745"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingSeat_704.asset",
+    "bytes": 108518,
+    "sha256": "ed9be68fe7061d2e1af0b5d39c7e7f8e4eebff35b42139450fcf880dcc6bfa3f"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingSeat_704.asset.meta",
+    "bytes": 188,
+    "sha256": "062ce89b0994246b6545adc595acb4bef36d28ca0b3a07f0de833ebbcd24a915"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingSeat_705.asset",
+    "bytes": 149992,
+    "sha256": "23da7a8d3df78eebb1869062b16c00ce795d20b61c263caacd8cf5fbeabf959f"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingSeat_705.asset.meta",
+    "bytes": 188,
+    "sha256": "b0ef3ab18c0503a1d1988f9fbcf3c3843699f5ccdd0bcf14231b34ee7dbfa361"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext.meta",
+    "bytes": 172,
+    "sha256": "773e8a20a81df8640c9e3b95788006670bb3394d05e0a3cc21305dc937b5096b"
+  },
+  {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes/ArchiveWorkstationReview.unity",
-    "bytes": 139571,
-    "sha256": "4ad9a3507f4787be14387eeda6022998b20d3a02157db276b88ceba1bbf36368"
+    "bytes": 196073,
+    "sha256": "0132b51a7fb93efbc3c99f06d12e73d7c00e2da8d98863b57894fab775c080ea"
   },
   {
     "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes/ArchiveWorkstationReview.unity.meta",
     "bytes": 155,
     "sha256": "330d1691c3d5ef9bf39f4722a64a2ddf1593d54507ad18e79ce98166e63e6064"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes.meta",
+    "bytes": 172,
+    "sha256": "d83dd812a5437688c6086dd2d30cc29aa3f2e0cf380b9fde80e6ea56c3fb6b77"
   },
   {
     "path": "Assets/Art/SealChamberStudy/Scripts/ArchiveWorkstationArt.cs",
@@ -130,28 +275,13 @@
     "sha256": "42884807c7bf4af69457581cab0b45691432c2573aafaee4c8613ecdd9663842"
   },
   {
-    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102.meta",
-    "bytes": 172,
-    "sha256": "b098ab77bfa855b52567db81d5bd9a57fe656aa30faa6414eed07dc9120384c8"
+    "path": "Assets/Art/SealChamberStudy/Scripts/MaintenanceArtAnchor.cs",
+    "bytes": 1635,
+    "sha256": "d0de8ed04fb58aa9045e4a4945ab6c42465ee932c1cf0f9dc4ac82b904e49e1e"
   },
   {
-    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationBuilder.cs",
-    "bytes": 20823,
-    "sha256": "5db47cd784fb22d5257acf770579e9b88a33309a976a4deb82809aed4b5da300"
-  },
-  {
-    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationBuilder.cs.meta",
+    "path": "Assets/Art/SealChamberStudy/Scripts/MaintenanceArtAnchor.cs.meta",
     "bytes": 59,
-    "sha256": "7fd65919328e01c4f6c949d4ea27d4b7a905f4effe010a804c2cbd24b3708199"
-  },
-  {
-    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationArtInspector.cs",
-    "bytes": 1850,
-    "sha256": "001a5543cb0db81584d7303cc6a8f461b6528b03f07a7eb96e9166e03abaf60f"
-  },
-  {
-    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationArtInspector.cs.meta",
-    "bytes": 59,
-    "sha256": "e7412c07cf89dda5373082530661a3eadba23386560383e982a2117bc2844381"
+    "sha256": "22f0ef4a571d2049c28db05b0060eecd451c74bd1715f1ed3a7b51dcc7d21b47"
   }
 ]

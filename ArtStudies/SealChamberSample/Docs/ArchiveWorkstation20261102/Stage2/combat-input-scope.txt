@@ -1,0 +1,2 @@
+Right=<Keyboard>/d, Absorb=<Mouse>/rightButton
+Test-only D/right-button defaults and virtual-device isolation applied to runtime clone. No binding file saved.
