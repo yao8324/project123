@@ -1,0 +1,157 @@
+[
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes.meta",
+    "bytes": 172,
+    "sha256": "e9e4d376c747945377cdd8b2e59f57a46b661969fb373db63b31050ed4b71705"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs.meta",
+    "bytes": 172,
+    "sha256": "b949c238cd84f08cdce45fea11ced387d3d216cf6eae367f14b76dfb8a65d55c"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext.meta",
+    "bytes": 172,
+    "sha256": "773e8a20a81df8640c9e3b95788006670bb3394d05e0a3cc21305dc937b5096b"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes.meta",
+    "bytes": 172,
+    "sha256": "d83dd812a5437688c6086dd2d30cc29aa3f2e0cf380b9fde80e6ea56c3fb6b77"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Ink.asset",
+    "bytes": 63064,
+    "sha256": "5844d663ab8325b05444ae7190d8a6dd86d25f34aa441612d6a562aeb5df72bd"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Ink.asset.meta",
+    "bytes": 188,
+    "sha256": "5c24bb73779ec9021c777828e20099414b235fdcbbaff6cb56f193b3a5dea25e"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Paper.asset",
+    "bytes": 18427,
+    "sha256": "fdcbdca365b9cb78f44f12c7a6867d33c06967a8749bd9ef03b23c78adf91318"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/ScatteredPaper_Archive_Paper.asset.meta",
+    "bytes": 188,
+    "sha256": "107402ca781cd81cd17464adc30aa6d462845589f9313b2ee5b81074438d3bb9"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/TiedSeal_Archive_Cord_Blue.asset",
+    "bytes": 321386,
+    "sha256": "faba9fb27f956a386edc0ffcbc2c807ed8dac06debf017761da4d718cf5b6711"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Meshes/TiedSeal_Archive_Cord_Blue.asset.meta",
+    "bytes": 188,
+    "sha256": "be3c2f0d765f568cddec28cc532b069afd8b05d5da1b6415c27608d08856edde"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs/ArchiveWorkstation.prefab",
+    "bytes": 118224,
+    "sha256": "b42c6d13705858ac677a3417c418c9a29a3c0f9455e79ed53dd1e70410d74c07"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Prefabs/ArchiveWorkstation.prefab.meta",
+    "bytes": 154,
+    "sha256": "7430daf8fd775e15328a233ab838bddde88aaabf25c3c2cd16c935385b90ebf9"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskLeather.mat",
+    "bytes": 3844,
+    "sha256": "969ed7f6ee7b9dc3ea43a4fff82cafc5ba9b122de74bc29d85dc978b76f65491"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskLeather.mat.meta",
+    "bytes": 188,
+    "sha256": "0996946c1084a1bc00cf5a3f00af72d44bcd7b96729638f986d829b659bf72d2"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskWood.mat",
+    "bytes": 3852,
+    "sha256": "cd85cf00ecc532d0907e9505c81c74e2e3e2a8329e4df109794499e7e8f9a866"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDeskWood.mat.meta",
+    "bytes": 188,
+    "sha256": "2cf39d0453d79b411f9741821268184fceffcd37ff68a3d5825e4a0272ece30b"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_685.asset",
+    "bytes": 1236587,
+    "sha256": "53b0101b679c907346c034bff740965e72eced8c6abec6375b26c5a72bd981b0"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_685.asset.meta",
+    "bytes": 188,
+    "sha256": "c3e4c4439b799f5db456ea8dbc1da38ac698cf80046beb5371c97522492c96db"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_686.asset",
+    "bytes": 19911,
+    "sha256": "aace87aabd931ea35745b4f2ce913d79fb243c80d819445b51c383ab656c2603"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_686.asset.meta",
+    "bytes": 188,
+    "sha256": "fc0f75415b80f19a4f5547ae546c2fb39517013a62827ea0b70f0ce3c02dfa08"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_687.asset",
+    "bytes": 10273,
+    "sha256": "a24e89761408045fb6358d032c587f2a3efe95b9dc40c790f10a198debe33591"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/ReviewContext/ExistingDesk_687.asset.meta",
+    "bytes": 188,
+    "sha256": "db87a82ed292ab7fbe0c59cc03c2409e58f53d38e3b6f96c5218f0606b7733bb"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes/ArchiveWorkstationReview.unity",
+    "bytes": 139571,
+    "sha256": "4ad9a3507f4787be14387eeda6022998b20d3a02157db276b88ceba1bbf36368"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102/Scenes/ArchiveWorkstationReview.unity.meta",
+    "bytes": 155,
+    "sha256": "330d1691c3d5ef9bf39f4722a64a2ddf1593d54507ad18e79ce98166e63e6064"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/Scripts/ArchiveWorkstationArt.cs",
+    "bytes": 1328,
+    "sha256": "cb252e40f3886243c8b81bbd8236cc5fd020d50d057d348efd5ff76b207cd9fc"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/Scripts/ArchiveWorkstationArt.cs.meta",
+    "bytes": 59,
+    "sha256": "42884807c7bf4af69457581cab0b45691432c2573aafaee4c8613ecdd9663842"
+  },
+  {
+    "path": "Assets/Art/SealChamberStudy/ArchiveWorkstation20261102.meta",
+    "bytes": 172,
+    "sha256": "b098ab77bfa855b52567db81d5bd9a57fe656aa30faa6414eed07dc9120384c8"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationBuilder.cs",
+    "bytes": 20823,
+    "sha256": "5db47cd784fb22d5257acf770579e9b88a33309a976a4deb82809aed4b5da300"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationBuilder.cs.meta",
+    "bytes": 59,
+    "sha256": "7fd65919328e01c4f6c949d4ea27d4b7a905f4effe010a804c2cbd24b3708199"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationArtInspector.cs",
+    "bytes": 1850,
+    "sha256": "001a5543cb0db81584d7303cc6a8f461b6528b03f07a7eb96e9166e03abaf60f"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/ArchiveWorkstationArtInspector.cs.meta",
+    "bytes": 59,
+    "sha256": "e7412c07cf89dda5373082530661a3eadba23386560383e982a2117bc2844381"
+  }
+]

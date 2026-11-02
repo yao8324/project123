@@ -1,0 +1,99 @@
+Exclusive presentation state after=False, sealed=False
+Seal presentation preserved
+Exactly three unique active record slots
+Table support: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record interaction within range
+Presentation adds no solid blocker
+Exclusive presentation state after=False, sealed=True
+Seal presentation preserved
+Exactly three unique active record slots
+Table support: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record interaction within range
+Presentation adds no solid blocker
+Exclusive presentation state after=True, sealed=False
+Seal presentation preserved
+Exactly three unique active record slots
+Table support: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record interaction within range
+Presentation adds no solid blocker
+Post-awakening badge faces down
+No active identity print behind post-awakening badge
+Loose sheets stay behind the desk approach
+Loose sheets stay behind the desk approach
+Exclusive presentation state after=True, sealed=True
+Seal presentation preserved
+Exactly three unique active record slots
+Table support: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record corner supported: ARCHIVE_RECORD_SLOT_01
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record corner supported: ARCHIVE_RECORD_SLOT_02
+Record interaction within range
+Table support: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record corner supported: ARCHIVE_RECORD_SLOT_03
+Record interaction within range
+Presentation adds no solid blocker
+Post-awakening badge faces down
+No active identity print behind post-awakening badge
+Loose sheets stay behind the desk approach
+Loose sheets stay behind the desk approach
+Disturbance does not erase completed seal presentation
+No extra production lights in overlay
+No missing or empty meshes

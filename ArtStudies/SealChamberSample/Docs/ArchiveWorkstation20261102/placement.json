@@ -1,0 +1,115 @@
+{
+    "status": "User-authorized additional art candidate, not a Client-assigned task or accepted production integration",
+    "unity": "6000.3.24f1",
+    "runtimeScene": "MilanLibrary_Magic_V6",
+    "existingDesk": "IV4_W04_Table chunks mesh_0685/0686/0687",
+    "rootWorld": {
+        "x": 5.800000190734863,
+        "y": 0.8360000252723694,
+        "z": 8.399999618530274
+    },
+    "playerWorkWorld": {
+        "x": 5.800000190734863,
+        "y": 0.07999999821186066,
+        "z": 7.300000190734863
+    },
+    "sideDoorReturnWorld": {
+        "x": 6.0,
+        "y": 0.07999999821186066,
+        "z": 1.399999976158142
+    },
+    "rootYaw": 0.0,
+    "anchors": [
+        {
+            "id": "ARCHIVE_RECORD_SLOT_01",
+            "localInteractionPosition": {
+                "x": -0.13000011444091798,
+                "y": 0.06400001049041748,
+                "z": 0.020000457763671876
+            },
+            "disturbed": false
+        },
+        {
+            "id": "ARCHIVE_RECORD_SLOT_02",
+            "localInteractionPosition": {
+                "x": 0.19999980926513673,
+                "y": 0.06400001049041748,
+                "z": 0.020000457763671876
+            },
+            "disturbed": false
+        },
+        {
+            "id": "ARCHIVE_RECORD_SLOT_03",
+            "localInteractionPosition": {
+                "x": 0.5300002098083496,
+                "y": 0.06400001049041748,
+                "z": 0.020000457763671876
+            },
+            "disturbed": false
+        },
+        {
+            "id": "ARCHIVE_WORK_BADGE",
+            "localInteractionPosition": {
+                "x": -0.559999942779541,
+                "y": 0.04399996995925903,
+                "z": 0.18000030517578126
+            },
+            "disturbed": false
+        },
+        {
+            "id": "ARCHIVE_TIE_CORD",
+            "localInteractionPosition": {
+                "x": -0.570000171661377,
+                "y": 0.06400001049041748,
+                "z": -0.1400003433227539
+            },
+            "disturbed": false
+        },
+        {
+            "id": "ARCHIVE_RECORD_SLOT_01",
+            "localInteractionPosition": {
+                "x": -0.16499996185302735,
+                "y": 0.06400001049041748,
+                "z": -0.015000343322753907
+            },
+            "disturbed": true
+        },
+        {
+            "id": "ARCHIVE_RECORD_SLOT_02",
+            "localInteractionPosition": {
+                "x": 0.19999980926513673,
+                "y": 0.06400001049041748,
+                "z": 0.05500030517578125
+            },
+            "disturbed": true
+        },
+        {
+            "id": "ARCHIVE_RECORD_SLOT_03",
+            "localInteractionPosition": {
+                "x": 0.5300002098083496,
+                "y": 0.06400001049041748,
+                "z": -0.015000343322753907
+            },
+            "disturbed": true
+        },
+        {
+            "id": "ARCHIVE_WORK_BADGE",
+            "localInteractionPosition": {
+                "x": -0.559999942779541,
+                "y": -0.004999995231628418,
+                "z": 0.18000030517578126
+            },
+            "disturbed": true
+        },
+        {
+            "id": "ARCHIVE_TIE_CORD",
+            "localInteractionPosition": {
+                "x": -0.570436954498291,
+                "y": 0.06400001049041748,
+                "z": -0.14415836334228517
+            },
+            "disturbed": true
+        }
+    ],
+    "note": "Overlay only. Retain existing table and its collision. Three slot IDs bind planner-authored data. SetDisturbed preserves sealed state. No automatic story, input, light, teleport or identity changes. Badge is face-down after disturbance."
+}
