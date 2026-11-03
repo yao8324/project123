@@ -1,0 +1,78 @@
+// Editor-only visual proof of the existing maintenance assets in the production library's pipeline.
+// Put beside ArchiveCameraPrevisualization.cs in the disposable validation project's Assets/Editor.
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using ArcaneArchive.Core;
+using IMMonster.SceneArt;
+using Object=UnityEngine.Object;
+
+public static class MaintenanceGuideProof
+{
+    const string Output="MaintenanceGuideEvidence";
+    [Serializable] class ViewRecord
+    {
+        public string id,imageFile,anchorId,indicatorMaterial;
+        public bool stable;
+        public Vector3 eye,target;
+        public Color baseColor,emissionColor;
+        public int activePointLights;
+    }
+    [Serializable] class Report
+    {
+        public bool passed;public string unity,pipeline;
+        public string scope="Editor visual study of original candidate geometry, six lights and SetStable presentation; not a story implementation, input test or target-device performance acceptance";
+        public ViewRecord[] views;
+    }
+    public static void Run()
+    {
+        Directory.CreateDirectory(Output+"/Captures");File.WriteAllText(Output+"/validation.json","{\"passed\":false}");
+        EditorSceneManager.OpenScene("Assets/ArtValidation/ArchiveStage2Scene.unity");
+        var encounter=Object.FindFirstObjectByType<BossEncounter>();var camera=Camera.main;
+        if(!encounter || !camera)throw new InvalidOperationException("Missing production scene references");
+        var arena=Object.Instantiate(encounter.arenaPrefab,new Vector3(160,0,0),Quaternion.identity);
+        try
+        {
+            arena.boss.gameObject.SetActive(false);encounter.libraryEnvironment.SetActive(false);
+            camera.allowHDR=true;camera.GetUniversalAdditionalCameraData().renderPostProcessing=true;
+            camera.aspect=1600f/900;ShaderUtil.allowAsyncCompilation=false;
+            var views=new List<ViewRecord>();var hashes=new Dictionary<string,string>();
+            var nodes=arena.GetComponentsInChildren<MaintenanceArtAnchor>().Where(a=>a.anchorId.StartsWith("MAINT_NODE_")).OrderBy(a=>a.anchorId).ToArray();
+            if(nodes.Length!=3)throw new InvalidOperationException("Expected three story maintenance nodes");
+            int lights=arena.GetComponentsInChildren<Light>().Count(l=>l.type==LightType.Point && l.enabled);
+            if(lights!=6)throw new InvalidOperationException("Expected six active candidate point lights");
+            foreach(var node in nodes)
+            {
+                if(!node.indicator || !node.interactionPoint)throw new InvalidOperationException("Incomplete node presentation");
+                var material=node.indicator.sharedMaterial;
+                foreach(bool stable in new[]{false,true})
+                {
+                    node.SetStable(stable);var block=new MaterialPropertyBlock();node.indicator.GetPropertyBlock(block);
+                    var color=block.GetColor("_BaseColor");var emission=block.GetColor("_EmissionColor");var expected=stable?node.stableColor:node.idleColor;
+                    if(color!=expected || node.indicator.sharedMaterial!=material)throw new InvalidOperationException("Node state must update the property block without cloning a material");
+                    var eye=node.transform.position-node.transform.forward*2.2f+Vector3.up*1.68f;
+                    var target=node.interactionPoint.position;
+                    var id=node.anchorId+"_"+(stable?"stable":"idle");
+                    camera.transform.SetPositionAndRotation(eye,Quaternion.LookRotation(target-eye));
+                    var file=ArchiveCameraPrevisualization.Capture(camera,id,hashes,Output);
+                    views.Add(new ViewRecord{id=id,imageFile=file,anchorId=node.anchorId,indicatorMaterial=AssetDatabase.GetAssetPath(material),stable=stable,eye=eye,target=target,baseColor=color,emissionColor=emission,activePointLights=lights});
+                    Debug.Log("[MaintenanceGuide] PASS "+id);
+                }
+                node.SetStable(false);
+            }
+            foreach(var shot in new[]{new{Id="07_arrival_overview",Eye=new Vector3(160,1.68f,-13.3f),Target=new Vector3(160,1.55f,0)},new{Id="08_exit_direction",Eye=new Vector3(160,1.68f,-10),Target=new Vector3(160,3.8f,-15.1f)}})
+            {
+                camera.transform.SetPositionAndRotation(shot.Eye,Quaternion.LookRotation(shot.Target-shot.Eye));
+                views.Add(new ViewRecord{id=shot.Id,imageFile=ArchiveCameraPrevisualization.Capture(camera,shot.Id,hashes,Output),eye=shot.Eye,target=shot.Target,activePointLights=lights});
+            }
+            File.WriteAllText(Output+"/validation.json",JsonUtility.ToJson(new Report{passed=true,unity=Application.unityVersion,pipeline=GraphicsSettings.currentRenderPipeline?.name,views=views.ToArray()},true));
+        }
+        finally{Object.DestroyImmediate(arena.gameObject);EditorSceneManager.OpenScene("Assets/ArtValidation/ArchiveStage2Scene.unity");}
+    }
+}

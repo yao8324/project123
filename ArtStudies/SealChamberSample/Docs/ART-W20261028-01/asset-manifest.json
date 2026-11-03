@@ -146,8 +146,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_01_AgedLimestone.asset",
-    "bytes": 18338,
-    "sha256": "7b44e9685906c12b3a9a85ae641aeb801ca679a4c8f652cb1f0d1cd7183536b7"
+    "bytes": 21314,
+    "sha256": "839412fcaf58ae261bbecc2567ce211168f6d6f7065ce22fecdce9d9b55512f2"
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Meshes/MaintenancePassage_01_AgedLimestone.asset.meta",
@@ -291,8 +291,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenanceHall.prefab",
-    "bytes": 115361,
-    "sha256": "a2307c3ee67b6f359dcc15271b61e0cc4302e7ef19a513615d3ede8d3bb2fbe8"
+    "bytes": 115940,
+    "sha256": "33870077b2b778a80e2eff450b967159ffdc22f38c3062a803278e1c59117918"
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenanceHall.prefab.meta",
@@ -301,8 +301,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenancePassage.prefab",
-    "bytes": 31165,
-    "sha256": "b3c79f9f5832779d28fa7e4e30e583e807859984b807ff8185ce4b450b7fa117"
+    "bytes": 32671,
+    "sha256": "e74af1b6d6b2984afddd93903bc1d7eb461fbcbd05218cdb356f76cb954f6d6b"
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/MaintenancePassage.prefab.meta",
@@ -311,8 +311,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/SupplyNode.prefab",
-    "bytes": 17603,
-    "sha256": "f971a117cd86d0b0fb2a1a28b963688495983cf01ce596a7a8afd465d926c2ce"
+    "bytes": 17605,
+    "sha256": "93cab697054f94d24dba89a42aff7375f29df9feb50865d6e2cdf5d5055fd945"
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Prefabs/SupplyNode.prefab.meta",
@@ -326,8 +326,8 @@
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Scenes/MaintenanceArtReview.unity",
-    "bytes": 134875,
-    "sha256": "a8c4e5cbb784a8cb58b5fb662bc18116132b8033cf250ef6d035344fce944639"
+    "bytes": 135350,
+    "sha256": "bfeee0561da08f6034e64f2b087a98ce0c533ebb4f2ff2f969ebee050d4a01f7"
   },
   {
     "path": "Assets/Art/SealChamberStudy/MaintenanceW20261028/Scenes/MaintenanceArtReview.unity.meta",

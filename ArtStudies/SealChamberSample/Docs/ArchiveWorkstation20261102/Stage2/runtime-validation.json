@@ -9,10 +9,10 @@
     "quality": "Ultra",
     "scope": "Production scene/controller/input/interaction class with test-only event adapters and safe transfers; not the five-event story system or human playtest",
     "checksPassed": 124,
-    "videoFrames": 479,
+    "videoFrames": 416,
     "roundTrips": 3,
-    "elapsedSeconds": 75.7624282836914,
-    "minFeetY": 0.07499958574771881,
+    "elapsedSeconds": 78.98616790771485,
+    "minFeetY": 0.07499934732913971,
     "checks": [
         "Production render pipeline is active",
         "One original player controller",

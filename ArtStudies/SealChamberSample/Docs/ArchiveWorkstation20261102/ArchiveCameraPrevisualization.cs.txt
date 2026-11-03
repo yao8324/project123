@@ -78,7 +78,7 @@ public static class ArchiveCameraPrevisualization
     }
     static Pose Shot(string id,string label,Vector3 eye,Vector3 target,bool disturbed,bool sealedState,string scope,float fov)
         =>new Pose{id=id,label=label,eye=eye,target=target,disturbed=disturbed,sealedState=sealedState,scope=scope,fieldOfView=fov};
-    static string Capture(Camera camera,string id,Dictionary<string,string> captureHashes)
+    public static string Capture(Camera camera,string id,Dictionary<string,string> captureHashes,string outputFolder=Output)
     {
         var previous=camera.targetTexture;var active=RenderTexture.active;
         var rt=new RenderTexture(1600,900,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);rt.Create();
@@ -91,7 +91,7 @@ public static class ArchiveCameraPrevisualization
             using(var sha=System.Security.Cryptography.SHA256.Create())hash=BitConverter.ToString(sha.ComputeHash(bytes));
             if(captureHashes.TryGetValue(hash,out string existing))return existing;
             string filename="Captures/"+id+".png";
-            File.WriteAllBytes(Output+"/"+filename,bytes);captureHashes.Add(hash,filename);return filename;
+            File.WriteAllBytes(outputFolder+"/"+filename,bytes);captureHashes.Add(hash,filename);return filename;
         }
         finally{camera.targetTexture=previous;RenderTexture.active=active;rt.Release();Object.DestroyImmediate(rt);Object.DestroyImmediate(texture);}
     }

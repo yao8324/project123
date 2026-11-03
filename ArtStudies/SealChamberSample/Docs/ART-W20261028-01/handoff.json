@@ -1,10 +1,12 @@
 {
+    "schemaVersion": 2,
     "task": "ART-W20261028-01",
     "runtimeProject": "1.0.6",
     "requiredUnity": "6000.3.25f1",
     "testedUnity": "6000.3.24f1 (user authorized installed version)",
     "groundY": 0.0,
     "flatRadius": 14.0,
+    "passageClearHeight": 3.490000009536743,
     "anchors": [
         {
             "id": "MAINTENANCE_TO_ARCHIVE",
@@ -17,7 +19,14 @@
                 "x": -8.742277657347586e-8,
                 "y": 0.0,
                 "z": -1.0
-            }
+            },
+            "hasInteractionPoint": true,
+            "localInteractionPosition": {
+                "x": 3.059797037963108e-8,
+                "y": 1.5499999523162842,
+                "z": -14.75
+            },
+            "interactionDistance": 2.299999952316284
         },
         {
             "id": "MAINT_NODE_01",
@@ -30,7 +39,14 @@
                 "x": 0.7071068286895752,
                 "y": 0.0,
                 "z": 0.7071067094802856
-            }
+            },
+            "hasInteractionPoint": true,
+            "localInteractionPosition": {
+                "x": 10.111627578735352,
+                "y": 1.149999976158142,
+                "z": 10.111627578735352
+            },
+            "interactionDistance": 2.299999952316284
         },
         {
             "id": "MAINT_NODE_02",
@@ -43,7 +59,14 @@
                 "x": 0.7071068286895752,
                 "y": 0.0,
                 "z": -0.7071069478988648
-            }
+            },
+            "hasInteractionPoint": true,
+            "localInteractionPosition": {
+                "x": 10.111627578735352,
+                "y": 1.149999976158142,
+                "z": -10.111627578735352
+            },
+            "interactionDistance": 2.299999952316284
         },
         {
             "id": "MAINT_NODE_03",
@@ -56,7 +79,14 @@
                 "x": -1.0000001192092896,
                 "y": 0.0,
                 "z": -1.1920928955078126e-7
-            }
+            },
+            "hasInteractionPoint": true,
+            "localInteractionPosition": {
+                "x": -14.300000190734864,
+                "y": 1.149999976158142,
+                "z": 2.0295159686156695e-7
+            },
+            "interactionDistance": 2.299999952316284
         },
         {
             "id": "PlayerSpawn_Reference",
@@ -69,7 +99,14 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 1.0
-            }
+            },
+            "hasInteractionPoint": false,
+            "localInteractionPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "interactionDistance": 0.0
         },
         {
             "id": "BossSpawn_Reference_NoActor",
@@ -82,7 +119,14 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 1.0
-            }
+            },
+            "hasInteractionPoint": false,
+            "localInteractionPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "interactionDistance": 0.0
         },
         {
             "id": "CombatArea_Radius14m",
@@ -95,7 +139,14 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 1.0
-            }
+            },
+            "hasInteractionPoint": false,
+            "localInteractionPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "interactionDistance": 0.0
         },
         {
             "id": "STORY_MAINTENANCE_ENTER_Spawn",
@@ -108,7 +159,14 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 1.0
-            }
+            },
+            "hasInteractionPoint": false,
+            "localInteractionPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "interactionDistance": 0.0
         },
         {
             "id": "STORY_ARCHIVE_RETURN_Exit",
@@ -121,7 +179,14 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 1.0
-            }
+            },
+            "hasInteractionPoint": false,
+            "localInteractionPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "interactionDistance": 0.0
         },
         {
             "id": "ArchiveSideDoor_Link",
@@ -134,7 +199,14 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 1.0
-            }
+            },
+            "hasInteractionPoint": false,
+            "localInteractionPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "interactionDistance": 0.0
         }
     ],
     "archiveKitWorldPosition": {
@@ -144,5 +216,22 @@
     },
     "archiveKitYaw": 180.0,
     "archiveDoor": "Exterior_V3_DarkHistoricalDoorWood_385 (right inner side door x=6)",
-    "note": "Anchors are relative to MaintenanceHall root. Archive kit uses the existing right side door, not the front entrance. Bind input and story states in program. RequestInteraction does not advance story or teleport. Keep old eight point lights disabled; candidate contains six lights."
+    "archiveEntryId": "ARCHIVE_TO_MAINTENANCE",
+    "archiveEntryInteractionWorld": {
+        "x": 6.0,
+        "y": 1.5499999523162842,
+        "z": 0.20000000298023225
+    },
+    "archiveReturnSpawnWorld": {
+        "x": 6.0,
+        "y": 0.07999999821186066,
+        "z": 1.399999976158142
+    },
+    "archiveReturnForwardWorld": {
+        "x": 1.7484555314695172e-7,
+        "y": 0.0,
+        "z": 1.0
+    },
+    "archiveEntryInteractionDistance": 2.299999952316284,
+    "note": "Hall positions and directions are relative to the MaintenanceHall root, including nested anchors. localForward is the visual anchor's direction, not the player's return facing. Read interaction points only when hasInteractionPoint is true. Archive entry/return values are world coordinates at the stated kit placement. Bind input and story states in program. RequestInteraction does not advance story or teleport. Keep old eight point lights disabled; candidate contains six lights."
 }

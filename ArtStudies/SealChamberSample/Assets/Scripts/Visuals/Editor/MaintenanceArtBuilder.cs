@@ -46,6 +46,9 @@ public static partial class SealChamberStudy
             bay++;
         }
         Instance(doorAsset,hall.transform,new Vector3(0,0,-15.1f),180);
+        // The removed wall carried a lantern. Keep the same sixth light, supported above the portal.
+        var entranceLantern=hall.transform.Find("Lanterns_6").Cast<Transform>().Single(t=>Mathf.Abs(t.localPosition.x)<.01f && t.localPosition.z<-14);
+        entranceLantern.localPosition=new Vector3(0,5.15f,-14.53f);
         var nodes=Node("MaintenanceNodes",hall.transform).transform;
         int number=0;
         foreach(float angle in new[]{45f,135f,270f})
@@ -159,22 +162,24 @@ public static partial class SealChamberStudy
         {
             Box("DoorJamb",p,new Vector3(sign*1.69f,2.60f,0),new Vector3(.67f,5.2f,.94f),stoneLight);
             Box("DoorTrim",p,new Vector3(sign*1.29f,2.45f,-.54f),new Vector3(.09f,4.90f,.10f),brass);
-            AddBox(p,"JambCollision",new Vector3(sign*1.69f,2.6f,0),new Vector3(.80f,5.2f,1.10f));
+            AddBox(p,"JambCollision",new Vector3(sign*1.69f,2.6f,0),new Vector3(1.10f,5.2f,1.40f));
         }
         Box("UpperMasonry",p,new Vector3(0,6.6f,0),new Vector3(4.05f,2.8f,.94f),stone);
         Box("Lintel",p,new Vector3(0,5.05f,-.10f),new Vector3(4.05f,.30f,1.10f),stoneLight);
-        AddBox(p,"UpperCollision",new Vector3(0,6.48f,-.05f),new Vector3(4.05f,3.04f,1.12f));
+        AddBox(p,"UpperCollision",new Vector3(0,6.45f,-.05f),new Vector3(4.05f,3.10f,1.42f));
+        Box("PassageHeadwall",p,new Vector3(0,4.35f,0),new Vector3(2.75f,1.10f,.94f),stone);
+        AddBox(p,"HeadwallCollision",new Vector3(0,4.35f,0),new Vector3(2.75f,1.10f,1.16f));
         var apron=PassageApron();string apronPath=Work+"/Meshes/PassageApron.asset";
         var savedApron=AssetDatabase.LoadAssetAtPath<Mesh>(apronPath);
         if(savedApron){EditorUtility.CopySerialized(apron,savedApron);Object.DestroyImmediate(apron);apron=savedApron;apron.UploadMeshData(false);EditorUtility.SetDirty(apron);}else AssetDatabase.CreateAsset(apron,apronPath);
         Shape("TransitionFloor",p,apron,dark,Vector3.zero,Vector3.one);
         Node("TransitionFloorCollision",p).AddComponent<MeshCollider>().sharedMesh=apron;
         foreach(int sign in new[]{-1,1})
-        {Box("PassageSide",p,new Vector3(sign*1.39f,1.8f,1.7f),new Vector3(.22f,3.6f,2.4f),stone);AddBox(p,"PassageSideCollision",new Vector3(sign*1.39f,1.8f,1.7f),new Vector3(.22f,3.6f,2.4f));}
+        {Box("PassageSide",p,new Vector3(sign*1.39f,1.8f,1.7f),new Vector3(.22f,3.6f,2.4f),stone);AddBox(p,"PassageSideCollision",new Vector3(sign*1.39f,1.8f,1.7f),new Vector3(.44f,3.6f,2.4f));}
         Box("TransitionEnd",p,new Vector3(0,1.8f,2.95f),new Vector3(2.8f,3.6f,.20f),stone);
-        AddBox(p,"TransitionEndCollision",new Vector3(0,1.8f,2.95f),new Vector3(2.8f,3.6f,.20f));
+        AddBox(p,"TransitionEndCollision",new Vector3(0,1.8f,2.95f),new Vector3(2.8f,3.6f,.42f));
         Box("TransitionCeiling",p,new Vector3(0,3.7f,1.7f),new Vector3(3.0f,.20f,2.6f),stone);
-        AddBox(p,"TransitionCeilingCollision",new Vector3(0,3.7f,1.7f),new Vector3(3.0f,.20f,2.6f));
+        AddBox(p,"TransitionCeilingCollision",new Vector3(0,3.7f,1.7f),new Vector3(3.0f,.42f,2.6f));
         Box("MarkerPlate",p,new Vector3(0,4.50f,-.56f),new Vector3(1.7f,.38f,.06f),patina);
         WeeklyMerge(p,"MaintenancePassage");AddLabel("ARCHIVE / RETURN",p,new Vector3(0,4.5f,-.61f),.065f,bone);
         Node("ArrivalFacingIn",p,new Vector3(0,.08f,-1.8f));Node("FadeTransferExit",p,new Vector3(0,.08f,1.8f));
@@ -274,13 +279,49 @@ public static partial class SealChamberStudy
         var rig=Node("REVIEW_ONLY_Lighting");var key=Node("ReviewKey",rig.transform).AddComponent<Light>();key.type=LightType.Directional;key.intensity=1.5f;key.color=new Color(.75f,.8f,1);key.transform.rotation=Quaternion.Euler(48,-25,0);key.shadows=LightShadows.Soft;
         var vol=rig.AddComponent<Volume>();vol.isGlobal=true;vol.sharedProfile=AssetDatabase.LoadAssetAtPath<VolumeProfile>(Root+"/Settings/ReviewVolume.asset");
     }
-    [Serializable] class AnchorRecord {public string id;public Vector3 localPosition;public Vector3 localForward;}
-    [Serializable] class Contract {public string task="ART-W20261028-01";public string runtimeProject="1.0.6";public string requiredUnity="6000.3.25f1";public string testedUnity="6000.3.24f1 (user authorized installed version)";public float groundY=0,flatRadius=14;public AnchorRecord[] anchors;public Vector3 archiveKitWorldPosition=new Vector3(6f,0,-.2f);public float archiveKitYaw=180;public string archiveDoor="Exterior_V3_DarkHistoricalDoorWood_385 (right inner side door x=6)";public string note="Anchors are relative to MaintenanceHall root. Archive kit uses the existing right side door, not the front entrance. Bind input and story states in program. RequestInteraction does not advance story or teleport. Keep old eight point lights disabled; candidate contains six lights.";}
+    [Serializable] class AnchorRecord
+    {
+        public string id;public Vector3 localPosition,localForward;
+        public bool hasInteractionPoint;public Vector3 localInteractionPosition;public float interactionDistance;
+    }
+    [Serializable] class Contract
+    {
+        public int schemaVersion=2;
+        public string task="ART-W20261028-01",runtimeProject="1.0.6",requiredUnity="6000.3.25f1",testedUnity="6000.3.24f1 (user authorized installed version)";
+        public float groundY=0,flatRadius=14,passageClearHeight=3.49f;public AnchorRecord[] anchors;
+        public Vector3 archiveKitWorldPosition=new Vector3(6f,0,-.2f);public float archiveKitYaw=180;
+        public string archiveDoor="Exterior_V3_DarkHistoricalDoorWood_385 (right inner side door x=6)",archiveEntryId;
+        public Vector3 archiveEntryInteractionWorld,archiveReturnSpawnWorld,archiveReturnForwardWorld;public float archiveEntryInteractionDistance;
+        public string note="Hall positions and directions are relative to the MaintenanceHall root, including nested anchors. localForward is the visual anchor's direction, not the player's return facing. Read interaction points only when hasInteractionPoint is true. Archive entry/return values are world coordinates at the stated kit placement. Bind input and story states in program. RequestInteraction does not advance story or teleport. Keep old eight point lights disabled; candidate contains six lights.";
+    }
     static void WriteContract(GameObject hall)
     {
-        var records=hall.GetComponentsInChildren<MaintenanceArtAnchor>().Select(a=>new AnchorRecord{id=a.anchorId,localPosition=a.transform.localPosition,localForward=a.transform.forward}).ToList();
-        foreach(Transform m in hall.transform.Find("PlacementMarkers"))records.Add(new AnchorRecord{id=m.name,localPosition=m.localPosition,localForward=m.forward});
-        WriteArtText(Evidence+"/handoff.json",JsonUtility.ToJson(new Contract{anchors=records.ToArray()},true));
+        var records=hall.GetComponentsInChildren<MaintenanceArtAnchor>().Select(a=>new AnchorRecord{id=a.anchorId,localPosition=hall.transform.InverseTransformPoint(a.transform.position),localForward=hall.transform.InverseTransformDirection(a.transform.forward),hasInteractionPoint=a.interactionPoint,localInteractionPosition=a.interactionPoint?hall.transform.InverseTransformPoint(a.interactionPoint.position):Vector3.zero,interactionDistance=a.interactionDistance}).ToList();
+        foreach(Transform m in hall.transform.Find("PlacementMarkers"))records.Add(new AnchorRecord{id=m.name,localPosition=hall.transform.InverseTransformPoint(m.position),localForward=hall.transform.InverseTransformDirection(m.forward)});
+        var result=new Contract{anchors=records.ToArray()};
+        var entry=AssetDatabase.LoadAssetAtPath<GameObject>(Work+"/Prefabs/ArchiveEntryKit.prefab");
+        if(!entry)throw new InvalidOperationException("Missing archive entry prefab for handoff export");
+        var anchor=entry.GetComponent<MaintenanceArtAnchor>();var spawn=entry.transform.Find("ArchiveReturnSpawn");
+        if(!anchor || !anchor.interactionPoint || !spawn)throw new InvalidOperationException("Incomplete archive entry anchors");
+        var kitToWorld=Matrix4x4.TRS(result.archiveKitWorldPosition,Quaternion.Euler(0,result.archiveKitYaw,0),Vector3.one);
+        result.archiveEntryId=anchor.anchorId;result.archiveEntryInteractionDistance=anchor.interactionDistance;
+        result.archiveEntryInteractionWorld=kitToWorld.MultiplyPoint3x4(entry.transform.InverseTransformPoint(anchor.interactionPoint.position));
+        result.archiveReturnSpawnWorld=kitToWorld.MultiplyPoint3x4(entry.transform.InverseTransformPoint(spawn.position));
+        result.archiveReturnForwardWorld=kitToWorld.MultiplyVector(entry.transform.InverseTransformDirection(spawn.forward)).normalized;
+        WriteArtText(Evidence+"/handoff.json",JsonUtility.ToJson(result,true));
+    }
+    [MenuItem("Art Studies/Maintenance/Export current handoff coordinates")]
+    public static void ExportMaintenanceHandoff()
+    {
+        if(EditorApplication.isPlaying)throw new InvalidOperationException("Exit Play Mode first");
+        var hall=PrefabUtility.LoadPrefabContents(Work+"/Prefabs/MaintenanceHall.prefab");
+        try
+        {
+            var anchors=hall.GetComponentsInChildren<MaintenanceArtAnchor>();
+            if(anchors.Length!=4 || anchors.Any(a=>!a.interactionPoint || a.interactionDistance<=0))throw new InvalidOperationException("Expected exit and three valid maintenance anchors");
+            WriteContract(hall);Debug.Log("[MaintenanceHandoff] Exported current prefab coordinates without rebuilding assets");
+        }
+        finally{PrefabUtility.UnloadPrefabContents(hall);}
     }
     static void ValidateMaintenance(GameObject hall)
     {
@@ -296,13 +337,26 @@ public static partial class SealChamberStudy
         {clearTests++;var p=RadialPoint(14,i);if(!Physics.CheckCapsule(p+Vector3.up*.29f,p+Vector3.up*1.48f,.28f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore))clearPassed++;}
         int doorPass=0;
         for(int i=0;i<17;i++){Vector3 p=new Vector3(0,0,-13.4f-i*.25f);if(!Physics.CheckCapsule(p+Vector3.up*.29f,p+Vector3.up*1.48f,.28f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&Physics.Raycast(p+Vector3.up,Vector3.down,out var hit,2,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&Mathf.Abs(hit.point.y)<.002f)doorPass++;}
+        int headerPassed=0;
+        foreach(float x in new[]{-1.3f,-.65f,0,.65f,1.3f})foreach(float y in new[]{3.85f,4.35f,4.85f})
+            if(Physics.Raycast(new Vector3(x,y,-13.3f),Vector3.back,out var upperHit,3,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&(upperHit.collider.name=="HeadwallCollision" || upperHit.collider.name=="JambCollision"))headerPassed++;
+        int seamPassed=0,shoulderPassed=0,jambPassed=0;
+        foreach(float x in new[]{-1.3f,-.65f,0,.65f,1.3f})
+            if(Physics.Raycast(new Vector3(x,4.93f,-13.3f),Vector3.back,out var seamHit,3,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&(seamHit.collider.name=="UpperCollision" || seamHit.collider.name=="JambCollision"))seamPassed++;
+        foreach(float x in new[]{-.8f,.8f})foreach(float z in new[]{-14.2f,-14.7f,-15.2f,-15.7f,-16.2f,-16.7f})
+            if(!Physics.CheckCapsule(new Vector3(x,.29f,z),new Vector3(x,1.48f,z),.28f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore))shoulderPassed++;
+        foreach(float sign in new[]{-1f,1f})
+            if(Physics.CapsuleCast(new Vector3(0,.29f,-15.1f),new Vector3(0,1.48f,-15.1f),.28f,Vector3.right*sign,out var jambHit,2,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&jambHit.collider.name=="JambCollision"&&jambHit.distance>.82f&&jambHit.distance<.89f)jambPassed++;
+        var doorLantern=hall.transform.Find("Lanterns_6").Cast<Transform>().Single(t=>Mathf.Abs(t.localPosition.x)<.01f && t.localPosition.z<-14);
+        var mount=doorLantern.TransformPoint(new Vector3(0,.15f,.1f));
+        bool lanternSupported=doorLantern.localPosition.y>4.9f && Physics.Raycast(mount+Vector3.forward*.5f,Vector3.back,out var mountHit,1,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore)&&mountHit.collider.name=="UpperCollision";
         int missing=hall.GetComponentsInChildren<MeshFilter>().Count(m=>!m.sharedMesh||m.sharedMesh.vertexCount==0)+hall.GetComponentsInChildren<Renderer>().Sum(r=>r.sharedMaterials.Count(m=>!m||!m.shader));
         foreach(string path in AssetDatabase.FindAssets("t:Mesh",new[]{Work+"/Meshes"}).Select(AssetDatabase.GUIDToAssetPath))
             if(AssetDatabase.LoadAssetAtPath<Mesh>(path).vertexCount==0)throw new Exception("Empty deliverable mesh: "+path);
         int lights=hall.GetComponentsInChildren<Light>().Length;
-        string report="{\"unity\":\""+Application.unityVersion+"\",\"wallEnvelopePassed\":"+wallPassed+",\"wallEnvelopeTotal\":"+wallTests+",\"outerFloorPassed\":"+floorPassed+",\"outerFloorTotal\":"+floorTests+",\"R14ClearPassed\":"+clearPassed+",\"R14ClearTotal\":"+clearTests+",\"doorPassed\":"+doorPass+",\"doorTotal\":17,\"missingReferences\":"+missing+",\"candidateLights\":"+lights+"}";
+        string report="{\"unity\":\""+Application.unityVersion+"\",\"wallEnvelopePassed\":"+wallPassed+",\"wallEnvelopeTotal\":"+wallTests+",\"outerFloorPassed\":"+floorPassed+",\"outerFloorTotal\":"+floorTests+",\"R14ClearPassed\":"+clearPassed+",\"R14ClearTotal\":"+clearTests+",\"doorPassed\":"+doorPass+",\"doorTotal\":17,\"doorHeaderPassed\":"+headerPassed+",\"doorHeaderTotal\":15,\"doorLintelSeamPassed\":"+seamPassed+",\"doorLintelSeamTotal\":5,\"doorShoulderPassed\":"+shoulderPassed+",\"doorShoulderTotal\":12,\"doorJambEnvelopePassed\":"+jambPassed+",\"doorJambEnvelopeTotal\":2,\"entranceLanternSupported\":"+lanternSupported.ToString().ToLowerInvariant()+",\"missingReferences\":"+missing+",\"candidateLights\":"+lights+"}";
         WriteArtText(Evidence+"/static-validation.json",report);
-        if(wallPassed!=wallTests||floorPassed!=floorTests||clearPassed!=clearTests||doorPass!=17||missing!=0||lights!=6)throw new Exception("Maintenance geometry check failed: "+report);
+        if(wallPassed!=wallTests||floorPassed!=floorTests||clearPassed!=clearTests||doorPass!=17||headerPassed!=15||seamPassed!=5||shoulderPassed!=12||jambPassed!=2||!lanternSupported||missing!=0||lights!=6)throw new Exception("Maintenance geometry check failed: "+report);
     }
     [MenuItem("Art Studies/Maintenance/Capture weekly deliverable")]
     public static void CaptureMaintenance()

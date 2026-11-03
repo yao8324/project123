@@ -29,15 +29,18 @@ public static class MaintenanceRuntimeValidation
     static GameObject hall,entry;static BossTestInputScope scope;static CharacterController cc;
     static MaintenanceArtAnchor[] nodes;static readonly List<string> checks=new List<string>();
     static readonly List<float> frameMs=new List<float>();static readonly List<string> times=new List<string>();
+    static readonly List<PortalContact> portalContacts=new List<PortalContact>();static int portalProbe;
     static int step,index,lastFrame=-1,videoFrame,wallIndex,roundTrip;static float since,started,lastCapture,maxJump,minFeet,maxSprint;
     static Vector3 previous;static uint jumps;static int requests;static bool crouched;static string failure;
     static RenderTexture rt;static Texture2D tex;
+    static Keyboard validationKeyboard;static Mouse validationMouse;static Key[] heldKeys=Array.Empty<Key>();
     [Serializable] class Report
     {
         public string unity,device,cpu,pipeline,quality,failure,resolution="960x540 camera target",performanceLimit="Editor batch rendering on this machine; not standalone target-platform acceptance. Capture frames excluded from timing.";
         public int step,videoFrames,frameSamples;public float elapsedSeconds,p50FrameMs,p95FrameMs,p99FrameMs,minFeetY,maxJumpY,maxSprintSpeed;
-        public string[] checks;
+        public string[] checks;public float controllerSkinWidth;public PortalContact[] portalContacts;
     }
+    [Serializable] class PortalContact {public string location;public Vector3 localFeet;public float capsuleRadius,visualInnerBoundary,physicalBodyEdge;public bool grounded;}
     static bool initialised;
     static double lastBootstrapLog;
     static MaintenanceRuntimeValidation(){EditorApplication.update+=Bootstrap;}
@@ -93,14 +96,18 @@ public static class MaintenanceRuntimeValidation
         try
         {
             scope=new BossTestInputScope();Application.runInBackground=true;Application.targetFrameRate=-1;QualitySettings.vSyncCount=0;
-            if(Keyboard.current==null)InputSystem.AddDevice<Keyboard>();
             encounter=Object.FindFirstObjectByType<BossEncounter>();player=encounter.GetComponent<FirstPersonController>();menu=encounter.GetComponent<RecoveryMenu>();cc=player.GetComponent<CharacterController>();cam=encounter.View;
+            // Isolate only the runtime action clone; never queue test input onto the user's real devices.
+            validationKeyboard=InputSystem.AddDevice<Keyboard>("MaintenanceArtKeyboard");validationMouse=InputSystem.AddDevice<Mouse>("MaintenanceArtMouse");
+            validationKeyboard.MakeCurrent();validationMouse.MakeCurrent();
+            ((InputActionAsset)typeof(FirstPersonController).GetField("runtimeInputActions",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(player)).devices=new InputDevice[]{validationKeyboard,validationMouse};
+            InputSystem.onBeforeUpdate+=FeedValidationInput;InputSystem.onAfterUpdate+=MakeValidationDevicesCurrent;
             if(!player.GetComponent<PlayerInteractor>())player.gameObject.AddComponent<PlayerInteractor>();
             entry=GameObject.Find("ArchiveEntrySignAndAnchors");
             foreach(var id in new[]{"Forward","Backward","Left","Right","Sprint","Jump","Crouch"})
             {var binding=player.Bindings.Find(id);binding.action.RemoveBindingOverride(binding.index);}
             menu.Resume();player.SetGameplayInputEnabled(true);player.SetCursorLocked(true);
-            checks.Clear();times.Clear();frameMs.Clear();failure=null;started=Time.realtimeSinceStartup;
+            checks.Clear();times.Clear();frameMs.Clear();portalContacts.Clear();failure=null;started=Time.realtimeSinceStartup;
             Physics.SyncTransforms();
             foreach(float x in new[]{6f,5.6f,6.6f})foreach(float z in new[]{1.4f,2.4f,3.4f,4.4f})
             {
@@ -116,7 +123,19 @@ public static class MaintenanceRuntimeValidation
     }
     static void Check(bool ok,string text){if(!ok)throw new Exception(text);checks.Add("PASS: "+text);Debug.Log("[MaintenanceValidation] "+text);}
     static void Step(int value){step=value;since=Time.realtimeSinceStartup;Keys();}
-    static void Keys(params Key[] keys){if(Keyboard.current!=null)InputSystem.QueueStateEvent(Keyboard.current,new KeyboardState(keys));}
+    static void Keys(params Key[] keys){heldKeys=keys;}
+    static void FeedValidationInput()
+    {
+        if(InputState.currentUpdateType!=InputUpdateType.Dynamic)return;
+        if(validationKeyboard!=null && validationKeyboard.added)InputSystem.QueueStateEvent(validationKeyboard,new KeyboardState(heldKeys));
+        if(validationMouse!=null && validationMouse.added)InputSystem.QueueStateEvent(validationMouse,new MouseState());
+    }
+    static void MakeValidationDevicesCurrent()
+    {
+        if(InputState.currentUpdateType!=InputUpdateType.Dynamic)return;
+        if(validationKeyboard!=null && validationKeyboard.added)validationKeyboard.MakeCurrent();
+        if(validationMouse!=null && validationMouse.added)validationMouse.MakeCurrent();
+    }
     static Vector3 Local(Vector3 value)=>hall.transform.TransformPoint(value);
     static bool Walk(Vector3 target,bool sprint=false)
     {
@@ -159,7 +178,7 @@ public static class MaintenanceRuntimeValidation
             float now=Time.realtimeSinceStartup,t=now-since;if(now-started>400)throw new TimeoutException("Step "+step);
             if(menu.IsOpen)menu.Resume();if(encounter.IsPaused)encounter.SendMessage("OnApplicationFocus",true);player.SetCursorLocked(true);player.SetGameplayInputEnabled(true);
             if(hall){minFeet=Mathf.Min(minFeet,player.transform.position.y);if(player.transform.position.y<-.1f)throw new Exception("Player fell through floor");}
-            if(step<90 && now-lastCapture>=.1f && videoFrame<900){Capture(null,true);times.Add(videoFrame+","+(now-started).ToString("F4",System.Globalization.CultureInfo.InvariantCulture)+","+step);videoFrame++;lastCapture=now;}
+            if(step<90 && now-lastCapture>=.1f && videoFrame<1200){Capture(null,true);times.Add(videoFrame+","+(now-started).ToString("F4",System.Globalization.CultureInfo.InvariantCulture)+","+step);videoFrame++;lastCapture=now;}
             switch(step)
             {
                 case 0:
@@ -169,7 +188,24 @@ public static class MaintenanceRuntimeValidation
                 case 2:
                     if(Walk(Local(new Vector3(0,0,-16.8f)))){Capture("03_short_transition");Step(3);}else if(t>8)throw new Exception("Door outbound blocked");break;
                 case 3:
-                    if(Walk(Local(new Vector3(0,0,-12.5f)),true)){Check(true,"Door threshold traversed both directions using real movement");index=0;Step(10);}else if(t>8)throw new Exception("Door inbound blocked");break;
+                    if(Walk(Local(new Vector3(0,0,-12.5f)),true)){Check(true,"Door threshold traversed both directions using real movement");portalProbe=0;Step(4);}else if(t>8)throw new Exception("Door inbound blocked");break;
+                case 4:
+                    Spawn(new Vector3(0,.08f,portalProbe<2?-15.1f:-16.5f),portalProbe==4?180:portalProbe%2==0?90:270);Step(5);break;
+                case 5:
+                    Keys(t<.25f?Array.Empty<Key>():new[]{Key.W,Key.LeftShift});
+                    if(t>1)
+                    {
+                        var contactFeet=hall.transform.InverseTransformPoint(player.transform.position);
+                        float boundary=portalProbe<2?1.245f:portalProbe<4?1.28f:17.95f;
+                        float bodyEdge=(portalProbe<4?Mathf.Abs(contactFeet.x):-contactFeet.z)+cc.radius;
+                        string location=new[]{"Right door jamb","Left door jamb","Right passage wall","Left passage wall","Passage end wall"}[portalProbe];
+                        Check(bodyEdge<boundary-.005f && (portalProbe<4?Mathf.Abs(contactFeet.x)>.70f:-contactFeet.z>17.35f),location+" blocks sprint capsule before its visible face; edge="+bodyEdge.ToString("F3")+", visual="+boundary.ToString("F3"));
+                        Check(player.IsGrounded,location+" contact remains grounded");
+                        portalContacts.Add(new PortalContact{location=location,localFeet=contactFeet,capsuleRadius=cc.radius,visualInnerBoundary=boundary,physicalBodyEdge=bodyEdge,grounded=player.IsGrounded});
+                        portalProbe++;if(portalProbe<5)Step(4);else{Spawn(new Vector3(0,.08f,-12.5f));index=0;Step(6);}
+                    }break;
+                case 6:
+                    Keys();if(t>.25f)Step(10);break;
                 case 10:
                     var a=nodes[index];var target=a.transform.position-a.transform.forward*1.55f;
                     if(Walk(target,true)){Aim(a.interactionPoint.position);Step(11);}else if(t>15)throw new Exception("Node approach blocked "+index);break;
@@ -219,15 +255,14 @@ public static class MaintenanceRuntimeValidation
                 case 42:
                     if(t>.6f)Step(40);break;
                 case 50:
-                    // Record at least 90 seconds at 10 captured frames/s, then test live warnings.
-                    Aim(Local(new Vector3(Mathf.Sin(t*.18f)*10,2,Mathf.Cos(t*.18f)*10)));
-                    if(videoFrame>=900){encounter.Arena.boss.gameObject.SetActive(true);encounter.enabled=true;Step(60);}break;
+                    // Continue the actual checks immediately; never wait just to fill the recording.
+                    encounter.Arena.boss.gameObject.SetActive(true);encounter.enabled=true;Step(60);break;
                 case 60:
                     Aim(encounter.Arena.boss.position+Vector3.up*2.2f);
                     if(encounter.CurrentState==BossEncounter.State.Telegraph){Capture("06_boss_warning_and_silhouette");Check(true,"Live production Boss warning and silhouette captured in target pipeline");Step(61);}else if(t>15)throw new Exception("No live warning");break;
                 case 61:
                     Aim(encounter.Arena.boss.position+Vector3.up*2.2f);
-                    if(t>2)Step(90);break;
+                    if(t>2){Check(videoFrame>=600,"At least one minute of the natural controller/check sequence captured without padding");Step(90);}break;
                 case 90:
                     // No screenshot encoding in this timing interval; Editor and capture overhead are distinct.
                     if(encounter.IsFinished)encounter.Retry();
@@ -241,12 +276,18 @@ public static class MaintenanceRuntimeValidation
     static void Write()
     {
         Directory.CreateDirectory(Out);
-        File.WriteAllText(Out+"/runtime-validation.json",JsonUtility.ToJson(new Report{unity=Application.unityVersion,device=SystemInfo.graphicsDeviceName,cpu=SystemInfo.processorType,pipeline=UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline?.name,quality=QualitySettings.names[QualitySettings.GetQualityLevel()],step=step,failure=failure,videoFrames=videoFrame,elapsedSeconds=Time.realtimeSinceStartup-started,frameSamples=frameMs.Count,p50FrameMs=Percentile(.5f),p95FrameMs=Percentile(.95f),p99FrameMs=Percentile(.99f),minFeetY=minFeet,maxJumpY=maxJump,maxSprintSpeed=maxSprint,checks=checks.ToArray()},true));
+        File.WriteAllText(Out+"/runtime-validation.json",JsonUtility.ToJson(new Report{unity=Application.unityVersion,device=SystemInfo.graphicsDeviceName,cpu=SystemInfo.processorType,pipeline=UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline?.name,quality=QualitySettings.names[QualitySettings.GetQualityLevel()],step=step,failure=failure,videoFrames=videoFrame,elapsedSeconds=Time.realtimeSinceStartup-started,frameSamples=frameMs.Count,p50FrameMs=Percentile(.5f),p95FrameMs=Percentile(.95f),p99FrameMs=Percentile(.99f),minFeetY=minFeet,maxJumpY=maxJump,maxSprintSpeed=maxSprint,controllerSkinWidth=cc.skinWidth,portalContacts=portalContacts.ToArray(),checks=checks.ToArray()},true));
         File.WriteAllLines(Out+"/capture-times.csv",new[]{"frame,realtimeSeconds,testStep"}.Concat(times));
         File.WriteAllLines(Out+"/frame-times-ms.csv",new[]{"frameMs"}.Concat(frameMs.Select(f=>f.ToString("F4",System.Globalization.CultureInfo.InvariantCulture))));
     }
     static void Fail(Exception ex){failure=ex.ToString();step=-1;Debug.LogError(failure);Write();Finish();}
-    static void Finish(){Keys();scope?.Dispose();EditorApplication.update-=Tick;SessionState.SetBool(Flag,false);Debug.Log("[MaintenanceValidation] FINISHED "+step);EditorApplication.Exit(step==100?0:2);}
+    static void Finish()
+    {
+        Keys();InputSystem.onBeforeUpdate-=FeedValidationInput;InputSystem.onAfterUpdate-=MakeValidationDevicesCurrent;
+        if(validationKeyboard!=null && validationKeyboard.added)InputSystem.RemoveDevice(validationKeyboard);
+        if(validationMouse!=null && validationMouse.added)InputSystem.RemoveDevice(validationMouse);
+        scope?.Dispose();EditorApplication.update-=Tick;SessionState.SetBool(Flag,false);Debug.Log("[MaintenanceValidation] FINISHED "+step);EditorApplication.Exit(step==100?0:2);
+    }
 }
 
 // Test-only adapter to the production interaction interface. Final story adapter remains program-owned.

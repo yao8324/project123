@@ -1,480 +1,417 @@
 frame,realtime,scenario
-0,0.1841,Preparing
-1,0.3787,Preparing
-2,0.5456,Preparing
-3,0.7421,Preparing
-4,0.9373,Read ARCHIVE_RECORD_SLOT_01
-5,1.1069,Read ARCHIVE_RECORD_SLOT_01
-6,1.2717,Read ARCHIVE_RECORD_SLOT_01
-7,1.4441,Read ARCHIVE_RECORD_SLOT_01
-8,1.6129,Read ARCHIVE_RECORD_SLOT_02
-9,1.7845,Read ARCHIVE_RECORD_SLOT_02
-10,1.9486,Read ARCHIVE_RECORD_SLOT_02
-11,2.1211,Read ARCHIVE_RECORD_SLOT_02
-12,2.2952,Read ARCHIVE_RECORD_SLOT_03
-13,2.4632,Read ARCHIVE_RECORD_SLOT_03
-14,2.6303,Read ARCHIVE_RECORD_SLOT_03
-15,2.7986,Read ARCHIVE_RECORD_SLOT_03
-16,2.9865,Pre-attack work badge
-17,3.1600,Pre-attack work badge
-18,3.3365,Pre-attack work badge
-19,3.4989,Pre-attack work badge
-20,3.6706,Tie the archival seal
-21,3.8414,Tie the archival seal
-22,4.0098,Tie the archival seal
-23,4.1814,Tie the archival seal
-24,4.3578,Repeat sealed cord press
-25,4.5299,Repeat sealed cord press
-26,4.6839,Walk around existing desk
-27,4.8403,Walk around existing desk
-28,4.9956,Walk around existing desk
-29,5.1510,Walk around existing desk
-30,5.3189,Walk around existing desk
-31,5.4920,Walk around existing desk
-32,5.6579,Walk around existing desk
-33,5.8231,Walk around existing desk
-34,5.9885,Walk around existing desk
-35,6.1517,Walk around existing desk
-36,6.3156,Walk around existing desk
-37,6.4850,Walk around existing desk
-38,6.6497,Walk around existing desk
-39,6.8054,Walk around existing desk
-40,6.9907,Walk around existing desk
-41,7.1507,Walk around existing desk
-42,7.3086,Walk around existing desk
-43,7.4649,Walk around existing desk
-44,7.6212,Walk around existing desk
-45,7.7776,Crouch at desk
-46,7.9323,Crouch at desk
-47,8.0878,Crouch at desk
-48,8.2428,Crouch at desk
-49,8.4022,Crouch at desk
-50,8.5584,Crouch at desk
-51,8.7157,Crouch at desk
-52,8.8734,Crouch at desk
-53,9.0452,Awakening position
-54,9.2251,Awakening position
-55,9.4349,Approach desk after awakening
-56,9.5876,Desk to side-door approach
-57,9.7435,Desk to side-door approach
-58,9.9009,Desk to side-door approach
-59,10.0573,Approach maintenance side door
-60,10.2136,Approach maintenance side door
-61,10.3706,Approach maintenance side door
-62,10.5259,Side-door interaction position
-63,10.6823,Side-door interaction position
-64,10.8389,Side-door interaction position
-65,10.9908,Enter maintenance trip 1
-66,11.1449,Enter maintenance trip 1
-67,11.2969,Enter maintenance trip 1
-68,11.4499,Enter maintenance trip 1
-69,11.6727,Enter maintenance trip 1
-70,11.8272,Enter maintenance trip 1
-71,11.9793,Enter maintenance trip 1
-72,12.1306,Enter maintenance trip 1
-73,12.2838,Maintenance approach MAINT_NODE_01
-74,12.4349,Maintenance approach MAINT_NODE_01
-75,12.5863,Maintenance approach MAINT_NODE_01
-76,12.7393,Maintenance approach MAINT_NODE_01
-77,12.8907,Maintenance approach MAINT_NODE_01
-78,13.0422,Maintenance approach MAINT_NODE_01
-79,13.1950,Maintenance approach MAINT_NODE_01
-80,13.3466,Maintenance approach MAINT_NODE_01
-81,13.4981,Maintenance approach MAINT_NODE_01
-82,13.6503,Maintenance approach MAINT_NODE_01
-83,13.8030,Maintenance approach MAINT_NODE_01
-84,13.9545,Maintenance approach MAINT_NODE_01
-85,14.1075,Maintenance approach MAINT_NODE_01
-86,14.2594,Maintenance approach MAINT_NODE_01
-87,14.4114,Maintenance approach MAINT_NODE_01
-88,14.5644,Maintenance approach MAINT_NODE_01
-89,14.7163,Maintenance approach MAINT_NODE_01
-90,14.8684,Maintenance approach MAINT_NODE_01
-91,15.0217,Maintenance approach MAINT_NODE_01
-92,15.1756,Maintenance approach MAINT_NODE_01
-93,15.3273,Maintenance approach MAINT_NODE_01
-94,15.4799,Maintenance approach MAINT_NODE_01
-95,15.6334,Maintenance approach MAINT_NODE_01
-96,15.7858,Maintenance approach MAINT_NODE_01
-97,15.9376,Maintenance approach MAINT_NODE_01
-98,16.0903,Maintenance approach MAINT_NODE_01
-99,16.2438,Stabilize MAINT_NODE_01
-100,16.3968,Stabilize MAINT_NODE_01
-101,16.5496,Stabilize MAINT_NODE_01
-102,16.7013,Stabilize MAINT_NODE_01
-103,16.8544,Maintenance approach MAINT_NODE_02
-104,17.0062,Maintenance approach MAINT_NODE_02
-105,17.1586,Maintenance approach MAINT_NODE_02
-106,17.3124,Maintenance approach MAINT_NODE_02
-107,17.4664,Maintenance approach MAINT_NODE_02
-108,17.6210,Maintenance approach MAINT_NODE_02
-109,17.7779,Maintenance approach MAINT_NODE_02
-110,17.9287,Maintenance approach MAINT_NODE_02
-111,18.0824,Maintenance approach MAINT_NODE_02
-112,18.2347,Maintenance approach MAINT_NODE_02
-113,18.3868,Maintenance approach MAINT_NODE_02
-114,18.5399,Maintenance approach MAINT_NODE_02
-115,18.6927,Maintenance approach MAINT_NODE_02
-116,18.8449,Maintenance approach MAINT_NODE_02
-117,18.9962,Maintenance approach MAINT_NODE_02
-118,19.1495,Maintenance approach MAINT_NODE_02
-119,19.3021,Maintenance approach MAINT_NODE_02
-120,19.4539,Maintenance approach MAINT_NODE_02
-121,19.6067,Maintenance approach MAINT_NODE_02
-122,19.7583,Maintenance approach MAINT_NODE_02
-123,19.9111,Stabilize MAINT_NODE_02
-124,20.0630,Stabilize MAINT_NODE_02
-125,20.2171,Stabilize MAINT_NODE_02
-126,20.3691,Stabilize MAINT_NODE_02
-127,20.5225,Maintenance approach MAINT_NODE_03
-128,20.6765,Maintenance approach MAINT_NODE_03
-129,20.8292,Maintenance approach MAINT_NODE_03
-130,20.9838,Maintenance approach MAINT_NODE_03
-131,21.1369,Maintenance approach MAINT_NODE_03
-132,21.2901,Maintenance approach MAINT_NODE_03
-133,21.4433,Maintenance approach MAINT_NODE_03
-134,21.5964,Maintenance approach MAINT_NODE_03
-135,21.7489,Maintenance approach MAINT_NODE_03
-136,21.9026,Maintenance approach MAINT_NODE_03
-137,22.0556,Maintenance approach MAINT_NODE_03
-138,22.2088,Maintenance approach MAINT_NODE_03
-139,22.3622,Maintenance approach MAINT_NODE_03
-140,22.5156,Maintenance approach MAINT_NODE_03
-141,22.6678,Maintenance approach MAINT_NODE_03
-142,22.8226,Maintenance approach MAINT_NODE_03
-143,22.9743,Maintenance approach MAINT_NODE_03
-144,23.1276,Maintenance approach MAINT_NODE_03
-145,23.2798,Maintenance approach MAINT_NODE_03
-146,23.4332,Maintenance approach MAINT_NODE_03
-147,23.5848,Maintenance approach MAINT_NODE_03
-148,23.7390,Maintenance approach MAINT_NODE_03
-149,23.8903,Maintenance approach MAINT_NODE_03
-150,24.0428,Maintenance approach MAINT_NODE_03
-151,24.1944,Maintenance approach MAINT_NODE_03
-152,24.3486,Maintenance approach MAINT_NODE_03
-153,24.5009,Stabilize MAINT_NODE_03
-154,24.6543,Stabilize MAINT_NODE_03
-155,24.8082,Stabilize MAINT_NODE_03
-156,24.9604,Stabilize MAINT_NODE_03
-157,25.1126,Return to maintenance portal
-158,25.2653,Return to maintenance portal
-159,25.4179,Return to maintenance portal
-160,25.5692,Return to maintenance portal
-161,25.7205,Return to maintenance portal
-162,25.8741,Return to maintenance portal
-163,26.0321,Return to maintenance portal
-164,26.1847,Return to maintenance portal
-165,26.3369,Return to maintenance portal
-166,26.4891,Return to maintenance portal
-167,26.6419,Return to maintenance portal
-168,26.7934,Return to maintenance portal
-169,26.9459,Return to maintenance portal
-170,27.0979,Return to maintenance portal
-171,27.2507,Return to maintenance portal
-172,27.4032,Return to maintenance portal
-173,27.5555,Return to maintenance portal
-174,27.7130,Return to maintenance portal
-175,27.8649,Return to maintenance portal
-176,28.0187,Return to maintenance portal
-177,28.1716,Leave maintenance trip 1
-178,28.3247,Leave maintenance trip 1
-179,28.4774,Leave maintenance trip 1
-180,28.6291,Leave maintenance trip 1
-181,28.8697,Leave maintenance trip 1
-182,29.0502,Leave maintenance trip 1
-183,29.2270,Leave maintenance trip 1
-184,29.3996,Return from side door
-185,29.5795,Return from side door
-186,29.7561,Return along archive approach
-187,29.9367,Return along archive approach
-188,30.1204,Return along archive approach
-189,30.2945,Return along archive approach
-190,30.4768,Retrieve records at original desk
-191,30.6393,Retrieve records at original desk
-192,30.8141,Retrieve records at original desk
-193,30.9741,Retrieve record after return
-194,31.1387,Retrieve record after return
-195,31.3097,Retrieve record after return
-196,31.4779,Retrieve record after return
-197,31.6317,Desk to side-door approach
-198,31.7868,Desk to side-door approach
-199,31.9426,Desk to side-door approach
-200,32.1002,Approach maintenance side door
-201,32.2572,Approach maintenance side door
-202,32.4154,Approach maintenance side door
-203,32.5699,Approach maintenance side door
-204,32.7249,Side-door interaction position
-205,32.8802,Side-door interaction position
-206,33.0348,Side-door interaction position
-207,33.1868,Enter maintenance trip 2
-208,33.3404,Enter maintenance trip 2
-209,33.4948,Enter maintenance trip 2
-210,33.6486,Enter maintenance trip 2
-211,33.8039,Enter maintenance trip 2
-212,33.9554,Enter maintenance trip 2
-213,34.1065,Enter maintenance trip 2
-214,34.2571,Enter maintenance trip 2
-215,34.4173,Maintenance approach MAINT_NODE_01
-216,34.5687,Maintenance approach MAINT_NODE_01
-217,34.7207,Maintenance approach MAINT_NODE_01
-218,34.8733,Maintenance approach MAINT_NODE_01
-219,35.0244,Maintenance approach MAINT_NODE_01
-220,35.1767,Maintenance approach MAINT_NODE_01
-221,35.3354,Maintenance approach MAINT_NODE_01
-222,35.4860,Maintenance approach MAINT_NODE_01
-223,35.6373,Maintenance approach MAINT_NODE_01
-224,35.7903,Maintenance approach MAINT_NODE_01
-225,35.9432,Maintenance approach MAINT_NODE_01
-226,36.0958,Maintenance approach MAINT_NODE_01
-227,36.2466,Maintenance approach MAINT_NODE_01
-228,36.3994,Maintenance approach MAINT_NODE_01
-229,36.5520,Maintenance approach MAINT_NODE_01
-230,36.7051,Maintenance approach MAINT_NODE_01
-231,36.8571,Maintenance approach MAINT_NODE_01
-232,37.0083,Maintenance approach MAINT_NODE_01
-233,37.1633,Maintenance approach MAINT_NODE_01
-234,37.3250,Maintenance approach MAINT_NODE_01
-235,37.4781,Maintenance approach MAINT_NODE_01
-236,37.6301,Maintenance approach MAINT_NODE_01
-237,37.7866,Maintenance approach MAINT_NODE_01
-238,37.9389,Maintenance approach MAINT_NODE_01
-239,38.0935,Maintenance approach MAINT_NODE_01
-240,38.2463,Maintenance approach MAINT_NODE_01
-241,38.3992,Stabilize MAINT_NODE_01
-242,38.5505,Stabilize MAINT_NODE_01
-243,38.7038,Stabilize MAINT_NODE_01
-244,38.8567,Stabilize MAINT_NODE_01
-245,39.0104,Maintenance approach MAINT_NODE_02
-246,39.1637,Maintenance approach MAINT_NODE_02
-247,39.3166,Maintenance approach MAINT_NODE_02
-248,39.4696,Maintenance approach MAINT_NODE_02
-249,39.6215,Maintenance approach MAINT_NODE_02
-250,39.7745,Maintenance approach MAINT_NODE_02
-251,39.9270,Maintenance approach MAINT_NODE_02
-252,40.0795,Maintenance approach MAINT_NODE_02
-253,40.2327,Maintenance approach MAINT_NODE_02
-254,40.3850,Maintenance approach MAINT_NODE_02
-255,40.5382,Maintenance approach MAINT_NODE_02
-256,40.6901,Maintenance approach MAINT_NODE_02
-257,40.8432,Maintenance approach MAINT_NODE_02
-258,40.9960,Maintenance approach MAINT_NODE_02
-259,41.1484,Maintenance approach MAINT_NODE_02
-260,41.3008,Maintenance approach MAINT_NODE_02
-261,41.4526,Maintenance approach MAINT_NODE_02
-262,41.6048,Maintenance approach MAINT_NODE_02
-263,41.7562,Maintenance approach MAINT_NODE_02
-264,41.9098,Maintenance approach MAINT_NODE_02
-265,42.0630,Stabilize MAINT_NODE_02
-266,42.2146,Stabilize MAINT_NODE_02
-267,42.3692,Stabilize MAINT_NODE_02
-268,42.5221,Stabilize MAINT_NODE_02
-269,42.6751,Maintenance approach MAINT_NODE_03
-270,42.8310,Maintenance approach MAINT_NODE_03
-271,42.9826,Maintenance approach MAINT_NODE_03
-272,43.1359,Maintenance approach MAINT_NODE_03
-273,43.2887,Maintenance approach MAINT_NODE_03
-274,43.4411,Maintenance approach MAINT_NODE_03
-275,43.5932,Maintenance approach MAINT_NODE_03
-276,43.7460,Maintenance approach MAINT_NODE_03
-277,43.8983,Maintenance approach MAINT_NODE_03
-278,44.0505,Maintenance approach MAINT_NODE_03
-279,44.2037,Maintenance approach MAINT_NODE_03
-280,44.3556,Maintenance approach MAINT_NODE_03
-281,44.5083,Maintenance approach MAINT_NODE_03
-282,44.6613,Maintenance approach MAINT_NODE_03
-283,44.8145,Maintenance approach MAINT_NODE_03
-284,44.9666,Maintenance approach MAINT_NODE_03
-285,45.1193,Maintenance approach MAINT_NODE_03
-286,45.2717,Maintenance approach MAINT_NODE_03
-287,45.4243,Maintenance approach MAINT_NODE_03
-288,45.5772,Maintenance approach MAINT_NODE_03
-289,45.7288,Maintenance approach MAINT_NODE_03
-290,45.8808,Maintenance approach MAINT_NODE_03
-291,46.0332,Maintenance approach MAINT_NODE_03
-292,46.1862,Maintenance approach MAINT_NODE_03
-293,46.3384,Maintenance approach MAINT_NODE_03
-294,46.4906,Maintenance approach MAINT_NODE_03
-295,46.6429,Stabilize MAINT_NODE_03
-296,46.7951,Stabilize MAINT_NODE_03
-297,46.9478,Stabilize MAINT_NODE_03
-298,47.1013,Stabilize MAINT_NODE_03
-299,47.2530,Return to maintenance portal
-300,47.4067,Return to maintenance portal
-301,47.5577,Return to maintenance portal
-302,47.7105,Return to maintenance portal
-303,47.8626,Return to maintenance portal
-304,48.0150,Return to maintenance portal
-305,48.1678,Return to maintenance portal
-306,48.3202,Return to maintenance portal
-307,48.4736,Return to maintenance portal
-308,48.6271,Return to maintenance portal
-309,48.7789,Return to maintenance portal
-310,48.9323,Return to maintenance portal
-311,49.0843,Return to maintenance portal
-312,49.2368,Return to maintenance portal
-313,49.3904,Return to maintenance portal
-314,49.5426,Return to maintenance portal
-315,49.6960,Return to maintenance portal
-316,49.8481,Return to maintenance portal
-317,50.0003,Return to maintenance portal
-318,50.1532,Return to maintenance portal
-319,50.3053,Return to maintenance portal
-320,50.4580,Leave maintenance trip 2
-321,50.6106,Leave maintenance trip 2
-322,50.7642,Leave maintenance trip 2
-323,50.9150,Leave maintenance trip 2
-324,51.1113,Leave maintenance trip 2
-325,51.2998,Leave maintenance trip 2
-326,51.4747,Leave maintenance trip 2
-327,51.6559,Return from side door
-328,51.8298,Return from side door
-329,52.0413,Return along archive approach
-330,52.2178,Return along archive approach
-331,52.3878,Return along archive approach
-332,52.5776,Retrieve records at original desk
-333,52.7489,Retrieve records at original desk
-334,52.9303,Retrieve records at original desk
-335,53.1015,Retrieve record after return
-336,53.2715,Retrieve record after return
-337,53.4460,Retrieve record after return
-338,53.6174,Retrieve record after return
-339,53.7727,Desk to side-door approach
-340,53.9280,Desk to side-door approach
-341,54.0851,Desk to side-door approach
-342,54.2412,Approach maintenance side door
-343,54.3977,Approach maintenance side door
-344,54.5542,Approach maintenance side door
-345,54.7100,Approach maintenance side door
-346,54.8671,Side-door interaction position
-347,55.0216,Side-door interaction position
-348,55.1874,Enter maintenance trip 3
-349,55.3462,Enter maintenance trip 3
-350,55.5024,Enter maintenance trip 3
-351,55.6558,Enter maintenance trip 3
-352,55.8521,Enter maintenance trip 3
-353,55.9955,Enter maintenance trip 3
-354,56.3991,Enter maintenance trip 3
-355,56.5499,Maintenance approach MAINT_NODE_01
-356,56.7038,Maintenance approach MAINT_NODE_01
-357,56.8562,Maintenance approach MAINT_NODE_01
-358,57.0100,Maintenance approach MAINT_NODE_01
-359,57.1613,Maintenance approach MAINT_NODE_01
-360,57.3141,Maintenance approach MAINT_NODE_01
-361,57.4649,Maintenance approach MAINT_NODE_01
-362,57.6156,Maintenance approach MAINT_NODE_01
-363,57.7678,Maintenance approach MAINT_NODE_01
-364,57.9190,Maintenance approach MAINT_NODE_01
-365,58.0707,Maintenance approach MAINT_NODE_01
-366,58.2240,Maintenance approach MAINT_NODE_01
-367,58.3762,Maintenance approach MAINT_NODE_01
-368,58.5305,Maintenance approach MAINT_NODE_01
-369,58.6835,Maintenance approach MAINT_NODE_01
-370,58.8358,Maintenance approach MAINT_NODE_01
-371,58.9880,Maintenance approach MAINT_NODE_01
-372,59.1402,Maintenance approach MAINT_NODE_01
-373,59.2943,Maintenance approach MAINT_NODE_01
-374,59.4465,Maintenance approach MAINT_NODE_01
-375,59.5980,Maintenance approach MAINT_NODE_01
-376,59.7504,Maintenance approach MAINT_NODE_01
-377,59.9040,Maintenance approach MAINT_NODE_01
-378,60.0555,Maintenance approach MAINT_NODE_01
-379,60.2088,Maintenance approach MAINT_NODE_01
-380,60.3587,Maintenance approach MAINT_NODE_01
-381,60.5117,Stabilize MAINT_NODE_01
-382,60.6665,Stabilize MAINT_NODE_01
-383,60.8197,Stabilize MAINT_NODE_01
-384,60.9738,Stabilize MAINT_NODE_01
-385,61.1252,Maintenance approach MAINT_NODE_02
-386,61.2782,Maintenance approach MAINT_NODE_02
-387,61.4406,Maintenance approach MAINT_NODE_02
-388,61.5916,Maintenance approach MAINT_NODE_02
-389,61.7453,Maintenance approach MAINT_NODE_02
-390,61.8967,Maintenance approach MAINT_NODE_02
-391,62.0485,Maintenance approach MAINT_NODE_02
-392,62.2009,Maintenance approach MAINT_NODE_02
-393,62.3540,Maintenance approach MAINT_NODE_02
-394,62.5050,Maintenance approach MAINT_NODE_02
-395,62.6577,Maintenance approach MAINT_NODE_02
-396,62.8091,Maintenance approach MAINT_NODE_02
-397,62.9593,Maintenance approach MAINT_NODE_02
-398,63.1119,Maintenance approach MAINT_NODE_02
-399,63.2625,Maintenance approach MAINT_NODE_02
-400,63.4140,Maintenance approach MAINT_NODE_02
-401,63.5648,Maintenance approach MAINT_NODE_02
-402,63.7164,Maintenance approach MAINT_NODE_02
-403,63.8681,Maintenance approach MAINT_NODE_02
-404,64.0212,Maintenance approach MAINT_NODE_02
-405,64.1729,Stabilize MAINT_NODE_02
-406,64.3244,Stabilize MAINT_NODE_02
-407,64.4764,Stabilize MAINT_NODE_02
-408,64.6291,Stabilize MAINT_NODE_02
-409,64.7802,Maintenance approach MAINT_NODE_03
-410,64.9330,Maintenance approach MAINT_NODE_03
-411,65.0845,Maintenance approach MAINT_NODE_03
-412,65.2362,Maintenance approach MAINT_NODE_03
-413,65.3882,Maintenance approach MAINT_NODE_03
-414,65.5400,Maintenance approach MAINT_NODE_03
-415,65.6921,Maintenance approach MAINT_NODE_03
-416,65.8449,Maintenance approach MAINT_NODE_03
-417,65.9958,Maintenance approach MAINT_NODE_03
-418,66.1480,Maintenance approach MAINT_NODE_03
-419,66.2988,Maintenance approach MAINT_NODE_03
-420,66.4508,Maintenance approach MAINT_NODE_03
-421,66.6023,Maintenance approach MAINT_NODE_03
-422,66.7544,Maintenance approach MAINT_NODE_03
-423,66.9071,Maintenance approach MAINT_NODE_03
-424,67.0598,Maintenance approach MAINT_NODE_03
-425,67.2117,Maintenance approach MAINT_NODE_03
-426,67.3640,Maintenance approach MAINT_NODE_03
-427,67.5156,Maintenance approach MAINT_NODE_03
-428,67.6673,Maintenance approach MAINT_NODE_03
-429,67.8183,Maintenance approach MAINT_NODE_03
-430,67.9698,Maintenance approach MAINT_NODE_03
-431,68.1221,Maintenance approach MAINT_NODE_03
-432,68.2748,Maintenance approach MAINT_NODE_03
-433,68.4254,Maintenance approach MAINT_NODE_03
-434,68.5776,Maintenance approach MAINT_NODE_03
-435,68.7293,Maintenance approach MAINT_NODE_03
-436,68.8808,Stabilize MAINT_NODE_03
-437,69.0319,Stabilize MAINT_NODE_03
-438,69.1844,Stabilize MAINT_NODE_03
-439,69.3357,Stabilize MAINT_NODE_03
-440,69.4786,Return to maintenance portal
-441,69.6295,Return to maintenance portal
-442,69.7813,Return to maintenance portal
-443,69.9324,Return to maintenance portal
-444,70.0852,Return to maintenance portal
-445,70.2362,Return to maintenance portal
-446,70.3876,Return to maintenance portal
-447,70.5388,Return to maintenance portal
-448,70.6925,Return to maintenance portal
-449,70.8443,Return to maintenance portal
-450,70.9959,Return to maintenance portal
-451,71.1461,Return to maintenance portal
-452,71.2979,Return to maintenance portal
-453,71.4494,Return to maintenance portal
-454,71.6012,Return to maintenance portal
-455,71.7551,Return to maintenance portal
-456,71.9130,Return to maintenance portal
-457,72.0647,Return to maintenance portal
-458,72.2167,Return to maintenance portal
-459,72.3679,Return to maintenance portal
-460,72.5198,Leave maintenance trip 3
-461,72.6721,Leave maintenance trip 3
-462,72.8256,Leave maintenance trip 3
-463,72.9781,Leave maintenance trip 3
-464,73.1529,Leave maintenance trip 3
-465,73.3459,Leave maintenance trip 3
-466,73.5240,Leave maintenance trip 3
-467,73.6906,Return from side door
-468,73.8660,Return from side door
-469,74.0534,Return along archive approach
-470,74.2344,Return along archive approach
-471,74.4199,Return along archive approach
-472,74.6005,Retrieve records at original desk
-473,74.7879,Retrieve records at original desk
-474,74.9603,Retrieve records at original desk
-475,75.1227,Retrieve record after return
-476,75.2974,Retrieve record after return
-477,75.4650,Retrieve record after return
-478,75.6296,Retrieve record after return
+0,0.3199,Preparing
+1,0.5236,Preparing
+2,0.7313,Preparing
+3,0.9281,Preparing
+4,1.2294,Read ARCHIVE_RECORD_SLOT_01
+5,1.4743,Read ARCHIVE_RECORD_SLOT_01
+6,1.6768,Read ARCHIVE_RECORD_SLOT_01
+7,1.8875,Read ARCHIVE_RECORD_SLOT_01
+8,2.0670,Read ARCHIVE_RECORD_SLOT_02
+9,2.2945,Read ARCHIVE_RECORD_SLOT_02
+10,2.4988,Read ARCHIVE_RECORD_SLOT_02
+11,2.6973,Read ARCHIVE_RECORD_SLOT_02
+12,2.8823,Read ARCHIVE_RECORD_SLOT_03
+13,3.0928,Read ARCHIVE_RECORD_SLOT_03
+14,3.3037,Read ARCHIVE_RECORD_SLOT_03
+15,3.5428,Pre-attack work badge
+16,3.7943,Pre-attack work badge
+17,4.0196,Pre-attack work badge
+18,4.3006,Tie the archival seal
+19,4.5188,Tie the archival seal
+20,4.7312,Tie the archival seal
+21,4.9690,Tie the archival seal
+22,5.2598,Repeat sealed cord press
+23,5.4792,Repeat sealed cord press
+24,5.6931,Walk around existing desk
+25,5.8887,Walk around existing desk
+26,6.0580,Walk around existing desk
+27,6.2814,Walk around existing desk
+28,6.4950,Walk around existing desk
+29,6.7030,Walk around existing desk
+30,6.9214,Walk around existing desk
+31,7.1479,Walk around existing desk
+32,7.3509,Walk around existing desk
+33,7.5471,Walk around existing desk
+34,7.7246,Walk around existing desk
+35,7.9155,Walk around existing desk
+36,8.0951,Walk around existing desk
+37,8.2863,Walk around existing desk
+38,8.4597,Walk around existing desk
+39,8.6373,Crouch at desk
+40,8.8185,Crouch at desk
+41,8.9998,Crouch at desk
+42,9.1772,Crouch at desk
+43,9.3521,Crouch at desk
+44,9.5423,Crouch at desk
+45,9.7177,Crouch at desk
+46,9.9304,Awakening position
+47,10.1612,Awakening position
+48,10.5117,Approach desk after awakening
+49,10.6898,Desk to side-door approach
+50,10.8733,Desk to side-door approach
+51,11.0637,Desk to side-door approach
+52,11.3022,Approach maintenance side door
+53,11.4766,Approach maintenance side door
+54,11.6742,Side-door interaction position
+55,11.8707,Side-door interaction position
+56,12.0532,Enter maintenance trip 1
+57,12.2206,Enter maintenance trip 1
+58,12.4045,Enter maintenance trip 1
+59,12.5995,Enter maintenance trip 1
+60,12.9040,Enter maintenance trip 1
+61,13.0675,Enter maintenance trip 1
+62,13.2350,Enter maintenance trip 1
+63,13.4347,Maintenance approach MAINT_NODE_01
+64,13.6039,Maintenance approach MAINT_NODE_01
+65,13.7757,Maintenance approach MAINT_NODE_01
+66,13.9441,Maintenance approach MAINT_NODE_01
+67,14.1179,Maintenance approach MAINT_NODE_01
+68,14.2928,Maintenance approach MAINT_NODE_01
+69,14.4660,Maintenance approach MAINT_NODE_01
+70,14.6537,Maintenance approach MAINT_NODE_01
+71,14.8267,Maintenance approach MAINT_NODE_01
+72,14.9986,Maintenance approach MAINT_NODE_01
+73,15.1669,Maintenance approach MAINT_NODE_01
+74,15.3385,Maintenance approach MAINT_NODE_01
+75,15.5199,Maintenance approach MAINT_NODE_01
+76,15.6989,Maintenance approach MAINT_NODE_01
+77,15.8630,Maintenance approach MAINT_NODE_01
+78,16.0511,Maintenance approach MAINT_NODE_01
+79,16.2367,Maintenance approach MAINT_NODE_01
+80,16.4108,Maintenance approach MAINT_NODE_01
+81,16.5971,Maintenance approach MAINT_NODE_01
+82,16.7855,Maintenance approach MAINT_NODE_01
+83,16.9534,Maintenance approach MAINT_NODE_01
+84,17.1295,Maintenance approach MAINT_NODE_01
+85,17.2937,Maintenance approach MAINT_NODE_01
+86,17.4658,Stabilize MAINT_NODE_01
+87,17.6537,Stabilize MAINT_NODE_01
+88,17.8555,Stabilize MAINT_NODE_01
+89,18.0335,Stabilize MAINT_NODE_01
+90,18.2168,Maintenance approach MAINT_NODE_02
+91,18.4110,Maintenance approach MAINT_NODE_02
+92,18.5688,Maintenance approach MAINT_NODE_02
+93,18.7402,Maintenance approach MAINT_NODE_02
+94,18.9086,Maintenance approach MAINT_NODE_02
+95,19.0733,Maintenance approach MAINT_NODE_02
+96,19.2465,Maintenance approach MAINT_NODE_02
+97,19.4195,Maintenance approach MAINT_NODE_02
+98,19.5948,Maintenance approach MAINT_NODE_02
+99,19.7769,Maintenance approach MAINT_NODE_02
+100,19.9568,Maintenance approach MAINT_NODE_02
+101,20.1363,Maintenance approach MAINT_NODE_02
+102,20.3085,Maintenance approach MAINT_NODE_02
+103,20.4805,Maintenance approach MAINT_NODE_02
+104,20.6434,Maintenance approach MAINT_NODE_02
+105,20.8374,Maintenance approach MAINT_NODE_02
+106,21.0065,Maintenance approach MAINT_NODE_02
+107,21.1842,Stabilize MAINT_NODE_02
+108,21.3675,Stabilize MAINT_NODE_02
+109,21.5560,Stabilize MAINT_NODE_02
+110,21.7393,Stabilize MAINT_NODE_02
+111,21.9001,Maintenance approach MAINT_NODE_03
+112,22.0666,Maintenance approach MAINT_NODE_03
+113,22.2275,Maintenance approach MAINT_NODE_03
+114,22.4105,Maintenance approach MAINT_NODE_03
+115,22.5805,Maintenance approach MAINT_NODE_03
+116,22.7411,Maintenance approach MAINT_NODE_03
+117,22.9149,Maintenance approach MAINT_NODE_03
+118,23.0957,Maintenance approach MAINT_NODE_03
+119,23.2935,Maintenance approach MAINT_NODE_03
+120,23.4835,Maintenance approach MAINT_NODE_03
+121,23.6609,Maintenance approach MAINT_NODE_03
+122,23.8679,Maintenance approach MAINT_NODE_03
+123,24.0406,Maintenance approach MAINT_NODE_03
+124,24.2083,Maintenance approach MAINT_NODE_03
+125,24.3794,Maintenance approach MAINT_NODE_03
+126,24.5489,Maintenance approach MAINT_NODE_03
+127,24.7184,Maintenance approach MAINT_NODE_03
+128,24.8962,Maintenance approach MAINT_NODE_03
+129,25.0713,Maintenance approach MAINT_NODE_03
+130,25.2555,Maintenance approach MAINT_NODE_03
+131,25.4371,Maintenance approach MAINT_NODE_03
+132,25.6460,Maintenance approach MAINT_NODE_03
+133,25.8200,Stabilize MAINT_NODE_03
+134,25.9913,Stabilize MAINT_NODE_03
+135,26.1687,Stabilize MAINT_NODE_03
+136,26.3504,Stabilize MAINT_NODE_03
+137,26.5230,Return to maintenance portal
+138,26.7135,Return to maintenance portal
+139,26.9116,Return to maintenance portal
+140,27.0835,Return to maintenance portal
+141,27.2440,Return to maintenance portal
+142,27.4191,Return to maintenance portal
+143,27.5894,Return to maintenance portal
+144,27.7494,Return to maintenance portal
+145,27.9240,Return to maintenance portal
+146,28.1040,Return to maintenance portal
+147,28.2845,Return to maintenance portal
+148,28.4637,Return to maintenance portal
+149,28.6566,Return to maintenance portal
+150,28.8324,Return to maintenance portal
+151,28.9932,Return to maintenance portal
+152,29.1613,Return to maintenance portal
+153,29.3356,Return to maintenance portal
+154,29.5359,Leave maintenance trip 1
+155,29.7008,Leave maintenance trip 1
+156,29.8749,Leave maintenance trip 1
+157,30.0558,Leave maintenance trip 1
+158,30.2859,Leave maintenance trip 1
+159,30.5234,Leave maintenance trip 1
+160,30.7698,Leave maintenance trip 1
+161,31.0069,Return from side door
+162,31.2530,Return from side door
+163,31.4918,Return along archive approach
+164,31.7484,Return along archive approach
+165,31.9886,Retrieve records at original desk
+166,32.2196,Retrieve records at original desk
+167,32.4486,Retrieve records at original desk
+168,32.6618,Retrieve record after return
+169,32.8878,Retrieve record after return
+170,33.1603,Retrieve record after return
+171,33.4958,Approach desk after awakening
+172,33.7186,Desk to side-door approach
+173,33.9139,Desk to side-door approach
+174,34.0974,Approach maintenance side door
+175,34.2833,Approach maintenance side door
+176,34.4745,Approach maintenance side door
+177,34.6627,Side-door interaction position
+178,34.8547,Side-door interaction position
+179,35.0606,Enter maintenance trip 2
+180,35.2417,Enter maintenance trip 2
+181,35.4092,Enter maintenance trip 2
+182,35.5787,Enter maintenance trip 2
+183,35.8510,Enter maintenance trip 2
+184,36.0113,Enter maintenance trip 2
+185,36.1808,Enter maintenance trip 2
+186,36.3387,Maintenance approach MAINT_NODE_01
+187,36.5365,Maintenance approach MAINT_NODE_01
+188,36.7147,Maintenance approach MAINT_NODE_01
+189,36.8818,Maintenance approach MAINT_NODE_01
+190,37.0426,Maintenance approach MAINT_NODE_01
+191,37.2088,Maintenance approach MAINT_NODE_01
+192,37.3734,Maintenance approach MAINT_NODE_01
+193,37.5600,Maintenance approach MAINT_NODE_01
+194,37.7275,Maintenance approach MAINT_NODE_01
+195,37.8944,Maintenance approach MAINT_NODE_01
+196,38.0648,Maintenance approach MAINT_NODE_01
+197,38.2332,Maintenance approach MAINT_NODE_01
+198,38.4402,Maintenance approach MAINT_NODE_01
+199,38.6212,Maintenance approach MAINT_NODE_01
+200,38.7933,Maintenance approach MAINT_NODE_01
+201,38.9658,Maintenance approach MAINT_NODE_01
+202,39.1583,Maintenance approach MAINT_NODE_01
+203,39.3286,Maintenance approach MAINT_NODE_01
+204,39.4920,Maintenance approach MAINT_NODE_01
+205,39.6745,Maintenance approach MAINT_NODE_01
+206,39.8858,Maintenance approach MAINT_NODE_01
+207,40.0638,Maintenance approach MAINT_NODE_01
+208,40.2333,Maintenance approach MAINT_NODE_01
+209,40.4052,Stabilize MAINT_NODE_01
+210,40.5831,Stabilize MAINT_NODE_01
+211,40.7546,Stabilize MAINT_NODE_01
+212,40.9308,Stabilize MAINT_NODE_01
+213,41.0966,Maintenance approach MAINT_NODE_02
+214,41.2995,Maintenance approach MAINT_NODE_02
+215,41.4777,Maintenance approach MAINT_NODE_02
+216,41.6479,Maintenance approach MAINT_NODE_02
+217,41.8137,Maintenance approach MAINT_NODE_02
+218,41.9881,Maintenance approach MAINT_NODE_02
+219,42.1545,Maintenance approach MAINT_NODE_02
+220,42.3200,Maintenance approach MAINT_NODE_02
+221,42.4818,Maintenance approach MAINT_NODE_02
+222,42.6915,Maintenance approach MAINT_NODE_02
+223,42.8628,Maintenance approach MAINT_NODE_02
+224,43.0431,Maintenance approach MAINT_NODE_02
+225,43.2167,Maintenance approach MAINT_NODE_02
+226,43.4204,Maintenance approach MAINT_NODE_02
+227,43.5858,Maintenance approach MAINT_NODE_02
+228,43.7565,Maintenance approach MAINT_NODE_02
+229,43.9293,Maintenance approach MAINT_NODE_02
+230,44.1022,Stabilize MAINT_NODE_02
+231,44.2705,Stabilize MAINT_NODE_02
+232,44.4469,Stabilize MAINT_NODE_02
+233,44.6242,Stabilize MAINT_NODE_02
+234,44.8001,Maintenance approach MAINT_NODE_03
+235,44.9745,Maintenance approach MAINT_NODE_03
+236,45.1451,Maintenance approach MAINT_NODE_03
+237,45.3204,Maintenance approach MAINT_NODE_03
+238,45.4983,Maintenance approach MAINT_NODE_03
+239,45.7028,Maintenance approach MAINT_NODE_03
+240,45.8724,Maintenance approach MAINT_NODE_03
+241,46.0459,Maintenance approach MAINT_NODE_03
+242,46.2646,Maintenance approach MAINT_NODE_03
+243,46.4428,Maintenance approach MAINT_NODE_03
+244,46.6084,Maintenance approach MAINT_NODE_03
+245,46.8141,Maintenance approach MAINT_NODE_03
+246,46.9848,Maintenance approach MAINT_NODE_03
+247,47.1544,Maintenance approach MAINT_NODE_03
+248,47.3192,Maintenance approach MAINT_NODE_03
+249,47.4936,Maintenance approach MAINT_NODE_03
+250,47.6589,Maintenance approach MAINT_NODE_03
+251,47.8391,Maintenance approach MAINT_NODE_03
+252,48.0167,Maintenance approach MAINT_NODE_03
+253,48.1993,Maintenance approach MAINT_NODE_03
+254,48.4034,Maintenance approach MAINT_NODE_03
+255,48.5863,Maintenance approach MAINT_NODE_03
+256,48.7692,Stabilize MAINT_NODE_03
+257,48.9499,Stabilize MAINT_NODE_03
+258,49.1233,Stabilize MAINT_NODE_03
+259,49.2873,Return to maintenance portal
+260,49.4634,Return to maintenance portal
+261,49.6481,Return to maintenance portal
+262,49.8518,Return to maintenance portal
+263,50.0315,Return to maintenance portal
+264,50.1960,Return to maintenance portal
+265,50.3755,Return to maintenance portal
+266,50.5492,Return to maintenance portal
+267,50.7112,Return to maintenance portal
+268,50.9172,Return to maintenance portal
+269,51.1060,Return to maintenance portal
+270,51.3061,Return to maintenance portal
+271,51.4792,Return to maintenance portal
+272,51.6535,Return to maintenance portal
+273,51.8132,Return to maintenance portal
+274,52.0062,Return to maintenance portal
+275,52.1708,Return to maintenance portal
+276,52.3448,Return to maintenance portal
+277,52.5137,Leave maintenance trip 2
+278,52.6847,Leave maintenance trip 2
+279,52.8872,Leave maintenance trip 2
+280,53.2078,Leave maintenance trip 2
+281,53.4424,Leave maintenance trip 2
+282,53.6752,Leave maintenance trip 2
+283,53.8726,Return from side door
+284,54.0767,Return from side door
+285,54.3113,Return along archive approach
+286,54.5566,Return along archive approach
+287,54.7954,Retrieve records at original desk
+288,55.0238,Retrieve records at original desk
+289,55.2660,Retrieve records at original desk
+290,55.4850,Retrieve record after return
+291,55.7039,Retrieve record after return
+292,55.9267,Retrieve record after return
+293,56.2431,Approach desk after awakening
+294,56.4148,Desk to side-door approach
+295,56.5932,Desk to side-door approach
+296,56.7665,Approach maintenance side door
+297,56.9572,Approach maintenance side door
+298,57.1610,Approach maintenance side door
+299,57.3595,Side-door interaction position
+300,57.5506,Side-door interaction position
+301,57.7303,Enter maintenance trip 3
+302,57.9388,Enter maintenance trip 3
+303,58.1127,Enter maintenance trip 3
+304,58.2938,Enter maintenance trip 3
+305,58.4946,Enter maintenance trip 3
+306,58.6635,Enter maintenance trip 3
+307,58.8404,Enter maintenance trip 3
+308,59.0129,Maintenance approach MAINT_NODE_01
+309,59.1850,Maintenance approach MAINT_NODE_01
+310,59.3818,Maintenance approach MAINT_NODE_01
+311,59.5454,Maintenance approach MAINT_NODE_01
+312,59.7070,Maintenance approach MAINT_NODE_01
+313,59.8747,Maintenance approach MAINT_NODE_01
+314,60.0444,Maintenance approach MAINT_NODE_01
+315,60.2723,Maintenance approach MAINT_NODE_01
+316,60.4418,Maintenance approach MAINT_NODE_01
+317,60.6178,Maintenance approach MAINT_NODE_01
+318,60.8214,Maintenance approach MAINT_NODE_01
+319,61.0205,Maintenance approach MAINT_NODE_01
+320,61.1828,Maintenance approach MAINT_NODE_01
+321,61.3402,Maintenance approach MAINT_NODE_01
+322,61.5216,Maintenance approach MAINT_NODE_01
+323,61.6996,Maintenance approach MAINT_NODE_01
+324,61.8734,Maintenance approach MAINT_NODE_01
+325,62.0747,Maintenance approach MAINT_NODE_01
+326,62.2755,Maintenance approach MAINT_NODE_01
+327,62.4419,Maintenance approach MAINT_NODE_01
+328,62.6136,Maintenance approach MAINT_NODE_01
+329,62.7905,Maintenance approach MAINT_NODE_01
+330,62.9939,Maintenance approach MAINT_NODE_01
+331,63.1656,Stabilize MAINT_NODE_01
+332,63.3262,Stabilize MAINT_NODE_01
+333,63.4966,Stabilize MAINT_NODE_01
+334,63.6627,Stabilize MAINT_NODE_01
+335,63.8419,Maintenance approach MAINT_NODE_02
+336,64.0236,Maintenance approach MAINT_NODE_02
+337,64.2045,Maintenance approach MAINT_NODE_02
+338,64.3853,Maintenance approach MAINT_NODE_02
+339,64.5908,Maintenance approach MAINT_NODE_02
+340,64.7549,Maintenance approach MAINT_NODE_02
+341,64.9291,Maintenance approach MAINT_NODE_02
+342,65.1058,Maintenance approach MAINT_NODE_02
+343,65.2681,Maintenance approach MAINT_NODE_02
+344,65.4336,Maintenance approach MAINT_NODE_02
+345,65.6134,Maintenance approach MAINT_NODE_02
+346,65.7844,Maintenance approach MAINT_NODE_02
+347,65.9502,Maintenance approach MAINT_NODE_02
+348,66.1260,Maintenance approach MAINT_NODE_02
+349,66.3274,Maintenance approach MAINT_NODE_02
+350,66.5031,Maintenance approach MAINT_NODE_02
+351,66.6758,Maintenance approach MAINT_NODE_02
+352,66.8797,Stabilize MAINT_NODE_02
+353,67.0484,Stabilize MAINT_NODE_02
+354,67.2248,Stabilize MAINT_NODE_02
+355,67.3915,Maintenance approach MAINT_NODE_03
+356,67.5530,Maintenance approach MAINT_NODE_03
+357,67.7544,Maintenance approach MAINT_NODE_03
+358,67.9156,Maintenance approach MAINT_NODE_03
+359,68.1059,Maintenance approach MAINT_NODE_03
+360,68.2801,Maintenance approach MAINT_NODE_03
+361,68.4471,Maintenance approach MAINT_NODE_03
+362,68.6156,Maintenance approach MAINT_NODE_03
+363,68.7850,Maintenance approach MAINT_NODE_03
+364,68.9545,Maintenance approach MAINT_NODE_03
+365,69.1366,Maintenance approach MAINT_NODE_03
+366,69.3150,Maintenance approach MAINT_NODE_03
+367,69.4938,Maintenance approach MAINT_NODE_03
+368,69.6667,Maintenance approach MAINT_NODE_03
+369,69.8373,Maintenance approach MAINT_NODE_03
+370,70.0227,Maintenance approach MAINT_NODE_03
+371,70.1993,Maintenance approach MAINT_NODE_03
+372,70.3776,Maintenance approach MAINT_NODE_03
+373,70.5459,Maintenance approach MAINT_NODE_03
+374,70.7329,Maintenance approach MAINT_NODE_03
+375,70.9092,Maintenance approach MAINT_NODE_03
+376,71.0834,Maintenance approach MAINT_NODE_03
+377,71.2606,Maintenance approach MAINT_NODE_03
+378,71.4326,Stabilize MAINT_NODE_03
+379,71.6166,Stabilize MAINT_NODE_03
+380,71.8028,Stabilize MAINT_NODE_03
+381,71.9836,Stabilize MAINT_NODE_03
+382,72.1588,Return to maintenance portal
+383,72.3271,Return to maintenance portal
+384,72.4986,Return to maintenance portal
+385,72.6637,Return to maintenance portal
+386,72.8432,Return to maintenance portal
+387,73.0244,Return to maintenance portal
+388,73.2012,Return to maintenance portal
+389,73.3673,Return to maintenance portal
+390,73.5302,Return to maintenance portal
+391,73.6997,Return to maintenance portal
+392,73.8742,Return to maintenance portal
+393,74.0461,Return to maintenance portal
+394,74.2197,Return to maintenance portal
+395,74.3875,Return to maintenance portal
+396,74.5641,Return to maintenance portal
+397,74.7378,Return to maintenance portal
+398,74.9362,Return to maintenance portal
+399,75.1026,Return to maintenance portal
+400,75.2783,Leave maintenance trip 3
+401,75.4514,Leave maintenance trip 3
+402,75.6256,Leave maintenance trip 3
+403,75.9479,Leave maintenance trip 3
+404,76.1922,Leave maintenance trip 3
+405,76.4345,Leave maintenance trip 3
+406,76.6648,Return from side door
+407,76.8919,Return from side door
+408,77.1233,Return along archive approach
+409,77.3559,Return along archive approach
+410,77.6058,Retrieve records at original desk
+411,77.8529,Retrieve records at original desk
+412,78.0761,Retrieve record after return
+413,78.3346,Retrieve record after return
+414,78.5661,Retrieve record after return
+415,78.7960,Retrieve record after return

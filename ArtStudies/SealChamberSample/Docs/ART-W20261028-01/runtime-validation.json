@@ -8,15 +8,15 @@
     "resolution": "960x540 camera target",
     "performanceLimit": "Editor batch rendering on this machine; not standalone target-platform acceptance. Capture frames excluded from timing.",
     "step": 100,
-    "videoFrames": 900,
-    "frameSamples": 1392,
-    "elapsedSeconds": 116.17738342285156,
-    "p50FrameMs": 6.865298748016357,
-    "p95FrameMs": 8.961904525756836,
-    "p99FrameMs": 10.499198913574219,
-    "minFeetY": 0.07466389238834381,
-    "maxJumpY": 1.299249529838562,
-    "maxSprintSpeed": 6.000027656555176,
+    "videoFrames": 1006,
+    "frameSamples": 1970,
+    "elapsedSeconds": 114.67922973632813,
+    "p50FrameMs": 4.973901271820068,
+    "p95FrameMs": 5.865200042724609,
+    "p99FrameMs": 6.9793009757995609,
+    "minFeetY": 0.07463373243808747,
+    "maxJumpY": 1.2985533475875855,
+    "maxSprintSpeed": 6.000032424926758,
     "checks": [
         "PASS: Existing archive side-door return point is reachable",
         "PASS: Uses original FirstPersonController with queued Input System keyboard; no replacement movement script",
@@ -27,6 +27,22 @@
         "PASS: Clear spawn (0.00, 0.08, -13.30)",
         "PASS: Hall entry spawn faces inward",
         "PASS: Door threshold traversed both directions using real movement",
+        "PASS: Clear spawn (0.00, 0.08, -15.10)",
+        "PASS: Right door jamb blocks sprint capsule before its visible face; edge=1.060, visual=1.245",
+        "PASS: Right door jamb contact remains grounded",
+        "PASS: Clear spawn (0.00, 0.08, -15.10)",
+        "PASS: Left door jamb blocks sprint capsule before its visible face; edge=1.060, visual=1.245",
+        "PASS: Left door jamb contact remains grounded",
+        "PASS: Clear spawn (0.00, 0.08, -16.50)",
+        "PASS: Right passage wall blocks sprint capsule before its visible face; edge=1.090, visual=1.280",
+        "PASS: Right passage wall contact remains grounded",
+        "PASS: Clear spawn (0.00, 0.08, -16.50)",
+        "PASS: Left passage wall blocks sprint capsule before its visible face; edge=1.090, visual=1.280",
+        "PASS: Left passage wall contact remains grounded",
+        "PASS: Clear spawn (0.00, 0.08, -16.50)",
+        "PASS: Passage end wall blocks sprint capsule before its visible face; edge=17.760, visual=17.950",
+        "PASS: Passage end wall contact remains grounded",
+        "PASS: Clear spawn (0.00, 0.08, -12.50)",
         "PASS: Node 1 reached and E interaction routed by production PlayerInteractor",
         "PASS: Interaction callback does not auto-advance story",
         "PASS: Stable node rejects duplicate interaction",
@@ -208,6 +224,70 @@
         "PASS: All eight historical arena point lights remain disabled; original directional lights preserved",
         "PASS: Clear spawn (0.00, 0.08, -13.30)",
         "PASS: Live production Boss warning and silhouette captured in target pipeline",
+        "PASS: At least one minute of the natural controller/check sequence captured without padding",
         "PASS: Collected unthrottled target-pipeline frame timings without capture encoding"
+    ],
+    "controllerSkinWidth": 0.07999999821186066,
+    "portalContacts": [
+        {
+            "location": "Right door jamb",
+            "localFeet": {
+                "x": 0.7800140380859375,
+                "y": 0.07499994337558747,
+                "z": -15.100000381469727
+            },
+            "capsuleRadius": 0.2800000011920929,
+            "visualInnerBoundary": 1.2450000047683716,
+            "physicalBodyEdge": 1.060014009475708,
+            "grounded": true
+        },
+        {
+            "location": "Left door jamb",
+            "localFeet": {
+                "x": -0.7800140380859375,
+                "y": 0.07499994337558747,
+                "z": -15.100000381469727
+            },
+            "capsuleRadius": 0.2800000011920929,
+            "visualInnerBoundary": 1.2450000047683716,
+            "physicalBodyEdge": 1.060014009475708,
+            "grounded": true
+        },
+        {
+            "location": "Right passage wall",
+            "localFeet": {
+                "x": 0.8100128173828125,
+                "y": 0.07499994337558747,
+                "z": -16.5
+            },
+            "capsuleRadius": 0.2800000011920929,
+            "visualInnerBoundary": 1.2799999713897706,
+            "physicalBodyEdge": 1.090012788772583,
+            "grounded": true
+        },
+        {
+            "location": "Left passage wall",
+            "localFeet": {
+                "x": -0.8100128173828125,
+                "y": 0.07499994337558747,
+                "z": -16.5
+            },
+            "capsuleRadius": 0.2800000011920929,
+            "visualInnerBoundary": 1.2799999713897706,
+            "physicalBodyEdge": 1.090012788772583,
+            "grounded": true
+        },
+        {
+            "location": "Passage end wall",
+            "localFeet": {
+                "x": 0.0,
+                "y": 0.07499994337558747,
+                "z": -17.480003356933595
+            },
+            "capsuleRadius": 0.2800000011920929,
+            "visualInnerBoundary": 17.950000762939454,
+            "physicalBodyEdge": 17.7600040435791,
+            "grounded": true
+        }
     ]
 }

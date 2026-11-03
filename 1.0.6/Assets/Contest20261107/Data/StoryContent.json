@@ -1,0 +1,963 @@
+{
+  "schema_version": 1,
+  "design_version": "contest-20261107-v0.3",
+  "updated": "2026-11-03",
+  "status": "User-authorized production design; not implemented or accepted runtime integration",
+  "theme": {
+    "text": "我是怪物",
+    "authority": "User explicitly supplied theme; activity document does not print a fixed theme"
+  },
+  "deadline": {
+    "local": "2026-11-07T22:00:00+08:00",
+    "internal_upload_target": "2026-11-07T20:00:00+08:00",
+    "authority": "User-supplied competition activity document"
+  },
+  "scope": {
+    "platform": "Windows x64 offline keyboard/mouse",
+    "target_first_play_minutes": [
+      8,
+      12
+    ],
+    "duration_is_measured_not_forced": true,
+    "main_story_combat": false,
+    "challenge_optional": true
+  },
+  "flags": {
+    "verified_records": [
+      "record_01_verified",
+      "record_02_verified",
+      "record_03_verified"
+    ],
+    "cord": "cord_sealed",
+    "nodes": [
+      "node_01_stable",
+      "node_02_stable",
+      "node_03_stable"
+    ],
+    "evidence": [
+      "cord_evidence_seen",
+      "badge_evidence_seen",
+      "wound_evidence_seen"
+    ],
+    "batch_location_enum": [
+      "desk",
+      "victim",
+      "carried",
+      "transfer_case"
+    ],
+    "note": "phase completion is stored once; presentation is reapplied from these values on load"
+  },
+  "events": [
+    {
+      "event_id": "STORY_ARCHIVE_START",
+      "scene_anchor": [
+        "ARCHIVE_RECORD_SLOT_01",
+        "ARCHIVE_RECORD_SLOT_02",
+        "ARCHIVE_RECORD_SLOT_03",
+        "ARCHIVE_TIE_CORD",
+        "ARCHIVE_WORK_BADGE"
+      ],
+      "prerequisite": {
+        "all": [
+          "new_game_or_valid_start_checkpoint"
+        ]
+      },
+      "trigger": "从主菜单开始新游戏或恢复开场检查点",
+      "interaction": "三份档案任意顺序核验，系绳可先后；条件齐全后显式确认交接并关面板",
+      "text": {
+        "objective": "查验三份遗赠记录",
+        "dialogue_ids": [
+          "D001",
+          "D002"
+        ]
+      },
+      "audio_cue": [
+        "archive_roomtone",
+        "seal_tie"
+      ],
+      "completion": {
+        "all": [
+          "record_01_verified",
+          "record_02_verified",
+          "record_03_verified",
+          "cord_sealed",
+          "handover_confirmed",
+          "reading_panel_closed"
+        ]
+      },
+      "repeat_policy": "read_again_allowed; verification and seal counted once; badge optional",
+      "next_event": "STORY_BREACH",
+      "actions": [
+        {
+          "id": "VERIFY_RECORDS",
+          "completion_button": "核验完成",
+          "open_or_close_is_completion": false,
+          "order": "any",
+          "required_count": 3
+        },
+        {
+          "id": "TIE_CORD",
+          "on_success": "SetArchiveSealed(true)",
+          "story_flag": "cord_sealed",
+          "order": "before_or_after_reading"
+        },
+        {
+          "id": "HANDOVER",
+          "enabled_when": "three records verified and cord sealed",
+          "on_confirm": "close reader then consume request once; transition"
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    },
+    {
+      "event_id": "STORY_BREACH",
+      "scene_anchor": [
+        "ARCHIVE_WORKSTATION",
+        "SEALED_BATCH"
+      ],
+      "prerequisite": {
+        "all": [
+          "STORY_ARCHIVE_START_complete"
+        ]
+      },
+      "trigger": "接收一次交接完成请求",
+      "interaction": "暂时锁移动交互，Esc保持可用；抱起三号封档包并受袭",
+      "text": {
+        "objective": "",
+        "dialogue_ids": [
+          "D003"
+        ]
+      },
+      "audio_cue": [
+        "alarm_distant",
+        "impact",
+        "cloth_tear",
+        "carrier_drop"
+      ],
+      "completion": {
+        "all": [
+          "breach_sequence_applied",
+          "fade_black_complete",
+          "batch_location_victim"
+        ]
+      },
+      "repeat_policy": "once; retry restores start checkpoint; no partially applied damage",
+      "next_event": "STORY_AWAKEN",
+      "actions": [
+        {
+          "id": "LIFT_BATCH",
+          "batch_location": "victim",
+          "visual": "抱起声或局部近景；之后遇难者怀中保留同一绳结"
+        },
+        {
+          "id": "BREACH_SEQUENCE",
+          "suggested_seconds": [
+            12,
+            18
+          ],
+          "reduced_flash_mode": "single fade, no camera shake",
+          "pause": "freeze all motion, progress and cue playheads"
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    },
+    {
+      "event_id": "STORY_AWAKEN",
+      "scene_anchor": [
+        "ARCHIVE_AWAKEN_POSITION"
+      ],
+      "prerequisite": {
+        "all": [
+          "STORY_BREACH_complete"
+        ]
+      },
+      "trigger": "黑屏内切换身体与灾后工作台，随后渐亮",
+      "interaction": "画外救助，站稳后完整恢复视角移动交互",
+      "text": {
+        "objective": "从侧门进入维护厅",
+        "dialogue_ids": [
+          "D004",
+          "D005",
+          "D006",
+          "D007",
+          "D008"
+        ]
+      },
+      "audio_cue": [
+        "muffled_roomtone",
+        "rescue_voice_optional"
+      ],
+      "completion": {
+        "all": [
+          "disturbed_presentation_applied",
+          "badge_identity_hidden",
+          "player_grounded",
+          "control_restored",
+          "checkpoint_awakening_saved"
+        ]
+      },
+      "repeat_policy": "once; skip applies final pose, objective and state before release",
+      "next_event": "STORY_MAINTENANCE_ENTER",
+      "actions": [
+        {
+          "id": "APPLY_DISTURBED",
+          "call": "SetDisturbed(true)",
+          "preserve": [
+            "cord_sealed",
+            "verified_records",
+            "batch_location"
+          ]
+        },
+        {
+          "id": "AWAKEN_CAMERA",
+          "note": "低视角仅用于镜头，安全站稳后保存检查点"
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    },
+    {
+      "event_id": "STORY_MAINTENANCE_ENTER",
+      "scene_anchor": [
+        "ARCHIVE_TO_MAINTENANCE",
+        "MAINT_NODE_01",
+        "MAINT_NODE_02",
+        "MAINT_NODE_03",
+        "MAINTENANCE_TO_ARCHIVE"
+      ],
+      "prerequisite": {
+        "all": [
+          "STORY_AWAKEN_complete"
+        ]
+      },
+      "trigger": "从馆内侧门有效交互并完成安全区域切换",
+      "interaction": "按一二三号顺序交互；每个节点完成约1秒局部表现",
+      "text": {
+        "objective": "稳定节点 0/3",
+        "dialogue_ids": [
+          "D009",
+          "D010",
+          "D011",
+          "D012"
+        ]
+      },
+      "audio_cue": [
+        "node_activation",
+        "node_stable"
+      ],
+      "completion": {
+        "all": [
+          "node_01_stable",
+          "node_02_stable",
+          "node_03_stable"
+        ]
+      },
+      "repeat_policy": "one callback per node; later node shows prerequisite message; no penalty",
+      "next_event": "STORY_ARCHIVE_RETURN",
+      "actions": [
+        {
+          "id": "ENTER_HALL",
+          "safe_spawn": "handoff.json STORY_MAINTENANCE_ENTER_Spawn in hall local space",
+          "hostile_boss": false,
+          "point_lights": 6,
+          "rollback_on_failure": true
+        },
+        {
+          "id": "STABILIZE_01",
+          "target": "MAINT_NODE_01",
+          "completion": "node_01_stable",
+          "feedback": "导流恢复"
+        },
+        {
+          "id": "STABILIZE_02",
+          "target": "MAINT_NODE_02",
+          "requires": "node_01_stable",
+          "completion": "node_02_stable",
+          "feedback": "档案供能恢复"
+        },
+        {
+          "id": "STABILIZE_03",
+          "target": "MAINT_NODE_03",
+          "requires": "node_02_stable",
+          "completion": "node_03_stable",
+          "feedback": "局部回路稳定"
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    },
+    {
+      "event_id": "STORY_ARCHIVE_RETURN",
+      "scene_anchor": [
+        "MAINTENANCE_TO_ARCHIVE",
+        "ARCHIVE_RETURN_POSITION",
+        "REVEAL_BODY",
+        "REVEAL_CORD",
+        "REVEAL_BADGE",
+        "REVEAL_WOUND"
+      ],
+      "prerequisite": {
+        "all": [
+          "STORY_MAINTENANCE_ENTER_complete"
+        ]
+      },
+      "trigger": "厅内出口交互后安全回到工作区，检查遇难者",
+      "interaction": "观察同一封档包绳结、工作牌、腹部伤口三项；顺序任意",
+      "text": {
+        "objective": "返回工作区取回记录",
+        "dialogue_ids": [
+          "D013",
+          "D014",
+          "D015",
+          "D016"
+        ]
+      },
+      "audio_cue": [
+        "carrier_rattle",
+        "close_observation"
+      ],
+      "completion": {
+        "all": [
+          "returned_to_archive",
+          "cord_evidence_seen",
+          "badge_evidence_seen",
+          "wound_evidence_seen",
+          "not_elaine_reveal_applied"
+        ]
+      },
+      "repeat_policy": "each clue counted once; observation can repeat; first reveal once",
+      "next_event": "STORY_IDENTITY_CONFIRM",
+      "actions": [
+        {
+          "id": "RETURN",
+          "spawn_world": [
+            6,
+            0.08,
+            1.4
+          ],
+          "forward_world": [
+            0,
+            0,
+            1
+          ],
+          "checkpoint": "archive_return"
+        },
+        {
+          "id": "OBSERVE_CORD",
+          "anchor": "REVEAL_CORD",
+          "flag": "cord_evidence_seen",
+          "dialogue": "D013"
+        },
+        {
+          "id": "OBSERVE_BADGE",
+          "anchor": "REVEAL_BADGE",
+          "flag": "badge_evidence_seen",
+          "dialogue": "D014"
+        },
+        {
+          "id": "OBSERVE_WOUND",
+          "anchor": "REVEAL_WOUND",
+          "flag": "wound_evidence_seen",
+          "dialogue": "D015"
+        },
+        {
+          "id": "REVEAL_NOT_ELAINE",
+          "requires": "all three evidence flags",
+          "dialogue": "D016",
+          "fallback": "three fixed closeups if covered-body asset misses Nov5 noon quality gate"
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    },
+    {
+      "event_id": "STORY_IDENTITY_CONFIRM",
+      "scene_anchor": [
+        "ARCHIVE_INCIDENT_RECORD",
+        "PLAYER_SEAL_ECHO"
+      ],
+      "prerequisite": {
+        "all": [
+          "STORY_ARCHIVE_RETURN_complete"
+        ]
+      },
+      "trigger": "完成第一揭示后阅读事故抄件并主动观察左掌",
+      "interaction": "核对三缺环纹，播放不超过6秒自身封印记忆闪回",
+      "text": {
+        "objective": "对照事故记录",
+        "dialogue_ids": [
+          "D017",
+          "D018"
+        ]
+      },
+      "audio_cue": [
+        "seal_resonance",
+        "own_memory_flash"
+      ],
+      "completion": {
+        "all": [
+          "incident_record_confirmed",
+          "palm_echo_observed",
+          "own_memory_flash_applied",
+          "monster_identity_confirmed"
+        ]
+      },
+      "repeat_policy": "reader repeat allowed; flash and identity confirmation once",
+      "next_event": "STORY_RESCUE",
+      "actions": [
+        {
+          "id": "INCIDENT_RECORD",
+          "text_id": "INCIDENT_RECORD",
+          "completion_control": "确认记录"
+        },
+        {
+          "id": "PALM_ECHO",
+          "motif": "左掌三道缺口环纹，与监测抄件一致",
+          "not_acquired_from_record": true
+        },
+        {
+          "id": "OWN_MEMORY_FLASH",
+          "max_seconds": 6,
+          "visual": "抽象已有场景材质，明确是核心封印记忆，不把维护厅称为核心室"
+        },
+        {
+          "id": "CONFIRM_IDENTITY",
+          "dialogue": [
+            "D017",
+            "D018"
+          ],
+          "checkpoint": "rescue_start"
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    },
+    {
+      "event_id": "STORY_RESCUE",
+      "scene_anchor": [
+        "RESCUE_CONDUIT",
+        "SEALED_BATCH",
+        "ARCHIVE_TRANSFER_CASE"
+      ],
+      "prerequisite": {
+        "all": [
+          "STORY_IDENTITY_CONFIRM_complete"
+        ]
+      },
+      "trigger": "身份共鸣引发近处受损回路失稳",
+      "interaction": "教学后按住和松开交互键完成三段收束，收取本批并放入转移箱",
+      "text": {
+        "objective": "引导力量保护遗赠",
+        "dialogue_ids": [
+          "D019",
+          "D020",
+          "D021"
+        ]
+      },
+      "audio_cue": [
+        "conduit_unstable",
+        "overload_warning",
+        "pulse_settle",
+        "transfer_seal"
+      ],
+      "completion": {
+        "all": [
+          "rescue_pulses_complete",
+          "batch_location_transfer_case",
+          "batch_transfer_committed"
+        ]
+      },
+      "repeat_policy": "completed pulses preserved; overload retries current pulse; transfer commits once",
+      "next_event": "STORY_COMPLETE",
+      "actions": [
+        {
+          "id": "TUTORIAL",
+          "safe_pulse_not_counted": true,
+          "unlimited_retry": true
+        },
+        {
+          "id": "RESCUE_PULSES",
+          "mechanic_id": "RESTRAIN_POWER",
+          "required_pulses": 3,
+          "after_complete": "batch pickup enabled"
+        },
+        {
+          "id": "PICKUP_BATCH",
+          "requires": "rescue_pulses_complete",
+          "batch_location": "carried",
+          "note": "combine desk records and the same sealed package; no duplicate object"
+        },
+        {
+          "id": "TRANSFER_BATCH",
+          "requires": "batch_location is carried",
+          "batch_location": "transfer_case",
+          "save": "commit completion before ending"
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    },
+    {
+      "event_id": "STORY_COMPLETE",
+      "scene_anchor": [
+        "ARCHIVE_TRANSFER_CASE",
+        "ENDING_UI"
+      ],
+      "prerequisite": {
+        "all": [
+          "STORY_RESCUE_complete"
+        ]
+      },
+      "trigger": "转移成功且通关记录写入完成",
+      "interaction": "显示救援完成、结尾、制作名单及可用操作",
+      "text": {
+        "objective": "本批遗赠已安全转移",
+        "dialogue_ids": [
+          "D022",
+          "D023",
+          "D024"
+        ]
+      },
+      "audio_cue": [
+        "alarm_fade",
+        "evacuation_distant"
+      ],
+      "completion": {
+        "all": [
+          "completion_saved",
+          "ending_visible"
+        ]
+      },
+      "repeat_policy": "one completion record; restart resets story flags; no ending duplication",
+      "next_event": null,
+      "actions": [
+        {
+          "id": "ENDING",
+          "title": "我是怪物",
+          "buttons": [
+            "重新开始",
+            "返回主菜单",
+            "退出游戏"
+          ],
+          "challenge_button": "only if separately accepted",
+          "not_a_to_be_continued_screen": true
+        }
+      ],
+      "implementation_status": "DESIGN_ONLY_NOT_IMPLEMENTED"
+    }
+  ],
+  "records": [
+    {
+      "id": "ARCHIVE_RECORD_01",
+      "scene_anchor": "ARCHIVE_RECORD_SLOT_01",
+      "title": "百年前的守夜记录",
+      "body": "封印落成后的第七夜，守夜人仍能听见岩层深处的震动。百年前的战事已经结束，那头企图夺取源石的怪物没有死去。我们将它留在世界尽头，让源石持续维持镇压。后来，导流设施把逸散的魔能引向地表，守藏院才有了长明的灯。请后来者记住，这里的光依赖一份尚未结束的看守。维护记录不得因年代久远而省略。",
+      "summary": "古老封印仍在持续运转。",
+      "chinese_character_count": 128,
+      "completion": "record_01_verified",
+      "completion_control": "核验完成",
+      "reading_time_gate": false
+    },
+    {
+      "id": "ARCHIVE_RECORD_02",
+      "scene_anchor": "ARCHIVE_RECORD_SLOT_02",
+      "title": "自愿遗赠的登记",
+      "body": "我愿把修桥时的见闻和这封写给女儿的信留在这里。她可以来读，也可以选择不读。至于我生前用于测量的术式，只交给登记在册的继承人；其他能力随我一同消逝。请封忆师逐项核对我的意愿，不要把记忆当作供人取用的力量。等这份交付完成，我就能安心离开。若供能中断，请先保护已经封存的内容，不要擅自重新开启。",
+      "summary": "记忆与能力的遗赠都要尊重本人意愿。",
+      "chinese_character_count": 131,
+      "completion": "record_02_verified",
+      "completion_control": "核验完成",
+      "reading_time_gate": false
+    },
+    {
+      "id": "ARCHIVE_RECORD_03",
+      "scene_anchor": "ARCHIVE_RECORD_SLOT_03",
+      "title": "供能巡检便笺",
+      "body": "今天更换了第三路回路的连接片。档案中的记忆并非封好便能永存，维持结构的魔能一旦不足，声音会先断续，随后连熟悉的面孔也会变得模糊。发现灯纹失稳时，应先恢复局部导流，再检查档案供能，最后锁定稳定回路。不要为了抢亮一盏灯耗尽整段余量。每一份看似安静的遗赠，都有人在另一端等着把它带回家。",
+      "summary": "维护顺序为导流、档案供能、稳定回路。",
+      "chinese_character_count": 128,
+      "completion": "record_03_verified",
+      "completion_control": "核验完成",
+      "reading_time_gate": false
+    }
+  ],
+  "incident_record": {
+    "id": "INCIDENT_RECORD",
+    "body": "封印监测抄件：“核心封印异常开启，受封对象离位。外逸共鸣呈三缺环纹，残留于掌部。此页只转抄当次读数，不能用于确认其他幸存者身份。”临终记录：“来不及归档了。我自愿留下这段记忆。若有人接到它，请先救那些还没被带走的遗赠。”",
+    "requires_first_reveal": true,
+    "title": "事故抄件与临终记录"
+  },
+  "dialogue": [
+    {
+      "id": "D001",
+      "speaker": "伊莱恩内心",
+      "text": "最后一批，核对完就能交接了。",
+      "stage": "STORY_ARCHIVE_START",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D002",
+      "speaker": "伊莱恩内心",
+      "text": "自愿交付，逐项核验。都齐了。",
+      "stage": "STORY_ARCHIVE_START",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D003",
+      "speaker": "环境提示",
+      "text": "警报声从地下传来。",
+      "stage": "STORY_BREACH",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D004",
+      "speaker": "典狱长",
+      "text": "听得见吗？先别站起来。",
+      "stage": "STORY_AWAKEN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D005",
+      "speaker": "典狱长",
+      "text": "还能行动就帮我一件事。",
+      "stage": "STORY_AWAKEN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D006",
+      "speaker": "典狱长",
+      "text": "侧门下面有三个维护节点，先稳住它们。",
+      "stage": "STORY_AWAKEN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D007",
+      "speaker": "典狱长",
+      "text": "上面的记忆撑不了太久。",
+      "stage": "STORY_AWAKEN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D008",
+      "speaker": "玩家内心",
+      "text": "这里……我知道怎么走。",
+      "stage": "STORY_AWAKEN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D009",
+      "speaker": "典狱长",
+      "text": "沿外圈走，先看一号。别碰中央的封印纹。",
+      "stage": "STORY_MAINTENANCE_ENTER",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D010",
+      "speaker": "典狱长",
+      "text": "这一段稳住了。",
+      "stage": "STORY_MAINTENANCE_ENTER",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D011",
+      "speaker": "典狱长",
+      "text": "回去把尚未转移的记录带出来。",
+      "stage": "STORY_MAINTENANCE_ENTER",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D012",
+      "speaker": "典狱长",
+      "text": "我在疏散口接应。",
+      "stage": "STORY_MAINTENANCE_ENTER",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D013",
+      "speaker": "玩家内心",
+      "text": "这个绳结，是我系的。",
+      "stage": "STORY_ARCHIVE_RETURN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D014",
+      "speaker": "玩家内心",
+      "text": "伊莱恩维尔……名字在她身上。",
+      "stage": "STORY_ARCHIVE_RETURN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D015",
+      "speaker": "玩家内心",
+      "text": "受伤的是她。",
+      "stage": "STORY_ARCHIVE_RETURN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D016",
+      "speaker": "玩家内心",
+      "text": "那些记忆属于她。我不是伊莱恩。",
+      "stage": "STORY_ARCHIVE_RETURN",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D017",
+      "speaker": "玩家内心",
+      "text": "封印里的东西，是我。",
+      "stage": "STORY_IDENTITY_CONFIRM",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D018",
+      "speaker": "玩家内心",
+      "text": "……我是怪物。",
+      "stage": "STORY_IDENTITY_CONFIRM",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D019",
+      "speaker": "典狱长",
+      "text": "那边还有没转走的遗赠。",
+      "stage": "STORY_RESCUE",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D020",
+      "speaker": "典狱长",
+      "text": "能听见的话，把它们带出来！",
+      "stage": "STORY_RESCUE",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D021",
+      "speaker": "玩家内心",
+      "text": "我能压住它。慢一点。",
+      "stage": "STORY_RESCUE",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D022",
+      "speaker": "典狱长",
+      "text": "收到了。这里还有人活着，继续往出口走。",
+      "stage": "STORY_COMPLETE",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D023",
+      "speaker": "玩家内心",
+      "text": "我记起了自己。",
+      "stage": "STORY_COMPLETE",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    },
+    {
+      "id": "D024",
+      "speaker": "玩家内心",
+      "text": "留下这些人的记忆，是我自己的决定。",
+      "stage": "STORY_COMPLETE",
+      "required": true,
+      "voice_optional": true,
+      "max_display_lines": 2,
+      "repeat_policy": "once_per_event_playback; restore state without replay on checkpoint load"
+    }
+  ],
+  "mechanics": {
+    "RESTRAIN_POWER": {
+      "status": "untested_design_values",
+      "action": "existing current interaction binding; default E",
+      "hold_rise_per_second": 30,
+      "release_fall_per_second": 25,
+      "strength_range": [
+        0,
+        100
+      ],
+      "safe_range": [
+        35,
+        70
+      ],
+      "safe_seconds_per_pulse": 1.2,
+      "pulses": 3,
+      "tutorial_pulse_counted": false,
+      "overload": {
+        "threshold": 85,
+        "continuous_seconds": 0.5,
+        "strength_after_reset": 20,
+        "reset": "current pulse only; preserve completed pulses",
+        "message": "先松开，让回响减弱"
+      },
+      "next_pulse_requires_release": true,
+      "assist_after_failures": 3,
+      "assist": {
+        "safe_range": [
+          20,
+          85
+        ],
+        "hold_rise_per_second": 20,
+        "release_fall_per_second": 20
+      },
+      "pause_and_focus_loss": "freeze strength and progress; clear held input; require release before resume",
+      "leave_target_range": "freeze and require new valid interaction; no remote progress",
+      "valid_range_m": 2.3,
+      "line_of_sight_required": true,
+      "outside_safe_range": "freeze accumulated current-pulse progress; overload alone resets it"
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "chapter_start",
+      "on": "new_game",
+      "state": "intact desk and all story flags reset"
+    },
+    {
+      "id": "awakening",
+      "on": "standing safely after awakening",
+      "state": "disturbed, badge identity hidden, same sealed batch at victim"
+    },
+    {
+      "id": "archive_return",
+      "on": "safe return before body investigation",
+      "state": "three nodes stable, disturbed presentation preserved"
+    },
+    {
+      "id": "rescue_start",
+      "on": "monster identity confirmed",
+      "state": "all clue flags true, resume at nearby safe rescue position"
+    }
+  ],
+  "save_policy": {
+    "location": "dedicated game user-data directory, not Assets or repo",
+    "atomic": true,
+    "format_version": 1,
+    "on_completed_pulse": "save progress with rescue checkpoint",
+    "corrupt_or_incompatible": "do not crash; allow new game with explanation",
+    "all_new_positions": "must be validated in formal scene before checkpoint writing"
+  },
+  "existing_safe_references": {
+    "desk_root_world": [
+      5.8,
+      0.836,
+      8.4
+    ],
+    "player_work_world": [
+      5.2,
+      0.08,
+      7.1
+    ],
+    "archive_entry_interaction_world": [
+      6,
+      1.55,
+      0.2
+    ],
+    "archive_return_world": [
+      6,
+      0.08,
+      1.4
+    ],
+    "archive_return_forward_world": [
+      0,
+      0,
+      1
+    ],
+    "maintenance_enter_local": [
+      0,
+      0.08,
+      -13.3
+    ],
+    "hall_ground_y": 0,
+    "hall_flat_radius_m": 14,
+    "new_body_echo_conduit_case_positions": "NOT_YET_VALIDATED"
+  },
+  "global_rules": {
+    "one_story_controller": true,
+    "ignore_player_own_collider": true,
+    "respect_solid_occlusion": true,
+    "one_active_area_and_player": true,
+    "transition_failure": "rollback to origin and restore input",
+    "identity_hidden_until": "STORY_IDENTITY_CONFIRM",
+    "batch_visuals_mutually_exclusive": true,
+    "story_challenge_state_separate": true
+  },
+  "required_submission": [
+    "playable_build",
+    "introduction",
+    "actual_member_roles",
+    "controls_and_platform_requirements",
+    "demo_video_1_to_3_minutes",
+    "asset_sources_and_AI_scope",
+    "preexisting_vs_added_work"
+  ],
+  "source_files": [
+    "../IM_MONSTER_故事背景与剧情框架设定_20261024_v02.docx",
+    "../../../团队任务/周计划/20261028/本周总计划.md",
+    "../../../ArtStudies/SealChamberSample/Docs/ART-W20261028-01/handoff.json",
+    "../../../ArtStudies/SealChamberSample/Docs/ArchiveWorkstation20261102/placement.json"
+  ],
+  "notes": [
+    "Spec only: prerequisite/completion expressions describe behavior, not executable Unity syntax.",
+    "New events after return are contest adaptation proposals and require new tests.",
+    "Original long-story final battle and outcome remain outside this short-game ending."
+  ]
+}

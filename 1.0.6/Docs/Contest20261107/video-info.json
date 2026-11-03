@@ -1,0 +1,14 @@
+{
+  "seconds": 91.808762,
+  "requestedFrames": 364,
+  "sourceFrames": 363,
+  "missedCaptureIndices": [],
+  "staleCaptureIndices": [
+    107
+  ],
+  "resolution": "1280x720 with aspect-preserving padding",
+  "audio": false,
+  "bytes": 11946639,
+  "timing": "Actual capture timestamps; unavailable or stale captures omitted without synthetic padding",
+  "scope": "Final 171-check real Unity editor game run; automated input/UI, safe placements for setup and controller walking near new props. Not human playtest or standalone performance evidence."
+}
