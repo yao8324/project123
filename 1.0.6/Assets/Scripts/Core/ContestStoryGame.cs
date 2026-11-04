@@ -41,6 +41,7 @@ namespace ArcaneArchive.Contest
         public string LastInteraction { get; private set; }
         public int InteractionCount { get; private set; }
         public string CurrentTargetId => target?target.id:null;
+        public ContestInteractionFeedback CurrentInteractionFeedback { get; private set; }
         public Content StoryContent => content;
         public ContestStoryState Checkpoint => checkpoint?.Copy();
         public bool Automated => Application.isBatchMode || Environment.GetCommandLineArgs().Contains("-contest-test");
@@ -116,8 +117,12 @@ namespace ArcaneArchive.Contest
             }
             else target=null;
             if(Mode==ScreenMode.Dialogue && CanAcceptUi && Keyboard.current?.spaceKey.wasPressedThisFrame==true)AdvanceDialogue();
-            string hint=target?Prompt(target.id):"";
-            if(State.stage==5 && State.incidentRead && Mode==ScreenMode.Explore)hint="["+InteractKey+"] 抬起左掌，对照共鸣纹";
+            var aimed=ProbeTarget(out bool closeEnough);
+            CurrentInteractionFeedback=Mode==ScreenMode.Explore && aimed?GetInteractionFeedback(aimed.id):default;
+            if(aimed && !closeEnough)CurrentInteractionFeedback=CurrentInteractionFeedback.OutOfRange();
+            if(State.stage==5 && State.incidentRead && Mode==ScreenMode.Explore)
+                CurrentInteractionFeedback=new ContestInteractionFeedback(true,"抬起左掌，对照共鸣纹");
+            string hint=CurrentInteractionFeedback.HasTarget?CurrentInteractionFeedback.Prompt(InteractKey):"";
             if(Mode==ScreenMode.Explore && string.IsNullOrEmpty(hint) && Time.unscaledTime-lastActionAt>20)hint=DirectionHint();
             Hud.Refresh(Mode,Started,Objective(),hint,Time.unscaledTime<noticeUntil?LastNotice:"",PowerActive,Power,State);
             UpdateConduit();
@@ -272,13 +277,17 @@ namespace ArcaneArchive.Contest
         }
         public int CompletionCount(string id)=>completionCounts.TryGetValue(id,out int value)?value:0;
         public ContestWorldTarget FindTarget()
+        {var candidate=ProbeTarget(out bool closeEnough);return closeEnough?candidate:null;}
+        ContestWorldTarget ProbeTarget(out bool closeEnough)
         {
+            closeEnough=false;
             var ray=view.ViewportPointToRay(new Vector3(.5f,.5f,0));
             foreach(var hit in Physics.RaycastAll(ray,3.2f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Collide).OrderBy(h=>h.distance))
             {
                 if(hit.collider.transform.IsChildOf(player.transform))continue;
                 var candidate=hit.collider.GetComponentInParent<ContestWorldTarget>();
-                if(candidate && candidate.isActiveAndEnabled && Vector3.Distance(player.transform.position,candidate.Point)<=2.3f)return candidate;
+                if(candidate && candidate.isActiveAndEnabled)
+                {closeEnough=Vector3.Distance(player.transform.position,candidate.Point)<=2.3f;return candidate;}
                 if(!hit.collider.isTrigger)return null;
             }
             return null;
@@ -286,7 +295,9 @@ namespace ArcaneArchive.Contest
         public void Activate(ContestWorldTarget item)
         {
             if(Mode!=ScreenMode.Explore || !item || !item.gameObject.activeInHierarchy || FindTarget()!=item)return;
-            Touch();LastInteraction=item.id;InteractionCount++;Sound(0);string id=item.id;
+            Touch();LastInteraction=item.id;InteractionCount++;string id=item.id;
+            var feedback=GetInteractionFeedback(id);
+            if(!feedback.Available){if(feedback.HasTarget)Notice(feedback.Reason,3);return;}
             if(id.StartsWith("ARCHIVE_RECORD_SLOT_"))
             {
                 if(State.stage!=0){Notice("先完成当前目标，再转移这批遗赠。",3);return;}
@@ -503,22 +514,11 @@ namespace ArcaneArchive.Contest
             if(State.stage==5)return "事故记录在遇难者旁的小册上。";
             return "回路和安全转移箱在侧门与工作区之间。";
         }
+        public ContestInteractionFeedback GetInteractionFeedback(string id)=>ContestInteractionFeedback.Evaluate(State,id,PowerActive);
         public string Prompt(string id)
         {
-            string key="["+InteractKey+"] ";
-            if(id.StartsWith("ARCHIVE_RECORD_SLOT_"))return key+"查看档案 "+id[id.Length-1];
-            if(id=="ARCHIVE_TIE_CORD")return key+"系好蓝色封档绳";
-            if(id=="ARCHIVE_WORK_BADGE")return key+(State.stage==0?"查看工作牌":"查看翻面的工作牌");
-            if(id=="ARCHIVE_TO_MAINTENANCE")return key+"前往下层维护厅";
-            if(id=="MAINTENANCE_TO_ARCHIVE")return key+"返回档案馆";
-            if(id.StartsWith("MAINT_NODE_"))return key+"稳定节点 "+id[id.Length-1];
-            if(id=="REVEAL_CORD")return key+(State.rescued?"取走本批封档包":"查看怀中的绳结");
-            if(id=="REVEAL_BADGE")return key+"观察工作牌";
-            if(id=="REVEAL_WOUND")return key+"观察受伤的衣料";
-            if(id=="ARCHIVE_INCIDENT_RECORD")return key+"查看事故抄件";
-            if(id=="RESCUE_CONDUIT")return PowerActive?"按住 "+InteractKey+" 引导  ·  松开收束":key+"引导回路";
-            if(id=="ARCHIVE_TRANSFER_CASE")return key+"交付本批遗赠";
-            return "";
+            var feedback=GetInteractionFeedback(id);
+            return feedback.HasTarget?feedback.Prompt(InteractKey):"";
         }
         static int CountBits(int mask){int n=0;while(mask!=0){n+=mask&1;mask>>=1;}return n;}
         public void Sound(int kind){if(effects)effects.PlayOneShot(GetClip(kind),kind==3?.35f:.45f);}

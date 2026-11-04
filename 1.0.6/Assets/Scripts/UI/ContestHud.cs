@@ -14,6 +14,7 @@ namespace ArcaneArchive.Contest
         RectTransform root,modal,world,cinematic,memory,powerRoot;
         Image fadeImage,strengthFill,safeFill,progressFill;
         Text objective,hint,notice,cinematicText,powerLabel,powerHint;
+        ContestReticle reticle;
         readonly Dictionary<string,Button> buttons=new Dictionary<string,Button>();
         readonly Dictionary<string,Text> bindingLabels=new Dictionary<string,Text>();
         readonly Color paper=new Color(.94f,.89f,.78f),gold=new Color(.71f,.57f,.33f),ink=new Color(.055f,.065f,.065f,.96f),muted=new Color(.64f,.66f,.61f);
@@ -31,8 +32,8 @@ namespace ArcaneArchive.Contest
             var plaque=Panel("ObjectivePanel",world,new Vector2(-270,285),new Vector2(660,82),new Color(.03f,.045f,.04f,.84f));
             Label(plaque,"终境守藏院  /  遗赠",new Vector2(0,22),new Vector2(620,22),13,gold,TextAnchor.MiddleLeft);
             objective=Label(plaque,"",new Vector2(0,-10),new Vector2(620,38),21,paper,TextAnchor.MiddleLeft);
-            Label(world,"·",Vector2.zero,new Vector2(28,30),28,paper);
-            hint=Label(world,"",new Vector2(0,-224),new Vector2(1010,64),20,paper);
+            reticle=Rect("InteractionReticle",world,Vector2.zero,new Vector2(40,40)).gameObject.AddComponent<ContestReticle>();
+            hint=Label(world,"",new Vector2(0,-45),new Vector2(900,58),18,paper);
             notice=Label(world,"",new Vector2(0,-295),new Vector2(1040,75),21,paper);
             var escapePanel=Panel("PauseHint",world,new Vector2(510,312),new Vector2(230,31),new Color(.02f,.03f,.03f,.75f));
             Label(escapePanel,"Esc  暂停 / 操作",Vector2.zero,new Vector2(210,28),14,paper,TextAnchor.MiddleRight);
@@ -70,6 +71,8 @@ namespace ArcaneArchive.Contest
         public void Refresh(ContestStoryGame.ScreenMode mode,bool started,string currentObjective,string currentHint,string currentNotice,bool powerActive,ContestPowerChallenge challenge,ContestStoryState state)
         {
             world.gameObject.SetActive(started && mode==ContestStoryGame.ScreenMode.Explore);
+            var feedback=game.CurrentInteractionFeedback;
+            reticle.Present(feedback.Available,feedback.HasTarget && !feedback.Available);
             objective.text=currentObjective;hint.text=currentHint;notice.text=currentNotice;
             powerRoot.gameObject.SetActive(powerActive);
             if(powerActive)
