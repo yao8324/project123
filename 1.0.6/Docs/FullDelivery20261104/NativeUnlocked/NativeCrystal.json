@@ -1,0 +1,33 @@
+{
+    "complete": true,
+    "failure": "",
+    "scope": "Native Mac build, Input System virtual mouse held to fire normal production projectiles. Boss reposition delay extended to isolate interactions; end/retry use explicit damage injection. No manual acceptance implied.",
+    "checks": [
+        "Native battle initializes crystal network",
+        "Native controls ready",
+        "Six independent ambience loops start",
+        "Real mouse firing breaks protective chain first 0",
+        "Chain break stops only its friction loop 0",
+        "Real mouse firing destroys exposed crystal 0",
+        "Crystal break stops only its resonance 0",
+        "Native damage reduction steps down 0",
+        "Real mouse firing breaks protective chain first 1",
+        "Chain break stops only its friction loop 1",
+        "Real mouse firing destroys exposed crystal 1",
+        "Crystal break stops only its resonance 1",
+        "Native damage reduction steps down 1",
+        "Real mouse firing breaks protective chain first 2",
+        "Chain break stops only its friction loop 2",
+        "Real mouse firing destroys exposed crystal 2",
+        "Crystal break stops only its resonance 2",
+        "Native damage reduction steps down 2",
+        "Native all-broken triggers one stagger",
+        "Native stagger recovers after duration",
+        "Finish still works",
+        "Native retry restores three targets",
+        "Retry restores six ambience loops",
+        "Native return succeeds",
+        "Native return clears network"
+    ],
+    "errors": []
+}

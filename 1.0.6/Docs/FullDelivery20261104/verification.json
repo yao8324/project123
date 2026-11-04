@@ -1,0 +1,12 @@
+{
+  "build": "Succeeded errors=0 bytes=1010398930",
+  "story": 171,
+  "feedback": 105,
+  "nativeCrystal": 25,
+  "menuStoryEntry": "manually clicked, loaded correct story title screen",
+  "initialLockedRun": "failed controls-ready while desktop locked; unlocked rerun passed",
+  "sources": [
+    "de003e6",
+    "ec365aa"
+  ]
+}

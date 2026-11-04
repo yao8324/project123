@@ -2,16 +2,16 @@
     "complete": true,
     "failure": "",
     "scenario": "Interact ARCHIVE_TRANSFER_CASE",
-    "unity": "6000.3.24f1",
-    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
-    "cpu": "Intel(R) Core(TM) i7-14650HX",
+    "unity": "6000.3.25f1",
+    "device": "Apple M3",
+    "cpu": "Apple M3",
     "scope": "Full contest story in actual candidate scene/controller; isolated virtual keyboard for world interaction and real UI button callbacks. New prop routes are walked with the controller; other setup points use safe test placements. Not a human playtest or standalone performance acceptance. Known Editor Search errors are separately retained, not counted as game runtime errors.",
     "checksPassed": 171,
     "stage": 7,
     "pulses": 3,
     "screenshots": 12,
-    "videoFrames": 364,
-    "seconds": 94.11236572265625,
+    "videoFrames": 394,
+    "seconds": 104.10548400878906,
     "checks": [
         "Normal power settings are completable with hold/release control",
         "Power does not advance while paused",
@@ -187,6 +187,6 @@
     ],
     "runtimeErrors": [],
     "editorSearchErrors": [
-        "ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.\r\nParameter name: index\nSystem.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <d49d4cb128564ee1b54a84338c98d353>:0)\nUnityEditor.Search.SearchDatabase+<EnumerateAll>d__83.MoveNext () (at <fe6344d3175d418bbae3fd579bdde162>:0)\nSystem.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) (at <e1f614c5eede4689988594bcb9796955>:0)\nSystem.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) (at <e1f614c5eede4689988594bcb9796955>:0)\nUnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at <fe6344d3175d418bbae3fd579bdde162>:0)\nUnityEditor.Search.SearchInit.IndexationOnStartup () (at <fe6344d3175d418bbae3fd579bdde162>:0)\nUnityEditor.EditorApplication.Internal_CallDelayFunctions () (at <8c0bcab5a3cf47549b7148fa2785366a>:0)\n"
+        "ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.\nParameter name: index\nSystem.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <4ac0ee785b7843ea944af6fc649f4ee5>:0)\nUnityEditor.Search.SearchDatabase+<EnumerateAll>d__83.MoveNext () (at /Users/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:453)\nSystem.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) (at <5eca27bd76e34b3f8e153e23d18e4c9d>:0)\nSystem.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) (at <5eca27bd76e34b3f8e153e23d18e4c9d>:0)\nUnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at /Users/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:428)\nUnityEditor.Search.SearchInit.IndexationOnStartup () (at /Users/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/SearchInit.cs:109)\nUnityEditor.EditorApplication.Internal_CallDelayFunctions () (at /Users/bokken/build/output/unity/unity/Editor/Mono/EditorApplication.cs:407)\n"
     ]
 }
