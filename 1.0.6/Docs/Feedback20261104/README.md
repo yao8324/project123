@@ -28,6 +28,8 @@
 
 复跑命令：`Unity -batchmode -projectPath <1.0.6绝对路径> -executeMethod ArcaneArchive.Visuals.Editor.ContestFeedbackAcceptance.RunAll -logFile <日志>`。完整剧情用 `ArcaneArchive.Visuals.Editor.ContestAcceptance.Run`。自动检查只允许在独立batch工程内运行。
 
+独立审阅未发现本次改动的实质回归；小项与既有路径待复验记录见 [REVIEW.md](REVIEW.md)。
+
 ## 主要文件
 
 - `Assets/Scripts/Interaction/ContestInteractionFeedback.cs`：统一剧情交互条件与提示。
