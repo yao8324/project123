@@ -1,0 +1,18 @@
+{
+  "assetMetaCount": 2170,
+  "missingMeta": [],
+  "orphanMeta": [],
+  "duplicateGuids": [],
+  "compiledCacheIdenticalScripts": [
+    "Assets\\Scripts\\Core\\ContestBuildProbe.cs",
+    "Assets\\Scripts\\Core\\ContestCheckpointStore.cs",
+    "Assets\\Scripts\\Core\\ContestPowerChallenge.cs",
+    "Assets\\Scripts\\Core\\ContestStoryGame.cs",
+    "Assets\\Scripts\\Interaction\\ContestWorldTarget.cs",
+    "Assets\\Scripts\\UI\\ContestHud.cs",
+    "Assets\\Scripts\\Visuals\\Editor\\ContestAcceptance.cs",
+    "Assets\\Scripts\\Visuals\\Editor\\ContestSceneBuilder.cs"
+  ],
+  "brokenDeliveryLinks": [],
+  "manifestFiles": 169
+}

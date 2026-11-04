@@ -1,0 +1,11 @@
+{
+  "folder": "D:\\IMMonster_Contest_20261107",
+  "zip": "D:\\IMMonster_Contest_20261107_试玩包.zip",
+  "zipBytes": 546966340,
+  "zipSha256": "d415b1ae78d999e6952d8ddce4cbad1ddc08e8c0acab63a973780e218df98b93",
+  "zipCrcVerified": true,
+  "releaseFiles": 182,
+  "removedBuildDebugFolders": [],
+  "unity": "6000.3.24f1",
+  "sourceBranch": "art"
+}

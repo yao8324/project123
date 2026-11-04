@@ -9,3 +9,12 @@ Blender/MilanLibrary_Magic_V6/*.blend filter=lfs diff=lfs merge=lfs -text
 # Animated Warden and editable spell geometry.
 Assets/Art/ForbiddenWarden/CombatV2/Models/*.fbx filter=lfs diff=lfs merge=lfs -text
 Blender/WardenCombatV2/*.blend filter=lfs diff=lfs merge=lfs -text
+
+# Unity serializers keep a space after empty YAML values. Code and docs remain strict.
+*.meta whitespace=-blank-at-eol
+*.unity whitespace=-blank-at-eol
+*.prefab whitespace=-blank-at-eol
+*.mat whitespace=-blank-at-eol
+*.asset whitespace=-blank-at-eol
+*.anim whitespace=-blank-at-eol
+*.playable whitespace=-blank-at-eol
