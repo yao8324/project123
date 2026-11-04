@@ -1,0 +1,74 @@
+[
+  {
+    "id": "wand_2589",
+    "title": "法杖 A · 能量弹释放",
+    "file": "audio_v5/2589.mp3",
+    "page": "https://mixkit.co/free-sound-effects/magic/",
+    "license": "Mixkit Sound Effects Free License · 官网MP3试听版",
+    "group": "新补充 · 法杖攻击",
+    "note": "普通秘文弹候选；先对比这条与B。 原名：Shot light energy flowing",
+    "duration": 7.41,
+    "loop": false,
+    "preview_url": "https://assets.mixkit.co/active_storage/sfx/2589/2589-preview.mp3"
+  },
+  {
+    "id": "wand_2345",
+    "title": "法杖 B · 神秘法术破风",
+    "file": "audio_v5/2345.mp3",
+    "page": "https://mixkit.co/free-sound-effects/magic/",
+    "license": "Mixkit Sound Effects Free License · 官网MP3试听版",
+    "group": "新补充 · 法杖攻击",
+    "note": "偏神秘法术的方向；作为普通发射备选。 原名：Magic spell mystery whoosh",
+    "duration": 5.84,
+    "loop": false,
+    "preview_url": "https://assets.mixkit.co/active_storage/sfx/2345/2345-preview.mp3"
+  },
+  {
+    "id": "wand_2343",
+    "title": "法杖 C · 魔法气流冲击",
+    "file": "audio_v5/2343.mp3",
+    "page": "https://mixkit.co/free-sound-effects/magic/",
+    "license": "Mixkit Sound Effects Free License · 官网MP3试听版",
+    "group": "新补充 · 法杖攻击",
+    "note": "强化秘文弹候选；试听后可截短尾音。 原名：Cinematic whoosh magic gust",
+    "duration": 7.51,
+    "loop": false,
+    "preview_url": "https://assets.mixkit.co/active_storage/sfx/2343/2343-preview.mp3"
+  },
+  {
+    "id": "wand_883",
+    "title": "法杖 D · 快速施法",
+    "file": "audio_v5/883.mp3",
+    "page": "https://mixkit.co/free-sound-effects/spell/",
+    "license": "Mixkit Sound Effects Free License · 官网MP3试听版",
+    "group": "新补充 · 法杖攻击",
+    "note": "快速施法备选，适合比较连续发射是否刺耳。 原名：Fast magic game spell",
+    "duration": 3.5,
+    "loop": false,
+    "preview_url": "https://assets.mixkit.co/active_storage/sfx/883/883-preview.mp3"
+  },
+  {
+    "id": "wand_879",
+    "title": "法杖 E · 奥术链式释放",
+    "file": "audio_v5/879.mp3",
+    "page": "https://mixkit.co/free-sound-effects/spell/",
+    "license": "Mixkit Sound Effects Free License · 官网MP3试听版",
+    "group": "新补充 · 法杖攻击",
+    "note": "强化攻击或施法起手备选。 原名：Arcane chain spell",
+    "duration": 5.46,
+    "loop": false,
+    "preview_url": "https://assets.mixkit.co/active_storage/sfx/879/879-preview.mp3"
+  },
+  {
+    "id": "wand_1347",
+    "title": "法杖 F · 火球释放",
+    "file": "audio_v5/1347.mp3",
+    "page": "https://mixkit.co/free-sound-effects/spell/",
+    "license": "Mixkit Sound Effects Free License · 官网MP3试听版",
+    "group": "新补充 · 法杖攻击",
+    "note": "较偏火焰的备选；不改现有紫色魔法视觉。 原名：Fireball spell",
+    "duration": 2.65,
+    "loop": false,
+    "preview_url": "https://assets.mixkit.co/active_storage/sfx/1347/1347-preview.mp3"
+  }
+]

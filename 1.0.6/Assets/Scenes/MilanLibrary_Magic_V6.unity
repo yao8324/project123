@@ -65100,7 +65100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcaneArchive.Core.BossEncounter
   definition: {fileID: 11400000, guid: c7c42b46e4dd2bd47a8d4d0517cd018f, type: 2}
-  arenaPrefab: {fileID: 4360396895551548820, guid: 0aa9b150a2d87e64a911f932e3d6bfdd, type: 3}
+  arenaPrefab: {fileID: 8391350976516197544, guid: b3e7f3c06073e4c7f9058af66597595e, type: 3}
   libraryEnvironment: {fileID: 1418556380}
   combatFont: {fileID: 11400000, guid: 7f30da00893316841b9905bb3a521851, type: 2}
 --- !u!114 &944895851

@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "exportedAt": "2026-11-04T12:40:51.706Z",
+  "selected": [
+    {
+      "id": "new_2160",
+      "title": "清脆剑刃碰撞",
+      "file": "audio_v4/2160.wav",
+      "page": "https://mixkit.co/free-sound-effects/sword/",
+      "license": "Mixkit SFX Free License",
+      "group": "新补充 · 清脆金属",
+      "note": "防御，挡住攻击后的",
+      "duration": 1.33
+    },
+    {
+      "id": "stone_original",
+      "title": "石块落地断裂 · 原录音",
+      "file": "audio_v4/stone_break.mp3",
+      "page": "https://freesound.org/people/SoundCollectah/sounds/109360/",
+      "license": "CC0 · SoundCollectah；HQ MP3试听版",
+      "group": "新补充 · 地裂",
+      "note": "",
+      "duration": 4.59
+    },
+    {
+      "id": "v3_2792",
+      "title": "快速挥砍",
+      "file": "audio_v3/2792.wav",
+      "page": "https://mixkit.co/free-sound-effects/sword/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "挥刀",
+      "loop": false,
+      "duration": 1.12
+    },
+    {
+      "id": "v3_2776",
+      "title": "剑刃击链甲",
+      "file": "audio_v3/2776.wav",
+      "page": "https://mixkit.co/free-sound-effects/sword/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "击中",
+      "loop": false,
+      "duration": 1.14
+    },
+    {
+      "id": "v3_2795",
+      "title": "重剑撞金属",
+      "file": "audio_v3/2795.wav",
+      "page": "https://mixkit.co/free-sound-effects/sword/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "重击，如果有的话",
+      "loop": false,
+      "duration": 1.52
+    },
+    {
+      "id": "v3_759",
+      "title": "水晶破碎底材",
+      "file": "audio_v3/759.wav",
+      "page": "https://mixkit.co/free-sound-effects/glass/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "",
+      "loop": false,
+      "duration": 1.44
+    },
+    {
+      "id": "v3_172",
+      "title": "碎片尾音",
+      "file": "audio_v3/172.wav",
+      "page": "https://mixkit.co/free-sound-effects/glass/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "",
+      "loop": false,
+      "duration": 3.12
+    },
+    {
+      "id": "v3_2380",
+      "title": "飞页：快速纸张运动",
+      "file": "audio_v3/2380.wav",
+      "page": "https://mixkit.co/free-sound-effects/paper/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · Boss攻击",
+      "note": "",
+      "loop": false,
+      "duration": 0.9
+    },
+    {
+      "id": "v3_2653",
+      "title": "飞页：风中纸张",
+      "file": "audio_v3/2653.wav",
+      "page": "https://mixkit.co/free-sound-effects/paper/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · Boss攻击",
+      "note": "",
+      "loop": false,
+      "duration": 5.2
+    },
+    {
+      "id": "v3_2599",
+      "title": "冲击环：重型电冲击",
+      "file": "audio_v3/2599.wav",
+      "page": "https://mixkit.co/free-sound-effects/electricity/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · Boss攻击",
+      "note": "",
+      "loop": false,
+      "duration": 6.65
+    },
+    {
+      "id": "v3_3201",
+      "title": "激光：充能嗡鸣",
+      "file": "audio_v3/3201.wav",
+      "page": "https://mixkit.co/free-sound-effects/electricity/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · Boss攻击",
+      "note": "",
+      "loop": false,
+      "duration": 2.5
+    },
+    {
+      "id": "v3_2746",
+      "title": "供能备用：暗色管风琴持续音",
+      "file": "audio_v3/2746.wav",
+      "page": "https://mixkit.co/free-sound-effects/drone/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · Boss攻击",
+      "note": "水晶供能声音",
+      "loop": false,
+      "duration": 95.38
+    },
+    {
+      "id": "v3_1489",
+      "title": "冲刺：空气掠过",
+      "file": "audio_v3/1489.wav",
+      "page": "https://mixkit.co/free-sound-effects/whoosh/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · Boss攻击",
+      "note": "",
+      "loop": false,
+      "duration": 2.32
+    },
+    {
+      "id": "v3_2799",
+      "title": "冲刺急停：金属刮擦",
+      "file": "audio_v3/2799.wav",
+      "page": "https://mixkit.co/free-sound-effects/sword/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "改成举盾牌的音效",
+      "loop": false,
+      "duration": 1.17
+    },
+    {
+      "id": "v3_2790",
+      "title": "锁链受击候选",
+      "file": "audio_v3/2790.wav",
+      "page": "https://mixkit.co/free-sound-effects/sword/",
+      "license": "Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "",
+      "loop": false,
+      "duration": 1.09
+    },
+    {
+      "id": "v3_chain_drag",
+      "title": "重链拖动原始试听",
+      "file": "audio_v3/chain_drag.mp3",
+      "page": "https://freesound.org/people/Hitrison/sounds/191513/",
+      "license": "CC0；当前为网站HQ MP3试听版",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "",
+      "loop": false,
+      "duration": 93.81
+    },
+    {
+      "id": "v3_grunt01",
+      "title": "受伤短哼",
+      "file": "audio_v3/grunt01.wav",
+      "page": "https://opengameart.org/content/damage-sounds-male-audio-pack",
+      "license": "CC BY-SA 4.0；署名VoiceBosch，改编音频遵循相同许可",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "",
+      "loop": false,
+      "duration": 0.85
+    },
+    {
+      "id": "v3_chain_drop",
+      "title": "重链落地",
+      "file": "audio_v3/chain_drop.wav",
+      "page": "https://soundbible.com/559-Chain-Dropped.html",
+      "license": "CC BY 3.0；署名BlastwaveFx.com",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "",
+      "loop": false,
+      "duration": 4.45
+    },
+    {
+      "id": "v3_chain_break_edit",
+      "title": "锁链破碎组合",
+      "file": "audio_v3/chain_break_edit.wav",
+      "page": "https://soundbible.com/559-Chain-Dropped.html",
+      "license": "CC BY 3.0；署名BlastwaveFx.com + Mixkit Sound Effects Free License",
+      "group": "现有素材 · 攻击受击与链晶",
+      "note": "",
+      "loop": false,
+      "duration": 4.53
+    }
+  ],
+  "notes": {
+    "new_2160": {
+      "selected": true,
+      "note": "防御，挡住攻击后的"
+    },
+    "new_2789": {
+      "selected": false,
+      "note": ""
+    },
+    "stone_original": {
+      "selected": true
+    },
+    "crystal_loop_quiet": {
+      "selected": false
+    },
+    "v3_2792": {
+      "selected": true,
+      "note": "挥刀"
+    },
+    "v3_1506": {
+      "note": ""
+    },
+    "v3_2776": {
+      "selected": true,
+      "note": "击中"
+    },
+    "v3_2795": {
+      "selected": true,
+      "note": "重击，如果有的话"
+    },
+    "v3_759": {
+      "selected": true
+    },
+    "v3_2799": {
+      "selected": true,
+      "note": "改成举盾牌的音效"
+    },
+    "v3_172": {
+      "selected": true
+    },
+    "v3_2790": {
+      "selected": true
+    },
+    "v3_chain_drag": {
+      "selected": true
+    },
+    "v3_grunt01": {
+      "selected": true
+    },
+    "v3_chain_drop": {
+      "selected": true
+    },
+    "v3_chain_break_edit": {
+      "selected": true
+    },
+    "v3_2380": {
+      "selected": true
+    },
+    "v3_2653": {
+      "selected": true
+    },
+    "v3_3201": {
+      "selected": true
+    },
+    "v3_2599": {
+      "selected": true
+    },
+    "v3_2746": {
+      "selected": true,
+      "note": "水晶供能声音"
+    },
+    "v3_1489": {
+      "selected": true
+    }
+  }
+}

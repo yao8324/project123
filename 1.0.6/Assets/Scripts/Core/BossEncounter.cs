@@ -11,7 +11,7 @@ namespace ArcaneArchive.Core
     [DisallowMultipleComponent]
     public sealed partial class BossEncounter : MonoBehaviour
     {
-        public enum State { Inactive, Intro, Observe, Telegraph, Attack, Recovery, PhaseBreak, Won, Lost }
+        public enum State { Inactive, Intro, Observe, Telegraph, Attack, Recovery, PhaseBreak, Won, Lost, Stagger }
         public BossDefinition definition;
         public BossArena arenaPrefab;
         public GameObject libraryEnvironment;
@@ -38,7 +38,7 @@ namespace ArcaneArchive.Core
         private Vector3 laserOrigin,laserDirection;
         private float nextLaserTick;
         private int orbitDirection=1;
-        private sealed class Shot { public GameObject go; public Vector3 velocity; public float damage, life, age, homingUsed; public bool enemy,homing; }
+        private sealed class Shot { public GameObject go; public Vector3 velocity; public float damage, life, age, homingUsed; public bool enemy,homing; public CrystalCombatTarget crystalTarget; }
         private sealed class Wave { public GameObject go; public Vector3 origin; public float radius; public bool hit; }
         private sealed class Zone { public GameObject go; public GroundFractureVisuals fracture; public Vector3 position; public float born; public bool fired; }
         private bool fractureSequenceStarted;
@@ -67,6 +67,25 @@ namespace ArcaneArchive.Core
         public PlayerCombat Combat => combat;
         public BossArena Arena => arena;
         public float BattleTime => combatTime;
+        public BossPowerNetwork PowerNetwork {get;private set;}
+        public ArenaCombatAudio SelectedAudio {get;private set;}
+        private bool pendingCrystalPhaseBreak;
+        public string CrystalTargetLabel
+        {
+            get{if(!arena || !View || !PowerNetwork)return "";
+                foreach(var h in Physics.RaycastAll(View.transform.position,View.transform.forward,45,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Collide).OrderBy(h=>h.distance)){
+                    if(h.collider.transform.IsChildOf(transform))continue;
+                    var target=h.collider.GetComponent<CrystalCombatTarget>();if(target&&target.Available)return target.Description;
+                    if(!h.collider.isTrigger)return "";
+                }return "";}
+        }
+        public void OnCrystalPowerExhausted()
+        {
+            if(!CanFight)return;
+            ClearAttacks();SetState(State.Stagger);Feedback("供能崩溃 · 守卫僵直",PowerNetwork.staggerDuration);
+        }
+        private void TickCrystalRegeneration(float dt)
+        {if(PowerNetwork && CanFight)BossHealth=Mathf.Min(definition.health,BossHealth+PowerNetwork.Regeneration(definition.health,dt));}
 
         private void Awake()
         {
@@ -100,7 +119,9 @@ namespace ArcaneArchive.Core
             arena.boss.localPosition = new Vector3(0, 0, 4);
             arena.boss.localRotation = Quaternion.Euler(0, 180, 0);
             arena.model.floatingBody.localScale = Vector3.one;
-            ResetIntent();arena.model.ResetPose();
+            ResetIntent();arena.model.ResetPose();pendingCrystalPhaseBreak=false;
+            PowerNetwork=arena.GetComponentInChildren<BossPowerNetwork>();if(PowerNetwork)PowerNetwork.Initialize(this);
+            SelectedAudio=arena.GetComponentInChildren<ArenaCombatAudio>();if(SelectedAudio)SelectedAudio.Initialize(this);
             SetState(State.Intro);
             menu.Resume(); player.SetGameplayInputEnabled(true); player.SetCursorLocked(true);
             player.WaitForReleasedControls(); combat.SuppressUntilReleased();
@@ -118,7 +139,7 @@ namespace ArcaneArchive.Core
             bool returned = player.TryReturnToSpawn(returnPosition, returnRotation) ||
                             player.TryReturnToSpawn(new Vector3(0, .08f, 7.8f), Quaternion.identity);
             if (!returned) { libraryEnvironment.SetActive(false); Feedback("返回位置被阻挡，请稍后重试", 3); return false; }
-            ClearAttacks(); CurrentState = State.Inactive;
+            ClearAttacks(); CurrentState = State.Inactive;PowerNetwork=null;if(SelectedAudio)SelectedAudio.StopAll();SelectedAudio=null;
             if (hud) { hud.Hide(); Destroy(hud); }
             if (arena) { arena.gameObject.SetActive(false); Destroy(arena.gameObject); arena = null; }
             menu.Resume(); player.SetGameplayInputEnabled(true); player.SetCursorLocked(true); player.WaitForReleasedControls();
@@ -133,6 +154,7 @@ namespace ArcaneArchive.Core
             if (IsPaused) { combat.SuppressUntilReleased(); return; }
             if (messageTime > 0) { messageTime -= dt; if (messageTime <= 0) message = ""; }
             combatTime += dt;
+            TickCrystalRegeneration(dt);
             // Controls use one Input System. Combat never samples the legacy Input API.
             combat.Tick(dt);
             if (IsFinished) return;
@@ -206,6 +228,10 @@ namespace ArcaneArchive.Core
                     // Existing projectiles finish independently; they must not freeze the animation state.
                     if (stateTime >= RecoveryDuration) SetState(State.Observe);
                     break;
+                case State.Stagger:
+                    if(stateTime >= (PowerNetwork?PowerNetwork.staggerDuration:2)){
+                        SetState(pendingCrystalPhaseBreak?State.PhaseBreak:State.Observe);pendingCrystalPhaseBreak=false;
+                    }break;
                 case State.PhaseBreak: if (stateTime >= 2.2f) SetState(State.Observe); break;
             }
         }
@@ -220,7 +246,7 @@ namespace ArcaneArchive.Core
             attack=SelectAttack();
             if(pattern%2==0)orbitDirection*=-1;
             emitted = 0; lockTarget = lastKnownPlayer + Vector3.up;
-            SetState(State.Telegraph); PlaySound(definition.warningSound, .35f);
+            SetState(State.Telegraph);if(!SelectedAudio || !SelectedAudio.Warn(attack))PlaySound(definition.warningSound, .35f);
             Feedback(attack == 0 ? "禁页齐射 · 弱追踪，侧移或吞印" : attack == 1 ? "缄默环波 · 看准时机跳跃" : attack==2 ? "裂地禁咒 · 沿地追踪，侧移躲避" : attack==3 ? "湮灭秘光 · 缓慢追踪，持续横移" : "封缄冲撞 · 路线锁定后侧向躲避", attack==2?7:WarningDuration);
             if (attack == 0) BeginVolleyCrown();
             else if (attack == 2)
@@ -288,16 +314,26 @@ namespace ArcaneArchive.Core
             shots.Add(new Shot { go = page, velocity = direction * definition.projectileSpeed,
                 damage = definition.volleyDamage * (Phase == 1 ? 3f : 5f) / count, enemy = true, life = 4, homing = true });
             VolleyReleasedCount++;
-            PlaySound(definition.shotSound, .16f);
+            if(SelectedAudio)SelectedAudio.Play(SelectedAudio.volleyRelease,.22f);else PlaySound(definition.shotSound, .16f);
         }
         public void FirePlayerBolt(float damage, bool empowered)
         {
+            if(!CanFight || !arena)return;
             var start = View.transform.position + View.transform.forward * .55f;
             var go = arena.Effect(arena.boltEffect, start, View.transform.rotation);
             go.transform.localScale *= empowered ? 1.7f : 1;
             var toBoss=arena.boss.TransformPoint(new Vector3(0,2.55f,.88f))-start;
             bool acquire=Vector3.Angle(View.transform.forward,toBoss)<=definition.playerAcquireAngle && HasClearShot(start,start+toBoss);
-            shots.Add(new Shot { go = go, velocity = View.transform.forward * 30, damage = damage, life = 1.5f,homing=acquire });
+            CrystalCombatTarget crystalTarget=null;
+            if(PowerNetwork && PowerNetwork.targets!=null){
+                // Prefer an explicitly aimed crystal; never pull a shot past it toward the Boss.
+                float closest=definition.playerAcquireAngle;
+                foreach(var candidate in PowerNetwork.targets){if(!candidate || !candidate.Available)continue;
+                    var delta=candidate.transform.position-start;float angle=Vector3.Angle(View.transform.forward,delta);
+                    if(angle<=closest && HasClearShot(start,candidate.transform.position)){closest=angle;crystalTarget=candidate;}
+                }
+            }
+            shots.Add(new Shot { go = go, velocity = View.transform.forward * 30, damage = damage, life = 1.5f,homing=crystalTarget || acquire,crystalTarget=crystalTarget });
             PlaySound(definition.shotSound, empowered ? .5f : .24f);
         }
         private void TickShots(float dt)
@@ -325,11 +361,14 @@ namespace ArcaneArchive.Core
                         bool hitPlayer = h.collider.transform.IsChildOf(transform);
                         bool hitBoss = h.collider.transform.IsChildOf(arena.boss);
                         if ((s.enemy && hitBoss) || (!s.enemy && hitPlayer)) continue;
-                        if (h.collider.isTrigger && !hitBoss) continue;
+                        var crystal=h.collider.GetComponent<CrystalCombatTarget>();
+                        if(crystal && s.enemy)continue;
+                        if (h.collider.isTrigger && !hitBoss && !crystal) continue;
                         consumed = true;
                         PageImpact(s, h.point, false);
                         if (s.enemy && hitPlayer) combat.ReceiveHit(s.damage,from,true);
-                        else if (!s.enemy && hitBoss) DamageBoss(s.damage, h.collider.name == "CoreHitbox");
+                        else if(!s.enemy && crystal)crystal.Hit(s.damage);
+                        else if (!s.enemy && hitBoss){if(SelectedAudio)SelectedAudio.HitArmor(s.damage>=definition.empoweredDamage);DamageBoss(s.damage, h.collider.name == "CoreHitbox");}
                         break;
                     }
                 }
@@ -342,6 +381,7 @@ namespace ArcaneArchive.Core
         }
         private void SpawnWave()
         {
+            if(SelectedAudio)SelectedAudio.Play(SelectedAudio.shockwave,.3f);
             var origin = arena.boss.position; origin.y = arena.transform.position.y + .06f;
             waves.Add(new Wave { origin = origin, radius = .8f, go = arena.Effect(arena.ringEffect, origin, Quaternion.identity) });
         }
@@ -362,21 +402,22 @@ namespace ArcaneArchive.Core
         }
         public void DamageBoss(float damage, bool core)
         {
-            if (!CanFight || CurrentState == State.PhaseBreak || damage <= 0) return;
-            BossHealth = Mathf.Max(0, BossHealth - damage * (core && CurrentState == State.Recovery ? 1.5f : 1));
+            if (!CanFight || CurrentState == State.PhaseBreak || damage <= 0 || float.IsNaN(damage) || float.IsInfinity(damage)) return;
+            BossHealth = Mathf.Max(0, BossHealth - damage * (core && (CurrentState == State.Recovery || CurrentState == State.Stagger) ? 1.5f : 1) * (1-(PowerNetwork?PowerNetwork.DamageReduction:0)));
             if (BossHealth <= 0) { Finish(true); return; }
             if (Phase == 1 && BossHealth <= definition.health * .5f)
-            { ClearAttacks(); Phase = 2; SetState(State.PhaseBreak); Feedback("封印破裂 · 它认出了你", 2.5f); }
+            { Phase = 2;if(CurrentState==State.Stagger)pendingCrystalPhaseBreak=true;else{ClearAttacks();SetState(State.PhaseBreak);} Feedback("封印破裂 · 它认出了你", 2.5f); }
         }
         public void Finish(bool won)
         {
             if (!IsActive || IsFinished) return;
-            ClearAttacks(); SetState(won ? State.Won : State.Lost);
+            ClearAttacks();if(SelectedAudio)SelectedAudio.StopAll(); SetState(won ? State.Won : State.Lost);
             player.SetGameplayInputEnabled(false); menu.ShowPage(RecoveryMenu.Page.BattleResult);
         }
         private void SetState(State value)
         {
             CurrentState=value;stateTime=0;
+            if(SelectedAudio && value==State.Attack)SelectedAudio.Attack(attack);
             if(value==State.Observe){UpdatePerception(0);ChooseMoveIntent();}
         }
         private static float HorizontalDistance(Vector3 a, Vector3 b) { a.y = b.y = 0; return Vector3.Distance(a, b); }
@@ -407,6 +448,7 @@ namespace ArcaneArchive.Core
         }
         private void ClearAttacks()
         {
+            if(SelectedAudio)SelectedAudio.StopLaser();
             ClearRitualEffects();
             foreach (var s in shots) if (s.go) Destroy(s.go);
             foreach (var w in waves) if (w.go) Destroy(w.go);
@@ -421,7 +463,7 @@ namespace ArcaneArchive.Core
         public void PlaySound(AudioClip clip, float volume) { if (clip && audioSource) audioSource.PlayOneShot(clip, volume); }
         public void Feedback(string value, float duration) { message = value; messageTime = duration; }
         public string Message => message;
-        public void PlayerHurt() { if (hud) hud.Hurt(); PlaySound(definition.impactSound, .35f); }
+        public void PlayerHurt() { if (hud) hud.Hurt(); if(SelectedAudio)SelectedAudio.Play(SelectedAudio.playerHurt,.42f);else PlaySound(definition.impactSound, .35f); }
         private void OnApplicationFocus(bool focused)
         {
             if (!IsActive || IsFinished) return;

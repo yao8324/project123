@@ -10,7 +10,7 @@ namespace ArcaneArchive.UI
         private BossEncounter encounter;
         private GameObject root;
         private TMP_FontAsset font;
-        private TMP_Text bossName, life, power, instruction, message,guardText;
+        private TMP_Text bossName, life, power, instruction, message,guardText,crystalStatus;
         private Image bossFill, playerFill, hurt,guardFill;
         private Image entryFade;
         private Sprite barSprite;
@@ -27,6 +27,7 @@ namespace ArcaneArchive.UI
             var scaler = root.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
             bossName = Text("", new Vector2(.5f, 1), new Vector2(0, -38), new Vector2(700, 34), 24, Gold);
+            crystalStatus=Text("",new Vector2(.5f,1),new Vector2(0,-86),new Vector2(900,28),15,new Color(.75f,.55f,.95f));
             bossFill = Bar(new Vector2(.5f, 1), new Vector2(0, -68), new Vector2(660, 9), Gold);
             playerFill = Bar(new Vector2(0, 0), new Vector2(154, 91), new Vector2(230, 9), new Color(.64f, .25f, .25f));
             life = Text("", new Vector2(0, 0), new Vector2(154, 114), new Vector2(270, 28), 18, Paper);
@@ -45,6 +46,7 @@ namespace ArcaneArchive.UI
             root.SetActive(!encounter.IsPaused && !encounter.IsFinished);
             entryFade.color=new Color(0,0,0,Mathf.Clamp01(1-encounter.BattleTime/.45f));
             bossName.text = encounter.Definition.displayName + (encounter.Phase == 2 ? "  /  封印破裂" : "");
+            crystalStatus.text=encounter.PowerNetwork ? "供能 "+encounter.PowerNetwork.LiveCount+" / 3  ·  减伤 "+Mathf.RoundToInt(encounter.PowerNetwork.DamageReduction*100)+"%  ·  回血 "+(encounter.PowerNetwork.LiveCount*encounter.PowerNetwork.regenFractionPerCrystal*100).ToString("F2")+"%/秒    "+encounter.CrystalTargetLabel : "";
             bossFill.fillAmount = encounter.BossHealth / encounter.Definition.health;
             playerFill.fillAmount = encounter.Combat.Health / encounter.Definition.playerHealth;
             guardFill.fillAmount=encounter.Combat.Guard/encounter.Definition.guardCapacity;

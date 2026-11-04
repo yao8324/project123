@@ -1,0 +1,67 @@
+[
+  {
+    "id": "new_2160",
+    "title": "Metallic sword strike",
+    "file": "audio_v4/2160.wav",
+    "page": "https://mixkit.co/free-sound-effects/sword/",
+    "license": "Mixkit SFX Free License",
+    "group": "新补充 · 清脆金属",
+    "note": "清脆金属碰撞候选；挥空仍用破风，击甲／格挡时叠此声。"
+  },
+  {
+    "id": "new_2789",
+    "title": "Samurai Sword Impact",
+    "file": "audio_v4/2789.wav",
+    "page": "https://mixkit.co/free-sound-effects/sword/",
+    "license": "Mixkit SFX Free License",
+    "group": "新补充 · 清脆金属",
+    "note": "清脆金属碰撞候选；挥空仍用破风，击甲／格挡时叠此声。"
+  },
+  {
+    "id": "new_2774",
+    "title": "Axe hits to a plate",
+    "file": "audio_v4/2774.wav",
+    "page": "https://mixkit.co/free-sound-effects/metal/",
+    "license": "Mixkit SFX Free License",
+    "group": "新补充 · 清脆金属",
+    "note": "清脆金属碰撞候选；挥空仍用破风，击甲／格挡时叠此声。"
+  },
+  {
+    "id": "stone_original",
+    "title": "石块落地断裂 · 原录音",
+    "file": "audio_v4/stone_break.mp3",
+    "page": "https://freesound.org/people/SoundCollectah/sounds/109360/",
+    "license": "CC0 · SoundCollectah；HQ MP3试听版",
+    "group": "新补充 · 地裂",
+    "note": "实录石块碎裂与颗粒尾部；作为地裂逐段爆发的底材。"
+  },
+  {
+    "id": "rock_short",
+    "title": "短促岩石断裂",
+    "file": "audio_v4/rock_break.ogg",
+    "page": "https://opengameart.org/content/breaking-rock",
+    "license": "CC0 · themightyglider / SoundCollectah",
+    "group": "新补充 · 地裂",
+    "note": "基于同一录音的短版；与长版比较，避免此前爆炸声的感觉。"
+  },
+  {
+    "id": "chain_loop_quiet",
+    "title": "锁链摩擦 · 再降低8dB",
+    "file": "audio_v4/chain_loop_quiet.wav",
+    "page": "",
+    "license": "沿用V3对应源许可",
+    "group": "背景循环 · 降低音量",
+    "note": "8秒循环；断链停止。",
+    "loop": true
+  },
+  {
+    "id": "crystal_loop_quiet",
+    "title": "水晶共鸣 · 再降低8dB",
+    "file": "audio_v4/crystal_loop_quiet.wav",
+    "page": "",
+    "license": "沿用V3对应源许可",
+    "group": "背景循环 · 降低音量",
+    "note": "8秒循环；断链继续，破晶停止。",
+    "loop": true
+  }
+]

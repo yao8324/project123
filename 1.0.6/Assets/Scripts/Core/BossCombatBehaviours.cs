@@ -158,7 +158,7 @@ namespace ArcaneArchive.Core
                 zone.fracture.Present(Mathf.Clamp01(age/Mathf.Max(.5f,definition.fractureLeadTime)),eruption);
                 if(!zone.fired && eruption>=0)
                 {
-                    zone.fired=true;float before=combat.Health;
+                    zone.fired=true;if(SelectedAudio)SelectedAudio.Play(SelectedAudio.groundFracture,.24f);float before=combat.Health;
                     if(zone.fracture.Contains(transform.position,.24f) && transform.position.y<arena.transform.position.y+.65f)combat.TakeDamage(definition.fractureDamage);
                     if(combat.Health<before)FractureHitCount++;
                     if(IsFinished)return;
@@ -177,10 +177,10 @@ namespace ArcaneArchive.Core
         }
         void SteerProjectile(Shot shot,float dt)
         {
-            shot.age+=dt;if(!shot.homing)return;float limit=shot.enemy?definition.enemyHomingBudget:definition.playerHomingBudget;
+            shot.age+=dt;if(shot.crystalTarget && !shot.crystalTarget.Available)shot.homing=false;if(!shot.homing)return;float limit=shot.enemy?definition.enemyHomingBudget:definition.playerHomingBudget;
             if(shot.age>(shot.enemy?1.15f:.85f) || shot.homingUsed>=limit){shot.homing=false;return;}
             if(shot.age<definition.projectileHomingDelay)return;
-            Vector3 target=shot.enemy?transform.position+Vector3.up*1.2f:arena.boss.TransformPoint(new Vector3(0,2.55f,.88f));
+            Vector3 target=shot.crystalTarget?shot.crystalTarget.transform.position:shot.enemy?transform.position+Vector3.up*1.2f:arena.boss.TransformPoint(new Vector3(0,2.55f,.88f));
             Vector3 toward=target-shot.go.transform.position;
             if(toward.magnitude<(shot.enemy?1.7f:.65f) || Vector3.Dot(shot.velocity.normalized,toward.normalized)<.4f){shot.homing=false;return;}
             if(!HasClearShot(shot.go.transform.position,target))return;
