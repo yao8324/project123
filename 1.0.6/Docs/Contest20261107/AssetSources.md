@@ -10,7 +10,7 @@
 | 左掌环纹、回路与转移箱 | 本轮新增网格组合及材质，箱体复用原库皮革黄铜 | 三缺环纹为比赛短篇新增设计，不冒称原长篇既定设定 |
 | 界面与剧情代码 | 本轮AI辅助编写，使用已有Unity及Input System接口；原演示场景保留 | 交付附代码文件与实际运行检查，不等于真人试玩 |
 | 文本与事件数据 | 用户原故事框架与本轮AI辅助补写的比赛策划、三档案和台词 | StoryContent.json保存正文，不在场景上硬编码书籍信息 |
-| 新反馈音和氛围声 | 程序合成波形及固定种子噪声，无外部音乐或录音采样 | ContestStoryGame运行时生成；没有真人配音 |
+| 新反馈音和氛围声 | 2026-11-04源码改为CC0纸张、机关、门、室内与地下环境素材，经剪裁、滤波和混合接入 | [作者与许可](../Feedback20261104/AUDIO_CREDITS.md)；[文件与处理清单](../Feedback20261104/audio-sources.json)；没有真人配音。11月3日旧运行包仍对应当时的合成声音 |
 | 中文界面字体 | Noto Sans CJK SC Regular，Adobe版权声明；官方notofonts/noto-cjk仓库 | 原文件未修改；OFL 1.1与版权NOTICE随字体和运行包提供 |
 
 字体来源：[官方字体文件](https://github.com/notofonts/noto-cjk/blob/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf) · [官方许可](https://github.com/notofonts/noto-cjk/blob/main/Sans/LICENSE)。具体文件SHA256及原字体版权文本见Assets/Contest20261107/Fonts/NOTICE.txt；OFL.txt保存完整许可证。

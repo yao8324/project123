@@ -37,6 +37,8 @@ namespace ArcaneArchive.Contest
         public bool PowerActive { get; private set; }
         public bool ReduceFlash { get; private set; } = true;
         public float Volume { get; private set; } = .55f;
+        public float EffectsVolume { get; private set; } = .75f;
+        public float EnvironmentVolume { get; private set; } = .65f;
         public string SavePath { get; private set; }
         public string LastInteraction { get; private set; }
         public int InteractionCount { get; private set; }
@@ -59,8 +61,7 @@ namespace ArcaneArchive.Contest
         bool cutsceneRunning,waitForRelease=true,initialised;
         float noticeUntil,lastActionAt,fade,previousVolume,previousScale;
         Vector3 restingEye;
-        AudioSource effects,ambience;
-        readonly Dictionary<int,AudioClip> clips=new Dictionary<int,AudioClip>();
+        ContestAudioDirector audioDirector;
         readonly Dictionary<string,int> completionCounts=new Dictionary<string,int>();
         readonly Dictionary<Light,float> lightDefaults=new Dictionary<Light,float>();
         readonly Vector3 workFeet=new Vector3(5.2f,.08f,7.1f),returnFeet=new Vector3(6,.08f,1.4f);
@@ -74,12 +75,16 @@ namespace ArcaneArchive.Contest
                 throw new InvalidOperationException("Contest scene references or story data missing");
             SavePath=Path.Combine(Application.persistentDataPath,"IMMonsterContest20261107",Automated?"acceptance-checkpoint.json":"checkpoint.json");
             if(!Automated){ContestCheckpointStore.TryRead(SavePath,out checkpoint,out var loadNotice);StartupNotice=loadNotice;}
-            if(!Automated){Volume=PlayerPrefs.GetFloat("IMContest.Volume",.55f);ReduceFlash=PlayerPrefs.GetInt("IMContest.ReducedFlash",1)==1;}
+            if(!Automated)
+            {
+                Volume=ContestAudioDirector.SafeVolume(PlayerPrefs.GetFloat("IMContest.Volume",.55f),.55f);
+                EffectsVolume=ContestAudioDirector.SafeVolume(PlayerPrefs.GetFloat("IMContest.EffectsVolume",.75f),.75f);
+                EnvironmentVolume=ContestAudioDirector.SafeVolume(PlayerPrefs.GetFloat("IMContest.EnvironmentVolume",.65f),.65f);
+                ReduceFlash=PlayerPrefs.GetInt("IMContest.ReducedFlash",1)==1;
+            }
             AudioListener.volume=Volume;
             foreach(var light in library.GetComponentsInChildren<Light>(true))if(light.type==LightType.Point)lightDefaults[light]=light.intensity;
-            effects=gameObject.AddComponent<AudioSource>();effects.playOnAwake=false;effects.spatialBlend=0;
-            ambience=gameObject.AddComponent<AudioSource>();ambience.playOnAwake=false;ambience.spatialBlend=0;ambience.loop=true;ambience.volume=.22f;
-            ambience.clip=MakeClip(4,6);ambience.Play();
+            audioDirector=gameObject.AddComponent<ContestAudioDirector>();audioDirector.Initialize(EffectsVolume,EnvironmentVolume);
             Hud=gameObject.AddComponent<ContestHud>();Hud.Initialize(this,font);
             ApplyPresentation();initialised=true;ShowMainMenu();
         }
@@ -110,7 +115,7 @@ namespace ArcaneArchive.Contest
                 {
                     Power.Assist=State.assist;
                     int outcome=Power.Step(Time.unscaledDeltaTime,held,target && target.id=="RESCUE_CONDUIT" && !waitForRelease,false);
-                    if(outcome<0){Notice("回响过强。先松开，让力量减弱。",4);Sound(2);}
+                    if(outcome<0){Notice("回响过强。先松开，让力量减弱。",4);PlayCue(ContestAudioDirector.Cue.Overload);}
                     if(outcome>0)CompletePulse();
                 }
                 if(player.transform.position.y<-3)RecoverFall();
@@ -125,6 +130,7 @@ namespace ArcaneArchive.Contest
             string hint=CurrentInteractionFeedback.HasTarget?CurrentInteractionFeedback.Prompt(InteractKey):"";
             if(Mode==ScreenMode.Explore && string.IsNullOrEmpty(hint) && Time.unscaledTime-lastActionAt>20)hint=DirectionHint();
             Hud.Refresh(Mode,Started,Objective(),hint,Time.unscaledTime<noticeUntil?LastNotice:"",PowerActive,Power,State);
+            audioDirector.SetContext(State,hall.activeSelf,Mode==ScreenMode.MainMenu,PowerActive,Power.Strength,Mode==ScreenMode.Reader || Mode==ScreenMode.Dialogue);
             UpdateConduit();
         }
         void LateUpdate(){if(initialised)FreezeControls();}
@@ -134,8 +140,6 @@ namespace ArcaneArchive.Contest
         {
             Time.timeScale=previousScale;AudioListener.pause=false;AudioListener.volume=previousVolume;
             if(player){player.SetGameplayInputEnabled(true);player.WaitForReleasedControls();}
-            if(ambience && ambience.clip)Destroy(ambience.clip);
-            foreach(var clip in clips.Values)if(clip)Destroy(clip);
         }
         public string InteractKey => player.Bindings!=null?player.Bindings.Display("Interact"):"E";
         void SetMode(ScreenMode value)
@@ -209,15 +213,15 @@ namespace ArcaneArchive.Contest
             var previous=resumeMode;
             SetMode(previous);
             if(previous==ScreenMode.Dialogue)RenderLine();
-            else if(previous==ScreenMode.Reader && readerRecord!=null)OpenRecord(readerRecord);
-            else if(previous==ScreenMode.Reader && incidentReader)OpenIncident();
+            else if(previous==ScreenMode.Reader && readerRecord!=null)OpenRecord(readerRecord,false);
+            else if(previous==ScreenMode.Reader && incidentReader)OpenIncident(false);
             else if(previous==ScreenMode.Cutscene){Hud.HideModal();Hud.ResumeCinematic();}
             else Explore();
         }
         void HandleEscape()
         {
             if(Mode==ScreenMode.Explore || Mode==ScreenMode.Cutscene || Mode==ScreenMode.Dialogue)Pause();
-            else if(Mode==ScreenMode.Reader){readerRecord=null;incidentReader=false;Explore();}
+            else if(Mode==ScreenMode.Reader){PlayCue(ContestAudioDirector.Cue.PaperClose);readerRecord=null;incidentReader=false;Explore();}
             else if(Mode==ScreenMode.Pause)Resume();
             else if(Mode==ScreenMode.Settings || Mode==ScreenMode.Help || Mode==ScreenMode.Credits)BackFromUtility();
             else if(Mode==ScreenMode.Confirm)BackFromUtility();
@@ -245,7 +249,9 @@ namespace ArcaneArchive.Contest
             Application.Quit();
             #endif
         });
-        public void SetVolume(float value){Volume=Mathf.Clamp01(value);AudioListener.volume=Volume;if(!Automated)PlayerPrefs.SetFloat("IMContest.Volume",Volume);}
+        public void SetVolume(float value){Volume=ContestAudioDirector.SafeVolume(value,.55f);AudioListener.volume=Volume;if(!Automated)PlayerPrefs.SetFloat("IMContest.Volume",Volume);}
+        public void SetEffectsVolume(float value){EffectsVolume=ContestAudioDirector.SafeVolume(value,.75f);audioDirector?.SetVolumes(EffectsVolume,EnvironmentVolume);if(!Automated)PlayerPrefs.SetFloat("IMContest.EffectsVolume",EffectsVolume);}
+        public void SetEnvironmentVolume(float value){EnvironmentVolume=ContestAudioDirector.SafeVolume(value,.65f);audioDirector?.SetVolumes(EffectsVolume,EnvironmentVolume);if(!Automated)PlayerPrefs.SetFloat("IMContest.EnvironmentVolume",EnvironmentVolume);}
         public void SetReducedFlash(bool value){ReduceFlash=value;if(!Automated)PlayerPrefs.SetInt("IMContest.ReducedFlash",value?1:0);}
         public void SetAssist(bool value){State.assist=value;Power.Assist=value;Notice(value?"辅助引导已开启。":"辅助引导已关闭。",3);}
         public void ChangeQuality(string value){var quality=player.GetComponent<ArcaneArchive.Visuals.MilanQualityOptions>();if(quality)quality.Select(value);}
@@ -304,9 +310,9 @@ namespace ArcaneArchive.Contest
                 var record=content.records.FirstOrDefault(r=>r.scene_anchor==id);if(record!=null)OpenRecord(record);return;
             }
             if(id=="ARCHIVE_WORK_BADGE")
-            {TalkText(State.stage==0?"工作牌":"翻面的工作牌",State.stage==0?"伊莱恩维尔  封忆师\n本批遗赠核验与封存。":"工作牌已经翻面。记忆里的名字仍然没有答案。",Explore);return;}
+            {PlayCue(ContestAudioDirector.Cue.Hardware);TalkText(State.stage==0?"工作牌":"翻面的工作牌",State.stage==0?"伊莱恩维尔  封忆师\n本批遗赠核验与封存。":"工作牌已经翻面。记忆里的名字仍然没有答案。",Explore);return;}
             if(id=="ARCHIVE_TIE_CORD" && State.stage==0)
-            {if(!State.sealedBatch){State.sealedBatch=true;ApplyPresentation();Notice("蓝绳已系好，封档结构稳定。",4);Sound(1);}return;}
+            {if(!State.sealedBatch){State.sealedBatch=true;ApplyPresentation();Notice("蓝绳已系好，封档结构稳定。",4);PlayCue(ContestAudioDirector.Cue.Cloth);}return;}
             if(id=="ARCHIVE_TO_MAINTENANCE")
             {if(State.stage<3){Notice("先完成本批档案核验。",3);return;}if(State.stage>=4){Notice("维护已完成，先取回这里的记录。",3);return;}StartCoroutine(Transfer(true));return;}
             if(id=="MAINTENANCE_TO_ARCHIVE")
@@ -317,7 +323,7 @@ namespace ArcaneArchive.Contest
                 if(State.nodes>=n){Notice("这处节点已经稳定。",2);return;}
                 if(State.nodes!=n-1){Notice("先稳定前一个节点。",3);return;}
                 if(State.stage!=3)return;
-                State.nodes=n;ApplyNodes();Sound(1);Notice(new[]{"导流恢复  1/3","档案供能恢复  2/3","局部回路稳定  3/3"}[n-1],4);
+                State.nodes=n;ApplyNodes();PlayCue(ContestAudioDirector.Cue.Node);Notice(new[]{"导流恢复  1/3","档案供能恢复  2/3","局部回路稳定  3/3"}[n-1],4);
                 if(n==3){Complete("STORY_MAINTENANCE_ENTER");Talk(new[]{"D010","D011","D012"},Explore);}return;
             }
             if(id.StartsWith("REVEAL_"))
@@ -326,6 +332,7 @@ namespace ArcaneArchive.Contest
                 if(State.stage!=4){Notice("先按当前目标行动。",2);return;}
                 int bit=id=="REVEAL_CORD"?1:id=="REVEAL_BADGE"?2:id=="REVEAL_WOUND"?4:0;
                 if(bit==0)return;
+                PlayCue(id=="REVEAL_BADGE"?ContestAudioDirector.Cue.Hardware:ContestAudioDirector.Cue.Cloth);
                 State.clues|=bit;
                 Talk(new[]{bit==1?"D013":bit==2?"D014":"D015"},()=>{
                     if(State.clues==7){Talk(new[]{"D016"},()=>{Complete("STORY_ARCHIVE_RETURN");State.stage=5;ApplyPresentation();Explore();});}
@@ -336,24 +343,26 @@ namespace ArcaneArchive.Contest
             if(id=="RESCUE_CONDUIT" && State.stage==6)
             {
                 if(State.rescued){Notice("回路已稳定。取走遇难者怀中的本批档案。",4);return;}
-                if(!PowerActive){Power.Reset();PowerActive=true;Notice("按住引导，松开收束。先完成一次练习。",6);}return;
+                if(!PowerActive){Power.Reset();PowerActive=true;PlayCue(ContestAudioDirector.Cue.PowerStart);Notice("按住引导，松开收束。先完成一次练习。",6);}return;
             }
             if(id=="ARCHIVE_TRANSFER_CASE")
             {if(State.stage==6 && State.batchLocation==2)FinishTransfer();else Notice("先稳住回路，再把本批档案带来。",4);return;}
         }
         Record readerRecord;bool incidentReader;
-        void OpenRecord(Record record)
+        void OpenRecord(Record record,bool playSound=true)
         {
+            if(playSound)PlayCue(ContestAudioDirector.Cue.PaperOpen);
             readerRecord=record;SetMode(ScreenMode.Reader);int index=Array.IndexOf(content.records,record),bit=1<<index;
             bool verified=(State.verifiedMask&bit)!=0;
             Hud.Reader(record.title,record.body+"\n\n核验摘要\n"+record.summary,verified?"已核验  合上":"核验完成",()=>{
-                State.verifiedMask|=bit;Sound(1);Explore();Notice("档案已核验 "+CountBits(State.verifiedMask)+"/3",3);
+                State.verifiedMask|=bit;Explore();Notice("档案已核验 "+CountBits(State.verifiedMask)+"/3",3);
             },Explore,State.verifiedMask==7 && State.sealedBatch && index==2?"完成本批交接":null,()=>{
                 if(State.verifiedMask==7 && State.sealedBatch){readerRecord=null;Complete("STORY_ARCHIVE_START");State.stage=1;Hud.HideModal();Talk(new[]{"D002"},()=>StartCoroutine(Breach()));}
             });
         }
-        void OpenIncident()
+        void OpenIncident(bool playSound=true)
         {
+            if(playSound)PlayCue(ContestAudioDirector.Cue.PaperOpen);
             incidentReader=true;SetMode(ScreenMode.Reader);
             Hud.Reader(content.incident_record.title,content.incident_record.body,"确认记录",()=>{
                 State.incidentRead=true;ApplyPresentation();Explore();Notice("左掌传来同样的共鸣。按交互键对照掌纹。",6);
@@ -367,12 +376,12 @@ namespace ArcaneArchive.Contest
         IEnumerator Breach()
         {
             cutsceneRunning=true;SetMode(ScreenMode.Cutscene);Hud.HideModal();
-            Hud.Cinematic(content.dialogue.Single(l=>l.id=="D003").text,true);Sound(2);
+            Hud.Cinematic(content.dialogue.Single(l=>l.id=="D003").text,true);PlayCue(ContestAudioDirector.Cue.Alarm);
             yield return StoryWait(2.5f);
-            Hud.Cinematic("你抱紧了刚刚封好的档案。",true);Sound(3);
+            Hud.Cinematic("你抱紧了刚刚封好的档案。",true);PlayCue(ContestAudioDirector.Cue.Impact);
             cameraPivot.localPosition=restingEye-Vector3.up*.25f;
             yield return StoryWait(2.5f);
-            Hud.Cinematic("",true);yield return FadeTo(1,1.1f);Sound(3);
+            Hud.Cinematic("",true);yield return FadeTo(1,1.1f);PlayCue(ContestAudioDirector.Cue.Impact);
             State.batchLocation=1;State.stage=2;ApplyPresentation();
             yield return StoryWait(3);
             library.SetActive(true);hall.SetActive(false);Place(new Vector3(5.05f,.08f,7),Quaternion.identity);
@@ -390,7 +399,7 @@ namespace ArcaneArchive.Contest
         }
         IEnumerator IdentityFlash()
         {
-            cutsceneRunning=true;SetMode(ScreenMode.Cutscene);Hud.HideModal();palm.SetActive(true);Sound(2);
+            cutsceneRunning=true;SetMode(ScreenMode.Cutscene);Hud.HideModal();palm.SetActive(true);PlayCue(ContestAudioDirector.Cue.PowerStart);
             Hud.Memory(true);Hud.Cinematic("残存的记忆\n封印内侧，同样的三缺环纹。",true);
             yield return StoryWait(4);Hud.Memory(false);cutsceneRunning=false;
             Talk(new[]{"D017","D018"},()=>{
@@ -405,6 +414,7 @@ namespace ArcaneArchive.Contest
             bool success=Place(enter?new Vector3(160,.08f,-13.3f):returnFeet,Quaternion.identity);
             if(success)
             {
+                PlayCue(ContestAudioDirector.Cue.Door);
                 origin.SetActive(false);
                 if(!enter && State.stage==3){State.stage=4;ApplyPresentation();WriteCheckpoint();}
             }
@@ -422,7 +432,7 @@ namespace ArcaneArchive.Contest
         }
         void CompletePulse()
         {
-            Sound(1);
+            PlayCue(ContestAudioDirector.Cue.PowerSuccess);
             if(!State.tutorialDone){State.tutorialDone=true;Notice("练习完成。现在完成三段收束，记得松开再按。",5);return;}
             State.pulses++;Notice("收束完成 "+State.pulses+"/3",4);
             if(State.pulses==3){State.rescued=true;PowerActive=false;ApplyPresentation();Notice("回路稳定了。取走遇难者怀中的封档包。",7);}
@@ -431,13 +441,13 @@ namespace ArcaneArchive.Contest
         void PickupBatch()
         {
             if(State.batchLocation>=2)return;
-            State.batchLocation=2;ApplyPresentation();WriteCheckpoint();Sound(1);Notice("已收齐本批遗赠。将它放入安全转移箱。",6);
+            State.batchLocation=2;ApplyPresentation();WriteCheckpoint();PlayCue(ContestAudioDirector.Cue.Bundle);Notice("已收齐本批遗赠。将它放入安全转移箱。",6);
         }
         void FinishTransfer()
         {
             if(State.transferred)return;
             State.transferred=true;State.batchLocation=3;State.stage=7;PowerActive=false;
-            Complete("STORY_RESCUE");ApplyPresentation();WriteCheckpoint();Sound(1);
+            Complete("STORY_RESCUE");ApplyPresentation();WriteCheckpoint();PlayCue(ContestAudioDirector.Cue.Transfer);
             Talk(new[]{"D022","D023","D024"},()=>{Complete("STORY_COMPLETE");ShowEnding();});
         }
         void ShowEnding(){Hud.Fade(0);SetMode(ScreenMode.Ending);Hud.Ending();}
@@ -521,20 +531,11 @@ namespace ArcaneArchive.Contest
             return feedback.HasTarget?feedback.Prompt(InteractKey):"";
         }
         static int CountBits(int mask){int n=0;while(mask!=0){n+=mask&1;mask>>=1;}return n;}
-        public void Sound(int kind){if(effects)effects.PlayOneShot(GetClip(kind),kind==3?.35f:.45f);}
-        AudioClip GetClip(int kind){if(!clips.TryGetValue(kind,out var clip)){clip=MakeClip(kind,kind==3?.6f:.32f);clips[kind]=clip;}return clip;}
-        AudioClip MakeClip(int kind,float seconds)
+        void PlayCue(ContestAudioDirector.Cue cue)=>audioDirector?.Play(cue);
+        public void PlayUiFeedback(string id)
         {
-            const int rate=22050;int n=Mathf.CeilToInt(seconds*rate);var samples=new float[n];var random=new System.Random(1729+kind);
-            for(int i=0;i<n;i++)
-            {
-                float t=(float)i/rate,envelope=kind==4?1:Mathf.Sin(Mathf.PI*Mathf.Clamp01(t/seconds))*Mathf.Exp(-t*5);
-                float v=kind==3?(float)(random.NextDouble()*2-1)*Mathf.Exp(-t*13):
-                    kind==4?.10f*(Mathf.Sin(t*2*Mathf.PI*110)+.3f*Mathf.Sin(t*2*Mathf.PI*165)):
-                    Mathf.Sin(t*2*Mathf.PI*(kind==2?164:kind==1?660:440))+.25f*Mathf.Sin(t*2*Mathf.PI*(kind==2?175:880));
-                samples[i]=v*envelope*.18f;
-            }
-            var clip=AudioClip.Create("IMMonster_Synth_"+kind,n,1,rate,false);clip.SetData(samples,0);return clip;
+            var cue=id=="ReaderClose" || id=="ReaderConfirm" || id=="Handover"?ContestAudioDirector.Cue.PaperClose:ContestAudioDirector.Cue.Ui;
+            audioDirector?.Play(cue,true);
         }
     }
 }

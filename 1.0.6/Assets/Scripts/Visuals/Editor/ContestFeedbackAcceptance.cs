@@ -84,6 +84,29 @@ namespace ArcaneArchive.Visuals.Editor
             game.cameraPivot.localRotation=Quaternion.Euler(pitch,0,0);
         }
         static ContestWorldTarget Target(string id)=>Object.FindObjectsByType<ContestWorldTarget>(FindObjectsSortMode.None).Single(t=>t.id==id);
+        static void Capture(string name)
+        {
+            var canvas=game.Hud.GetComponentInChildren<Canvas>();var oldMode=canvas.renderMode;var oldCamera=canvas.worldCamera;float oldDistance=canvas.planeDistance;
+            var camera=game.view;var oldTarget=camera.targetTexture;var oldActive=RenderTexture.active;
+            var rt=RenderTexture.GetTemporary(1280,720,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);
+            var image=new Texture2D(1280,720,TextureFormat.RGB24,false);
+            try
+            {
+                canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=camera;canvas.planeDistance=.4f;
+                camera.targetTexture=rt;Canvas.ForceUpdateCanvases();camera.Render();RenderTexture.active=rt;
+                image.ReadPixels(new Rect(0,0,1280,720),0,0);image.Apply();File.WriteAllBytes(Out+"/Captures/"+name+".png",image.EncodeToPNG());
+                var reticle=game.Hud.GetComponentsInChildren<Graphic>(true).First(g=>g.GetType().Name=="ContestReticle");
+                var mesh=reticle.canvasRenderer.GetMesh();
+                Debug.Log("[ReticleDiagnostic] vertices="+(mesh?mesh.vertexCount:0)+" bounds="+(mesh?mesh.bounds.ToString():"none")+" cull="+reticle.canvasRenderer.cull+" depth="+reticle.depth+" position="+reticle.rectTransform.position+" texture="+reticle.mainTexture+" alpha="+reticle.canvasRenderer.GetAlpha());
+                if(name=="01_neutral")
+                    Check(image.GetPixel(640,360).grayscale>.65f,"Neutral reticle paints visible center pixels on the dark ceiling");
+            }
+            finally
+            {
+                camera.targetTexture=oldTarget;RenderTexture.active=oldActive;canvas.renderMode=oldMode;canvas.worldCamera=oldCamera;canvas.planeDistance=oldDistance;
+                RenderTexture.ReleaseTemporary(rt);Object.DestroyImmediate(image);
+            }
+        }
         static IEnumerator<float> Sequence()
         {
             yield return .3f;
@@ -96,12 +119,12 @@ namespace ArcaneArchive.Visuals.Editor
                 Check(!reticle.raycastTarget,"Reticle cannot intercept UI clicks");
                 Aim(game.view.transform.position+Vector3.up*5);yield return .3f;
                 Check(reticle.gameObject.activeInHierarchy,"Reticle stays visible when looking away from props");
-                ScreenCapture.CaptureScreenshot(Out+"/Captures/01_neutral.png");yield return .25f;
+                Capture("01_neutral");yield return .25f;
                 var record=Target("ARCHIVE_RECORD_SLOT_02");Aim(record.Point);yield return .25f;
                 Check(game.FindTarget()==record,"Actual scene ray reaches the aimed archive");
                 Allowed(record.id,true,"Unverified archive is available");
                 Check((bool)Property(reticle,"Ready"),"Ready ring matches actual archive interaction");
-                ScreenCapture.CaptureScreenshot(Out+"/Captures/02_ready.png");yield return .25f;
+                Capture("02_ready");yield return .25f;
                 game.Activate(record);yield return .25f;
                 Check(game.Mode==ContestStoryGame.ScreenMode.Reader && !reticle.gameObject.activeInHierarchy,"Reader uses pointer and hides reticle");
                 game.Hud.FindButton("ReaderClose").onClick.Invoke();yield return .3f;
@@ -110,7 +133,7 @@ namespace ArcaneArchive.Visuals.Editor
                 Allowed(door.id,false,"Story prerequisites block the maintenance entrance");
                 Check(!string.IsNullOrEmpty((string)Property(Feedback(door.id),"Reason")),"Blocked interaction gives a reason");
                 Check((bool)Property(reticle,"Blocked"),"Blocked ring does not claim the door is ready");
-                ScreenCapture.CaptureScreenshot(Out+"/Captures/03_blocked.png");yield return .25f;
+                Capture("03_blocked");yield return .25f;
                 game.Activate(door);yield return .2f;
                 Check(game.State.stage==0 && game.Mode==ContestStoryGame.ScreenMode.Explore,"Rejected door activation cannot advance story");
                 game.State.sealedBatch=true;Allowed("ARCHIVE_TIE_CORD",false,"Already tied cord is completed, not actionable");
@@ -127,7 +150,7 @@ namespace ArcaneArchive.Visuals.Editor
                 Allowed("REVEAL_CORD",false,"Picked-up bundle cannot be collected again");
                 string error;Check(game.player.Bindings.TryAssign("Interact","<Keyboard>/j",false,out error),"Interaction can be rebound");
                 Check(game.Prompt("ARCHIVE_TRANSFER_CASE").Contains("J"),"Prompt follows the rebound interaction key");
-                game.player.Bindings.RestoreDefaults();
+                Check(game.player.Bindings.TryAssign("Interact","<Keyboard>/e",false,out error),"Test restores binding without writing player settings");
                 // Controlled geometry uses the real physics probe and production player dimensions.
                 var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.transform.position=new Vector3(500,-.1f,500);floor.transform.localScale=new Vector3(10,.2f,10);
                 Physics.SyncTransforms();Check(game.player.TryReturnToSpawn(new Vector3(500,.08f,500),Quaternion.identity),"Physics fixture safely places the real player");
@@ -147,6 +170,21 @@ namespace ArcaneArchive.Visuals.Editor
             {
                 var director=game.GetComponent("ContestAudioDirector");
                 Check(director,"Contextual audio director replaces generic beep and drone");
+                var worldSound=director.transform.Find("Story effects").GetComponent<AudioSource>();
+                var uiSound=director.transform.Find("Interface and paper").GetComponent<AudioSource>();
+                game.State.stage=0;Explore();yield return .2f;
+                var archive=Target("ARCHIVE_RECORD_SLOT_02");Aim(archive.Point);yield return .2f;
+                game.Activate(archive);yield return .2f;
+                Check(worldSound.clip && worldSound.clip.name=="PaperOpen","Opening a real archive routes to paper foley");
+                game.Hud.FindButton("ReaderClose").onClick.Invoke();yield return .2f;
+                Check(uiSound.clip && uiSound.clip.name=="PaperClose","Reader close routes to paper foley rather than generic UI click");
+                game.player.TryReturnToSpawn(new Vector3(6,.08f,1.4f),Quaternion.identity);
+                var blockedDoor=Target("ARCHIVE_TO_MAINTENANCE");Aim(blockedDoor.Point);yield return .2f;
+                var previousClip=worldSound.clip;game.Activate(blockedDoor);yield return .2f;
+                Check(worldSound.clip==previousClip && game.State.stage==0,"Rejected world interaction emits no action sound");
+                game.ShowSettings();yield return .2f;
+                Check(game.Hud.GetComponentsInChildren<Slider>().Length==4,"Settings expose master, effects, environment and sensitivity controls");
+                Capture("04_settings");yield return .2f;Explore();
                 foreach(string clipName in new[]{"PaperOpen","PaperClose","Cloth","Hardware","Node","Door","Ui","PowerStart","PowerSuccess","Overload","Bundle","Transfer","Impact","Alarm","Calm","Tension","Maintenance","Restored","Investigation","Rescue","Ending","PowerLoop"})
                 {
                     var clip=Resources.Load<AudioClip>("ContestAudio/"+clipName);
@@ -162,11 +200,16 @@ namespace ArcaneArchive.Visuals.Editor
                 Check((string)Property(director,"CurrentAmbienceKey")=="Restored","Restored nodes change hall ambience");
                 game.State.stage=4;game.hall.SetActive(false);game.library.SetActive(true);yield return .3f;
                 Check((string)Property(director,"CurrentAmbienceKey")=="Investigation","Returned archive uses investigation ambience");
-                game.State.stage=6;yield return 1.4f;
+                game.State.stage=6;yield return .25f;
                 Check((string)Property(director,"CurrentAmbienceKey")=="Rescue","Rescue raises tension");
                 game.Pause();yield return .2f;Check(AudioListener.pause,"Pause freezes environment audio");
+                var pausedVolumes=director.GetComponentsInChildren<AudioSource>().Where(s=>s.loop).Select(s=>s.volume).ToArray();
                 var pausedTimes=director.GetComponentsInChildren<AudioSource>().Where(s=>s.loop).Select(s=>s.timeSamples).ToArray();yield return .5f;
                 Check(pausedTimes.SequenceEqual(director.GetComponentsInChildren<AudioSource>().Where(s=>s.loop).Select(s=>s.timeSamples)),"Loop playback positions remain frozen while paused");
+                Check(pausedVolumes.SequenceEqual(director.GetComponentsInChildren<AudioSource>().Where(s=>s.loop).Select(s=>s.volume)),"An in-progress environment crossfade stays frozen while paused");
+                game.Hud.FindButton("Help").onClick.Invoke();
+                Check(uiSound.isPlaying && uiSound.ignoreListenerPause,"Pause menu action remains audible while environment is paused");
+                yield return .2f;game.Hud.FindButton("Back").onClick.Invoke();yield return .2f;
                 game.Resume();yield return .2f;Check(!AudioListener.pause,"Resume restores environment audio");
                 var effectProp=game.GetType().GetProperty("EffectsVolume");var envProp=game.GetType().GetProperty("EnvironmentVolume");
                 Check(effectProp!=null && envProp!=null,"Settings expose independent effects and environment buses");

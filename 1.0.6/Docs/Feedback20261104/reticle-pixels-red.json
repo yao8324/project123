@@ -1,0 +1,12 @@
+{
+    "complete": false,
+    "mode": "reticle",
+    "failure": "UnityEngine.MissingComponentException: There is no 'CanvasRenderer' attached to the \"InteractionReticle\" game object, but a script is trying to access it.\nYou probably need to add a CanvasRenderer to the game object \"InteractionReticle\". Or your script needs to check if the component is attached before using it.\n  at UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) [0x000d1] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnityEngineObject.bindings.cs:1084 \n  at UnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) [0x00010] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/BindingsHelpers.cs:61 \n  at UnityEngine.CanvasRenderer.GetMesh () [0x00006] in <583b530d91e7449ea7b126b5be845e92>:0 \n  at ArcaneArchive.Visuals.Editor.ContestFeedbackAcceptance.Capture (System.String name) [0x0011a] in /Users/jack/Desktop/虚拟环境团队/最新游戏_art_20261104/.worktrees/contest-feedback-20261104/1.0.6/Assets/Scripts/Visuals/Editor/ContestFeedbackAcceptance.cs:99 \n  at ArcaneArchive.Visuals.Editor.ContestFeedbackAcceptance+<Sequence>d__26.MoveNext () [0x001e5] in /Users/jack/Desktop/虚拟环境团队/最新游戏_art_20261104/.worktrees/contest-feedback-20261104/1.0.6/Assets/Scripts/Visuals/Editor/ContestFeedbackAcceptance.cs:122 \n  at ArcaneArchive.Visuals.Editor.ContestFeedbackAcceptance.Update () [0x000f2] in /Users/jack/Desktop/虚拟环境团队/最新游戏_art_20261104/.worktrees/contest-feedback-20261104/1.0.6/Assets/Scripts/Visuals/Editor/ContestFeedbackAcceptance.cs:59 ",
+    "unity": "6000.3.25f1",
+    "checks": [
+        "Persistent reticle uses vector geometry instead of a font glyph",
+        "Reticle cannot intercept UI clicks",
+        "Reticle stays visible when looking away from props"
+    ],
+    "errors": []
+}

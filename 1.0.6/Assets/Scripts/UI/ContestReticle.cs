@@ -4,6 +4,7 @@ using UnityEngine.UI;
 namespace ArcaneArchive.Contest
 {
     // Vector geometry remains crisp and does not depend on a font containing a dot glyph.
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class ContestReticle : MaskableGraphic
     {
         public bool Ready { get; private set; }

@@ -1,0 +1,8 @@
+{
+    "complete": false,
+    "mode": "reticle",
+    "failure": "System.Exception: Persistent reticle uses vector geometry instead of a font glyph\n  at ArcaneArchive.Visuals.Editor.ContestFeedbackAcceptance.Check (System.Boolean pass, System.String label) [0x00025] in /Users/jack/Desktop/虚拟环境团队/最新游戏_art_20261104/.worktrees/contest-feedback-20261104/1.0.6/Assets/Scripts/Visuals/Editor/ContestFeedbackAcceptance.cs:67 \n  at ArcaneArchive.Visuals.Editor.ContestFeedbackAcceptance+<Sequence>d__25.MoveNext () [0x00141] in /Users/jack/Desktop/虚拟环境团队/最新游戏_art_20261104/.worktrees/contest-feedback-20261104/1.0.6/Assets/Scripts/Visuals/Editor/ContestFeedbackAcceptance.cs:95 \n  at ArcaneArchive.Visuals.Editor.ContestFeedbackAcceptance.Update () [0x000f2] in /Users/jack/Desktop/虚拟环境团队/最新游戏_art_20261104/.worktrees/contest-feedback-20261104/1.0.6/Assets/Scripts/Visuals/Editor/ContestFeedbackAcceptance.cs:59 ",
+    "unity": "6000.3.25f1",
+    "checks": [],
+    "errors": []
+}

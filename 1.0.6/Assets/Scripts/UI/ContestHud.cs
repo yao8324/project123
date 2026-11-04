@@ -163,24 +163,28 @@ namespace ArcaneArchive.Contest
             var p=Backdrop("设置","按键提示读取当前绑定，Esc可以取消换绑。",960,650);
             Label(p,"主音量",new Vector2(-325,190),new Vector2(180,35),20,paper,TextAnchor.MiddleLeft);
             Slider(p,new Vector2(30,190),new Vector2(500,25),game.Volume,game.SetVolume,0,1);
-            Label(p,"鼠标灵敏度",new Vector2(-325,143),new Vector2(180,35),20,paper,TextAnchor.MiddleLeft);
-            Slider(p,new Vector2(30,143),new Vector2(500,25),game.player.MouseSensitivityMultiplier,game.ChangeSensitivity,.25f,3);
-            Toggle(p,"减少强闪烁与镜头晃动",new Vector2(-190,94),game.ReduceFlash,game.SetReducedFlash);
-            Toggle(p,"辅助引导  扩大力量安全区",new Vector2(200,94),game.State.assist,game.SetAssist);
-            Button(p,"Balanced","均衡画质",new Vector2(-185,44),()=>game.ChangeQuality("Balanced"),new Vector2(300,38));
-            Button(p,"Ultra","高画质",new Vector2(185,44),()=>game.ChangeQuality("Ultra"),new Vector2(300,38));
+            Label(p,"音效音量",new Vector2(-325,149),new Vector2(180,35),20,paper,TextAnchor.MiddleLeft);
+            Slider(p,new Vector2(30,149),new Vector2(500,25),game.EffectsVolume,game.SetEffectsVolume,0,1);
+            Label(p,"环境音量",new Vector2(-325,108),new Vector2(180,35),20,paper,TextAnchor.MiddleLeft);
+            Slider(p,new Vector2(30,108),new Vector2(500,25),game.EnvironmentVolume,game.SetEnvironmentVolume,0,1);
+            Label(p,"鼠标灵敏度",new Vector2(-325,67),new Vector2(180,35),20,paper,TextAnchor.MiddleLeft);
+            Slider(p,new Vector2(30,67),new Vector2(500,25),game.player.MouseSensitivityMultiplier,game.ChangeSensitivity,.25f,3);
+            Toggle(p,"减少强闪烁与镜头晃动",new Vector2(-190,20),game.ReduceFlash,game.SetReducedFlash);
+            Toggle(p,"辅助引导  扩大力量安全区",new Vector2(200,20),game.State.assist,game.SetAssist);
+            Button(p,"Balanced","均衡画质",new Vector2(-185,-27),()=>game.ChangeQuality("Balanced"),new Vector2(300,38));
+            Button(p,"Ultra","高画质",new Vector2(185,-27),()=>game.ChangeQuality("Ultra"),new Vector2(300,38));
             var ids=new[]{"Forward","Backward","Left","Right","Sprint","Jump","Crouch","Interact","Menu","Relock"};
             for(int i=0;i<ids.Length;i++)
             {
-                string id=ids[i];var button=Button(p,"Bind"+id,BindingName(id)+"  "+game.player.Bindings.Display(id),new Vector2(i%2==0?-210:210,-16-i/2*43),()=>game.player.Bindings.Begin(id),new Vector2(390,36));
+                string id=ids[i];var button=Button(p,"Bind"+id,BindingName(id)+"  "+game.player.Bindings.Display(id),new Vector2(i%2==0?-210:210,-78-i/2*39),()=>game.player.Bindings.Begin(id),new Vector2(390,36));
                 bindingLabels[id]=button.GetComponentInChildren<Text>();
             }
-            Button(p,"Back","返回",new Vector2(0,-277),back);
+            Button(p,"Back","返回",new Vector2(0,-290),back);
         }
         public void Credits(Action back)
         {
             var p=Backdrop("制作与素材鸣谢","IM MONSTER  我是怪物  /  比赛候选",920,590);
-            string body="制作  IM MONSTER项目组\n\n本作沿用团队图书馆与维护厅资源。\n开发过程中使用AI辅助策划、代码与部分美术制作。\n完整参与范围及素材来源见随包说明。\n\n声音  原创程序合成\n字体  Noto Sans CJK SC\n字体许可  SIL Open Font License 1.1\n\n感谢游玩。";
+            string body="制作  IM MONSTER项目组\n\n本作沿用团队图书馆与维护厅资源。\n开发过程中使用AI辅助策划、代码与部分美术制作。\n完整参与范围及素材来源见随包说明。\n\n声音  CC0素材录音与声音设计\nStarNinjas / laleksic / rubberduck / LEGIT Audio / JaggedStone\n字体  Noto Sans CJK SC\n字体许可  SIL Open Font License 1.1\n\n感谢游玩。";
             ScrollText(p,body,new Vector2(0,-4),new Vector2(830,360),21);Button(p,"Back","返回",new Vector2(0,-245),back);
         }
         public void Ending()
@@ -197,7 +201,7 @@ namespace ArcaneArchive.Contest
             var button=r.gameObject.AddComponent<Button>();button.targetGraphic=r.GetComponent<Image>();
             var colors=button.colors;colors.normalColor=Color.white;colors.highlightedColor=new Color(1.3f,1.22f,.94f);colors.pressedColor=new Color(.65f,.8f,.75f);colors.selectedColor=colors.highlightedColor;button.colors=colors;
             var label=Label(r,title,Vector2.zero,(size??new Vector2(430,44))-new Vector2(18,4),20,paper);label.raycastTarget=false;
-            button.onClick.AddListener(()=>{if(game.CanAcceptUi){game.Sound(0);action?.Invoke();}});buttons[id]=button;return button;
+            button.onClick.AddListener(()=>{if(game.CanAcceptUi){game.PlayUiFeedback(id);action?.Invoke();}});buttons[id]=button;return button;
         }
         void ScrollText(Transform parent,string text,Vector2 position,Vector2 size,int fontSize)
         {

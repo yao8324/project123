@@ -1,0 +1,175 @@
+{
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sources": {
+    "book_flips.zip": {
+      "author": "StarNinjas",
+      "page": "https://opengameart.org/content/10-book-page-flips",
+      "download": "https://opengameart.org/sites/default/files/book_flips_-_starninjas.zip",
+      "sha256": "0ff49c3677ea0e64544aeda3a0aa2ce71ee5d42b266da9e54421252a5ca5f20f",
+      "page_cc0_verified": true
+    },
+    "various.zip": {
+      "author": "laleksic",
+      "page": "https://opengameart.org/content/various-sound-effects",
+      "download": "https://opengameart.org/sites/default/files/sounds_8.zip",
+      "sha256": "82c945e5f3c97e4d38dbf18fa27bcea78dbed73b4078c5bbafc04ad89b4096db",
+      "page_cc0_verified": true
+    },
+    "rpg.zip": {
+      "author": "rubberduck",
+      "page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "download": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip",
+      "sha256": "1c2f06ff4e8563b5b8b745b23cf213c1474142a69bb82bd8f5e10d9b3f7a7bbd",
+      "page_cc0_verified": true
+    },
+    "room.zip": {
+      "author": "LEGIT Audio",
+      "page": "https://opengameart.org/content/the-shop",
+      "download": "https://opengameart.org/sites/default/files/legit_audio_-_the_shop_free_sfx_mp3.zip",
+      "sha256": "45321a1d1764702002da3f2902e3ba9b09ff04a6193337728afe41da093479d3",
+      "page_cc0_verified": true
+    },
+    "dungeon.ogg": {
+      "author": "JaggedStone",
+      "page": "https://opengameart.org/content/loopable-dungeon-ambience",
+      "download": "https://opengameart.org/sites/default/files/dungeon_ambient_1_0.ogg",
+      "sha256": "df491823e4877371c34dbda4e9321cd83a4a14fa7573cee0ebca1ae423b70e6e",
+      "page_cc0_verified": true
+    }
+  },
+  "outputs": {
+    "PaperOpen": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/PaperOpen.wav",
+      "seconds": 0.614,
+      "sha256": "dc38770ab86e4026944537fa47271d195e9e82046cf45516d7ccbb4a7413a178",
+      "recipe": "book_flips/book_flip.1.ogg; anull"
+    },
+    "PaperClose": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/PaperClose.wav",
+      "seconds": 1.091,
+      "sha256": "fe861dc29b03f708c387fc1e81ca9a4b3c45a78cbbdc96ef469af0dd2aaa0836",
+      "recipe": "book_flips/book_flip.3.ogg; anull"
+    },
+    "Cloth": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Cloth.wav",
+      "seconds": 0.604,
+      "sha256": "7cf94f9a56682360224700ccda6772e0fe71de0706e31358bfdafb251a0f7b1a",
+      "recipe": "book_flips/book_flip.8.ogg; lowpass=f=1600"
+    },
+    "Hardware": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Hardware.wav",
+      "seconds": 0.275,
+      "sha256": "b062ff031842e99c6dd0770327077edae7997db4f6d82909f4c013e24e73cb25",
+      "recipe": "various/pickup_keys.wav; anull"
+    },
+    "Node": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Node.wav",
+      "seconds": 0.253,
+      "sha256": "63e49e0894bd8a91f85d434276f794c5e5b91ce864e84da46f4e8f057ba7cda4",
+      "recipe": "various/switch_on.wav; anull"
+    },
+    "Door": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Door.wav",
+      "seconds": 1.454,
+      "sha256": "ccd78413a9808438cf9e9b349914ae31c03e9f6bd7bfad2768071be92b21e710",
+      "recipe": "various/door_creak_open.wav; anull"
+    },
+    "Ui": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Ui.wav",
+      "seconds": 0.077,
+      "sha256": "34cd2acf73803129e6e3fc8cd55152ccde89e485484e02e3a4579d24d5c25f10",
+      "recipe": "various/switch_off.wav; atrim=duration=0.11"
+    },
+    "PowerStart": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/PowerStart.wav",
+      "seconds": 0.536,
+      "sha256": "400f4a471533d659c429878029111e3c42271eb4545f36f4520d978bfce4437d",
+      "recipe": "rpg/spell_01.ogg; lowpass=f=3500"
+    },
+    "PowerSuccess": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/PowerSuccess.wav",
+      "seconds": 0.231,
+      "sha256": "e3ccdf6570718e0bea296625e908ce382034d11d5040116421846489c3f16f07",
+      "recipe": "rpg/item_gem_01.ogg; lowpass=f=4000"
+    },
+    "Overload": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Overload.wav",
+      "seconds": 0.65,
+      "sha256": "8d023f4592a8e897c0078c4eede9544849d4edb20e0276bb57abd5c1cbc2150c",
+      "recipe": "various/grind_stone.wav; atrim=duration=0.65,afade=t=out:st=0.4:d=0.25"
+    },
+    "Bundle": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Bundle.wav",
+      "seconds": 0.978,
+      "sha256": "487c56bcf91b7b727895a95f2338bc2b13cd3c1ccfb5b2d0877f16e86babfe91",
+      "recipe": "rpg/book_04.ogg; lowpass=f=2400"
+    },
+    "Transfer": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Transfer.wav",
+      "seconds": 0.692,
+      "sha256": "158184355d2556efe290649c72eeeaddc8e60a3a00560ad63084f97dde3d73a7",
+      "recipe": "various/drawer_close.wav; anull"
+    },
+    "Impact": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Impact.wav",
+      "seconds": 0.659,
+      "sha256": "b00544176f013c15b3127bc69e2344ab941391b2b0bc1d79df3ca64ec5f60763",
+      "recipe": "various/door_close.wav; anull"
+    },
+    "Alarm": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Alarm.wav",
+      "seconds": 1.542,
+      "sha256": "4a9a088f1e37a353b59ab901767403f4904a64af68ef47a42ac4733331f7cf9c",
+      "recipe": "various/bell.wav; aecho=0.8:0.6:350:0.3"
+    },
+    "Calm": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Calm.wav",
+      "seconds": 23.4,
+      "sha256": "1003ec152b5994d1c2738f4647b59a52d861cb05a5f32a9f68a0b9ad197690ab",
+      "recipe": "Recorded room/cave beds, seamless wrap and distant recorded foley layers; Calm"
+    },
+    "Tension": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Tension.wav",
+      "seconds": 23.4,
+      "sha256": "2be723c277bd0f1cbd2fa3b2cd11843cfb8701d3532b961605feab6b66c05f2a",
+      "recipe": "Recorded room/cave beds, seamless wrap and distant recorded foley layers; Tension"
+    },
+    "Maintenance": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Maintenance.wav",
+      "seconds": 23.4,
+      "sha256": "5163f6b8071d7d8c21c034a41a501978bb7bc6788ac8b39f6db0db1fe19aac19",
+      "recipe": "Recorded room/cave beds, seamless wrap and distant recorded foley layers; Maintenance"
+    },
+    "Restored": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Restored.wav",
+      "seconds": 23.4,
+      "sha256": "24c34cd5e31de690dd80740e4e7af906b4b9a24ca25d22d6caaebcb024bfacbd",
+      "recipe": "Recorded room/cave beds, seamless wrap and distant recorded foley layers; Restored"
+    },
+    "Investigation": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Investigation.wav",
+      "seconds": 23.4,
+      "sha256": "eb629a13bf68dc21f5ea5a1ca084060d691ae44d0ae527dc323cc7683ca0fab2",
+      "recipe": "Recorded room/cave beds, seamless wrap and distant recorded foley layers; Investigation"
+    },
+    "Rescue": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Rescue.wav",
+      "seconds": 23.4,
+      "sha256": "a2e0d9a66b5eb83b7b1b9cdeb4b6ba59ebc7d9d4d4a1c13325d8eba74c55d74c",
+      "recipe": "Recorded room/cave beds, seamless wrap and distant recorded foley layers; Rescue"
+    },
+    "Ending": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/Ending.wav",
+      "seconds": 23.4,
+      "sha256": "575432051c964132eed7a1910ad22db1f5d5d9874e8f5c1f2af9a7879ba3e61e",
+      "recipe": "Recorded room/cave beds, seamless wrap and distant recorded foley layers; Ending"
+    },
+    "PowerLoop": {
+      "file": "Assets/Contest20261107/Resources/ContestAudio/PowerLoop.wav",
+      "seconds": 5.4,
+      "sha256": "d9c1f1ce9ec4a83e541883563ae4bf8c73581758c086214af53604c78ab853db",
+      "recipe": "Recorded metal grind, low-pass and seamless loop; playback pitch follows controlled strength"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+IM MONSTER story feedback audio
+
+Selected assets released under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+StarNinjas - 10 Book Page Flips
+https://opengameart.org/content/10-book-page-flips
+laleksic - Various Sound Effects
+https://opengameart.org/content/various-sound-effects
+rubberduck - 80 CC0 RPG SFX
+https://opengameart.org/content/80-cc0-rpg-sfx
+LEGIT Audio - The Shop (OpenGameArt free samples)
+https://opengameart.org/content/the-shop
+JaggedStone - Loopable Dungeon Ambience
+https://opengameart.org/content/loopable-dungeon-ambience
+
+Modified for the game through trimming, filtering, mixing, gain adjustment and loop crossfades.
+Paper rustle is also filtered for the light cord/fabric interaction cue.
+See Docs/Feedback20261104/audio-sources.json for source and output checksums.
