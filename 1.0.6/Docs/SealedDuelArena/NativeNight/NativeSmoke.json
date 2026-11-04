@@ -1,0 +1,28 @@
+{
+    "complete": true,
+    "failure": "",
+    "unity": "6000.3.25f1",
+    "device": "Apple M3",
+    "cpu": "Apple M3",
+    "scope": "Actual native Mac executable at specified window resolution; isolated virtual input, real controller/encounter and pause UI; explicit damage injection only to exercise completion/retry. Includes screenshot/setup overhead, not a minimum-hardware benchmark or manager acceptance.",
+    "checks": [
+        "Native player enters the new Boss arena automatically",
+        "Actual built battle clock advances",
+        "Built player contains the modeled arena and its own atmosphere",
+        "Real controller keyboard movement traverses the new combat floor",
+        "Pause stops the native battle clock",
+        "Actual UI mouse click on Continue resumes combat through EventSystem",
+        "A real production Boss attack runs in the rebuilt arena",
+        "Encounter can finish with the new environment active",
+        "Retry restores Boss, player health and safe spawn",
+        "Actual UI mouse click on Return exits the arena through EventSystem",
+        "Returning restores the exact library atmosphere",
+        "Reentering the rebuilt arena works after return"
+    ],
+    "errors": [],
+    "width": 1600,
+    "height": 900,
+    "frameSamples": 387,
+    "frameP50Ms": 16.667709350585939,
+    "frameP95Ms": 17.153627395629884
+}

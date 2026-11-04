@@ -1,0 +1,11 @@
+{
+  "gain_change_db": {
+    "chain_loop": -7.994,
+    "crystal_loop": -8.0
+  },
+  "all_catalog_files_probed": 63,
+  "browser_checked_selection_reload": true,
+  "browser_checked_selected_filter": true,
+  "browser_export_triggered": true,
+  "import_reviewed_not_browser_tested": true
+}

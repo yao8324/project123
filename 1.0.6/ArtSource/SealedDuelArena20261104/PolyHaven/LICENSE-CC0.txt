@@ -1,0 +1,2 @@
+Poly Haven assets are supplied under CC0. Reviewed asset pages and exact file hashes are recorded in sources.json. Large Sandstone Blocks by Rob Tuytel; Stone Tiles by Christopher Melani. Original maps retained here; Unity maps are channel-packed copies. No paid assets used.
+https://polyhaven.com/license

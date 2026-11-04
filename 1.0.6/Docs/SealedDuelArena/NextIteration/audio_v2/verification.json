@@ -1,0 +1,30 @@
+{
+  "readable_pcm_no_clipping": [
+    "A01",
+    "A02",
+    "A04",
+    "A05",
+    "A05b",
+    "A07",
+    "A08",
+    "A06",
+    "B01a",
+    "B02a",
+    "B03a",
+    "B05a",
+    "B01b",
+    "B02b",
+    "B03b",
+    "B04a",
+    "B04b",
+    "B04c",
+    "B05b",
+    "C03",
+    "C01",
+    "C02",
+    "D01"
+  ],
+  "loop_wrap_delta_within_normal_sample_step": true,
+  "runtime_integration_tested": false,
+  "listened_by_assistant": false
+}

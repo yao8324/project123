@@ -75,6 +75,7 @@ namespace ArcaneArchive.Visuals
                 name=Releases[Mathf.Clamp(attack,0,4)];t=elapsed;loop=attack==2 || attack==4;
                 if(attack==1 && phase==2 && elapsed>=1.25f)t-=1.25f;
             }
+            else if(state==BossEncounter.State.Stagger){name="Recovery";t=.25f;loop=false;}
             else if(state==BossEncounter.State.Recovery){name="Recovery";t=Mathf.Clamp01(elapsed/Mathf.Max(.1f,recovery));loop=false;}
             else if(state==BossEncounter.State.PhaseBreak){name="PhaseBreak";t=elapsed;loop=false;}
             else if(state==BossEncounter.State.Won){name="Defeat";t=deathTime;loop=false;}
@@ -92,7 +93,7 @@ namespace ArcaneArchive.Visuals
                 players[i].SetTime(times[i]);
             }
             float length=clips[current].length;
-            if(state==BossEncounter.State.Telegraph || state==BossEncounter.State.Recovery)t*=length;
+            if(state==BossEncounter.State.Telegraph || state==BossEncounter.State.Recovery || state==BossEncounter.State.Stagger)t*=length;
             times[current]=loop?Mathf.Repeat(t,Mathf.Max(.001f,length)):Mathf.Clamp(t,0,length);loops[current]=loop;
             players[current].SetTime(times[current]);blendAge+=dt;
             float blend=blendDuration<=0?1:Mathf.SmoothStep(0,1,Mathf.Clamp01(blendAge/blendDuration));

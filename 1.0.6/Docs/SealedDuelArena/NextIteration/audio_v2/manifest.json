@@ -1,0 +1,232 @@
+[
+  {
+    "id": "A01",
+    "title": "挥砍 · 暗刃破风",
+    "note": "挥动有效帧；挥空也播放。",
+    "loop": false,
+    "duration": 0.55,
+    "peak_db": -9.0,
+    "rms_db": -26.03,
+    "seam_delta": null
+  },
+  {
+    "id": "A02",
+    "title": "命中盔甲 · 厚重金属",
+    "note": "实际命中盔甲时叠加，区别于链节。",
+    "loop": false,
+    "duration": 1.1,
+    "peak_db": -9.0,
+    "rms_db": -26.7,
+    "seam_delta": null
+  },
+  {
+    "id": "A04",
+    "title": "主角受伤 · 钝击护印震裂",
+    "note": "无真人气声的合成受创稿；成功扣血才播放。",
+    "loop": false,
+    "duration": 0.8,
+    "peak_db": -9.0,
+    "rms_db": -24.38,
+    "seam_delta": null
+  },
+  {
+    "id": "A05",
+    "title": "主角防御 · 格挡",
+    "note": "成功格挡触发。",
+    "loop": false,
+    "duration": 0.9,
+    "peak_db": -9.27,
+    "rms_db": -26.2,
+    "seam_delta": null
+  },
+  {
+    "id": "A05b",
+    "title": "主角破防 · 护印崩裂",
+    "note": "破防独立事件。",
+    "loop": false,
+    "duration": 1.3,
+    "peak_db": -10.58,
+    "rms_db": -27.3,
+    "seam_delta": null
+  },
+  {
+    "id": "A07",
+    "title": "锁链受击 · 链节震响",
+    "note": "命中保护链时触发，限频。",
+    "loop": false,
+    "duration": 0.85,
+    "peak_db": -10.28,
+    "rms_db": -26.93,
+    "seam_delta": null
+  },
+  {
+    "id": "A08",
+    "title": "锁链断裂 · 崩断散落",
+    "note": "每组锁链破除仅一次；停止该组摩擦循环。",
+    "loop": false,
+    "duration": 1.8,
+    "peak_db": -9.09,
+    "rms_db": -26.55,
+    "seam_delta": null
+  },
+  {
+    "id": "A06",
+    "title": "水晶爆裂 · 晶片与断供",
+    "note": "晶体破碎瞬间触发；停止对应供能共鸣。",
+    "loop": false,
+    "duration": 2.2,
+    "peak_db": -9.0,
+    "rms_db": -25.34,
+    "seam_delta": null
+  },
+  {
+    "id": "B01a",
+    "title": "飞页齐射 · 聚页预警",
+    "note": "招式预警状态进入时一次播放。",
+    "loop": false,
+    "duration": 1.1,
+    "peak_db": -12.0,
+    "rms_db": -23.19,
+    "seam_delta": null
+  },
+  {
+    "id": "B02a",
+    "title": "冲击环 · 蓄压预警",
+    "note": "招式预警状态进入时一次播放。",
+    "loop": false,
+    "duration": 1.1,
+    "peak_db": -12.0,
+    "rms_db": -22.46,
+    "seam_delta": null
+  },
+  {
+    "id": "B03a",
+    "title": "地裂 · 地底预警",
+    "note": "招式预警状态进入时一次播放。",
+    "loop": false,
+    "duration": 1.1,
+    "peak_db": -12.0,
+    "rms_db": -23.55,
+    "seam_delta": null
+  },
+  {
+    "id": "B05a",
+    "title": "冲刺 · 危险预警",
+    "note": "招式预警状态进入时一次播放。",
+    "loop": false,
+    "duration": 1.1,
+    "peak_db": -12.0,
+    "rms_db": -22.01,
+    "seam_delta": null
+  },
+  {
+    "id": "B01b",
+    "title": "飞页齐射 · 释放",
+    "note": "整轮一次；单页不叠播完整主音。",
+    "loop": false,
+    "duration": 1.2,
+    "peak_db": -9.0,
+    "rms_db": -25.91,
+    "seam_delta": null
+  },
+  {
+    "id": "B02b",
+    "title": "冲击环 · 能量脉冲",
+    "note": "波环释放一次。",
+    "loop": false,
+    "duration": 1.6,
+    "peak_db": -9.0,
+    "rms_db": -25.84,
+    "seam_delta": null
+  },
+  {
+    "id": "B03b",
+    "title": "连续地裂 · 四段裂地",
+    "note": "试听为四段示例；接入时每段由实际地裂事件驱动。",
+    "loop": false,
+    "duration": 2.2,
+    "peak_db": -9.0,
+    "rms_db": -23.43,
+    "seam_delta": null
+  },
+  {
+    "id": "B04a",
+    "title": "激光 · 蓄能",
+    "note": "与可见预警同步。",
+    "loop": false,
+    "duration": 1.6,
+    "peak_db": -9.0,
+    "rms_db": -19.3,
+    "seam_delta": null
+  },
+  {
+    "id": "B04b",
+    "title": "激光 · 持续束流",
+    "note": "可停止循环；激光结束或中断立即淡出。",
+    "loop": true,
+    "duration": 8.0,
+    "peak_db": -17.0,
+    "rms_db": -22.28,
+    "seam_delta": 0.0056774
+  },
+  {
+    "id": "B04c",
+    "title": "激光 · 收束",
+    "note": "停束后一次短尾音。",
+    "loop": false,
+    "duration": 0.8,
+    "peak_db": -14.0,
+    "rms_db": -29.35,
+    "seam_delta": null
+  },
+  {
+    "id": "B05b",
+    "title": "冲刺 · 掠过与急停",
+    "note": "冲刺发动；命中另外触发主角受伤。",
+    "loop": false,
+    "duration": 1.0,
+    "peak_db": -9.0,
+    "rms_db": -23.43,
+    "seam_delta": null
+  },
+  {
+    "id": "C03",
+    "title": "全部断供 · Boss失能",
+    "note": "最后一枚水晶破碎时一次，与硬直同步。",
+    "loop": false,
+    "duration": 2.0,
+    "peak_db": -12.0,
+    "rms_db": -32.47,
+    "seam_delta": null
+  },
+  {
+    "id": "C01",
+    "title": "背景循环 · 锁链盘旋摩擦",
+    "note": "每枚独立声源；锁链断裂停止，低沉轻微摩擦。",
+    "loop": true,
+    "duration": 8.0,
+    "peak_db": -29.0,
+    "rms_db": -43.79,
+    "seam_delta": 0.0003948
+  },
+  {
+    "id": "C02",
+    "title": "背景循环 · 水晶供能共鸣",
+    "note": "每枚独立声源；断链继续，破晶停止，三路分别控制。",
+    "loop": true,
+    "duration": 8.0,
+    "peak_db": -31.0,
+    "rms_db": -38.44,
+    "seam_delta": 0.0004391
+  },
+  {
+    "id": "D01",
+    "title": "混音演示 · 三路供能逐一关闭",
+    "note": "24秒：4.5/10.5/16.5秒断链，6/12/18秒破晶；19秒全破失能。",
+    "loop": false,
+    "duration": 24.0,
+    "peak_db": -6.0,
+    "rms_db": -24.54,
+    "seam_delta": null
+  }
+]

@@ -39,7 +39,7 @@ namespace ArcaneArchive.Player
             invulnerability = Mathf.Max(0, invulnerability - dt);
             guardBreakRemaining=Mathf.Max(0,guardBreakRemaining-dt);
             guardRegenDelay=Mathf.Max(0,guardRegenDelay-dt);
-            Guarding=false;
+            bool previouslyGuarding=Guarding;Guarding=false;
             var bindings = player.Bindings;
             if (!bindings || !player.GameplayInputEnabled || !player.CursorIsLocked || bindings.SuppressInputThisFrame) return;
             var fire = bindings.AttackAction; var absorb = bindings.AbsorbAction;
@@ -51,6 +51,7 @@ namespace ArcaneArchive.Player
             }
             if (absorb.WasPressedThisFrame()) TryAbsorb();
             Guarding=encounter.CanFight && absorb.IsPressed() && !GuardBroken && !guardReleaseRequired && Guard>0;
+            if(Guarding && !previouslyGuarding && encounter.SelectedAudio)encounter.SelectedAudio.RaiseGuard();
             if(Guarding)
             {
                 Guard=Mathf.Max(0,Guard-encounter.Definition.guardHoldDrain*dt);
@@ -98,7 +99,7 @@ namespace ArcaneArchive.Player
                 if(Guard>cost)
                 {
                     Guard-=cost;invulnerability=.10f;
-                    encounter.Feedback("格挡成功",.45f);encounter.PlaySound(encounter.Definition.absorbSound,.15f);return false;
+                    encounter.Feedback("格挡成功",.45f);if(encounter.SelectedAudio)encounter.SelectedAudio.Block();else encounter.PlaySound(encounter.Definition.absorbSound,.15f);return false;
                 }
                 float fraction=Guard/Mathf.Max(.01f,cost);
                 damage*=1-fraction*.8f;BreakGuard();

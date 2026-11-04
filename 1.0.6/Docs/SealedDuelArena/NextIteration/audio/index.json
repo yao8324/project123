@@ -1,0 +1,50 @@
+{
+  "source": "https://opengameart.org/content/magic-spell-sfx",
+  "author": "JaggedStone",
+  "license": "CC0",
+  "notes": "Original samples, decoded to WAV without artistic processing. Candidates for user listening; no auditory quality approval claimed.",
+  "samples": [
+    {
+      "number": 1,
+      "file": "magical_1_0.wav",
+      "seconds": 1.61,
+      "sha256": "f51b70bc84164938c932037b7e23159dcef295b51dc6f01bb01bb42de52fe659"
+    },
+    {
+      "number": 2,
+      "file": "magical_2.wav",
+      "seconds": 1.38,
+      "sha256": "0b27b7bdb8e658506ad8312a5bfc87c4370571ee8600cf24e051a60a7e86f01b"
+    },
+    {
+      "number": 3,
+      "file": "magical_3.wav",
+      "seconds": 1.82,
+      "sha256": "16f6cfe4ac74329930b5ce2faa1ea7437a26b54b17cce735ba95e8f3b4828e15"
+    },
+    {
+      "number": 4,
+      "file": "magical_4.wav",
+      "seconds": 2.41,
+      "sha256": "33c21e6fbe94f60565b56521b5650119173e5cf27ed6c035482aa56671044aee"
+    },
+    {
+      "number": 5,
+      "file": "magical_5.wav",
+      "seconds": 1.44,
+      "sha256": "2a0f40a22b238e800bcafc25406d79e30c341b5ff8cb76a4bf975b2e220beac1"
+    },
+    {
+      "number": 6,
+      "file": "magical_6_0.wav",
+      "seconds": 1.11,
+      "sha256": "8a85bfdac9bb699c3621a7937f4af7fe86f0b8115185f8b09e3d9af96dde7d30"
+    },
+    {
+      "number": 7,
+      "file": "magical_7_0.wav",
+      "seconds": 1.54,
+      "sha256": "c454812fede910926e4710c5ab683a5be93eadfd8559a2fd8f5ea016db3f85ce"
+    }
+  ]
+}
