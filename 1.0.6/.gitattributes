@@ -10,3 +10,5 @@ Blender/MilanLibrary_Magic_V6/*.blend filter=lfs diff=lfs merge=lfs -text
 Assets/Art/ForbiddenWarden/CombatV2/Models/*.fbx filter=lfs diff=lfs merge=lfs -text
 Blender/WardenCombatV2/*.blend filter=lfs diff=lfs merge=lfs -text
 /Assets/Art/SealedDuelArena20261104/Materials/StarSky.asset filter=lfs diff=lfs merge=lfs -text
+
+/Releases/Full-20261104/*.zip.* filter=lfs diff=lfs merge=lfs -text
