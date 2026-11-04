@@ -120,3 +120,12 @@ P0 仍为：**导入资料 → 生成书籍 → 归档书架 → 搜索定位 �
 - [程序交付说明](../团队任务/程序/提交/PROG-20261027-1.0.6_提交.md)
 
 素材包含 WhiteCastle、Stylized Library、原项目贴图与校标等第三方内容；其授权仍按原始许可处理。本仓库没有为这些素材授予新的开源许可，公开仓库或二次分发前需核对资源授权。Poly Haven 木材贴图的 CC0 说明及其他出处见 [Texture_Credits.txt](Blender/MilanLibrary_Magic_V6/Texture_Credits.txt)。
+
+
+## 2026-11-04 完整整合包下载
+
+[GitHub Release 下载页](https://github.com/yao8324/project123/releases/tag/full-2026-11-04)
+
+完整包包含Mac试玩程序、Unity完整工程、制作资源，以及本次剧情交互/环境声和三水晶斗场新增内容。需要同时下载 `.zip.001` 和 `.zip.002`，放在同一目录，用7-Zip或Keka打开第一卷解压。当前可执行程序为Mac版，Windows可从Unity工程构建。
+
+工程入口：`Assets/Scenes/IMMonster_FullDelivery.unity`。玩法说明与验证见 `Docs/FullDelivery20261104/README.md`。
