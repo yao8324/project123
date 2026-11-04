@@ -1,0 +1,10 @@
+{
+    "complete": true,
+    "failure": "",
+    "scope": "Fixed-time rendering of the actual Unity ending scene, camera, animation, subtitles and fade at 30 fps. Original Timeline WAV supplied for muxing. No player checkpoint is written; this is not an FPS/performance capture.",
+    "frames": 780,
+    "fps": 30,
+    "width": 2620,
+    "height": 1578,
+    "seconds": 26.0
+}

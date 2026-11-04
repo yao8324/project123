@@ -43,11 +43,12 @@ namespace ArcaneArchive.Contest
         public string CurrentTargetId => target?target.id:null;
         public Content StoryContent => content;
         public ContestStoryState Checkpoint => checkpoint?.Copy();
-        public bool Automated => Application.isBatchMode || Environment.GetCommandLineArgs().Contains("-contest-test");
+        public bool Automated => Application.isBatchMode || Environment.GetCommandLineArgs().Contains("-contest-test") || Environment.GetCommandLineArgs().Contains("-ending-test");
         public bool CanAcceptUi => Time.frameCount>uiFrame+1;
         public float StorySeconds { get; private set; }
         public string LastNotice { get; private set; }
         public string StartupNotice { get; private set; }
+        public ArcaneArchive.Visuals.ContestEndingCutscene EndingCutscene { get; private set; }
         Content content;
         ContestStoryState checkpoint;
         ContestWorldTarget target;
@@ -71,7 +72,9 @@ namespace ArcaneArchive.Contest
             content=JsonUtility.FromJson<Content>(contentFile.text);
             if(content==null || content.records==null || content.records.Length!=3 || content.dialogue==null || !player || !view || !font)
                 throw new InvalidOperationException("Contest scene references or story data missing");
-            SavePath=Path.Combine(Application.persistentDataPath,"IMMonsterContest20261107",Automated?"acceptance-checkpoint.json":"checkpoint.json");
+            SavePath=Environment.GetCommandLineArgs().Contains("-ending-test")
+                ?Path.GetFullPath(Path.Combine(Application.dataPath,"../Logs/Ending20261104/ending-acceptance-checkpoint.json"))
+                :Path.Combine(Application.persistentDataPath,"IMMonsterContest20261107",Automated?"acceptance-checkpoint.json":"checkpoint.json");
             if(!Automated){ContestCheckpointStore.TryRead(SavePath,out checkpoint,out var loadNotice);StartupNotice=loadNotice;}
             if(!Automated){Volume=PlayerPrefs.GetFloat("IMContest.Volume",.55f);ReduceFlash=PlayerPrefs.GetInt("IMContest.ReducedFlash",1)==1;}
             AudioListener.volume=Volume;
@@ -80,6 +83,7 @@ namespace ArcaneArchive.Contest
             ambience=gameObject.AddComponent<AudioSource>();ambience.playOnAwake=false;ambience.spatialBlend=0;ambience.loop=true;ambience.volume=.22f;
             ambience.clip=MakeClip(4,6);ambience.Play();
             Hud=gameObject.AddComponent<ContestHud>();Hud.Initialize(this,font);
+            EndingCutscene=gameObject.AddComponent<ArcaneArchive.Visuals.ContestEndingCutscene>();
             ApplyPresentation();initialised=true;ShowMainMenu();
         }
         IEnumerator Start()
@@ -150,7 +154,7 @@ namespace ArcaneArchive.Contest
         {
             if(!confirmed && (Started || CanContinue))
             {Confirm("开始新游戏","将覆盖本篇的检查点记录。",()=>NewGame(true));return;}
-            StopAllCoroutines();cutsceneRunning=false;State=new ContestStoryState();Power.Reset();PowerActive=false;completionCounts.Clear();StorySeconds=0;
+            EndingCutscene.Cancel();StopAllCoroutines();cutsceneRunning=false;State=new ContestStoryState();Power.Reset();PowerActive=false;completionCounts.Clear();StorySeconds=0;
             Started=true;ApplyPresentation();
             if(!Place(workFeet,Quaternion.identity)){ShowMainMenu();return;}
             WriteCheckpoint();Hud.HideModal();SetMode(ScreenMode.Explore);Touch();
@@ -163,7 +167,7 @@ namespace ArcaneArchive.Contest
         }
         void Restore(ContestStoryState restored)
         {
-            StopAllCoroutines();cutsceneRunning=false;PowerActive=false;State=restored;Started=true;Power.Reset();Power.Assist=State.assist;
+            EndingCutscene.Cancel();StopAllCoroutines();cutsceneRunning=false;PowerActive=false;State=restored;Started=true;Power.Reset();Power.Assist=State.assist;
             completionCounts.Clear();
             if(State.stage>=2){completionCounts["STORY_ARCHIVE_START"]=1;completionCounts["STORY_BREACH"]=1;}
             if(State.stage>=3)completionCounts["STORY_AWAKEN"]=1;
@@ -188,6 +192,7 @@ namespace ArcaneArchive.Contest
         }
         public void ShowMainMenu()
         {
+            if(EndingCutscene)EndingCutscene.Cancel();
             StopAllCoroutines();cutsceneRunning=false;PowerActive=false;
             hall.SetActive(false);library.SetActive(true);fade=0;Hud.Fade(0);Hud.Memory(false);
             SetMode(ScreenMode.MainMenu);Hud.MainMenu(CanContinue);Touch();
@@ -206,7 +211,7 @@ namespace ArcaneArchive.Contest
             if(previous==ScreenMode.Dialogue)RenderLine();
             else if(previous==ScreenMode.Reader && readerRecord!=null)OpenRecord(readerRecord);
             else if(previous==ScreenMode.Reader && incidentReader)OpenIncident();
-            else if(previous==ScreenMode.Cutscene){Hud.HideModal();Hud.ResumeCinematic();}
+            else if(previous==ScreenMode.Cutscene){Hud.HideModal();if(!EndingCutscene.Running)Hud.ResumeCinematic();}
             else Explore();
         }
         void HandleEscape()
@@ -224,7 +229,7 @@ namespace ArcaneArchive.Contest
         }
         ScreenMode utilityReturn=ScreenMode.MainMenu;
         void OpenUtility(ScreenMode screen)
-        {utilityReturn=Mode==ScreenMode.MainMenu?ScreenMode.MainMenu:ScreenMode.Pause;SetMode(screen);}
+        {utilityReturn=Mode==ScreenMode.MainMenu || Mode==ScreenMode.Ending?Mode:ScreenMode.Pause;SetMode(screen);}
         public void ShowHelp(){OpenUtility(ScreenMode.Help);Hud.Help(BackFromUtility);}
         public void ShowSettings(){OpenUtility(ScreenMode.Settings);Hud.Settings(BackFromUtility);}
         public void ShowCredits(){OpenUtility(ScreenMode.Credits);Hud.Credits(BackFromUtility);}
@@ -427,7 +432,21 @@ namespace ArcaneArchive.Contest
             if(State.transferred)return;
             State.transferred=true;State.batchLocation=3;State.stage=7;PowerActive=false;
             Complete("STORY_RESCUE");ApplyPresentation();WriteCheckpoint();Sound(1);
-            Talk(new[]{"D022","D023","D024"},()=>{Complete("STORY_COMPLETE");ShowEnding();});
+            PlayEnding();
+        }
+        public void ReplayEnding()
+        {
+            if(Mode!=ScreenMode.Ending || !State.transferred)return;
+            PlayEnding();
+        }
+        void PlayEnding()
+        {
+            cutsceneRunning=true;Hud.HideModal();SetMode(ScreenMode.Cutscene);
+            EndingCutscene.Play(this,()=>{
+                cutsceneRunning=false;
+                if(CompletionCount("STORY_COMPLETE")==0)Complete("STORY_COMPLETE");
+                ShowEnding();
+            });
         }
         void ShowEnding(){Hud.Fade(0);SetMode(ScreenMode.Ending);Hud.Ending();}
         public void Talk(IEnumerable<string> ids,Action done)

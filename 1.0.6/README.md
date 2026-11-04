@@ -1,3 +1,5 @@
+> 2026-11-04 本地开发：短篇剧情场景 `Assets/Scenes/IMMonsterContest20261107.unity` 新增约 26 秒结尾过场，支持暂停、跳过及重看。开发预览可用菜单 `IM Monster → Ending → Preview ending (no save)`。制作、资源位置与验证说明见[结尾动画制作说明](Docs/Contest20261107/结尾动画制作说明_20261104.md)。
+
 > 2026-10-29：本工程现已作为IM MONSTER团队main第一版v0.1.0的运行基线，已接入新的圆形厅美术。下文保留原程序交付说明；当前版本、启动方式与已知问题以[仓库首页](../README.md)和[发布说明](../发布记录/v0.1.0/发布说明.md)为准。
 
 # Arcane Archive 魔法图书馆 · 1.0.6

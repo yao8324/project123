@@ -1,0 +1,14 @@
+{
+  "File": "我是怪物_遗赠_结尾动画.mp4",
+  "Bytes": 13229727,
+  "Sha256": "74B7222DF36E0E3E7CA61A208CFBEB4DE89EFD9C63E38490E048E9834603BDAB",
+  "DurationSeconds": 26,
+  "Width": 1920,
+  "Height": 1080,
+  "Fps": 30,
+  "Frames": 780,
+  "VideoCodec": "H.264",
+  "AudioCodec": "AAC",
+  "DecodeExitCode": 0,
+  "Source": "Actual Unity ending scene rendered at fixed Timeline times; original soundtrack muxed and normalized; not an FPS benchmark"
+}

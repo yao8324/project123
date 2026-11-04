@@ -19,9 +19,10 @@ namespace ArcaneArchive.Visuals.Editor
     public static class ContestAcceptance
     {
         const string Flag="IMMonster.ContestAcceptance";
-        const string Out="Docs/Contest20261107/Acceptance";
+        static string Out=>Environment.GetCommandLineArgs().Contains("-ending-test")?"Logs/Ending20261104/FullRoute":"Docs/Contest20261107/Acceptance";
         static ContestStoryGame game;
         static Keyboard keyboard;static Mouse mouse;static Key[] held=Array.Empty<Key>();
+        static InputSettings originalInputSettings,testInputSettings;
         static IEnumerator<Gate> sequence;static Gate gate;
         static bool running,finished;static float startedAt,lastVideoFrame;static int screenshots,videoFrames;static StreamWriter videoTimes;
         static string failure,scenario;
@@ -47,7 +48,7 @@ namespace ArcaneArchive.Visuals.Editor
             EditorSceneManager.OpenScene(ContestSceneBuilder.ScenePath);SessionState.SetBool(Flag,true);SessionState.SetFloat(Flag+".deadline",(float)EditorApplication.timeSinceStartup+480);
             var view=EditorWindow.GetWindow(typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView"));view.Focus();
             view.maximized=false;view.position=new Rect(20,20,1300,790);
-            Application.runInBackground=true;EditorApplication.isPlaying=true;
+            SessionState.SetBool(Flag+".background",Application.runInBackground);Application.runInBackground=true;EditorApplication.isPlaying=true;
         }
         static void Update()
         {
@@ -70,6 +71,10 @@ namespace ArcaneArchive.Visuals.Editor
             keyboard=InputSystem.AddDevice<Keyboard>("ContestAcceptanceKeyboard");mouse=InputSystem.AddDevice<Mouse>("ContestAcceptanceMouse");keyboard.MakeCurrent();mouse.MakeCurrent();
             var asset=(InputActionAsset)typeof(FirstPersonController).GetField("runtimeInputActions",Private).GetValue(game.player);
             asset.devices=new InputDevice[]{keyboard,mouse};asset.RemoveAllBindingOverrides();
+            originalInputSettings=InputSystem.settings;testInputSettings=Object.Instantiate(originalInputSettings);
+            testInputSettings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;
+            testInputSettings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+            InputSystem.settings=testInputSettings;
             InputSystem.onBeforeUpdate+=Feed;InputSystem.onAfterUpdate+=MakeCurrent;Application.logMessageReceived+=Log;
             AudioListener.volume=0;QualitySettings.vSyncCount=0;Application.targetFrameRate=60;
             sequence=Sequence();gate=null;Write(false);
@@ -146,10 +151,16 @@ namespace ArcaneArchive.Visuals.Editor
         {yield return Wait(.3f);Capture(name);yield return Wait(.35f);}
         static IEnumerator<Gate> Sequence()
         {
-            UnitChecks();yield return Wait(2);Directory.CreateDirectory(Out+"/Frames");
-            if((File.GetAttributes(Out+"/Frames")&FileAttributes.ReparsePoint)!=0)throw new IOException("Frame output must be an ordinary owned directory");
-            foreach(string oldFrame in Directory.GetFiles(Out+"/Frames","frame-*.png",SearchOption.TopDirectoryOnly))File.Delete(oldFrame);
-            videoTimes=new StreamWriter(Out+"/capture-times.csv");videoTimes.WriteLine("frame,realtimeSeconds,storyStage");videoFrames=0;lastVideoFrame=Time.realtimeSinceStartup;
+            UnitChecks();yield return Wait(2);
+            // Keep high-DPI PNG encoding out of the ending delivery's controller timing checks.
+            // Video export is a separate fixed-time render; legacy recording remains opt-in here.
+            if(!Environment.GetCommandLineArgs().Contains("-ending-test") || Environment.GetCommandLineArgs().Contains("-contest-record-video"))
+            {
+                Directory.CreateDirectory(Out+"/Frames");
+                if((File.GetAttributes(Out+"/Frames")&FileAttributes.ReparsePoint)!=0)throw new IOException("Frame output must be an ordinary owned directory");
+                foreach(string oldFrame in Directory.GetFiles(Out+"/Frames","frame-*.png",SearchOption.TopDirectoryOnly))File.Delete(oldFrame);
+                videoTimes=new StreamWriter(Out+"/capture-times.csv");videoTimes.WriteLine("frame,realtimeSeconds,storyStage");videoFrames=0;lastVideoFrame=Time.realtimeSinceStartup;
+            }
             Check(game.Mode==ContestStoryGame.ScreenMode.MainMenu,"Normal entry opens main menu");foreach(var g in Shot("01_main_menu"))yield return g;
             Click("Help");yield return Wait(.3f);Check(game.Mode==ContestStoryGame.ScreenMode.Help,"Controls available from main menu");Click("Back");yield return Wait(.25f);
             Click("NewGame");yield return Wait(.3f);foreach(var g in CloseDialogue())yield return g;
@@ -224,6 +235,7 @@ namespace ArcaneArchive.Visuals.Editor
             Check(game.State.batchLocation==2 && !game.sealedBundle.activeSelf,"Picking up moves the single batch instead of cloning it");
             foreach(var point in new[]{new Vector3(4.275f,.08f,9.85f),new Vector3(4.275f,.08f,6.9f),new Vector3(3.1f,.08f,6.9f),new Vector3(3.1f,.08f,3),new Vector3(5,.08f,2.5f)})foreach(var g in WalkTo(point))yield return g;
             foreach(var g in Press("ARCHIVE_TRANSFER_CASE"))yield return g;foreach(var g in CloseDialogue())yield return g;
+            yield return Until(()=>game.Mode==ContestStoryGame.ScreenMode.Ending,"Ending Timeline completes",40);
             Check(game.Mode==ContestStoryGame.ScreenMode.Ending && game.State.transferred,"Normal route reaches explicit completed-game ending");foreach(var g in Shot("12_ending"))yield return g;
             foreach(string id in new[]{"STORY_ARCHIVE_START","STORY_BREACH","STORY_AWAKEN","STORY_MAINTENANCE_ENTER","STORY_ARCHIVE_RETURN","STORY_IDENTITY_CONFIRM","STORY_RESCUE","STORY_COMPLETE"})Check(game.CompletionCount(id)==1,"Story event completed exactly once "+id);
             Check(ContestCheckpointStore.TryRead(game.SavePath,out var saved,out _) && saved.stage==7 && saved.transferred,"Atomic disk checkpoint contains finished game");
@@ -242,6 +254,14 @@ namespace ArcaneArchive.Visuals.Editor
             {p.Reset(false);bool done=false;for(int n=0;n<fps*8;n++){int result=p.Step(1f/fps,p.Strength<50,true,false);if(result==1){done=true;break;}}Check(done,"Power substep integration works at "+fps+" FPS");}
             string path=fixtures+"/checkpoint.json";var valid=new ContestStoryState();Check(ContestCheckpointStore.TryWrite(path,valid,out _),"Checkpoint atomically writes valid state");
             Check(ContestCheckpointStore.TryRead(path,out var copy,out _) && copy.stage==0,"Checkpoint roundtrip preserves start state");
+            var opened=new System.Threading.ManualResetEvent(false);
+            var locker=new System.Threading.Thread(()=>{using(var handle=new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.None)){opened.Set();System.Threading.Thread.Sleep(55);}});
+            locker.Start();opened.WaitOne();var retryState=valid.Copy();retryState.assist=true;
+            bool retried=ContestCheckpointStore.TryWrite(path,retryState,out _);locker.Join();opened.Dispose();
+            Check(retried && ContestCheckpointStore.TryRead(path,out var retriedState,out _) && retriedState.assist,"Checkpoint survives a transient exclusive file lock");
+            bool rejected;
+            using(var handle=new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.None))rejected=!ContestCheckpointStore.TryWrite(path,valid,out _);
+            Check(rejected && ContestCheckpointStore.TryRead(path,out var retainedState,out _) && retainedState.assist,"Persistent checkpoint lock preserves previous saved state");
             File.WriteAllText(path,"{broken json");Check(!ContestCheckpointStore.TryRead(path,out _,out _),"Corrupt checkpoint is rejected safely");
             Check(!ContestCheckpointStore.TryWrite(path,new ContestStoryState{stage=7},out _),"Inconsistent completion cannot overwrite checkpoint");
         }
@@ -252,9 +272,10 @@ namespace ArcaneArchive.Visuals.Editor
         }
         static void Finish()
         {
-            finished=true;Keys();Write(true);Cleanup();SessionState.SetBool(Flag,false);EditorApplication.isPlaying=false;
+            finished=true;Keys();Write(true);Cleanup();SessionState.SetBool(Flag,false);
             if(SessionState.GetBool(Flag+".BuildAfter",false))EditorApplication.update+=BuildAfterStop;
             else EditorApplication.delayCall+=()=>EditorApplication.Exit(0);
+            EditorApplication.isPlaying=false;
         }
         static void BuildAfterStop()
         {
@@ -267,10 +288,12 @@ namespace ArcaneArchive.Visuals.Editor
         {
             if(finished)return;finished=true;failure=ex.ToString();Debug.LogError("[ContestTest] "+failure);
             try{Capture("FAILURE");Write(false);}catch(Exception){}
-            Cleanup();SessionState.SetBool(Flag,false);EditorApplication.isPlaying=false;EditorApplication.delayCall+=()=>EditorApplication.Exit(1);
+            Cleanup();SessionState.SetBool(Flag,false);EditorApplication.delayCall+=()=>EditorApplication.Exit(1);EditorApplication.isPlaying=false;
         }
         static void Cleanup()
         {
+            if(originalInputSettings){InputSystem.settings=originalInputSettings;Object.DestroyImmediate(testInputSettings);}
+            Application.runInBackground=SessionState.GetBool(Flag+".background",false);
             InputSystem.onBeforeUpdate-=Feed;InputSystem.onAfterUpdate-=MakeCurrent;Application.logMessageReceived-=Log;
             videoTimes?.Dispose();videoTimes=null;
             if(keyboard!=null&&keyboard.added)InputSystem.RemoveDevice(keyboard);if(mouse!=null&&mouse.added)InputSystem.RemoveDevice(mouse);

@@ -60,10 +60,20 @@ namespace ArcaneArchive.Contest
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
                 File.WriteAllText(temporary,JsonUtility.ToJson(state,true));
-                if(File.Exists(path))File.Replace(temporary,path,null);else File.Move(temporary,path);
+                // Indexers and antivirus can briefly hold a Windows checkpoint handle.
+                // Retry the atomic operation; never delete the previous checkpoint as a fallback.
+                for(int attempt=0;;attempt++)
+                {
+                    try
+                    {
+                        if(File.Exists(path))File.Replace(temporary,path,null);else File.Move(temporary,path);
+                        break;
+                    }
+                    catch(IOException) when(attempt<4){System.Threading.Thread.Sleep(10<<attempt);}
+                }
                 return true;
             }
-            catch(Exception ex){message="检查点保存失败，可继续本次游戏。";Debug.LogWarning("[Contest] Checkpoint write: "+ex.GetType().Name);return false;}
+            catch(Exception ex){message="检查点保存失败，可继续本次游戏。";Debug.LogWarning("[Contest] Checkpoint write: "+ex.GetType().Name+" (0x"+ex.HResult.ToString("X8")+") "+ex.Message);return false;}
             finally{try{if(File.Exists(temporary))File.Delete(temporary);}catch(IOException){}catch(UnauthorizedAccessException){}}
         }
     }

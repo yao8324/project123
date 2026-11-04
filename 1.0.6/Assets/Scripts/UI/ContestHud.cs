@@ -11,13 +11,15 @@ namespace ArcaneArchive.Contest
     {
         ContestStoryGame game;
         Font font;
-        RectTransform root,modal,world,cinematic,memory,powerRoot;
+        RectTransform root,modal,world,cinematic,memory,powerRoot,endingCinema;
+        Text endingSpeaker,endingSubtitle;
+        Button endingSkip;
         Image fadeImage,strengthFill,safeFill,progressFill;
         Text objective,hint,notice,cinematicText,powerLabel,powerHint;
         readonly Dictionary<string,Button> buttons=new Dictionary<string,Button>();
         readonly Dictionary<string,Text> bindingLabels=new Dictionary<string,Text>();
         readonly Color paper=new Color(.94f,.89f,.78f),gold=new Color(.71f,.57f,.33f),ink=new Color(.055f,.065f,.065f,.96f),muted=new Color(.64f,.66f,.61f);
-        public Button FindButton(string id)=>buttons.TryGetValue(id,out var b)?b:null;
+        public Button FindButton(string id)=>id=="EndingSkip"?endingSkip:buttons.TryGetValue(id,out var b)?b:null;
         public void Initialize(ContestStoryGame owner,Font face)
         {
             game=owner;font=face;
@@ -59,6 +61,17 @@ namespace ArcaneArchive.Contest
             Label(memory,"封  印  深  处",new Vector2(0,33),new Vector2(500,70),29,gold);
             Label(memory,"这一次，记忆来自我自己。",new Vector2(0,-155),new Vector2(820,45),22,paper);
             memory.gameObject.SetActive(false);
+            endingCinema=Rect("EndingCinema",root,Vector2.zero,Vector2.zero);Stretch(endingCinema);
+            var top=Panel("LetterboxTop",endingCinema,Vector2.zero,new Vector2(0,68),Color.black);
+            top.anchorMin=new Vector2(0,1);top.anchorMax=Vector2.one;top.pivot=new Vector2(.5f,1);
+            var bottom=Panel("LetterboxBottom",endingCinema,Vector2.zero,new Vector2(0,145),Color.black);
+            bottom.anchorMin=Vector2.zero;bottom.anchorMax=new Vector2(1,0);bottom.pivot=new Vector2(.5f,0);
+            endingSpeaker=Label(endingCinema,"",new Vector2(0,-230),new Vector2(980,26),16,gold);
+            endingSubtitle=Label(endingCinema,"",new Vector2(0,-267),new Vector2(1100,62),24,paper);
+            Label(endingCinema,"终境守藏院  /  遗赠",new Vector2(-385,326),new Vector2(430,25),14,gold,TextAnchor.MiddleLeft);
+            Label(endingCinema,"Esc  暂停",new Vector2(-493,-329),new Vector2(210,25),14,muted,TextAnchor.MiddleLeft);
+            endingSkip=Button(endingCinema,"EndingSkip","跳过动画",new Vector2(500,-327),()=>game.EndingCutscene.Skip(),new Vector2(190,34));
+            endingCinema.gameObject.SetActive(false);
             modal=Rect("ModalRoot",root,Vector2.zero,Vector2.zero);Stretch(modal);
             fadeImage=Panel("Fade",root,Vector2.zero,Vector2.zero,Color.black).GetComponent<Image>();Stretch(fadeImage.rectTransform);fadeImage.raycastTarget=false;Fade(0);
         }
@@ -84,6 +97,7 @@ namespace ArcaneArchive.Contest
         }
         void Clear()
         {
+            endingCinema.gameObject.SetActive(false);
             buttons.Clear();bindingLabels.Clear();
             for(int i=modal.childCount-1;i>=0;i--){var child=modal.GetChild(i).gameObject;child.SetActive(false);Destroy(child);}
             modal.gameObject.SetActive(true);cinematic.gameObject.SetActive(false);
@@ -140,6 +154,8 @@ namespace ArcaneArchive.Contest
             Button(p,"DialogueNext","继续  /  Space",new Vector2(390,-78),next,new Vector2(250,42));
         }
         public void Cinematic(string text,bool active){cinematicText.text=text;cinematic.gameObject.SetActive(active);cinematic.SetAsLastSibling();fadeImage.rectTransform.SetAsLastSibling();}
+        public void EndingCinema(bool active,string speaker,string text)
+        {endingCinema.gameObject.SetActive(active);endingSpeaker.text=speaker;endingSubtitle.text=text;}
         public void ResumeCinematic(){cinematic.gameObject.SetActive(!string.IsNullOrEmpty(cinematicText.text));}
         public void Memory(bool visible){memory.gameObject.SetActive(visible);if(visible){memory.SetAsLastSibling();cinematic.SetAsLastSibling();modal.SetAsLastSibling();fadeImage.rectTransform.SetAsLastSibling();}}
         public void Fade(float opacity){var c=fadeImage.color;c.a=opacity;fadeImage.color=c;}
@@ -183,7 +199,9 @@ namespace ArcaneArchive.Contest
         public void Ending()
         {
             var p=Backdrop("我是怪物","本批遗赠已安全转移",820,550);
-            Label(p,"你已经知道自己是谁。\n\n这一次，你约束了力量，\n让别人的记忆留了下来。\n\n远处，撤离的脚步仍在继续。",new Vector2(0,25),new Vector2(720,240),26,paper);
+            Label(p,"你已经知道自己是谁。\n这一次，你约束了力量，\n让别人的记忆留了下来。\n远处，撤离的脚步仍在继续。",new Vector2(0,25),new Vector2(720,240),26,paper);
+            Button(p,"ReplayEnding","重看结尾",new Vector2(-155,-130),game.ReplayEnding,new Vector2(280,38));
+            Button(p,"EndingCredits","制作与素材鸣谢",new Vector2(155,-130),game.ShowCredits,new Vector2(280,38));
             Button(p,"Restart","重新开始",new Vector2(-210,-185),()=>game.NewGame(),new Vector2(200,46));
             Button(p,"MainMenu","返回主菜单",new Vector2(0,-185),game.ShowMainMenu,new Vector2(200,46));
             Button(p,"Quit","退出游戏",new Vector2(210,-185),game.RequestExit,new Vector2(200,46));

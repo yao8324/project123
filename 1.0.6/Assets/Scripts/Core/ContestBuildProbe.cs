@@ -88,6 +88,7 @@ namespace ArcaneArchive.Contest
             }
             held=Array.Empty<Key>();Assert(game.State.pulses==3,"Built normal power challenge completes three pulses");yield return Shot("03_rescue");
             Place(new Vector3(5.5f,.08f,9.85f));yield return Wait(.3f);yield return Interact("REVEAL_CORD");Place(new Vector3(5,.08f,2.5f));yield return Wait(.3f);yield return Interact("ARCHIVE_TRANSFER_CASE");yield return Dialogue();
+            yield return Until(()=>game.Mode==ContestStoryGame.ScreenMode.Ending,"Ending Timeline completes",40);
             Assert(game.Mode==ContestStoryGame.ScreenMode.Ending,"Actual executable reaches ending");Assert(ContestCheckpointStore.TryRead(game.SavePath,out var saved,out _) && saved.stage==7,"Actual executable saved completion");yield return Shot("04_ending");
             Click("MainMenu");yield return Wait(.3f);Click("Continue");yield return Wait(.3f);Assert(game.Mode==ContestStoryGame.ScreenMode.Ending,"Actual executable resumes completed checkpoint");
             Click("Quit");yield return Wait(.3f);Click("ConfirmNo");yield return Wait(.3f);Assert(game.Mode==ContestStoryGame.ScreenMode.Ending,"Cancel exit restores ending instead of restarting gameplay");Done(true,"");

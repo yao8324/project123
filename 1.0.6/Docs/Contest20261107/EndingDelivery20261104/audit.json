@@ -1,0 +1,20 @@
+{
+  "ProgramBase": "b984c5db4077451c66df4da7d3f0a541ecf896ef",
+  "ArtRuntimeSource": "0253ec7f0d733e834fefb7a5719341dd7633574d",
+  "DependencyCommit": "b33d6d0dce6a06d3e3b168e8b6b8b214fc5aaad5",
+  "Unity": "6000.3.25f1",
+  "EndingChecks": 51,
+  "StoryChecks": 170,
+  "CompileErrors": 0,
+  "RuntimeErrors": 0,
+  "KnownEditorSearchExceptions": 1,
+  "ExpectedExclusiveLockWarnings": 1,
+  "VideoDecodedCompletely": true,
+  "VideoFrames": 780,
+  "VideoFps": 30,
+  "IsolatedTestCheckpoint": "Logs/Ending20261104/ending-acceptance-checkpoint.json",
+  "StandaloneBuildPerformed": false,
+  "PhysicalAudioListeningVerified": false,
+  "FinalEndingCompileErrors": 0,
+  "NormalPlayerCheckpointUnchanged": true
+}
