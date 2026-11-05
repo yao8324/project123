@@ -1,0 +1,1441 @@
+{
+    "scope": "Unity Play Mode; real FirstPersonController driven by synthetic InputSystem devices. Fixed 1/60 simulated delta; not FPS or human-input acceptance. Desktop cursor untouched.",
+    "total": 61,
+    "failed": 1,
+    "errors": 0,
+    "exceptions": 0,
+    "completed": true,
+    "results": [
+        {
+            "id": "front_cross_z1_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.0,
+                "y": 6.079999923706055,
+                "z": 1.0
+            },
+            "end": {
+                "x": 9.766661643981934,
+                "y": 6.074999809265137,
+                "z": 1.0
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.76666259765625,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_cross_z1_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 1.0
+            },
+            "end": {
+                "x": -9.766661643981934,
+                "y": 6.074999809265137,
+                "z": 1.0
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.76666259765625,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_cross_z3_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.0,
+                "y": 6.079999923706055,
+                "z": 3.0
+            },
+            "end": {
+                "x": 9.766661643981934,
+                "y": 6.074999809265137,
+                "z": 3.0
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.76666259765625,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_cross_z3_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 3.0
+            },
+            "end": {
+                "x": -9.766661643981934,
+                "y": 6.074999809265137,
+                "z": 3.0
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.76666259765625,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_cross_z5.3_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.0,
+                "y": 6.079999923706055,
+                "z": 5.300000190734863
+            },
+            "end": {
+                "x": 9.766661643981934,
+                "y": 6.074999809265137,
+                "z": 5.300000190734863
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.76666259765625,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Structure_IV4_Interior_AgedLimestone_211",
+                "Structure_IV4_Interior_AgedLimestone_219"
+            ]
+        },
+        {
+            "id": "front_cross_z5.3_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 5.300000190734863
+            },
+            "end": {
+                "x": -9.766661643981934,
+                "y": 6.074999809265137,
+                "z": 5.300000190734863
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.76666259765625,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Structure_IV4_Interior_AgedLimestone_219",
+                "Structure_IV4_Interior_AgedLimestone_211"
+            ]
+        },
+        {
+            "id": "front_cross_z6.4_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.0,
+                "y": 6.079999923706055,
+                "z": 6.400000095367432
+            },
+            "end": {
+                "x": 9.75993824005127,
+                "y": 6.074999809265137,
+                "z": 6.425374984741211
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.75995445251465,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_244",
+                "Structure_IV4_Interior_AgedLimestone_211",
+                "Gallery_V5_Border_Walnut_248",
+                "Structure_IV4_Interior_AgedLimestone_219"
+            ]
+        },
+        {
+            "id": "front_cross_z6.4_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 6.400000095367432
+            },
+            "end": {
+                "x": -9.759940147399903,
+                "y": 6.074999809265137,
+                "z": 6.425374984741211
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.759958267211915,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "Structure_IV4_Interior_AgedLimestone_219",
+                "Structure_IV4_Interior_AgedLimestone_211",
+                "Gallery_V5_Border_Walnut_244"
+            ]
+        },
+        {
+            "id": "front_cross_z8_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.0,
+                "y": 6.079999923706055,
+                "z": 8.0
+            },
+            "end": {
+                "x": 9.766661643981934,
+                "y": 6.074999809265137,
+                "z": 8.0
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.76666259765625,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_244",
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "front_cross_z8_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 8.0
+            },
+            "end": {
+                "x": -9.733320236206055,
+                "y": 6.074999809265137,
+                "z": 8.0
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 19.733320236206056,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "Gallery_V5_Border_Walnut_244"
+            ]
+        },
+        {
+            "id": "front_seam_x-10_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.0,
+                "y": 6.079999923706055,
+                "z": 1.0
+            },
+            "end": {
+                "x": -10.0,
+                "y": 6.074999809265137,
+                "z": 7.766662120819092
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.766664028167725,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Gallery_V5_Border_Walnut_244"
+            ]
+        },
+        {
+            "id": "front_seam_x-10_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.0,
+                "y": 6.079999923706055,
+                "z": 8.0
+            },
+            "end": {
+                "x": -10.0,
+                "y": 6.074999809265137,
+                "z": 1.2000055313110352
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.799996376037598,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_244",
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_seam_x-5_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -5.0,
+                "y": 6.079999923706055,
+                "z": 1.0
+            },
+            "end": {
+                "x": -5.0,
+                "y": 6.074999809265137,
+                "z": 7.766662120819092
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.766664028167725,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "front_seam_x-5_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -5.0,
+                "y": 6.079999923706055,
+                "z": 8.0
+            },
+            "end": {
+                "x": -5.0,
+                "y": 6.074999809265137,
+                "z": 1.2666717767715455
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.733330249786377,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_seam_x0_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 6.079999923706055,
+                "z": 1.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 6.074999809265137,
+                "z": 7.766662120819092
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.766664028167725,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "front_seam_x0_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 6.079999923706055,
+                "z": 8.0
+            },
+            "end": {
+                "x": -1.6545534720080469e-7,
+                "y": 6.074999809265137,
+                "z": 1.2333388328552247
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.766663074493408,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_seam_x5_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 5.0,
+                "y": 6.079999923706055,
+                "z": 1.0
+            },
+            "end": {
+                "x": 5.0,
+                "y": 6.074999809265137,
+                "z": 7.766662120819092
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.766664028167725,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "front_seam_x5_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 5.0,
+                "y": 6.079999923706055,
+                "z": 8.0
+            },
+            "end": {
+                "x": 5.0,
+                "y": 6.074999809265137,
+                "z": 1.2333388328552247
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.766663074493408,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "front_seam_x10_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 1.0
+            },
+            "end": {
+                "x": 10.0,
+                "y": 6.074999809265137,
+                "z": 7.733328819274902
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.733330726623535,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "front_seam_x10_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 8.0
+            },
+            "end": {
+                "x": 10.0,
+                "y": 6.074999809265137,
+                "z": 1.2333388328552247
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.766663074493408,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "GlassFloor_Review_V5_Border_Walnut_906"
+            ]
+        },
+        {
+            "id": "gallery_-1_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -9.199999809265137,
+                "y": 6.079999923706055,
+                "z": 10.0
+            },
+            "end": {
+                "x": -9.199999809265137,
+                "y": 6.074999809265137,
+                "z": 39.76664352416992
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 29.766643524169923,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_244",
+                "Gallery_V5_Border_Walnut_245",
+                "Gallery_V5_Border_Walnut_246",
+                "Gallery_V5_Border_Walnut_247"
+            ]
+        },
+        {
+            "id": "gallery_-1_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -9.199999809265137,
+                "y": 6.079999923706055,
+                "z": 40.0
+            },
+            "end": {
+                "x": -9.199999809265137,
+                "y": 6.074999809265137,
+                "z": 10.23335075378418
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 29.76664924621582,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_247",
+                "Gallery_V5_Border_Walnut_246",
+                "Gallery_V5_Border_Walnut_245",
+                "Gallery_V5_Border_Walnut_244"
+            ]
+        },
+        {
+            "id": "stair_connection_-1_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -10.600000381469727,
+                "y": 6.079999923706055,
+                "z": 12.699999809265137
+            },
+            "end": {
+                "x": -15.166667938232422,
+                "y": 6.074999809265137,
+                "z": 12.699999809265137
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 4.5666704177856449,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_245",
+                "Walkability_Collision_V1_IV4_Amber_Glass_902"
+            ]
+        },
+        {
+            "id": "stair_connection_-1_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -15.4399995803833,
+                "y": 6.079999923706055,
+                "z": 12.699999809265137
+            },
+            "end": {
+                "x": -10.873332023620606,
+                "y": 6.074999809265137,
+                "z": 12.699999809265137
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 4.5666704177856449,
+            "contacts": [
+                "Walkability_Collision_V1_IV4_Amber_Glass_902",
+                "Gallery_V5_Border_Walnut_245"
+            ]
+        },
+        {
+            "id": "upper_stair_-1_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -15.4399995803833,
+                "y": 3.0799999237060549,
+                "z": 19.5
+            },
+            "end": {
+                "x": -15.4399995803833,
+                "y": 6.0655293464660648,
+                "z": 13.972206115722657
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.282506942749023,
+            "contacts": [
+                "Walkability_Collision_V1_IV4_Amber_Glass_902"
+            ]
+        },
+        {
+            "id": "upper_stair_-1_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -15.4399995803833,
+                "y": 6.079999923706055,
+                "z": 13.699999809265137
+            },
+            "end": {
+                "x": -15.4399995803833,
+                "y": 3.2868409156799318,
+                "z": 19.266687393188478
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.228141784667969,
+            "contacts": [
+                "Walkability_Collision_V1_IV4_Amber_Glass_902"
+            ]
+        },
+        {
+            "id": "gallery_1_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 9.199999809265137,
+                "y": 6.079999923706055,
+                "z": 10.0
+            },
+            "end": {
+                "x": 9.199999809265137,
+                "y": 6.074999809265137,
+                "z": 39.76664352416992
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 29.766643524169923,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "Gallery_V5_Border_Walnut_249",
+                "Gallery_V5_Border_Walnut_250",
+                "Gallery_V5_Border_Walnut_251"
+            ]
+        },
+        {
+            "id": "gallery_1_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 9.199999809265137,
+                "y": 6.079999923706055,
+                "z": 40.0
+            },
+            "end": {
+                "x": 9.199999809265137,
+                "y": 6.074999809265137,
+                "z": 10.23335075378418
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 29.76664924621582,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_251",
+                "Gallery_V5_Border_Walnut_250",
+                "Gallery_V5_Border_Walnut_249",
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "stair_connection_1_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.600000381469727,
+                "y": 6.079999923706055,
+                "z": 12.699999809265137
+            },
+            "end": {
+                "x": 15.166667938232422,
+                "y": 6.074999809265137,
+                "z": 12.699999809265137
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 4.5666704177856449,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_249",
+                "Walkability_Collision_V1_IV4_Amber_Glass_902"
+            ]
+        },
+        {
+            "id": "stair_connection_1_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 15.4399995803833,
+                "y": 6.079999923706055,
+                "z": 12.699999809265137
+            },
+            "end": {
+                "x": 10.873332023620606,
+                "y": 6.074999809265137,
+                "z": 12.699999809265137
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 4.5666704177856449,
+            "contacts": [
+                "Walkability_Collision_V1_IV4_Amber_Glass_902",
+                "Gallery_V5_Border_Walnut_249"
+            ]
+        },
+        {
+            "id": "upper_stair_1_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 15.4399995803833,
+                "y": 3.0799999237060549,
+                "z": 19.5
+            },
+            "end": {
+                "x": 15.4399995803833,
+                "y": 6.0655293464660648,
+                "z": 13.972206115722657
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.282506942749023,
+            "contacts": [
+                "Walkability_Collision_V1_IV4_Amber_Glass_902"
+            ]
+        },
+        {
+            "id": "upper_stair_1_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 15.4399995803833,
+                "y": 6.079999923706055,
+                "z": 13.699999809265137
+            },
+            "end": {
+                "x": 15.4399995803833,
+                "y": 3.2868409156799318,
+                "z": 19.266687393188478
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 6.228141784667969,
+            "contacts": [
+                "Walkability_Collision_V1_IV4_Amber_Glass_902"
+            ]
+        },
+        {
+            "id": "apse_joint_0",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 10.0,
+                "y": 6.079999923706055,
+                "z": 42.0
+            },
+            "end": {
+                "x": 9.6954345703125,
+                "y": 6.074999809265137,
+                "z": 44.31340408325195
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.333371639251709,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_251",
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_1",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 9.659257888793946,
+                "y": 6.079999923706055,
+                "z": 44.588191986083987
+            },
+            "end": {
+                "x": 8.766327857971192,
+                "y": 6.074999809265137,
+                "z": 46.74391555786133
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.333343744277954,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_2",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 8.66025447845459,
+                "y": 6.079999923706055,
+                "z": 47.0
+            },
+            "end": {
+                "x": 7.239799976348877,
+                "y": 6.074999809265137,
+                "z": 48.85117721557617
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.3333609104156496,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_3",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 7.071067810058594,
+                "y": 6.079999923706055,
+                "z": 49.071067810058597
+            },
+            "end": {
+                "x": 5.219902515411377,
+                "y": 6.074999809265137,
+                "z": 50.49152755737305
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.3333547115325929,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_4",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 5.0,
+                "y": 6.079999923706055,
+                "z": 50.660255432128909
+            },
+            "end": {
+                "x": 2.844273328781128,
+                "y": 6.074999809265137,
+                "z": 51.553192138671878
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.3333492279052736,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_5",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 2.5881905555725099,
+                "y": 6.079999923706055,
+                "z": 51.65925979614258
+            },
+            "end": {
+                "x": 0.2748211622238159,
+                "y": 6.074999809265137,
+                "z": 51.96381378173828
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.3333356380462648,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_6",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 6.123233998228043e-16,
+                "y": 6.079999923706055,
+                "z": 52.0
+            },
+            "end": {
+                "x": -2.3133692741394045,
+                "y": 6.074999809265137,
+                "z": 51.6954460144043
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.3333356380462648,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_7",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -2.5881905555725099,
+                "y": 6.079999923706055,
+                "z": 51.65925979614258
+            },
+            "end": {
+                "x": -4.743916034698486,
+                "y": 6.074999809265137,
+                "z": 50.76632308959961
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.333348035812378,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_8",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -5.0,
+                "y": 6.079999923706055,
+                "z": 50.660255432128909
+            },
+            "end": {
+                "x": -6.851165294647217,
+                "y": 6.074999809265137,
+                "z": 49.23979568481445
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.3333547115325929,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_9",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -7.071067810058594,
+                "y": 6.079999923706055,
+                "z": 49.071067810058597
+            },
+            "end": {
+                "x": -8.4915189743042,
+                "y": 6.074999809265137,
+                "z": 47.21989059448242
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.3333587646484377,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_10",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -8.66025447845459,
+                "y": 6.079999923706055,
+                "z": 47.0
+            },
+            "end": {
+                "x": -9.553184509277344,
+                "y": 6.074999809265137,
+                "z": 44.844276428222659
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.333343744277954,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "apse_joint_11",
+            "kind": "floor_route",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -9.659257888793946,
+                "y": 6.079999923706055,
+                "z": 44.588191986083987
+            },
+            "end": {
+                "x": -9.963823318481446,
+                "y": 6.074999809265137,
+                "z": 42.27478790283203
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 2.333371639251709,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248"
+            ]
+        },
+        {
+            "id": "front_edge",
+            "kind": "window",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 6.079999923706055,
+                "z": 0.8500000238418579
+            },
+            "end": {
+                "x": -1.399999737739563,
+                "y": 6.074999809265137,
+                "z": 1.6955326795578004
+            },
+            "minInside": 0.2955319881439209,
+            "maxPenetration": 0.0,
+            "retreatDistance": 1.4000005722045899,
+            "forwardDistance": 0.0,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Structure_MAT_V2_Candoglia_Masonry_236",
+                "V3_ReferenceExterior_MAT_V2_Candoglia_Masonry_481"
+            ]
+        },
+        {
+            "id": "west_edge",
+            "kind": "window",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -11.100000381469727,
+                "y": 6.079999923706055,
+                "z": 3.0
+            },
+            "end": {
+                "x": -10.25446891784668,
+                "y": 6.074999809265137,
+                "z": 4.399999141693115
+            },
+            "minInside": 0.3455324172973633,
+            "maxPenetration": 0.0,
+            "retreatDistance": 1.4470064640045167,
+            "forwardDistance": 0.0,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Structure_MAT_V2_Ivory_Carving_212",
+                "V3_ReferenceExterior_V3_FiguralPaintedGlass_546"
+            ]
+        },
+        {
+            "id": "east_edge",
+            "kind": "window",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 11.100000381469727,
+                "y": 6.079999923706055,
+                "z": 3.0
+            },
+            "end": {
+                "x": 10.254477500915528,
+                "y": 6.074999809265137,
+                "z": 1.5999916791915894
+            },
+            "minInside": 0.3455238342285156,
+            "maxPenetration": 0.0,
+            "retreatDistance": 1.4470080137252808,
+            "forwardDistance": 0.0,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Structure_MAT_V2_Ivory_Carving_220",
+                "V3_ReferenceExterior_V3_FiguralPaintedGlass_550"
+            ]
+        },
+        {
+            "id": "atrium_edge",
+            "kind": "window",
+            "pass": false,
+            "failures": [
+                "Entered window/wall recess beyond safe inner plane."
+            ],
+            "start": {
+                "x": 0.0,
+                "y": 6.079999923706055,
+                "z": 8.100000381469727
+            },
+            "end": {
+                "x": 1.4000006914138795,
+                "y": 0.07499992847442627,
+                "z": 16.706233978271486
+            },
+            "minInside": -9.106252670288086,
+            "maxPenetration": 0.0,
+            "retreatDistance": 1.4000186920166016,
+            "forwardDistance": 0.0,
+            "contacts": [
+                "Gallery_V5_Border_Walnut_248",
+                "Walkability_Collision_V1_IV4_Amber_Glass_903",
+                "Structure_MAT_Warm_Marble_203",
+                "Structure_MAT_Warm_Marble_207"
+            ]
+        },
+        {
+            "id": "GF21_FiguralGlazing_new_floor6",
+            "kind": "window",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -11.029999732971192,
+                "y": 6.079999923706055,
+                "z": 3.0
+            },
+            "end": {
+                "x": -10.254477500915528,
+                "y": 6.074999809265137,
+                "z": 4.400012016296387
+            },
+            "minInside": 0.7255239486694336,
+            "maxPenetration": 0.0,
+            "retreatDistance": 1.4470080137252808,
+            "forwardDistance": 0.0,
+            "contacts": [
+                "GlassFloor_Review_V5_Border_Walnut_906",
+                "Structure_MAT_V2_Ivory_Carving_212",
+                "V3_ReferenceExterior_V3_FiguralPaintedGlass_546"
+            ]
+        },
+        {
+            "id": "recovery_window_gap",
+            "kind": "ui_pointer",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": -12.449999809265137,
+                "y": 6.079999923706055,
+                "z": 21.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 8.799999237060547
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "recovery_stairs",
+            "kind": "ui_pointer",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 13.4399995803833,
+                "y": 1.600000023841858,
+                "z": 16.799999237060548
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 8.799999237060547
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "recovery_jump",
+            "kind": "ui_pointer",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.07999999821186066,
+                "z": 7.800000190734863
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 8.799999237060547
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "recovery_crouch",
+            "kind": "ui_pointer",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.07999999821186066,
+                "z": 7.800000190734863
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 8.799999237060547
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "recovery_held_jump",
+            "kind": "ui_pointer",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.07999999821186066,
+                "z": 7.800000190734863
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 8.799999237060547
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "hand_Idle",
+            "kind": "real_controller_animation",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 7.800000190734863
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "hand_Walk",
+            "kind": "real_controller_animation",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 9.79999828338623
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "hand_Sprint",
+            "kind": "real_controller_animation",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07500000298023224,
+                "z": 12.800009727478028
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "hand_Jump",
+            "kind": "real_controller_animation",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 1.0749999284744263,
+                "z": 12.800009727478028
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "hand_Land",
+            "kind": "real_controller_animation",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07499998807907105,
+                "z": 12.800009727478028
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "hand_Crouch",
+            "kind": "real_controller_animation",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "end": {
+                "x": 0.0,
+                "y": 0.07499992847442627,
+                "z": 12.800009727478028
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        },
+        {
+            "id": "hand_NearWall",
+            "kind": "real_controller_animation",
+            "pass": true,
+            "failures": [],
+            "start": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "end": {
+                "x": -11.496665954589844,
+                "y": 6.074999809265137,
+                "z": 21.0
+            },
+            "minInside": 0.0,
+            "maxPenetration": 0.0,
+            "retreatDistance": 0.0,
+            "forwardDistance": 0.0,
+            "contacts": []
+        }
+    ]
+}

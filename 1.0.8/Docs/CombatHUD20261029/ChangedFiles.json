@@ -1,0 +1,257 @@
+[
+  {
+    "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset",
+    "change": "modified",
+    "sha256": "194CCE40510F3AB46ED8DDB4167E3B1B33C8A46DC9277351BDE9F34E8D0D09E9"
+  },
+  {
+    "path": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+    "change": "modified",
+    "sha256": "7FF7CC730AADD3E46B8C0B00E2FE2829F062395DB8055D4FBC96EEE7D5652516"
+  },
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs",
+    "change": "modified",
+    "sha256": "C13C2E9A5CC36A15CBC4838B1FCFBC8AD9C081BCA6C30AC55045CA147BFF8ACD"
+  },
+  {
+    "path": "Assets/Scripts/Player/SwordShieldView.cs",
+    "change": "modified",
+    "sha256": "98395C64047F47DF6F3594D6BD8146D91CFA1968545D0376DBE5BC79E01EDB5B"
+  },
+  {
+    "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+    "change": "modified",
+    "sha256": "13414EDD8533D2AE354D7723F6D84437B619DF4755EF19FCB88DCBC2333D4763"
+  },
+  {
+    "path": "Assets/Scripts/UI/SkillCooldownBadge.cs",
+    "change": "added",
+    "sha256": "E38550477D11BD4EBF172411F30A718966FE6E6EE2311C74217FB035A963831F"
+  },
+  {
+    "path": "Assets/Scripts/UI/SkillCooldownBadge.cs.meta",
+    "change": "added",
+    "sha256": "4D92966203981BBDA756F810642F3BF97C46BA78E4A9A5592766C318953CC353"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/MeleeSkillIconBuilder.cs",
+    "change": "added",
+    "sha256": "346A6060359726A8DDD6F0C2500AF592D6640C190E0CD76FD013A0E463C27202"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/MeleeSkillIconBuilder.cs.meta",
+    "change": "added",
+    "sha256": "8353425443A1A9C28ECF6D20D460CB870233F83B87704A9CB66D8EC87B2BB2F3"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills.meta",
+    "change": "added",
+    "sha256": "4804FD98F8F27C4D903382F089F15723165A7731A79D37B5EE34680E5F9634EB"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/01_Oathbreaker_Gray.png",
+    "change": "added",
+    "sha256": "792477AC72DCE108E957CA3A5330E6F81E74B114B15D7C28B22F45870EA94CED"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/01_Oathbreaker_Gray.png.meta",
+    "change": "added",
+    "sha256": "733CA2C449AD630E19B839B4C684EE5430AA9DC966F1E102AD725F9D86D21D26"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/01_Oathbreaker.png",
+    "change": "added",
+    "sha256": "55C8550EA39AB471BC40DDDF1779E64B2FE8FFCBE0FE1C1DA2DBD6CAC344E457"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/01_Oathbreaker.png.meta",
+    "change": "added",
+    "sha256": "183711872DA3A2A8410A1A0F41B65C21199C1DBF4266DB025E71076E03E9E99C"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/02_VeiledGuard_Gray.png",
+    "change": "added",
+    "sha256": "4D669618CADF8303AFC048FA043E0C182536C292E73F34692E5D95CF5C2620E9"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/02_VeiledGuard_Gray.png.meta",
+    "change": "added",
+    "sha256": "3074FEEDD58CC2C4082368E750D824162056C3151FF6DE2F283902EB4F366F8A"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/02_VeiledGuard.png",
+    "change": "added",
+    "sha256": "96E22315C1639BDB96D672D749B79C5984D2DE9531007B05265C18A7C84797ED"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/02_VeiledGuard.png.meta",
+    "change": "added",
+    "sha256": "B6ABEF07B8A6A5292B88DAE3AF47171681924E7EA1F25729F1CAC633636128D3"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/03_ShadowThrust_Gray.png",
+    "change": "added",
+    "sha256": "6E90BC2F5A8B62F1EB0F6B521342773176A2DF4B57C7BD45D629096FF9283ABD"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/03_ShadowThrust_Gray.png.meta",
+    "change": "added",
+    "sha256": "AC5F8777DEB34569B7C35E1DDAD2F78BFCC99F40D7FCFA8F6FB437959FFE9EB8"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/03_ShadowThrust.png",
+    "change": "added",
+    "sha256": "67F510F612925C6B2F79C870B90967743214EB1DE7D03CC41FE9785DE8474082"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/03_ShadowThrust.png.meta",
+    "change": "added",
+    "sha256": "86A68BF96B0C39C39CEB333A1BFBC6CA89ECD535D1FCB8BBEA11AE6FB6189F54"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/04_SealOrbit_Gray.png",
+    "change": "added",
+    "sha256": "05A8932B73EB4ABBE78CCCA4FA61B39EAE7310C4F7FE9ED12DC5F01D1EAF6D01"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/04_SealOrbit_Gray.png.meta",
+    "change": "added",
+    "sha256": "B0BC33BB05F62F4CBD76523E408671DF5F730F665C5C68AA57D35F643DB0D2F1"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/04_SealOrbit.png",
+    "change": "added",
+    "sha256": "4DD4D7531536C0626AF4DFFFD1CBFF4364AC82F4628C286044F4A2942F90C9D1"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/04_SealOrbit.png.meta",
+    "change": "added",
+    "sha256": "05CE12FCC46A982B66D5B6F5A13CD7DDCE00B357795BFA62577F591E933D9476"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/CooldownRing.png",
+    "change": "added",
+    "sha256": "33D24A9E10C30A75DF39178B13F9BD7224A1CE8E31265CD45D8C15A5FE06E09F"
+  },
+  {
+    "path": "Assets/UI/MeleeSkills/CooldownRing.png.meta",
+    "change": "added",
+    "sha256": "E96F25C10C28F75F25D6DAA50B9E28494AC117F03B0D08E59B486F523536AFDD"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "change": "modified",
+    "sha256": "680A9D74A8F9D3655BCFECB4ED59DC0B8B15F0BDB98E6E312C388B82D338335B"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Before/Assets__Art__PlayerSwordShield__OathboundLoadout.asset.txt",
+    "change": "added",
+    "sha256": "45EC90F39EF8D5CEF3FD57BA4E0DDF99CF63AE7D95F59FD3FECE1C639B66A1FE"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Before/Assets__Scenes__MilanLibrary_Magic_V6.unity.txt",
+    "change": "added",
+    "sha256": "A8636FED616C40D8674D119D019BB941C3CFCCCA2D503F94B85E60DDAD8BD70E"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Before/Assets__Scripts__Core__MeleeLoadout.cs.txt",
+    "change": "added",
+    "sha256": "3D07DFD28E16691B46932C7F085F6AE9FBCD689148E34B6BFC19AAD49FAB5ABA"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Before/Assets__Scripts__Player__SwordShieldView.cs.txt",
+    "change": "added",
+    "sha256": "DFFCE4E9AD68FEDCC6C9E1838920EE1CADD2F2473A8053E61ABF6E1F1D0985B6"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Before/Assets__Scripts__UI__BossCombatHUD.cs.txt",
+    "change": "added",
+    "sha256": "8DFFFB3DDCE03861A9E3186641368199A684B89EAEF4FC892247BF8387A8C795"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Before/CHANGELOG.md.txt",
+    "change": "added",
+    "sha256": "3F6709712FB9FCC521DF17E358EFC95C12C545465E76A95D5BB0BEB7617B71D8"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Before/README.md.txt",
+    "change": "added",
+    "sha256": "2526A99F1FC1AC4221FD88F4C0DEB7CE6C523888BC30E5C318C4208CEFFE7B41"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/BeforeHashes.json",
+    "change": "added",
+    "sha256": "50EECDD5E501F9BBA2358E7C222C6CD8D0308E4453273137387E61722DB0CCC4"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Captures/02_ReadyHUD.png",
+    "change": "added",
+    "sha256": "C9446A716D99E4B7ED7CCC62FAC47A929A122184E415B3C0AD39C54B539ADD6C"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Captures/03_CloseGuard.png",
+    "change": "added",
+    "sha256": "2C58FC7B49D317A194AE74F793EF79F20531277A9C2CB120AA6F2D6BD1742F72"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/Captures/05_FinalCooldown.png",
+    "change": "added",
+    "sha256": "DB0CE9D9D6CB53E155249B57748FEF775340C7184859C40E8FB3E32BBDE14870"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/DisplayCheck.json",
+    "change": "added",
+    "sha256": "6E640ACF5D8F67D7FBBF5B33EE1E35C9AD3CDF5842C7FDADBAFC71616392B339"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/FinalState.json",
+    "change": "added",
+    "sha256": "8D005D000D49DF8F8CE61A4C92833FF2CB5AD012554FDF688FB60DAD36CE02C2"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/IconSources/01_Oathbreaker.svg",
+    "change": "added",
+    "sha256": "158BF830D2FF206D35D79B5C2A781F715838BE546A26B64B4F3065B3C02F4C8A"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/IconSources/02_VeiledGuard.svg",
+    "change": "added",
+    "sha256": "C8668F25AB9FF0D6898C90760998B781AD2826F274C05F8E1B85E89BCB46EB82"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/IconSources/03_ShadowThrust.svg",
+    "change": "added",
+    "sha256": "6D9C9832BCF87770B8B17154E8395B67A58E329640EC0BA6DDC6CAAAC667F79A"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/IconSources/04_SealOrbit.svg",
+    "change": "added",
+    "sha256": "16CC56DCBC89CD5B7A852870A1E7D3D1C231EC4BC568D195373105718B85CC5F"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/MinimalChecks.json",
+    "change": "added",
+    "sha256": "D525FBB3758D6BE6B86FE43A1AEC200A2EFA02042FBC3DBD75AE1A89222FBF1D"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/PoseCheck.json",
+    "change": "added",
+    "sha256": "24E231FF36D0EDA4B01CA5FDAF0756ECBBDD14396244F23D461EBF2A07DAF3F3"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/README.md",
+    "change": "added",
+    "sha256": "D03415873C5C9956F5E7450BAE83E667BF50D57EEA1D8007D0930303A4C09C94"
+  },
+  {
+    "path": "Docs/CombatHUD20261029/SkillIcons.png",
+    "change": "added",
+    "sha256": "3BEAA62AF92E43DFD6AFE40615F3F05A8C759A1E85D8EB5B4557027BE69A4629"
+  },
+  {
+    "path": "README.md",
+    "change": "modified",
+    "sha256": "70345C993C040417365297B78A63AC35A9563425C25700FA76937E1FCFA1921E"
+  }
+]

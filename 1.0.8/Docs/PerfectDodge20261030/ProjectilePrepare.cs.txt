@@ -1,0 +1,15 @@
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var p=e.GetComponent<ArcaneArchive.Player.FirstPersonController>();var d=p.Dash;var m=e.GetComponent<ArcaneArchive.Player.PlayerMelee>();var c=e.Combat;var controller=e.GetComponent<CharacterController>();var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();
+var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+System.Action<string,object> set=(n,v)=>e.GetType().GetField(n,flags).SetValue(e,v);
+System.Action<string,object[]> call=(n,a)=>e.GetType().GetMethod(n,flags).Invoke(e,a);
+System.Action<ArcaneArchive.Core.BossEncounter.State> state=s=>call("SetState",new object[]{s});
+System.Action<Vector3> place=position=>{controller.enabled=false;e.transform.SetPositionAndRotation(position,Quaternion.identity);controller.enabled=true;Physics.SyncTransforms();p.GetType().GetField("<IsGrounded>k__BackingField",flags).SetValue(p,true);};
+System.Action reset=()=>{d.Cancel(true);menu.Resume();set("focusLost",false);p.SetGameplayInputEnabled(true);c.ResetCombat(e);call("ClearAttacks",new object[0]);state(ArcaneArchive.Core.BossEncounter.State.Observe);e.Arena.boss.position=new Vector3(160,0,0);e.Arena.boss.rotation=Quaternion.Euler(0,180,0);place(new Vector3(160,.08f,-4.5f));};
+System.Action<float> step=dt=>{d.Tick(dt);CollisionFlags collision;d.Move(out collision);Physics.SyncTransforms();};
+System.Action strike=()=>{set("attack",5);state(ArcaneArchive.Core.BossEncounter.State.Attack);set("stateTime",e.definition.meleeImpact);set("meleeResolved",false);call("TickMeleeStrike",new object[0]);d.ConfirmPerfect();};
+reset();
+var shotType=e.GetType().GetNestedType("Shot",System.Reflection.BindingFlags.NonPublic);var shots=(System.Collections.IList)e.GetType().GetField("shots",flags).GetValue(e);
+var shot=System.Activator.CreateInstance(shotType,true);var page=new GameObject("Temporary perfect dodge page");page.transform.SetParent(e.Arena.effectRoot);page.transform.position=e.transform.position+new Vector3(0,1,.8f);
+shotType.GetField("go").SetValue(shot,page);shotType.GetField("velocity").SetValue(shot,Vector3.back*22);shotType.GetField("enemy").SetValue(shot,true);shotType.GetField("damage").SetValue(shot,10f);shotType.GetField("life").SetValue(shot,2f);shots.Add(shot);
+d.TryStart(Vector2.left);step(.06f);return "Projectile probe prepared; allow one Editor frame to sync CharacterController broadphase.";

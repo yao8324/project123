@@ -1,0 +1,192 @@
+using ArcaneArchive.Core;
+using ArcaneArchive.Visuals;
+using UnityEngine;
+
+namespace ArcaneArchive.Player
+{
+    [DisallowMultipleComponent, RequireComponent(typeof(PlayerCombat))]
+    public sealed class PlayerMelee : MonoBehaviour
+    {
+        public MeleeLoadout loadout;
+        public SwordShieldView view;
+        FirstPersonController player;
+        PlayerCombat combat;
+        BossEncounter encounter;
+        CharacterController capsule;
+        Camera eye;
+        MeleeFeedback feedback;
+        Transform practiceEffects;
+        float age, regenDelay, chainGrace, bufferRemaining, practiceClock, impactPause;
+        readonly float[] cooldowns = new float[4];
+        Vector3 committedDirection;
+        bool hit, whooshPlayed, waitForRelease = true;
+        int combo, bufferedAction = -1;
+        public float Stamina { get; private set; }
+        // The action clock drives damage, pose and blade light together.
+        public int Action { get; private set; } = -1;
+        public int Combo => combo;
+        public bool Busy => Action >= 0;
+        public float ActionAge => age;
+        public float Duration => Action > 0 ? loadout.skills[Action-1].duration : loadout.lightDuration + (combo==2?.12f:0);
+        public float ImpactTime => Action > 0 ? loadout.skills[Action-1].impactTime : loadout.lightImpactTime + (combo==2?.06f:0);
+        public float Progress => Busy ? Mathf.Clamp01(age/Duration) : 0;
+        public bool InHitStop => impactPause > 0;
+        public bool CanGuard => !Busy || (hit && Progress >= .58f);
+        public bool PracticeGuarding { get; private set; }
+        public uint SwingSequence { get; private set; }
+        public uint HitSequence { get; private set; }
+        public float Cooldown(int index) => index>=0 && index<4 ? cooldowns[index] : 0;
+        public float Clock => encounter && encounter.IsActive ? encounter.BattleTime : practiceClock;
+        void Awake()
+        {
+            player=GetComponent<FirstPersonController>(); combat=GetComponent<PlayerCombat>();
+            encounter=GetComponent<BossEncounter>(); capsule=GetComponent<CharacterController>();eye=GetComponentInChildren<Camera>();
+            feedback=GetComponent<MeleeFeedback>();if(!feedback)feedback=gameObject.AddComponent<MeleeFeedback>();
+            ResetCombat();
+        }
+        public void ResetCombat()
+        {
+            Stamina=loadout?loadout.maxStamina:100;Action=-1;age=regenDelay=chainGrace=bufferRemaining=impactPause=0;
+            bufferedAction=-1;hit=whooshPlayed=false;combo=0;waitForRelease=true;PracticeGuarding=false;
+            System.Array.Clear(cooldowns,0,cooldowns.Length);
+            if(view)view.ResetPose();if(feedback)feedback.Clear();
+            if(practiceEffects){Destroy(practiceEffects.gameObject);practiceEffects=null;}
+        }
+        void Update()
+        {
+            if(!loadout || (encounter && encounter.IsActive) || player.SimulationPaused)return;
+            float dt=Mathf.Min(Time.deltaTime,.1f);practiceClock+=dt;Advance(dt);
+            var b=player.Bindings;
+            PracticeGuarding=b!=null && player.GameplayInputEnabled && player.CursorIsLocked && !b.SuppressInputThisFrame && b.AbsorbAction.IsPressed() && CanGuard;
+            if(PracticeGuarding)CancelRecoveryForGuard();ReadInput();
+        }
+        public void SuppressUntilReleased() { waitForRelease=true;bufferedAction=-1;bufferRemaining=0;PracticeGuarding=false; }
+        public void Advance(float dt)
+        {
+            if(!loadout || player.SimulationPaused)return;
+            dt=Mathf.Max(0,dt);
+            for(int i=0;i<4;i++)cooldowns[i]=Mathf.Max(0,cooldowns[i]-dt);
+            regenDelay=Mathf.Max(0,regenDelay-dt);chainGrace=Mathf.Max(0,chainGrace-dt);
+            bufferRemaining=Mathf.Max(0,bufferRemaining-dt);if(bufferRemaining<=0)bufferedAction=-1;
+            if(!Busy && regenDelay<=0 && !combat.Guarding && !combat.GuardBroken && !combat.GuardNeedsRelease && !PracticeGuarding)Stamina=Mathf.Min(loadout.maxStamina,Stamina+loadout.staminaRegen*dt);
+            if(!Busy)return;
+            // Contact arrests the weapon briefly, never the global clock or mouse look.
+            float consumed=Mathf.Min(impactPause,dt);impactPause-=consumed;float motionDt=dt-consumed;
+            float previous=age;age+=motionDt;
+            if(Action==3 && capsule && capsule.enabled)
+            {
+                float before=Mathf.SmoothStep(0,1,Mathf.Clamp01((previous-.075f)/.22f));
+                float after=Mathf.SmoothStep(0,1,Mathf.Clamp01((age-.075f)/.22f));
+                capsule.Move(committedDirection*((after-before)*2.35f));
+            }
+            if(!whooshPlayed && age>=ImpactTime-.075f){whooshPlayed=true;feedback.Swing(Action,combo);}
+            if(!hit && age>=ImpactTime)
+            {
+                hit=true;
+                if(ResolveHit())impactPause=loadout.hitStop*(Action==1 || combo==2?1.65f:1);
+            }
+            if(bufferedAction>=0 && hit && Progress>=(Action==0?.70f:.78f) && CanAct)
+            {
+                int next=bufferedAction;
+                if(CanAfford(next)){FinishAction();if(next==0)TryLightAttack();else TrySkill(next-1);return;}
+            }
+            if(age>=Duration)FinishAction();
+        }
+        public bool TrySpendStamina(float amount)
+        {
+            amount=Mathf.Max(0,amount);if(Stamina<amount)return false;DrainStamina(amount);return true;
+        }
+        public void DrainStamina(float amount)
+        {Stamina=Mathf.Max(0,Stamina-Mathf.Max(0,amount));DelayStaminaRecovery(loadout.staminaRegenDelay);}
+        public void RestoreStamina(float amount)
+        {Stamina=Mathf.Min(loadout.maxStamina,Stamina+Mathf.Max(0,amount));}
+        public void DelayStaminaRecovery(float delay){regenDelay=Mathf.Max(regenDelay,delay);}
+        void FinishAction(){Action=-1;age=impactPause=0;bufferedAction=-1;bufferRemaining=0;chainGrace=.44f;}
+        public void CancelRecoveryForGuard()
+        {
+            if(Busy && CanGuard){FinishAction();chainGrace=0;if(view)view.EndTrail();}
+        }
+        public void ReadInput()
+        {
+            if(!loadout || !player.Bindings)return;
+            var b=player.Bindings;
+            if(!player.GameplayInputEnabled || !player.CursorIsLocked || b.SuppressInputThisFrame){SuppressUntilReleased();return;}
+            if(waitForRelease)
+            {
+                bool held=b.AttackAction.IsPressed() || b.AbsorbAction.IsPressed();
+                foreach(var skill in b.MeleeSkillActions)held|=skill.IsPressed();
+                if(!held)waitForRelease=false;return;
+            }
+            for(int i=0;i<4;i++)if(b.MeleeSkillActions[i].WasPressedThisFrame())
+            {
+                if(Busy)Buffer(i+1);else TrySkill(i);return;
+            }
+            if(b.AttackAction.WasPressedThisFrame() || b.AttackAction.IsPressed())
+            {
+                if(Busy && Action==0){if(bufferedAction<=0)Buffer(0);}
+                else if(!Busy)TryLightAttack();
+            }
+        }
+        void Buffer(int action)
+        {
+            if(Progress<.48f || !CanAfford(action))return;
+            bufferedAction=action;bufferRemaining=.24f;
+        }
+        bool CanAct => loadout && !player.SimulationPaused && player.GameplayInputEnabled &&
+            (!encounter || !encounter.IsActive || encounter.CanFight) && !combat.Guarding && !PracticeGuarding;
+        bool CanAfford(int action) => action==0 ? Stamina>=loadout.lightCost : cooldowns[action-1]<=0 && Stamina>=loadout.skills[action-1].stamina;
+        public bool TryLightAttack()
+        {
+            if(!CanAct || Busy || !CanAfford(0))return false;
+            combo=chainGrace>0?(combo+1)%3:0;StartAction(0,loadout.lightCost);return true;
+        }
+        public bool TrySkill(int index)
+        {
+            if(index<0 || index>=4 || !CanAct || Busy)return false;
+            var s=loadout.skills[index];
+            if(!CanAfford(index+1))
+            {if(encounter && encounter.IsActive)encounter.Feedback(cooldowns[index]>0?s.title+" · 尚在冷却":"体力不足 · 暂缓进攻",.65f);return false;}
+            cooldowns[index]=s.cooldown;combo=0;StartAction(index+1,s.stamina);return true;
+        }
+        Transform EffectRoot
+        {
+            get
+            {
+                if(encounter && encounter.IsActive && encounter.Arena)return encounter.Arena.effectRoot;
+                if(!practiceEffects)practiceEffects=new GameObject("Practice sword effects").transform;
+                return practiceEffects;
+            }
+        }
+        void StartAction(int action,float cost)
+        {
+            Action=action;age=impactPause=0;hit=whooshPlayed=false;bufferedAction=-1;bufferRemaining=0;
+            DrainStamina(cost);SwingSequence++;
+            committedDirection=Vector3.ProjectOnPlane(eye.transform.forward,Vector3.up).normalized;
+            if(committedDirection.sqrMagnitude<.01f)committedDirection=transform.forward;
+            if(view)view.BeginSwing();
+            if(action>0)MeleeSkillVfx.Spawn(EffectRoot,eye.transform.position-eye.transform.up*.35f,eye.transform.rotation,action,loadout,encounter,true);
+        }
+        bool ResolveHit()
+        {
+            if(Action>0)MeleeSkillVfx.Spawn(EffectRoot,eye.transform.position-eye.transform.up*.35f,eye.transform.rotation,Action,loadout,encounter,false);
+            if(!encounter || !encounter.CanFight)return false;
+            float damage=loadout.lightDamage*(combo==2?1.45f:1),reach=loadout.lightReach,arc=105,poise=combo==2?28:16;
+            if(Action>0){var s=loadout.skills[Action-1];damage=s.damage;reach=s.reach;arc=s.arc;poise=s.poiseDamage;}
+            bool empowered=combat.Power>=100;if(empowered)damage*=1.65f;
+            if(!encounter.TryMeleeHit(reach,arc,damage,poise,Action==2))return false;
+            HitSequence++;if(empowered)combat.ConsumePower();if(Action==2)RestoreStamina(6);
+            feedback.Contact(Action==1 || combo==2,false);if(view)view.Impact(false);return true;
+        }
+        public void Parried()
+        {
+            RestoreStamina(loadout.parryRefund);feedback.Contact(true,true);
+            if(view)view.Impact(true);
+        }
+        public void Interrupt()
+        {
+            Action=-1;bufferedAction=-1;age=chainGrace=impactPause=bufferRemaining=0;
+            if(feedback)feedback.Hurt();if(view)view.Interrupt();
+        }
+        void OnDestroy(){if(practiceEffects)Destroy(practiceEffects.gameObject);}
+    }
+}

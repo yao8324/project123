@@ -1,0 +1,47 @@
+[
+  {
+    "path": "Assets/Art/ForbiddenWarden/WardenEncounter.asset",
+    "beforeSha256": "11e9aa2b8a2696b917dc44bdfcb362f9a9c05c84c4c465ad52050ef4b2444bdf",
+    "afterSha256": "21305c1b27ffc19891bc826d5890667144ab1f4324678041ad02c2814c57c8a3"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+    "beforeSha256": "1406ba140e8fa533e392a2674b86126602322e03dea42b9230aa9343e2a88535",
+    "afterSha256": "ce8699db40dd50c58e2fa80d19fb742d3c45b4ebb9709a349fb9c63830c0233c"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossDefinition.cs",
+    "beforeSha256": "454e03ad5a0f8796e1788cf50e190eb4d054caa8f91bc091dc6bb3e71c0e7846",
+    "afterSha256": "b78810e79f57703d8b9ab2afbf08ac432933556ee41fa83ebb5ce8643006eb7b"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "beforeSha256": "f791c8c59fcca26c4f9559838d58e043dae7e879161ee068719155cef9d9262e",
+    "afterSha256": "421aa5a0b46975a962b0d61141a3db332a6649d3fc5ad02b131d5fec869c0627"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossMeleeCombat.cs",
+    "beforeSha256": "cef64d2bb9557df6f13b0e8479e98919a82dd316f9edeba7abebd44fa1a1bd2d",
+    "afterSha256": "07f1d26a88474228f3463542a031ebbfd8d2b15c969fc038013de0634a53cd48"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenAnimationDriver.cs",
+    "beforeSha256": "cb60a8a259e090039ba6de2b44ea02ac9c3ff1280acc587caef520da1a613fdf",
+    "afterSha256": "b7ea6712dce902d3be25e0f2e70afc848e36f837991e923fb15d71535bd4d828"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenMeleeVfx.cs",
+    "beforeSha256": "a6fa608e843bec185568f34f2a39449cbd369bdf36c6d4696cd45cb0ed7f6f25",
+    "afterSha256": "2f70ffa118065bddaeeaff702aabcdaa7376ef27b41871415e143c464bf50b77"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "beforeSha256": "599d938dda88eaf8b1b12e6b97d64eead19d3fe0108784b81af08839ae81cef5",
+    "afterSha256": "400111388473ca6e97900531a45ef9655eb1dbf3a8eb74cf1e68b7d213fa87fa"
+  },
+  {
+    "path": "README.md",
+    "beforeSha256": "9e1d74c7171c637517127886c9f5ceaa9c4c54a46c375e8f00f28f2c9166d9dc",
+    "afterSha256": "413239d57af32e5a01e13bd98ddd2a2abe0176cfd28af1f4f4657572017a80b5"
+  }
+]

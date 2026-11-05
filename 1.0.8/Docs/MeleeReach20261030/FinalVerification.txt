@@ -1,0 +1,4 @@
+10 focused boss melee checks passed. Player source/config restore verified by SHA256.
+Final blade-axis/radius visual check passed. Final Console: 0 Error, 0 Warning.
+Edit mode=True; sceneDirty=False; compiling=False.
+Original runInBackground restored. No full regression or standalone build.

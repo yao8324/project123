@@ -1,0 +1,131 @@
+{
+  "failed": 0,
+  "total": 31,
+  "scope": "Controlled Play Mode integration; no standalone build or full manual playthrough",
+  "checks": [
+    {
+      "name": "one player and original sword shield loadout",
+      "passed": true
+    },
+    {
+      "name": "minimal arena safe ground spawn",
+      "passed": true
+    },
+    {
+      "name": "grounded boss capsule can actually advance",
+      "passed": true
+    },
+    {
+      "name": "thrust travels four metres and hits once",
+      "passed": true
+    },
+    {
+      "name": "thrust contact cannot repeat",
+      "passed": true
+    },
+    {
+      "name": "combo warning causes no damage",
+      "passed": true
+    },
+    {
+      "name": "combo first real contact 18",
+      "passed": true
+    },
+    {
+      "name": "same combo contact cannot repeat",
+      "passed": true
+    },
+    {
+      "name": "second combo contact 22.5",
+      "passed": true
+    },
+    {
+      "name": "real ReceiveHit parry cancels whole combo",
+      "passed": true
+    },
+    {
+      "name": "parry leaves no delayed combo hits",
+      "passed": true
+    },
+    {
+      "name": "front shield absorbs 80 percent",
+      "passed": true
+    },
+    {
+      "name": "two front hits schedule visible shield counter",
+      "passed": true
+    },
+    {
+      "name": "back attack bypasses directional shield",
+      "passed": true
+    },
+    {
+      "name": "actual player shield skill interrupts bastion",
+      "passed": true
+    },
+    {
+      "name": "final thrust aim is locked",
+      "passed": true
+    },
+    {
+      "name": "three absorbable projectiles spawn",
+      "passed": true
+    },
+    {
+      "name": "attack interruption cleans projectiles",
+      "passed": true
+    },
+    {
+      "name": "gap between phase one seals is safe",
+      "passed": true
+    },
+    {
+      "name": "ground seal actual contact 28",
+      "passed": true
+    },
+    {
+      "name": "55 percent transition cleans attacks",
+      "passed": true
+    },
+    {
+      "name": "phase two combo has three resolved contacts",
+      "passed": true
+    },
+    {
+      "name": "pause freezes encounter clock and skill",
+      "passed": true
+    },
+    {
+      "name": "practice can be won",
+      "passed": true
+    },
+    {
+      "name": "retry resets health phase counters and attacks",
+      "passed": true
+    },
+    {
+      "name": "practice can be lost",
+      "passed": true
+    },
+    {
+      "name": "huge hit cannot skip narrative threshold",
+      "passed": true
+    },
+    {
+      "name": "pending narrative rejects further damage",
+      "passed": true
+    },
+    {
+      "name": "debug continuation consumes narrative lock",
+      "passed": true
+    },
+    {
+      "name": "return restores original warden configuration",
+      "passed": true
+    },
+    {
+      "name": "original warden still begins",
+      "passed": true
+    }
+  ]
+}

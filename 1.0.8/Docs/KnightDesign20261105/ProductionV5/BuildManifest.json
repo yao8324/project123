@@ -1,0 +1,9 @@
+{
+    "unity": "6000.3.25f1",
+    "sourceConfiguration": "Refined/KnightDefinitionRefined.asset",
+    "productionConfiguration": "Assets/Art/Bosses/Knight/ProductionV5/KnightProduction.asset",
+    "scene": "Assets/Scenes/BossTests/Knight_Production_Test.unity",
+    "bones": 100,
+    "renderers": 12,
+    "triangles": 7042
+}

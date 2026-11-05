@@ -1,0 +1,68 @@
+{
+  "total": 15,
+  "failed": 0,
+  "book": "星图与魔法笔记",
+  "maxWeaponDegreesPer60HzStep": 18.0172653,
+  "checks": [
+    {
+      "name": "real selected book starts refined Knight",
+      "passed": true
+    },
+    {
+      "name": "combo hits extended 5m reach",
+      "passed": true
+    },
+    {
+      "name": "combo excludes outside 5.4m",
+      "passed": true
+    },
+    {
+      "name": "orbit hits extended 6m reach",
+      "passed": true
+    },
+    {
+      "name": "orbit excludes outside 6.5m",
+      "passed": true
+    },
+    {
+      "name": "phase two ground strip reaches 14m",
+      "passed": true
+    },
+    {
+      "name": "thrust actual travel plus lance reaches 8.5m",
+      "passed": true
+    },
+    {
+      "name": "thrust excludes beyond 9m",
+      "passed": true
+    },
+    {
+      "name": "context AI avoids consecutive same move",
+      "passed": true
+    },
+    {
+      "name": "phase one uses varied moves without heavenfall",
+      "passed": true
+    },
+    {
+      "name": "phase two AI includes heavenfall",
+      "passed": true
+    },
+    {
+      "name": "weapon remains continuous across windup strike recovery",
+      "passed": true
+    },
+    {
+      "name": "zero battle time freezes pose",
+      "passed": true
+    },
+    {
+      "name": "book encounter retry remains Knight",
+      "passed": true
+    },
+    {
+      "name": "book encounter returns to library",
+      "passed": true
+    }
+  ]
+}

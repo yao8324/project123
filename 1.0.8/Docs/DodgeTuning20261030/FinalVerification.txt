@@ -1,0 +1,7 @@
+Play mode=False
+Compiling=False
+Scene dirty=False
+Time scale=1
+Fixed delta=0.01999999
+Console after checks: 0 errors / 0 warnings
+Modified existing files=5

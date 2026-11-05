@@ -1,0 +1,2 @@
+10 minimum checks passed. Final compile complete; Console: 0 Error / 0 Warning.
+Edit mode=True; compiling=False; sceneDirty=False. Original background setting restored.

@@ -1,0 +1,40 @@
+{
+  "source": "C:\\Users\\li101\\Downloads\\【无限机兵】于战场上起舞吧 最帅Boss 洛希德.mp4",
+  "source_bytes": 196473499,
+  "source_sha256": "2fad492f10076aa6298411a02e10748f6c9e0073768c91afe7d2910d425084a1",
+  "metadata": {
+    "ffmpeg_version": "9.0.2-essentials_build-www.gyan.dev built with gcc 16.2.0 (Rev3, Built by MSYS2 project)",
+    "codec": "h264",
+    "pix_fmt": "yuv420p(tv, bt709, progressive)",
+    "audio_codec": "aac",
+    "fps": 30.0,
+    "source_size": [
+      1920,
+      1080
+    ],
+    "size": [
+      1920,
+      1080
+    ],
+    "rotate": 0,
+    "duration": 531.28
+  },
+  "seconds": [
+    98.0,
+    99.0,
+    100.0,
+    101.0,
+    102.0,
+    103.0,
+    104.0,
+    105.0,
+    106.0,
+    107.0,
+    108.0,
+    109.0,
+    110.0,
+    111.0,
+    112.0
+  ],
+  "purpose": "Internal visual and motion analysis; no source video or extracted audio is used as runtime content."
+}

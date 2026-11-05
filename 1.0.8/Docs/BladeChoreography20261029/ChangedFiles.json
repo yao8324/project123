@@ -1,0 +1,222 @@
+[
+  {
+    "path": "Assets/Scripts/Player/SwordShieldView.cs",
+    "change": "modified",
+    "sha256": "E956B547A73A11254E40EAAC318E918CA8347314C469E7F1783EC52EDF81BA07"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerMelee.cs",
+    "change": "modified",
+    "sha256": "11BC193F541B377BF8C23E341B532DC539223868C509AD9FB748AC7E323464A8"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BladeRibbon.cs",
+    "change": "modified",
+    "sha256": "207782105DB94582D2DBAC856A28F5616553B3FA9E44DE047C370F7AF73A0906"
+  },
+  {
+    "path": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+    "change": "modified",
+    "sha256": "94BC21533144AD8D172A34C45E6C6EAAAE857F4D752D55A149FF19F29A8627F2"
+  },
+  {
+    "path": "README.md",
+    "change": "modified",
+    "sha256": "FC43680C6603181469746A07FF316D5AC35121606C0C017E72463957CE83520B"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "change": "modified",
+    "sha256": "52C989A6931D83CF59B0EDBCBAB7985A7438E957BFAF7B9A20BFF3EAC8117C5B"
+  },
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs",
+    "change": "modified",
+    "sha256": "E13ED0F5CD8568C42AEB0CA95EC8792ACF7A18EBB4519DDF2507BCD405215322"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset",
+    "change": "modified",
+    "sha256": "07AD159FE6CD458BD5BBC45CFED6F229954C8A968EAFF0A20AAA72D190E57B6F"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/MeleeSkillVfx.cs",
+    "change": "added",
+    "sha256": "0D6E6D8DEE2105A51727604CDD916D8FD2C47159E223640FCB53C2377A07F1CA"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/MeleeSkillVfx.cs.meta",
+    "change": "added",
+    "sha256": "E177892BCA582129FB7530619CA40C9896C454E6DD9EC05CBEB9041552D5E0B8"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/SpellMote.shader",
+    "change": "added",
+    "sha256": "164D6924ED72DA605D6D5E505317DC17A63C6EF76F810E6CFD97A89A8D8D7E0C"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/SpellMote.shader.meta",
+    "change": "added",
+    "sha256": "2D8F1FB261824E23BF323FBB20F218A3213A9B88BB1437506B2571F150ECEDE1"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/SkillSpellMote.mat",
+    "change": "added",
+    "sha256": "51563700709E4EA945F36AC1A1F280A90778CC16C29F0E06FFEB02849E312810"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/SkillSpellMote.mat.meta",
+    "change": "added",
+    "sha256": "352967DF826A88610EBBF3800435FCED921E82B5420176962580117D64A3C809"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/BeforeHashes.json",
+    "change": "added",
+    "sha256": "49792C753691BEE00520CA0B3D42D63F330180216681055341FE86449A5D3A42"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/BladePoseCheck.json",
+    "change": "added",
+    "sha256": "103F5B098A5D6B1EB26360947A0E0FBC5B35939C499BAEAA861F977E520D2A29"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/ContactCheck.json",
+    "change": "added",
+    "sha256": "C045BFBBEF977F9B7750390E19CCDB1A0E3DE620434C25D5BB70AC8D09E96034"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/ExpiryCheck.json",
+    "change": "added",
+    "sha256": "C6F2DE7097D0CCDFDD9A7720058C8A0CA330F285808EEA0D6F9BF296E6B6ED8C"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/FinalState.json",
+    "change": "added",
+    "sha256": "318F4D572F61ECB4EF031A0E374237A091ECDD33538B7074071879ACA8EC6ABD"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/FourSkills.png",
+    "change": "added",
+    "sha256": "90BCC53A76AD2A34961905522C62048093681C553323E1770C4E7D6A222C7255"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/MinimalVfxChecks.json",
+    "change": "added",
+    "sha256": "5CA4EF473FFE236CF5827AA65A35E2832C5372AF9209419A095CF6D40400FC57"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/MotionCapture.json",
+    "change": "added",
+    "sha256": "1A72A91C32395ECBD62A56D489D00406528882FBC5D867E9A48D42F7D90372C9"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/MotionContactSheet.jpg",
+    "change": "added",
+    "sha256": "C0F75CBB160C2A0203924E7EC629EDD66E54036AF5EB2BDA56A997A7C90AABE6"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/README.md",
+    "change": "added",
+    "sha256": "075C0E89C0C70AA17EB860F10362D6E5AA809220C8330907C9C8A9EEB470EFF5"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/ThreeCutCombo.mp4",
+    "change": "added",
+    "sha256": "DE0AC50E7852A36ED483101F49B75B5F574C2B3763D3187D01B6AA5F0AB8668E"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Art__PlayerSwordShield__BladeLight.shader.txt",
+    "change": "added",
+    "sha256": "4C8737F8ED919CA10268F628A775D76582C28C9458B794C6A825B56F24910C08"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Art__PlayerSwordShield__OathboundLoadout.asset.txt",
+    "change": "added",
+    "sha256": "194CCE40510F3AB46ED8DDB4167E3B1B33C8A46DC9277351BDE9F34E8D0D09E9"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Scenes__MilanLibrary_Magic_V6.unity.txt",
+    "change": "added",
+    "sha256": "7FF7CC730AADD3E46B8C0B00E2FE2829F062395DB8055D4FBC96EEE7D5652516"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Scripts__Core__MeleeLoadout.cs.txt",
+    "change": "added",
+    "sha256": "C13C2E9A5CC36A15CBC4838B1FCFBC8AD9C081BCA6C30AC55045CA147BFF8ACD"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Scripts__Player__MeleeFeedback.cs.txt",
+    "change": "added",
+    "sha256": "4CC1582C7CC519D41139F9DF0FE7008D3AFA3B975F05E01203C6848F4899834E"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Scripts__Player__PlayerMelee.cs.txt",
+    "change": "added",
+    "sha256": "E4F63180F56DBA6A52BF5A590C7A008A4513845C84592C99667E85148F98FCB4"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Scripts__Player__SwordShieldView.cs.txt",
+    "change": "added",
+    "sha256": "98395C64047F47DF6F3594D6BD8146D91CFA1968545D0376DBE5BC79E01EDB5B"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Scripts__Visuals__BladeRibbon.cs.txt",
+    "change": "added",
+    "sha256": "575B0D84533A75A9894D6979DA5397329FB697C61C9A1F71DC4E6FFD77C7F43A"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/Assets__Scripts__Visuals__MeleeEffects.cs.txt",
+    "change": "added",
+    "sha256": "51E012CD6FB12EEE6FADA18867F4AB56FC12A1EFA40AD3735C23FADA94255539"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/CHANGELOG.md.txt",
+    "change": "added",
+    "sha256": "680A9D74A8F9D3655BCFECB4ED59DC0B8B15F0BDB98E6E312C388B82D338335B"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Before/README.md.txt",
+    "change": "added",
+    "sha256": "70345C993C040417365297B78A63AC35A9563425C25700FA76937E1FCFA1921E"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Captures/08_IdleEdge.png",
+    "change": "added",
+    "sha256": "7A1E3DB24542D8527129AD486CAA82672C09B64650EF6C21CC8FCC13EAB1A155"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Captures/11_FinalReadyHUD.png",
+    "change": "added",
+    "sha256": "760E2588C35DE9BE4690BD4872F08EA4224A48F59249BCBE6FF1FE7CAFA1DE46"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Captures/Skill_1.png",
+    "change": "added",
+    "sha256": "41F4938CE7B49EA2E850D7F0C8201B80F481E31C9A5620D23C17A9CA4496465B"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Captures/Skill_2.png",
+    "change": "added",
+    "sha256": "2A4783B64F87ED2CE5D77F58C95024D530292BABEEA4E5B2626805739F9CCC76"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Captures/Skill_3.png",
+    "change": "added",
+    "sha256": "EF2EFCDADE8CE2DABFF6BBEA5C69F9DA634B63D8AAE6D496BDFB77B344E93F87"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Captures/Skill_4.png",
+    "change": "added",
+    "sha256": "B4FEE571DD8AEB2419C1339A00CF39BE437EB8BF978FD2FAAB83F663B30F8762"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Reference/Slash_0625_20fps.jpg",
+    "change": "added",
+    "sha256": "0C3218C57AF41636C03A0B7733B7DDA5B676C10ED848E2A269C57F7347D40C70"
+  },
+  {
+    "path": "Docs/BladeChoreography20261029/Reference/Slash_0626_9_20fps.jpg",
+    "change": "added",
+    "sha256": "ABB855D1F07E34B2722E70E258BECD8141178005787158B8BBABE5160EE91855"
+  }
+]

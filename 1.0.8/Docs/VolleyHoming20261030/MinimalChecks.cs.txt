@@ -1,0 +1,49 @@
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;menu.Resume();e.GetType().GetField("focusLost",flags).SetValue(e,false);System.Action<string,object> set=(n,v)=>e.GetType().GetField(n,flags).SetValue(e,v);System.Action<ArcaneArchive.Core.BossEncounter.State> state=s=>e.GetType().GetMethod("SetState",flags).Invoke(e,new object[]{s});System.Action<string,object[]> call=(n,a)=>e.GetType().GetMethod(n,flags).Invoke(e,a);var shotType=e.GetType().GetNestedType("Shot",System.Reflection.BindingFlags.NonPublic);System.Action<object,string,object> put=(s,n,v)=>shotType.GetField(n).SetValue(s,v);System.Func<object,string,object> get=(s,n)=>shotType.GetField(n).GetValue(s);System.Func<Vector3,Vector3,bool,object> make=(position,velocity,enemy)=>{var shot=System.Activator.CreateInstance(shotType,true);var go=new GameObject("Temporary homing probe");go.transform.SetParent(e.Arena.effectRoot);go.transform.position=position;put(shot,"go",go);put(shot,"velocity",velocity);put(shot,"enemy",enemy);put(shot,"homing",true);put(shot,"life",4f);return shot;};System.Action<object> dispose=s=>UnityEngine.Object.DestroyImmediate((GameObject)get(s,"go"));
+var results=new System.Collections.Generic.List<string>();System.Action<bool,string> check=(ok,n)=>results.Add((ok?"PASS ":"FAIL ")+n);
+e.Arena.boss.position=new Vector3(160,0,3);e.Arena.boss.rotation=Quaternion.Euler(0,180,0);state(ArcaneArchive.Core.BossEncounter.State.Observe);
+var original=e.definition;var settings=UnityEngine.Object.Instantiate(original);e.definition=settings;
+try
+{
+    System.Func<bool,float> lateral=strong=>{
+        settings.enemyHomingSpeed=strong?95:10;settings.enemyHomingBudget=strong?85:12;settings.enemyHomingDelay=strong?.04f:.12f;settings.enemyHomingDuration=strong?1.8f:1.15f;
+        Vector3 start=new Vector3(160,3.6f,4),playerStart=new Vector3(160,0,-6);
+        var shot=make(start,(playerStart+Vector3.up*1.2f-start).normalized*22,true);var go=(GameObject)get(shot,"go");float closest=100;
+        for(int i=0;i<85;i++)
+        {
+            e.transform.position=playerStart+Vector3.right*(4.5f*(i+1)*.01f);Physics.SyncTransforms();call("SteerProjectile",new object[]{shot,.01f});
+            Vector3 from=go.transform.position,step=(Vector3)get(shot,"velocity")*.01f,target=e.transform.position+Vector3.up*1.2f;
+            float t=Mathf.Clamp01(Vector3.Dot(target-from,step)/Mathf.Max(.0001f,step.sqrMagnitude));
+            closest=Mathf.Min(closest,Vector3.Distance(target,from+step*t));go.transform.position+=step;
+        }
+        dispose(shot);return closest;
+    };
+    float oldMiss=lateral(false),newMiss=lateral(true);
+    check(newMiss<oldMiss*.5f,"moving-target comparison: old settings miss="+oldMiss.ToString("F3")+"m, new="+newMiss.ToString("F3")+"m");
+}
+finally{e.definition=original;UnityEngine.Object.DestroyImmediate(settings);}
+e.transform.position=new Vector3(160,0,-5);Physics.SyncTransforms();Vector3 targetNow=e.transform.position+Vector3.up*1.2f;
+var probe=make(targetNow+new Vector3(0,0,8),Quaternion.AngleAxis(30,Vector3.up)*Vector3.back*22,true);
+var first=(Vector3)get(probe,"velocity");put(probe,"age",.05f);call("SteerProjectile",new object[]{probe,.1f});float turn=Vector3.Angle(first,(Vector3)get(probe,"velocity"));
+check(Mathf.Abs(turn-9.5f)<.02f && Mathf.Abs(((Vector3)get(probe,"velocity")).magnitude-22)<.01f,"95 degree/sec tracking preserves projectile speed");
+put(probe,"homingUsed",84.8f);put(probe,"velocity",Quaternion.AngleAxis(40,Vector3.up)*Vector3.back*22);put(probe,"homing",true);call("SteerProjectile",new object[]{probe,.1f});
+check((float)get(probe,"homingUsed")<=85.001f,"total turn cannot exceed 85 degrees");dispose(probe);
+probe=make(targetNow+Vector3.forward*1.5f,Vector3.back*22,true);put(probe,"age",.1f);call("SteerProjectile",new object[]{probe,.016f});
+bool committed=!(bool)get(probe,"homing");e.transform.position+=Vector3.right*3;first=(Vector3)get(probe,"velocity");call("SteerProjectile",new object[]{probe,.1f});
+check(committed && Vector3.Angle(first,(Vector3)get(probe,"velocity"))<.01f,"within 1.7m permanently commits straight for a late dodge");dispose(probe);
+targetNow=e.transform.position+Vector3.up*1.2f;probe=make(targetNow+Vector3.forward*5,Vector3.forward*22,true);put(probe,"age",.1f);call("SteerProjectile",new object[]{probe,.016f});check(!(bool)get(probe,"homing"),"missed pages do not turn back from behind");dispose(probe);
+probe=make(targetNow+Vector3.forward*8,Vector3.back*22,true);put(probe,"age",1.79f);call("SteerProjectile",new object[]{probe,.03f});check(!(bool)get(probe,"homing"),"tracking expires at 1.8 seconds");dispose(probe);
+Vector3 fromPlayer=e.View.transform.position+Vector3.forward*.5f,towardBoss=e.Arena.boss.TransformPoint(new Vector3(0,2.55f,.88f))-fromPlayer;
+probe=make(fromPlayer,Quaternion.AngleAxis(20,Vector3.up)*towardBoss.normalized*30,false);put(probe,"age",.13f);first=(Vector3)get(probe,"velocity");call("SteerProjectile",new object[]{probe,.1f});
+check(Mathf.Abs(Vector3.Angle(first,(Vector3)get(probe,"velocity"))-1.6f)<.02f,"player projectile retains its original 16 degree/sec tracking");dispose(probe);
+call("ClearAttacks",new object[0]);e.Combat.ResetCombat(e);e.transform.position=new Vector3(160,0,-4);set("combatTime",0f);set("lastSeenAt",0f);set("lastKnownPlayer",e.transform.position);set("nextMeleeAt",999f);set("pattern",0);
+call("BeginWarning",new object[0]);set("stateTime",.11f);call("TickVolleyRetreat",new object[0]);set("stateTime",.31f);call("TickVolleyRetreat",new object[0]);set("stateTime",1.25f);call("TickRitualEffects",new object[0]);
+e.transform.position+=Vector3.right*3;Physics.SyncTransforms();state(ArcaneArchive.Core.BossEncounter.State.Attack);set("stateTime",.2f);call("SpawnPage",new object[]{2,6});
+var shots=(System.Collections.IList)e.GetType().GetField("shots",flags).GetValue(e);var launched=shots[0];var page=(GameObject)get(launched,"go");targetNow=e.transform.position+Vector3.up*1.2f;
+Vector3 side=Vector3.Cross(Vector3.up,(targetNow-e.Arena.boss.position).normalized).normalized;Vector3 aim=targetNow-side*.21f;
+check(Vector3.Angle((Vector3)get(launched,"velocity"),aim-page.transform.position)<.02f,"page released after retreat aims at current player position");
+Vector3 facing=((Vector3)get(launched,"velocity")).normalized;
+var wall=GameObject.CreatePrimitive(PrimitiveType.Cube);wall.name="Temporary volley wall check";wall.transform.SetPositionAndRotation(page.transform.position+facing,Quaternion.LookRotation(facing));wall.transform.localScale=new Vector3(2,2,.25f);Physics.SyncTransforms();call("TickShots",new object[]{.1f});
+check(shots.Count==0,"homing page still collides with a wall");UnityEngine.Object.DestroyImmediate(wall);
+call("ClearAttacks",new object[0]);probe=make(new Vector3(160,2,2),Vector3.back*22,true);shots.Add(probe);var pausedPosition=((GameObject)get(probe,"go")).transform.position;float age=(float)get(probe,"age");menu.Open();call("Update",new object[0]);
+check((float)get(probe,"age")==age && ((GameObject)get(probe,"go")).transform.position==pausedPosition,"pause freezes homing age and flight");menu.Resume();call("ClearAttacks",new object[0]);
+string report=string.Join("\n",results.ToArray());System.IO.File.WriteAllText("Docs/VolleyHoming20261030/MinimalChecks.txt",report);return report;

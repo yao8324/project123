@@ -1,0 +1,40 @@
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var p=e.GetComponent<ArcaneArchive.Player.FirstPersonController>();var d=p.Dash;var m=e.GetComponent<ArcaneArchive.Player.PlayerMelee>();var c=e.Combat;var controller=e.GetComponent<CharacterController>();var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();
+var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+System.Action<string,object> set=(n,v)=>e.GetType().GetField(n,flags).SetValue(e,v);
+System.Action<string,object[]> call=(n,a)=>e.GetType().GetMethod(n,flags).Invoke(e,a);
+System.Action<ArcaneArchive.Core.BossEncounter.State> state=s=>call("SetState",new object[]{s});
+System.Action<Vector3> place=position=>{controller.enabled=false;e.transform.SetPositionAndRotation(position,Quaternion.identity);controller.enabled=true;Physics.SyncTransforms();p.GetType().GetField("<IsGrounded>k__BackingField",flags).SetValue(p,true);};
+System.Action reset=()=>{d.Cancel(true);menu.Resume();set("focusLost",false);p.SetGameplayInputEnabled(true);c.ResetCombat(e);call("ClearAttacks",new object[0]);state(ArcaneArchive.Core.BossEncounter.State.Observe);set("combatTime",0f);e.Arena.boss.position=new Vector3(160,0,0);e.Arena.boss.rotation=Quaternion.Euler(0,180,0);place(new Vector3(160,.08f,-4.5f));};
+System.Action<float> step=dt=>{d.Tick(dt);CollisionFlags collision;d.Move(out collision);Physics.SyncTransforms();};
+System.Action strike=()=>{set("attack",5);state(ArcaneArchive.Core.BossEncounter.State.Attack);set("stateTime",e.definition.meleeImpact);set("meleeResolved",false);call("TickMeleeStrike",new object[0]);d.ConfirmPerfect();};
+
+reset();set("combatTime",3f);e.View.transform.localRotation=Quaternion.identity;
+m.view.ResetPose();m.view.SendMessage("LateUpdate");call("PresentBoss",new object[]{.016f});
+d.TryStart(Vector2.right);step(.2f);strike();call("PresentBoss",new object[]{.016f});
+var fx=e.GetComponent<ArcaneArchive.Visuals.DashAfterimageVfx>();fx.enabled=false;fx.Trigger();
+var echo=e.GetComponent<ArcaneArchive.Visuals.DodgeWorldEchoes>();echo.enabled=false;echo.Trigger();
+var pulse=e.GetComponent<ArcaneArchive.Visuals.TemporalStopPulse>();pulse.enabled=false;pulse.Trigger(e.transform.position);
+d.GetType().GetField("slowAge",flags).SetValue(d,.08f);fx.Present(.08f);echo.Present(.08f);pulse.Present(.08f);
+
+var folder=System.IO.Path.Combine(System.IO.Directory.GetParent(Application.dataPath).FullName,"Docs/TemporalStop20261030");
+System.IO.Directory.CreateDirectory(folder+"/Frames");
+d.GetType().GetField("slowAge",flags).SetValue(d,0f);fx.Trigger();echo.Trigger();pulse.Trigger(e.transform.position);
+for(int frame=0;frame<24;frame++)
+{
+    float time=frame*.05f;if(frame>0)d.Tick(.05f);
+    if(d.SlowActive){fx.Present(frame==0?0:.05f);pulse.Present(d.RewardAge);}else{fx.Clear();pulse.Clear();}
+    echo.Present(time);
+    var rt=RenderTexture.GetTemporary(800,450,24,RenderTextureFormat.ARGB32);
+    var request=new UnityEngine.Rendering.RenderPipeline.StandardRequest();request.destination=rt;
+    UnityEngine.Rendering.RenderPipeline.SubmitRenderRequest(e.View,request);
+    var previous=RenderTexture.active;RenderTexture.active=rt;var texture=new Texture2D(800,450,TextureFormat.RGB24,false);
+    texture.ReadPixels(new Rect(0,0,800,450),0,0);texture.Apply();
+    string file=folder+"/Frames/"+frame.ToString("D3")+".png";
+    System.IO.File.WriteAllBytes(file,texture.EncodeToPNG());
+    if(frame==2)System.IO.File.Copy(file,folder+"/Captures/01_Expansion.png",true);
+    if(frame==6)System.IO.File.Copy(file,folder+"/Captures/02_GreyHold.png",true);
+    if(frame==12)System.IO.File.Copy(file,folder+"/Captures/03_ColourReturns.png",true);
+    RenderTexture.active=previous;RenderTexture.ReleaseTemporary(rt);UnityEngine.Object.DestroyImmediate(texture);
+}
+d.Cancel(true);return "24 effect-preview frames saved; timeScale="+Time.timeScale;

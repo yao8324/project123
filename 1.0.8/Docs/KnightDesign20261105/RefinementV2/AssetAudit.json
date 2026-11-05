@@ -1,0 +1,15 @@
+{
+  "scene": "Assets/Scenes/BossTests/Knight_Test.unity",
+  "boss": "KnightRefined",
+  "modelMeshInstances": 105,
+  "modelTriangles": 7904,
+  "modelRenderers": 105,
+  "missingMeshes": 0,
+  "missingScripts": 0,
+  "unsupportedOrMissingMaterials": 0,
+  "prefabs": [
+    "Assets/Art/Bosses/Knight/Refined/KnightArenaRefined.prefab",
+    "Assets/Art/Bosses/Knight/Refined/KnightRefined.prefab"
+  ],
+  "configuration": "KnightDefinitionRefined"
+}

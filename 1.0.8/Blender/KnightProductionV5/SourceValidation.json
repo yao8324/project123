@@ -1,0 +1,17 @@
+{
+  "blender": "5.2.1 LTS",
+  "sources": [
+    {
+      "kind": "Knight",
+      "objects": 127,
+      "meshObjects": 126,
+      "bones": 106
+    },
+    {
+      "kind": "Forecourt",
+      "objects": 314,
+      "meshObjects": 314,
+      "bones": 0
+    }
+  ]
+}

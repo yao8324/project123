@@ -1,0 +1,22 @@
+{
+  "combo": [
+    {
+      "step": 0,
+      "started": true,
+      "damage": 30.0
+    },
+    {
+      "step": 1,
+      "started": true,
+      "damage": 30.0
+    },
+    {
+      "step": 2,
+      "started": true,
+      "damage": 43.5
+    }
+  ],
+  "bossSelectedMelee": 5,
+  "bossSingleHit": true,
+  "returnClearsWeaponState": true
+}

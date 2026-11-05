@@ -1,0 +1,32 @@
+[
+  {
+    "path": "Assets/Art/ForbiddenWarden/WardenEncounter.asset",
+    "beforeSha256": "21305c1b27ffc19891bc826d5890667144ab1f4324678041ad02c2814c57c8a3",
+    "afterSha256": "0ef5af7b9eff49868d7742362e9c268ead8ec4d052ad2697237966f43876a82c"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+    "beforeSha256": "ce8699db40dd50c58e2fa80d19fb742d3c45b4ebb9709a349fb9c63830c0233c",
+    "afterSha256": "a7bef84d3122f4facc35141310e2355bcac2328efb87b67e4748b13c3b1b5c7a"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossDefinition.cs",
+    "beforeSha256": "b78810e79f57703d8b9ab2afbf08ac432933556ee41fa83ebb5ce8643006eb7b",
+    "afterSha256": "9f08335266c9626a06da78b1268700ee837fff2de5b0834863395a73712bf4e7"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "beforeSha256": "421aa5a0b46975a962b0d61141a3db332a6649d3fc5ad02b131d5fec869c0627",
+    "afterSha256": "adc908a745890512174346ad04c60e8fa9ecd9d2ebb6db3df46048023696673e"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "beforeSha256": "400111388473ca6e97900531a45ef9655eb1dbf3a8eb74cf1e68b7d213fa87fa",
+    "afterSha256": "101204f831b6ee1663f1de5cf22b8c314f2395d8375aef65094844dacb695f4c"
+  },
+  {
+    "path": "README.md",
+    "beforeSha256": "413239d57af32e5a01e13bd98ddd2a2abe0176cfd28af1f4f4657572017a80b5",
+    "afterSha256": "760d415dacd94c9e52c210a6f11396566fe3257101576e1623f03b1346ba4de6"
+  }
+]

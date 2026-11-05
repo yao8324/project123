@@ -1,0 +1,39 @@
+{
+  "status": "CANDIDATE_READY_WITH_OPEN_RAILING_DECISION",
+  "app": "Builds/GlassFloor_20261007/MilanLibrary_GlassFloor.app",
+  "bundleIdentifier": "com.arcanearchive.milan.glassfloor20261007",
+  "version": "2026.10.7.2",
+  "platform": "macOS Universal arm64/x86_64",
+  "archive": "Builds/MilanLibrary_GlassFloor_20261007.zip",
+  "bytes": 540691429,
+  "sha256": "5666505939a31b6047995f4c9f7d3b1876f2164efe9dafcf1fbcabb9c094650f",
+  "appFileLedger": "Builds/GlassFloor_20261007/APP_FILES_SHA256.txt",
+  "appFileLedgerSHA256": "04771acfe21db85096b214f37867d5476117ae9d6cb1c6996ea4d1abeb9f956b",
+  "signatureStrictVerified": true,
+  "zipCRCVerified": true,
+  "buildErrors": 0,
+  "buildWarnings": 1,
+  "tests": {
+    "regressionPassed": 107,
+    "regressionTotal": 107,
+    "floorPassed": 60,
+    "floorTotal": 61,
+    "newFloorSupportRays": 14400,
+    "missingSupport": 0,
+    "finalVisualImages": 66,
+    "finalPerformanceSamples": 64,
+    "consoleErrorsFinalRuns": 0
+  },
+  "openIssues": [
+    "Existing 1.23m atrium railing can be crossed by sprint jump; visible railing height decision pending.",
+    "Central atrium infill not approved; only entrance-side 144m2 filled.",
+    "No current standalone FPS or human-input acceptance."
+  ],
+  "sourceHashes": {
+    "Assets/Scenes/MilanLibrary_Magic_V6.unity": "c60aa0a205fe8ebc75a1fa64e3fec907e9297a2c1acbddfd0c86d1f566140635",
+    "Assets/Art/MilanLibraryV6/manifest.json": "4cf08881e3f61e1ea5b17b4639dcbe9eae5e10ffbbf6a44c9c3f163bdb138ce2",
+    "Blender/MilanLibrary_Magic_V6/MilanLibrary_Magic_V6_GlassFloorReview.blend": "d106b9acca687320b625cee23a2bffdb1582b581305287c1f679bdadba80ce0a"
+  },
+  "sourceArchivePlan": "Builds/MilanLibrary_GlassFloor_Source_20261007.zip; checksum sidecar source_package.json generated after packaging.",
+  "published": false
+}

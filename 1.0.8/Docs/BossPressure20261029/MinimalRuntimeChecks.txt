@@ -1,0 +1,22 @@
+PASS light attack costs shared stamina 12
+PASS absorb costs same pool 10
+PASS block spends 29 from same pool without health loss
+PASS exhaustion breaks guard and spills unpaid damage
+PASS recovery delay 1.6 seconds
+PASS recovery 14 stamina per second
+PASS volley enters retreat before crown
+PASS retreat swept distance 4.2
+PASS retreat transitions into first summoning wave
+PASS laser follows live player before lock
+PASS final 0.65 second lock holds aim
+PASS firing beam does not resume tracking
+PASS rift travels 1.68m per 0.16s = 10.5m/s
+PASS rift turns up to 135 degrees per second
+PASS boss collider and visual uniformly scaled 0.82
+PASS close swing hits once at impact time
+PASS close range chooses melee
+PASS blade crosses horizontally toward player at 0.22s
+PASS camera stack uses current boss skin matrices
+PASS next close-range cycle can choose retreat volley
+PASS retreat afterimages match smaller boss
+PASS pause holds battle and VFX clock
