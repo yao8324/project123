@@ -1,0 +1,26 @@
+{
+  "observedUtc": "2026-11-05T12:56:59.5264607Z",
+  "unity": "6000.3.25f1",
+  "activeScene": "Assets/Scenes/BossTests/Knight_Test.unity",
+  "sceneDirty": false,
+  "playing": false,
+  "compiling": false,
+  "timeScale": 1.0,
+  "background": false,
+  "testDefinition": "KnightDefinitionRefined",
+  "moveCount": 8,
+  "testFont": "KnightRefinedChinese",
+  "buildScenes": [
+    {
+      "path": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+      "enabled": true
+    },
+    {
+      "path": "Assets/Scenes/LibraryMain.unity",
+      "enabled": true
+    }
+  ],
+  "controlledChecksPassed": 61,
+  "standaloneBuildPerformed": false,
+  "fullHumanPlaythroughPerformed": false
+}

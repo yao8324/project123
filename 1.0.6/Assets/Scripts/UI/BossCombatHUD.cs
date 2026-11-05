@@ -59,7 +59,7 @@ namespace ArcaneArchive.UI
             if (!root || !encounter || !encounter.Combat) return;
             root.SetActive(!encounter.IsPaused && !encounter.IsFinished);
             entryFade.color=new Color(0,0,0,Mathf.Clamp01(1-encounter.BattleTime/.45f));
-            bossName.text = encounter.Definition.displayName + (encounter.Phase == 2 ? "  /  封印破裂" : "");
+            bossName.text = encounter.Definition.displayName + encounter.PhaseLabel;
             bossFill.fillAmount = encounter.BossHealth / encounter.Definition.health;
             playerFill.fillAmount = encounter.Combat.Health / encounter.Definition.playerHealth;
             staminaStatus.text=melee && melee.Exhausted?"体力耗尽  "+melee.ExhaustionRemaining.ToString("F1")+"s":encounter.Combat.GuardBroken?"破防  "+encounter.Combat.GuardBreakRemaining.ToString("F1")+"s":encounter.Combat.GuardNeedsRelease?"松开防御键 · 重新格挡":encounter.Combat.Guarding?"格挡中 · 攻防共用体力":"突进 / 攻击 / 防御共用体力";

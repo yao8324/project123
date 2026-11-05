@@ -1,0 +1,367 @@
+{
+  "files": [
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightChinese.asset",
+      "bytes": 8457412,
+      "sha256": "bbdce17fd487dd875ec61c6ec003245703c6e15bd9bf672929b3ebb3bb83ddb0"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightChinese.asset.meta",
+      "bytes": 189,
+      "sha256": "3f4215b4e35bf380a8aef28f5842af9e8e55887aa32bb50ba0d7c15fb0161b4f"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightCombat.asset",
+      "bytes": 2989,
+      "sha256": "1859e1ad06d7f5e0a9bdfa98b33ec3a6bda3a75a301d524698fedb7617a7e9eb"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightCombat.asset.meta",
+      "bytes": 189,
+      "sha256": "a65c8de7a27ec22bba21d72b9ca163cb3a6c13e4f454b353018f6c92fb82e13e"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightDefinition.asset",
+      "bytes": 2956,
+      "sha256": "64b7ae797dc35f9c4c3306bb3a6120fdf8e12a5b0937a9ba6fdd7fe1e998b67c"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightDefinition.asset.meta",
+      "bytes": 189,
+      "sha256": "76ac32cd3f64b4ab71cb262b1445591345b2cc597ae74fc227f6b27d071186b2"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/AbsorbBlue.mat",
+      "bytes": 1890,
+      "sha256": "f19b462cf15a739887e5484f4f25275269cd4232e083690b60abeb19e2cb0668"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/AbsorbBlue.mat.meta",
+      "bytes": 188,
+      "sha256": "95c5a17456b4a471984462c36fc886688af4f41cf1da91aa3fb34ea5533860b2"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/DarkSteel.mat",
+      "bytes": 3843,
+      "sha256": "9c41372c9c68c286c590a30d56732268e27862e1a9a6a4ed8362623818ac8836"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/DarkSteel.mat.meta",
+      "bytes": 188,
+      "sha256": "bb2614f35aa9bfbd33881b2b1b4e2c95195aaf3026ce03f901d876c7ec4ef810"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/Floor.mat",
+      "bytes": 3838,
+      "sha256": "aa2734a724e29b541034ab023516a845b426b9873a4efa60a071493ccecd2f37"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/Floor.mat.meta",
+      "bytes": 188,
+      "sha256": "280e26b2d509822a68dba1c4abb0648026c5d99f56623736dd317314b034beb4"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/GroundAmber.mat",
+      "bytes": 1897,
+      "sha256": "99a31361b3dc3dd19f8aea55c5f56f35dcf4dec048097d8998067fa32dee2783"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/GroundAmber.mat.meta",
+      "bytes": 188,
+      "sha256": "9cd4a6b33f8ad8513aea0d7791ccd870bab61419846c824c2b128aa09adf3b04"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/Ivory.mat",
+      "bytes": 3821,
+      "sha256": "c3cb0f4062e9fc2c7e5ff230f53b426af43c4661f87f916ddc5e828f8aaee829"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/Ivory.mat.meta",
+      "bytes": 188,
+      "sha256": "f15c266d6ae7ef618191cdddf54709466df688d9fd28ccd55014cb49f745b787"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/MutedViolet.mat",
+      "bytes": 3846,
+      "sha256": "2eb4ec4ee9e9f76e3d795608945a6ec871a724be1ccd9c680af770da96c1af7f"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/MutedViolet.mat.meta",
+      "bytes": 188,
+      "sha256": "279a73537a7538f699c9af989e10b9b2acace70fbfca5d7cd0803514de7672bc"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/OldGold.mat",
+      "bytes": 3839,
+      "sha256": "2e0e02122fabaf9189eb2973378364af98fed19c3eb820c3be74da5759955c41"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/OldGold.mat.meta",
+      "bytes": 188,
+      "sha256": "431cfa5a994878736ba18ddf42f8992ae6414b1edb899c3ff9f5607b525e5385"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/ParryWhite.mat",
+      "bytes": 1884,
+      "sha256": "dbe902d915c78fb1efa8cc2bbd077ebd8b66b42bc3482ee4784f71ce2c18b4fa"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials/ParryWhite.mat.meta",
+      "bytes": 188,
+      "sha256": "58de15a570a0e0b2976fb5f4f82f45b1b277d63f8d6472f5d13aea4ee60d59b4"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Materials.meta",
+      "bytes": 172,
+      "sha256": "b806a71b70c608951367476faa7bcf3c4a2b0833aad3812aa031395eb1989bcd"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/GuardRing.prefab",
+      "bytes": 5799,
+      "sha256": "19be176c45c0e6749b532c239292a537aeb5238b2075325123f713278d7cd727"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/GuardRing.prefab.meta",
+      "bytes": 154,
+      "sha256": "e0411ee4909d40c5093f348588fc3f696a4de4b00a6e6033aeff04a55d7cc319"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/Impact.prefab",
+      "bytes": 3547,
+      "sha256": "ea396cba01d90d7d6e1cf3e0a2ac0f2446e7df77607c97cfcf4914e3e0f0d128"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/Impact.prefab.meta",
+      "bytes": 154,
+      "sha256": "87016b2b4ed6c452b66eb8fd64b0b2f0449f7c05eaf76c99bef47fb7bdc67681"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/Knight.prefab",
+      "bytes": 95740,
+      "sha256": "31599a660772ec064810223f46246141ef00e412000c38cb2d13eb29d081e132"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/Knight.prefab.meta",
+      "bytes": 154,
+      "sha256": "8685cc4e12a9080c5da8f932edaf0441186a636c6c54fb6cd5c9cfd433a60e97"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/KnightArena.prefab",
+      "bytes": 124405,
+      "sha256": "3dccdf000d9b8fd4de14553d1ec7a3a6f3fc8bec4bc998e048fb90a82bf62b9f"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/KnightArena.prefab.meta",
+      "bytes": 154,
+      "sha256": "f172c03e23804135f29d4690cd1eca36b5ad0ef172e6fc49c0232e73940e3386"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/PlayerBolt.prefab",
+      "bytes": 3551,
+      "sha256": "18ab1039d1fe27c88913bcc70ed6c0fef58106618a5956c13e7d3f87ac23fb2a"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/PlayerBolt.prefab.meta",
+      "bytes": 154,
+      "sha256": "4de80cfeaa74cdf40bc59bb47fbcad2fb212062db242010212d5967c6e1dde27"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/SealSpear.prefab",
+      "bytes": 3545,
+      "sha256": "2a95b0fd0408fb92ebb6bfbe01e8ea6571a3aaa5655fd497ee7ecaf6c1a1e5b7"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs/SealSpear.prefab.meta",
+      "bytes": 154,
+      "sha256": "842be76b28a841120449f975883d12799c1696e0f3960b1ff6c64b1ad837c898"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/Prefabs.meta",
+      "bytes": 172,
+      "sha256": "ba32a47681b6bd7a2e2511af243542f8e6599a49180df4b4eca247207f000d84"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight.meta",
+      "bytes": 172,
+      "sha256": "c2d71f8a4671570916514218137b9f3ef395fa7d84a8f5e8dcf7f55a061d4ca2"
+    },
+    {
+      "path": "Assets/Scenes/BossTests/Knight_Test.unity",
+      "bytes": 3696372,
+      "sha256": "48c33c5d41d129bcde9d8a92e221956bf0135a369c9db1c946f8ff96b115d4f3"
+    },
+    {
+      "path": "Assets/Scenes/BossTests/Knight_Test.unity.meta",
+      "bytes": 155,
+      "sha256": "af8ba69faeadf9cc757313d120a6bbf0336d0a489471ebb0a32268ddca7247cd"
+    },
+    {
+      "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+      "bytes": 15247,
+      "sha256": "dc4c7f58c93424f91d1b931d915cc98eac900fab9158caa5de882c05a1526567"
+    },
+    {
+      "path": "Assets/Scripts/Core/BossEncounter.cs",
+      "bytes": 27328,
+      "sha256": "9a4d1f313641f58bc1c5f72590e5a836b96cbdb1ec14a1c8842c3512a87bce2f"
+    },
+    {
+      "path": "Assets/Scripts/Core/Bosses/Knight/KnightDefinition.cs",
+      "bytes": 1287,
+      "sha256": "a0b3130d1b6d3478f6a65adfb19b320c4544b6fd78f40667d153ec6f63c8fd4e"
+    },
+    {
+      "path": "Assets/Scripts/Core/Bosses/Knight/KnightDefinition.cs.meta",
+      "bytes": 59,
+      "sha256": "5fd955b8658601f2695c23b26c179b69a36bbd19ced473e59c6119ab9d8e2fcb"
+    },
+    {
+      "path": "Assets/Scripts/Core/Bosses/Knight/KnightEncounter.cs",
+      "bytes": 14526,
+      "sha256": "dab87d04ae7915bee850cb4125bad0fbfb456aa36ef5d05b91018b3a29ae33ac"
+    },
+    {
+      "path": "Assets/Scripts/Core/Bosses/Knight/KnightEncounter.cs.meta",
+      "bytes": 59,
+      "sha256": "1853b0ee5188740edd869fd7d4841997a9099743ac262a6d8f20e67df31acb72"
+    },
+    {
+      "path": "Assets/Scripts/Core/Bosses/Knight/KnightTrialLauncher.cs",
+      "bytes": 3488,
+      "sha256": "99347db6ac460a0347753a28cee97cc84466d4fba0c950bfa0b5d51f9bad3d07"
+    },
+    {
+      "path": "Assets/Scripts/Core/Bosses/Knight/KnightTrialLauncher.cs.meta",
+      "bytes": 59,
+      "sha256": "c7c1025760841696ed2050445c17ec41397c61a15d2ce13a6c7966504270753a"
+    },
+    {
+      "path": "Assets/Scripts/Core/Bosses/Knight.meta",
+      "bytes": 172,
+      "sha256": "166b5551d3c5d448708278ebc5ebf709630cf53b05e5434d69e7867646ed24a8"
+    },
+    {
+      "path": "Assets/Scripts/Core/BossMeleeCombat.cs",
+      "bytes": 4823,
+      "sha256": "3b80b7ecb91509470489d775cf9864f59c8925444e9d875165df3075fbc311c7"
+    },
+    {
+      "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+      "bytes": 8365,
+      "sha256": "fd95c3afc77e5cf368161b13ee6f0bfcfa0ad7ac12285b3aa9721c7464d8888c"
+    },
+    {
+      "path": "Assets/Scripts/UI/RecoveryMenu.cs",
+      "bytes": 36429,
+      "sha256": "632c5d30e898f3e769ce4d71fd283cbe08a3052e0ad546089a3e50ff4a4bb0ad"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightVisuals.cs",
+      "bytes": 3567,
+      "sha256": "6cdfd591277d79022760a0744840eccc91c994ba3bdc0ff2d506d7f81c18f0d4"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightVisuals.cs.meta",
+      "bytes": 59,
+      "sha256": "627b52afdcfbd8af4549fe8ec0390a9ff3c16777df80a6e2e70a631eab7e3d4b"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Bosses/Knight.meta",
+      "bytes": 172,
+      "sha256": "ec734872ab479e0e1f98a79f722017bc7919d3997a6c47d34c5943a03d15ee80"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Editor/KnightTrialBuilder.cs",
+      "bytes": 13799,
+      "sha256": "abc64f222df107b0c901db6ad146c4a281b9a294406eb4266e921fcd044db498"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Editor/KnightTrialBuilder.cs.meta",
+      "bytes": 59,
+      "sha256": "a8476bffe49fb7cafbc261f7a087712d1e7409b95d45c7ead0910823a5754ac0"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 18216,
+      "sha256": "9e4ede7fd88abe31f054a31202e09a4f4c7a4f9f93a1feb35e22ce603fd87744"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/ArenaDesign.md",
+      "bytes": 8983,
+      "sha256": "810d967d554dac193cb78f372d978bc7467d2567b420c598602b12901ec6f0b9"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/AssetAudit.json",
+      "bytes": 139,
+      "sha256": "3be8f61340d54f895c1ab807181d6f746e81f08dbfb73b1d7d7b4abb207139e1"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/BossDesign.md",
+      "bytes": 10266,
+      "sha256": "2a9746f580526143128c0912698776d4d106f8f00aa5b2fa17cd93b92bdbc1cb"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/Development.md",
+      "bytes": 10247,
+      "sha256": "59562dbe3bb223ad502e1ead07c1447d8722a62dbec04104063ba4ccc1ef3584"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/FinalVerification.json",
+      "bytes": 569,
+      "sha256": "f571b4faa8c7f362fa0256d3e8459c3ae58f06ba2749b330c3c45bbfa9aa3c19"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/ModelPreview_NoHUD.png",
+      "bytes": 166566,
+      "sha256": "80e27dbfd3361a06ff1bb69842adc90b53f9a9068af2827b8f39326e62a256c2"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/MoveDesign.md",
+      "bytes": 18353,
+      "sha256": "293351bf4f1e1e2969ec1390b0cb238ad522c11d8a169067db095944c352999d"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/README.md",
+      "bytes": 3511,
+      "sha256": "7ae27d439f4686a9b53d089dce24d563f9f2129da083c3165680db365eb39179"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/RuntimeChecks.cs.txt",
+      "bytes": 8112,
+      "sha256": "b8d0fd4d18a50eaa536ed9705ee7d08fba75e8a59c387116aa8a6809a410dc32"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/RuntimeChecks.json",
+      "bytes": 2982,
+      "sha256": "3c5e27cd4a07ba665049b29dd270639c630dc2f11516d7c97e334414df167a8a"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/SourceAudit.md",
+      "bytes": 4963,
+      "sha256": "3d2991ca55b07acf7e9194c86ea1de7125bb2485b412a5e56997e095375727fa"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/SourceManifest.json",
+      "bytes": 1677,
+      "sha256": "d640daf8d56867cafd2efc47afa4c4ad1913511b531d6a00ba39f5300fa66f68"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/StoryGate.png",
+      "bytes": 101516,
+      "sha256": "b8851f32da7384935fb0d2d960856352400ba77d72ff8ea8bd1438c6218d8191"
+    },
+    {
+      "path": "Docs/KnightDesign20261105/TrialOverview.png",
+      "bytes": 397239,
+      "sha256": "52d77787e3508e1f22609aa4a0e5caca8ab21a2ed36d62ef68ef5c94067f88cf"
+    },
+    {
+      "path": "README.md",
+      "bytes": 19957,
+      "sha256": "96a54d1fa7825cc7e46bdc85a839dc24d51e8f73e7b8efed3b0a472c54134cb0"
+    }
+  ],
+  "unpaired_assets": [],
+  "duplicate_new_guids": [],
+  "broken_document_links": []
+}

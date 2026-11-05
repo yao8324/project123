@@ -45,13 +45,13 @@ namespace ArcaneArchive.Core
         private float nextFractureSpawn;
         public int FractureSpawnCount { get; private set; }
         public int FractureHitCount { get; private set; }
-        public float RecoveryDuration => attack==5 ? definition.meleeRecovery : attack==4 ? definition.rushRecovery : attack>=2 ? definition.heavyRecovery : definition.standardRecovery;
+        public float RecoveryDuration => KnightMode && knightSpec!=null ? knightSpec.recovery : attack==5 ? definition.meleeRecovery : attack==4 ? definition.rushRecovery : attack>=2 ? definition.heavyRecovery : definition.standardRecovery;
         private sealed class Flash { public GameObject go; public float life, total; public Vector3 scale; }
         public BossDefinition Definition => definition;
         public State CurrentState { get; private set; }
         public bool IsActive => CurrentState != State.Inactive;
         public bool IsFinished => CurrentState == State.Won || CurrentState == State.Lost;
-        public bool IsPaused => IsActive && (focusLost || (menu && menu.IsOpen));
+        public bool IsPaused => IsActive && (KnightStoryPending || focusLost || (menu && menu.IsOpen));
         public bool CanFight => IsActive && !IsFinished && !IsPaused && CurrentState != State.Intro;
         public Camera View { get; private set; }
         public float BossHealth { get; private set; }
@@ -78,7 +78,8 @@ namespace ArcaneArchive.Core
         public bool Begin()
         {
             if (IsActive) return false;
-            if (!definition || !arenaPrefab || !arenaPrefab.laserEffect || !arenaPrefab.fractureEffect || !arenaPrefab.rushEffect || !arenaPrefab.volleyEffect || !arenaPrefab.rushWakeEffect || !arenaPrefab.pageImpactEffect || !combatFont || !player || !combat || !View || !libraryEnvironment) return false;
+            if (!definition || !arenaPrefab || !combatFont || !player || !combat || !View || !libraryEnvironment) return false;
+            if (!KnightMode && (!arenaPrefab.laserEffect || !arenaPrefab.fractureEffect || !arenaPrefab.rushEffect || !arenaPrefab.volleyEffect || !arenaPrefab.rushWakeEffect || !arenaPrefab.pageImpactEffect)) return false;
             returnPosition = transform.position; returnRotation = transform.rotation;
             libraryWasActive = libraryEnvironment.activeSelf;
             arena = Instantiate(arenaPrefab, new Vector3(160, 0, 0), Quaternion.identity);
@@ -100,12 +101,13 @@ namespace ArcaneArchive.Core
             arena.boss.localPosition = new Vector3(0, 0, 4);
             arena.boss.localScale=Vector3.one*definition.bossScale;
             arena.boss.localRotation = Quaternion.Euler(0, 180, 0);
-            arena.model.floatingBody.localScale = Vector3.one;
-            ResetIntent();ResetMelee();arena.model.ResetPose();
+            if(!KnightMode)arena.model.floatingBody.localScale = Vector3.one;
+            ResetIntent();ResetMelee();
+            if(KnightMode)ResetKnight();else arena.model.ResetPose();
             SetState(State.Intro);
             menu.Resume(); player.SetGameplayInputEnabled(true); player.SetCursorLocked(true);
             player.WaitForReleasedControls(); combat.SuppressUntilReleased();
-            Feedback("归档编号零。你不该醒来。", 3);
+            if(!KnightMode)Feedback("归档编号零。你不该醒来。", 3);
         }
         public void Retry()
         {
@@ -122,6 +124,7 @@ namespace ArcaneArchive.Core
             ClearAttacks(); CurrentState = State.Inactive;combat.EndCombat();
             if (hud) { hud.Hide(); Destroy(hud); }
             if (arena) { arena.gameObject.SetActive(false); Destroy(arena.gameObject); arena = null; }
+            RestoreKnightSession();
             menu.Resume(); player.SetGameplayInputEnabled(true); player.SetCursorLocked(true); player.WaitForReleasedControls();
             return true;
         }
@@ -136,7 +139,7 @@ namespace ArcaneArchive.Core
             combatTime += dt;
             // Controls use one Input System. Combat never samples the legacy Input API.
             combat.Tick(Mathf.Min(player.PlayerDeltaTime,.1f));
-            if (IsFinished) return;
+            if (IsFinished || KnightStoryPending) return;
             TickBoss(dt);
             if(IsFinished)return;
             Physics.SyncTransforms();TickShots(dt);
@@ -151,6 +154,7 @@ namespace ArcaneArchive.Core
         }
         private void TickBoss(float dt)
         {
+            if(KnightMode){TickKnight(dt);return;}
             stateTime += dt;
             UpdatePerception(dt);
             switch (CurrentState)
@@ -218,7 +222,7 @@ namespace ArcaneArchive.Core
         {
             MoveTowardIntent(dt,factor);
         }
-        private float WarningDuration => attack==5 ? definition.meleeWarning : attack == 0 ? definition.volleyWarning : attack == 1 ? definition.waveWarning : attack==2 ? definition.fractureWarning : attack==3 ? definition.laserChargeTime : definition.rushWarning;
+        private float WarningDuration => KnightMode && knightSpec!=null ? knightSpec.warning : attack==5 ? definition.meleeWarning : attack == 0 ? definition.volleyWarning : attack == 1 ? definition.waveWarning : attack==2 ? definition.fractureWarning : attack==3 ? definition.laserChargeTime : definition.rushWarning;
         private float AimLockDuration => attack==3?definition.laserLockTime:attack==4?definition.rushLockTime:attack==5?.24f:.55f;
         private void BeginWarning()
         {
@@ -378,6 +382,7 @@ namespace ArcaneArchive.Core
         public void DamageBoss(float damage, bool core)
         {
             if (!CanFight || CurrentState == State.PhaseBreak || damage <= 0) return;
+            if(KnightMode){DamageKnight(damage,core);return;}
             BossHealth = Mathf.Max(0, BossHealth - damage * (core && CurrentState == State.Recovery ? 1.5f : 1));
             if (BossHealth <= 0) { Finish(true); return; }
             if (Phase == 1 && BossHealth <= definition.health * .5f)
@@ -422,6 +427,7 @@ namespace ArcaneArchive.Core
         }
         private void ClearAttacks()
         {
+            ClearKnightTelegraph();
             ClearMeleeVisual();
             ClearWaveCharge();
             ClearRitualEffects();

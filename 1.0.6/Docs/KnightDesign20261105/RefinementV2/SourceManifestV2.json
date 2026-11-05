@@ -1,0 +1,1972 @@
+[
+  {
+    "path": "Assets/Art/Bosses/Knight/KnightChinese.asset",
+    "bytes": 8457412,
+    "sha256": "bbdce17fd487dd875ec61c6ec003245703c6e15bd9bf672929b3ebb3bb83ddb0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/KnightChinese.asset.meta",
+    "bytes": 189,
+    "sha256": "3f4215b4e35bf380a8aef28f5842af9e8e55887aa32bb50ba0d7c15fb0161b4f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/KnightCombat.asset",
+    "bytes": 2989,
+    "sha256": "1859e1ad06d7f5e0a9bdfa98b33ec3a6bda3a75a301d524698fedb7617a7e9eb"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/KnightCombat.asset.meta",
+    "bytes": 189,
+    "sha256": "a65c8de7a27ec22bba21d72b9ca163cb3a6c13e4f454b353018f6c92fb82e13e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/KnightDefinition.asset",
+    "bytes": 2956,
+    "sha256": "64b7ae797dc35f9c4c3306bb3a6120fdf8e12a5b0937a9ba6fdd7fe1e998b67c"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/KnightDefinition.asset.meta",
+    "bytes": 189,
+    "sha256": "76ac32cd3f64b4ab71cb262b1445591345b2cc597ae74fc227f6b27d071186b2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/AbsorbBlue.mat",
+    "bytes": 1890,
+    "sha256": "f19b462cf15a739887e5484f4f25275269cd4232e083690b60abeb19e2cb0668"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/AbsorbBlue.mat.meta",
+    "bytes": 188,
+    "sha256": "95c5a17456b4a471984462c36fc886688af4f41cf1da91aa3fb34ea5533860b2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/DarkSteel.mat",
+    "bytes": 3843,
+    "sha256": "9c41372c9c68c286c590a30d56732268e27862e1a9a6a4ed8362623818ac8836"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/DarkSteel.mat.meta",
+    "bytes": 188,
+    "sha256": "bb2614f35aa9bfbd33881b2b1b4e2c95195aaf3026ce03f901d876c7ec4ef810"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/Floor.mat",
+    "bytes": 3838,
+    "sha256": "aa2734a724e29b541034ab023516a845b426b9873a4efa60a071493ccecd2f37"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/Floor.mat.meta",
+    "bytes": 188,
+    "sha256": "280e26b2d509822a68dba1c4abb0648026c5d99f56623736dd317314b034beb4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/GroundAmber.mat",
+    "bytes": 1897,
+    "sha256": "99a31361b3dc3dd19f8aea55c5f56f35dcf4dec048097d8998067fa32dee2783"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/GroundAmber.mat.meta",
+    "bytes": 188,
+    "sha256": "9cd4a6b33f8ad8513aea0d7791ccd870bab61419846c824c2b128aa09adf3b04"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/Ivory.mat",
+    "bytes": 3821,
+    "sha256": "c3cb0f4062e9fc2c7e5ff230f53b426af43c4661f87f916ddc5e828f8aaee829"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/Ivory.mat.meta",
+    "bytes": 188,
+    "sha256": "f15c266d6ae7ef618191cdddf54709466df688d9fd28ccd55014cb49f745b787"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/MutedViolet.mat",
+    "bytes": 3846,
+    "sha256": "2eb4ec4ee9e9f76e3d795608945a6ec871a724be1ccd9c680af770da96c1af7f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/MutedViolet.mat.meta",
+    "bytes": 188,
+    "sha256": "279a73537a7538f699c9af989e10b9b2acace70fbfca5d7cd0803514de7672bc"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/OldGold.mat",
+    "bytes": 3839,
+    "sha256": "2e0e02122fabaf9189eb2973378364af98fed19c3eb820c3be74da5759955c41"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/OldGold.mat.meta",
+    "bytes": 188,
+    "sha256": "431cfa5a994878736ba18ddf42f8992ae6414b1edb899c3ff9f5607b525e5385"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/ParryWhite.mat",
+    "bytes": 1884,
+    "sha256": "dbe902d915c78fb1efa8cc2bbd077ebd8b66b42bc3482ee4784f71ce2c18b4fa"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials/ParryWhite.mat.meta",
+    "bytes": 188,
+    "sha256": "58de15a570a0e0b2976fb5f4f82f45b1b277d63f8d6472f5d13aea4ee60d59b4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Materials.meta",
+    "bytes": 172,
+    "sha256": "b806a71b70c608951367476faa7bcf3c4a2b0833aad3812aa031395eb1989bcd"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/GuardRing.prefab",
+    "bytes": 5799,
+    "sha256": "19be176c45c0e6749b532c239292a537aeb5238b2075325123f713278d7cd727"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/GuardRing.prefab.meta",
+    "bytes": 154,
+    "sha256": "e0411ee4909d40c5093f348588fc3f696a4de4b00a6e6033aeff04a55d7cc319"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/Impact.prefab",
+    "bytes": 3547,
+    "sha256": "ea396cba01d90d7d6e1cf3e0a2ac0f2446e7df77607c97cfcf4914e3e0f0d128"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/Impact.prefab.meta",
+    "bytes": 154,
+    "sha256": "87016b2b4ed6c452b66eb8fd64b0b2f0449f7c05eaf76c99bef47fb7bdc67681"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/Knight.prefab",
+    "bytes": 95740,
+    "sha256": "31599a660772ec064810223f46246141ef00e412000c38cb2d13eb29d081e132"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/Knight.prefab.meta",
+    "bytes": 154,
+    "sha256": "8685cc4e12a9080c5da8f932edaf0441186a636c6c54fb6cd5c9cfd433a60e97"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/KnightArena.prefab",
+    "bytes": 124405,
+    "sha256": "3dccdf000d9b8fd4de14553d1ec7a3a6f3fc8bec4bc998e048fb90a82bf62b9f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/KnightArena.prefab.meta",
+    "bytes": 154,
+    "sha256": "f172c03e23804135f29d4690cd1eca36b5ad0ef172e6fc49c0232e73940e3386"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/PlayerBolt.prefab",
+    "bytes": 3551,
+    "sha256": "18ab1039d1fe27c88913bcc70ed6c0fef58106618a5956c13e7d3f87ac23fb2a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/PlayerBolt.prefab.meta",
+    "bytes": 154,
+    "sha256": "4de80cfeaa74cdf40bc59bb47fbcad2fb212062db242010212d5967c6e1dde27"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/SealSpear.prefab",
+    "bytes": 3545,
+    "sha256": "2a95b0fd0408fb92ebb6bfbe01e8ea6571a3aaa5655fd497ee7ecaf6c1a1e5b7"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs/SealSpear.prefab.meta",
+    "bytes": 154,
+    "sha256": "842be76b28a841120449f975883d12799c1696e0f3960b1ff6c64b1ad837c898"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Prefabs.meta",
+    "bytes": 172,
+    "sha256": "ba32a47681b6bd7a2e2511af243542f8e6599a49180df4b4eca247207f000d84"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightArenaRefined.prefab",
+    "bytes": 246163,
+    "sha256": "65dad7453d557a779e28dcd3ee70d94922fa564c4327cf0400ad4d3517347646"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightArenaRefined.prefab.meta",
+    "bytes": 154,
+    "sha256": "48e6a9edbf86b11885c67930c61389da7fa05e216b053a1a0b74a99f4e6150b0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightDefinitionRefined.asset",
+    "bytes": 3694,
+    "sha256": "42b7e349685e4982c087663d2b062429d6f01f942a686b5f59505ec9ecde4574"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightDefinitionRefined.asset.meta",
+    "bytes": 189,
+    "sha256": "4854b1a9df80a3a4189a74d0469d799dc6effda1889f7d5a18901b1ae54931d2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightRefined.prefab",
+    "bytes": 314532,
+    "sha256": "588a77d0670612c2649a4f9258c4ee314fe19554294d2c60c386d6213cf8e34d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightRefined.prefab.meta",
+    "bytes": 154,
+    "sha256": "e14e785aa33395876cfac8250eac535705de6ed3f3b023795db9454c383fab28"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightRefinedChinese.asset",
+    "bytes": 2128553,
+    "sha256": "6cbff58213bf267f71cd3a771284c968d2fe26730918d251957f720ce153a6d6"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/KnightRefinedChinese.asset.meta",
+    "bytes": 189,
+    "sha256": "c2b7023b182d2975e43c3127cc387b3073f29c70b26c0b11f66779c6b8c4ae36"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/BlackJointSteel.mat",
+    "bytes": 3849,
+    "sha256": "d16f7f11ec9bcc67e53577d0af3f2f17f10782ecb81e276e9fc81f5366536f6b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/BlackJointSteel.mat.meta",
+    "bytes": 188,
+    "sha256": "be6c6bbf06ec94e9d6c285a7d2dbbaf12d9d3f3fd103206ab94ea373a488f41c"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/IvoryOathRibbons.mat",
+    "bytes": 3832,
+    "sha256": "7c145d77822931342e1c878ac52ca13691c60b0c5cea8d90dc4f912145979dea"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/IvoryOathRibbons.mat.meta",
+    "bytes": 188,
+    "sha256": "f325a3d9247dcd5f6de92850ed2f3e3a037a61c8909e8b67e14bc421a3ffd2ad"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/OathGoldLight.mat",
+    "bytes": 809,
+    "sha256": "26404bb4e89ff4203130362d8d5a47b39b1a127de4d7d035850a55513ff5f89a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/OathGoldLight.mat.meta",
+    "bytes": 188,
+    "sha256": "fbdfb94a2d4c17c2016519bd0bac208a495bbd1e25c321650f8e209f8637be94"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/OathGoldVeil.mat",
+    "bytes": 808,
+    "sha256": "9d70eb612a8a9192110fcf6f3346c481d6bce0a984a21d2bee87e883e95d0957"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/OathGoldVeil.mat.meta",
+    "bytes": 188,
+    "sha256": "63d2390f4b79d0b782326911d8953877d3d2185aad3f0c24ed93198b89051f47"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/OldGoldEdges.mat",
+    "bytes": 3838,
+    "sha256": "7a0afbd5706ef1dc038155f3476bf7e9e188004fe99278043fcc8d3d98c3abf8"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/OldGoldEdges.mat.meta",
+    "bytes": 188,
+    "sha256": "2236431c8e4e33c56f46423f22f519ad2ec97f447944ef9e30c1d3af6740a6d1"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/SilverArmor.mat",
+    "bytes": 3833,
+    "sha256": "56b9ca07cd9ec4f79f195c96062951beaced47d1db2931657a4573b5aa3c1350"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/SilverArmor.mat.meta",
+    "bytes": 188,
+    "sha256": "d33f1f32db76b99dee0b3784d65f25b1613bf846bd78033b18f0940732302f19"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/VioletUndercloth.mat",
+    "bytes": 3850,
+    "sha256": "1bdaac26e627deee4df50a6ee3be0275f60262c4e815734312c6027c26326ead"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials/VioletUndercloth.mat.meta",
+    "bytes": 188,
+    "sha256": "9d8926365a324a0dc7979e97d48a8a8f96fed25cf432e81386f722d29f77d461"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Materials.meta",
+    "bytes": 172,
+    "sha256": "e2360121103532d854c12d69845a022e4b2e424f6aee175382f984b278c4681f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/000_Fitted_torso_flexible_cuirass.asset",
+    "bytes": 10615,
+    "sha256": "f98938168de6a3449a738ee8bf80dcc609da831e7fec8063cdb5c2496eedcbbd"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/000_Fitted_torso_flexible_cuirass.asset.meta",
+    "bytes": 188,
+    "sha256": "fabbfda3fa92033ce7c5b4fa7c2394bd9335d04a5ae698c5a9cba9e9d8550be3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/001_Cuirass_silver_bevel.asset",
+    "bytes": 5439,
+    "sha256": "61fe1c5a97101bf606aedf03d3415a14a5f66180432a52d3a34ab1e16aa9741e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/001_Cuirass_silver_bevel.asset.meta",
+    "bytes": 188,
+    "sha256": "d3a14666eb343ac87acc0f22efef0b2d6fd7f98b564283f9c0bbd1406c1101b4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/002_Breastplate_ivory_inlay.asset",
+    "bytes": 5178,
+    "sha256": "fb1ef3cc5bb548484578bf59d2b26360be8013c8c13acd6317615c0fd3af4102"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/002_Breastplate_ivory_inlay.asset.meta",
+    "bytes": 188,
+    "sha256": "c010b1a3831fb5fc5670f19264388f38beaecf923bce389ae843ff8d18d30f5b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/003_Cuirass_oath_rune.asset",
+    "bytes": 5164,
+    "sha256": "5003f1cf44052121c2e9f2cefac69edabfc1d1c94591a66995836e078a897e25"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/003_Cuirass_oath_rune.asset.meta",
+    "bytes": 188,
+    "sha256": "1527695ec7b3a0ce9e708fe1f4a0aa73f82241b9b99207206afc057e598c4108"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/004_Overlapping_abdominal_lames_0.asset",
+    "bytes": 5176,
+    "sha256": "09240a27f994661d69831646463bebb64de6e9894ac700e71fdc0319c80f27e4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/004_Overlapping_abdominal_lames_0.asset.meta",
+    "bytes": 188,
+    "sha256": "334248903d5822effa8386d486d04d91acf27d9608e55b5d211e92d557e99b97"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/005_Overlapping_abdominal_lames_1.asset",
+    "bytes": 5174,
+    "sha256": "e2c71ccf7c5a88c405ef30bce75aeeb86c5282bff7040ccd50bb5039909dd676"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/005_Overlapping_abdominal_lames_1.asset.meta",
+    "bytes": 188,
+    "sha256": "deda02a266c6667c6580085b3e2bc8913c1e3d97b27d9fdf37386cd57f6ac78a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/006_Overlapping_abdominal_lames_2.asset",
+    "bytes": 5176,
+    "sha256": "48d69421e7340874affbfb65fe9aa18954cdaf95121d579c70804f5a5eb28109"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/006_Overlapping_abdominal_lames_2.asset.meta",
+    "bytes": 188,
+    "sha256": "1bd524e55c382174ff68d236bf4f2ed7b33bc952524c7909eff20214cfafaa10"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/007_Overlapping_abdominal_lames_3.asset",
+    "bytes": 5186,
+    "sha256": "d05c7e2e72e262284c6b150e4f72acc94da54547ae630e37989b92199e9f8089"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/007_Overlapping_abdominal_lames_3.asset.meta",
+    "bytes": 188,
+    "sha256": "8069acab2319224671da0977862af9ce9e6521d7e4da4e46dce2503bfc218d3e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/008_Neck_collar.asset",
+    "bytes": 7787,
+    "sha256": "685e90fae76884ce2c68b526ecbb293e0667570223c8a9f799683045c924f747"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/008_Neck_collar.asset.meta",
+    "bytes": 188,
+    "sha256": "86c3510997b2287da4f34f1ae859e07c000b7167acd0e3acbc0d5a4f3913369a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/009_Faceted_sealed_helmet.asset",
+    "bytes": 10629,
+    "sha256": "c7ccee0167153dd7c2700ac44cd84103dc0f275f5cfc64db226d32f238c029bf"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/009_Faceted_sealed_helmet.asset.meta",
+    "bytes": 188,
+    "sha256": "bb48c7742998b56c87c46e4e3a30788b8f4d6456de1272a0f945d5678c1d9901"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/010_Anonymous_ivory_faceplate.asset",
+    "bytes": 5166,
+    "sha256": "7ad02715c72a6424bbb88c41f24f7011c9940e9b4c3da52acf25ace336375ad8"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/010_Anonymous_ivory_faceplate.asset.meta",
+    "bytes": 188,
+    "sha256": "0bbe950032635cac7704abf1c3ba0eff2f92356136bc827ad318fa11c496992b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/011_Recessed_eye_slit.asset",
+    "bytes": 5178,
+    "sha256": "c4ed95bb56d5e2f5e3ebddbf632f3031ee1844d88112965ebffc35ba8360ccf2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/011_Recessed_eye_slit.asset.meta",
+    "bytes": 188,
+    "sha256": "f739d3fb19bb07ff04e10550579172046d0452750f267bbd261c212c1f6adc5d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/012_Swept_coronet_crest.asset",
+    "bytes": 5164,
+    "sha256": "7abf1dab38fec54f7aff87a8c260a8aaa6cef52c089c3c18b0176658cc2bfed7"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/012_Swept_coronet_crest.asset.meta",
+    "bytes": 188,
+    "sha256": "52d44f8d6623605c8e27a12aa7bf4860fcbcc9c3e7b5fea7aab0eb7ffb21cde6"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/013_Segmented_tasset_0.asset",
+    "bytes": 5161,
+    "sha256": "83e2d482d1cf35d8e4e6d9cee0a7497460612f04659c4ade186cd3ff53ce866f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/013_Segmented_tasset_0.asset.meta",
+    "bytes": 188,
+    "sha256": "72ba9dafe9d389f336deab153586570cb6e70ba0571654c90c4cbc9f809264ef"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/014_Segmented_tasset_1.asset",
+    "bytes": 5161,
+    "sha256": "b97d8cd4db98a415f81fd6e5a41b0d9b6c916eb721781c75a391d63a6a58703e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/014_Segmented_tasset_1.asset.meta",
+    "bytes": 188,
+    "sha256": "105c2ae2c5fe215841a7ab4ffa9b31d24e964780533a048aced07f6ade2ee4dc"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/015_Segmented_tasset_2.asset",
+    "bytes": 5161,
+    "sha256": "048c5fe2422f3e77e18dfd1287ef0da6276b09dcb4fc5ff2005b02b27fb64244"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/015_Segmented_tasset_2.asset.meta",
+    "bytes": 188,
+    "sha256": "a9f45d553d0eb946626479261dee53843281c35fce3a6125278b618d017e1ae6"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/016_Recessed_eye_slit.asset",
+    "bytes": 5178,
+    "sha256": "c4ed95bb56d5e2f5e3ebddbf632f3031ee1844d88112965ebffc35ba8360ccf2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/016_Recessed_eye_slit.asset.meta",
+    "bytes": 188,
+    "sha256": "062ed2c5a9b60d3f1e25398f31f291977fed12efd9715e0672611afb3c3b0205"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/017_Swept_coronet_crest.asset",
+    "bytes": 5164,
+    "sha256": "7abf1dab38fec54f7aff87a8c260a8aaa6cef52c089c3c18b0176658cc2bfed7"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/017_Swept_coronet_crest.asset.meta",
+    "bytes": 188,
+    "sha256": "9c6f749e6c0a7b76ee7f0f6d4759f84f1eee6eb40ed924bdca4abc97e5234e7f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/018_Segmented_tasset_0.asset",
+    "bytes": 5161,
+    "sha256": "83e2d482d1cf35d8e4e6d9cee0a7497460612f04659c4ade186cd3ff53ce866f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/018_Segmented_tasset_0.asset.meta",
+    "bytes": 188,
+    "sha256": "c24ed11f2b3fe685c76ded5422c577b7658927a4047050c50f17b65b9570ce28"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/019_Segmented_tasset_1.asset",
+    "bytes": 5161,
+    "sha256": "b97d8cd4db98a415f81fd6e5a41b0d9b6c916eb721781c75a391d63a6a58703e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/019_Segmented_tasset_1.asset.meta",
+    "bytes": 188,
+    "sha256": "5d33557834c178618ebb7ae9a97c848bfdd3982d670c9edaacd165febaba6119"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/020_Segmented_tasset_2.asset",
+    "bytes": 5161,
+    "sha256": "048c5fe2422f3e77e18dfd1287ef0da6276b09dcb4fc5ff2005b02b27fb64244"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/020_Segmented_tasset_2.asset.meta",
+    "bytes": 188,
+    "sha256": "9b41880e2b658f39a09c519114d9d031815004863b669164400afcea4f62d98d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/021_Upper_arm_articulated_underlay.asset",
+    "bytes": 7798,
+    "sha256": "60f3ac38ed91a1ca275ae67116a83047e6e311e10926cf810c45f6a7eefc970b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/021_Upper_arm_articulated_underlay.asset.meta",
+    "bytes": 188,
+    "sha256": "354c0063c93aa5c020e1d6e9c858efb9b66f9849ab0556c383bcf23cbdfe34ff"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/022_Upper_arm_shield_plate.asset",
+    "bytes": 5169,
+    "sha256": "a3fef82da47a0689a3dc43a3c0207102e9c5ca8604aa184661a70240c421c7cf"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/022_Upper_arm_shield_plate.asset.meta",
+    "bytes": 188,
+    "sha256": "a0e71f1cfbf15a88b72c247badd0af92309ac3727909e2ab23a6cb62865a6d24"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/023_Layered_pointed_pauldron_0.asset",
+    "bytes": 5165,
+    "sha256": "aae2666d4f3c6674550a2780d21083ef81456eef340cd94c32388075e860b735"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/023_Layered_pointed_pauldron_0.asset.meta",
+    "bytes": 188,
+    "sha256": "ea4a769a63354be2f64259f407e38b2cd6f25192ce3fb30f6a7ff115aa475dde"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/024_Layered_pointed_pauldron_1.asset",
+    "bytes": 5165,
+    "sha256": "18144db0df31bb644e0706d43773dad291885d831736551f5d4568f6e4d6c751"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/024_Layered_pointed_pauldron_1.asset.meta",
+    "bytes": 188,
+    "sha256": "3ba66141158a14379baf9d11d12b35a6c3419802b70a8f024609d2bb695cd7fa"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/025_Layered_pointed_pauldron_2.asset",
+    "bytes": 5177,
+    "sha256": "e7bbc40ff293df879d36b784dc5528bd8c8de679039f2efb5e9c459845b90ba4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/025_Layered_pointed_pauldron_2.asset.meta",
+    "bytes": 188,
+    "sha256": "af44102318525684b11bc988ee5b31e4972fb5a516f4e8ab507f12d0b221b7a5"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/026_Elbow_and_vambrace.asset",
+    "bytes": 9206,
+    "sha256": "291b4fe9faf0c7a8823d07b4409da2dd1463547c3904a739dcdf3d229460f6f4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/026_Elbow_and_vambrace.asset.meta",
+    "bytes": 188,
+    "sha256": "34aac24f1a9a81a7397c452da8499c746839eb1974bb01a23c2d98dcfb7ac29d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/027_Vambrace_bevel_shell.asset",
+    "bytes": 5169,
+    "sha256": "4c24833ec13d8d40a85c4429fc826f3d0bef95366bfffabf5a654c88f15d973b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/027_Vambrace_bevel_shell.asset.meta",
+    "bytes": 188,
+    "sha256": "b72a8ffd9e38eae09fa97f281334ceedfd149bb20fe6b0c833e75fbe9e67ecbd"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/028_Elbow_gold_fin.asset",
+    "bytes": 5155,
+    "sha256": "30be6a471f59934d9c5fd1a89abd3ba30dc881ee7f10385991c4975a2b11701d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/028_Elbow_gold_fin.asset.meta",
+    "bytes": 188,
+    "sha256": "e42e70d43350f1b8aac03019f250eec7db92a96bf2eab46fa10708349267ec41"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/029_Gauntlet_metacarpal_plate.asset",
+    "bytes": 5180,
+    "sha256": "ae8b8ba2affd0f4a1021dd412570da53b683e809b24de525bc61e435a2394b8d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/029_Gauntlet_metacarpal_plate.asset.meta",
+    "bytes": 188,
+    "sha256": "a694a15f8ed7e1ae908a8e329b8e2e85744a363ad4c8612d83e73228465a6434"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/030_Armored_curled_finger_0.asset",
+    "bytes": 5678,
+    "sha256": "5f0825d333b2599008376d0f7596c0b2a942c0c294bf4f58f5d08787e4381b87"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/030_Armored_curled_finger_0.asset.meta",
+    "bytes": 188,
+    "sha256": "3e01e1a49f3ed66ca46900e0153794612b8852c724aa91b321d76fb0dde235a9"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/031_Armored_curled_finger_1.asset",
+    "bytes": 5678,
+    "sha256": "f4242ff70dfa5e0de5c6e564d9201697b7ddb32ed136225100654be6b2b86633"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/031_Armored_curled_finger_1.asset.meta",
+    "bytes": 188,
+    "sha256": "c8a799452ef2bdd5d0c765b8fafc8ddfe1ca8ff4a66016da74fa59086863326f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/032_Armored_curled_finger_2.asset",
+    "bytes": 5678,
+    "sha256": "c1045a4af2270a4de68a3bcc3840167d6295ad0d6022132bea2e2fc832627843"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/032_Armored_curled_finger_2.asset.meta",
+    "bytes": 188,
+    "sha256": "8501cf56126a910a1bf48d8d8b34e5ce78bb5c31de5805fa5980b88cdd92e6ce"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/033_Armored_curled_finger_3.asset",
+    "bytes": 5678,
+    "sha256": "73b0a5e8c967c734fbaf54f17def004d60b42b7c3d27fd9e75a414c03b812407"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/033_Armored_curled_finger_3.asset.meta",
+    "bytes": 188,
+    "sha256": "336a692fb0992b6571f3e4f9b734eb200b3bf07c244907f8b4c8c7376ccef814"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/034_Opposing_thumb.asset",
+    "bytes": 5159,
+    "sha256": "07335f1db8492e391e94cdfd826f3d9bef689af552c01e77164e89e8c237a72a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/034_Opposing_thumb.asset.meta",
+    "bytes": 188,
+    "sha256": "00f92052fa0f4980f05d0e019ecbd9fbd99d8c817f94d6c6401a7bf0368026c0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/035_Upper_arm_articulated_underlay.asset",
+    "bytes": 7798,
+    "sha256": "60f3ac38ed91a1ca275ae67116a83047e6e311e10926cf810c45f6a7eefc970b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/035_Upper_arm_articulated_underlay.asset.meta",
+    "bytes": 188,
+    "sha256": "48ab6e97dc8691787af32f3dabe69997236a5219064e6fe90ae6ae9e82dcc719"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/036_Upper_arm_shield_plate.asset",
+    "bytes": 5169,
+    "sha256": "a3fef82da47a0689a3dc43a3c0207102e9c5ca8604aa184661a70240c421c7cf"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/036_Upper_arm_shield_plate.asset.meta",
+    "bytes": 188,
+    "sha256": "80d9673e89721943573b8ba901a220c2090278171a012225e3e484ba0a3ee322"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/037_Layered_pointed_pauldron_0.asset",
+    "bytes": 5165,
+    "sha256": "aae2666d4f3c6674550a2780d21083ef81456eef340cd94c32388075e860b735"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/037_Layered_pointed_pauldron_0.asset.meta",
+    "bytes": 188,
+    "sha256": "dcb1da09e829bd29644f4fe88447e7b15b7135e92888daae91d97a007af2cb5a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/038_Layered_pointed_pauldron_1.asset",
+    "bytes": 5165,
+    "sha256": "18144db0df31bb644e0706d43773dad291885d831736551f5d4568f6e4d6c751"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/038_Layered_pointed_pauldron_1.asset.meta",
+    "bytes": 188,
+    "sha256": "c0a0e1b9d9ce66d3fbcfaf40329846ed14677b1614939ef6db728a8e869dff3b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/039_Layered_pointed_pauldron_2.asset",
+    "bytes": 5177,
+    "sha256": "e7bbc40ff293df879d36b784dc5528bd8c8de679039f2efb5e9c459845b90ba4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/039_Layered_pointed_pauldron_2.asset.meta",
+    "bytes": 188,
+    "sha256": "4e575cfffd5c4aaeb5edb1edf02da7033e3139971cebb0eaf02563f1822e648e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/040_Elbow_and_vambrace.asset",
+    "bytes": 9206,
+    "sha256": "291b4fe9faf0c7a8823d07b4409da2dd1463547c3904a739dcdf3d229460f6f4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/040_Elbow_and_vambrace.asset.meta",
+    "bytes": 188,
+    "sha256": "a7b2f313efd8e727c72faf238079e599009e8e5fc8e3d9eccc78cc7fa6388fe1"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/041_Vambrace_bevel_shell.asset",
+    "bytes": 5169,
+    "sha256": "4c24833ec13d8d40a85c4429fc826f3d0bef95366bfffabf5a654c88f15d973b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/041_Vambrace_bevel_shell.asset.meta",
+    "bytes": 188,
+    "sha256": "4e38feebf491a9775442fda45b3d3fabea3a36fc80a4dd3c77138f57b74637ef"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/042_Elbow_gold_fin.asset",
+    "bytes": 5155,
+    "sha256": "30be6a471f59934d9c5fd1a89abd3ba30dc881ee7f10385991c4975a2b11701d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/042_Elbow_gold_fin.asset.meta",
+    "bytes": 188,
+    "sha256": "f747d0dc457d04c7254350f4e82e1ac481d59470b4a118b9a516ec56a49771f3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/043_Gauntlet_metacarpal_plate.asset",
+    "bytes": 5180,
+    "sha256": "ae8b8ba2affd0f4a1021dd412570da53b683e809b24de525bc61e435a2394b8d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/043_Gauntlet_metacarpal_plate.asset.meta",
+    "bytes": 188,
+    "sha256": "a0be0dfbd07681341406773b4301783a2bb22fcc7f167a1e0c4cff269fcea881"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/044_Armored_curled_finger_0.asset",
+    "bytes": 5678,
+    "sha256": "5f0825d333b2599008376d0f7596c0b2a942c0c294bf4f58f5d08787e4381b87"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/044_Armored_curled_finger_0.asset.meta",
+    "bytes": 188,
+    "sha256": "a6151556f4a76016d1f1bfbf507c25dc7b52db95e518f267f3712ab569bf46bf"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/045_Armored_curled_finger_1.asset",
+    "bytes": 5678,
+    "sha256": "f4242ff70dfa5e0de5c6e564d9201697b7ddb32ed136225100654be6b2b86633"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/045_Armored_curled_finger_1.asset.meta",
+    "bytes": 188,
+    "sha256": "309c325b766bd65ff15ac6921c576b15c5c3ac899fc0d24f016b0e28f49958b2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/046_Armored_curled_finger_2.asset",
+    "bytes": 5678,
+    "sha256": "c1045a4af2270a4de68a3bcc3840167d6295ad0d6022132bea2e2fc832627843"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/046_Armored_curled_finger_2.asset.meta",
+    "bytes": 188,
+    "sha256": "77eee370c1e606f49c2cd93c84dcbad760c69cd58071a15c54396132f5360b95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/047_Armored_curled_finger_3.asset",
+    "bytes": 5678,
+    "sha256": "73b0a5e8c967c734fbaf54f17def004d60b42b7c3d27fd9e75a414c03b812407"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/047_Armored_curled_finger_3.asset.meta",
+    "bytes": 188,
+    "sha256": "979ccad65fff9b1a760e94bdc134a497ef6a5cc66b573a30b8ecdb481749db7a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/048_Opposing_thumb.asset",
+    "bytes": 5159,
+    "sha256": "07335f1db8492e391e94cdfd826f3d9bef689af552c01e77164e89e8c237a72a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/048_Opposing_thumb.asset.meta",
+    "bytes": 188,
+    "sha256": "909c5e2beeca8da81695ec5bbab915aa62020fd71b01e3559aab902e9a6a9854"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/049_Thigh_flexible_joint.asset",
+    "bytes": 7788,
+    "sha256": "049b8c08cc7392913c734862153697337d2952461ce23615e648cb70872161c5"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/049_Thigh_flexible_joint.asset.meta",
+    "bytes": 188,
+    "sha256": "f26825c9ff33321fc09ea347664e6bac5965c32d53709b6d83cd6ad000a30bf4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/050_Thigh_directional_silver_armor.asset",
+    "bytes": 5171,
+    "sha256": "31fba72d4593ecf158d58842d044dae338b68bb13c8b245016550626fad736da"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/050_Thigh_directional_silver_armor.asset.meta",
+    "bytes": 188,
+    "sha256": "f51a2fcd14a41aca7f803ad087b0afaaa559fef2c95704375db5f9a4b91d9db8"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/051_Thigh_outer_gold_edge.asset",
+    "bytes": 5174,
+    "sha256": "83fc11b5ce624d1d369abc084bfc04454f3a23f4e5a52614e05ac4e4267b5ec6"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/051_Thigh_outer_gold_edge.asset.meta",
+    "bytes": 188,
+    "sha256": "41260026c4c301e069d3c24d4e7c4196d70032bfa6502972b3b0d4d5da529aaf"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/052_Greave_understructure.asset",
+    "bytes": 7801,
+    "sha256": "76e0fb8ae49e22acdd58c81871eb2a1b75722f3f2b7e9982c648530eb3359a94"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/052_Greave_understructure.asset.meta",
+    "bytes": 188,
+    "sha256": "834d7aee2701f1bf319f52d26a86fb332114075b2709fe5199061e6fa36ba2fc"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/053_Pointed_knee_guard.asset",
+    "bytes": 5165,
+    "sha256": "980b65950616ba1ce2f1a4c5304d58d0ce8a30ae1ca9fa3d7df7566fdd45aabd"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/053_Pointed_knee_guard.asset.meta",
+    "bytes": 188,
+    "sha256": "fc989f3a2c834f8f342a2e308c4a308e73e70a22447a803227e8d4c372031da1"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/054_Greave_front_shell.asset",
+    "bytes": 5147,
+    "sha256": "fe957f18aee76482018aa29e102186f3b6d2c41f4f57ca29e819949a9e73d1be"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/054_Greave_front_shell.asset.meta",
+    "bytes": 188,
+    "sha256": "72585c392d9377dd6beb899c9506b6703b6a366fa1f62cd5ee188b7c029f26d7"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/055_Sabatons_beveled_boot.asset",
+    "bytes": 7805,
+    "sha256": "a4a0c8c9609f5f2d0e762010b2890e0bfe78f101ee14e8a17545bd7cf2227667"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/055_Sabatons_beveled_boot.asset.meta",
+    "bytes": 188,
+    "sha256": "209cce764dbd043ecd853648e67d404d9d58fab39cd3ed2d6e75f88441ea649c"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/056_Thigh_flexible_joint.asset",
+    "bytes": 7788,
+    "sha256": "049b8c08cc7392913c734862153697337d2952461ce23615e648cb70872161c5"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/056_Thigh_flexible_joint.asset.meta",
+    "bytes": 188,
+    "sha256": "496a4a0dee905d93c135fd9b779f3589bb527191ed68d7ba71680f1ab9feb4b5"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/057_Thigh_directional_silver_armor.asset",
+    "bytes": 5171,
+    "sha256": "31fba72d4593ecf158d58842d044dae338b68bb13c8b245016550626fad736da"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/057_Thigh_directional_silver_armor.asset.meta",
+    "bytes": 188,
+    "sha256": "1638fe123ef142ccf9041e76fb9760a338b5d1c0440195caf675feaf668397f3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/058_Thigh_outer_gold_edge.asset",
+    "bytes": 5174,
+    "sha256": "83fc11b5ce624d1d369abc084bfc04454f3a23f4e5a52614e05ac4e4267b5ec6"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/058_Thigh_outer_gold_edge.asset.meta",
+    "bytes": 188,
+    "sha256": "a756142241b9940f4ad1717ac4135a9a3e6d2dbf22ffc3721d8ddf6e9eec5acc"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/059_Greave_understructure.asset",
+    "bytes": 7801,
+    "sha256": "76e0fb8ae49e22acdd58c81871eb2a1b75722f3f2b7e9982c648530eb3359a94"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/059_Greave_understructure.asset.meta",
+    "bytes": 188,
+    "sha256": "1cd1aaf956f6b87d2eaa73238169c264da482e676658f090c4171a6273f94c1d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/060_Pointed_knee_guard.asset",
+    "bytes": 5165,
+    "sha256": "980b65950616ba1ce2f1a4c5304d58d0ce8a30ae1ca9fa3d7df7566fdd45aabd"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/060_Pointed_knee_guard.asset.meta",
+    "bytes": 188,
+    "sha256": "cc5fd1275b1778dcdb3d1ee02be94fd0e7b3106fa51fba800f85afa49159cafb"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/061_Greave_front_shell.asset",
+    "bytes": 5147,
+    "sha256": "fe957f18aee76482018aa29e102186f3b6d2c41f4f57ca29e819949a9e73d1be"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/061_Greave_front_shell.asset.meta",
+    "bytes": 188,
+    "sha256": "3ea299fc156a0d9766757858747c45c8a4efee42b4c2354ff03545384d0b3e2a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/062_Sabatons_beveled_boot.asset",
+    "bytes": 7805,
+    "sha256": "a4a0c8c9609f5f2d0e762010b2890e0bfe78f101ee14e8a17545bd7cf2227667"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/062_Sabatons_beveled_boot.asset.meta",
+    "bytes": 188,
+    "sha256": "1a47a008e034655f1d74d27e48eb67c08627409eb4ae7efd53dd1c8b86503f70"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/063_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6370,
+    "sha256": "7f5729cdb7202fcb5706e7275cb1840ca14a27a0e077df80f071420cfa39f801"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/063_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "7f18551f4ac1c6c3654a275956d1106a4fbe3931a99fbb6d848a0763cc95145f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/064_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6370,
+    "sha256": "653d81579076ae8946b9b67e54c945a56c58531e114bc6affa3055b1336b99ac"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/064_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "5e183245bd1e3acc766e150468d4e1fa374818b3b5fdf9f81ac8ea17ae9501b9"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/065_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6356,
+    "sha256": "b82442cf8a5e8b850776d9318081569385f3aa396db5f0dea7f8c94cd9dbda05"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/065_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "59ec4baa0030264ce59c9d610ba856b749114a82ffa13f6253bd8761e042e6c3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/066_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6372,
+    "sha256": "f8cfc76266873dd062dcb2abe0fd8bd43f44e5c00357bd6b45de57852f055ab0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/066_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "9c44e9c495a5ea25667cb66501775a6bb06f97686f17fa370ea1bb7924034738"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/067_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6374,
+    "sha256": "31dcfd93839c533ffef76c3f108f0a4e44017efa2a3dd1edb4272bbd36bc7979"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/067_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "ba55e6c40cac20a265b10062b9fc3ae3ca99efd02de102415397ded5190afe25"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/068_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6358,
+    "sha256": "104ac53a36e19b6912e04e2f5f542f7907cdabaec94c3d14b154996e98330b22"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/068_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "ef33aeedd22f133be62d43eb8b3c00bb5bd9461d41e8d26ff19a91502bab4d23"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/069_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6368,
+    "sha256": "593ff051501a76c5c6f9f5f351f3dc820f1a4a4ec8b0ff0d708b687cd635b848"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/069_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "0aef0b331f48836b035c550747b87235544ee8f2fd06f68d8902d6c29f4669df"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/070_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6370,
+    "sha256": "8066f014fab6e49621da8680769ca582ee8250b14ef766cea450b98fa30430d0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/070_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "e6c35e3ebe94869ebf9bff10c1c43b5210458bfb510334a0671ad65611b148e3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/071_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6360,
+    "sha256": "d8aa391bbe0a158dba54b631376658c18150eaf6c56e09a5c5c0bad98d16c61f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/071_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "0eba9451eea861662a14a99e89b7e18b165a43288ee13fd915d6c31c93c1b6af"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/072_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6368,
+    "sha256": "31fd40c269030eab7611aa4c208e6cfeb775bea485a05dec4f2bcb0c9a35d357"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/072_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "d078fa9bc4c1e2cbe1f8a9fc894311916377f9833b98e95351538c4796ab19a3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/073_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6364,
+    "sha256": "d863abe7736435439f21535e4bf4e421a2aaf929def74d2b0c0c6b29fc5f9c0d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/073_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "0ead1f127eb5b0d1964ad0290227909dbf9e342cd1b61a901441bcccce34af65"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/074_Flowing_carved_seal_ribbon.asset",
+    "bytes": 6354,
+    "sha256": "80fa13a037847f0620f4e894b3398c676ff21fb088a7912cae8856cf7d9c7ed3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/074_Flowing_carved_seal_ribbon.asset.meta",
+    "bytes": 188,
+    "sha256": "4a5b9df27b7bfa5edbdccdbe7113763a37765198c99591092ad7dffb34f23e8d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/075_Engraved_outer_authority_ring.asset",
+    "bytes": 49015,
+    "sha256": "00ce7bb9dcc11923892a70b2705ae7ac8186f9c797b09ab378e0eb4c02a810fe"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/075_Engraved_outer_authority_ring.asset.meta",
+    "bytes": 188,
+    "sha256": "2e3a0f7b3a370fa62ffc84a60913e5829d3abe8d528a730094bd8fdb861ebfec"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/076_Fine_internal_light_ring.asset",
+    "bytes": 49030,
+    "sha256": "17fb8238cca240495d94ef23af44e9ff4e85b10d7efa3640067b5f7ab5367226"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/076_Fine_internal_light_ring.asset.meta",
+    "bytes": 188,
+    "sha256": "c8c8688690c878de7dc97c65d2c24cd96ad4934b316cadd61d45bace649a60a1"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/077_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/077_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "5787db0e1e0cdbfeee6211bd8217f1c5de62592f3b53c126a87f9cbe9927ae55"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/078_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/078_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "684029f81c03661daab901d12af536d2e98d27f847a185bb469ad95d26d1f4a6"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/079_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/079_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "fa0c2925cf629d5eddb66e11632c54017786f78b82f1d7fb2f58def72099ab3a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/080_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/080_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "60d56ed528daa01906837f730b9c85f340141d5e4d6e031a82ed055d1d0c2f6e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/081_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/081_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "b94f8c2ed259382685fe3a3fd649173e57c9742580f788ff4521c2d930ccd9da"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/082_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/082_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "d7adb48580efc739a9d4121263c44e3de902f2bdd1d7a8258fbd185ba4be40c8"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/083_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/083_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "9d68f5d1bb99466aeab5de146ed83d80837ec8d3028ca11da5b70033ec878950"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/084_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/084_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "a72113ca2ed08a70ef7671b9b76cfb2b904867826f7f12b8d726681d099c6e99"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/085_Halo_glyph.asset",
+    "bytes": 5163,
+    "sha256": "83afca7c198877cf9285824a2980e11520a86ccaf0e86483f5d4dc0c0139708b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/085_Halo_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "af6b03022342d357cf5363c9e03c7f02db936a08821c3ceccc5a048de2a83e39"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/086_Glaive_dark_shaft.asset",
+    "bytes": 7797,
+    "sha256": "d9c88355730fc2b2910534ba7d4f053b505de4503707d3fbb6498fc7818fe734"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/086_Glaive_dark_shaft.asset.meta",
+    "bytes": 188,
+    "sha256": "b31fbdc3c8d8ba32fd8e203d6d83546fa8eb1b2d39f4628546bc361d67a9fbae"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/087_Glaive_grip_ferrule.asset",
+    "bytes": 6729,
+    "sha256": "a72e22ce8c2fa316d3ff314a3c393ff27fe08878dce652a160722ea298db408f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/087_Glaive_grip_ferrule.asset.meta",
+    "bytes": 188,
+    "sha256": "c94d243465b6ea7d1fb669e59d2432dd87d3cce7d614221e72241572bceda7d1"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/088_Glaive_grip_ferrule.asset",
+    "bytes": 6729,
+    "sha256": "a72e22ce8c2fa316d3ff314a3c393ff27fe08878dce652a160722ea298db408f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/088_Glaive_grip_ferrule.asset.meta",
+    "bytes": 188,
+    "sha256": "88eb04731211f435b24c7be5a07acb531c1ecfa71c46fd51adbede5d35508cd8"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/089_Glaive_grip_ferrule.asset",
+    "bytes": 6729,
+    "sha256": "a72e22ce8c2fa316d3ff314a3c393ff27fe08878dce652a160722ea298db408f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/089_Glaive_grip_ferrule.asset.meta",
+    "bytes": 188,
+    "sha256": "399880f0364c4b237813344e04593a16cb23b4e223a9e561117e1e93f4ff82c1"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/090_Glaive_grip_ferrule.asset",
+    "bytes": 6729,
+    "sha256": "a72e22ce8c2fa316d3ff314a3c393ff27fe08878dce652a160722ea298db408f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/090_Glaive_grip_ferrule.asset.meta",
+    "bytes": 188,
+    "sha256": "7159a549382a11e5d5126ea25cbdae9a7fa9170da958ef0113130c4ba8bc15c7"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/091_Glaive_grip_ferrule.asset",
+    "bytes": 6729,
+    "sha256": "a72e22ce8c2fa316d3ff314a3c393ff27fe08878dce652a160722ea298db408f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/091_Glaive_grip_ferrule.asset.meta",
+    "bytes": 188,
+    "sha256": "48f4afee4f3b49d9d7f4d52454f08c66222200e57b6c13bc096cbf8baf505abe"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/092_Glaive_grip_ferrule.asset",
+    "bytes": 6729,
+    "sha256": "a72e22ce8c2fa316d3ff314a3c393ff27fe08878dce652a160722ea298db408f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/092_Glaive_grip_ferrule.asset.meta",
+    "bytes": 188,
+    "sha256": "924e1ec2399af6040c1785631437010fe2ba53bf9e726620453e9fbe34242989"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/093_Glaive_grip_ferrule.asset",
+    "bytes": 6729,
+    "sha256": "a72e22ce8c2fa316d3ff314a3c393ff27fe08878dce652a160722ea298db408f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/093_Glaive_grip_ferrule.asset.meta",
+    "bytes": 188,
+    "sha256": "88cef59181aa98db83a9803be2b59c0b676b3effd2bade3744f7367c7d0d02ef"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/094_Gothic_spear_blade.asset",
+    "bytes": 6480,
+    "sha256": "0fcc51ef70bc33c38afe58e9484a4efccac2b3af7668edce9285da3a76f45de0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/094_Gothic_spear_blade.asset.meta",
+    "bytes": 188,
+    "sha256": "7686f0e4ba29ff0d9d00e23521996a3433e5e614ed57e6c4e3cb8a5d7e4fe3a4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/095_Glaive_golden_central_fuller.asset",
+    "bytes": 5171,
+    "sha256": "4d92ddf6a38cd6fc0c599e88665ace10099f7a162cfae5a01143fc067f292f7b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/095_Glaive_golden_central_fuller.asset.meta",
+    "bytes": 188,
+    "sha256": "0cce77f1bef642d30758ab746961ed76b4c4e8092f8c42cccb99c4c8958a8221"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/096_Glaive_gothic_hooked_quillon.asset",
+    "bytes": 5185,
+    "sha256": "a87a5ec3bc4a3c2614ad21e3c0b9aabf48744fe78a4bd729aacec87a680d772f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/096_Glaive_gothic_hooked_quillon.asset.meta",
+    "bytes": 188,
+    "sha256": "b263d044a66c0823a91f46b2d99355513a20a20dfd084331cac207ca56852db0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/097_Glaive_gothic_hooked_quillon.asset",
+    "bytes": 5185,
+    "sha256": "a87a5ec3bc4a3c2614ad21e3c0b9aabf48744fe78a4bd729aacec87a680d772f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/097_Glaive_gothic_hooked_quillon.asset.meta",
+    "bytes": 188,
+    "sha256": "0ea2ca2991955af99656ca9ffc27519c0f74f8bf25b7be5a67e909f6be39460a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/098_Rear_counterweight_blade.asset",
+    "bytes": 5179,
+    "sha256": "bd874bce6fdccefed611f99642f252e46b82a3fa4026045ea8d3880aea089964"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/098_Rear_counterweight_blade.asset.meta",
+    "bytes": 188,
+    "sha256": "23de4682914c6dc38d9149af87fbb0dc2c801c1f4572f1a5280430f4552067d3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/099_Deployable_ivory_ward.asset",
+    "bytes": 5162,
+    "sha256": "0be1292602ffcdf172e96d07c584ea9deab17623cebcad8f7a71422f23d2ab89"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/099_Deployable_ivory_ward.asset.meta",
+    "bytes": 188,
+    "sha256": "61da73fae2350b90b3332b8f6ec405f7b899cbb87cdd1947bddb8a2c463eea6e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/100_Ward_authority_border.asset",
+    "bytes": 37763,
+    "sha256": "b1e759b3aecb2bd3689af9da0b345a7602d563b5c83492d6c76e20fa2bc55ad4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/100_Ward_authority_border.asset.meta",
+    "bytes": 188,
+    "sha256": "d04c6e2154f76b5456c869a1c25b7a49a377bdcb6e3d3c092616452a37afdf76"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/101_Ward_seal_axis.asset",
+    "bytes": 5165,
+    "sha256": "6ca5033852cef9dc969a83946635ec75c472d770af83d77879cf8ef2b04b9763"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/101_Ward_seal_axis.asset.meta",
+    "bytes": 188,
+    "sha256": "7497e99dcc290a632664752a35695de56e771060443544c6efccbf86b32c1de7"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/102_Suspended_gold_blade.asset",
+    "bytes": 5165,
+    "sha256": "026d4095b3787ce4658b1084335a7d826da04dde53a689767cead12c77926a87"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/102_Suspended_gold_blade.asset.meta",
+    "bytes": 188,
+    "sha256": "ec9898dbc92395c9390a0b24bc582ff62f173e9240713ba74d2e6f2458204759"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/103_Suspended_gold_blade.asset",
+    "bytes": 5165,
+    "sha256": "026d4095b3787ce4658b1084335a7d826da04dde53a689767cead12c77926a87"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/103_Suspended_gold_blade.asset.meta",
+    "bytes": 188,
+    "sha256": "2646b6f985a28b0fe91f7ae2daf7ebfde3f03b2704701fab18c433062bd6dbba"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/104_Suspended_gold_blade.asset",
+    "bytes": 5165,
+    "sha256": "026d4095b3787ce4658b1084335a7d826da04dde53a689767cead12c77926a87"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/104_Suspended_gold_blade.asset.meta",
+    "bytes": 188,
+    "sha256": "4fc2e55d044c8d956b4213f11bd0496666d1464967ce9c467f5e6e236eec589e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/105_Gate_ribbed_pier.asset",
+    "bytes": 12002,
+    "sha256": "76134a75a579b7d858329936db130649014944ddd7b7f7fc6c176dccb5693834"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/105_Gate_ribbed_pier.asset.meta",
+    "bytes": 188,
+    "sha256": "a1ed088d64ea57ce200955b1d7b1f6565d5ccb970ec5f6676e016e4ff5d5e741"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/106_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/106_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "4ed0b1eb02ad8e47e9bf6110321ee343530457f8564eabe2c61d008c04c4a1b5"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/107_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/107_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "d3d3c96a25a92bd06b5f135317e6396f217c86273ffeb8e93b60d6f95a477f32"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/108_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/108_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "1a2a74890e89776ece8304f7f4dc4895e44ed0f15610282c7f6dbe15864ef9a3"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/109_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/109_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "0dd6bbcc78403d8c7c254c03386293001b10be94e5357e4d9189197d1f9db916"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/110_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/110_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "9e32a1d9c3575774b8b7f072b68b0d3cafe3614ecceb2d23faefbe59c87f3667"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/111_Gate_ribbed_pier.asset",
+    "bytes": 12002,
+    "sha256": "76134a75a579b7d858329936db130649014944ddd7b7f7fc6c176dccb5693834"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/111_Gate_ribbed_pier.asset.meta",
+    "bytes": 188,
+    "sha256": "33bdbaeab57589022b01a87e75d02e7f633d890ed3c49d138d8a43e4e17c59cf"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/112_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/112_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "ea0a87b87951234bdeafd4b5948834d0a83bce181be9190e931313207aa587c5"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/113_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/113_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "374810c417b6a99127efd5b4f5716015dd1a5ac4407029610ecac7c1ea9928cb"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/114_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/114_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "b83501a572069885a1a4ff60fbcd3373b33ac4f1bdea1c5df1812dd702ea8c20"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/115_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/115_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "4184b915adebbafcdc4dcf13b9ed064a1244c142261e2dce7ddaf1339c5f2754"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/116_Ascending_gate_arch_segment.asset",
+    "bytes": 5168,
+    "sha256": "c80c78450980dcc0e46bc5d9203e2d1d43a416b0f4b911594e77c3341040de95"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/116_Ascending_gate_arch_segment.asset.meta",
+    "bytes": 188,
+    "sha256": "31d820dedb82377ab902ce236357b3f86889b4c4c5eb7052778a7a3c488f16e2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/117_Gate_concentric_authority_seal.asset",
+    "bytes": 49032,
+    "sha256": "2e9e89ac811fb089a7e997478dc8e86a5cbea711a7f232eb2b80a63b8a2981ea"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/117_Gate_concentric_authority_seal.asset.meta",
+    "bytes": 188,
+    "sha256": "ffdea5f3a1afdf28fd0eae35f7ce86209b031be91c252568423a3d6c4ef0d939"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/118_Gate_inner_seal_glow.asset",
+    "bytes": 49006,
+    "sha256": "bbd61227ba7876ab7b5c748d8f6d2f2a0cc802d5647eae7633094baed7f84ef0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/118_Gate_inner_seal_glow.asset.meta",
+    "bytes": 188,
+    "sha256": "b513e839aeaa1582ed4ebf8f8151e6bc37d33700bc6834e668c46440edca91e4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/119_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/119_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "0e7b091b50f0ee7856bb5a3b10f3d423670efaf6d41f47b325c4a2c656e0988c"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/120_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/120_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "a18dc725fca6b6d70bc617eeadddb0356158d05134d8cb5be98f2fffa8a13ae8"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/121_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/121_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "d617df2e9a44057978fd7ac9fadc3a09efe564fef67a93cc23684e0d5e866c99"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/122_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/122_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "8a67787c3842c9486e5a34eb3961c949cc1efd6c89900f3412047564fbcb4b44"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/123_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/123_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "5f508f067371fbb3221ded84e62f42b706671d6e53b775289cb21fde33205ef4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/124_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/124_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "cab4a8223ada6bf1ab0308b195880444f3ab92c6f22791ad6806e30ba70e4a62"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/125_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/125_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "4d4d421bda15807ad9a0ed9c371eb5e2e9be83113fa2c9f119c785a03d18683a"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/126_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/126_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "87220c6e9208de14e85ed26e0925ebd166f72a74c6893c5a37433282bc721282"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/127_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/127_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "05726a0e1022b0266301de955ad3f6bd651cc8c76c1c6a746d7f6e4b5d1605cb"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/128_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/128_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "96dd080c60953777a072044a3eb22e55839a760443456461299f6fc107e58644"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/129_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/129_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "bad3762f8e2fd15a7dbc37dbd864ae64aedc07aa16d2c3ef51e0c37b98bf6a9c"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/130_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/130_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "34c511ad9041a594fc4fc6df325ebe79b575184d5e20a1fe1fde878e2713f3f0"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/131_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/131_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "dc5d826fb5be73b922a2926456cb625042c4782d14e604c797c609d0f2ebd377"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/132_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/132_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "12862aa5275bcf3360995da4f46f2f09fee471f38c702a6226d0da0d18bc46ed"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/133_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/133_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "7b386bd6cab7f4a8255889236d5fe0d8d68a90d946cddd877de59a98049e521b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/134_Gate_seal_radial_glyph.asset",
+    "bytes": 5167,
+    "sha256": "eb606705f7ee1a26e89cc5092e526af1a0e4c5e4b5251b5ee26a952344377eb2"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/134_Gate_seal_radial_glyph.asset.meta",
+    "bytes": 188,
+    "sha256": "4aeab70e8e1748fc8d82870ae6331b8cf7a30d7d67e56a69ff5abb979f0f9fe4"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/135_Floor_authority_inlay.asset",
+    "bytes": 94069,
+    "sha256": "255d52724e5badfae8f5b677054d0a746335389fa0976a19f87d717e5802e1d8"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/135_Floor_authority_inlay.asset.meta",
+    "bytes": 188,
+    "sha256": "c20646406e2bcde3a1a58984b0bf26c903cfc2d95d07a29d22c8558aa9e69625"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/136_Floor_authority_inlay.asset",
+    "bytes": 94069,
+    "sha256": "fa794811402560fe5ddf119adac360cfa8ac7f96755156534582d6d75ce2b121"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/136_Floor_authority_inlay.asset.meta",
+    "bytes": 188,
+    "sha256": "773f760cd964613739287c6351820c12cc80c1b28d84b52385c28be79dfbad93"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/137_Floor_authority_inlay.asset",
+    "bytes": 94069,
+    "sha256": "65c45505de81e47d525b08dc62c3b41e9992f07ebd41cf3c9977016ddef50cb1"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/137_Floor_authority_inlay.asset.meta",
+    "bytes": 188,
+    "sha256": "88c1dfecf14d98061567093eb2365f3d800f0571ca5141c865da4a4db9c82b1d"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/138_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/138_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "5d0495ac162381fd65818b0aae890527489238ec8e06bcc6c3c4c039c2a04821"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/139_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/139_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "208961959594ac1825575b4eba3e3b90d378717f1c0d2f92b03bcbf0c1428d1e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/140_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/140_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "177ff079ebb3ebaf92731dbacc1e3ab4b144d123d2289075e02a5a238429dc67"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/141_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/141_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "903cb0287496db709823362e434d5ef76f118799ca565e80ecd7435495a9a30f"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/142_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/142_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "04dd24eef9929e4793f263cae24da5155b095f1d1b36a8720619bc908b9b805b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/143_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/143_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "efde21519813c602765ec0980837aa1831a86285c8d7e00ee75b0240dab98153"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/144_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/144_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "760b987303517dba120d6e960fea02348b8dfecf3f842eb4654f3177b5a2062b"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/145_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/145_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "79b00e972b63e39544698e5bfbc0c05c882cdfac6bcbed095bdb06fa06380665"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/146_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/146_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "24595d403c810abe0c96ab17fe028d4d7264427d103d5d7797d21b36e5945f89"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/147_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/147_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "f26cfab887e84735434cfb88779b1a8124b15d64ab688166a586e0d82542d74c"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/148_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/148_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "02a7c671286ced1a7d53fd1d85c5b62ac77216c236255271069a9559f4147299"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/149_Outer_buttress.asset",
+    "bytes": 12000,
+    "sha256": "c2550d3b84e71bc82e7e09b30f860bf764dc0309dce66a895a1721c75d0ec204"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes/149_Outer_buttress.asset.meta",
+    "bytes": 188,
+    "sha256": "c11f05d3012622aa7c0769657c695b13c0d30c51fab7e4cac7a683fe96e0f238"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined/Meshes.meta",
+    "bytes": 172,
+    "sha256": "03f1419f535703dd3b5f00b65b03ac12d9b1524317bd6352d41205a7f5f6864e"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight/Refined.meta",
+    "bytes": 172,
+    "sha256": "7aa4d0019796993f6c976ef38669d2131faeb042c106eef70b59a1a5a6182dd7"
+  },
+  {
+    "path": "Assets/Art/Bosses/Knight.meta",
+    "bytes": 172,
+    "sha256": "c2d71f8a4671570916514218137b9f3ef395fa7d84a8f5e8dcf7f55a061d4ca2"
+  },
+  {
+    "path": "Assets/Art/Bosses.meta",
+    "bytes": 172,
+    "sha256": "a437285536fab73082812efe2d8aafccc1fffc14227bdb42136c3169f846ce9b"
+  },
+  {
+    "path": "Assets/Scenes/BossTests/Knight_Test.unity",
+    "bytes": 3696372,
+    "sha256": "99c0ab3176f8fd09019dce55687105e5e531d9395ddd3fa2a1f55ead266cd244"
+  },
+  {
+    "path": "Assets/Scenes/BossTests/Knight_Test.unity.meta",
+    "bytes": 155,
+    "sha256": "af8ba69faeadf9cc757313d120a6bbf0336d0a489471ebb0a32268ddca7247cd"
+  },
+  {
+    "path": "Assets/Scenes/BossTests.meta",
+    "bytes": 172,
+    "sha256": "28127e1c9126d951e9f2a0e30786019a79143bf52ea5972538fc15450cd202a7"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+    "bytes": 15247,
+    "sha256": "dc4c7f58c93424f91d1b931d915cc98eac900fab9158caa5de882c05a1526567"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "bytes": 27328,
+    "sha256": "9a4d1f313641f58bc1c5f72590e5a836b96cbdb1ec14a1c8842c3512a87bce2f"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightDefinition.cs",
+    "bytes": 1478,
+    "sha256": "a3bb255e35c1047e45847d7f5fcb31403226049155ad3c0048d818af5e02d0e7"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightDefinition.cs.meta",
+    "bytes": 59,
+    "sha256": "5fd955b8658601f2695c23b26c179b69a36bbd19ced473e59c6119ab9d8e2fcb"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightEncounter.cs",
+    "bytes": 18201,
+    "sha256": "46cb7d5d666122159769dd3ced8466ca23d7a2c4248ccc0199b33f510133ca61"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightEncounter.cs.meta",
+    "bytes": 59,
+    "sha256": "1853b0ee5188740edd869fd7d4841997a9099743ac262a6d8f20e67df31acb72"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightTrialLauncher.cs",
+    "bytes": 3488,
+    "sha256": "99347db6ac460a0347753a28cee97cc84466d4fba0c950bfa0b5d51f9bad3d07"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightTrialLauncher.cs.meta",
+    "bytes": 59,
+    "sha256": "c7c1025760841696ed2050445c17ec41397c61a15d2ce13a6c7966504270753a"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight.meta",
+    "bytes": 172,
+    "sha256": "166b5551d3c5d448708278ebc5ebf709630cf53b05e5434d69e7867646ed24a8"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses.meta",
+    "bytes": 172,
+    "sha256": "f9c4342701a456e4c626ba7a84976b518c3d7907890393e9d99cb1af202fd864"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossMeleeCombat.cs",
+    "bytes": 4823,
+    "sha256": "3b80b7ecb91509470489d775cf9864f59c8925444e9d875165df3075fbc311c7"
+  },
+  {
+    "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+    "bytes": 8365,
+    "sha256": "fd95c3afc77e5cf368161b13ee6f0bfcfa0ad7ac12285b3aa9721c7464d8888c"
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryMenu.cs",
+    "bytes": 36508,
+    "sha256": "1d6bdc47b322613ee7af73a22128b99f5fb7d8014b6bd2316ea0c2c9ec42d4eb"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightRefinedEffects.cs",
+    "bytes": 6422,
+    "sha256": "1e0c02cf48bcb2b7e5812984cfc4f4b7141ee120caea5173fca653bed9225651"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightRefinedEffects.cs.meta",
+    "bytes": 59,
+    "sha256": "adfba8c848d92a9819cd3369ddfb9e714cf733b011d023aa1b515293d715d68e"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightVisuals.cs",
+    "bytes": 10015,
+    "sha256": "9445a3485f2dafce40e33c1914eb0e6c7df8e10c725296dcb5c707e72423efb3"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightVisuals.cs.meta",
+    "bytes": 59,
+    "sha256": "627b52afdcfbd8af4549fe8ec0390a9ff3c16777df80a6e2e70a631eab7e3d4b"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight.meta",
+    "bytes": 172,
+    "sha256": "ec734872ab479e0e1f98a79f722017bc7919d3997a6c47d34c5943a03d15ee80"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses.meta",
+    "bytes": 172,
+    "sha256": "b0e108d475c5923cf92ab8e431e036e6390aae0624f6ca2828e1980c5b363d39"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/KnightRefinementBuilder.cs",
+    "bytes": 22471,
+    "sha256": "ccb44698e7147864e16036643f887e6d22d759232a1ae23f5e8e59a0452aeb96"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/KnightRefinementBuilder.cs.meta",
+    "bytes": 59,
+    "sha256": "21383b1127e1f7d74481e999b990735e46a31f4483626278a15d858a33d1758a"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/KnightTrialBuilder.cs",
+    "bytes": 13799,
+    "sha256": "abc64f222df107b0c901db6ad146c4a281b9a294406eb4266e921fcd044db498"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/KnightTrialBuilder.cs.meta",
+    "bytes": 59,
+    "sha256": "a8476bffe49fb7cafbc261f7a087712d1e7409b95d45c7ead0910823a5754ac0"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 18853,
+    "sha256": "802dad51ece5e13fcb848957de5a3ea19b65d930ca1b4d82b43c5fbf6605cdc0"
+  },
+  {
+    "path": "README.md",
+    "bytes": 20334,
+    "sha256": "96f53378d337cfef47fdff0b3b19662e0577c76dca31da71661b7c1802c44ca6"
+  },
+  {
+    "path": "Tools/KnightReference/assemble_preview.py",
+    "bytes": 1395,
+    "sha256": "3c26c278f5240b48b4580e644ed36faf3fcae7edf6f1b3f965e2f71a1e2b55bb"
+  },
+  {
+    "path": "Tools/KnightReference/extract_reference.py",
+    "bytes": 2525,
+    "sha256": "1b47c9e3d0fc20fd35116d4a9996606377ee30e406114a5e912b9f2792bba03a"
+  },
+  {
+    "path": "Tools/KnightReference/verify_delivery.py",
+    "bytes": 3206,
+    "sha256": "41a6c8f0dfbd13d92e44f87d5dc918b9ee87c29cfa402bae500aa922d428e9c7"
+  }
+]

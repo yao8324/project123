@@ -55,7 +55,7 @@ namespace ArcaneArchive.Core
         void FacePoint(Vector3 target,float dt)
         {
             Vector3 direction=target-arena.boss.position;direction.y=0;if(direction.sqrMagnitude<.01f)return;
-            arena.boss.rotation=Quaternion.RotateTowards(arena.boss.rotation,Quaternion.LookRotation(direction),(CurrentState==State.Telegraph && attack==5?definition.meleeTurnSpeed:definition.bodyTurnSpeed)*dt);
+            arena.boss.rotation=Quaternion.RotateTowards(arena.boss.rotation,Quaternion.LookRotation(direction),(!KnightMode && CurrentState==State.Telegraph && attack==5?definition.meleeTurnSpeed:definition.bodyTurnSpeed)*dt);
         }
         void MoveTowardIntent(float dt,float factor)
         {
@@ -204,6 +204,6 @@ namespace ArcaneArchive.Core
             shot.velocity=direction*speed;shot.go.transform.rotation=Quaternion.LookRotation(direction);
             if(shot.enemy)MaximumEnemyHomingTurn=Mathf.Max(MaximumEnemyHomingTurn,shot.homingUsed);else MaximumPlayerHomingTurn=Mathf.Max(MaximumPlayerHomingTurn,shot.homingUsed);
         }
-        void PresentBoss(float dt){arena.model.animatedRig.SetMeleeRange(arena.boss.position,definition.meleeReach);arena.model.Present(dt,Phase,attack,CurrentState,stateTime,WarningDuration,RecoveryDuration);PresentMeleeVisual(dt);}
+        void PresentBoss(float dt){if(KnightMode){if(poise>0 && combatTime-poiseLastHit>2.5f)poise=Mathf.Max(0,poise-18*dt);if(knightVisual)knightVisual.Present(this);return;}arena.model.animatedRig.SetMeleeRange(arena.boss.position,definition.meleeReach);arena.model.Present(dt,Phase,attack,CurrentState,stateTime,WarningDuration,RecoveryDuration);PresentMeleeVisual(dt);}
     }
 }

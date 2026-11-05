@@ -65231,6 +65231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f08a6dbaf8942e6b52bef4a560d2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcaneArchive.UI.RecoveryMenu
+  bookKnight: {fileID: 11400000, guid: 7df54953bfced7248a5cee3a394f95b3, type: 2}
+  bookKnightFont: {fileID: 11400000, guid: 7769e12c03e5b384cb00ae9d1788db84, type: 2}
   player: {fileID: 0}
   spawnPosition: {x: 0, y: 0.08, z: 7.8}
   demoBooks:

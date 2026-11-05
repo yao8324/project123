@@ -14,6 +14,8 @@ namespace ArcaneArchive.UI
     public sealed partial class RecoveryMenu : MonoBehaviour
     {
         public enum Page { Explore, Menu, Help, Settings, Gallery, Book, Reading, Upload, Search, Exit, DeepExplore, BattleResult, CombatControls, Equipment }
+        public ArcaneArchive.Core.KnightDefinition bookKnight;
+        public TMP_FontAsset bookKnightFont;
         private ArcaneArchive.Core.BossEncounter Encounter => GetComponent<ArcaneArchive.Core.BossEncounter>();
         [SerializeField] private FirstPersonController player;
         [SerializeField] private Vector3 spawnPosition = new Vector3(0,.08f,7.8f);
@@ -21,6 +23,7 @@ namespace ArcaneArchive.UI
         private GameObject canvasObject, overlay, body, viewmodel, promptObject, crosshair;
         [SerializeField] private TMP_FontAsset uiFont;
         private TMP_FontAsset font;
+        private TMP_FontAsset originalCombatFont;
         private TMP_Text prompt, footer, qualityHint;
         private GameObject qualityHintObject;
         private float qualityHintUntil;
@@ -49,6 +52,7 @@ namespace ArcaneArchive.UI
             if(view)viewmodel=view.gameObject;
             qualityOptions=player.GetComponent<MilanQualityOptions>();
             font=uiFont;
+            if(Encounter)originalCombatFont=Encounter.combatFont;
             if(!font) { Debug.LogError("Arcane Archive requires its baked Chinese SDF font asset.",this);enabled=false;return; }
             canvasObject=new GameObject("ArcaneArchiveUI",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster));
             canvasObject.transform.SetParent(transform,false);
@@ -401,24 +405,35 @@ namespace ArcaneArchive.UI
         private void BuildDeepExplore(Transform p)
         {
             Label(p,"封印之下",new Vector2(0,153),new Vector2(800,55),33,brass);
-            Label(p,selectedBook.title+" · 封印之书",new Vector2(0,85),new Vector2(820,45),23,paper);
-            InfoRow(p,"UnknownWorld","未知领域","探索被封存的魔法回廊",14,54);
-            InfoRow(p,"BossEncounter","禁忌试炼","缄默典狱长 · 维纶",-40,54);
-            Label(p,"当封印开启，你面对的将不只是书中的故事。",new Vector2(0,-106),new Vector2(820,42),20,new Color(.78f,.66f,.57f));
-            GildedExploreButton(p,new Vector2(0,-177),StartEncounter);
+            Label(p,selectedBook.title+" · 选择挑战",new Vector2(0,85),new Vector2(820,45),23,paper);
+            Button(p,"缄默典狱长 · 维纶",new Vector2(-205,-10),new Vector2(370,60),()=>StartSelectedEncounter(false));
+            Label(p,"封印之书 · 禁忌试炼",new Vector2(-205,-72),new Vector2(370,55),20,paper);
+            if(bookKnight)
+            {
+                Button(p,"封印圣骑士",new Vector2(205,-10),new Vector2(370,60),()=>StartSelectedEncounter(true));
+                Label(p,"守门誓约 · 剑盾挑战",new Vector2(205,-72),new Vector2(370,55),20,paper);
+            }
+            Label(p,"选择对手，进入封印试炼。",new Vector2(0,-145),new Vector2(820,42),20,new Color(.78f,.66f,.57f));
             footer.text="进入后可随时按 Esc 暂停或返回图书馆";
         }
         public void StartEncounter()
         {
+            StartSelectedEncounter(bookKnight);
+        }
+        public void StartSelectedEncounter(bool knight)
+        {
             if(CurrentPage!=Page.DeepExplore || !selectedBook || !selectedBook.opensTrial)
             {if(footer)footer.text="请从大厅封印之书进入试炼";return;}
-            if(!Encounter || !Encounter.Begin())footer.text="封印厅暂不可用，请检查战斗资源";
+            if(!Encounter || Encounter.IsActive)return;
+            if(knight && !bookKnight)return;
+            Encounter.combatFont=knight && bookKnightFont?bookKnightFont:originalCombatFont;
+            if(!(knight?Encounter.BeginKnight(bookKnight):Encounter.Begin()))footer.text="封印厅暂不可用，请检查战斗资源";
         }
         private void BuildBattleResult(Transform p)
         {
             bool won=Encounter && Encounter.CurrentState==ArcaneArchive.Core.BossEncounter.State.Won;
-            Label(p,won?"封印已破":"再次被收容",new Vector2(0,110),new Vector2(800,65),36,brass);
-            Label(p,won?"典狱长倒下了。\n收容物编号零，正在离馆。":"你体内的力量尚未醒来。\n观察预警，吞噬禁页，再次挑战。",new Vector2(0,15),new Vector2(820,100),23,paper);
+            Label(p,Encounter?Encounter.ResultTitle:"试炼结束",new Vector2(0,110),new Vector2(800,65),36,brass);
+            Label(p,Encounter?Encounter.ResultDescription:"",new Vector2(0,15),new Vector2(820,100),23,paper);
             Button(p,"再次挑战",new Vector2(-175,-110),new Vector2(270,48),()=>Encounter.Retry());
             Button(p,"返回图书馆",new Vector2(175,-110),new Vector2(270,48),()=>Encounter.ReturnToLibrary());
             footer.text="I AM A MONSTER";
@@ -494,7 +509,7 @@ namespace ArcaneArchive.UI
         {
             var go=new GameObject("Label",typeof(RectTransform),typeof(TextMeshProUGUI));go.transform.SetParent(parent,false);
             var r=(RectTransform)go.transform;r.anchorMin=r.anchorMax=r.pivot=new Vector2(.5f,.5f);r.anchoredPosition=pos;r.sizeDelta=size;
-            var text=go.GetComponent<TextMeshProUGUI>();text.font=font;text.text=message;text.fontSize=Mathf.Max(fontSize,18);text.color=color;
+            var text=go.GetComponent<TextMeshProUGUI>();text.font=bookKnight && bookKnightFont?bookKnightFont:Encounter && Encounter.KnightMode && Encounter.combatFont?Encounter.combatFont:font;text.text=message;text.fontSize=Mathf.Max(fontSize,18);text.color=color;
             text.alignment=TextAlignmentOptions.Center;text.raycastTarget=false;text.richText=false;
             text.textWrappingMode=TextWrappingModes.Normal;text.extraPadding=true;return text;
         }

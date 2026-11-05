@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-05",
+  "remote_latest_verified": false,
+  "remote_note": "Web open unavailable; git ls-remote DNS failure and elevated retry timed out. Refs below are local tracking refs.",
+  "refs": {
+    "HEAD": "056363b74b9f05784d83fb15a8c0db93bc28a043",
+    "origin/program": "d45a98873c171c6549163de44a2290a2166ff9f5",
+    "origin/main": "520dbea8bd62ec1219c94c64eca26c23c6f0f95b",
+    "origin/planner": "b984c5db4077451c66df4da7d3f0a541ecf896ef",
+    "origin/art": "0253ec7f0d733e834fefb7a5719341dd7633574d"
+  },
+  "files": [
+    {
+      "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset",
+      "sha256": "cde75042ab901c54dd797b01ec5718dd2e55576a2f3b6df56e0e48e9aecec9aa"
+    },
+    {
+      "path": "Assets/Scripts/Player/PlayerMelee.cs",
+      "sha256": "983ab571f3b92efe0ff288f48949cc0aefeb41624b03c1ad329ef1ccc67c6228"
+    },
+    {
+      "path": "Assets/Scripts/Player/PlayerCombat.cs",
+      "sha256": "209a4270131d432e8b376e755730e7183b4c26c5f53642ec42ac6f1be86a70d9"
+    },
+    {
+      "path": "Assets/Scripts/Player/PlayerDash.cs",
+      "sha256": "62392c34ecf3bdba2a16001254c66cf15de8d4b2e81e7baa678c67a8baddfc8a"
+    },
+    {
+      "path": "Assets/Art/ForbiddenWarden/WardenEncounter.asset",
+      "sha256": "5d8a8d76538c3c75ace73d52bd1fe433e5dbc3190d47d720b2229f9ed68e817e"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightDefinition.asset",
+      "sha256": "64b7ae797dc35f9c4c3306bb3a6120fdf8e12a5b0937a9ba6fdd7fe1e998b67c"
+    },
+    {
+      "path": "Assets/Art/Bosses/Knight/KnightCombat.asset",
+      "sha256": "1859e1ad06d7f5e0a9bdfa98b33ec3a6bda3a75a301d524698fedb7617a7e9eb"
+    }
+  ]
+}

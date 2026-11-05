@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-05T13:46:55.9057381Z",
+  "scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+  "sceneDirty": false,
+  "playing": false,
+  "compiling": false,
+  "bookKnight": "KnightDefinitionRefined",
+  "font": "KnightRefinedChinese",
+  "controlledChecks": 45,
+  "failures": 0,
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "standaloneBuild": false,
+  "fullHumanPlaythrough": false
+}

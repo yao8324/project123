@@ -72,7 +72,7 @@ namespace ArcaneArchive.Core
             if(IsFinished || CurrentState==State.PhaseBreak)return true;
             poise+=poiseDamage;poiseLastHit=combatTime;
             if(interrupt || poise>=definition.poiseCapacity)StaggerBoss(false);
-            else arena.model.animatedRig.ReactToHit();
+            else if(!KnightMode)arena.model.animatedRig.ReactToHit();
             return true;
         }
         public void StaggerBoss(bool parry)
