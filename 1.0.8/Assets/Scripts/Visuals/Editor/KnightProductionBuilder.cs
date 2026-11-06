@@ -375,7 +375,7 @@ namespace ArcaneArchive.Visuals.Editor
             var font=AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Art/Bosses/Knight/Refined/KnightRefinedChinese.asset");
             var model=BuildModel();var arena=BuildArena(model,font);
             var source=AssetDatabase.LoadAssetAtPath<KnightDefinition>("Assets/Art/Bosses/Knight/Refined/KnightDefinitionRefined.asset");
-            var configuration=Object.Instantiate(source);configuration.name="KnightProduction";configuration.arena=arena;configuration=Save(configuration,Config);
+            var configuration=Object.Instantiate(source);configuration.name="KnightProduction";configuration.arena=arena;configuration.AddMobilityMoves();configuration=Save(configuration,Config);
             var scene=EditorSceneManager.OpenScene(KnightTrialBuilder.ScenePath);var launcher=Object.FindFirstObjectByType<KnightTrialLauncher>();launcher.definition=configuration;launcher.font=font;launcher.storyGate=false;
             foreach(var menu in Object.FindObjectsByType<RecoveryMenu>(FindObjectsInactive.Include,FindObjectsSortMode.None))menu.bookKnight=configuration;
             EditorSceneManager.SaveScene(scene,TestScene);

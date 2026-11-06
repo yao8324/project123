@@ -82,6 +82,10 @@ namespace ArcaneArchive.UI
                 }
             }
             message.text = encounter.Message ?? "";
+            bool showHints=BossPresentationSettings.ShowHints;
+            message.gameObject.SetActive(showHints);
+            instruction.gameObject.SetActive(showHints);
+            if(!showHints && !(melee && melee.Exhausted) && !encounter.Combat.GuardBroken)staminaStatus.text="";
             hurt.color = new Color(.85f, .15f, .12f, Mathf.Clamp01(1 - (Time.unscaledTime - hurtAt) / .35f));
         }
         public void Hurt() => hurtAt = Time.unscaledTime;

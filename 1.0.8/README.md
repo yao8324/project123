@@ -6,6 +6,18 @@
 
 ## 主要改动
 
+**弹幕节奏最新修订：一次侧向瞬移只释放一轮五发追踪弹幕，然后收招。** 取消原第二、第三轮；Attack 段由 1.32 s 缩短为 0.55 s，首轮仍在 Attack 的 0.12 s 释放，收招 1.25 s 不变。出弹后停止施法转向，召刃同时消失；弹体自身追踪、伤害和吞印机制保留。修改 KnightDefinition.cs（含现有配置迁移及重建默认值）、KnightEncounter.cs、KnightRefinedEffects.cs 和 KnightProduction.asset。Unity 编译通过，两阶段受控检查均确认一次瞬移/一次释放/五发弹体，收招不再补发，结束清理正常；最终 Console 无 Error / Warning，原始结果见 [SingleVolleyVerification](Docs/KnightMobility108/SingleVolleyVerification.txt)。下方及历史设计中的“三轮”已由本条取代。
+
+**表现与设置修订：** 统一金白刀光、落雷光芯/柔光、命中火花、金雷波游走电弧；弹幕替换为金白符印光刃与青色标识、渐细拖尾。优化起手/收招混合、移动倾身和武器跟随，命中特效在收招中自然消散。设置页新增可保存的 **Boss 战提示** 开关，对两种 Boss 生效，仅关闭提示文字和按键说明，保留攻击预警与核心状态。[修改文件、截图和验证](Docs/KnightMobility108/Polish/README.md)。
+
+**落雷与跳劈追加修订：** 落雷改为三次独立追踪玩家、逐次锁定后下落；跳劈落地后生成金色扩散闪电波，需要起跳越过。仍是六招，没有另加独立招式。[机制、参数与验收](Docs/KnightMobility108/ThunderWave.md)。
+
+**当前修订：圣骑士精简为六种常规招式（一阶段五种，二阶段加入落雷）。** 保留连斩、追身回旋、跳劈、瞬移斩、侧闪追踪弹幕、落雷；普通突刺、普通封印弹、地面裂斩、独立盾阵/盾击退出选招池。回旋斩在两击间追身，弹幕持续调整出手方向并具有限时弯曲追踪。当前参数和本轮验收见 [招式精简与追踪修订](Docs/KnightMobility108/Streamlined.md)，下方十一招说明为上一轮记录。
+
+**2026-11-06 接续开发：按用户明确要求，直接在 1.0.8 优化圣骑士。** 当前生产配置由八招扩为十一招，新增踏光跳劈、追誓瞬移斩、侧闪三轮封印弹幕；加入安全落点、预警锁定、机动招式冷却与连续瞬移限制，并补充腾空/落地缓冲、双手握柄、瞬移金雷和弹幕出手动作。大厅书籍和生产测试场景均使用该配置。
+
+完整十一招、三招时序、反制方式、实现文件与本轮验证见 [1.0.8 机动招式开发记录](Docs/KnightMobility108/README.md)。下面的 V5、Archive108 结果是原始归档记录；本轮并未重新打包 Windows 版本。
+
 - 骑士 V5：100 根运行骨骼、两档蒙皮 LOD、右手主握与左手辅助握柄、脚底贴地、12 条六段长带，以及八招姿态采样动画。战斗时序和伤害仍由原战斗层控制，保留 V4 数值。
 - 终扉前庭：尖拱封印门、外围柱间与高位承重肋、供能接缝、撤离线索、三盏实时灯和随阶段变化的门纹；退出战斗恢复原环境光。
 - 完整交接：V5 运行 Prefab、分件制作 Prefab、可编辑 Blender 模型、生成脚本、制作规格、截图与验证报告。
@@ -33,7 +45,7 @@
 
 本目录包含独立的 `Assets/`、`Packages/`、`ProjectSettings/`、`Docs/`、`Blender/`、`Tools/`、项目规则和 LFS 配置，不依赖其他版本工程。原 V4 资源保留。第三方素材许可沿用源工程，见 `Blender/MilanLibrary_Magic_V6/Texture_Credits.txt`。
 
-继续制作先读 [角色与场景交接](Docs/KnightDesign20261105/ProductionV5/ArtHandoff.md) 和 [战斗制作规格](Docs/KnightDesign20261105/ProductionV5/CombatProductionSpec.md)。本次归档后保持版本目录只读；后续工作按根 `AGENTS.md` 建立新开发版本。
+继续制作先读 [角色与场景交接](Docs/KnightDesign20261105/ProductionV5/ArtHandoff.md)、[战斗制作规格](Docs/KnightDesign20261105/ProductionV5/CombatProductionSpec.md) 和 [当前机动招式](Docs/KnightMobility108/README.md)。归档规则通常要求建立新开发版本；本轮依据用户“基于 1.0.8 继续开发”的明确授权直接修改本目录。
 
 ---
 

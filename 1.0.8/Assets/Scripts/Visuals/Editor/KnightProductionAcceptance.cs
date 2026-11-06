@@ -132,7 +132,12 @@ namespace ArcaneArchive.Visuals.Editor
             var original = AssetDatabase.LoadAssetAtPath<KnightDefinition>("Assets/Art/Bosses/Knight/Refined/KnightDefinitionRefined.asset");
             var production = AssetDatabase.LoadAssetAtPath<KnightDefinition>(KnightProductionBuilder.Config);
             string Normalize(KnightDefinition d) => Regex.Replace(JsonUtility.ToJson(d), "\"arena\":\\{[^}]+\\}", "\"arena\":{}");
-            Check(Normalize(original) == Normalize(production), "All V4 numeric combat parameters remain unchanged");
+            var baseline=Object.Instantiate(production);
+            baseline.moves=baseline.moves.Where(m=>(int)m.move<8).ToArray();
+            baseline.streamlinedKit=original.streamlinedKit;
+            Check(Normalize(original) == Normalize(baseline), "Original eight V4 moves and shared numeric combat parameters remain unchanged");
+            Object.DestroyImmediate(baseline);
+            Check(production.moves.Length==11,"Production configuration includes three 1.0.8 mobility moves");
             var skins = visual.GetComponentsInChildren<SkinnedMeshRenderer>(true);
             Check(skins.Length == 2 && visual.GetComponent<LODGroup>(), "Two real skinned LOD meshes, without duplicate source renderers");
             foreach (var skin in skins)

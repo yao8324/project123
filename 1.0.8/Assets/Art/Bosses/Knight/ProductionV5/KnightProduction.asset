@@ -32,6 +32,10 @@ MonoBehaviour:
   retreatDistance: 2.2
   orbitTravel: 3.2
   leapHeight: 1.15
+  pursuitLeapHeight: 2.6
+  pursuitLeapTravel: 9
+  blinkTravel: 9
+  sideBlinkTravel: 5.5
   moves:
   - move: 0
     title: "\u8A93\u821E\u8FDE\u950B"
@@ -142,3 +146,48 @@ MonoBehaviour:
     - 0.16
     - 0.86
     - 1.56
+  - move: 8
+    title: "\u8E0F\u5149\xB7\u8DF3\u5288"
+    hint: "\u843D\u70B9\u5149\u73AF\u9501\u5B9A\u540E\u4FA7\u95EA\uFF1B\u843D\u5730\u91CD\u5288\u53EF\u4E3E\u76FE"
+    warning: 0.95
+    lockTime: 0.4
+    duration: 1.08
+    recovery: 1.2
+    damage: 28
+    reach: 3.8
+    width: 0
+    arc: 360
+    impacts:
+    - 0.72
+  - move: 9
+    title: "\u8FFD\u8A93\xB7\u77AC\u65A9"
+    hint: "\u5149\u73AF\u9884\u544A\u77AC\u79FB\u843D\u70B9\uFF1B\u663E\u5F62\u540E\u4FA7\u95EA\u6216\u5F39\u53CD"
+    warning: 1.2
+    lockTime: 0.65
+    duration: 0.66
+    recovery: 1.05
+    damage: 24
+    reach: 4.8
+    width: 0
+    arc: 140
+    impacts:
+    - 0.25
+  - move: 10
+    title: "\u6298\u5149\xB7\u5C01\u5370\u5E55"
+    hint: "\u4FA7\u5411\u95EA\u73B0\u540E\u4E00\u8F6E\u6247\u5F62\u5C01\u5370\u5F39\uFF1B\u6A2A\u79FB\u7A7F\u9699\u6216\u541E\u5370"
+    warning: 1.35
+    lockTime: 0.8
+    duration: 0.55
+    recovery: 1.25
+    damage: 8
+    reach: 18
+    width: 0
+    arc: 56
+    impacts:
+    - 0.12
+  streamlinedKit: 1
+  orbitPursuitSpeed: 6.5
+  orbitTurnSpeed: 140
+  barrageAimSpeed: 110
+  barrageHomingSpeed: 120
+  barrageHomingBudget: 55

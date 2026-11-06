@@ -38,7 +38,7 @@ namespace ArcaneArchive.Core
         private Vector3 laserOrigin,laserDirection;
         private float nextLaserTick;
         private int orbitDirection=1;
-        private sealed class Shot { public GameObject go; public Vector3 velocity; public float damage, life, age, homingUsed; public bool enemy,homing; }
+        private sealed class Shot { public GameObject go; public Vector3 velocity; public float damage, life, age, homingUsed, knightFanOffset; public bool enemy,homing,knightBarrage; }
         private sealed class Wave { public GameObject go; public Vector3 origin; public float radius; public bool hit; public WardenWaveVisuals visual; }
         private sealed class Zone { public GameObject go; public GroundFractureVisuals fracture; public Vector3 position; public float born; public bool fired; }
         private bool fractureSequenceStarted;
@@ -56,7 +56,7 @@ namespace ArcaneArchive.Core
         public Camera View { get; private set; }
         public float BossHealth { get; private set; }
         public int Phase { get; private set; }
-        public int ActiveAttackCount => shots.Count + waves.Count + zones.Count + (laser?1:0) + (rushWarningVisual?1:0) + (volleyCrown?1:0);
+        public int ActiveAttackCount => shots.Count + waves.Count + zones.Count + (laser?1:0) + (rushWarningVisual?1:0) + (volleyCrown?1:0) + (knightShockwave?1:0);
         public int CurrentAttack => attack;
         public float AttackElapsed => stateTime;
         public bool LaserIsFiring => attack==3 && CurrentState==State.Attack && laser;
@@ -349,7 +349,11 @@ namespace ArcaneArchive.Core
                 if (i >= shots.Count || shots[i] != s) break;
                 s.life -= dt;
                 if (consumed || s.life <= 0) { Destroy(s.go); shots.RemoveAt(i); }
-                else s.go.transform.position += movement;
+                else
+                {
+                    s.go.transform.position += movement;
+                    if(s.knightBarrage){var presentation=s.go.GetComponent<ArcaneArchive.Visuals.KnightBoltVisual>();if(presentation)presentation.Present();}
+                }
             }
         }
         private void SpawnWave()
@@ -427,6 +431,7 @@ namespace ArcaneArchive.Core
         }
         private void ClearAttacks()
         {
+            ClearKnightShockwave();
             ClearKnightTelegraph();
             ClearMeleeVisual();
             ClearWaveCharge();

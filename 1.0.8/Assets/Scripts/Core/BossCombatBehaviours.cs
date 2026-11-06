@@ -191,6 +191,7 @@ namespace ArcaneArchive.Core
         }
         void SteerProjectile(Shot shot,float dt)
         {
+            if(shot.knightBarrage){SteerKnightBarrage(shot,dt);return;}
             shot.age+=dt;if(!shot.homing)return;float limit=shot.enemy?definition.enemyHomingBudget:definition.playerHomingBudget;
             if(shot.age>(shot.enemy?definition.enemyHomingDuration:.85f) || shot.homingUsed>=limit){shot.homing=false;return;}
             if(shot.age<(shot.enemy?definition.enemyHomingDelay:definition.projectileHomingDelay))return;

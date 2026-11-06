@@ -1,0 +1,20 @@
+First thunder follows player during warning
+First thunder releases exactly once
+First thunder remains locked through impact
+Second thunder reacquires later player position
+Second thunder releases at its own locked position
+Third thunder reacquires new position independently
+Third thunder releases once with final lock
+Real leap impact creates shockwave
+Shockwave survives normal attack-to-recovery cleanup
+Wave has 0.3-second launch warning
+Grounded shielding does not block lightning wave
+Wave hits at most once
+Jump above 0.6 m clears wave
+Landing behind passed wave stays safe
+Fast grounded crossing cannot tunnel through wave
+Pause freezes shockwave
+Wave expires after covering arena
+Interrupt cleanup removes wave
+Defeat removes wave
+Return restores library

@@ -294,7 +294,14 @@ namespace ArcaneArchive.UI
             slider.minValue=.25f;slider.maxValue=3f;slider.wholeNumbers=false;slider.SetValueWithoutNotify(player.MouseSensitivityMultiplier);
             slider.onValueChanged.AddListener(v=>{player.SetMouseSensitivityMultiplier(v);value.text=player.MouseSensitivityMultiplier.ToString("F2")+"x";});
             InfoRow(p,"SettingsRow_2","音量","待音频系统接入",-53,70);
-            footer.text="画质与灵敏度即时生效 · 1.00x 为默认灵敏度";
+            var hintsRow=InfoRow(p,"BossHintsRow","Boss 战提示","",-123,70);
+            var hintsButton=Button(hintsRow.transform,"",new Vector2(260,0),new Vector2(230,42),null);
+            hintsButton.name="BossHintsToggle";
+            System.Action refreshHints=()=>{hintsButton.GetComponentInChildren<TMP_Text>().text=ArcaneArchive.Core.BossPresentationSettings.ShowHints?"提示：开启":"提示：关闭";SetQualityButtonState(hintsButton,ArcaneArchive.Core.BossPresentationSettings.ShowHints);};
+            hintsButton.onClick.AddListener(()=>{ArcaneArchive.Core.BossPresentationSettings.ShowHints=!ArcaneArchive.Core.BossPresentationSettings.ShowHints;refreshHints();});
+            refreshHints();
+            Label(p,"关闭战斗提示文字与按键说明，保留生命与攻击范围",new Vector2(0,-177),new Vector2(800,28),17,paper);
+            footer.text="设置即时生效并保存 · Boss 战提示也可在暂停时设置";
         }
         private void SelectQuality(string name)
         {

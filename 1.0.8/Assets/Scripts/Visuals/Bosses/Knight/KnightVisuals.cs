@@ -23,7 +23,8 @@ namespace ArcaneArchive.Visuals
         Quaternion weaponWorld;
         Quaternion recoveryWeapon;
         float ribbonTurn;
-        Vector3 torsoBase;
+        Vector3 torsoBase,visualBase;
+        Vector3 motionLean;
         bool initialized;
         public void Present(BossEncounter encounter)
         {
@@ -84,12 +85,12 @@ namespace ArcaneArchive.Visuals
         }
         void PresentRefined(BossEncounter encounter)
         {
-            if(!initialized){torsoBase=torso.localPosition;lastPosition=transform.position;lastClock=encounter.BattleTime;lastState=encounter.CurrentState;oldTorso=torso.localRotation;oldRight=rightArm.localRotation;oldLeft=leftArm.localRotation;weaponWorld=weapon.rotation;initialized=true;}
+            if(!initialized){torsoBase=torso.localPosition;visualBase=visualRoot.localPosition;lastPosition=transform.position;lastClock=encounter.BattleTime;lastState=encounter.CurrentState;oldTorso=torso.localRotation;oldRight=rightArm.localRotation;oldLeft=leftArm.localRotation;weaponWorld=weapon.rotation;initialized=true;}
             float clock=encounter.BattleTime,age=encounter.AttackElapsed;
             var state=encounter.CurrentState;var move=encounter.KnightCurrentMove;
             float dt=Mathf.Max(0,clock-lastClock),follow=1-Mathf.Exp(-22*dt);
             if(state!=lastState || move!=lastMove){changeAt=clock;oldTorso=torso.localRotation;oldRight=rightArm.localRotation;oldLeft=leftArm.localRotation;recoveryWeapon=Quaternion.Inverse(transform.rotation)*weaponWorld;lastState=state;lastMove=move;}
-            float transition=state==BossEncounter.State.Recovery?.48f:state==BossEncounter.State.Telegraph?.28f:.12f;
+            float transition=state==BossEncounter.State.Recovery?.55f:state==BossEncounter.State.Telegraph?.32f:.14f;
             float blend=Mathf.SmoothStep(0,1,Mathf.Clamp01((clock-changeAt)/transition));
             Vector3 right=new Vector3(-12,0,-12),left=new Vector3(-8,0,18),axis=new Vector3(-.16f,.96f,.22f);
             float lean=0,twist=0,spin=0,elbow=28;
@@ -102,6 +103,9 @@ namespace ArcaneArchive.Visuals
                 if(move==KnightMove.SealThrust){axis=new Vector3(.08f,.10f,1);lean=-9;right=new Vector3(-52,-8,-18);}
                 if(move==KnightMove.SealBolts){axis=new Vector3(-.3f,.92f,.1f);left=new Vector3(-95,0,20);}
                 if(move==KnightMove.GateCleave || move==KnightMove.Heavenfall){axis=Vector3.up;right=new Vector3(160,0,-18);left=new Vector3(-65,0,35);}
+                if(move==KnightMove.LeapCleave){axis=new Vector3(0,.96f,-.28f);right=new Vector3(145,0,-18);left=new Vector3(-65,0,28);lean=12*p;elbow=75;}
+                if(move==KnightMove.BlinkChase){axis=new Vector3(.92f,.2f,-.3f);right=new Vector3(-65,-12,-38);lean=9;twist=24;}
+                if(move==KnightMove.BlinkBarrage){axis=new Vector3(-.22f,.95f,.12f);left=new Vector3(-95,0,30);twist=-12;}
             }
             if(active)
             {
@@ -117,28 +121,58 @@ namespace ArcaneArchive.Visuals
                 if(move==KnightMove.SealBolts){float pulse=0;foreach(float release in encounter.KnightCurrentSpec.impacts)pulse+=Mathf.Exp(-Mathf.Pow((age-release)/.075f,2));axis=new Vector3(-.15f,.98f,.12f);left=new Vector3(-100+pulse*12,0,18);twist=-pulse*5;}
                 if(move==KnightMove.GateCleave){float cut=Mathf.SmoothStep(0,1,Mathf.Clamp01(age/.15f));axis=Vector3.Lerp(Vector3.up,new Vector3(0,-.45f,1),cut);right=Vector3.Lerp(new Vector3(160,0,-18),new Vector3(-75,0,-15),cut);lean=12*cut;elbow=Mathf.Lerp(65,12,cut);}
                 if(move==KnightMove.Heavenfall){axis=new Vector3(.12f,1,0);right=new Vector3(160,0,-15);left=new Vector3(-70,0,45);lean=-10;}
+                if(move==KnightMove.LeapCleave)
+                {
+                    float cut=Sample(age,new[]{0f,.32f,.5f,.72f,.88f,1.08f},new[]{0f,0,.1f,1,1,.85f});
+                    axis=Vector3.Lerp(new Vector3(0,.96f,-.28f),new Vector3(0,-.6f,1),cut);
+                    right=Vector3.Lerp(new Vector3(145,0,-18),new Vector3(-72,0,-15),cut);left=new Vector3(-68,0,25);
+                    lean=Mathf.Lerp(-12,28,cut);elbow=Mathf.Lerp(75,12,cut);
+                }
+                if(move==KnightMove.BlinkChase)
+                {
+                    float yaw=Sample(age,new[]{0f,.08f,.25f,.45f,.66f},new[]{100f,94,0,-100,-110});
+                    axis=Quaternion.AngleAxis(yaw,Vector3.up)*Vector3.forward;axis.y=.12f;
+                    right=new Vector3(-78,0,Mathf.Lerp(-38,28,(100-yaw)/210));left=new Vector3(-45,0,35);twist=yaw*.22f;lean=8;elbow=18;
+                }
+                if(move==KnightMove.BlinkBarrage)
+                {
+                    float pulse=0;foreach(float release in encounter.KnightCurrentSpec.impacts)pulse+=Mathf.Exp(-Mathf.Pow((age-release)/.1f,2));
+                    axis=new Vector3(-.22f,.95f,.12f);left=new Vector3(-104+pulse*16,0,30);twist=-12-pulse*6;lean=-pulse*3;
+                }
             }
             if(encounter.KnightGuarding || (move==KnightMove.ShieldBash && (windup||active)))left=new Vector3(active?-100:-82,0,12);
             if(move==KnightMove.ShieldBash && active){float push=Sample(age,new[]{0f,.20f,.34f,.50f},new[]{0f,1,.85f,0});left=new Vector3(Mathf.Lerp(-82,-110,push),0,12);lean=push*12;twist=-push*8;}
             if(state==BossEncounter.State.Stagger){lean=28;right=new Vector3(15,0,-35);left=new Vector3(20,0,30);axis=new Vector3(-.75f,.35f,.5f);}
             if(state==BossEncounter.State.Won){lean=32;axis=new Vector3(-.3f,.1f,.9f);}
+            Vector3 displacement=transform.position-lastPosition;
+            Vector3 velocity=dt>.00001f && displacement.magnitude<1.2f?transform.InverseTransformDirection(displacement/dt):Vector3.zero;
+            motionLean=Vector3.Lerp(motionLean,Vector3.ClampMagnitude(velocity,6),1-Mathf.Exp(-8*dt));
+            lean+=Mathf.Clamp(motionLean.z*.7f,-4,4);
             torso.localPosition=torsoBase+Vector3.up*Mathf.Sin(clock*2.1f)*.012f;
-            torso.localRotation=Quaternion.Slerp(oldTorso,Quaternion.Euler(lean,twist,0),blend);
+            torso.localRotation=Quaternion.Slerp(oldTorso,Quaternion.Euler(lean,twist,Mathf.Clamp(-motionLean.x,-5,5)),blend);
             rightArm.localRotation=Quaternion.Slerp(oldRight,Quaternion.Euler(right),blend);
             leftArm.localRotation=Quaternion.Slerp(oldLeft,Quaternion.Euler(left),blend);
             rightForearm.localRotation=Quaternion.Slerp(rightForearm.localRotation,Quaternion.Euler(-elbow,0,0),follow);
             leftForearm.localRotation=Quaternion.Slerp(leftForearm.localRotation,Quaternion.Euler(-35,0,0),follow);
             visualRoot.localRotation=Quaternion.Slerp(visualRoot.localRotation,Quaternion.Euler(0,spin,0),follow);
+            float compression=0;
+            if(move==KnightMove.LeapCleave && windup)compression=.25f*Mathf.SmoothStep(0,1,Mathf.Clamp01(age/.55f));
+            if(move==KnightMove.LeapCleave && active && age>=.7f)compression=.3f*Mathf.Exp(-Mathf.Pow((age-.77f)/.16f,2));
+            visualRoot.localPosition=Vector3.Lerp(visualRoot.localPosition,visualBase-Vector3.up*compression,follow);
             Quaternion weaponTarget=Quaternion.FromToRotation(Vector3.up,axis.normalized);
             if(state==BossEncounter.State.Recovery)weaponTarget=Quaternion.Slerp(recoveryWeapon,weaponTarget,blend);
-            weaponWorld=Quaternion.RotateTowards(weaponWorld,Quaternion.Slerp(weaponWorld,transform.rotation*weaponTarget,follow),1080*dt);
+            float weaponFollow=1-Mathf.Exp(-(active?32:state==BossEncounter.State.Recovery?12:18)*dt);
+            weaponWorld=Quaternion.RotateTowards(weaponWorld,Quaternion.Slerp(weaponWorld,transform.rotation*weaponTarget,weaponFollow),1080*dt);
             weapon.rotation=weaponWorld;
             float travelled=Vector3.ProjectOnPlane(transform.position-lastPosition,Vector3.up).magnitude;
             float speed=dt>.00001f?Mathf.Min(5,travelled/dt):0;
+            // A teleport is not a stride; do not drag planted feet or create a huge gait step.
+            if(travelled>1.2f){travelled=0;speed=0;gaitWeight=0;}
             gaitPhase+=travelled*3.4f;gaitWeight=Mathf.Lerp(gaitWeight,Mathf.Clamp01(speed/2.5f),1-Mathf.Exp(-10*dt));
             float gait=Mathf.Sin(gaitPhase)*gaitWeight;
             Vector3 lt=new Vector3(gait*23,0,-3),rt=new Vector3(-gait*23,0,3),ls=new Vector3(Mathf.Max(0,-gait)*30,0,0),rs=new Vector3(Mathf.Max(0,gait)*30,0,0);
-            if(move==KnightMove.Heavenfall && (windup||active)){float lift=Mathf.Clamp01((transform.position.y-encounter.Arena.transform.position.y)/1.15f);lt=Vector3.Lerp(lt,new Vector3(-22,0,-8),lift);rt=Vector3.Lerp(rt,new Vector3(15,0,5),lift);ls=Vector3.Lerp(ls,new Vector3(35,0,0),lift);}
+            if((move==KnightMove.Heavenfall || move==KnightMove.LeapCleave) && (windup||active)){float lift=Mathf.Clamp01((transform.position.y-encounter.Arena.transform.position.y)/1.15f);lt=Vector3.Lerp(lt,new Vector3(-32,0,-8),lift);rt=Vector3.Lerp(rt,new Vector3(18,0,5),lift);ls=Vector3.Lerp(ls,new Vector3(48,0,0),lift);rs=Vector3.Lerp(rs,new Vector3(25,0,0),lift);}
+            if(move==KnightMove.LeapCleave && windup){float crouch=Mathf.SmoothStep(0,1,Mathf.Clamp01(age/.55f));lt.x-=crouch*18;rt.x-=crouch*18;ls.x+=crouch*30;rs.x+=crouch*30;}
             leftThigh.localRotation=Quaternion.Slerp(leftThigh.localRotation,Quaternion.Euler(lt),follow);rightThigh.localRotation=Quaternion.Slerp(rightThigh.localRotation,Quaternion.Euler(rt),follow);
             leftShin.localRotation=Quaternion.Slerp(leftShin.localRotation,Quaternion.Euler(ls),follow);rightShin.localRotation=Quaternion.Slerp(rightShin.localRotation,Quaternion.Euler(rs),follow);
             if(wardShield)wardShield.SetActive(encounter.KnightGuarding || (move==KnightMove.ShieldBash && (windup||active)));

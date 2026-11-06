@@ -16,7 +16,7 @@ namespace ArcaneArchive.Core
         KnightMoveSpec knightSpec;
         Vector3 knightOrigin,knightForward,knightTarget;
         float knightTravel;
-        readonly float[] knightUsedAt=new float[8];
+        readonly float[] knightUsedAt=new float[11];
         int knightImpact,knightPattern,knightBlockedHits,knightLast=-1,knightRepeat;
         bool knightStoryEnabled,knightStorySeen;
         GameObject knightWarning;
@@ -29,10 +29,7 @@ namespace ArcaneArchive.Core
         public KnightMoveSpec KnightCurrentSpec=>knightSpec;
         public Vector3 KnightHeavenfallPoint(int index)
         {
-            float spacing=Mathf.Max(3.3f,knightSpec.reach*2.2f);
-            Vector3 point=knightTarget+Vector3.Cross(Vector3.up,knightForward)*((index==0?0:index==1?1:-1)*spacing);
-            Vector3 local=arena.transform.InverseTransformPoint(point);local.y=0;
-            return arena.transform.TransformPoint(Vector3.ClampMagnitude(local,arena.radius-Mathf.Max(2,knightSpec.reach+.25f)));
+            return knightThunderTargets[Mathf.Clamp(index,0,2)];
         }
         public int KnightImpactCount { get; private set; }
         public int KnightBlockedCount { get; private set; }
@@ -70,6 +67,9 @@ namespace ArcaneArchive.Core
         void TickKnight(float dt)
         {
             stateTime+=dt;
+            TickKnightShockwave(dt);
+            if(IsFinished)return;
+            TickKnightThunderTargets();
             if(knightDefinition.danceStyle && knightMove==KnightMove.Heavenfall && (CurrentState==State.Telegraph || CurrentState==State.Attack))
             {
                 float lift=CurrentState==State.Telegraph?Mathf.SmoothStep(0,1,Mathf.Clamp01((stateTime-.45f)/.8f)):
@@ -92,7 +92,7 @@ namespace ArcaneArchive.Core
                         if(toward.magnitude<2.6f)step-=toward.normalized;
                         SweepBoss(step.normalized,knightDefinition.walkSpeed*.45f*dt,false);
                     }
-                    if(stateTime>=(Phase==2?knightDefinition.phaseTwoObserve:knightDefinition.observeTime))BeginKnightMove(ChooseKnightMove());
+                    if(!knightShockwave && stateTime>=(Phase==2?knightDefinition.phaseTwoObserve:knightDefinition.observeTime))BeginKnightMove(ChooseKnightMove());
                     break;
                 case State.Telegraph:
                     if(knightDefinition.danceStyle && knightMove==KnightMove.SealBolts)
@@ -103,12 +103,14 @@ namespace ArcaneArchive.Core
                     if(stateTime<knightSpec.warning-knightSpec.lockTime)
                     {
                         FacePoint(transform.position,dt);knightForward=arena.boss.forward;knightTarget=transform.position;
-                        UpdateKnightWarning();
                     }
+                    TickKnightMobilityWarning();
+                    UpdateKnightWarning();
                     if(knightMove==KnightMove.Bastion && knightBlockedHits>=2){BeginKnightMove(KnightMove.ShieldBash);break;}
                     if(stateTime>=knightSpec.warning){knightImpact=0;SetState(State.Attack);}
                     break;
                 case State.Attack:
+                    TickKnightMobilityAttack();
                     if(knightMove==KnightMove.Bastion)
                     {
                         if(knightBlockedHits>=2){BeginKnightMove(KnightMove.ShieldBash);break;}
@@ -120,14 +122,29 @@ namespace ArcaneArchive.Core
                     }
                     if(knightMove==KnightMove.OrbitSweep)
                     {
+                        if(knightDefinition.streamlinedKit)TickKnightOrbitPursuit(dt);
+                        else
+                        {
                         float wanted=knightDefinition.orbitTravel*Mathf.SmoothStep(0,1,Mathf.Clamp01(stateTime/1.1f));
                         knightTravel+=SweepBoss(Vector3.Cross(Vector3.up,knightForward),Mathf.Max(0,wanted-knightTravel),false);
+                        }
+                        UpdateKnightWarning();
+                    }
+                    if(knightMove==KnightMove.BlinkBarrage && knightDefinition.streamlinedKit)
+                    {
+                        knightTarget=transform.position;
+                        Vector3 aim=Vector3.ProjectOnPlane(knightTarget-arena.boss.position,Vector3.up).normalized;
+                        if(knightImpact<knightSpec.impacts.Length && aim.sqrMagnitude>.01f)
+                        {
+                            knightForward=Vector3.RotateTowards(knightForward,aim,knightDefinition.barrageAimSpeed*Mathf.Deg2Rad*dt,0);
+                            arena.boss.rotation=Quaternion.LookRotation(knightForward);
+                        }
                         UpdateKnightWarning();
                     }
                     ResolveKnightImpacts();
                     if(IsFinished || CurrentState!=State.Attack)break;
                     float duration=knightSpec.duration+(knightMove==KnightMove.OathCombo && Phase==2?.78f:0);
-                    if(stateTime>=duration){ClearKnightTelegraph();SetState(State.Recovery);}
+                    if(stateTime>=duration){ClearKnightTelegraph(false);SetState(State.Recovery);}
                     break;
                 case State.Recovery:
                     if(knightDefinition.danceStyle && stateTime>knightSpec.recovery*.65f)FacePoint(transform.position,dt*.45f);
@@ -139,14 +156,16 @@ namespace ArcaneArchive.Core
             if(knightDefinition.danceStyle)
             {
                 float combatDistance=HorizontalDistance(arena.boss.position,transform.position);
-                float[] weights={combatDistance<6?4f:.15f,combatDistance>6?5f:1f,combatDistance>5?3f:1f,2f,combatDistance<4?1.1f:0,0,combatDistance<7?3.5f:.4f,Phase==2?2.8f:0};
+                float[] weights={combatDistance<6?4f:.15f,combatDistance>6?5f:1f,combatDistance>5?3f:1f,2f,combatDistance<4?1.1f:0,0,combatDistance<7?3.5f:.4f,Phase==2?2.8f:0,combatDistance>4?3.6f:.6f,combatDistance>5?3.2f:.3f,combatDistance<10?2.7f:1.2f};
                 float sum=0;
                 for(int i=0;i<weights.Length;i++)
                 {
-                    if(i==knightLast || combatTime-knightUsedAt[i]<(i==7?12f:i==4?10f:5f))weights[i]=0;
+                    bool available=knightDefinition.IsMoveEnabled((KnightMove)i) && Array.Exists(knightDefinition.moves,spec=>(int)spec.move==i);
+                    if(!available || i==knightLast || (i>=9 && knightLast>=9) || combatTime-knightUsedAt[i]<(i==7?12f:i>=8?9f:i==4?10f:5f))weights[i]=0;
                     sum+=weights[i];
                 }
                 int chosen=knightLast==(int)KnightMove.SealThrust?(int)KnightMove.SealBolts:(int)KnightMove.SealThrust;
+                if(knightDefinition.streamlinedKit)chosen=knightLast==(int)KnightMove.OathCombo?(int)KnightMove.OrbitSweep:(int)KnightMove.OathCombo;
                 float pick=UnityEngine.Random.value*sum;
                 if(sum>0)for(int i=0;i<weights.Length;i++){pick-=weights[i];if(pick<=0 && weights[i]>0){chosen=i;break;}}
                 knightLast=chosen;knightPattern++;return (KnightMove)chosen;
@@ -170,9 +189,13 @@ namespace ArcaneArchive.Core
             knightUsedAt[(int)move]=combatTime;
             knightImpact=knightBlockedHits=0;knightTravel=0;
             knightOrigin=arena.boss.position;knightForward=arena.boss.forward;knightTarget=transform.position;
+            ResetKnightMobility();
+            ResetKnightThunderTargets();
             attack=5;SetState(State.Telegraph);
             knightWarning=new GameObject("Knight telegraph: "+move);knightWarning.transform.SetParent(arena.effectRoot,false);
-            UpdateKnightWarning();Feedback(knightSpec.hint,knightSpec.warning+1);PlaySound(definition.warningSound,.3f);
+            string hint=move==KnightMove.Heavenfall?"三道追身雷 · 逐次锁定，落雷前突进离圈":
+                move==KnightMove.LeapCleave?"跳劈可挡 · 落地后起跳越过金雷波":knightSpec.hint;
+            UpdateKnightWarning();Feedback(hint,knightSpec.warning+1);PlaySound(definition.warningSound,.3f);
         }
         void ResolveKnightImpacts()
         {
@@ -183,13 +206,15 @@ namespace ArcaneArchive.Core
                 if(stateTime<time)break;
                 int index=knightImpact++;KnightImpactCount++;
                 if(knightVisual)knightVisual.Release(this,index);
+                if(knightMove==KnightMove.LeapCleave)StartKnightShockwave();
                 if(knightMove==KnightMove.SealBolts){SpawnKnightBolt(index);continue;}
+                if(knightMove==KnightMove.BlinkBarrage){SpawnKnightBarrage(index);continue;}
                 bool hit=KnightCovers(transform.position,View.transform.position,index);
                 if(!hit && CheckingDodge)CheckDodge(KnightCovers(ActiveDodge.StartPosition,ActiveDodge.StartEye,index),false);
                 if(hit)
                 {
                     bool blockable=knightMove!=KnightMove.GateCleave && knightMove!=KnightMove.Heavenfall;
-                    bool parryable=knightMove==KnightMove.OathCombo || knightMove==KnightMove.SealThrust || knightMove==KnightMove.OrbitSweep;
+                    bool parryable=knightMove==KnightMove.OathCombo || knightMove==KnightMove.SealThrust || knightMove==KnightMove.OrbitSweep || knightMove==KnightMove.BlinkChase;
                     float damage=knightSpec.damage*(knightMove==KnightMove.OathCombo?index==0?1:index==1?1.25f:1.4f:1);
                     combat.ReceiveHit(damage,arena.boss.position+Vector3.up*1.5f,blockable,-1,parryable);
                 }
@@ -204,6 +229,7 @@ namespace ArcaneArchive.Core
             Vector3 from=knightMove==KnightMove.SealThrust?knightOrigin:arena.boss.position;
             Vector3 delta=feet-from;delta.y=0;
             if(Mathf.Abs(feet.y-arena.boss.position.y)>2 || !HasClearShot(arena.boss.position+Vector3.up*1.3f,eye))return false;
+            if(knightMove==KnightMove.LeapCleave)return delta.magnitude<=knightSpec.reach;
             if(knightMove==KnightMove.Heavenfall)
                 return HorizontalDistance(feet,KnightHeavenfallPoint(index))<=knightSpec.reach;
             if(knightMove==KnightMove.GateCleave)
@@ -264,6 +290,7 @@ namespace ArcaneArchive.Core
         void UpdateKnightWarning()
         {
             if(!knightWarning)return;
+            if(UpdateKnightMobilityWarning())return;
             int lineIndex=0;
             Material mat=knightMove==KnightMove.GateCleave?knightDefinition.unblockable:knightMove==KnightMove.SealBolts?knightDefinition.absorbable:knightDefinition.blockable;
             Vector3 origin=(knightMove==KnightMove.OrbitSweep || knightMove==KnightMove.SealBolts?arena.boss.position:knightOrigin)+Vector3.up*.055f;
@@ -274,7 +301,9 @@ namespace ArcaneArchive.Core
                     Vector3 center=KnightHeavenfallPoint(n)+Vector3.up*.06f;var points=new Vector3[49];
                     for(int i=0;i<49;i++){float angle=i*Mathf.PI*2/48;points[i]=center+new Vector3(Mathf.Cos(angle),0,Mathf.Sin(angle))*knightSpec.reach;}
                     SetKnightWarningLine(lineIndex++,"Heavenfall locked footprint "+n,knightDefinition.unblockable,points,.06f,false);
+                    knightLines[n].enabled=n==knightImpact;
                 }
+                UpdateKnightFallingThunder(lineIndex);
             }
             else if(knightMove==KnightMove.GateCleave || knightMove==KnightMove.SealThrust)
             {
@@ -303,12 +332,12 @@ namespace ArcaneArchive.Core
                 line.loop=loop;line.startWidth=line.endWidth=width;
             }
         }
-        void ClearKnightTelegraph()
+        void ClearKnightTelegraph(bool cancelEffects=true)
         {
-            if(KnightMode && arena && knightMove==KnightMove.Heavenfall)
+            if(KnightMode && arena && (knightMove==KnightMove.Heavenfall || knightMove==KnightMove.LeapCleave))
             {var point=arena.boss.position;point.y=arena.transform.position.y;arena.boss.position=point;}
             if(knightWarning)Destroy(knightWarning);knightWarning=null;knightLines.Clear();
-            if(knightVisual)knightVisual.CancelEffects();
+            if(cancelEffects && knightVisual)knightVisual.CancelEffects();
         }
     }
 }

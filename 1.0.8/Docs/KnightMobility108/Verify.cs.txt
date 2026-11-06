@@ -1,0 +1,89 @@
+try {
+
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var f=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+System.Action<object,string,object> set=(o,n,v)=>o.GetType().GetField(n,f).SetValue(o,v);
+System.Func<string,object[],object> call=(n,a)=>typeof(ArcaneArchive.Core.BossEncounter).GetMethod(n,f).Invoke(e,a);
+set(e,"focusLost",false); e.GetComponent<ArcaneArchive.UI.RecoveryMenu>().Resume();
+set(e.Combat,"<Health>k__BackingField",100000f); set(e.Combat,"invulnerability",0f); e.GetComponent<ArcaneArchive.Player.FirstPersonController>().SetGameplayInputEnabled(false);
+System.Action<float> step=dt=>{set(e,"combatTime",e.BattleTime+dt);e.Combat.Tick(dt);call("TickKnight",new object[]{dt});call("PresentBoss",new object[]{dt});UnityEngine.Physics.SyncTransforms();};
+
+var checks=new System.Collections.Generic.List<string>();
+System.Action<bool,string> check=(ok,label)=>{if(!ok)throw new System.Exception(label);checks.Add(label);};
+System.Action<ArcaneArchive.Core.KnightMove> begin=m=>{
+call("ClearAttacks",new object[0]);call("SetState",new object[]{ArcaneArchive.Core.BossEncounter.State.Observe});
+e.Arena.boss.localPosition=new Vector3(0,0,4);e.Arena.boss.localRotation=Quaternion.Euler(0,180,0);
+e.transform.position=e.Arena.transform.TransformPoint(new Vector3(0,.08f,-5));UnityEngine.Physics.SyncTransforms();e.BeginKnightMove(m);
+};
+var moves=new[]{ArcaneArchive.Core.KnightMove.LeapCleave,ArcaneArchive.Core.KnightMove.BlinkChase,ArcaneArchive.Core.KnightMove.BlinkBarrage};
+check(e.KnightMode && e.GetComponent<ArcaneArchive.UI.RecoveryMenu>().bookKnight.moves.Length==11,"Book selection loads production configuration with 11 moves");
+foreach(int phase in new[]{1,2}){
+set(e,"<Phase>k__BackingField",phase);
+foreach(var move in moves){
+begin(move);var start=e.Arena.boss.position;int hits=e.KnightImpactCount;float health=e.Combat.Health,peak=0;
+for(int i=0;i<250;i++){step(1f/60);peak=Mathf.Max(peak,e.Arena.boss.localPosition.y);if(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Recovery)break;}
+check(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Recovery,"Recovery reached: "+phase+" "+move);
+check(e.KnightImpactCount-hits==(move==moves[2]?3:1),"Exactly expected releases: "+phase+" "+move);
+check(e.Arena.boss.localPosition.y<.01f,"Grounded after attack: "+phase+" "+move);
+check(Vector3.Distance(start,e.Arena.boss.position)>4,"Actual root movement: "+phase+" "+move);
+check(!float.IsNaN(e.Arena.boss.GetComponent<ArcaneArchive.Visuals.KnightVisuals>().weapon.position.x),"Finite weapon pose: "+phase+" "+move);
+if(move==moves[0]){check(peak>2.5f && peak<2.7f,"Leap height 2.6 m: "+phase);check(Mathf.Abs(health-e.Combat.Health-28)<.1f,"Leap damage once: "+phase);}
+if(move==moves[1])check(Mathf.Abs(health-e.Combat.Health-24)<.1f,"Blink slash damage once: "+phase);
+if(move==moves[2]){
+check(e.ActiveAttackCount==15,"Three five-shot waves: "+phase);
+var shots=(System.Collections.IList)typeof(ArcaneArchive.Core.BossEncounter).GetField("shots",f).GetValue(e);
+Vector3 velocity=(Vector3)shots[0].GetType().GetField("velocity").GetValue(shots[0]);e.transform.position+=Vector3.right*5;
+call("TickShots",new object[]{.01f});
+check(((Vector3)shots[0].GetType().GetField("velocity").GetValue(shots[0])-velocity).sqrMagnitude<.0001f,"Released barrage does not home: "+phase);
+for(int i=0;i<120;i++)call("TickShots",new object[]{1f/60});
+check(e.ActiveAttackCount==0,"Barrage expires through real projectile loop: "+phase);
+}
+}
+}
+foreach(var move in moves){
+begin(move);for(int i=0;i<36;i++)step(1f/60);
+Vector3 locked=e.KnightMobilityDestination,target=e.KnightLockedTarget;
+e.transform.position+=Vector3.right*5;UnityEngine.Physics.SyncTransforms();
+step(.02f);
+check(Vector3.Distance(locked,e.KnightMobilityDestination)<.001f && Vector3.Distance(target,e.KnightLockedTarget)<.001f,"Player relocation after lock does not retarget: "+move);
+var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();menu.ShowPage(ArcaneArchive.UI.RecoveryMenu.Page.Menu);
+float clock=e.BattleTime;Vector3 root=e.Arena.boss.position;int count=e.KnightImpactCount;
+for(int i=0;i<4;i++)call("Update",new object[0]);
+check(e.BattleTime==clock && e.Arena.boss.position==root && e.KnightImpactCount==count,"Pause freezes move: "+move);
+menu.Resume();set(e,"focusLost",false);
+}
+begin(moves[0]);while(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Telegraph)step(1f/60);
+for(int i=0;i<20;i++)step(1f/60);check(e.Arena.boss.localPosition.y>2,"Leap reaches airborne state before cancellation");
+call("ClearAttacks",new object[0]);check(e.Arena.boss.localPosition.y<.01f && e.ActiveAttackCount==0,"Airborne interrupt grounds root and clears attacks");
+var wall=GameObject.CreatePrimitive(PrimitiveType.Cube);wall.name="Temporary mobility verification obstacle";
+try {
+wall.transform.position=e.Arena.transform.TransformPoint(new Vector3(0,2,0));wall.transform.localScale=new Vector3(10,4,.5f);
+foreach(var move in new[]{moves[0],moves[1]}){
+begin(move);Physics.SyncTransforms();for(int i=0;i<180;i++){step(1f/60);if(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Recovery)break;}
+check(e.Arena.boss.localPosition.z>.5f,"Ground capsule prevents crossing wall: "+move);
+}
+} finally{UnityEngine.Object.DestroyImmediate(wall);}
+begin(moves[2]);e.Arena.boss.localPosition=new Vector3(11,0,1);e.transform.position=e.Arena.transform.TransformPoint(new Vector3(11,.08f,-7));Physics.SyncTransforms();e.BeginKnightMove(moves[2]);
+for(int i=0;i<60;i++)step(1f/60);
+check(new Vector2(e.Arena.boss.localPosition.x,e.Arena.boss.localPosition.z).magnitude<e.Arena.radius-.5f,"Blink stays within arena boundary");
+call("ClearAttacks",new object[0]);call("SetState",new object[]{ArcaneArchive.Core.BossEncounter.State.Observe});
+set(e,"<Phase>k__BackingField",2);e.Arena.boss.localPosition=new Vector3(0,0,4);e.transform.position=e.Arena.transform.TransformPoint(new Vector3(0,.08f,-5));Physics.SyncTransforms();
+var seen=new System.Collections.Generic.HashSet<int>();int last=-1;
+for(int i=0;i<500;i++){set(e,"combatTime",e.BattleTime+15f);int chosen=(int)(ArcaneArchive.Core.KnightMove)call("ChooseKnightMove",new object[0]);check(!(last>=9 && chosen>=9),"No consecutive teleports "+i);seen.Add(chosen);last=chosen;}
+check(seen.Contains(8)&&seen.Contains(9)&&seen.Contains(10),"Distance-weighted AI selects all three mobility moves");
+foreach(var move in new[]{ArcaneArchive.Core.KnightMove.OathCombo,ArcaneArchive.Core.KnightMove.SealThrust,ArcaneArchive.Core.KnightMove.SealBolts,ArcaneArchive.Core.KnightMove.GateCleave,ArcaneArchive.Core.KnightMove.Bastion,ArcaneArchive.Core.KnightMove.ShieldBash,ArcaneArchive.Core.KnightMove.OrbitSweep,ArcaneArchive.Core.KnightMove.Heavenfall}){
+begin(move);int frames=0;while(e.CurrentState!=ArcaneArchive.Core.BossEncounter.State.Recovery && frames++<360)step(1f/60);
+check(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Recovery,"Original move still completes: "+move);
+}
+begin(moves[2]);for(int i=0;i<150;i++)step(1f/60);
+e.Finish(false);check(e.ActiveAttackCount==0,"Defeat clears barrage");
+e.Retry();check(e.IsActive&&!e.IsFinished && e.BossHealth==e.Definition.health,"Retry restores combat");
+check(e.ReturnToLibrary(),"Knight returns to library");check(!e.KnightMode && e.ActiveAttackCount==0,"Return restores Warden configuration and clears attacks");
+var ui=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();var book=UnityEditor.AssetDatabase.FindAssets("t:DemoBookRecord").Select(g=>UnityEditor.AssetDatabase.LoadAssetAtPath<ArcaneArchive.Knowledge.DemoBookRecord>(UnityEditor.AssetDatabase.GUIDToAssetPath(g))).First(x=>x.opensTrial);
+ui.ShowBook(book);ui.StartSelectedEncounter(false);check(e.IsActive&&!e.KnightMode,"Book Warden selection still starts");e.Finish(false);check(e.ReturnToLibrary(),"Warden returns to library");
+ui.ShowBook(book);ui.StartSelectedEncounter(true);e.enabled=false;e.GetComponent<ArcaneArchive.Player.FirstPersonController>().enabled=false;set(e,"focusLost",false);ui.Resume();call("SetState",new object[]{ArcaneArchive.Core.BossEncounter.State.Observe});
+var concise=checks.Where(x=>!x.StartsWith("No consecutive teleports")).ToList();concise.Add("No consecutive teleports across 500 weighted AI choices");
+System.IO.Directory.CreateDirectory("Docs/KnightMobility108");
+System.IO.File.WriteAllLines("Docs/KnightMobility108/Verification.txt",new[]{"PASS - controlled Unity Play Mode verification; elevated player health and explicit battle-clock steps, not human playtest."}.Concat(concise));
+return concise;
+}catch(System.Exception ex){return ex.GetBaseException().ToString();}

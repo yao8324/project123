@@ -86,12 +86,12 @@ namespace ArcaneArchive.Player
         }
         public void AbsorbHit(){Power=Mathf.Min(100,Power+25);encounter.Feedback("吞印成功  +25",.7f);}
         public bool TakeDamage(float damage)=>ReceiveHit(damage,Vector3.zero,false);
-        public bool ReceiveHit(float damage,Vector3 source,bool blockable,float hitProtection=-1,bool parryable=false)
+        public bool ReceiveHit(float damage,Vector3 source,bool blockable,float hitProtection=-1,bool parryable=false,bool ignoreDodgeProtection=false)
         {
             if(!encounter || !encounter.CanFight || damage<=0)return false;
             // Reward protection is real-time and begins only after a verified successful dodge.
-            if(player.Dash && player.Dash.RewardProtected)return false;
-            if(player.Dash)player.Dash.RegisterContact();
+            if(!ignoreDodgeProtection && player.Dash && player.Dash.RewardProtected)return false;
+            if(!ignoreDodgeProtection && player.Dash)player.Dash.RegisterContact();
             if(invulnerability>0)return false;
             if(blockable && Guarding && Vector3.Dot(encounter.View.transform.forward,(source-encounter.View.transform.position).normalized)>=.5f)
             {

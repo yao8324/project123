@@ -48,7 +48,7 @@ namespace ArcaneArchive.Visuals
             previousClock = clock;
             var state = encounter.CurrentState;
             var move = encounter.KnightCurrentMove;
-            bool melee = move == KnightMove.OathCombo || move == KnightMove.SealThrust || move == KnightMove.OrbitSweep;
+            bool melee = move == KnightMove.OathCombo || move == KnightMove.SealThrust || move == KnightMove.OrbitSweep || move == KnightMove.LeapCleave || move == KnightMove.BlinkChase;
             bool working = state == BossEncounter.State.Telegraph || state == BossEncounter.State.Attack || state == BossEncounter.State.Recovery;
             bool twoHands = melee && working && !encounter.KnightGuarding;
             TwoHandWeight = Mathf.MoveTowards(TwoHandWeight, twoHands ? 1 : 0, dt / Mathf.Max(.01f, gripBlendSeconds));
