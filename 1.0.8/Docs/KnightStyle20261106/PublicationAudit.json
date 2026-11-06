@@ -1,0 +1,18 @@
+{
+  "target": "lixiang/1.0.8",
+  "baseCommit": "60f452be0dbffee918ef2608661ca837aee824d8",
+  "stagedFileCountBeforeThisReport": 102,
+  "oldVersionsChanged": false,
+  "cacheOrBuildOutputStaged": false,
+  "missingMeta": [],
+  "orphanMeta": [],
+  "duplicateGuids": 0,
+  "checks": 36,
+  "build": "Succeeded",
+  "buildErrors": 0,
+  "buildWarnings": 0,
+  "nativeStartup": true,
+  "editorSearchIssues": 1,
+  "diffCheckPassed": true,
+  "scope": "Pre-push validation; user explicitly requested same-version 1.0.8 update."
+}

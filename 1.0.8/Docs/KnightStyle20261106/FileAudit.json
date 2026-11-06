@@ -1,0 +1,17 @@
+{
+  "missingMeta": [],
+  "orphanMeta": [],
+  "duplicateGuids": {},
+  "unexpectedTrackedChanges": [],
+  "unexpectedNewFiles": [],
+  "changedTracked": [
+    "1.0.8/Assets/Art/Bosses/Knight/ProductionV5/KnightArenaProduction.prefab",
+    "1.0.8/Assets/Art/Bosses/Knight/ProductionV5/KnightProduction.prefab",
+    "1.0.8/Assets/Scripts/Visuals/Bosses/Knight/KnightVisuals.cs",
+    "1.0.8/README.md"
+  ],
+  "newFileCount": 95,
+  "corePlayerUiPackagesSettingsChanged": false,
+  "nativeStartupPassed": true,
+  "scope": "Pre-push resource/source audit. Remote upload is verified separately by Git."
+}

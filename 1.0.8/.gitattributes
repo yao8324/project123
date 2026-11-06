@@ -19,3 +19,6 @@ Blender/KnightProductionV5/*.blend filter=lfs diff=lfs merge=lfs -text
 *.prefab whitespace=-blank-at-eol
 *.asset whitespace=-blank-at-eol
 *.anim whitespace=-blank-at-eol
+
+# Unity material YAML uses a trailing space for empty serialized fields.
+*.mat whitespace=-blank-at-eol

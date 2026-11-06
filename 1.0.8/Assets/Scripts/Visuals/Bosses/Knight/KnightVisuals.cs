@@ -14,6 +14,7 @@ namespace ArcaneArchive.Visuals
         public GameObject wardShield;
         public KnightRefinedEffects refinedEffects;
         public KnightRigConstraints productionRig;
+        public KnightOathPresentation oathPresentation;
         Vector3 lastPosition;
         float lastClock,changeAt;
         float gaitPhase,gaitWeight;
@@ -181,6 +182,7 @@ namespace ArcaneArchive.Visuals
             ribbonTurn=Mathf.Lerp(ribbonTurn,active && move==KnightMove.OrbitSweep?22:0,1-Mathf.Exp(-5*dt));
             if(sealRibbons!=null)for(int i=0;i<sealRibbons.Length;i++)if(sealRibbons[i]){var target=Quaternion.Euler(Mathf.Sin(clock*2+i)*3+gaitWeight*6,Mathf.Sin(clock*1.6f+i)*4+ribbonTurn,Mathf.Sin(clock*1.3f+i)*2);sealRibbons[i].localRotation=Quaternion.Slerp(sealRibbons[i].localRotation,target,1-Mathf.Exp(-(5+i*.3f)*dt));}
             if(productionRig)productionRig.Apply(encounter);
+            if(oathPresentation)oathPresentation.Present(encounter);
             if(refinedEffects)refinedEffects.Present(encounter);
             lastPosition=transform.position;lastClock=clock;
         }
