@@ -1,0 +1,51 @@
+{
+  "name": "Soulbinder — Overlord reference study with open grimoire",
+  "reference": "https://overlord-anime.com/assets/character/1c2.webp",
+  "blender": "4.3.2",
+  "characterHeightMetres": 3.617,
+  "bones": 50,
+  "sourceObjects": 328,
+  "gameMeshes": {
+    "Soulbinder_Body_Skinned": {
+      "vertices": 43349,
+      "triangles": 85081,
+      "materialSlots": 9,
+      "uvLayers": 1,
+      "vertexGroups": 45
+    },
+    "Grimoire_Open_Separate_Prop": {
+      "vertices": 9030,
+      "triangles": 16600,
+      "materialSlots": 6,
+      "uvLayers": 1,
+      "vertexGroups": 1
+    },
+    "Invocation_Optional_Separate_VFX": {
+      "vertices": 2012,
+      "triangles": 3952,
+      "materialSlots": 2,
+      "uvLayers": 1,
+      "vertexGroups": 2
+    },
+    "Soulbinder_Body_Skinned_Reduced": {
+      "vertices": 18646,
+      "triangles": 35733,
+      "materialSlots": 9,
+      "uvLayers": 1,
+      "vertexGroups": 45
+    },
+    "Grimoire_Open_Separate_Prop_Reduced": {
+      "vertices": 3997,
+      "triangles": 6972,
+      "materialSlots": 6,
+      "uvLayers": 1,
+      "vertexGroups": 1
+    }
+  },
+  "animations": [
+    "Soulbinder_Idle_Study",
+    "Soulbinder_Invocation_Study"
+  ],
+  "gpuRender": true,
+  "scope": "Editable fan-character visual study, basic deform rig and motion studies; no Boss AI, hand-authored production retopology, final skinning or Unity runtime validation claimed."
+}

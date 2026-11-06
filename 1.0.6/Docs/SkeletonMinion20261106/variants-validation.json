@@ -1,0 +1,46 @@
+{
+  "Skeleton_Archer": {
+    "passed": true,
+    "bones": 27,
+    "meshes": 7,
+    "actions": 7,
+    "allVerticesWeighted": true
+  },
+  "Skeleton_Hammer": {
+    "passed": true,
+    "bones": 27,
+    "meshes": 6,
+    "actions": 7,
+    "allVerticesWeighted": true
+  },
+  "Skeleton_SwordShield": {
+    "passed": true,
+    "bones": 27,
+    "meshes": 7,
+    "actions": 7,
+    "allVerticesWeighted": true
+  },
+  "Undead_Winged": {
+    "passed": true,
+    "bones": 10,
+    "meshes": 3,
+    "actions": 4,
+    "allVerticesWeighted": true
+  },
+  "Skeleton_Arrow": {
+    "passed": true,
+    "meshes": 4
+  },
+  "Undead_Fireball": {
+    "passed": true,
+    "meshes": 4
+  },
+  "Boss_PurpleSkull": {
+    "passed": true,
+    "meshes": 1
+  },
+  "Boss_MagicDagger": {
+    "passed": true,
+    "meshes": 3
+  }
+}

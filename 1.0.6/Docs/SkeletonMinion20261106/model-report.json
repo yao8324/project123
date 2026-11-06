@@ -1,0 +1,45 @@
+{
+  "bones": 27,
+  "animations": [
+    "Skeleton_ArmorBreakStun",
+    "Skeleton_Death",
+    "Skeleton_Hit",
+    "Skeleton_Idle",
+    "Skeleton_MacheteSlash",
+    "Skeleton_Walk"
+  ],
+  "sourceParts": 190,
+  "meshes": {
+    "Skeleton_Body": {
+      "vertices": 9803,
+      "triangles": 19009,
+      "unweightedVertices": 0
+    },
+    "Skeleton_GhostEyes": {
+      "vertices": 322,
+      "triangles": 628,
+      "unweightedVertices": 0
+    },
+    "Machete_Weapon": {
+      "vertices": 591,
+      "triangles": 1118,
+      "unweightedVertices": 0
+    },
+    "Armor_Shoulder": {
+      "vertices": 258,
+      "triangles": 488,
+      "unweightedVertices": 0
+    },
+    "Armor_Bracer": {
+      "vertices": 258,
+      "triangles": 488,
+      "unweightedVertices": 0
+    },
+    "Armor_Shin": {
+      "vertices": 258,
+      "triangles": 488,
+      "unweightedVertices": 0
+    }
+  },
+  "scope": "Reusable skeleton and machete visual prototype. Basic FK animation studies, no combat AI or damage logic."
+}

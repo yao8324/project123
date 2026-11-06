@@ -1,0 +1,1294 @@
+{
+  "date": "2026-11-06",
+  "branch": "art",
+  "files": [
+    {
+      "path": "Assets/Art/Blockouts.meta",
+      "bytes": 172,
+      "sha256": "41c412b42041e320acd83fdb91c7a8808b991c833820112757e54e0547ebfff2"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom.meta",
+      "bytes": 172,
+      "sha256": "3d69d166499d48d5c6e2bc2f9e9ed96c8167c30053086278eaf02e487ccd063a"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/BossMarker.mat",
+      "bytes": 3826,
+      "sha256": "26f2119ebed2691cee863a51b3c3219ceb78806ac63099db4485abe8b44a69d3"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/BossMarker.mat.meta",
+      "bytes": 188,
+      "sha256": "3e73d8e64153e3d47d6ef0efacd48b24f6d1a387e196e7269e3d5ef336735c21"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/Floor.mat",
+      "bytes": 3835,
+      "sha256": "74d7d95422b716dc849798bc9e8a414a14578447d1dac33bc6c227f59bcf248c"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/Floor.mat.meta",
+      "bytes": 188,
+      "sha256": "7f74af80430e389180fd191362a19982d85afab05727df796fb39812b38b6898"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/PlayerMarker.mat",
+      "bytes": 3834,
+      "sha256": "d9327963931b7222c0c8efec84892380e1a9110bc6fdcfa6a776fca8413547b4"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/PlayerMarker.mat.meta",
+      "bytes": 188,
+      "sha256": "db1ae76c74abf2f4a3f63a1199b790ae31d833087b2b7a888bef052274bed47f"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/SummonerTestRoom.prefab",
+      "bytes": 50123,
+      "sha256": "41f5a555e2c4f33dd8a6eb7989cc865616ec399ba7b340ca6f27ad1ed1d0e35c"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/SummonerTestRoom.prefab.meta",
+      "bytes": 154,
+      "sha256": "6151534cc78bce35323985fde989d1d272804b970e041c293a2858eb98fa9077"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/Walls.mat",
+      "bytes": 3834,
+      "sha256": "227d23a4fc301c3db9802089702d72b003d8703f563544d7e30c98bde5bd517b"
+    },
+    {
+      "path": "Assets/Art/Blockouts/SummonerRoom/Walls.mat.meta",
+      "bytes": 188,
+      "sha256": "228d1e0de0a629a944e2d9ef0bdef1cb631fd00c50ad3d092e55aa343df603f6"
+    },
+    {
+      "path": "Assets/Art/Bosses.meta",
+      "bytes": 172,
+      "sha256": "fbb1868f1d73b5a77215bd161a9af4da08357be6f5af684ad31b10a5ef7b1dcf"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner.meta",
+      "bytes": 172,
+      "sha256": "5ad201fc1e4e17a74633891b6986c3d184af99ca3b0fdbea27b936c93c8efd28"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials.meta",
+      "bytes": 172,
+      "sha256": "6abf0d481ff31326d69a653f853e271ba4b56f22999cb6b399dfde07f1121469"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/01_Obsidian_Violet_Velvet.mat",
+      "bytes": 3846,
+      "sha256": "cbf766e09bccb105066e45512a493ced4ca0e1233a278603039869c0a4fcdf76"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/01_Obsidian_Violet_Velvet.mat.meta",
+      "bytes": 188,
+      "sha256": "311647ff9f2ebdfa89217645284d579be06147ab1a1a70a02759239260438d4d"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/02_Royal_Amethyst_Lining.mat",
+      "bytes": 3861,
+      "sha256": "3b25dc28a548623d6db0e87c85fa6ccafee63ed483167fdc0ed53debe46f5e2a"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/02_Royal_Amethyst_Lining.mat.meta",
+      "bytes": 188,
+      "sha256": "f8db3a46b5ec7f13c4668fe032ff9c250a845f12d71374035e7e4b24c255646d"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/03_Antique_Gold.mat",
+      "bytes": 3850,
+      "sha256": "42c581ff15dfeecefe8729c4c739b4984238fb0d926d0eb6076cf032a4dde849"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/03_Antique_Gold.mat.meta",
+      "bytes": 188,
+      "sha256": "db1f234b0a00bc5794d3f7b0ec9cbf3e23b751d050da49e6bfaa6cd6ba45f00b"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/04_Engraved_Gold_Highlights.mat",
+      "bytes": 3849,
+      "sha256": "46f9432cddecd73fdbad4c21bd1efd2679dc6f1b307c9540d1c23ed6cfc27c23"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/04_Engraved_Gold_Highlights.mat.meta",
+      "bytes": 188,
+      "sha256": "36138bc1bb221b4ab210c25d205f570ed9fd9872de7471d3d0dbc80b8d5b339a"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/05_Aged_Ivory_Bone.mat",
+      "bytes": 3846,
+      "sha256": "c46e709edd847b78cbb622a98ea6184bf176add73fa20e31ac311f19d6a83a11"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/05_Aged_Ivory_Bone.mat.meta",
+      "bytes": 188,
+      "sha256": "94cba78f9eb830bff8e0cb43696342c390e185e7094a6f4b697fd342e1bbb9b4"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/06_Tooth_Edge_Ivory.mat",
+      "bytes": 3835,
+      "sha256": "e0d12b6cb2618cebe2c14f223b80ee8598e791107ea760ed7653672cbd2fd8c2"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/06_Tooth_Edge_Ivory.mat.meta",
+      "bytes": 188,
+      "sha256": "f1fb4e1914b5c482ee477aa58cf91dc35e5e5610aa38ee7d4c928e5ebec899bc"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/07_Orbital_Shadow_And_Iron.mat",
+      "bytes": 3848,
+      "sha256": "f66356faf5b29ea0bef1afb62efb781d119538a6b6823c62dd90bf42c929eb18"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/07_Orbital_Shadow_And_Iron.mat.meta",
+      "bytes": 188,
+      "sha256": "bce27e33d0add7067f88382c7786076c460df7950decf4a88c4355f09043e69e"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/08_Blood_Ruby.mat",
+      "bytes": 3860,
+      "sha256": "7a49d2e027f0b0084d68d928f59da7a54e601eed140972838e03e23d7d866c51"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/08_Blood_Ruby.mat.meta",
+      "bytes": 188,
+      "sha256": "99b4bea99d8fb3a7eaa25b944c2b0b271e64781acac9c0e32f93af9348fb8f9b"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/09_Crimson_Soul_Eye.mat",
+      "bytes": 3856,
+      "sha256": "0b7bd306d239bebfec83023803defbefca7f8e639df9e324444338443722d78a"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/09_Crimson_Soul_Eye.mat.meta",
+      "bytes": 188,
+      "sha256": "335bd97fe46691f3be59a3841530dd31eb15ece2405926f93a22bf0d60dfa91d"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/10_Grimoire_Oxblood_Leather.mat",
+      "bytes": 3860,
+      "sha256": "98ea4ca8beb6c162ade9662b71be79ee8367292e06175110f0ea43adab2c81a9"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/10_Grimoire_Oxblood_Leather.mat.meta",
+      "bytes": 188,
+      "sha256": "03257fd749b015d1cf8686cbbd3ffab65937b33b2b111ae80dddd60747837252"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/11_Old_Vellum.mat",
+      "bytes": 3838,
+      "sha256": "139fbd743e43368ffddc98814ee0676499777516195414411deaf28b25757f32"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/11_Old_Vellum.mat.meta",
+      "bytes": 188,
+      "sha256": "0a861a0afac87ed67bd7efbda4729550d28bdb2e4a0350a60b83be059ef84e70"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/12_Grimoire_Ink.mat",
+      "bytes": 3843,
+      "sha256": "3c04df05bf1c747873a4eaa71c1e821c852204e455635bbbc4272a433dd96448"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/12_Grimoire_Ink.mat.meta",
+      "bytes": 188,
+      "sha256": "1f10444346208f61e1a09d8c5d3fec20f52fb7e83463ca9739bf86ec92ab6fc5"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/13_Soul_Rune_Emission.mat",
+      "bytes": 3861,
+      "sha256": "53d6e2228d9452bd1f5ceb277b30d6d5eb9bf1eaeef8b9a54c2057be086645d1"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/13_Soul_Rune_Emission.mat.meta",
+      "bytes": 188,
+      "sha256": "35f983fbd957131a7c89b186b602ab9686b63714bdb2d64929593600d4509ef9"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/14_Amethyst_Invocation.mat",
+      "bytes": 3880,
+      "sha256": "511808d7610815f992b1878a091f466de54a5e54b8deb9ba78bb288df3c81378"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Materials/14_Amethyst_Invocation.mat.meta",
+      "bytes": 188,
+      "sha256": "1dd42564b3090bd03c10d7ca08152cf5bf3073a849cf6dd39e534a8e6a2391c4"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Models.meta",
+      "bytes": 172,
+      "sha256": "81f509910915f712cd551ec7aa9695876b06abe5c98afb4995dce772dcc78119"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Models/Soulbinder_OverlordStudy.fbx",
+      "bytes": 2924956,
+      "sha256": "47ade27ba65c1a071d6e0a7fc0a149ed3761ce1db220515e4e907bda3154efc0"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Models/Soulbinder_OverlordStudy.fbx.meta",
+      "bytes": 7355,
+      "sha256": "eb80c875e558d95564f9c834087ba4b34df0d23f3fd67cc6007d5e42029c7977"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Models/Soulbinder_OverlordStudy.glb",
+      "bytes": 3716256,
+      "sha256": "a4982a75980ec9ae42789ab2904b8fb7a976f9b6a04738b9274b2e64380e42a2"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Models/Soulbinder_OverlordStudy.glb.meta",
+      "bytes": 155,
+      "sha256": "2deb11724e925229d26e9c04b44f3a211ed736944124533074fb0ecee37ffc15"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Models/Soulbinder_OverlordStudy_LOD1.fbx",
+      "bytes": 1327196,
+      "sha256": "97ec09e2a2c76259c2af67c8bcb751ffc06f5f8c2086eac5975ee7fbb207470b"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Models/Soulbinder_OverlordStudy_LOD1.fbx.meta",
+      "bytes": 2891,
+      "sha256": "2338bdc684836339384f0c0245a9bc314b36da15a1fc884bde32fa4103736600"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Prefabs.meta",
+      "bytes": 172,
+      "sha256": "fa10673962092142922821de9008e4d9ea8d49c27e4bd5368d175eb689c216d7"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Prefabs/Soulbinder_Visual.controller",
+      "bytes": 2909,
+      "sha256": "de04dae72b9211ddf745b879d3de5cac1e0a61f1c93a412a0687f4859120ce35"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Prefabs/Soulbinder_Visual.controller.meta",
+      "bytes": 188,
+      "sha256": "61c11629fc4e3a2623aa6faae363d0414c34670b7f25d1a779bd6f73589950c6"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Prefabs/Soulbinder_Visual.prefab",
+      "bytes": 4038,
+      "sha256": "b57af2af2509652a7bffaee6211f0c8eb1c8a4413049fe146ee8bd02fee1472c"
+    },
+    {
+      "path": "Assets/Art/Bosses/Summoner/Prefabs/Soulbinder_Visual.prefab.meta",
+      "bytes": 154,
+      "sha256": "a00349fb4bc45c9b867528da80a46543f53d2a49c61a8cff54cb8dcf67bb2c75"
+    },
+    {
+      "path": "Assets/Art/Minions.meta",
+      "bytes": 172,
+      "sha256": "8c5dc1fcfa6df614ec334a5feaf24d673e9bd10abdff61d8b423b9e941d9eb45"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles.meta",
+      "bytes": 172,
+      "sha256": "bab737256a942e2f2349e832473c9f228609f3264937ccf8760e9f9ff01deba1"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials.meta",
+      "bytes": 172,
+      "sha256": "585faa8125904d97d72b98e654f437936049160e73f0d325624594c74facc860"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Projectile_VioletSoul.mat",
+      "bytes": 3862,
+      "sha256": "0e0e3eafd21aff753f9178c1c8a78b76750e0a1625ed223ca80e819e0c85ed7e"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Projectile_VioletSoul.mat.meta",
+      "bytes": 188,
+      "sha256": "422b0e5528d1909ebc6556d3e60b8c7c13984e7035fa292f9d0ff6503b7819a0"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_AgedBone.mat",
+      "bytes": 3842,
+      "sha256": "c6ce2e4c2eb22797e8c05ee3e5f44c5f77781b073b0ee34b14461d8d135c88cf"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_AgedBone.mat.meta",
+      "bytes": 188,
+      "sha256": "b8ed10fcb335ef7d65e68ef06ead575277c6cc4e9bff592bf4f1a53b161b5410"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_BladeEdge.mat",
+      "bytes": 3834,
+      "sha256": "545dd12f818a7eb2b97cc51b0724c0ccd4849dc8e3a36ce82a3b823a0e60d49e"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_BladeEdge.mat.meta",
+      "bytes": 188,
+      "sha256": "c6cb170ab1aa9f4debba240ef0ebbb6a8e4e6bfd004833c421a189974a3925ba"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_GhostFlame.mat",
+      "bytes": 3870,
+      "sha256": "ab0b05b1ed415d25f2dc001a2e896a9e19022957fe991439517f87a234496d1f"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_GhostFlame.mat.meta",
+      "bytes": 188,
+      "sha256": "39acf3d1425cb39234598e2df3a22163a8a9f474311a60ead716ad243b14f197"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_IvoryTeeth.mat",
+      "bytes": 3831,
+      "sha256": "394a2386771879aec6aefb1f3004a052c63cbff934904eb0cfdadde606a159a4"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_IvoryTeeth.mat.meta",
+      "bytes": 188,
+      "sha256": "00248b2c955d32b48961881a627585ec56683e2f2993d59c597bf2b4b2b1bc2e"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_Leather.mat",
+      "bytes": 3851,
+      "sha256": "c649719f16b0ffdf5461173e467366011f3f86c41c2cfb48d06c3bcb75583d0a"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_Leather.mat.meta",
+      "bytes": 188,
+      "sha256": "2d0e2e894ca7ae3d1d9f8a7fad13da207cdd09e2fdef9c43b8cc1933598a07a3"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_Rust.mat",
+      "bytes": 3848,
+      "sha256": "ecbfc7fff77b8e88a03e3bb8e999545e0fc78d68657fbf0486c636896cd332c5"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_Rust.mat.meta",
+      "bytes": 188,
+      "sha256": "1d7a1b8566c21f33e2fe227daacb68ae960ccecf416e7af5b30b16a01f200e39"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_SocketShadow.mat",
+      "bytes": 3845,
+      "sha256": "01581deb47866e6a6cac962178bcd271047d7e3bf7454f07bd155d2ef0d9f183"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_SocketShadow.mat.meta",
+      "bytes": 188,
+      "sha256": "dd41396bf1364f58fa995f1229a27b880bc2825cc0e0f491b547f285b9abd44b"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_TarnishedBrass.mat",
+      "bytes": 3862,
+      "sha256": "192ea626bfee39702adb19484183fe57c9a276f1dd3ba36a4370d21d2acc09f1"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_TarnishedBrass.mat.meta",
+      "bytes": 188,
+      "sha256": "7af43e86722a4b93475f5a058557729845d75cbac546227c022b1cbad20f32d1"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_WornIron.mat",
+      "bytes": 3849,
+      "sha256": "ee9bdd86e18b3a7fa35b7eae98fda87f4bcc1e3c648bf3d59367afa7d57629a4"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Skeleton_WornIron.mat.meta",
+      "bytes": 188,
+      "sha256": "e4f28b22af476f4200bccccb16bcf2353491ffe90e928c3ea3f45a6852275691"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Undead_SoulFire.mat",
+      "bytes": 3858,
+      "sha256": "c11b5b2acf68de135ba3448b130d44ca5f5f837afcee2c3498a942723ff28cad"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Undead_SoulFire.mat.meta",
+      "bytes": 188,
+      "sha256": "208fbf9549204aef80902943c8c954e2a9b36de57fcb8e33c312d0c060e3aafc"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Undead_TranslucentSkin.mat",
+      "bytes": 3981,
+      "sha256": "6d195b166de35353c689a97aecca8fe62fd01043a3501b900685e635f9bdef22"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Undead_TranslucentSkin.mat.meta",
+      "bytes": 188,
+      "sha256": "443a33939707a2f1000e173997f726c73124baab4a246ec1aa1b745f086ee7d3"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Undead_TranslucentWing.mat",
+      "bytes": 3985,
+      "sha256": "e189319bf078f04186e5f0d572e3877871b9173ed9bf3f89a589effd2d7bd81e"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Materials/Undead_TranslucentWing.mat.meta",
+      "bytes": 188,
+      "sha256": "260667acd1628b591e94d95860ba4b7d51f7a85a724cee159decadad231941ca"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models.meta",
+      "bytes": 172,
+      "sha256": "69868890b2adfc410e1b2d9090a098a1a691e425e02b0b4b98d26f09e54c18a8"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Boss_MagicDagger.fbx",
+      "bytes": 22700,
+      "sha256": "1cedbedc0781992fb16b6a90054a4a668c57f521c7d1044d853fdc903908d10e"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Boss_MagicDagger.fbx.meta",
+      "bytes": 5406,
+      "sha256": "1202c03f9188e6b2322702447ce1c6461a9b07e267c4693602c226d8758590d8"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Boss_PurpleSkull.fbx",
+      "bytes": 81356,
+      "sha256": "a3ceb83020034e253528a76323c9656515da5e43d3813b93c829ff3fa6281490"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Boss_PurpleSkull.fbx.meta",
+      "bytes": 5406,
+      "sha256": "ceb45b7231292d6e0517a8164ac9ec4355a4f489cdc39394e95eae245ed95c0c"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Skeleton_Arrow.fbx",
+      "bytes": 24588,
+      "sha256": "44f50e35964b6c353a01f77403a8b8ed5b2a480d1760f438cb283caa9cd2f7ca"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Skeleton_Arrow.fbx.meta",
+      "bytes": 5406,
+      "sha256": "6e3a3cda475531694849f3c5aa53ce612fcc15c4acab232578a72b18d61915cf"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Undead_Fireball.fbx",
+      "bytes": 31372,
+      "sha256": "782464ee12ef8498355864786735cf2d9cf70370569f5d36e08016769e3b8f55"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Models/Undead_Fireball.fbx.meta",
+      "bytes": 5406,
+      "sha256": "3e1567322f2951327eb881c0f2d71c16a6233626f1c95712aee3839c75fa0900"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs.meta",
+      "bytes": 172,
+      "sha256": "63ca6d0dd2d3dd9eca7d013f06758cb11bd3258ca6a4cb192ab78fa6dc71baf4"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Boss_MagicDagger.prefab",
+      "bytes": 3611,
+      "sha256": "6705dcb7103fffcc86501ffd614b08ad205631c620849b3b31fa147c3815d09f"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Boss_MagicDagger.prefab.meta",
+      "bytes": 154,
+      "sha256": "54e15dc0cfe9599a716daa388800404ed0b9030325cc1da4039e499b73d39e84"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Boss_PurpleSkull.prefab",
+      "bytes": 3637,
+      "sha256": "cd25fdaa1ac073934ca624972a35d592c8f42f6725359895379d2590dea8cad9"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Boss_PurpleSkull.prefab.meta",
+      "bytes": 154,
+      "sha256": "e15130a1fa68767dab151c1f13ff3360e1f1ed09103720b8792f93c5bb89b99f"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Skeleton_Arrow.prefab",
+      "bytes": 3630,
+      "sha256": "9f8740d6da8d999de71041c3996e3e6b2d24efc6e3f5af116ec94ba07772c4c0"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Skeleton_Arrow.prefab.meta",
+      "bytes": 154,
+      "sha256": "595d0f0b8eb8b43dd5c26649c95e09b783410722807d9199954c966f3f23d4ca"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Undead_Fireball.prefab",
+      "bytes": 3626,
+      "sha256": "47e8a76d938159ea3504acbb00c1680ea76af6496538c3c98b31163c4c0990fb"
+    },
+    {
+      "path": "Assets/Art/Minions/Projectiles/Prefabs/Undead_Fireball.prefab.meta",
+      "bytes": 154,
+      "sha256": "77df9e0822e3664e08b5db47d8f12bb3593f1d9d205f31953d852b26283cccf0"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton.meta",
+      "bytes": 172,
+      "sha256": "5bbabaf0cbcf51eb88b198d3bb1f07ae002e6c81585eef62e8c03ae2e41d9369"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials.meta",
+      "bytes": 172,
+      "sha256": "d36c5ad8b38b078ad9a2bfe703f0dead5c185b5ce8962948d69cb6eedc7057c4"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Projectile_VioletSoul.mat",
+      "bytes": 3861,
+      "sha256": "c9e72d935dbcf5b43ecb63b2482dd3bd395697cdb7224750ed92b1c84e17c1e1"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Projectile_VioletSoul.mat.meta",
+      "bytes": 188,
+      "sha256": "4605beb989a919505d2a5d62b50d39bd1f2d12ea13cfeee0cf69b08e1ad05118"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_AgedBone.mat",
+      "bytes": 3841,
+      "sha256": "b000c194d749fdda8f6ea961de7eacca06ff00fcc2b0874387d3f43a12c754f5"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_AgedBone.mat.meta",
+      "bytes": 188,
+      "sha256": "c2c5e33b2397caacdec85b9a6fdbc44acd0e0b0adc51670dbd7c0fd416e6e39d"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_BladeEdge.mat",
+      "bytes": 3833,
+      "sha256": "a326a09532571612c005abf3627ee9b7292185d75b7d4360a5ec4c5e424952eb"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_BladeEdge.mat.meta",
+      "bytes": 188,
+      "sha256": "e9490ee2b7c940d6aa5654d6ca61a7e5fed4806d3d915457302642847b186cc0"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_GhostFlame.mat",
+      "bytes": 3859,
+      "sha256": "6f6c1a99865d5c1cb89ca01bdce1cf43c0b2430622102fd9acc93cd999e58c26"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_GhostFlame.mat.meta",
+      "bytes": 188,
+      "sha256": "fd76fc409d0c2e737f78596077fed57992dc426db57c2c6cc06b15831194e8a9"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_IvoryTeeth.mat",
+      "bytes": 3831,
+      "sha256": "91932cd65b4bc6d62a63879c962e45fbae0d946e3a17a5d66f7e71e4c51eac28"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_IvoryTeeth.mat.meta",
+      "bytes": 188,
+      "sha256": "12e30ace100b391176725cb13d5a63792bfe2e0e8d448831cb0d871af760f9dd"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_Leather.mat",
+      "bytes": 3850,
+      "sha256": "9a2d974411267e8123680163e81fa22192451df9800bcdb0d60857893a09b9a0"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_Leather.mat.meta",
+      "bytes": 188,
+      "sha256": "d48d833b860cce9692b61d6e44d418114a09677ff786d00d8fe1f1ae4ef9cdb2"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_Rust.mat",
+      "bytes": 3849,
+      "sha256": "5a28109612d35ad93413d4e79167df18d306b1e1b09a15e6a464c483d04ad9db"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_Rust.mat.meta",
+      "bytes": 188,
+      "sha256": "ff2e5931a580082d99177035e6ba7dca7f3a0e367bba8b765f4b5712294b3fb6"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_SocketShadow.mat",
+      "bytes": 3845,
+      "sha256": "b4e6202ca45e9d4ad23633bec70ad7e8cd119704c273168a50ad462b3012a834"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_SocketShadow.mat.meta",
+      "bytes": 188,
+      "sha256": "09ef553896ee66b5a4e726767c66bdee1493a365d9ad88b6ebd2c6c24add6685"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_TarnishedBrass.mat",
+      "bytes": 3863,
+      "sha256": "c8902b79977cb822e9102971ea2d7b97c8e619f2c190ab0e1730a32c8c5e5941"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_TarnishedBrass.mat.meta",
+      "bytes": 188,
+      "sha256": "df02f95e6d4d7e6d25d8dc4d7437bbfa046e66c54e35e553e82d010aa19b4f6f"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_WornIron.mat",
+      "bytes": 3849,
+      "sha256": "20a595f997f1a1d261179d06ecc10ea3f040137e60bffe4f80c79136444040bc"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Skeleton_WornIron.mat.meta",
+      "bytes": 188,
+      "sha256": "6dbe44bca7611a3b961339ead79141bf9b1eab9ff676076d7c6c88f5c9e2d0ea"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Undead_SoulFire.mat",
+      "bytes": 3858,
+      "sha256": "f9efd1c93a10599321441308a12b5c870c34c0912775618e82c36f9973c9e0f5"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Undead_SoulFire.mat.meta",
+      "bytes": 188,
+      "sha256": "f057856343e037e2c4422859e9292b6e5d0db19d587bcb911e68c2902d344a95"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Undead_TranslucentSkin.mat",
+      "bytes": 3981,
+      "sha256": "6438fad94d2c068da72bc49575370477dfc520db7275ca13a81149679c0a7c1e"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Undead_TranslucentSkin.mat.meta",
+      "bytes": 188,
+      "sha256": "66c89bdb4892f70433b2bdf5fb0664dbf6fd81f9517e9afb6c57617ce291b006"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Undead_TranslucentWing.mat",
+      "bytes": 3984,
+      "sha256": "fdf5cf243556b1d6d3c717a70ea7bf5870d8623e343544b3ab703aa7c6936721"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Materials/Undead_TranslucentWing.mat.meta",
+      "bytes": 188,
+      "sha256": "22fdf3c3d27119ddfb56b0bb0383d9ab97e8b15012302740af01f13fb53f6156"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models.meta",
+      "bytes": 172,
+      "sha256": "5859393fb846057bbb64037b94bb3835624b50132eada3fcd98f1155804c00f3"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Archer.fbx",
+      "bytes": 1670524,
+      "sha256": "1314afe75ddf9663637b0bcfff2a8cee48be772c12da7a0d4ebbf4a0c0039298"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Archer.fbx.meta",
+      "bytes": 11377,
+      "sha256": "e20fed4260e44d4471494ff4f44bf1927c896f6bc55db7212f81e1c7480ec906"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Archer.glb",
+      "bytes": 886852,
+      "sha256": "2e3cbb7ec2f894680ca944752a97f7ef482f437347eaf8fa5be7f8c6a8428cf3"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Archer.glb.meta",
+      "bytes": 155,
+      "sha256": "f5b807db10d61488b8569550265b2414924e7ea60d77362063afed7dd21aff58"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Hammer.fbx",
+      "bytes": 1663852,
+      "sha256": "b1fca2943fdfda29c517281bb53cb3e7eb0ad6913c731c55e46b9efd967936d5"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Hammer.fbx.meta",
+      "bytes": 11378,
+      "sha256": "75d9627070df7174d2e0b9ec0bbdbdd16a06eba0fda9706bafd7837688fe159d"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Hammer.glb",
+      "bytes": 902220,
+      "sha256": "f5768dc1382ac5c5e520a706cb851b30a0976c588a726b52447788f7691d4f50"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Hammer.glb.meta",
+      "bytes": 155,
+      "sha256": "7c26333347ba5364690a17a719437df1ca19ff896a6a71a8cb52b3304e93b78a"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Machete.fbx",
+      "bytes": 1508204,
+      "sha256": "23fdb2cbfb87c598953e7439be0cca9b5b3466765631adb34cb010f96c97a90b"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Machete.fbx.meta",
+      "bytes": 9728,
+      "sha256": "3696a4d7fb41de3ea69e2ec663fe2fd1e424754c922a7730441f430ecb468ed5"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Machete.glb",
+      "bytes": 893236,
+      "sha256": "e4a900c2919c674a9a0d70f500a83ad52decce540a41c7c1657310e320ddb72b"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_Machete.glb.meta",
+      "bytes": 155,
+      "sha256": "bb5219f8680fb879ae1935e420b527ca55d662c02f59c24618177e9db5971ac6"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_SwordShield.fbx",
+      "bytes": 1657052,
+      "sha256": "2c8a8a8248cdc594ab06df3ec2f7402d4f349c002ade0a5c2cfbaf47bd611368"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_SwordShield.fbx.meta",
+      "bytes": 11379,
+      "sha256": "516a2aa456ff0dd2cf6dcf2ec4fc01dc13e3aff0d2e369701dcdbc62b44f3829"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_SwordShield.glb",
+      "bytes": 868680,
+      "sha256": "d00e57175263e0634361d8c8b63c4c98d4372fde1e4a962210d169862d9ad3ae"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Models/Skeleton_SwordShield.glb.meta",
+      "bytes": 155,
+      "sha256": "6766b32288620a2f4b661fc16716894f1ce35d18f833d1c2e6f6b07cf37ac6eb"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs.meta",
+      "bytes": 172,
+      "sha256": "656befc4a366b1464c3032bb9c4fe386ad9ee089304c3263383d22c93c260dc1"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Archer_Visual.controller",
+      "bytes": 7041,
+      "sha256": "5098b22dd2c75d36f02c5aaf6099d1ef4a965d8e30449ec779b604911b17ba65"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Archer_Visual.controller.meta",
+      "bytes": 188,
+      "sha256": "12317224ce82dc0dc6a263c97f8bd7786c78f304918fe1cfc892663ab9bf0ce7"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Archer_Visual.prefab",
+      "bytes": 4038,
+      "sha256": "79140db53c3edb3db0acf14dc11ea8546564feae34672fe15f0acd9850f497de"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Archer_Visual.prefab.meta",
+      "bytes": 154,
+      "sha256": "e203ba182e3e9aafa6e794aa9714c305047872ee5b24609d07e47782ef93c67a"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Hammer_Visual.controller",
+      "bytes": 7043,
+      "sha256": "03f420b14a3b764a04290217233134f2ca0a417e8f1004954cbe64aaef700ce2"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Hammer_Visual.controller.meta",
+      "bytes": 188,
+      "sha256": "526be8a5a63aad192096c5bf43121929c92d38e470d4a2b6c0469fa0443147e1"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Hammer_Visual.prefab",
+      "bytes": 4040,
+      "sha256": "d5f60431ac5aa0a6bef17a1390eea34561cdb300ed9c32f91cd3d54241abb286"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Hammer_Visual.prefab.meta",
+      "bytes": 154,
+      "sha256": "5205ec202482e3f77abeb3f351fda6653e90d9fdcf70101af3960980a2559811"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Machete_Visual.controller",
+      "bytes": 6216,
+      "sha256": "d0c4869c5eb5735a749233f823beb4d417c081c841dd7243c304e8e40b624f96"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Machete_Visual.controller.meta",
+      "bytes": 188,
+      "sha256": "44b772b14f9dcce65c1e01bf18d6d65236d08bee71bcc9cf793d0c30283041ad"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Machete_Visual.prefab",
+      "bytes": 4042,
+      "sha256": "ca928a748e280330127066c18db09041fda5fee9f64af135d437df81e081e9a4"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_Machete_Visual.prefab.meta",
+      "bytes": 154,
+      "sha256": "ff95b49007bcb6b2fbe68c335eab08cb4d76a3869c499c0b805b3585f9d7b79e"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_SwordShield_Visual.controller",
+      "bytes": 7058,
+      "sha256": "bbe043897f2cb146f70e6477a31d1a9caf0943a8c8b82461b1c9e53b449c01c6"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_SwordShield_Visual.controller.meta",
+      "bytes": 188,
+      "sha256": "d62151617684e31fd7c23dd3dc1530b7afe9a8008a82dd93f37140f39bb485c1"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_SwordShield_Visual.prefab",
+      "bytes": 4046,
+      "sha256": "a865af3b398107f8a22707c5dbbcde32f11925eddb45eb483dec6843c765d32a"
+    },
+    {
+      "path": "Assets/Art/Minions/Skeleton/Prefabs/Skeleton_SwordShield_Visual.prefab.meta",
+      "bytes": 154,
+      "sha256": "30bb68086344d6f249ad6409e162b1e5b7f2b430203d4ffc3fa3922b00de4fc4"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead.meta",
+      "bytes": 172,
+      "sha256": "a08ffacc2fc15f992237553054865940054d43585a0ef245d640fa30c9a6a86f"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials.meta",
+      "bytes": 172,
+      "sha256": "e96464d871e3475b18b600ca489c2ba424dd03d2bbdaab9dd8475e92b64ca8bb"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Projectile_VioletSoul.mat",
+      "bytes": 3861,
+      "sha256": "790f71f4210dacd18baabe04b43bafb87f39ba8cf5c4fa32375af5f07b1c96b6"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Projectile_VioletSoul.mat.meta",
+      "bytes": 188,
+      "sha256": "34a7eeb99fe777e3a4ec0241642090f619382e6853c4974c0f7ceb741cd82cee"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_AgedBone.mat",
+      "bytes": 3842,
+      "sha256": "de051f325c050f03f09d519e1672df59e7f4b9aca5ee597611a4bf10b9d9f4ba"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_AgedBone.mat.meta",
+      "bytes": 188,
+      "sha256": "d311f811c2743935089abfca465db323226caabce701dda323563b8091e499ef"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_BladeEdge.mat",
+      "bytes": 3834,
+      "sha256": "1caee361ce1b4067aa3edcd2bed42ceda8cd121d712f8cff1a8713ebfd91230d"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_BladeEdge.mat.meta",
+      "bytes": 188,
+      "sha256": "a0a8baf7a684fc91a21ad419bfc91e777c90dcce9dac5b236eea8ef8cc4535d7"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_GhostFlame.mat",
+      "bytes": 3860,
+      "sha256": "ce5871365a17b12242e5841c646aad8db7982fc6da8a591e3f05a27a80614086"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_GhostFlame.mat.meta",
+      "bytes": 188,
+      "sha256": "092206062cf27f144eaac6518ddffaf1f67f5e0d767556b76e6921ad874573a2"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_IvoryTeeth.mat",
+      "bytes": 3831,
+      "sha256": "f44c4f2e1757cf2d3ad54ac661438b5caa2d6ed5e0690dd0fd14076c9afb9a12"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_IvoryTeeth.mat.meta",
+      "bytes": 188,
+      "sha256": "310ef2367c05952573a8675811ebca46f06c374af212e1aca6ef88b666738d66"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_Leather.mat",
+      "bytes": 3850,
+      "sha256": "42e36c4ca2187e1fa324fcaa02a0521a9eba12850179a5fd4eed913ed1767b3b"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_Leather.mat.meta",
+      "bytes": 188,
+      "sha256": "c756865076a2cbb094eaee214e7a13dc304fe21d04e2af89a0b3da3621dc0e3f"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_Rust.mat",
+      "bytes": 3850,
+      "sha256": "730ccc9b1485fcd9ff1d4e2172de116ca34682aff674cb2bed0331ba1addcd25"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_Rust.mat.meta",
+      "bytes": 188,
+      "sha256": "6d06b00cef9d5d1f07965ff7121efd7fb649fb7f3e9cfd18ae4b819bef128c96"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_SocketShadow.mat",
+      "bytes": 3845,
+      "sha256": "82002f8669f8ee37b639bec69ea33507c5734a06034804e765c76c406bfd0ce3"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_SocketShadow.mat.meta",
+      "bytes": 188,
+      "sha256": "42bccd8d06cc751babfb2a7b18a96aead533c0b2ca6507ea50ffa2aa550017f9"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_TarnishedBrass.mat",
+      "bytes": 3862,
+      "sha256": "ecd1fcd3de0f9bd80502e9d2626138f5b46c0884aa46fa8970590dccbf7cce8f"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_TarnishedBrass.mat.meta",
+      "bytes": 188,
+      "sha256": "d273435b038bc686f72492e7f77b021fb53594cafe0c212cf2af350b047914f1"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_WornIron.mat",
+      "bytes": 3850,
+      "sha256": "e8d13372f1100cfb424a433b94d818c17cd3b0ead2eeaef0c9e184650371b6ac"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Skeleton_WornIron.mat.meta",
+      "bytes": 188,
+      "sha256": "c00c650cb9631bc84102c16e3ba82f88191819642038fc8f4ffa323baf450b38"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Undead_SoulFire.mat",
+      "bytes": 3858,
+      "sha256": "6ef17b18e5f76de92a62fc677d0585dd6c14f8f9a5b3bc12f9ba635886310bd4"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Undead_SoulFire.mat.meta",
+      "bytes": 188,
+      "sha256": "da1990e01697fd35efefff1d9a973dd7053e575593d9de8ce320b47292abb3ab"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Undead_TranslucentSkin.mat",
+      "bytes": 3966,
+      "sha256": "6c46e22d1308556ed52cee5d6b3737435b26a756f9bf61807e782e64d3fd4ba5"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Undead_TranslucentSkin.mat.meta",
+      "bytes": 188,
+      "sha256": "394c23a053a056dc24c91962c11285f070ee532e7d6e41cda3588817a8a034ef"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Undead_TranslucentWing.mat",
+      "bytes": 3970,
+      "sha256": "ba76fd7b5eb87c2b55955c340bbea1ddbe920d742db5de6a055b5d9716383fc3"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Materials/Undead_TranslucentWing.mat.meta",
+      "bytes": 188,
+      "sha256": "cb8f3d2a56ba9239bbe3374df27567bddb88a6ebc579e5a60f92778bc125b451"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Models.meta",
+      "bytes": 172,
+      "sha256": "a8e483e2391593d23f1adde2946edecf6585c3b20f51a50933922491812ecfcb"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Models/Undead_Winged.fbx",
+      "bytes": 375228,
+      "sha256": "fc9572d81c8fb0c531c3de0b3b921155c29e26e68c8eabce7af49693aa902c95"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Models/Undead_Winged.fbx.meta",
+      "bytes": 8773,
+      "sha256": "f66a3f7428c945fdc267ea6fe0b4b0309b946b65a1bb34d3c3ec78a4d0c7adf1"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Models/Undead_Winged.glb",
+      "bytes": 158092,
+      "sha256": "f3211878607fd090166df722d20cf6d6a0d638fffcf817fb0433f74d744472e0"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Models/Undead_Winged.glb.meta",
+      "bytes": 155,
+      "sha256": "10224309d393461253f5d5bf92486a87780cd2c8d8a905deeebf72eb7a4019cc"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Prefabs.meta",
+      "bytes": 172,
+      "sha256": "6e0172c8c5cf5451a2b3494b4758726dc12775ecf06519637a53e81cd2697391"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Prefabs/Undead_Winged_Visual.controller",
+      "bytes": 4536,
+      "sha256": "d53a99807f9e66f516c2544832fe108ab4ea5bf84ff48ba13d75fd58f828f7e3"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Prefabs/Undead_Winged_Visual.controller.meta",
+      "bytes": 188,
+      "sha256": "d4e22bf83d71b4dd6cae51c14d55ad1ef0f80291394267bcc140137e2c8e3aa4"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Prefabs/Undead_Winged_Visual.prefab",
+      "bytes": 4022,
+      "sha256": "0d29d53d0d9e58e9323eedfbde537c8b980be1fb116732dddd294b69e5675109"
+    },
+    {
+      "path": "Assets/Art/Minions/Undead/Prefabs/Undead_Winged_Visual.prefab.meta",
+      "bytes": 154,
+      "sha256": "49ac6b34feed3f88764cef8faaca45f6a78831714dcd55743fc96c9fd9833913"
+    },
+    {
+      "path": "Assets/Scenes/Summoner_Blockout.unity",
+      "bytes": 10302,
+      "sha256": "bd56499a32930173dbfb808fcaaaa9b0ce2045c7f5a2a148b9a0be3cc63a3bec"
+    },
+    {
+      "path": "Assets/Scenes/Summoner_Blockout.unity.meta",
+      "bytes": 155,
+      "sha256": "432c59a6da6e4c5b0d1958953d79b007419f3e9c50a387965729d33c20c24bfb"
+    },
+    {
+      "path": "Assets/Scenes/Summoner_ModelReview.unity",
+      "bytes": 31425,
+      "sha256": "14566b26fdb401a09d7da93ffd2a90098e98721b7ee7e9f5c2a0ab6ab2bda21f"
+    },
+    {
+      "path": "Assets/Scenes/Summoner_ModelReview.unity.meta",
+      "bytes": 155,
+      "sha256": "dd39e8848098e8807190825c7e694d40613917c221082b6be4053cc7ffeffb18"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Editor/SummonerBlockoutBuilder.cs",
+      "bytes": 7954,
+      "sha256": "01d83a418175038dc6eba66bc5de6efb7f768bd92934e5d25214b9ce8264957d"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Editor/SummonerBlockoutBuilder.cs.meta",
+      "bytes": 59,
+      "sha256": "a67b03340e0c6b067b4c043c6c61a1be84d0f4b13e4350430e3e88979ded339b"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Editor/SummonerModelReviewBuilder.cs",
+      "bytes": 14935,
+      "sha256": "c773b54cd5a95caa1ffa694f847d60e44e0bda74fb958c3a968d838e811b5eea"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/Editor/SummonerModelReviewBuilder.cs.meta",
+      "bytes": 59,
+      "sha256": "edb07fea7657a70bb6e106c5cac44aa1dcf874055e750181e903cfd94ad5abf8"
+    },
+    {
+      "path": "Blender/Bosses/Summoner/OverlordStudy20261106/Soulbinder_OverlordStudy.blend",
+      "bytes": 4831914,
+      "sha256": "fdce76e07134aac62d1acdad3c2fffaa65c6c4a895eef2e691415f2b451b1be0"
+    },
+    {
+      "path": "Blender/Minions/Skeleton20261106/Skeleton_Archer.blend",
+      "bytes": 783799,
+      "sha256": "21568a42617e50743282a5b979617a72088caad11b2a0688e402e88821e66db1"
+    },
+    {
+      "path": "Blender/Minions/Skeleton20261106/Skeleton_Hammer.blend",
+      "bytes": 812943,
+      "sha256": "9f7ebaaadd26ed49b29989a4860a62223d566697aefa0ca798be57b5d9e8e5e7"
+    },
+    {
+      "path": "Blender/Minions/Skeleton20261106/Skeleton_Machete.blend",
+      "bytes": 763614,
+      "sha256": "c8b738d6035a63a07cadb4d767fe55e6451199332421d192915fdcc0e8989b78"
+    },
+    {
+      "path": "Blender/Minions/Skeleton20261106/Skeleton_SwordShield.blend",
+      "bytes": 771865,
+      "sha256": "86413999c3246014c076652be0eb6133bc972904f20db6305e21d626267d2613"
+    },
+    {
+      "path": "Blender/Minions/Skeleton20261106/Undead_Projectiles.blend",
+      "bytes": 852157,
+      "sha256": "cc0bfccf4687e06c2df9cb53ed12e357ddf3a9d4c157980d354dd10b175290cd"
+    },
+    {
+      "path": "Blender/Minions/Skeleton20261106/Undead_Winged.blend",
+      "bytes": 541257,
+      "sha256": "3971df28574aee28a8c8749bd6344e21badfda1e72771e4a9aaad4f7b5748647"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/README.md",
+      "bytes": 5122,
+      "sha256": "442f12d13da807957d50deb611c8944b8abea664eeb5328d33b5257898e1e5ec"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/01_hero.png",
+      "bytes": 1801936,
+      "sha256": "fcee27e8751c12df3205120523e406a54111d0176f35d9dae097e4bd2807dc5b"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/02_front.png",
+      "bytes": 1876516,
+      "sha256": "d4d7d0ad1650ca1820fb4d512a239606f1b409315ca907714eb5c36ed28d8592"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/03_rear.png",
+      "bytes": 1824070,
+      "sha256": "c9e82a36804708648619e65c854ee01de2ebdbb2cbc926071e04eff15c2851e1"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/04_attack_windup.png",
+      "bytes": 1773033,
+      "sha256": "4db93f8ad0d31c229787e866f428047ba0d6866aa65168ed146be7b49f3dfb99"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/05_unity_room.png",
+      "bytes": 310632,
+      "sha256": "c725e47b0261c4ee53ebf92066ce1a626f420395d0ed40e2037194b41e8d82df"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/06_archer.png",
+      "bytes": 1815945,
+      "sha256": "e7d1331b184829747fd9e5de0fca755a7702483cd271adbe1fa0b57c2427e61c"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/07_hammer.png",
+      "bytes": 1832403,
+      "sha256": "f9e5b4a74901e7ad2ff730bbfdae6665fb7b36eac3329bda6e427cf36fa6c48c"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/08_swordshield.png",
+      "bytes": 1828034,
+      "sha256": "3e19181084cf37d73b7555aa8ddd62302b2deb54154b23402effcc0b6295e3ee"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/Renders/09_undead.png",
+      "bytes": 1780047,
+      "sha256": "363a5f0521ec50694586cd69dd38dedbf607f7747e7054e0df1c9f31e7fc09f0"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/export-validation.json",
+      "bytes": 1514,
+      "sha256": "d1b96d1f0dcca14cd23a0de66fb249c3ea0b739aa779826d76fc5b25596f1556"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/materials-all.json",
+      "bytes": 3598,
+      "sha256": "e87e28df29481ce1d36160122b525cbc2388b7030acd5122efb66de9d1b40eaf"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/materials.json",
+      "bytes": 2503,
+      "sha256": "1d668a354d0e9f02713d61dc6c1c24f79b541e1cde3cc7c7abf11d1324bb31ae"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/model-report.json",
+      "bytes": 1036,
+      "sha256": "6aabe83e209790f6d6705ab75b9c1e4f9f751a95c4c63379175ba75e7854df79"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/variants-report.json",
+      "bytes": 2021,
+      "sha256": "1d21e7a4984d78dd9fd74abb3eddf23554f222082428b04bb45ee3bf3a2e2cc5"
+    },
+    {
+      "path": "Docs/SkeletonMinion20261106/variants-validation.json",
+      "bytes": 835,
+      "sha256": "c645e65316e7da79d3030f23d367d6ab920ee01a6e5c81c56ac3ef29df9055ba"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/README.md",
+      "bytes": 4818,
+      "sha256": "9f7ae76bcd9b17aac2873a206db8da32789e958a20221232474b2d7ab32d0ec3"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/Lich_Reference_01.jpeg",
+      "bytes": 76197,
+      "sha256": "0171feb8f50937ae8d67f604cde9bbb059e08b63defb9c3c3ca553cf5ad8c70a"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/Lich_Reference_02.jpeg",
+      "bytes": 65681,
+      "sha256": "f3a371c45df07c76deb2a21d2f6f8620b473f9fb6ad900af8badad303c4de0ad"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/Lich_Reference_03.jpeg",
+      "bytes": 46733,
+      "sha256": "f9829110540c9a89d6ccde264d2f9d6df3b32e1602ca016e451cc6ddc6e0b6bc"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/Lich_Reference_04.jpeg",
+      "bytes": 56981,
+      "sha256": "0a1efe1b70883451fee5771c12070e030eff31cf6421418277c4fda5ae0a7bf9"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/Lich_Reference_05.jpeg",
+      "bytes": 54070,
+      "sha256": "237a9e5b265c93eb2fadc6a28c599161c651b256f579b3b50fc086b88f903b24"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/Lich_Reference_06.jpeg",
+      "bytes": 84464,
+      "sha256": "704eff5b2891c141c25324fb1f75dcf87e37895cff42200a250a8d74eaf3dac5"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/Lich_Reference_07.jpeg",
+      "bytes": 29689,
+      "sha256": "109d62c7b2bd8054522e61f5d8eaab8fb5e9b4079b455e4eda203b2d041ec79c"
+    },
+    {
+      "path": "Docs/SummonerBossDesign20261106/References/README.md",
+      "bytes": 862,
+      "sha256": "6c1c3340839a7f79bdd814abe4dfff8b25ca552bc2b119937446701545f1813b"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/README.md",
+      "bytes": 3519,
+      "sha256": "9f3ce25e6ae63524c6b51617713e09659ed107009b80a543ec7f10590deb1612"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/Renders/01_hero.png",
+      "bytes": 2698498,
+      "sha256": "5968b375fa1d8aa108b36a825fea5dae7f694c890a435f07742660eec51f8eee"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/Renders/02_front.png",
+      "bytes": 2219455,
+      "sha256": "de697cc2900f62d297098e66db7eb30f763fb7db2661797546605b7af719061c"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/Renders/03_rear.png",
+      "bytes": 2033001,
+      "sha256": "8e3e2d17bf535a6e556bd0efc2c17fd9d2a85304369edfc0c491f2ac0e17d532"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/Renders/04_grimoire.png",
+      "bytes": 1957298,
+      "sha256": "59c1af609a4140e5ec6d7d7b7dae68e3e915df40223806dec1d4cde968159877"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/export-validation.json",
+      "bytes": 1632,
+      "sha256": "9c94533fbe9b3db8460ab3733c5838a6275da13f2ee836af69c01913897089d0"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/material-manifest.json",
+      "bytes": 3734,
+      "sha256": "a3fba0a1d9c8f3191d398c98a08efbd9006abaf8417bbdd104498b22a11f63af"
+    },
+    {
+      "path": "Docs/SummonerModel20261106/model-report.json",
+      "bytes": 1448,
+      "sha256": "b5fb6b0cdc975a2b5baaf59c09758f8969ac2a7cff57057adf59776569e68f89"
+    },
+    {
+      "path": "Tools/SkeletonMinion20261106/build_minion.py",
+      "bytes": 20943,
+      "sha256": "7d1cf4008b8b71a4ea9bb10bbe77211a7397c009be981c1f5a137c53e4e71a0b"
+    },
+    {
+      "path": "Tools/SkeletonMinion20261106/build_variants.py",
+      "bytes": 17410,
+      "sha256": "862ecfc1246ceed7220bfcf386a9693a6b9f820ebd046d556d8c138985dadd1a"
+    },
+    {
+      "path": "Tools/SkeletonMinion20261106/validate_minion.py",
+      "bytes": 2110,
+      "sha256": "c82d1edba18edf160741939d64f7364ba0bbdb5dd4d06fe3836c013decce571d"
+    },
+    {
+      "path": "Tools/SkeletonMinion20261106/validate_variants.py",
+      "bytes": 2226,
+      "sha256": "5dd12f98b9cbcbd9dc3d5a00ee9cd33c3ae4ecead1321afb7524ec557dc5f5f5"
+    },
+    {
+      "path": "Tools/SummonerModel20261106/build_soulbinder.py",
+      "bytes": 32027,
+      "sha256": "19ef8de03d90ecdb480acaa7355277ffb41c540e45721dba16d355ba8d66083a"
+    },
+    {
+      "path": "Tools/SummonerModel20261106/finalize_lod.py",
+      "bytes": 1713,
+      "sha256": "0cb57259f8df5aec5084d0d00d1804b7fe56ccf0c914f86bd1dff9987ff665ea"
+    },
+    {
+      "path": "Tools/SummonerModel20261106/validate_exports.py",
+      "bytes": 3499,
+      "sha256": "c818d7fcd9b8104ac93cbe326eae04406996ca3b973cb5c831aa3736130604b0"
+    }
+  ],
+  "totalBytes": 52858442.0,
+  "validation": "Copied delivery files byte-for-byte from the Unity 6000.3.24f1 verified working project. No second Unity cache generated for upload.",
+  "note": "Ignored local logs omitted. Documentation adjusted after copy to describe this art delivery."
+}

@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "bones": 27,
+  "meshes": [
+    {
+      "name": "Armor_Shin",
+      "vertices": 258,
+      "triangles": 488
+    },
+    {
+      "name": "Armor_Bracer",
+      "vertices": 258,
+      "triangles": 488
+    },
+    {
+      "name": "Armor_Shoulder",
+      "vertices": 258,
+      "triangles": 488
+    },
+    {
+      "name": "Machete_Weapon",
+      "vertices": 591,
+      "triangles": 1118
+    },
+    {
+      "name": "Skeleton_Body",
+      "vertices": 9803,
+      "triangles": 19009
+    },
+    {
+      "name": "Skeleton_GhostEyes",
+      "vertices": 322,
+      "triangles": 628
+    }
+  ],
+  "actions": [
+    {
+      "name": "Skeleton_Rig|Skeleton_Rig|Skeleton_ArmorBreakStun",
+      "frames": [
+        1.0,
+        75.0
+      ]
+    },
+    {
+      "name": "Skeleton_Rig|Skeleton_Rig|Skeleton_Death",
+      "frames": [
+        1.0,
+        45.0
+      ]
+    },
+    {
+      "name": "Skeleton_Rig|Skeleton_Rig|Skeleton_Hit",
+      "frames": [
+        1.0,
+        18.0
+      ]
+    },
+    {
+      "name": "Skeleton_Rig|Skeleton_Rig|Skeleton_Idle",
+      "frames": [
+        1.0,
+        90.0
+      ]
+    },
+    {
+      "name": "Skeleton_Rig|Skeleton_Rig|Skeleton_MacheteSlash",
+      "frames": [
+        1.0,
+        36.0
+      ]
+    },
+    {
+      "name": "Skeleton_Rig|Skeleton_Rig|Skeleton_Walk",
+      "frames": [
+        1.0,
+        30.0
+      ]
+    }
+  ],
+  "studioObjectsExcluded": true,
+  "allVerticesWeighted": true
+}

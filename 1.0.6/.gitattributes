@@ -9,3 +9,11 @@ Blender/MilanLibrary_Magic_V6/*.blend filter=lfs diff=lfs merge=lfs -text
 # Animated Warden and editable spell geometry.
 Assets/Art/ForbiddenWarden/CombatV2/Models/*.fbx filter=lfs diff=lfs merge=lfs -text
 Blender/WardenCombatV2/*.blend filter=lfs diff=lfs merge=lfs -text
+
+# Summoner and five undead minion model sources / game exports.
+Assets/Art/Bosses/Summoner/Models/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Art/Bosses/Summoner/Models/*.glb filter=lfs diff=lfs merge=lfs -text
+Assets/Art/Minions/**/Models/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Art/Minions/**/Models/*.glb filter=lfs diff=lfs merge=lfs -text
+Blender/Bosses/Summoner/OverlordStudy20261106/*.blend filter=lfs diff=lfs merge=lfs -text
+Blender/Minions/Skeleton20261106/*.blend filter=lfs diff=lfs merge=lfs -text

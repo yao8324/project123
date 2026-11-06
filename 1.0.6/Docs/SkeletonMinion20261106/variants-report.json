@@ -1,0 +1,98 @@
+{
+  "Skeleton_Archer": {
+    "bones": 27,
+    "meshes": [
+      "Skeleton_Body",
+      "Skeleton_GhostEyes",
+      "Armor_Shoulder",
+      "Armor_Bracer",
+      "Armor_Shin",
+      "Archer_Bow",
+      "Archer_Quiver"
+    ],
+    "triangles": 21973,
+    "animations": [
+      "Skeleton_ArcherDraw_Study",
+      "Skeleton_ArmorBreakStun",
+      "Skeleton_Death",
+      "Skeleton_Hit",
+      "Skeleton_Idle",
+      "Skeleton_MacheteSlash",
+      "Skeleton_Walk"
+    ]
+  },
+  "Skeleton_Hammer": {
+    "bones": 27,
+    "meshes": [
+      "Skeleton_Body",
+      "Skeleton_GhostEyes",
+      "Armor_Shoulder",
+      "Armor_Bracer",
+      "Armor_Shin",
+      "Hammer_Weapon"
+    ],
+    "triangles": 22337,
+    "animations": [
+      "Skeleton_ArmorBreakStun",
+      "Skeleton_Death",
+      "Skeleton_HammerSlam_Study",
+      "Skeleton_Hit",
+      "Skeleton_Idle",
+      "Skeleton_MacheteSlash",
+      "Skeleton_Walk"
+    ]
+  },
+  "Skeleton_SwordShield": {
+    "bones": 27,
+    "meshes": [
+      "Skeleton_Body",
+      "Skeleton_GhostEyes",
+      "Armor_Shoulder",
+      "Armor_Bracer",
+      "Armor_Shin",
+      "Shield_Prop",
+      "Sword_Weapon"
+    ],
+    "triangles": 21395,
+    "animations": [
+      "Skeleton_ArmorBreakStun",
+      "Skeleton_Death",
+      "Skeleton_Hit",
+      "Skeleton_Idle",
+      "Skeleton_MacheteSlash",
+      "Skeleton_ShieldGuard_Study",
+      "Skeleton_Walk"
+    ]
+  },
+  "Undead_Winged": {
+    "bones": 10,
+    "meshes": [
+      "Undead_Body",
+      "Undead_Eyes",
+      "Undead_Wings"
+    ],
+    "triangles": 3936,
+    "animations": [
+      "Undead_Death",
+      "Undead_Hit",
+      "Undead_Hover",
+      "Undead_ThrowFireball"
+    ]
+  },
+  "Skeleton_Arrow": {
+    "meshes": 4,
+    "triangles": 32
+  },
+  "Undead_Fireball": {
+    "meshes": 4,
+    "triangles": 402
+  },
+  "Boss_PurpleSkull": {
+    "meshes": 1,
+    "triangles": 3411
+  },
+  "Boss_MagicDagger": {
+    "meshes": 3,
+    "triangles": 54
+  }
+}

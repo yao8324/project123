@@ -1,0 +1,66 @@
+{
+  "complete": true,
+  "source": {
+    "bones": 50,
+    "actions": [
+      "Soulbinder_Idle_Study",
+      "Soulbinder_Invocation_Study"
+    ],
+    "separateBook": true,
+    "missingExternalFiles": []
+  },
+  "exports": {
+    "Soulbinder_OverlordStudy.fbx": {
+      "meshCount": 2,
+      "bones": 50,
+      "actions": [
+        "Summoner_Rig|Summoner_Rig|Soulbinder_Idle_Study",
+        "Summoner_Rig|Summoner_Rig|Soulbinder_Invocation_Study"
+      ],
+      "meshes": [
+        {
+          "name": "Grimoire_Open_Separate_Prop",
+          "vertices": 9030,
+          "triangles": 16600,
+          "unweightedVertices": 0,
+          "uvLayers": 1
+        },
+        {
+          "name": "Soulbinder_Body_Skinned",
+          "vertices": 43349,
+          "triangles": 85081,
+          "unweightedVertices": 0,
+          "uvLayers": 1
+        }
+      ],
+      "studioObjectsPresent": false
+    },
+    "Soulbinder_OverlordStudy_LOD1.fbx": {
+      "meshCount": 2,
+      "bones": 50,
+      "actions": [],
+      "meshes": [
+        {
+          "name": "Soulbinder_Body_Skinned.001_Reduced",
+          "vertices": 18646,
+          "triangles": 35733,
+          "unweightedVertices": 0,
+          "uvLayers": 1
+        },
+        {
+          "name": "Grimoire_Open_Separate_Prop.001_Reduced",
+          "vertices": 3997,
+          "triangles": 6972,
+          "unweightedVertices": 0,
+          "uvLayers": 1
+        }
+      ],
+      "studioObjectsPresent": false
+    },
+    "Soulbinder_OverlordStudy.glb": {
+      "meshCount": 2,
+      "skins": 1,
+      "cameras": 0
+    }
+  }
+}
