@@ -1,3 +1,4 @@
+> **2026-11-06 规划更新：** [第三个 Boss：亡灵法师设定](1.0.6/Docs/SummonerBossDesign20261106/README.md)，整理了召唤、五类亡灵、攻击数值、护甲及破甲眩晕，并附[七张巫妖参考图](1.0.6/Docs/SummonerBossDesign20261106/References/README.md)。本次为设定记录，尚未实现玩法。
 # IM MONSTER · main 第一版
 
 团队整合版本：**v0.1.0**，2026-10-29。此次由管理者明确要求将当前程序、场景与剧情资料纳入main，作为后续共同开发基线。
