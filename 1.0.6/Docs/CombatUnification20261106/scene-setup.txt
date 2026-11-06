@@ -1,0 +1,1 @@
+Main library and sealed arena equipped with authored 1.0.8 sword/shield view, four skills, shared stamina and equipment menu. Existing worlds and launch/story scenes preserved.

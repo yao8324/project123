@@ -1,0 +1,194 @@
+[
+  {
+    "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossDefinition.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossMeleeCombat.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossPerfectDodge.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossRitualEffects.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossVolleyRetreat.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossWavePresentation.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Core/LibraryInputBindings.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Player/FirstPersonController.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Player/MeleeFeedback.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerCombat.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerDash.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerMelee.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Player/SwordShieldView.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/UI/EquipmentPreview.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryEquipment.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryMenu.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/UI/SkillCooldownBadge.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/ArcaneEnergyMesh.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BattleVfx.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BladeRibbon.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/DashAfterimageVfx.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/DodgeWorldEchoes.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/GroundFractureVisuals.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/LaserBeamVisuals.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/MeleeEffects.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/MeleeSkillVfx.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/TemporalStopPulse.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/TemporalStopRendererFeature.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/TemporalWorldEchoRendererFeature.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenAnimationDriver.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenBlinkVisual.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenMeleeVfx.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenRushWake.cs",
+    "change": "modified"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenWaveVisuals.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightDefinition.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightEncounter.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Core/Bosses/Knight/KnightTrialLauncher.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/AcceptanceTestOnly/Combat108BuildProbe.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/CombatUnificationAcceptance.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/CombatUnificationBuilder.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightArenaPresentation.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightRefinedEffects.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightRigConstraints.cs",
+    "change": "added"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Bosses/Knight/KnightVisuals.cs",
+    "change": "added"
+  }
+]

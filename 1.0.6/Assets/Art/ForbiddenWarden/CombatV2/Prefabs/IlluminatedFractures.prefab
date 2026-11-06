@@ -998,6 +998,8 @@ MonoBehaviour:
   - {fileID: 4300000, guid: b86de9f1f9597ea488b49c633b56301c, type: 2}
   - {fileID: 4300000, guid: 9f90ece9c304e214a90b00efd12796b3, type: 2}
   riftLight: {fileID: 1650462690557234992}
+  detailMaterial: {fileID: 2100000, guid: 8eac07fbdf792ce42a844d97817b7778, type: 2}
+  particleMaterial: {fileID: 2100000, guid: d45e1ff5c78d6b7488df21214d45684a, type: 2}
 --- !u!1 &7134467685121234415
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ArcaneArchive.Player
 {
-    [RequireComponent(typeof(CharacterController))]
+    [DefaultExecutionOrder(-100), RequireComponent(typeof(CharacterController))]
     public sealed class FirstPersonController : MonoBehaviour
     {
         [Header("Input")]
@@ -39,8 +39,13 @@ namespace ArcaneArchive.Player
 
 
         private CharacterController characterController;
+        public PlayerDash Dash { get; private set; }
+        public float PlayerDeltaTime => Dash ? Dash.PlayerDeltaTime : Time.deltaTime;
         private InputActionMap playerActions;
         private InputActionAsset runtimeInputActions;
+        private ArcaneArchive.UI.RecoveryMenu pauseMenu;
+        private ArcaneArchive.Core.BossEncounter encounter;
+        public bool SimulationPaused => (pauseMenu && pauseMenu.IsOpen) || (encounter && encounter.IsPaused);
         public ArcaneArchive.Core.LibraryInputBindings Bindings { get; private set; }
         private InputAction moveAction;
         private InputAction lookAction;
@@ -91,6 +96,11 @@ namespace ArcaneArchive.Player
         private void Awake()
         {
             characterController = GetComponent<CharacterController>();
+            Dash = GetComponent<PlayerDash>();
+            if(!Dash)Dash = gameObject.AddComponent<PlayerDash>();
+            Dash.Initialize(this, characterController);
+            pauseMenu = GetComponent<ArcaneArchive.UI.RecoveryMenu>();
+            encounter = GetComponent<ArcaneArchive.Core.BossEncounter>();
             standingHeight = characterController.height;
             standingCenter = characterController.center;
 
@@ -115,12 +125,21 @@ namespace ArcaneArchive.Player
 
         private void OnDisable()
         {
+            if(Dash)Dash.Cancel(false);
             playerActions?.Disable();
             SetCursorLocked(false);
         }
 
         private void Update()
         {
+            // Preserve position, gravity velocity, crouch and jump/landing state during a pause.
+            // Input suppression alone must not allow gravity to advance behind the menu.
+            if (SimulationPaused)
+            {
+                if(Dash)Dash.Cancel(false);
+                ActualVelocity = Vector3.zero; PlanarSpeed = 0f; IsSprinting = false;
+                return;
+            }
             if (inputReleaseFrames > 0) inputReleaseFrames--;
             else if (waitForInputRelease && moveAction.ReadValue<Vector2>().sqrMagnitude < .001f &&
                 !sprintAction.IsPressed() && !jumpAction.IsPressed() && !crouchAction.IsPressed() &&
@@ -129,6 +148,9 @@ namespace ArcaneArchive.Player
             frameCollisionFlags = CollisionFlags.None;
             UpdateGroundState();
             HandleCursorLock();
+            if(MovementInputAllowed && CursorIsLocked && Bindings && !Bindings.SuppressInputThisFrame &&
+                sprintAction.WasPressedThisFrame())Dash.TryStart(moveAction.ReadValue<Vector2>());
+            Dash.Tick(Time.unscaledDeltaTime);
             ApplyGravity();
 
             if (MovementInputAllowed)
@@ -138,7 +160,7 @@ namespace ArcaneArchive.Player
                 UpdateMovement();
             }
 
-            ActualVelocity = Time.deltaTime > 0f ? (transform.position - previousPosition) / Time.deltaTime : Vector3.zero;
+            ActualVelocity = PlayerDeltaTime > 0f ? (transform.position - previousPosition) / PlayerDeltaTime : Vector3.zero;
             PlanarSpeed = Vector3.ProjectOnPlane(ActualVelocity, Vector3.up).magnitude;
             IsSprinting = MovementInputAllowed && IsMoving && sprintAction != null && sprintAction.IsPressed();
             // Move is called separately for gravity and horizontal movement. The last
@@ -152,6 +174,7 @@ namespace ArcaneArchive.Player
         public void SetGameplayInputEnabled(bool enabled)
         {
             GameplayInputEnabled = enabled;
+            if(!enabled && Dash)Dash.Cancel(false);
         }
 
         public void SetCursorLocked(bool locked)
@@ -188,6 +211,7 @@ namespace ArcaneArchive.Player
                 characterController.enabled=false;
                 try
                 {
+                    if(Dash)Dash.Cancel(true);
                     transform.SetPositionAndRotation(feet,facing);
                     characterController.height=standingHeight;characterController.center=standingCenter;
                     pitch=0f;
@@ -252,7 +276,7 @@ namespace ArcaneArchive.Player
             // Integrate the ballistic displacement before changing velocity. A long
             // render frame must not turn a normal jump into a tiny hop. Substeps
             // also preserve ceiling/ground contacts if a frame spans the apex.
-            float remaining = Time.deltaTime;
+            float remaining = PlayerDeltaTime;
             while (remaining > 0f)
             {
                 float dt = Mathf.Min(remaining, 1f / 60f);
@@ -317,7 +341,7 @@ namespace ArcaneArchive.Player
                 ? Mathf.Clamp(crouchHeight, minimumHeight, standingHeight)
                 : standingHeight;
             float heightDifference = standingHeight - targetHeight;
-            float maxDelta = crouchTransitionSpeed * Time.deltaTime;
+            float maxDelta = crouchTransitionSpeed * PlayerDeltaTime;
 
             characterController.height = Mathf.MoveTowards(
                 characterController.height,
@@ -370,13 +394,14 @@ namespace ArcaneArchive.Player
 
         private void UpdateMovement()
         {
+            if(Dash && Dash.Move(out CollisionFlags dashFlags)){frameCollisionFlags |= dashFlags;return;}
             Vector2 moveInput = moveAction.ReadValue<Vector2>();
             Vector3 movement = transform.right * moveInput.x + transform.forward * moveInput.y;
             float speed = sprintAction.IsPressed() ? walkSpeed * sprintMultiplier : walkSpeed;
             // Keep each collision sweep short enough to traverse ramps and steps
             // consistently at low render frame rates, including while sprinting.
             Vector3 velocity = movement.normalized * speed;
-            float remaining = Time.deltaTime;
+            float remaining = PlayerDeltaTime;
             while (remaining > 0f)
             {
                 float dt = Mathf.Min(remaining, 1f / 60f);

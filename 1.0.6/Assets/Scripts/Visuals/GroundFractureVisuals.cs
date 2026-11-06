@@ -10,6 +10,60 @@ namespace ArcaneArchive.Visuals
         public MeshFilter[] crackLayers;
         public Mesh[] crackVariants;
         public Light riftLight;
+        public Material detailMaterial,particleMaterial;
+        LineRenderer[] fissures,plumes;
+        ParticleSystem sparks;
+        float previousEruption=-1;
+        bool erupted;
+        void EnsureDetail()
+        {
+            if(fissures!=null)return;
+            fissures=new LineRenderer[7];plumes=new LineRenderer[3];
+            for(int i=0;i<7;i++)fissures[i]=BattleVfx.Line(transform,"Forked lightning "+i,detailMaterial,13,i==0?.055f:.024f,i%2==0?BattleVfx.Gold:BattleVfx.Violet);
+            for(int i=0;i<3;i++)plumes[i]=BattleVfx.Line(transform,"Rising rift ribbon "+i,detailMaterial,20,.06f,BattleVfx.Violet);
+            sparks=BattleVfx.Particles(transform,particleMaterial,40);
+        }
+        void PresentDetail(float warning,float eruption,float fade)
+        {
+            EnsureDetail();bool firing=eruption>=0;
+            BattleVfx.Tick(sparks,previousEruption<0?Mathf.Max(0,eruption):Mathf.Max(0,eruption-previousEruption));previousEruption=eruption;
+            for(int i=0;i<7;i++)
+            {
+                var line=fissures[i];float start=i==0?0:.13f+(i-1)*.12f;
+                float end=i==0?1:Mathf.Min(1,start+.3f);
+                for(int j=0;j<line.positionCount;j++)
+                {
+                    float p=j/(float)(line.positionCount-1);
+                    float x=i==0?Mathf.Sin(j*2.7f+seed)*.055f:Mathf.Lerp(0,(i%2==0?1:-1)*.42f,p)+Mathf.Sin(j*2.9f+seed)*.035f;
+                    line.SetPosition(j,transform.TransformPoint(new Vector3(x,.035f,Mathf.Lerp(start,end,p))));
+                }
+                BattleVfx.Tint(line,i%2==0?BattleVfx.Gold:BattleVfx.Violet,fade*(firing?1:.22f+.5f*warning));
+            }
+            for(int i=0;i<3;i++)
+            {
+                var line=plumes[i];line.enabled=firing;if(!firing)continue;
+                float lift=Mathf.Clamp01(eruption/.22f);
+                for(int j=0;j<line.positionCount;j++)
+                {
+                    float p=j/(float)(line.positionCount-1);
+                    Vector3 local=new Vector3(Mathf.Sin(p*5+i*2+seed)*(.04f+.16f*lift),.04f+Mathf.Sin(p*Mathf.PI)*(1.1f+i*.28f)*lift,Mathf.Lerp(.06f,.94f,p));
+                    line.SetPosition(j,transform.TransformPoint(local));
+                }
+                BattleVfx.Tint(line,i==1?BattleVfx.Gold:BattleVfx.Violet,fade*.8f);
+            }
+            if(firing&&!erupted)
+            {
+                erupted=true;
+                for(int i=0;i<30;i++)
+                {
+                    float z=(i+.5f)/30;
+                    var point=transform.TransformPoint(new Vector3(Mathf.Sin(i*2.4f+seed)*.26f,.06f,z));
+                    var velocity=transform.right*Mathf.Sin(i*1.7f)*.8f+Vector3.up*Random.Range(1.5f,3.8f);
+                    BattleVfx.Emit(sparks,point,velocity,i%3==0?BattleVfx.Gold:BattleVfx.Violet,Random.Range(.045f,.13f),Random.Range(.4f,.8f));
+                }
+            }
+        }
+
         Vector3[] rest;
         MaterialPropertyBlock properties;
         float fadeTime=1.25f;
@@ -42,6 +96,7 @@ namespace ArcaneArchive.Visuals
             if(rest==null)Awake();EruptionAge=eruption;WarningProgress=warning;
             bool firing=eruption>=0;
             float fade=firing?1-Mathf.SmoothStep(0,1,Mathf.Clamp01((eruption-.32f)/(fadeTime-.32f))):1;
+            PresentDetail(warning,eruption,fade);
             float impulse=firing?Mathf.Exp(-eruption*7):0;
             float reveal=firing?1:Mathf.Lerp(.14f,1,Mathf.SmoothStep(0,1,warning));
             float phase=firing?1+eruption:warning;
@@ -56,7 +111,7 @@ namespace ArcaneArchive.Visuals
             {
                 slabs[i].gameObject.SetActive(firing && fade>.01f);if(!firing)continue;
                 float t=Mathf.Clamp01(eruption/(.6f+(i%3)*.1f));
-                float height=Mathf.Sin(t*Mathf.PI)*(.18f+(i%4)*.055f);
+                float height=Mathf.Sin(t*Mathf.PI)*(.32f+(i%4)*.09f);
                 slabs[i].localPosition=rest[i]+Vector3.up*height;
                 slabs[i].localRotation=Quaternion.Euler(t*(24+i*3),i*47+seed*17,t*19);
                 slabs[i].localScale=Vector3.one*fade;

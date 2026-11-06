@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &424241393456179464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9003344423562918459}
+  m_Layer: 0
+  m_Name: MeleeBladeBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9003344423562918459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424241393456179464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.000000028638176, y: 0.008728805, z: -6.984918e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1031949699274884846}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2095291249550484028
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,6 +116,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3504684226532817929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3029674252269862966}
+  m_Layer: 0
+  m_Name: MeleeBladeTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3029674252269862966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3504684226532817929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0000000530854, y: 0.015932193, z: 0.0000000032596286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1031949699274884846}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4375034831290554242
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +234,8 @@ MonoBehaviour:
   - {fileID: 5225324529974638048, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
   - {fileID: -4703082102004433688, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
   - {fileID: -7253008158389610065, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
+  - {fileID: 7400000, guid: 076d0d15b0d18214ebe194e6efa4eb14, type: 2}
+  - {fileID: 7400000, guid: 5ad611753468c44408bbc7e218b1b559, type: 2}
   castingSocket: {fileID: 3727915551068599200}
   leftHand: {fileID: 4871615289005653847}
   rightHand: {fileID: 786513979816343791}
@@ -179,6 +243,11 @@ MonoBehaviour:
   - {fileID: 7322245654170028429}
   - {fileID: 8266237683052768865}
   phaseSeal: {fileID: 855885758144401581}
+  meleeBladeBase: {fileID: 9003344423562918459}
+  meleeBladeTip: {fileID: 3029674252269862966}
+  meleeTrailMaterial: {fileID: 2100000, guid: 8eac07fbdf792ce42a844d97817b7778, type: 2}
+  meleeSurfaceMaterial: {fileID: 2100000, guid: e1283a63e2316f04e8c3bee82b512478, type: 2}
+  meleeParticleMaterial: {fileID: 2100000, guid: d45e1ff5c78d6b7488df21214d45684a, type: 2}
 --- !u!136 &1384753412896221665
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2623,6 +2692,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2595726745439201236, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3727915551068599200}
+    - targetCorrespondingSourceObject: {fileID: -2359223458965969363, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9003344423562918459}
+    - targetCorrespondingSourceObject: {fileID: -2359223458965969363, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3029674252269862966}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
       insertIndex: -1
@@ -2631,6 +2706,11 @@ PrefabInstance:
 --- !u!4 &786513979816343791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2595726745439201236, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
+  m_PrefabInstance: {fileID: 5841276516986085571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1031949699274884846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2359223458965969363, guid: 4f8ab682b10584f4a907a6482c5b4ab6, type: 3}
   m_PrefabInstance: {fileID: 5841276516986085571}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4310649815793600019 stripped

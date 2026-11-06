@@ -86,13 +86,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArcaneArchive.Visuals.LaserBeamVisuals
   outerBeam: {fileID: 2200182720655239612}
   coreBeam: {fileID: 4150266592634388708}
+  goldHelix: {fileID: 1098899007378277709}
+  violetHelix: {fileID: 9216325743852455129}
   chargeRing: {fileID: 7871148320774107410}
   chargeCore: {fileID: 2838108654545598103}
   impactCore: {fileID: 3406052481257383192}
   ornateGate: {fileID: 4628302482043498590}
   violetOrbit: {fileID: 6578338578435409512}
-  goldHelix: {fileID: 1098899007378277709}
-  violetHelix: {fileID: 9216325743852455129}
+  detailMaterial: {fileID: 2100000, guid: 8eac07fbdf792ce42a844d97817b7778, type: 2}
+  particleMaterial: {fileID: 2100000, guid: d45e1ff5c78d6b7488df21214d45684a, type: 2}
 --- !u!1 &2380812892079841212
 GameObject:
   m_ObjectHideFlags: 0

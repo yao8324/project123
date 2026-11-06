@@ -1,4 +1,23 @@
-> 2026-10-29：本工程现已作为IM MONSTER团队main第一版v0.1.0的运行基线，已接入新的圆形厅美术。下文保留原程序交付说明；当前版本、启动方式与已知问题以[仓库首页](../README.md)和[发布说明](../发布记录/v0.1.0/发布说明.md)为准。
+# IM MONSTER · main 当前工程
+
+2026-11-06：**战斗操作与界面已统一到 1.0.8 的剑盾方案**，同时保留 main 的剧情、封闭斗场和三水晶供能。目录继续沿用 `1.0.6/`。
+
+- **编辑器：Unity 6000.3.24f1。** Unity Hub 添加本目录，等待资源与脚本导入。
+- **完整启动：** `Assets/Scenes/IMMonster_FullDelivery.unity`，进入 Play Mode 后选择剧情探索或 Boss 斗场。
+- **直接战斗：** `Assets/Scenes/SealedDuelArena_Showcase.unity`。
+- **操作：** 左键连斩；右键举盾/弹反/吞印；1～4 技能；Shift 突进；I 装备页；Esc 暂停。攻防与突进共用体力。
+- **水晶机制：** 先断链，再碎晶；近战按距离、角度与遮挡结算，全碎触发失衡，重试恢复。
+- **已验证：** 战斗 84 项、剧情 171 项、Windows 独立包 13 项自动化检查通过；Windows 构建 0 错误，另抽查实际窗口的 HUD 与特效。
+- **本机 Windows 包：** `Builds/MainCombat108_20261106/IMMonster.exe`。Builds 不随源码推送，队友可从 main 源码构建；2026-11-04 的旧下载包不含本次剑盾操作。
+
+[完整操作、迁移范围与构建/验证步骤](Docs/CombatUnification20261106/README.md) · [验收摘要](Docs/CombatUnification20261106/delivery-validation.json) · [修改脚本清单](Docs/CombatUnification20261106/changed-scripts.json) · [更新日志](CHANGELOG.md)
+
+## 历史交付说明
+
+<details>
+<summary>展开原 1.0.6 说明（旧操作、编辑器版本和测试数字仅对应历史版本）</summary>
+
+> 2026-10-29：本工程现已作为IM MONSTER团队main第一版v0.1.0的运行基线，已接入新的圆形厅美术。下文保留原程序交付说明。
 
 # Arcane Archive 魔法图书馆 · 1.0.6
 
@@ -129,3 +148,5 @@ P0 仍为：**导入资料 → 生成书籍 → 归档书架 → 搜索定位 �
 完整包包含Mac试玩程序、Unity完整工程、制作资源，以及本次剧情交互/环境声和三水晶斗场新增内容。需要同时下载 `.zip.001` 和 `.zip.002`，放在同一目录，用7-Zip或Keka打开第一卷解压。当前可执行程序为Mac版，Windows可从Unity工程构建。
 
 工程入口：`Assets/Scenes/IMMonster_FullDelivery.unity`。玩法说明与验证见 `Docs/FullDelivery20261104/README.md`。
+
+</details>

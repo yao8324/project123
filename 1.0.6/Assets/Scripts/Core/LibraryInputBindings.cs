@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -32,6 +32,8 @@ namespace ArcaneArchive.Core
         public InputAction InteractAction { get; private set; }
         public InputAction AttackAction { get; private set; }
         public InputAction AbsorbAction { get; private set; }
+        public InputAction EquipmentAction { get; private set; }
+        public InputAction[] MeleeSkillActions { get; private set; }
 
         public void Initialize(InputActionAsset asset)
         {
@@ -50,19 +52,24 @@ namespace ArcaneArchive.Core
             Add("Interact",InteractAction,"<Keyboard>/e");
             Add("Menu",MenuAction,"<Keyboard>/escape");
             Add("Relock",RelockAction,"<Mouse>/leftButton");
-            Load();
-            AttackAction=map.AddAction("ArchiveAttack",InputActionType.Button,AvailableCombatPath("<Mouse>/leftButton"),expectedControlLayout:"Button");
+            AttackAction=map.AddAction("ArchiveAttack",InputActionType.Button,"<Mouse>/leftButton",expectedControlLayout:"Button");
             entries.Add(new Entry{id="Attack",action=AttackAction,index=0});
-            AbsorbAction=map.AddAction("ArchiveAbsorb",InputActionType.Button,AvailableCombatPath("<Mouse>/rightButton"),expectedControlLayout:"Button");
+            AbsorbAction=map.AddAction("ArchiveAbsorb",InputActionType.Button,"<Mouse>/rightButton",expectedControlLayout:"Button");
             entries.Add(new Entry{id="Absorb",action=AbsorbAction,index=0});
+            EquipmentAction=map.AddAction("ArchiveEquipment",InputActionType.Button,"<Keyboard>/i",expectedControlLayout:"Button");
+            entries.Add(new Entry{id="Equipment",action=EquipmentAction,index=0});
+            MeleeSkillActions=new InputAction[4];
+            for(int i=0;i<4;i++)
+            {
+                MeleeSkillActions[i]=map.AddAction("ArchiveMelee"+(i+1),InputActionType.Button,"<Keyboard>/"+(i+1),expectedControlLayout:"Button");
+                entries.Add(new Entry{id="Melee"+(i+1),action=MeleeSkillActions[i],index=0});
+            }
             Load();
         }
-        private string AvailableCombatPath(string preferred)
-        {
-            foreach(var candidate in new[]{preferred,"<Keyboard>/j","<Keyboard>/k","<Keyboard>/l","<Keyboard>/u"})
-                if(!entries.Exists(e=>e.id!="Relock" && string.Equals(e.action.bindings[e.index].effectivePath,candidate,StringComparison.OrdinalIgnoreCase)))return candidate;
-            return preferred;
-        }
+        public bool IsReadOnly(string id) => id=="Relock" || id=="Attack" || id=="Absorb" || id=="Equipment" || id.StartsWith("Melee",StringComparison.Ordinal);
+        private static bool IsReservedMouse(string path) =>
+            string.Equals(path,"<Mouse>/leftButton",StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(path,"<Mouse>/rightButton",StringComparison.OrdinalIgnoreCase);
         private static bool CanShare(string a,string b)
             => (a=="Relock" && (b=="Attack"||b=="Absorb")) || (b=="Relock" && (a=="Attack"||a=="Absorb"));
         private void Add(string id,InputAction action,string path)
@@ -86,6 +93,8 @@ namespace ArcaneArchive.Core
         {
             var entry=Find(id);
             if(entry==null){error="未找到按键";return false;}
+            if(IsReadOnly(id)){error="此操作为固定按键，仅供查看";return false;}
+            if(IsReservedMouse(path)){error="鼠标左右键已固定，不能分配给其他操作";return false;}
             bool keyboard=path!=null&&path.StartsWith("<Keyboard>/",StringComparison.Ordinal);
             bool mouse=path=="<Mouse>/leftButton"||path=="<Mouse>/rightButton"||path=="<Mouse>/middleButton";
             if(!keyboard&&!mouse){error="请选择键盘按键或鼠标按钮";return false;}
@@ -105,7 +114,9 @@ namespace ArcaneArchive.Core
         }
         public void Begin(string id)
         {
-            Cancel();pending=Find(id);if(pending==null)return;
+            Cancel();
+            if(IsReadOnly(id)){Status="此操作为固定按键，仅供查看";Changed?.Invoke();return;}
+            pending=Find(id);if(pending==null)return;
             suppressedFrame=Time.frameCount;
             Status="按下新按键 · Esc 取消";
             wasEnabled=pending.action.enabled;pending.action.Disable();
@@ -145,7 +156,7 @@ namespace ArcaneArchive.Core
             try
             {
                 var saved=new List<SavedBinding>();
-                foreach(var e in entries)if(e.action.bindings[e.index].hasOverrides)
+                foreach(var e in entries)if(!IsReadOnly(e.id)&&e.action.bindings[e.index].hasOverrides)
                     saved.Add(new SavedBinding{id=e.id,path=e.action.bindings[e.index].effectivePath});
                 Directory.CreateDirectory(Application.persistentDataPath);
                 string temporary=SavePath+".tmp";
@@ -164,8 +175,28 @@ namespace ArcaneArchive.Core
                 // Validate the final layout together: valid key swaps must survive a restart.
                 var finalPaths=new Dictionary<string,string>();
                 foreach(var entry in entries)finalPaths[entry.id]=entry.action.bindings[entry.index].path;
+                bool migrated=false;
                 foreach(var binding in data.bindings)
-                    if(binding!=null&&finalPaths.ContainsKey(binding.id)&&!string.IsNullOrEmpty(binding.path))finalPaths[binding.id]=binding.path;
+                {
+                    if(binding==null||binding.id==null||!finalPaths.ContainsKey(binding.id)||string.IsNullOrEmpty(binding.path))continue;
+                    // Old saves may bind absorption to K/J and interaction to right click.
+                    // Restore only the affected actions; retain unrelated valid keyboard choices.
+                    if(IsReadOnly(binding.id)||IsReservedMouse(binding.path)){migrated=true;continue;}
+                    finalPaths[binding.id]=binding.path;
+                }
+                // A restored default may be occupied by another old override. Resolve the
+                // connected conflicts together so valid key swaps elsewhere remain intact.
+                for(int pass=0;pass<entries.Count;pass++)
+                {
+                    var reset=new HashSet<string>();
+                    for(int i=0;i<entries.Count;i++)
+                        for(int j=i+1;j<entries.Count;j++)
+                            if(!CanShare(entries[i].id,entries[j].id)&&string.Equals(finalPaths[entries[i].id],finalPaths[entries[j].id],StringComparison.OrdinalIgnoreCase))
+                            {reset.Add(entries[i].id);reset.Add(entries[j].id);}
+                    if(reset.Count==0)break;
+                    foreach(string id in reset)finalPaths[id]=Find(id).action.bindings[Find(id).index].path;
+                    migrated=true;
+                }
                 var used=new Dictionary<string,string>(StringComparer.OrdinalIgnoreCase);
                 foreach(var pair in finalPaths)
                 {
@@ -177,7 +208,10 @@ namespace ArcaneArchive.Core
                         throw new InvalidDataException("Invalid saved key layout");
                     if(!used.ContainsKey(pair.Value)||pair.Key!="Relock")used[pair.Value]=pair.Key;
                 }
-                foreach(var entry in entries)entry.action.ApplyBindingOverride(entry.index,finalPaths[entry.id]);
+                foreach(var entry in entries)
+                    if(!string.Equals(entry.action.bindings[entry.index].path,finalPaths[entry.id],StringComparison.OrdinalIgnoreCase))
+                        entry.action.ApplyBindingOverride(entry.index,finalPaths[entry.id]);
+                if(migrated)Save();
             }
             catch(Exception e){Debug.LogWarning("Input binding load failed; using defaults: "+e.Message);}
         }

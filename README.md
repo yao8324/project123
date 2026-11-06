@@ -1,3 +1,46 @@
+# IM MONSTER · 当前 main
+
+**2026-11-06：main 已统一 1.0.8 的整套剑盾战斗操作与界面。** 保留原剧情、三水晶斗场、锁链与分类音效。原 1.0.8 归档保持不变。
+
+## 获取与试玩
+
+```bash
+git clone --branch main https://github.com/yao8324/project123.git
+cd project123
+git lfs install
+git lfs pull origin main
+```
+
+已有仓库先保存本地工作，再切换 main，执行 `git pull --ff-only origin main` 和 `git lfs pull origin main`。
+
+Unity Hub 添加仓库内的 **`1.0.6/`**，使用 **Unity 6000.3.24f1**。目录名沿用历史路径，新战斗已接入其中。等待导入完成，打开 `Assets/Scenes/IMMonster_FullDelivery.unity` 进入 Play Mode，选择剧情探索或 Boss 斗场；直接战斗场景为 `SealedDuelArena_Showcase.unity`。
+
+| 操作 | 输入 |
+| --- | --- |
+| 移动 / 环视 / 跳跃 / 蹲下 | WASD / 鼠标 / Space / C |
+| 剑术三段连斩 | 左键，可按住 |
+| 举盾、弹反、吞印 | 右键 |
+| 破誓重斩 / 缄眼盾击 / 踏影突刺 / 回旋封印 | 1 / 2 / 3 / 4 |
+| 突进 / 装备页 / 暂停 | Shift / I / Esc |
+
+攻击、防御和突进共用体力；I 装备页暂停战斗。水晶需先断链再碎晶，全碎打断供能。目前可进入的战斗仍为典狱长；保留的圣骑士公共代码依赖不表示增加了新 Boss 入口。
+
+## 本次交付
+
+- [工程说明](1.0.6/README.md)
+- [操作、整合范围、团队拉取、构建和验证步骤](1.0.6/Docs/CombatUnification20261106/README.md)
+- [验收摘要：84 项战斗、171 项剧情、13 项独立包检查通过](1.0.6/Docs/CombatUnification20261106/delivery-validation.json)
+- [修改脚本清单](1.0.6/Docs/CombatUnification20261106/changed-scripts.json)
+
+**本次推送包含源码、资源、场景和验收文档。** 新 Windows 包已在本机构建，位于 `1.0.6/Builds/MainCombat108_20261106/`，该目录被 Git 忽略。队友请按文档从源码构建。原 [2026-11-04 Release](https://github.com/yao8324/project123/releases/tag/full-2026-11-04) 和历史分卷包不包含本次剑盾统一。
+
+已完成自动化检查与部分实际窗口画面检查；真人手感平衡、目标设备帧率和课程资料导入业务闭环不属于本次验收范围。
+
+## 历史基线记录
+
+<details>
+<summary>展开原 main 第一版说明（旧操作和测试数字仅对应历史版本）</summary>
+
 # IM MONSTER · main 第一版
 
 本分支新增2026-11-04剧情交互与声音反馈：常驻准心、可用状态、分类音效和动态环境声。运行 `1.0.6/Assets/Scenes/IMMonsterContest20261107.unity`，详见[反馈改进与验证](1.0.6/Docs/Feedback20261104/README.md)。以下v0.1.0团队基线记录保留其历史状态。
@@ -45,3 +88,5 @@ git lfs pull
 现有空中暂停下落、隔墙吞印、近墙发射越墙、墙裙碰撞不包络及旧UI身份泄露问题保留在[已知问题](发布记录/v0.1.0/已知问题.md)，由本周任务处理。原36项检查通过不能覆盖这些已确认缺陷。
 
 协作入口：[任务总览](团队任务/README.md) · [本周总计划](团队任务/周计划/20261028/本周总计划.md) · [简单协作说明](协作说明.md)。个人分支以本版main为共同起点，历史分支`lixiang`保持归档。
+
+</details>

@@ -11,7 +11,7 @@ namespace ArcaneArchive.Core
     [DisallowMultipleComponent]
     public sealed partial class BossEncounter : MonoBehaviour
     {
-        public enum State { Inactive, Intro, Observe, Telegraph, Attack, Recovery, PhaseBreak, Won, Lost, Stagger }
+        public enum State { Inactive, Intro, Observe, Telegraph, Attack, Recovery, PhaseBreak, Won, Lost, Stagger, Retreat }
         public BossDefinition definition;
         public BossArena arenaPrefab;
         public GameObject libraryEnvironment;
@@ -39,19 +39,19 @@ namespace ArcaneArchive.Core
         private float nextLaserTick;
         private int orbitDirection=1;
         private sealed class Shot { public GameObject go; public Vector3 velocity; public float damage, life, age, homingUsed; public bool enemy,homing; public CrystalCombatTarget crystalTarget; }
-        private sealed class Wave { public GameObject go; public Vector3 origin; public float radius; public bool hit; }
+        private sealed class Wave { public GameObject go; public Vector3 origin; public float radius; public bool hit; public WardenWaveVisuals visual; }
         private sealed class Zone { public GameObject go; public GroundFractureVisuals fracture; public Vector3 position; public float born; public bool fired; }
         private bool fractureSequenceStarted;
         private float nextFractureSpawn;
         public int FractureSpawnCount { get; private set; }
         public int FractureHitCount { get; private set; }
-        public float RecoveryDuration => attack==4 ? definition.rushRecovery : attack>=2 ? definition.heavyRecovery : definition.standardRecovery;
+        public float RecoveryDuration => KnightMode && knightSpec!=null ? knightSpec.recovery : attack==5 ? definition.meleeRecovery : attack==4 ? definition.rushRecovery : attack>=2 ? definition.heavyRecovery : definition.standardRecovery;
         private sealed class Flash { public GameObject go; public float life, total; public Vector3 scale; }
         public BossDefinition Definition => definition;
         public State CurrentState { get; private set; }
         public bool IsActive => CurrentState != State.Inactive;
         public bool IsFinished => CurrentState == State.Won || CurrentState == State.Lost;
-        public bool IsPaused => IsActive && (focusLost || (menu && menu.IsOpen));
+        public bool IsPaused => IsActive && (KnightStoryPending || focusLost || (menu && menu.IsOpen));
         public bool CanFight => IsActive && !IsFinished && !IsPaused && CurrentState != State.Intro;
         public Camera View { get; private set; }
         public float BossHealth { get; private set; }
@@ -69,7 +69,7 @@ namespace ArcaneArchive.Core
         public float BattleTime => combatTime;
         public BossPowerNetwork PowerNetwork {get;private set;}
         public ArenaCombatAudio SelectedAudio {get;private set;}
-        private bool pendingCrystalPhaseBreak;
+        private bool pendingCrystalPhaseBreak, crystalStagger;
         public string CrystalTargetLabel
         {
             get{if(!arena || !View || !PowerNetwork)return "";
@@ -82,7 +82,7 @@ namespace ArcaneArchive.Core
         public void OnCrystalPowerExhausted()
         {
             if(!CanFight)return;
-            ClearAttacks();SetState(State.Stagger);Feedback("供能崩溃 · 守卫僵直",PowerNetwork.staggerDuration);
+            crystalStagger=true;ClearAttacks();SetState(State.Stagger);Feedback("供能崩溃 · 守卫僵直",PowerNetwork.staggerDuration);
         }
         private void TickCrystalRegeneration(float dt)
         {if(PowerNetwork && CanFight)BossHealth=Mathf.Min(definition.health,BossHealth+PowerNetwork.Regeneration(definition.health,dt));}
@@ -97,7 +97,8 @@ namespace ArcaneArchive.Core
         public bool Begin()
         {
             if (IsActive) return false;
-            if (!definition || !arenaPrefab || !arenaPrefab.laserEffect || !arenaPrefab.fractureEffect || !arenaPrefab.rushEffect || !arenaPrefab.volleyEffect || !arenaPrefab.rushWakeEffect || !arenaPrefab.pageImpactEffect || !combatFont || !player || !combat || !View || !libraryEnvironment) return false;
+            if (!definition || !arenaPrefab || !combatFont || !player || !combat || !View || !libraryEnvironment) return false;
+            if (!KnightMode && (!arenaPrefab.laserEffect || !arenaPrefab.fractureEffect || !arenaPrefab.rushEffect || !arenaPrefab.volleyEffect || !arenaPrefab.rushWakeEffect || !arenaPrefab.pageImpactEffect)) return false;
             returnPosition = transform.position; returnRotation = transform.rotation;
             libraryWasActive = libraryEnvironment.activeSelf;
             arena = Instantiate(arenaPrefab, new Vector3(160, 0, 0), Quaternion.identity);
@@ -117,15 +118,18 @@ namespace ArcaneArchive.Core
             FractureSpawnCount=FractureHitCount=0;FracturePathLength=FractureTotalTurn=0;
             combat.ResetCombat(this); focusLost = false;
             arena.boss.localPosition = new Vector3(0, 0, 4);
+            arena.boss.localScale=Vector3.one*definition.bossScale;
             arena.boss.localRotation = Quaternion.Euler(0, 180, 0);
-            arena.model.floatingBody.localScale = Vector3.one;
-            ResetIntent();arena.model.ResetPose();pendingCrystalPhaseBreak=false;
+            if(!KnightMode)arena.model.floatingBody.localScale = Vector3.one;
+            ResetIntent();ResetMelee();
+            if(KnightMode)ResetKnight();else arena.model.ResetPose();
+            pendingCrystalPhaseBreak=crystalStagger=false;
             PowerNetwork=arena.GetComponentInChildren<BossPowerNetwork>();if(PowerNetwork)PowerNetwork.Initialize(this);
             SelectedAudio=arena.GetComponentInChildren<ArenaCombatAudio>();if(SelectedAudio)SelectedAudio.Initialize(this);
             SetState(State.Intro);
             menu.Resume(); player.SetGameplayInputEnabled(true); player.SetCursorLocked(true);
             player.WaitForReleasedControls(); combat.SuppressUntilReleased();
-            Feedback("归档编号零。你不该醒来。", 3);
+            if(!KnightMode)Feedback("归档编号零。你不该醒来。", 3);
         }
         public void Retry()
         {
@@ -139,9 +143,10 @@ namespace ArcaneArchive.Core
             bool returned = player.TryReturnToSpawn(returnPosition, returnRotation) ||
                             player.TryReturnToSpawn(new Vector3(0, .08f, 7.8f), Quaternion.identity);
             if (!returned) { libraryEnvironment.SetActive(false); Feedback("返回位置被阻挡，请稍后重试", 3); return false; }
-            ClearAttacks(); CurrentState = State.Inactive;PowerNetwork=null;if(SelectedAudio)SelectedAudio.StopAll();SelectedAudio=null;
+            ClearAttacks(); CurrentState = State.Inactive;PowerNetwork=null;if(SelectedAudio)SelectedAudio.StopAll();SelectedAudio=null;combat.EndCombat();
             if (hud) { hud.Hide(); Destroy(hud); }
             if (arena) { arena.gameObject.SetActive(false); Destroy(arena.gameObject); arena = null; }
+            RestoreKnightSession();
             menu.Resume(); player.SetGameplayInputEnabled(true); player.SetCursorLocked(true); player.WaitForReleasedControls();
             return true;
         }
@@ -156,21 +161,23 @@ namespace ArcaneArchive.Core
             combatTime += dt;
             TickCrystalRegeneration(dt);
             // Controls use one Input System. Combat never samples the legacy Input API.
-            combat.Tick(dt);
-            if (IsFinished) return;
+            combat.Tick(Mathf.Min(player.PlayerDeltaTime,.1f));
+            if (IsFinished || KnightStoryPending) return;
             TickBoss(dt);
             if(IsFinished)return;
             Physics.SyncTransforms();TickShots(dt);
             if (IsFinished) return;
             TickFractures(); if(IsFinished)return;
-            TickWaves(dt); if(IsFinished)return;
+            TickWaveCharge(); TickWaves(dt); if(IsFinished)return;
             TickFlashes(dt); UpdateAbsorbVisual();
             PresentBoss(dt);
             TickRitualEffects();
+            if(ActiveDodge)ActiveDodge.ConfirmPerfect();
             if (transform.position.y < -3) Finish(false);
         }
         private void TickBoss(float dt)
         {
+            if(KnightMode){TickKnight(dt);return;}
             stateTime += dt;
             UpdatePerception(dt);
             switch (CurrentState)
@@ -178,17 +185,19 @@ namespace ArcaneArchive.Core
                 case State.Intro: if (stateTime >= 2.2f) SetState(State.Observe); break;
                 case State.Observe:
                     MoveBoss(dt,1);
-                    if (stateTime >= definition.repositionTime) BeginWarning();
+                    if (stateTime >= definition.repositionTime || (stateTime>=.35f && MeleeInRange && combatTime>=nextMeleeAt)) BeginWarning();
                     break;
+                case State.Retreat: TickVolleyRetreat(); break;
                 case State.Telegraph:
                     float duration = WarningDuration;
                     if (stateTime < duration - AimLockDuration)
                     {
-                        lockTarget = lastKnownPlayer + Vector3.up;
+                        lockTarget = (attack==3 || attack==5 ? transform.position : lastKnownPlayer) + Vector3.up;
                         FacePoint(lockTarget,dt);
                         if (attack == 3) AimLaser();
                         if (attack == 4) AimRush();
                     }
+                    if(attack==5)AdvanceMeleeWarning();
                     if(attack==3)TickLaser(false);
                     if(attack==2 && !fractureSequenceStarted && stateTime>=duration-definition.fractureLeadTime)
                     { StartFractureLine(); }
@@ -216,11 +225,11 @@ namespace ArcaneArchive.Core
                     }
                     else if(attack==3)
                     {
-                        TrackLaser(dt);
                         TickLaser(true);
                         if(IsFinished)return;
                         if(stateTime>=definition.laserDuration){if(laser)Destroy(laser.gameObject);laser=null;SetState(State.Recovery);}
                     }
+                    else if(attack==5)TickMeleeStrike();
                     else TickRush(dt);
                     break;
                 case State.Recovery:
@@ -229,8 +238,8 @@ namespace ArcaneArchive.Core
                     if (stateTime >= RecoveryDuration) SetState(State.Observe);
                     break;
                 case State.Stagger:
-                    if(stateTime >= (PowerNetwork?PowerNetwork.staggerDuration:2)){
-                        SetState(pendingCrystalPhaseBreak?State.PhaseBreak:State.Observe);pendingCrystalPhaseBreak=false;
+                    if(stateTime >= (crystalStagger && PowerNetwork?PowerNetwork.staggerDuration:definition.staggerDuration)){
+                        SetState(pendingCrystalPhaseBreak?State.PhaseBreak:crystalStagger?State.Observe:State.Recovery);pendingCrystalPhaseBreak=crystalStagger=false;
                     }break;
                 case State.PhaseBreak: if (stateTime >= 2.2f) SetState(State.Observe); break;
             }
@@ -239,16 +248,19 @@ namespace ArcaneArchive.Core
         {
             MoveTowardIntent(dt,factor);
         }
-        private float WarningDuration => attack == 0 ? definition.volleyWarning : attack == 1 ? definition.waveWarning : attack==2 ? definition.fractureWarning : attack==3 ? definition.laserChargeTime : definition.rushWarning;
-        private float AimLockDuration => attack==3?definition.laserLockTime:attack==4?definition.rushLockTime:.55f;
+        private float WarningDuration => KnightMode && knightSpec!=null ? knightSpec.warning : attack==5 ? definition.meleeWarning : attack == 0 ? definition.volleyWarning : attack == 1 ? definition.waveWarning : attack==2 ? definition.fractureWarning : attack==3 ? definition.laserChargeTime : definition.rushWarning;
+        private float AimLockDuration => attack==3?definition.laserLockTime:attack==4?definition.rushLockTime:attack==5?.24f:.55f;
         private void BeginWarning()
         {
             attack=SelectAttack();
             if(pattern%2==0)orbitDirection*=-1;
             emitted = 0; lockTarget = lastKnownPlayer + Vector3.up;
+            if(attack==0){BeginVolleyRetreat();return;}
             SetState(State.Telegraph);if(!SelectedAudio || !SelectedAudio.Warn(attack))PlaySound(definition.warningSound, .35f);
-            Feedback(attack == 0 ? "禁页齐射 · 弱追踪，侧移或吞印" : attack == 1 ? "缄默环波 · 看准时机跳跃" : attack==2 ? "裂地禁咒 · 沿地追踪，侧移躲避" : attack==3 ? "湮灭秘光 · 缓慢追踪，持续横移" : "封缄冲撞 · 路线锁定后侧向躲避", attack==2?7:WarningDuration);
-            if (attack == 0) BeginVolleyCrown();
+            Feedback(attack==5 ? "刃杖横斩 · 侧退或举盾弹反" : attack == 0 ? "禁页齐射 · 追踪，侧移或吞印" : attack == 1 ? "缄默环波 · 看准时机跳跃" : attack==2 ? "裂地禁咒 · 沿地追踪，侧移躲避" : attack==3 ? "湮灭秘光 · 金线锁定后侧移" : "封缄冲撞 · 路线锁定后侧向躲避", attack==2?7:WarningDuration);
+            if(attack==5)BeginMeleeWarning();
+            else if (attack == 0) BeginVolleyCrown();
+            else if (attack == 1) BeginWaveCharge();
             else if (attack == 2)
             {
                 FractureSpawnCount=FractureHitCount=0; fractureSequenceStarted=false;
@@ -263,18 +275,7 @@ namespace ArcaneArchive.Core
         private void AimLaser()
         {
             laserOrigin=arena.boss.TransformPoint(new Vector3(0,2.6f,.92f));
-            laserDirection=(lockTarget+Vector3.up*.6f-laserOrigin).normalized;
-        }
-        private void TrackLaser(float dt)
-        {
-            if(stateTime<=definition.laserTrackingDelay || definition.laserTrackingSpeed<=0)return;
-            Vector3 toPlayer=View.transform.position-laserOrigin;
-            if(toPlayer.sqrMagnitude<.001f)return;
-            // Angular speed is bounded: moving sideways can outrun the sweep.
-            // The initial hold keeps the telegraph meaningful; no instant aim snap.
-            float ramp=Mathf.Clamp01((stateTime-definition.laserTrackingDelay)/.25f);
-            laserDirection=Vector3.RotateTowards(laserDirection,toPlayer.normalized,
-                definition.laserTrackingSpeed*Mathf.Deg2Rad*ramp*dt,0).normalized;
+            laserDirection=(View.transform.position-laserOrigin).normalized;
         }
         private void TickLaser(bool firing)
         {
@@ -291,10 +292,13 @@ namespace ArcaneArchive.Core
             float visibleDistance=distance;
             if(hitPlayer && combat.Guarding && Vector3.Dot(View.transform.forward,(laserOrigin-View.transform.position).normalized)>=.5f)
                 visibleDistance=Mathf.Min(distance,Mathf.Max(0,Vector3.Dot(View.transform.position-laserOrigin,laserDirection)-1.1f));
-            laser.Present(laserOrigin,laserOrigin+laserDirection*visibleDistance,Mathf.Clamp01(stateTime/definition.laserChargeTime),firing,definition.laserRadius,combatTime);
+            laser.Present(laserOrigin,laserOrigin+laserDirection*visibleDistance,Mathf.Clamp01(stateTime/definition.laserChargeTime),firing,definition.laserRadius,combatTime,firing || stateTime>=definition.laserChargeTime-definition.laserLockTime);
             if(firing && stateTime>=nextLaserTick)
             {
                 nextLaserTick=stateTime+definition.laserTickInterval;
+                // Every damaging tick can reward a new, genuinely successful dodge.
+                if(!hitPlayer && CheckingDodge)
+                    CheckDodge(SegmentThreatensDodge(laserOrigin,laserOrigin+laserDirection*distance,definition.laserRadius),false);
                 if(hitPlayer)combat.ReceiveHit(definition.laserDamage,laserOrigin,true,definition.laserTickInterval*.9f);
             }
         }
@@ -304,8 +308,11 @@ namespace ArcaneArchive.Core
             var page = volleyCrown.Release(index, arena.effectRoot);
             if (!page) return;
             Vector3 start = page.transform.position;
-            Vector3 side = Vector3.Cross(Vector3.up, (lockTarget - arena.boss.position).normalized).normalized;
-            Vector3 aim = lockTarget + side * (index - (count - 1) * .5f) * .42f;
+            // Sample the current player position for each released page; the crown's earlier
+            // pose target is presentation only and can be stale after the retreat.
+            Vector3 target=transform.position+Vector3.up*1.2f;
+            Vector3 side = Vector3.Cross(Vector3.up, (target - arena.boss.position).normalized).normalized;
+            Vector3 aim = target + side * (index - (count - 1) * .5f) * .42f;
             Vector3 direction = (aim - start).normalized;
             page.transform.rotation = Quaternion.LookRotation(direction);
             var motion = page.GetComponent<WardenSpellMotion>();
@@ -344,13 +351,14 @@ namespace ArcaneArchive.Core
                 var s = shots[i]; if (!s.go) { shots.RemoveAt(i); continue; }
                 SteerProjectile(s,dt);
                 Vector3 from = s.go.transform.position, movement = s.velocity * dt;
+                Vector3 dodgeEnd=from+movement;
                 bool consumed = false;
                 // Segment closest point makes the short absorption window work at low frame rates.
                 if (s.enemy)
                 {
                     float t = Mathf.Clamp01(Vector3.Dot(View.transform.position - from, movement) / Mathf.Max(.0001f, movement.sqrMagnitude));
                     if (combat.CanAbsorb(from + movement * t))
-                    { combat.AbsorbHit(); consumed = true; PageImpact(s, from + movement * t, true); }
+                    { if(ActiveDodge)ActiveDodge.RegisterContact(); combat.AbsorbHit(); consumed = true; PageImpact(s, from + movement * t, true); }
                 }
                 if (!consumed)
                 {
@@ -365,6 +373,8 @@ namespace ArcaneArchive.Core
                         if(crystal && s.enemy)continue;
                         if (h.collider.isTrigger && !hitBoss && !crystal) continue;
                         consumed = true;
+                        // Keep the actual swept path up to the first collision, including a wall hit later in this step.
+                        dodgeEnd=from+s.velocity.normalized*h.distance;
                         PageImpact(s, h.point, false);
                         if (s.enemy && hitPlayer) combat.ReceiveHit(s.damage,from,true);
                         else if(!s.enemy && crystal)crystal.Hit(s.damage);
@@ -372,6 +382,8 @@ namespace ArcaneArchive.Core
                         break;
                     }
                 }
+                if(s.enemy && CheckingDodge)
+                    CheckDodge(SegmentThreatensDodge(from,dodgeEnd,.13f),false);
                 // Damage can finish the fight or start phase transition and clear this list.
                 if (i >= shots.Count || shots[i] != s) break;
                 s.life -= dt;
@@ -383,7 +395,8 @@ namespace ArcaneArchive.Core
         {
             if(SelectedAudio)SelectedAudio.Play(SelectedAudio.shockwave,.3f);
             var origin = arena.boss.position; origin.y = arena.transform.position.y + .06f;
-            waves.Add(new Wave { origin = origin, radius = .8f, go = arena.Effect(arena.ringEffect, origin, Quaternion.identity) });
+            var visual=CreateWaveVisual(false);visual.PresentWave(origin,.8f,combatTime);
+            waves.Add(new Wave { origin = origin, radius = .8f, go = visual.gameObject, visual=visual });
         }
         private void TickWaves(float dt)
         {
@@ -392,10 +405,16 @@ namespace ArcaneArchive.Core
                 if (i >= waves.Count) continue;
                 var wave = waves[i]; float previous = wave.radius;
                 wave.radius += dt * definition.waveSpeed;
-                wave.go.transform.localScale = new Vector3(wave.radius, 1, wave.radius);
+                wave.visual.PresentWave(wave.origin,wave.radius,combatTime);
                 float distance = HorizontalDistance(transform.position, wave.origin);
-                if (!wave.hit && distance >= previous - .45f && distance <= wave.radius + .45f && transform.position.y < wave.origin.y + .50f)
-                { wave.hit = true; combat.TakeDamage(definition.waveDamage); }
+                bool inWave = distance >= previous - .45f && distance <= wave.radius + .45f && transform.position.y < wave.origin.y + .50f;
+                if(!wave.hit && !inWave && CheckingDodge)
+                {
+                    float oldDistance=HorizontalDistance(ActiveDodge.StartPosition,wave.origin);
+                    CheckDodge(oldDistance>=previous-.45f && oldDistance<=wave.radius+.45f &&
+                        ActiveDodge.StartPosition.y<wave.origin.y+.50f,false);
+                }
+                if (!wave.hit && inWave){ wave.hit = true; combat.TakeDamage(definition.waveDamage); }
                 if (i >= waves.Count || waves[i] != wave) break;
                 if (wave.radius > 24) { Destroy(wave.go); waves.RemoveAt(i); }
             }
@@ -403,6 +422,7 @@ namespace ArcaneArchive.Core
         public void DamageBoss(float damage, bool core)
         {
             if (!CanFight || CurrentState == State.PhaseBreak || damage <= 0 || float.IsNaN(damage) || float.IsInfinity(damage)) return;
+            if(KnightMode){DamageKnight(damage,core);return;}
             BossHealth = Mathf.Max(0, BossHealth - damage * (core && (CurrentState == State.Recovery || CurrentState == State.Stagger) ? 1.5f : 1) * (1-(PowerNetwork?PowerNetwork.DamageReduction:0)));
             if (BossHealth <= 0) { Finish(true); return; }
             if (Phase == 1 && BossHealth <= definition.health * .5f)
@@ -449,6 +469,9 @@ namespace ArcaneArchive.Core
         private void ClearAttacks()
         {
             if(SelectedAudio)SelectedAudio.StopLaser();
+            ClearKnightTelegraph();
+            ClearMeleeVisual();
+            ClearWaveCharge();
             ClearRitualEffects();
             foreach (var s in shots) if (s.go) Destroy(s.go);
             foreach (var w in waves) if (w.go) Destroy(w.go);

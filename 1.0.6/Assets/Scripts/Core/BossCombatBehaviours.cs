@@ -43,6 +43,9 @@ namespace ArcaneArchive.Core
             Vector3 toward=lastKnownPlayer-arena.boss.position;toward.y=0;float distance=toward.magnitude;
             toward=distance>.01f?toward/distance:arena.boss.forward;Vector3 side=Vector3.Cross(Vector3.up,toward)*orbitDirection,step;
             if(distance>definition.preferredMaxDistance){step=(toward+.4f*side).normalized*5.5f;BossIntent="接近记忆位置";}
+            else if(distance<=definition.meleeReach+definition.meleeAdvanceDistance && combatTime>=nextMeleeAt)
+            {step=toward*Mathf.Max(0,distance-(definition.meleeReach-.7f))+side*.35f;BossIntent="近身压迫";}
+            else if(distance<4.4f){step=side*1.1f;BossIntent="近身对峙";}
             else if(distance<definition.preferredMinDistance){step=(-toward+.45f*side).normalized*4;BossIntent="拉开距离";}
             else{step=side*4.6f;BossIntent="侧向换位";}
             if(combatTime-lastSeenAt>3){step=side*3;BossIntent="搜索";}
@@ -52,7 +55,7 @@ namespace ArcaneArchive.Core
         void FacePoint(Vector3 target,float dt)
         {
             Vector3 direction=target-arena.boss.position;direction.y=0;if(direction.sqrMagnitude<.01f)return;
-            arena.boss.rotation=Quaternion.RotateTowards(arena.boss.rotation,Quaternion.LookRotation(direction),definition.bodyTurnSpeed*dt);
+            arena.boss.rotation=Quaternion.RotateTowards(arena.boss.rotation,Quaternion.LookRotation(direction),(!KnightMode && CurrentState==State.Telegraph && attack==5?definition.meleeTurnSpeed:definition.bodyTurnSpeed)*dt);
         }
         void MoveTowardIntent(float dt,float factor)
         {
@@ -66,6 +69,7 @@ namespace ArcaneArchive.Core
         }
         int SelectAttack()
         {
+            if(MeleeInRange && combatTime>=nextMeleeAt){nextMeleeAt=combatTime+definition.meleeCooldown;BossIntent="刃杖近斩";return 5;}
             int[] order={0,3,2,4,1};int choice=order[pattern++%order.Length];float distance=HorizontalDistance(arena.boss.position,lastKnownPlayer);
             if(choice==4 && (distance<4 || distance>14 || combatTime-lastSeenAt>2.5f))choice=distance<4?1:0;
             if(combatTime-lastSeenAt>5)choice=1;
@@ -74,14 +78,21 @@ namespace ArcaneArchive.Core
         float SweepBoss(Vector3 direction,float requested,bool rush)
         {
             float travel=requested;
-            var hits=Physics.CapsuleCastAll(arena.boss.position+Vector3.up*1.05f,arena.boss.position+Vector3.up*3.35f,.70f,direction,travel+.06f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore).OrderBy(h=>h.distance);
+            var capsule=arena.boss.GetComponent<CapsuleCollider>();
+            float radius=capsule?capsule.radius*Mathf.Max(arena.boss.lossyScale.x,arena.boss.lossyScale.z):.55f;
+            Vector3 center=capsule?arena.boss.TransformPoint(capsule.center):arena.boss.position+Vector3.up*1.8f;
+            float half=capsule?Mathf.Max(0,capsule.height*arena.boss.lossyScale.y*.5f-radius):1.1f;
+            var hits=Physics.CapsuleCastAll(center-Vector3.up*half,center+Vector3.up*half,radius,direction,travel+.06f,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Ignore).OrderBy(h=>h.distance);
             foreach(var hit in hits)
             {
                 if(hit.collider.transform.IsChildOf(arena.boss))continue;travel=Mathf.Min(travel,Mathf.Max(0,hit.distance-.05f));
                 if(rush && !ramHit && hit.collider.transform.IsChildOf(transform)){ramHit=true;RushHitCount++;combat.ReceiveHit(definition.rushDamage,arena.boss.position,true);}break;
             }
-            Vector3 next=arena.boss.position+direction*travel;var local=arena.transform.InverseTransformPoint(next);local.y=0;
-            if(local.magnitude>arena.radius-2.1f)return 0;
+            Vector3 offset=arena.boss.position-arena.transform.position;offset.y=0;
+            float limit=arena.radius-radius-.15f,dot=Vector3.Dot(offset,direction);
+            float safe=-dot+Mathf.Sqrt(Mathf.Max(0,dot*dot+limit*limit-offset.sqrMagnitude));
+            travel=Mathf.Min(travel,Mathf.Max(0,safe));Vector3 next=arena.boss.position+direction*travel;
+            if(rush && travel>0)CheckRushDodge(center,center+direction*travel,radius,half);
             arena.boss.position=next;BossDistanceTravelled+=travel;return travel;
         }
         void AimRush()
@@ -119,8 +130,8 @@ namespace ArcaneArchive.Core
             float interval=Mathf.Max(.12f,definition.fractureInterval);
             Vector3 target=transform.position-riftHead;target.y=0;
             // Commit near the player so a last-second side step can evade the advancing line.
-            if(target.magnitude<3 && combatTime>=riftCommitUntil)riftCommitUntil=combatTime+definition.fractureLeadTime;
-            if(target.magnitude>=3 && combatTime>=riftCommitUntil)
+            if(target.magnitude<2.5f && combatTime>=riftCommitUntil)riftCommitUntil=combatTime+definition.fractureLeadTime;
+            if(target.magnitude>=2.5f && combatTime>=riftCommitUntil)
             {
                 var old=riftDirection;
                 riftDirection=Vector3.RotateTowards(riftDirection,target.normalized,definition.fractureTurnSpeed*Mathf.Deg2Rad*interval,0).normalized;
@@ -159,7 +170,10 @@ namespace ArcaneArchive.Core
                 if(!zone.fired && eruption>=0)
                 {
                     zone.fired=true;if(SelectedAudio)SelectedAudio.Play(SelectedAudio.groundFracture,.24f);float before=combat.Health;
-                    if(zone.fracture.Contains(transform.position,.24f) && transform.position.y<arena.transform.position.y+.65f)combat.TakeDamage(definition.fractureDamage);
+                    bool hitPlayer=zone.fracture.Contains(transform.position,.24f) && transform.position.y<arena.transform.position.y+.65f;
+                    if(!hitPlayer && CheckingDodge)CheckDodge(zone.fracture.Contains(ActiveDodge.StartPosition,.24f) &&
+                        ActiveDodge.StartPosition.y<arena.transform.position.y+.65f,false);
+                    if(hitPlayer)combat.TakeDamage(definition.fractureDamage);
                     if(combat.Health<before)FractureHitCount++;
                     if(IsFinished)return;
                 }
@@ -178,11 +192,11 @@ namespace ArcaneArchive.Core
         void SteerProjectile(Shot shot,float dt)
         {
             shot.age+=dt;if(shot.crystalTarget && !shot.crystalTarget.Available)shot.homing=false;if(!shot.homing)return;float limit=shot.enemy?definition.enemyHomingBudget:definition.playerHomingBudget;
-            if(shot.age>(shot.enemy?1.15f:.85f) || shot.homingUsed>=limit){shot.homing=false;return;}
-            if(shot.age<definition.projectileHomingDelay)return;
+            if(shot.age>(shot.enemy?definition.enemyHomingDuration:.85f) || shot.homingUsed>=limit){shot.homing=false;return;}
+            if(shot.age<(shot.enemy?definition.enemyHomingDelay:definition.projectileHomingDelay))return;
             Vector3 target=shot.crystalTarget?shot.crystalTarget.transform.position:shot.enemy?transform.position+Vector3.up*1.2f:arena.boss.TransformPoint(new Vector3(0,2.55f,.88f));
             Vector3 toward=target-shot.go.transform.position;
-            if(toward.magnitude<(shot.enemy?1.7f:.65f) || Vector3.Dot(shot.velocity.normalized,toward.normalized)<.4f){shot.homing=false;return;}
+            if(toward.magnitude<(shot.enemy?definition.enemyHomingCommitDistance:.65f) || Vector3.Dot(shot.velocity.normalized,toward.normalized)<(shot.enemy?.05f:.4f)){shot.homing=false;return;}
             if(!HasClearShot(shot.go.transform.position,target))return;
             float speed=shot.velocity.magnitude,turn=Mathf.Min((shot.enemy?definition.enemyHomingSpeed:definition.playerHomingSpeed)*dt,limit-shot.homingUsed);
             var old=shot.velocity.normalized;var direction=Vector3.RotateTowards(old,toward.normalized,turn*Mathf.Deg2Rad,0).normalized;
@@ -190,6 +204,6 @@ namespace ArcaneArchive.Core
             shot.velocity=direction*speed;shot.go.transform.rotation=Quaternion.LookRotation(direction);
             if(shot.enemy)MaximumEnemyHomingTurn=Mathf.Max(MaximumEnemyHomingTurn,shot.homingUsed);else MaximumPlayerHomingTurn=Mathf.Max(MaximumPlayerHomingTurn,shot.homingUsed);
         }
-        void PresentBoss(float dt){arena.model.Present(dt,Phase,attack,CurrentState,stateTime,WarningDuration,RecoveryDuration);}
+        void PresentBoss(float dt){if(KnightMode){if(poise>0 && combatTime-poiseLastHit>2.5f)poise=Mathf.Max(0,poise-18*dt);if(knightVisual)knightVisual.Present(this);return;}arena.model.animatedRig.SetMeleeRange(arena.boss.position,definition.meleeReach);arena.model.Present(dt,Phase,attack,CurrentState,stateTime,WarningDuration,RecoveryDuration);PresentMeleeVisual(dt);}
     }
 }

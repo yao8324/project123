@@ -30,12 +30,13 @@ namespace ArcaneArchive.Core
             if (rushWake) Destroy(rushWake.gameObject);
             LastRushDuration = 0;
             rushWake = Instantiate(arena.rushWakeEffect, arena.effectRoot);
-            rushWake.Configure(definition.rushWakeDuration);
+            rushWake.Configure(definition.rushWakeDuration,definition.bossScale);
             rushWake.SetPath(rushOrigin, rushDirection, 0, combatTime);
         }
 
         void TickRitualEffects()
         {
+            TickBlinkEffects();
             if (volleyCrown)
             {
                 if (attack == 0 && (CurrentState == State.Telegraph || CurrentState == State.Attack))
@@ -67,6 +68,7 @@ namespace ArcaneArchive.Core
 
         void ClearRitualEffects()
         {
+            ClearBlinkEffects();
             if (volleyCrown) Destroy(volleyCrown.gameObject);
             if (rushWake) Destroy(rushWake.gameObject);
             foreach (var impact in pageImpacts) if (impact) Destroy(impact.gameObject);

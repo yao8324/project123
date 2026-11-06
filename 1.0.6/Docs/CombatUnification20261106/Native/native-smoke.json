@@ -1,0 +1,22 @@
+{
+    "complete": true,
+    "failure": "",
+    "scope": "Windows standalone executable, opt-in automated virtual Input System keyboard/mouse and rendered screenshots. Runtime-only AI settings isolate control smoke. No manual playtest claimed.",
+    "checksPassed": 13,
+    "checks": [
+        "Native arena loads sword/shield and three crystals",
+        "Native HUD contains four skill badges",
+        "Native sword/shield materials and shaders supported",
+        "Native left mouse swings sword and spends stamina",
+        "Native keyboard skill 1 starts cooldown",
+        "Native keyboard skill 2 starts cooldown",
+        "Native keyboard skill 3 starts cooldown",
+        "Native keyboard skill 4 starts cooldown",
+        "Native I key opens equipment",
+        "Native equipment freezes skill cooldown",
+        "Native I key resumes combat",
+        "Native Shift performs dash",
+        "Native smoke has no runtime errors"
+    ],
+    "errors": []
+}

@@ -36,6 +36,11 @@
 !/Docs/
 !/AGENTS.md
 
+# Regenerable acceptance video frames, fixtures and hidden-window captures.
+/Docs/Contest20261107/Acceptance/Frames/
+/Docs/Contest20261107/Acceptance/Fixtures/
+/Docs/CombatUnification20261106/Native/*.png
+
 # Local machine secrets and credentials (never publish)
 .env
 .env.*

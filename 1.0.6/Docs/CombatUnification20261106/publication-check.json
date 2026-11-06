@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "assetsToStage": 218,
+  "missingMeta": [],
+  "duplicateNewGuids": {},
+  "missingSourceAssetReferences": [],
+  "validatedChecks": {
+    "runtime-acceptance.json": 84,
+    "story-regression.json": 171,
+    "Native/native-smoke.json": 13
+  },
+  "buildsIgnored": true
+}

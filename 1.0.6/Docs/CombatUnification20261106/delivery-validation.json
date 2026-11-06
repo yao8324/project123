@@ -1,0 +1,13 @@
+{
+  "completed": "2026-11-06T11:51:18.9771861+08:00",
+  "combatPassed": true,
+  "combatChecks": 84,
+  "storyPassed": true,
+  "storyChecks": 171,
+  "nativePassed": true,
+  "nativeChecks": 13,
+  "originalUserFilesPreserved": true,
+  "windowsBuild": "Succeeded errors=0 bytes=996421886 path=D:\\大三上\\CS423虚拟环境设计\\项目整理\\04_各分支文件\\main\\1.0.6\\Builds\\MainCombat108_20261106\\IMMonster.exe",
+  "visualReview": "Editor captures inspected: HUD, sword and shield, heavy swing, equipment, wave. Computer-use actual Windows build: launcher, battle HUD, corrected coloured cast effect and defeat/retry. Hidden native automatic captures are black and are excluded from visual evidence.",
+  "scope": "Automated integration checks and limited UI inspection; no claim of human gameplay/balance acceptance."
+}

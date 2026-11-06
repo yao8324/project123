@@ -11,13 +11,13 @@ namespace ArcaneArchive.Visuals
         Renderer[][] ghostRenderers;
         MaterialPropertyBlock properties;
         Vector3 origin, direction;
-        float distance, duration, finish = -1, latest;
+        float distance, duration, finish = -1, latest, bodyScale=1;
         public float Fade { get; private set; } = 1;
         public float Distance => distance;
         public bool IsLingering => finish >= 0;
-        public void Configure(float lifetime)
+        public void Configure(float lifetime,float scale=1)
         {
-            duration = lifetime; properties = new MaterialPropertyBlock();
+            duration = lifetime; bodyScale=scale; properties = new MaterialPropertyBlock();
             ghostRenderers = new Renderer[ghosts.Length][];
             for (int i = 0; i < ghosts.Length; i++) ghostRenderers[i] = ghosts[i].GetComponentsInChildren<Renderer>();
         }
@@ -43,7 +43,7 @@ namespace ArcaneArchive.Visuals
                 {
                     float p = j / (float)(line.positionCount - 1);
                     float flutter = Mathf.Sin(p * 17 - latest * 8 + i) * .09f * Mathf.Sin(p * Mathf.PI);
-                    float height = i < 2 ? 1.55f : 2.6f;
+                    float height = (i < 2 ? 1.55f : 2.6f)*bodyScale;
                     line.SetPosition(j, origin + direction * (distance * p) + side * (sign * (.55f + .22f * Mathf.Sin(p * 7)) + flutter) + Vector3.up * (height + flutter - age * .25f));
                 }
             }
@@ -53,7 +53,7 @@ namespace ArcaneArchive.Visuals
                 float p = (i + 1f) / (ghosts.Length + 1f);
                 ghosts[i].gameObject.SetActive(distance > 1);
                 ghosts[i].SetPositionAndRotation(origin + direction * distance * p + Vector3.up * age * .13f, Quaternion.LookRotation(direction));
-                ghosts[i].localScale = new Vector3(1 + age * .12f, 1, 1);
+                ghosts[i].localScale = new Vector3(1 + age * .12f, 1, 1)*bodyScale;
                 Tint(ghostRenderers[i], Mathf.Clamp01(1 - age / (duration * (.62f + p * .38f))) * .58f, clock);
             }
             for (int i = 0; i < scraps.Length; i++)
