@@ -1,0 +1,2 @@
+Generated sanctuary prefab, materials, modular meshes, standalone test scene. Source combat config cloned; original resources retained.
+2026-11-07T05:55:28.3662850Z

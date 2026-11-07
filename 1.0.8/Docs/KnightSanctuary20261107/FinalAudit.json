@@ -1,0 +1,36 @@
+{
+  "complete": true,
+  "scope": "Local editable/playable Unity implementation and author visual inspection. User artistic acceptance, exact concept equivalence and target-machine performance are not asserted.",
+  "utc": "2026-11-07T05:59:58.825342+00:00",
+  "reports": {
+    "Asset": {
+      "complete": true,
+      "assertions": 925,
+      "errors": []
+    },
+    "Runtime": {
+      "complete": true,
+      "assertions": 273,
+      "errors": []
+    },
+    "Art": {
+      "complete": true,
+      "assertions": 5,
+      "errors": []
+    }
+  },
+  "protectedFiles": 1249,
+  "protectedMismatches": [],
+  "assetFilesScanned": 553,
+  "missingAssetGUIDs": [],
+  "finalLogs": [
+    "SanctuaryPierBuild03.log",
+    "SanctuaryFinalRuntime04.log",
+    "SanctuaryFinalArt04.log"
+  ],
+  "renderers": 280,
+  "meshFilterTriangles": 2027686,
+  "lights": 8,
+  "remotePush": false,
+  "merge": false
+}
