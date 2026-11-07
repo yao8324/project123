@@ -1,0 +1,29 @@
+{
+  "static": {
+    "structure": 25,
+    "dimensions": 25,
+    "detail": 20,
+    "material": 20,
+    "placement": 10
+  },
+  "animation": {
+    "key_pose": 25,
+    "timing_motion": 25,
+    "wing_state": 25,
+    "contact_equipment": 25
+  },
+  "material": {
+    "basecolor": 20,
+    "metallic_roughness": 30,
+    "texture_scale": 25,
+    "seams_repetition": 15,
+    "wear": 10
+  },
+  "lighting": {
+    "hierarchy": 25,
+    "temperature": 20,
+    "material_readability": 25,
+    "telegraph_readability": 20,
+    "exposure": 10
+  }
+}

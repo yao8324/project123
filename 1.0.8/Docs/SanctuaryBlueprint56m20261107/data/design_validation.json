@@ -1,0 +1,20 @@
+{
+  "hall_ratio": [
+    16,
+    18,
+    9
+  ],
+  "arena_area_factor": 4,
+  "column_instances": 12,
+  "transverse_arches": 6,
+  "placement_count": 57,
+  "rig_length_error": 0.0,
+  "gate_leaf_sum": 16.0,
+  "sword_component_sum": 1.7000000000000002,
+  "jump_apex_t": 0.65,
+  "jump_apex_y": 4,
+  "jump_distance": 10,
+  "pdf_pages": 30,
+  "atlas_pages": 22,
+  "downstream_model_acceptance": "NOT_EVALUATED"
+}

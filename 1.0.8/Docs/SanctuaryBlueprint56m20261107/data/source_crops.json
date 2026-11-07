@@ -1,0 +1,62 @@
+[
+  {
+    "title": "柱头与石纹",
+    "normalized_box_left_top_right_bottom": [
+      0.12,
+      0.03,
+      0.34,
+      0.6
+    ],
+    "interpretation": "原图：细长柱束、金属承托带、石材云纹。要求：叶饰有体积，金条镶入线脚。"
+  },
+  {
+    "title": "尖拱与穹顶",
+    "normalized_box_left_top_right_bottom": [
+      0.3,
+      0,
+      0.72,
+      0.31
+    ],
+    "interpretation": "原图：不同粗细肋条交叉、尖拱层层后退。要求：主肋、次肋和拱面分件。"
+  },
+  {
+    "title": "门与封印",
+    "normalized_box_left_top_right_bottom": [
+      0.44,
+      0.14,
+      0.64,
+      0.61
+    ],
+    "interpretation": "原图：暗铁门、破环、横栓与铆钉。要求：扁平金属镶板、门厚与背面完整。"
+  },
+  {
+    "title": "地面与金圈",
+    "normalized_box_left_top_right_bottom": [
+      0.28,
+      0.62,
+      0.78,
+      0.96
+    ],
+    "interpretation": "原图：深灰石板、轻纹脉和薄金圈。要求：金圈齐平，纹脉不做凸起。"
+  },
+  {
+    "title": "撤离角落",
+    "normalized_box_left_top_right_bottom": [
+      0.01,
+      0.48,
+      0.28,
+      0.99
+    ],
+    "interpretation": "原图：蓝绳箱、清单、工具台、空托位。要求：保持人用尺度与正在撤离的状态。"
+  },
+  {
+    "title": "骑士原始尺度",
+    "normalized_box_left_top_right_bottom": [
+      0.54,
+      0.48,
+      0.6,
+      0.63
+    ],
+    "interpretation": "原图中的角色像素很少。最终盔甲背面、羽翼与动作均为本次补全设计。"
+  }
+]
