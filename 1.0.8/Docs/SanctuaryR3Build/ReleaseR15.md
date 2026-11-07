@@ -7,7 +7,9 @@
 ## 下载内容
 
 - `KnightSanctuary-R15-macOS.zip`：独立 Mac 试玩程序及快速说明。包含 arm64 和 x86_64 可执行程序；实际启动与输入验证在 Apple M3 上完成。没有 Windows 运行包。
-- `KnightSanctuary-R15-UnitySource.zip`：完整 `1.0.8` Unity 源码、实际模型文件、可编辑 Blender、制作脚本、设计与检查记录。排除 Library、Temp、Logs、Builds 等缓存和构建产物。无需从 Git LFS 另下载模型即可打开此源码 ZIP。
+- `KnightSanctuary-R15-UnityProject.zip`：可打开的 `1.0.8` Unity 工程，包含 Assets、Packages、ProjectSettings 与实际模型。
+- `KnightSanctuary-R15-DesignSources.zip`：同一工程的 Blender、制作脚本、设计与检查记录。两个源码 ZIP 均解压到同一父目录，合并 `1.0.8` 文件夹即可还原完整交付；文件互不重复。
+- 源码包排除 Library、Temp、Logs、Builds 等缓存和构建产物，包含实际模型，无需从 Git LFS 另下载。
 - `SHA256SUMS.txt` 和 `ReleaseManifest.json`：下载校验和与来源提交。
 
 ## Mac 试玩
