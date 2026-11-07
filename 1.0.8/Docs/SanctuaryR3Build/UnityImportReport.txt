@@ -1,7 +1,7 @@
 Stage: first engine import, NOT final acceptance
 Environment bounds: Center: (0.00, 18.04, 0.00), Extents: (33.20, 18.39, 37.20)
 Environment renderers: 4776
-Character skinned meshes: 380
+Character skinned meshes: 360
 Paladin_R3_Rig|A01_SlowWalk duration=1.1
 Paladin_R3_Rig|A02_Dash duration=0.95
 Paladin_R3_Rig|A03_JumpAttack duration=1.6

@@ -7,19 +7,8 @@
       "sampled_poses_120hz": 133,
       "cloth_min_world_z_m": 0.05555638670921326,
       "sole_min_world_z_m": 0.003974180668592453,
-      "cloth_armor_surface_overlap_count": 2,
-      "overlap_examples": [
-        {
-          "frame": 12.5,
-          "cloth": "C01_FoldedPanel_Front.L",
-          "armor": "R05_PointKneeShield.001"
-        },
-        {
-          "frame": 45.5,
-          "cloth": "C01_FoldedPanel_Front.R",
-          "armor": "R05_PointKneeShield"
-        }
-      ],
+      "cloth_armor_surface_overlap_count": 0,
+      "overlap_examples": [],
       "rear_joint_angle_range_rad": [
         0.16536185145378113,
         0.20083627104759216

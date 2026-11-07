@@ -4,7 +4,7 @@ from pathlib import Path
 from mathutils.bvhtree import BVHTree
 P=Path(__file__).resolve().parents[2];bpy.ops.wm.open_mainfile(filepath=str(P/'Blender/SanctuaryR3/Paladin_R3_Animated.blend'));s=bpy.context.scene;r=bpy.data.objects['Paladin_R3_Rig']
 feathers=[o for o in s.objects if o.type=='MESH' and o.name.startswith('W01_') and any(k in o.name for k in ['Primary','Secondary','Covert'])]
-body=[o for o in s.objects if o.type=='MESH' and o.name.startswith(('R01_R7_OpenVisor','R02_CurvedBreast','R02_SeparateBack','R03_LayeredShoulder','R03_R7_PointShoulder','R03_R11_ShoulderShell'))]
+body=[o for o in s.objects if o.type=='MESH' and o.name.startswith(('R01_R7_OpenVisor','R02_CurvedBreast','R02_SeparateBack','R03_LayeredShoulder','R03_R7_PointShoulder','R03_R11_ShoulderShell','R03_R16_FittedRerebrace','R03_R16_UpperArmUnderlayer'))]
 def tree(o,dg):
  ev=o.evaluated_get(dg);me=ev.to_mesh();v=[ev.matrix_world@p.co for p in me.vertices];f=[tuple(p.vertices) for p in me.polygons];ev.to_mesh_clear();return BVHTree.FromPolygons(v,f)
 reports=[]
