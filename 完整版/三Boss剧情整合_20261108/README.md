@@ -26,4 +26,4 @@ ZIP 使用 Git LFS 保存；网页请使用文件的 Download 下载，或克隆
 
 本提交的完整 Unity 工程位于仓库 [`1.0.8/`](../../1.0.8/README.md)，使用 Unity 6000.3.25f1。入口为 `Assets/Scenes/IMMonster_ThreeBoss_Book.unity`；运行后默认打开三 Boss 书页。构建与验收步骤见 [整合说明](../../1.0.8/Docs/ThreeBoss/README.md)。
 
-本轮提交在独立 `codex/three-boss-book-20261107` 分支，未合并 main。
+当前交付分支为 `exe`。游戏包与完整 Unity 工程均在本分支。
