@@ -1,6 +1,6 @@
 # Arcane Archive 魔法图书馆 · 1.0.8
 
-**当前交付：2026-11-07 · 黄金羽翼圣骑士与圣堂 R15 试玩版。** 分支 `codex/knight-sanctuary-20261107`；直接打开 `Assets/Scenes/BossTests/Knight_Sanctuary_R3_Combat.unity`。提供 Mac 试玩包和完整 Unity 源码，详见 [R15 下载与接入说明](Docs/SanctuaryR3Build/ReleaseR15.md)。仅负责本骑士场景，三 Boss 整合由其他同学完成，最终美术尚未验收。
+**当前交付：2026-11-07 · 黄金羽翼圣骑士与圣堂 R15 试玩版。** 分支 `codex/knight-sanctuary-20261107`；直接打开 `Assets/Scenes/BossTests/Knight_Sanctuary_R3_Combat.unity`。提供 Mac 试玩包和完整 Unity 源码，详见 [R15 下载与接入说明](Docs/SanctuaryR3Build/ReleaseR15.md)。 [GitHub 试玩下载](https://github.com/yao8324/project123/releases/tag/knight-sanctuary-playtest-20261107) 已发布，核验记录见 [交付记录](Docs/SanctuaryR3Build/GitHubDeliveryR15.md)。开发分支另含 R16/R17 后续模型修订，尚未进入 R15 下载包。仅负责本骑士场景，三 Boss 整合由其他同学完成，最终美术尚未验收。
 
 以下保留原 1.0.8 历史记录；其中 lixiang 分支、旧场景、旧构建和“不发布 Release”描述属于之前交付，不适用于本次 R15 下载包。
 
