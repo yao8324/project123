@@ -6,11 +6,25 @@ namespace ArcaneArchive.Core
     {
         Vector3 knightDestination;
         bool knightBlinked;
+        int knightBarrageRound;
+        public int KnightBarrageRound=>knightBarrageRound+1;
         public Vector3 KnightMobilityDestination=>knightDestination;
         bool KnightBlinkMove=>knightMove==KnightMove.BlinkChase || knightMove==KnightMove.BlinkBarrage;
 
         void ResetKnightMobility()
-        {knightBlinked=false;PlanKnightDestination();}
+        {knightBlinked=false;knightBarrageRound=0;PlanKnightDestination();}
+
+        bool ContinueKnightBarrage()
+        {
+            if(knightMove!=KnightMove.BlinkBarrage || knightBarrageRound>=2)return false;
+            // Keep already released projectiles alive; each round gets its own warning and blink.
+            knightBarrageRound++;knightImpact=0;knightBlinked=false;
+            knightOrigin=arena.boss.position;knightTarget=transform.position;
+            knightForward=arena.boss.forward;PlanKnightDestination();
+            SetState(State.Telegraph);UpdateKnightWarning();
+            PlaySound(definition.warningSound,.3f);
+            return true;
+        }
 
         void PlanKnightDestination()
         {
@@ -26,11 +40,11 @@ namespace ArcaneArchive.Core
             }
             if(knightMove==KnightMove.BlinkBarrage)
             {
-                Vector3 side=Vector3.Cross(Vector3.up,forward)*(knightPattern%2==0?1:-1);
+                Vector3 side=Vector3.Cross(Vector3.up,forward)*((knightPattern+knightBarrageRound)%2==0?1:-1);
                 Vector3 first=SafeKnightDestination(knightOrigin+side*knightDefinition.sideBlinkTravel-forward*1.2f);
                 Vector3 other=SafeKnightDestination(knightOrigin-side*knightDefinition.sideBlinkTravel-forward*1.2f);
                 // Use the free side when a pillar blocks the preferred orbit direction.
-                desired=(first-knightOrigin).sqrMagnitude>=(other-knightOrigin).sqrMagnitude?first:other;
+                desired=(first-knightOrigin).sqrMagnitude>=1f?first:other;
             }
             knightDestination=SafeKnightDestination(desired);
         }

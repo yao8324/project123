@@ -22,11 +22,13 @@ namespace ArcaneArchive.Visuals
         float previousClock = -1, distance;
         Vector3 previousPosition, leftPlant, rightPlant;
         bool planted, initialized;
+        Quaternion leftHandBind;
         KnightArenaPresentation environment;
 
         void Initialize(BossEncounter encounter)
         {
             initialized = true; previousPosition = transform.position;
+            leftHandBind=visual.leftHand.localRotation;
             if (ribbons != null) foreach (var chain in ribbons)
             {
                 if (chain == null || chain.bones == null) continue;
@@ -79,8 +81,10 @@ namespace ArcaneArchive.Visuals
             if (TwoHandWeight > .001f)
             {
                 SolveArm(visual.leftArm, visual.leftForearm, visual.leftHand, leftTarget, 1, TwoHandWeight);
-                visual.leftHand.rotation = Quaternion.Slerp(visual.leftHand.rotation, leftOrientation, TwoHandWeight);
+                if(!visual.sealedGreatswordGrip)visual.leftHand.rotation = Quaternion.Slerp(visual.leftHand.rotation, leftOrientation, TwoHandWeight);
             }
+            if(visual.sealedGreatswordGrip)
+                visual.leftHand.rotation=Quaternion.Slerp(visual.leftHand.parent.rotation*leftHandBind,leftOrientation,TwoHandWeight);
             visual.weapon.SetPositionAndRotation(weaponPosition, weaponRotation);
             RightGripError = Vector3.Distance(visual.rightHand.position, rightGrip.position);
             LeftGripError = Vector3.Distance(visual.leftHand.position, leftGrip.position);

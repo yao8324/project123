@@ -48,12 +48,12 @@ namespace ArcaneArchive.Core
             var list=new System.Collections.Generic.List<KnightMoveSpec>(moves ?? new KnightMoveSpec[0]);
             AddMove(list,new KnightMoveSpec{move=KnightMove.LeapCleave,title="踏光·跳劈",hint="落点光环锁定后侧闪；落地重劈可举盾",warning=.95f,lockTime=.4f,duration=1.08f,recovery=1.2f,damage=28,reach=3.8f,arc=360,impacts=new[]{.72f}});
             AddMove(list,new KnightMoveSpec{move=KnightMove.BlinkChase,title="追誓·瞬斩",hint="光环预告瞬移落点；显形后侧闪或弹反",warning=1.2f,lockTime=.65f,duration=.66f,recovery=1.05f,damage=24,reach=4.8f,arc=140,impacts=new[]{.25f}});
-            AddMove(list,new KnightMoveSpec{move=KnightMove.BlinkBarrage,title="折光·封印幕",hint="侧向闪现后一轮扇形封印弹；横移穿隙或吞印",warning=1.35f,lockTime=.8f,duration=.55f,recovery=1.25f,damage=8,reach=18,arc=56,impacts=new[]{.12f}});
+            AddMove(list,new KnightMoveSpec{move=KnightMove.BlinkBarrage,title="折光·封印幕",hint="侧闪后释放一轮封印弹，连续三次；横移或吞印",warning=1.35f,lockTime=.8f,duration=.55f,recovery=1.25f,damage=8,reach=18,arc=56,impacts=new[]{.12f}});
             moves=list.ToArray();
             // Migrate existing production assets as well as freshly built configurations.
             var barrage=Get(KnightMove.BlinkBarrage);
             barrage.impacts=new[]{.12f};barrage.duration=.55f;
-            barrage.hint="侧向闪现后一轮扇形封印弹；横移穿隙或吞印";
+            barrage.hint="侧闪后释放一轮封印弹，连续三次；横移或吞印";
         }
         static void AddMove(System.Collections.Generic.List<KnightMoveSpec> list,KnightMoveSpec spec)
         {if(!list.Exists(item=>item.move==spec.move))list.Add(spec);}

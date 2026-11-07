@@ -14,6 +14,7 @@ namespace ArcaneArchive.Visuals
         public GameObject wardShield;
         public KnightRefinedEffects refinedEffects;
         public KnightRigConstraints productionRig;
+        public bool sealedGreatswordGrip;
         public KnightOathPresentation oathPresentation;
         Vector3 lastPosition;
         float lastClock,changeAt;
@@ -161,10 +162,27 @@ namespace ArcaneArchive.Visuals
             if(move==KnightMove.LeapCleave && active && age>=.7f)compression=.3f*Mathf.Exp(-Mathf.Pow((age-.77f)/.16f,2));
             visualRoot.localPosition=Vector3.Lerp(visualRoot.localPosition,visualBase-Vector3.up*compression,follow);
             Quaternion weaponTarget=Quaternion.FromToRotation(Vector3.up,axis.normalized);
+            if(sealedGreatswordGrip)
+            {
+                // Define both blade axis and blade face: a greatsword must lead with its edge.
+                bool horizontal=move==KnightMove.OrbitSweep || move==KnightMove.BlinkChase ||
+                    move==KnightMove.OathCombo && !(active && age>=1.46f);
+                bool overhead=move==KnightMove.LeapCleave || move==KnightMove.GateCleave ||
+                    move==KnightMove.OathCombo && active && age>=1.46f;
+                Vector3 face=(windup||active)?horizontal?Vector3.up:overhead?Vector3.right:Vector3.forward:Vector3.forward;
+                Vector3 normal=Vector3.ProjectOnPlane(face,axis.normalized);
+                if(normal.sqrMagnitude<.001f)normal=Vector3.ProjectOnPlane(Vector3.right,axis.normalized);
+                weaponTarget=Quaternion.LookRotation(normal.normalized,axis.normalized);
+            }
             if(state==BossEncounter.State.Recovery)weaponTarget=Quaternion.Slerp(recoveryWeapon,weaponTarget,blend);
             float weaponFollow=1-Mathf.Exp(-(active?32:state==BossEncounter.State.Recovery?12:18)*dt);
             weaponWorld=Quaternion.RotateTowards(weaponWorld,Quaternion.Slerp(weaponWorld,transform.rotation*weaponTarget,weaponFollow),1080*dt);
             weapon.rotation=weaponWorld;
+            if(sealedGreatswordGrip && productionRig && productionRig.rightGrip)
+            {
+                // Re-anchor at the wrist before IK; rotating the longer grip offset must not move the hand.
+                weapon.position=rightHand.position-weapon.rotation*productionRig.rightGrip.localPosition;
+            }
             float travelled=Vector3.ProjectOnPlane(transform.position-lastPosition,Vector3.up).magnitude;
             float speed=dt>.00001f?Mathf.Min(5,travelled/dt):0;
             // A teleport is not a stride; do not drag planted feet or create a huge gait step.

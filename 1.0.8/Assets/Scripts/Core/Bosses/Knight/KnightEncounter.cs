@@ -144,7 +144,11 @@ namespace ArcaneArchive.Core
                     ResolveKnightImpacts();
                     if(IsFinished || CurrentState!=State.Attack)break;
                     float duration=knightSpec.duration+(knightMove==KnightMove.OathCombo && Phase==2?.78f:0);
-                    if(stateTime>=duration){ClearKnightTelegraph(false);SetState(State.Recovery);}
+                    if(stateTime>=duration)
+                    {
+                        if(ContinueKnightBarrage())break;
+                        ClearKnightTelegraph(false);SetState(State.Recovery);
+                    }
                     break;
                 case State.Recovery:
                     if(knightDefinition.danceStyle && stateTime>knightSpec.recovery*.65f)FacePoint(transform.position,dt*.45f);
