@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/IMMonster_ThreeBoss_Book.unity
+    guid: 9afc0dc3dab564967926503b489a0f87
+  - enabled: 0
     path: Assets/Scenes/MilanLibrary_Magic_V6.unity
     guid: fbd9f74360eae4d489e0b1fdc5cd42fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LibraryMain.unity
     guid: 3ad8e6d4482c44cf84b46d9750f1d0c1
   m_configObjects:

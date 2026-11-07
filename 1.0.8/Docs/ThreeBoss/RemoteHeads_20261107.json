@@ -1,0 +1,74 @@
+[
+  {
+    "branch": "codex/knight-sanctuary-20261107",
+    "sha": "0bab7d125e7fcc43432ae1c82a51e4ab8cb34cbc",
+    "date": "2026-11-07T15:35:32Z",
+    "author": "laozifeiyi",
+    "message": "docs(knight): record verified GitHub playtest delivery",
+    "url": "https://github.com/yao8324/project123/commit/0bab7d125e7fcc43432ae1c82a51e4ab8cb34cbc"
+  },
+  {
+    "branch": "lixiang",
+    "sha": "c87b41cd55b5a783800f827945844bef8bcbb4dd",
+    "date": "2026-11-07T03:23:02Z",
+    "author": "loumengxinshang",
+    "message": "美化boss",
+    "url": "https://github.com/yao8324/project123/commit/c87b41cd55b5a783800f827945844bef8bcbb4dd"
+  },
+  {
+    "branch": "art",
+    "sha": "0cb81db760495be08f683b28bad3f9e08b0a68d6",
+    "date": "2026-11-06T11:46:03Z",
+    "author": "yao8324",
+    "message": "feat(art): add summoner and five undead minion model prototypes",
+    "url": "https://github.com/yao8324/project123/commit/0cb81db760495be08f683b28bad3f9e08b0a68d6"
+  },
+  {
+    "branch": "planner",
+    "sha": "bb047cf1eb4cf3ec3a0acc83038f974f94e4bd13",
+    "date": "2026-11-06T09:47:54Z",
+    "author": "yao8324",
+    "message": "docs(planner): record summoner boss rules and lich references",
+    "url": "https://github.com/yao8324/project123/commit/bb047cf1eb4cf3ec3a0acc83038f974f94e4bd13"
+  },
+  {
+    "branch": "main",
+    "sha": "3a775232c1a2aff7040a612ffff7c85555a2596b",
+    "date": "2026-11-06T04:06:05Z",
+    "author": "yao8324",
+    "message": "feat: unify main combat controls and HUD with 1.0.8",
+    "url": "https://github.com/yao8324/project123/commit/3a775232c1a2aff7040a612ffff7c85555a2596b"
+  },
+  {
+    "branch": "program",
+    "sha": "d45a98873c171c6549163de44a2290a2166ff9f5",
+    "date": "2026-11-05T08:57:46Z",
+    "author": "summer",
+    "message": "docs: add three-boss story plan and team development workflow",
+    "url": "https://github.com/yao8324/project123/commit/d45a98873c171c6549163de44a2290a2166ff9f5"
+  },
+  {
+    "branch": "codex/crystal-arena-review-20261104",
+    "sha": "ec365aad54ae3b9f83fe1bb7319ea6b732cf0fe5",
+    "date": "2026-11-04T13:36:30Z",
+    "author": "laozifeiyi",
+    "message": "docs: record GitHub review branch and LFS checkout requirements",
+    "url": "https://github.com/yao8324/project123/commit/ec365aad54ae3b9f83fe1bb7319ea6b732cf0fe5"
+  },
+  {
+    "branch": "codex/contest-feedback-20261104",
+    "sha": "de003e6b13aa1137c8f54a2222b0c839d3d257e7",
+    "date": "2026-11-04T12:51:32Z",
+    "author": "laozifeiyi",
+    "message": "docs: record feedback validation and independent review",
+    "url": "https://github.com/yao8324/project123/commit/de003e6b13aa1137c8f54a2222b0c839d3d257e7"
+  },
+  {
+    "branch": "codex/team-submit",
+    "sha": "b984c5db4077451c66df4da7d3f0a541ecf896ef",
+    "date": "2026-10-29T03:52:05Z",
+    "author": "laozifeiyi",
+    "message": "feat: integrate first IM MONSTER main baseline v0.1.0",
+    "url": "https://github.com/yao8324/project123/commit/b984c5db4077451c66df4da7d3f0a541ecf896ef"
+  }
+]

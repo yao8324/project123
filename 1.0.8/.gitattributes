@@ -26,3 +26,12 @@ Blender/KnightProductionV5/*.blend filter=lfs diff=lfs merge=lfs -text
 # Sanctuary R3 editable geometry and animated character.
 Assets/Art/Bosses/Knight/SanctuaryR3/*.fbx filter=lfs diff=lfs merge=lfs -text
 Blender/SanctuaryR3/*.blend filter=lfs diff=lfs merge=lfs -text
+
+# Three-boss integrated runtime exports.
+Assets/Art/ThreeBoss/Imported/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Art/ThreeBoss/Fonts/*.otf filter=lfs diff=lfs merge=lfs -text
+
+# Preserve the verbatim upstream license HTML snapshot.
+Docs/ThreeBoss/Licenses/OFFICIAL_LICENSE.html whitespace=-blank-at-eol,cr-at-eol
+
+Assets/Art/SealedDuelArena20261104/Materials/StarSky.asset filter=lfs diff=lfs merge=lfs -text

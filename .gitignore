@@ -41,3 +41,7 @@
 sysinfo.txt
 mono_crash.*
 .DS_Store
+
+# Unity performance package generates these during local builds.
+**/Assets/Resources/PerformanceTestRunInfo.json*
+**/Assets/Resources/PerformanceTestRunSettings.json*

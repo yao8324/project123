@@ -13,7 +13,7 @@ namespace ArcaneArchive.UI
     [DefaultExecutionOrder(-100), DisallowMultipleComponent]
     public sealed partial class RecoveryMenu : MonoBehaviour
     {
-        public enum Page { Explore, Menu, Help, Settings, Gallery, Book, Reading, Upload, Search, Exit, DeepExplore, BattleResult, CombatControls, Equipment }
+        public enum Page { Explore, Menu, Help, Settings, Gallery, Book, Reading, Upload, Search, Exit, DeepExplore, BattleResult, CombatControls, Equipment, CampaignStory }
         public ArcaneArchive.Core.KnightDefinition bookKnight;
         public TMP_FontAsset bookKnightFont;
         private ArcaneArchive.Core.BossEncounter Encounter => GetComponent<ArcaneArchive.Core.BossEncounter>();
@@ -81,6 +81,7 @@ namespace ArcaneArchive.UI
         }
         private void Update()
         {
+            if(Campaign && Campaign.ShowingStory)return;
             var controls=player.Bindings;
             if(controls && !controls.SuppressInputThisFrame &&
                 (controls.MenuAction.WasPressedThisFrame() || Keyboard.current?.escapeKey.wasPressedThisFrame==true))HandleEscape();
@@ -102,6 +103,7 @@ namespace ArcaneArchive.UI
         }
         public void HandleEscape()
         {
+            if(Campaign && Campaign.ShowingStory)return;
             if(Encounter && Encounter.IsFinished){ShowPage(Page.BattleResult);return;}
             switch(CurrentPage)
             {
@@ -116,6 +118,7 @@ namespace ArcaneArchive.UI
         public void Open()=>ShowPage(Page.Menu);
         public void Resume()
         {
+            if(Campaign && Campaign.ShowingStory)return;
             if(Encounter && Encounter.IsFinished){ShowPage(Page.BattleResult);return;}
             if(!IsOpen)return;
             if(player.Bindings)player.Bindings.Cancel();
@@ -153,14 +156,15 @@ namespace ArcaneArchive.UI
             body=Panel(overlay.transform,"Page_"+page,Vector2.zero,new Vector2(980,580),brass);
             var inner=Panel(body.transform,"Inner",Vector2.zero,new Vector2(976,576),ink);
             Label(inner.transform,"ARCANE ARCHIVE",new Vector2(-270,246),new Vector2(350,42),25,brass);
-            Label(inner.transform,page==Page.Equipment ? "行者档案  /  剑盾装备" : Encounter && Encounter.IsActive ? "禁书档案  /  封印试炼" : "魔法图书馆  /  UI 展示版",new Vector2(245,246),new Vector2(350,36),17,paper);
+            Label(inner.transform,page==Page.Equipment ? "行者档案  /  剑盾装备" : Encounter && Encounter.IsActive ? "禁书档案  /  封印试炼" : Campaign?"遗赠  /  三章故事":"魔法图书馆  /  UI 展示版",new Vector2(245,246),new Vector2(350,36),17,paper);
             Panel(inner.transform,"Rule",new Vector2(0,211),new Vector2(880,1),brass);
             footer=Label(inner.transform,"界面演示 · 资料功能待接入",new Vector2(0,-256),new Vector2(800,28),15,new Color(.7f,.66f,.57f));
-            if(page!=Page.Menu && page!=Page.BattleResult && page!=Page.Equipment)Button(inner.transform,"返回",new Vector2(-378,-205),new Vector2(130,40),HandleEscape);
-            if(page!=Page.BattleResult)Button(inner.transform,"×",new Vector2(450,246),new Vector2(40,36),Resume);
+            if(page!=Page.Menu && page!=Page.BattleResult && page!=Page.Equipment && page!=Page.CampaignStory)Button(inner.transform,"返回",new Vector2(-378,-205),new Vector2(130,40),HandleEscape);
+            if(page!=Page.BattleResult && page!=Page.CampaignStory)Button(inner.transform,"×",new Vector2(450,246),new Vector2(40,36),Resume);
             switch(page)
             {
                 case Page.Menu:BuildMenu(inner.transform);break;
+                case Page.CampaignStory:BuildCampaignStory(inner.transform);break;
                 case Page.Help:BuildHelp(inner.transform);break;
                 case Page.Settings:BuildSettings(inner.transform);break;
                 case Page.Gallery:BuildGallery(inner.transform);break;
@@ -178,6 +182,7 @@ namespace ArcaneArchive.UI
         }
         private void BuildMenu(Transform p)
         {
+            if(Campaign && !Encounter.IsActive){BuildCampaignBook(p);Button(p,"退出游戏",new Vector2(0,-208),new Vector2(220,38),()=>ShowPage(Page.Exit));return;}
             if(Encounter && Encounter.IsActive)
             {
                 Label(p,"封印厅 · 战斗暂停",new Vector2(0,153),new Vector2(760,50),32,brass);
@@ -185,7 +190,7 @@ namespace ArcaneArchive.UI
                 Button(p,"属性与装备  [I]",new Vector2(0,36),new Vector2(330,44),()=>{equipmentFromMenu=true;ShowPage(Page.Equipment);});
                 Button(p,"战斗按键",new Vector2(0,-18),new Vector2(330,44),()=>ShowPage(Page.CombatControls));
                 Button(p,"设置",new Vector2(0,-72),new Vector2(330,44),()=>ShowPage(Page.Settings));
-                Button(p,"放弃并返回图书馆",new Vector2(0,-126),new Vector2(330,44),()=>Encounter.ReturnToLibrary());
+                Button(p,"返回书页",new Vector2(0,-126),new Vector2(330,44),()=>{if(Campaign)Campaign.ReturnToBook();else Encounter.ReturnToLibrary();});
                 footer.text="暂停期间冻结角色与战斗 · Esc 继续";
                 return;
             }
@@ -411,6 +416,7 @@ namespace ArcaneArchive.UI
         }
         private void BuildDeepExplore(Transform p)
         {
+            if(Campaign && Campaign.definition){BuildCampaignBook(p);return;}
             Label(p,"封印之下",new Vector2(0,153),new Vector2(800,55),33,brass);
             Label(p,selectedBook.title+" · 选择挑战",new Vector2(0,85),new Vector2(820,45),23,paper);
             Button(p,"缄默典狱长 · 维纶",new Vector2(-205,-10),new Vector2(370,60),()=>StartSelectedEncounter(false));
@@ -438,6 +444,7 @@ namespace ArcaneArchive.UI
         }
         private void BuildBattleResult(Transform p)
         {
+            if(Campaign && Campaign.Active){BuildCampaignResult(p);return;}
             bool won=Encounter && Encounter.CurrentState==ArcaneArchive.Core.BossEncounter.State.Won;
             Label(p,Encounter?Encounter.ResultTitle:"试炼结束",new Vector2(0,110),new Vector2(800,65),36,brass);
             Label(p,Encounter?Encounter.ResultDescription:"",new Vector2(0,15),new Vector2(820,100),23,paper);

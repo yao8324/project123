@@ -5,6 +5,7 @@ namespace ArcaneArchive.Core
     [CreateAssetMenu(menuName = "Arcane Archive/Boss Definition")]
     public sealed class BossDefinition : ScriptableObject
     {
+        public int[] attackSequence;
         public string displayName = "缄默典狱长 · 维纶";
         [Min(1)] public float health = 1000;
         [Min(1)] public float playerHealth = 100;

@@ -70,7 +70,7 @@ namespace ArcaneArchive.Core
         int SelectAttack()
         {
             if(MeleeInRange && combatTime>=nextMeleeAt){nextMeleeAt=combatTime+definition.meleeCooldown;BossIntent="刃杖近斩";return 5;}
-            int[] order={0,3,2,4,1};int choice=order[pattern++%order.Length];float distance=HorizontalDistance(arena.boss.position,lastKnownPlayer);
+            int[] order=definition.attackSequence!=null && definition.attackSequence.Length>0?definition.attackSequence:new[]{0,3,2,4,1};int choice=order[pattern++%order.Length];float distance=HorizontalDistance(arena.boss.position,lastKnownPlayer);
             if(choice==4 && (distance<4 || distance>14 || combatTime-lastSeenAt>2.5f))choice=distance<4?1:0;
             if(combatTime-lastSeenAt>5)choice=1;
             BossIntent=choice==4?"锁定冲撞路线":"准备施法";return choice;
