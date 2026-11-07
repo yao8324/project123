@@ -1,0 +1,9 @@
+{
+  "new_skinned_meshes": 101,
+  "halo_opening_degrees": 30,
+  "halo_radial_width_m": 0.022,
+  "pivot_caps": 6,
+  "spar_sheaths": 6,
+  "rig_bones": 72,
+  "scope": "Hardware only; original feather counts and actions preserved. No envelope/clearance acceptance."
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Selected left hand vs shield handle surface overlap only,13poses/clip; no containment/all-equipment/continuous-time guarantee",
+  "reports": [
+    {
+      "clip": "A01_SlowWalk",
+      "sampled_poses": 13,
+      "surface_overlap_records": 0,
+      "hits": []
+    },
+    {
+      "clip": "A02_Dash",
+      "sampled_poses": 13,
+      "surface_overlap_records": 0,
+      "hits": []
+    },
+    {
+      "clip": "A03_JumpAttack",
+      "sampled_poses": 13,
+      "surface_overlap_records": 0,
+      "hits": []
+    }
+  ]
+}

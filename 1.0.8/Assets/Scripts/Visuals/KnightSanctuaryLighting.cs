@@ -14,6 +14,7 @@ namespace ArcaneArchive.Visuals
         AmbientMode oldMode;Color oldSky,oldEquator,oldGround,oldFogColor;
         float oldIntensity,oldFogDensity,oldReflection;bool oldFog,ownsState;
         RenderPipelineAsset oldGraphics,oldQuality;
+        int oldAntiAliasing;
         BossEncounter encounter;float previousClock=-1;
         UniversalAdditionalCameraData cameraData;bool oldPost;
         void OnEnable()
@@ -21,7 +22,7 @@ namespace ArcaneArchive.Visuals
             if(!Application.isPlaying)return;
             oldMode=RenderSettings.ambientMode;oldSky=RenderSettings.ambientSkyColor;oldEquator=RenderSettings.ambientEquatorColor;oldGround=RenderSettings.ambientGroundColor;
             oldIntensity=RenderSettings.ambientIntensity;oldFog=RenderSettings.fog;oldFogColor=RenderSettings.fogColor;oldFogDensity=RenderSettings.fogDensity;oldReflection=RenderSettings.reflectionIntensity;
-            oldGraphics=GraphicsSettings.defaultRenderPipeline;oldQuality=QualitySettings.renderPipeline;ownsState=true;
+            oldAntiAliasing=QualitySettings.antiAliasing;oldGraphics=GraphicsSettings.defaultRenderPipeline;oldQuality=QualitySettings.renderPipeline;ownsState=true;
             if(pipeline){GraphicsSettings.defaultRenderPipeline=pipeline;QualitySettings.renderPipeline=pipeline;}
             RenderSettings.ambientMode=AmbientMode.Trilight;
             RenderSettings.ambientSkyColor=new Color(.5f,.52f,.55f);RenderSettings.ambientEquatorColor=new Color(.31f,.30f,.29f);RenderSettings.ambientGroundColor=new Color(.23f,.22f,.21f);
@@ -47,7 +48,7 @@ namespace ArcaneArchive.Visuals
             if(!ownsState)return;
             RenderSettings.ambientMode=oldMode;RenderSettings.ambientSkyColor=oldSky;RenderSettings.ambientEquatorColor=oldEquator;RenderSettings.ambientGroundColor=oldGround;RenderSettings.ambientIntensity=oldIntensity;
             RenderSettings.fog=oldFog;RenderSettings.fogColor=oldFogColor;RenderSettings.fogDensity=oldFogDensity;RenderSettings.reflectionIntensity=oldReflection;
-            GraphicsSettings.defaultRenderPipeline=oldGraphics;QualitySettings.renderPipeline=oldQuality;
+            GraphicsSettings.defaultRenderPipeline=oldGraphics;QualitySettings.renderPipeline=oldQuality;QualitySettings.antiAliasing=oldAntiAliasing;
             if(cameraData)cameraData.renderPostProcessing=oldPost;
             ownsState=false;previousClock=-1;Pressure=0;
         }

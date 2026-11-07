@@ -1,0 +1,3 @@
+R3 material/lighting pass; not final visual acceptance.
+R5 maps: sparse warped mineral veins; metallic R and smoothness A masks; albedo sRGB and mask linear; gate and wood avoid double dark tint. Scene-space baked reflection cubemap, dedicated URP 4xMSAA and ACES.
+Lighting values are renderer settings, not verified scene lux.

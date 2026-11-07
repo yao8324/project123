@@ -7,6 +7,7 @@ namespace ArcaneArchive.Visuals
     public sealed class KnightVisuals : MonoBehaviour
     {
         public Transform torso, rightArm, leftArm, halo, swordTip;
+        public SanctuaryR3CombatVisuals sanctuaryR3;
         public bool refinedRig;
         public Transform rightForearm,leftForearm,rightHand,leftHand,weapon,visualRoot;
         public Transform leftThigh,rightThigh,leftShin,rightShin;
@@ -30,6 +31,7 @@ namespace ArcaneArchive.Visuals
         bool initialized;
         public void Present(BossEncounter encounter)
         {
+            if(sanctuaryR3){sanctuaryR3.Present(encounter);if(refinedEffects)refinedEffects.Present(encounter);return;}
             if(refinedRig){PresentRefined(encounter);return;}
             if(!initialized){torsoBase=torso.localPosition;initialized=true;}
             float age=encounter.AttackElapsed;

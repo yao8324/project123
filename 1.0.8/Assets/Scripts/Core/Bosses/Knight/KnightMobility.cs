@@ -91,7 +91,7 @@ namespace ArcaneArchive.Core
         void TickKnightMobilityAttack()
         {
             if(knightMove!=KnightMove.LeapCleave)return;
-            float t=Mathf.Clamp01(stateTime/.72f);
+            float t=Mathf.Clamp01(stateTime/Mathf.Max(.01f,knightDefinition.leapFlightDuration));
             Vector3 ground=arena.boss.position;ground.y=arena.transform.position.y;arena.boss.position=ground;
             Vector3 wanted=Vector3.Lerp(knightOrigin,knightDestination,Mathf.SmoothStep(0,1,t));
             Vector3 delta=wanted-ground;delta.y=0;

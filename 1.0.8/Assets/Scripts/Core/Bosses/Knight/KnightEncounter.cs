@@ -117,7 +117,7 @@ namespace ArcaneArchive.Core
                     }
                     if(knightMove==KnightMove.SealThrust)
                     {
-                        float wanted=knightDefinition.thrustTravel*Mathf.SmoothStep(0,1,Mathf.Clamp01((stateTime-.10f)/.34f));
+                        float wanted=knightDefinition.thrustTravel*(knightDefinition.sanctuaryDash ? Mathf.Clamp01(stateTime/.5f) : Mathf.SmoothStep(0,1,Mathf.Clamp01((stateTime-.10f)/.34f)));
                         knightTravel+=SweepBoss(knightForward,Mathf.Max(0,wanted-knightTravel),false);
                     }
                     if(knightMove==KnightMove.OrbitSweep)

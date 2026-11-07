@@ -22,3 +22,7 @@ Blender/KnightProductionV5/*.blend filter=lfs diff=lfs merge=lfs -text
 
 # Unity material YAML uses a trailing space for empty serialized fields.
 *.mat whitespace=-blank-at-eol
+
+# Sanctuary R3 editable geometry and animated character.
+Assets/Art/Bosses/Knight/SanctuaryR3/*.fbx filter=lfs diff=lfs merge=lfs -text
+Blender/SanctuaryR3/*.blend filter=lfs diff=lfs merge=lfs -text

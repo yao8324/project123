@@ -5,6 +5,7 @@ namespace ArcaneArchive.Visuals
     public sealed class BossArena : MonoBehaviour
     {
         public Transform spawn, boss;
+        public Transform bossSpawn;
         public WardenVisuals model;
         public GameObject pageProjectile, ringEffect, boltEffect, impactEffect;
         public LaserBeamVisuals laserEffect;

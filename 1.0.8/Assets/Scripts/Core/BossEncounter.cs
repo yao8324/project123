@@ -98,7 +98,7 @@ namespace ArcaneArchive.Core
             BossDistanceTravelled=0;orbitDirection=1;
             FractureSpawnCount=FractureHitCount=0;FracturePathLength=FractureTotalTurn=0;
             combat.ResetCombat(this); focusLost = false;
-            arena.boss.localPosition = new Vector3(0, 0, 4);
+            arena.boss.localPosition = arena.bossSpawn ? arena.transform.InverseTransformPoint(arena.bossSpawn.position) : new Vector3(0, 0, 4);
             arena.boss.localScale=Vector3.one*definition.bossScale;
             arena.boss.localRotation = Quaternion.Euler(0, 180, 0);
             if(!KnightMode)arena.model.floatingBody.localScale = Vector3.one;

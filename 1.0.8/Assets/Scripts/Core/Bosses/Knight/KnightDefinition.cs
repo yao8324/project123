@@ -29,6 +29,8 @@ namespace ArcaneArchive.Core
         public bool danceStyle;
         public float retreatDistance=2.2f, orbitTravel=2.4f, leapHeight=1.15f;
         [Header("1.0.8 mobility")]
+        public float leapFlightDuration=.72f;
+        public bool sanctuaryDash;
         public float pursuitLeapHeight=2.6f, pursuitLeapTravel=9f, blinkTravel=9f, sideBlinkTravel=5.5f;
         public KnightMoveSpec[] moves;
         public bool streamlinedKit;
@@ -36,7 +38,7 @@ namespace ArcaneArchive.Core
         public float barrageAimSpeed=110f, barrageHomingSpeed=120f, barrageHomingBudget=55f;
         public bool IsMoveEnabled(KnightMove move)
         {
-            return !streamlinedKit || move==KnightMove.OathCombo || move==KnightMove.OrbitSweep ||
+            return !streamlinedKit || (sanctuaryDash && move==KnightMove.SealThrust) || move==KnightMove.OathCombo || move==KnightMove.OrbitSweep ||
                 move==KnightMove.Heavenfall || move==KnightMove.LeapCleave ||
                 move==KnightMove.BlinkChase || move==KnightMove.BlinkBarrage;
         }

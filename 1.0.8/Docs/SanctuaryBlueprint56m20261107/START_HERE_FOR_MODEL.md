@@ -1,3 +1,5 @@
+> 施工修订：门侧管线终点已由 X=±9 m 修订为 ±12.5 m，见 ../SanctuaryR3Build/P05_ConstructionCorrection_R4.md 与对应 JSON。旧 PDF/ZIP 尚未合并该修订。
+
 # 可直接交给建模模型的任务
 
 按此包完成“终扉圣堂与黄金翼圣骑士 R3”的可编辑 3D 资产、场景及动画。不要把输出限制为图片或文字计划。
