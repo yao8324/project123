@@ -20,7 +20,7 @@ W,H=landscape(A3);INK='#242B32';GOLD='#AD874B';BLUE='#35697C';PALE='#F4F1E9';GRA
 def js(name,data): (DATA/name).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 def csvout(name,rows):
  with (DATA/name).open('w',newline='',encoding='utf-8-sig') as f:
-  w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+  w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator="\n");w.writeheader();w.writerows(rows)
 
 dims={'version':'R3-56m-winged','units':'m','coordinate_system':'Unity: +Y up, +Z north/gate; Blender Xb=Xu,Yb=Zu,Zb=Yu',
  'authority':'Numeric data and vector dimensions override generated image pixel proportions.',

@@ -26,13 +26,13 @@
   },
   {
     "file": "data/acceptance_scorecard.csv",
-    "bytes": 2266,
-    "sha256": "a3415d15dfbd9a8bf473b2389f3cb056a7a120bb082680c8e19fb0f097d1e49d"
+    "bytes": 2226,
+    "sha256": "8f99c54d777170d5f1cb5bfa08173e073da0aa4f0109374816034866586458ce"
   },
   {
     "file": "data/animation_states.csv",
-    "bytes": 1005,
-    "sha256": "a3ae709217bba269c21a52c2bcba004045e12dfca37ded5e6a314923740a04ff"
+    "bytes": 991,
+    "sha256": "18341f1e0c9100ae8549d092bf489ec5d4ffd03f07eb20bad8ab1af0e2297b31"
   },
   {
     "file": "data/atlas_pages.json",
@@ -56,13 +56,13 @@
   },
   {
     "file": "data/materials.csv",
-    "bytes": 902,
-    "sha256": "0786ed33de2e16f49e290ef5dc750e062f251c1753d83f2b4a3dac4406ee5d03"
+    "bytes": 889,
+    "sha256": "977270947cc11930756f9939944931fe59260f3aafb700e1eb9e883b47b5160f"
   },
   {
     "file": "data/module_placements.csv",
-    "bytes": 5166,
-    "sha256": "1647ba55af634779db5190fe2c5b62866e939be99a85ca1a81188d7773287187"
+    "bytes": 5108,
+    "sha256": "a813b0a697166fbe1ee0be2116050340dd7930d5e1fccc411de5de88b7f6aac4"
   },
   {
     "file": "data/package_validation.json",
@@ -221,8 +221,13 @@
   },
   {
     "file": "source/make_package.py",
-    "bytes": 38284,
-    "sha256": "3ea957d561e85ed6d5e318037e1f34354a681c73b537f73659b06ccb43b7e310"
+    "bytes": 38304,
+    "sha256": "a9c68c97670e1bc9efb6ca571a61ee3141fe763bf636a4bc9bdda70b370bed51"
+  },
+  {
+    "file": "source/package_zip.py",
+    "bytes": 1110,
+    "sha256": "b864baa18fa56e2c11cbe31a1aaf1aa5b676edc12fdb195bf22c90f0ef953a43"
   },
   {
     "file": "source/validate_package.py",
