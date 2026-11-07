@@ -1,0 +1,131 @@
+{
+  "scope": "120Hz samples including half-frames of60fps clips, actual evaluated cloth/leg surfaces; BVH surface overlaps only, no containment or continuous-time certification",
+  "clips": [
+    {
+      "action": "A01_SlowWalk",
+      "frames": 67,
+      "sampled_poses_120hz": 133,
+      "cloth_min_world_z_m": 0.05595606565475464,
+      "sole_min_world_z_m": 0.003974180668592453,
+      "cloth_armor_surface_overlap_count": 0,
+      "overlap_examples": [],
+      "rear_joint_angle_range_rad": [
+        0.16536185145378113,
+        0.20083627104759216
+      ],
+      "maximum_leg_length_error_m": 1.683907723259992e-07,
+      "walk_stance_max_head_drift_m": 0.0011632732492120462
+    },
+    {
+      "action": "A02_Dash",
+      "frames": 58,
+      "sampled_poses_120hz": 115,
+      "cloth_min_world_z_m": 0.13621443510055542,
+      "sole_min_world_z_m": 0.004641649778932333,
+      "cloth_armor_surface_overlap_count": 16,
+      "overlap_examples": [
+        {
+          "frame": 7.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 7.5,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 8.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 8.5,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 9.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 9.5,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 10.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 10.5,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 44.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 44.5,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 45.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 45.5,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 46.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 46.5,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 47.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        },
+        {
+          "frame": 49.0,
+          "cloth": "C01_FoldedPanel_Front.R",
+          "armor": "R05_PointKneeShield"
+        }
+      ],
+      "rear_joint_angle_range_rad": [
+        0.10561656951904297,
+        0.2271144986152649
+      ],
+      "maximum_leg_length_error_m": 3.411580867807018e-07,
+      "walk_stance_max_head_drift_m": null
+    },
+    {
+      "action": "A03_JumpAttack",
+      "frames": 97,
+      "sampled_poses_120hz": 193,
+      "cloth_min_world_z_m": 0.041741132736206055,
+      "sole_min_world_z_m": 0.004507993347942829,
+      "cloth_armor_surface_overlap_count": 0,
+      "overlap_examples": [],
+      "rear_joint_angle_range_rad": [
+        0.10561656951904297,
+        0.19716891646385193
+      ],
+      "maximum_leg_length_error_m": 3.621672482467808e-07,
+      "walk_stance_max_head_drift_m": null
+    }
+  ]
+}

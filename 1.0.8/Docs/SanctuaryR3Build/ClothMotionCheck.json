@@ -5,7 +5,7 @@
       "action": "A01_SlowWalk",
       "frames": 67,
       "sampled_poses_120hz": 133,
-      "cloth_min_world_z_m": 0.05555638670921326,
+      "cloth_min_world_z_m": 0.05595606565475464,
       "sole_min_world_z_m": 0.003974180668592453,
       "cloth_armor_surface_overlap_count": 0,
       "overlap_examples": [],
@@ -20,31 +20,10 @@
       "action": "A02_Dash",
       "frames": 58,
       "sampled_poses_120hz": 115,
-      "cloth_min_world_z_m": 0.13560247421264648,
+      "cloth_min_world_z_m": 0.13621443510055542,
       "sole_min_world_z_m": 0.004641649778932333,
-      "cloth_armor_surface_overlap_count": 4,
-      "overlap_examples": [
-        {
-          "frame": 6.5,
-          "cloth": "C01_FoldedPanel_Front.R",
-          "armor": "R05_PointKneeShield"
-        },
-        {
-          "frame": 47.5,
-          "cloth": "C01_FoldedPanel_Front.R",
-          "armor": "R05_PointKneeShield"
-        },
-        {
-          "frame": 48.5,
-          "cloth": "C01_FoldedPanel_Front.R",
-          "armor": "R05_PointKneeShield"
-        },
-        {
-          "frame": 49.5,
-          "cloth": "C01_FoldedPanel_Front.R",
-          "armor": "R05_PointKneeShield"
-        }
-      ],
+      "cloth_armor_surface_overlap_count": 0,
+      "overlap_examples": [],
       "rear_joint_angle_range_rad": [
         0.10561656951904297,
         0.2271144986152649
@@ -56,7 +35,7 @@
       "action": "A03_JumpAttack",
       "frames": 97,
       "sampled_poses_120hz": 193,
-      "cloth_min_world_z_m": 0.04218009114265442,
+      "cloth_min_world_z_m": 0.041741132736206055,
       "sole_min_world_z_m": 0.004507993347942829,
       "cloth_armor_surface_overlap_count": 0,
       "overlap_examples": [],
