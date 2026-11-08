@@ -1,0 +1,29 @@
+{
+  "objects": 1434,
+  "pipes": 4,
+  "shelf_groups": [
+    {
+      "side": -1,
+      "z_m": -12,
+      "objects": 240
+    },
+    {
+      "side": -1,
+      "z_m": 12,
+      "objects": 240
+    },
+    {
+      "side": 1,
+      "z_m": -12,
+      "objects": 240
+    },
+    {
+      "side": 1,
+      "z_m": 12,
+      "objects": 240
+    }
+  ],
+  "min_conservative_clearance_m": 3.805515241043338,
+  "routing_note": "Two specified routes share each north riser; union geometry emitted once with tee, no duplicate coplanar pipes.",
+  "pending": "Wall niche recess depth, clamp bolts/engravings, weathering, all final acceptance."
+}

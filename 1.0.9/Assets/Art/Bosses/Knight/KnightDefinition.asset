@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c716842c216a14c883aa36c53a2cd4, type: 3}
+  m_Name: KnightDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneArchive.Core.KnightDefinition
+  combat: {fileID: 11400000, guid: 3bfa07e69ccd1554c840620ed2451d9f, type: 2}
+  arena: {fileID: 2366145325065537601, guid: 7b851cb44f319524e97c3e8a05edbfbf, type: 3}
+  blockable: {fileID: 2100000, guid: cc0af27f16bb2b245a140d7790e270b4, type: 2}
+  unblockable: {fileID: 2100000, guid: 169f20173a3e3d740b239da4ca740ebd, type: 2}
+  absorbable: {fileID: 2100000, guid: 4bf5e86a403999a4fa0bfe41fc341ddb, type: 2}
+  phaseThreshold: 0.55
+  storyThreshold: 0.2
+  observeTime: 0.95
+  phaseTwoObserve: 0.7
+  walkSpeed: 2.5
+  guardDamageMultiplier: 0.2
+  guardArc: 120
+  thrustTravel: 4
+  projectileSpeed: 14
+  projectileDamage: 12
+  projectileInterval: 0.32
+  moves:
+  - move: 0
+    title: "\u8A93\u7EA6\u8FDE\u65A9"
+    hint: "\u8A93\u7EA6\u8FDE\u65A9 \xB7 \u5F39\u53CD\u6216\u7ED5\u4FA7\uFF0C\u7559\u610F\u540E\u7EED\u65A9"
+    warning: 0.9
+    lockTime: 0.25
+    duration: 1.25
+    recovery: 1.15
+    damage: 18
+    reach: 3.9
+    width: 0
+    arc: 120
+    impacts:
+    - 0.18
+    - 0.95
+  - move: 1
+    title: "\u8D2F\u95E8\u7A81\u523A"
+    hint: "\u8D2F\u95E8\u7A81\u523A \xB7 \u91D1\u7EBF\u9501\u5B9A\u540E\u4FA7\u95EA"
+    warning: 1.15
+    lockTime: 0.35
+    duration: 0.65
+    recovery: 1.35
+    damage: 30
+    reach: 6.4
+    width: 1.2
+    arc: 0
+    impacts:
+    - 0.44
+  - move: 2
+    title: "\u5C01\u5370\u98DE\u77DB"
+    hint: "\u5C01\u5370\u98DE\u77DB \xB7 \u4FA7\u79FB\u6216\u6B63\u9762\u541E\u5370"
+    warning: 1
+    lockTime: 0.3
+    duration: 0.95
+    recovery: 1.1
+    damage: 12
+    reach: 0
+    width: 0
+    arc: 360
+    impacts:
+    - 0.1
+    - 0.42
+    - 0.74
+  - move: 3
+    title: "\u95E8\u6249\u88C1\u65AD"
+    hint: "\u95E8\u6249\u88C1\u65AD \xB7 \u79BB\u5F00\u91D1\u8272\u5730\u5E26\u6216\u8D77\u8DF3"
+    warning: 1.25
+    lockTime: 0.5
+    duration: 0.55
+    recovery: 1.5
+    damage: 28
+    reach: 12
+    width: 1.35
+    arc: 0
+    impacts:
+    - 0.15
+  - move: 4
+    title: "\u5B88\u95E8\u76FE\u8A93"
+    hint: "\u5B88\u95E8\u76FE\u8A93 \xB7 \u7ED5\u4FA7\u6216\u76FE\u51FB\uFF0C\u8FDE\u7EED\u6B63\u9762\u653B\u51FB\u4F1A\u53CD\u5236"
+    warning: 0.65
+    lockTime: 0.25
+    duration: 1.8
+    recovery: 0.8
+    damage: 0
+    reach: 2.3
+    width: 0
+    arc: 120
+    impacts: []
+  - move: 5
+    title: "\u9000\u754C\u76FE\u51FB"
+    hint: "\u9000\u754C\u76FE\u51FB \xB7 \u62AC\u76FE\u540E\u9000\uFF0C\u4FDD\u6301\u8DDD\u79BB"
+    warning: 0.65
+    lockTime: 0.3
+    duration: 0.5
+    recovery: 1
+    damage: 16
+    reach: 2.8
+    width: 0
+    arc: 110
+    impacts:
+    - 0.2

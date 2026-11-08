@@ -1,0 +1,16 @@
+{
+    "complete": true,
+    "failure": "",
+    "scope": "Editable art scene in Play mode with real Unity rendering; no combat simulation. Triangle metric includes MeshFilter geometry only.",
+    "checks": [
+        "Editable art scene contains sanctuary prefab",
+        "Preview camera exists",
+        "Art preview uses sanctuary pipeline in Play",
+        "Art hierarchy has no missing scripts",
+        "Art preview has no runtime errors"
+    ],
+    "errors": [],
+    "renderers": 280,
+    "triangles": 2027686,
+    "lights": 8
+}

@@ -1,0 +1,10 @@
+{
+  "scope": "Conservative lateral AABB separation of north service equipment from all E06 gate parts; not general architectural collision verification",
+  "gate_outer_abs_x_m": 11.399999618530273,
+  "equipment_inner_abs_x_m": 12.275,
+  "gap_m": 0.8750003814697269,
+  "minimum_required_m": 0.6,
+  "north_path_z_m": 35.65,
+  "riser_abs_x_m": 12.5,
+  "design_correction": "Original x=+-9 intersected gate frames. Corrected construction routing x=+-12.5 supersedes only the original north terminal positions."
+}

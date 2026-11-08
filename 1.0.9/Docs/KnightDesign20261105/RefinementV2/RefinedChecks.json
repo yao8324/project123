@@ -1,0 +1,127 @@
+{
+  "total": 30,
+  "failed": 0,
+  "scope": "Controlled Play Mode integration using production movement, damage and VFX methods; not full human playthrough or standalone build",
+  "checks": [
+    {
+      "name": "refined configuration has eight moves",
+      "passed": true
+    },
+    {
+      "name": "articulated original mesh replaces cube model",
+      "passed": true
+    },
+    {
+      "name": "twelve independently articulated oath ribbons",
+      "passed": true
+    },
+    {
+      "name": "polearm grip stays parented to the hand",
+      "passed": true
+    },
+    {
+      "name": "orbit warning has no damage",
+      "passed": true
+    },
+    {
+      "name": "orbit first hit resolves once",
+      "passed": true
+    },
+    {
+      "name": "orbit translates tangentially by actual sweep",
+      "passed": true
+    },
+    {
+      "name": "orbit first hit is not repeated",
+      "passed": true
+    },
+    {
+      "name": "orbit second hit has separate timing",
+      "passed": true
+    },
+    {
+      "name": "orbit provides its declared recovery",
+      "passed": true
+    },
+    {
+      "name": "orbit can be parried and interrupted",
+      "passed": true
+    },
+    {
+      "name": "orbit travel stops at a solid wall",
+      "passed": true
+    },
+    {
+      "name": "blade summon retreats by 2.2 metres",
+      "passed": true
+    },
+    {
+      "name": "retreat warning does not cause contact damage",
+      "passed": true
+    },
+    {
+      "name": "retreat still emits exactly three absorbable blades",
+      "passed": true
+    },
+    {
+      "name": "heavenfall final target does not follow late movement",
+      "passed": true
+    },
+    {
+      "name": "whole boss including hitbox rises with the animation",
+      "passed": true
+    },
+    {
+      "name": "aerial warning is harmless",
+      "passed": true
+    },
+    {
+      "name": "heavenfall covers the displayed locked circle",
+      "passed": true
+    },
+    {
+      "name": "outside heavenfall radius is safe",
+      "passed": true
+    },
+    {
+      "name": "jumping alone cannot avoid vertical lightning",
+      "passed": true
+    },
+    {
+      "name": "heavenfall footprints remain inside arena",
+      "passed": true
+    },
+    {
+      "name": "locked circle can be escaped before real impact",
+      "passed": true
+    },
+    {
+      "name": "real release creates a finite lightning effect",
+      "passed": true
+    },
+    {
+      "name": "pause freezes airborne pose and damage clock",
+      "passed": true
+    },
+    {
+      "name": "interrupt safely grounds aerial boss and cancels damage",
+      "passed": true
+    },
+    {
+      "name": "interrupt cleans temporary lightning and blade trails",
+      "passed": true
+    },
+    {
+      "name": "actual vertical lightning damages locked target once",
+      "passed": true
+    },
+    {
+      "name": "same lightning impact cannot repeat",
+      "passed": true
+    },
+    {
+      "name": "refined encounter returns to original session",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/ForbiddenWardenRigged.prefab",
+    "change": "modified",
+    "beforeSha256": "ac8701d92c07d6a6e5fc75b25c820aba5498ff449911eff6671e5e6927490451",
+    "afterSha256": "0552c7edcb3be6264834ebfcd617706c48170c421905c3619621dce4e3918ef0"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/IlluminatedFractures.prefab",
+    "change": "modified",
+    "beforeSha256": "bf40a6d236f1393ee5186b989e72c32ea9179e6a7d888c754fd755b26a8748f4",
+    "afterSha256": "6dbd7307b3bee4093ee4d11a5fd9b727e4f56fb4854fb619c4827933b797719c"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/IlluminatedLaser.prefab",
+    "change": "modified",
+    "beforeSha256": "6769a01f8488185b7a59b41a80c4e7fdd98821f43b18e63e9166edb6bda429ba",
+    "afterSha256": "05b06b24b8425dd238a0a38304fb639a16b509f292347a6411cfa5b29b883779"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Prefabs/SealChamberRigged.prefab",
+    "change": "modified",
+    "beforeSha256": "2963ad4df95e3ef677c84b5b97b51dd73150a331e14c13b9f29de86c6954eef6",
+    "afterSha256": "0234e9cbaf43e9b361cf369ab8dbe3df8e662b1d00739a19f010e14d4182acba"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/WardenEncounter.asset",
+    "change": "modified",
+    "beforeSha256": "f24341abe27b1dc88534fd8c17a9b3c6939a24e92a424f1220fe34d6d471214c",
+    "afterSha256": "9a7d8300ed7121065df69b247ad0471103bdffd3e6757cc42eba4c7d7652dc58"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeStrike.anim",
+    "change": "modified",
+    "beforeSha256": "ca69ae81ff1a606eea2a4d1869187d6815229339442e6134bd8ebaa8c864df03",
+    "afterSha256": "0cd078e50e40814c3b816a182b50b61491f1dd27b823ac531820454926c9393f"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeWindup.anim",
+    "change": "modified",
+    "beforeSha256": "7186fc9e20f7c10cae7967b801ec04c9f65ba01f742b6da1f5f6fe65db35ecc7",
+    "afterSha256": "5c6a34e13b8e2fe6dab796e78e4d4c2bee60fc2e638ef2740d6fc6393e784cdd"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset",
+    "change": "modified",
+    "beforeSha256": "07ad159fe6cd458bd5bbc45cfed6f229954c8a968eaff0a20aaa72d190e57b6f",
+    "afterSha256": "cfc7ebed69b428ed90568cb233ce999ffd887148fab26df55b3fbd19484490aa"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossCombatBehaviours.cs",
+    "change": "modified",
+    "beforeSha256": "ae357dbec436c1bbf62e9fd5ec457a867ca28ddec249ba257d70e2eedec9fa2a",
+    "afterSha256": "1406ba140e8fa533e392a2674b86126602322e03dea42b9230aa9343e2a88535"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossDefinition.cs",
+    "change": "modified",
+    "beforeSha256": "19dc00e71795a10e0673d90fb1927dfcab6b854f7cbbc716a6cbdd0d92279a77",
+    "afterSha256": "b2a1acdf6581907e638063a2dbfbe3884921af9b66a840822bae845fd7ea746b"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "change": "modified",
+    "beforeSha256": "f7e492375476335c2a5967991c3e4dbfe6c9f05e721c494e8eda09edb931a04c",
+    "afterSha256": "3b4deb3648d2e2f491628b0ab322cfc32f43058e7ece1ea15f51366cc17d3715"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossRitualEffects.cs",
+    "change": "modified",
+    "beforeSha256": "3c28e158e78992428e1924da23f3216de31c162dc32d0426196270c9d34ae6f1",
+    "afterSha256": "738f9d8ef6591ad3fa1a61a965a2dc0bcfa386df3f874e4e808b5aa9fa944448"
+  },
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs",
+    "change": "modified",
+    "beforeSha256": "e13ed0f5cd8568c42aeb0ca95ec8792acf7a18ebb4519ddf2507bcd405215322",
+    "afterSha256": "a02757aac316aeff143bb8bd005bd03351825dd0c9c361f9625ccefb553c3b23"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerCombat.cs",
+    "change": "modified",
+    "beforeSha256": "406741ceb85f758a79880a7b546c449217ec2b8dc16f4891eed0ea021c47d9ad",
+    "afterSha256": "34eaeeaca1f342ce616cd533cf4a4039d664af9b466d9f4f224fc8d0ece549f2"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerMelee.cs",
+    "change": "modified",
+    "beforeSha256": "11bc193f541b377bf8c23e341b532dc539223868c509ad9fb748ac7e323464a8",
+    "afterSha256": "b37f94d7d39d3b64c1a8cef8db83dba08fd4bec980742ed1aef8686192757c21"
+  },
+  {
+    "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+    "change": "modified",
+    "beforeSha256": "13414edd8533d2ae354d7723f6d84437b619df4755ef19fcb88dcbc2333d4763",
+    "afterSha256": "eb95ce1ae46cea2a114956c2ac5e4d2145d5f5fa3600044fd7414515a487601f"
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryEquipment.cs",
+    "change": "modified",
+    "beforeSha256": "ba032701651057bc27991368cf0405a5abf9da2827586638a9f4598594de417b",
+    "afterSha256": "c9a0fba3bbc92fda86b191c419e81e12cc2f34b52da24244bf4049a732959caf"
+  },
+  {
+    "path": "Assets/Scripts/UI/RecoveryMenu.cs",
+    "change": "modified",
+    "beforeSha256": "57f521ebfe95215cddf7b6e11589f5d9c6c5ebf51f1811b91f0041d2e6834bcc",
+    "afterSha256": "4f41d9bb5b16d9e29f80021c074edcd8e9729ee3548bf67eecbdb4511960db09"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/SwordShieldSetup.cs",
+    "change": "modified",
+    "beforeSha256": "e761efd78d5bcdd8350df68268913457b8d705f702a15b67a165a43674cf87eb",
+    "afterSha256": "977017b9844d70168d1ade02f894805a209f3e48332259e9dce5d571ed13503c"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/GroundFractureVisuals.cs",
+    "change": "modified",
+    "beforeSha256": "5ea954fd89241ac1efebc576c5065eaa128e316f2904f4d8805b1277f9f01b6f",
+    "afterSha256": "9a7e6591b1c71cd13d720796ee7a334c24a99c2297985c9dfdec9b26a726ea96"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/LaserBeamVisuals.cs",
+    "change": "modified",
+    "beforeSha256": "6305e2ad329077bf889b369f58a135b5b7118617c8f2324a7be668e0bd3930e5",
+    "afterSha256": "5b753bf308b064cd6b521bb5481f7d88aa0401a120efd5d1a1d9ae00a1b2abe3"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenAnimationDriver.cs",
+    "change": "modified",
+    "beforeSha256": "968b60e92b79a269ba9c59d26b47da35a44e37d72c920634bf0b08efd939e4f1",
+    "afterSha256": "d0f0f19ef7fcc0ca427d9e6e8ae3052e6a26928946910de29f403f0c6fef4052"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenRushWake.cs",
+    "change": "modified",
+    "beforeSha256": "e4d609f68643c22230d4d2ddb2b6b9098e5062cedf8b8fbc70c16d99e318b75c",
+    "afterSha256": "a249328f4cb3c5828f606530da665c41d0e9df40f15aaf198c234c0952fb9c92"
+  },
+  {
+    "path": "Assets/UI/Fonts/BossChineseSDF.asset",
+    "change": "modified",
+    "beforeSha256": "067456b6aafce7bb7fbe83d366afe6a76b6356252655e16e01f7676ffd8128fc",
+    "afterSha256": "a94b0fd3d0f30abcbeb6fce28a13522b7e73c39bc51010d7ee446eab408c2abf"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "change": "modified",
+    "beforeSha256": "52c989a6931d83cf59b0edbcbab7985a7438e957bfaf7b9a20bff3eac8117c5b",
+    "afterSha256": "6bacb2356040b261a576748be4b2553c7e39f60d00f9e4edd57b346db5f207c8"
+  },
+  {
+    "path": "README.md",
+    "change": "modified",
+    "beforeSha256": "fc43680c6603181469746a07ff316d5ac35121606c0c017e72463957ce83520b",
+    "afterSha256": "67673a0f6975f4dd3cbe87ae36332004eba9e608ebc9d87b714bfdba6cb9072c"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BattleVfx.cs",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "b15f0aa8d3e7d3aee2e8d885582f6eccb37ab2d21281f347e7c00d0044a16893"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BattleVfx.cs.meta",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "ef1a1963c85cddfab21a46c039f79ea00a9217ea5757602374600fc8f8dd9bcb"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenBlinkVisual.cs",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "bf41793a2af8cc755a432008b15c4d67418ae412e126ffee96fcf2d0d4c655a3"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/WardenBlinkVisual.cs.meta",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "4fe930ea3dad3028864168d45f94dadba27b8c1e51f8c544a551e94598757b4a"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossVolleyRetreat.cs",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "4c142cb1ab753b8f09236ddfb02ea3263db34aa0a5dd922e4abbf9ef18384069"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossVolleyRetreat.cs.meta",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "9b5bb465b0ab7da53e6d28e44463c31aa50aff25c5c840978a3fa6653d1988fd"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Materials/WardenSpellRibbon.mat",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "8351e2178752e014e9839eae7438e642840258a1f6745e8eb2b9de911107bc2c"
+  },
+  {
+    "path": "Assets/Art/ForbiddenWarden/CombatV2/Materials/WardenSpellRibbon.mat.meta",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "c12be10be458825ad1ba8d5f8759cb7c56b83a37f29ab23bcbe7a4b6d9c475a8"
+  },
+  {
+    "path": "Assets/UI/Fonts/BossPressureChineseSupplement.asset",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "19c23ddbdccacdd63f431060686c4aa2658e3f346d0b66d49763de66974031b2"
+  },
+  {
+    "path": "Assets/UI/Fonts/BossPressureChineseSupplement.asset.meta",
+    "change": "added",
+    "beforeSha256": "",
+    "afterSha256": "5164b1c685f66f468f047fccfa77f31351e97b62e9f1f191573193862f637306"
+  }
+]

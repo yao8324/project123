@@ -1,0 +1,8 @@
+{
+  "new_mesh_groups": 16,
+  "gate_plate_faces": 88,
+  "hinge_straps": 8,
+  "gallery_quatrefoils": 60,
+  "min_new_AABB_combat_gap_m": 1.3500003814697266,
+  "scope": "Surface construction and blind tracery; original gate and gallery dimensions preserved. No full collision/visual acceptance."
+}

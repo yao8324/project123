@@ -1,0 +1,14 @@
+{
+    "unity": "6000.3.25f1",
+    "platform": "WindowsPlayer",
+    "gpu": "Intel(R) Arc(TM) B390 GPU",
+    "cpu": "Intel(R) Core(TM) Ultra X7 358H",
+    "scope": "Native startup and 120-frame render sample after three-second warmup, 1280x720, capped at 60. Focus/pause state recorded. Not full combat, human input, or target-device performance acceptance.",
+    "complete": true,
+    "knight": true,
+    "paused": false,
+    "frames": 120,
+    "meanMs": 0.471112459897995,
+    "p95Ms": 0.5666029453277588,
+    "errors": []
+}

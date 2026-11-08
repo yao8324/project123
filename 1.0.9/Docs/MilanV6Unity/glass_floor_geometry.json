@@ -1,0 +1,163 @@
+{
+  "inputSHA256": "57f75a3fb4c000d23e80228327ef74ffb13f37c07812b85d3dc900970852aab6",
+  "fillBoundsBlender": [
+    [
+      -12,
+      0,
+      5.65
+    ],
+    [
+      12,
+      6,
+      6
+    ]
+  ],
+  "atriumPreserved": true,
+  "stairOpeningsPreserved": true,
+  "retiredRails": [
+    "WV1_SouthBridge_6_0_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_0_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_0_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridge_6_1_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_1_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_1_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridge_6_2_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_2_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_2_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridge_6_3_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_3_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_3_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridge_6_4_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_4_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_4_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridge_6_5_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_5_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_5_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridge_6_6_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_6_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_6_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridge_6_7_IV4_C01_BrassHairline",
+    "WV1_SouthBridge_6_7_IV4_C01_PiercedTimberRail",
+    "WV1_SouthBridge_6_7_IV4_C01_ScrollFasciaAndCorbel",
+    "WV1_SouthBridgeBarrier_6_0",
+    "WV1_SouthBridgeBarrier_6_1",
+    "WV1_SouthBridgeBarrier_6_2",
+    "WV1_SouthBridgeBarrier_6_3",
+    "WV1_SouthBridgeBarrier_6_4",
+    "WV1_SouthBridgeBarrier_6_5",
+    "WV1_SouthBridgeBarrier_6_6",
+    "WV1_SouthBridgeBarrier_6_7"
+  ],
+  "woodFloors": [
+    {
+      "source": "G01_Gallery",
+      "planks": 77
+    },
+    {
+      "source": "G01_Gallery.001",
+      "planks": 77
+    },
+    {
+      "source": "G01_Gallery.002",
+      "planks": 76
+    },
+    {
+      "source": "G01_Gallery.003",
+      "planks": 76
+    },
+    {
+      "source": "G01_Gallery.004",
+      "planks": 77
+    },
+    {
+      "source": "G01_Gallery.005",
+      "planks": 77
+    },
+    {
+      "source": "G01_Gallery.006",
+      "planks": 76
+    },
+    {
+      "source": "G01_Gallery.007",
+      "planks": 76
+    },
+    {
+      "source": "G01_Gallery.008",
+      "planks": 77
+    },
+    {
+      "source": "G01_Gallery.009",
+      "planks": 77
+    },
+    {
+      "source": "G01_Gallery.010",
+      "planks": 76
+    },
+    {
+      "source": "G01_Gallery.011",
+      "planks": 76
+    },
+    {
+      "source": "G02_ApseGallery",
+      "planks": 241
+    },
+    {
+      "source": "G02_ApseGallery.001",
+      "planks": 236
+    },
+    {
+      "source": "G02_ApseGallery.002",
+      "planks": 219
+    },
+    {
+      "source": "G02_ApseGallery.003",
+      "planks": 192
+    },
+    {
+      "source": "G02_ApseGallery.004",
+      "planks": 153
+    },
+    {
+      "source": "G02_ApseGallery.005",
+      "planks": 104
+    },
+    {
+      "source": "G02_ApseGallery.006",
+      "planks": 106
+    },
+    {
+      "source": "G02_ApseGallery.007",
+      "planks": 155
+    },
+    {
+      "source": "G02_ApseGallery.008",
+      "planks": 192
+    },
+    {
+      "source": "G02_ApseGallery.009",
+      "planks": 222
+    },
+    {
+      "source": "G02_ApseGallery.010",
+      "planks": 238
+    },
+    {
+      "source": "G02_ApseGallery.011",
+      "planks": 240
+    },
+    {
+      "source": "G07_SouthBridge",
+      "planks": 204
+    },
+    {
+      "source": "GFReview_EntranceUpperFloor",
+      "planks": 450
+    }
+  ],
+  "plankSizeMetres": [
+    0.24,
+    1.6
+  ],
+  "jointMetres": 0.004,
+  "surfaceZ": 6.004
+}

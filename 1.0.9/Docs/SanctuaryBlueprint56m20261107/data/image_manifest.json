@@ -1,0 +1,74 @@
+[
+  {
+    "file": "images/00_reference.png",
+    "status": "original_source",
+    "sha256": "beab8d1a144dc1cd1a0dc69563c51f5adfd36c8262813f6aa07b777913199b84",
+    "size_px": [
+      1672,
+      941
+    ]
+  },
+  {
+    "file": "images/01_architecture_details.png",
+    "status": "current_design_reference",
+    "sha256": "d84dcb6e21b8355e7106c6e1edc64bb0adce4486cac8fbdd9af1546bbde3f208",
+    "size_px": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "file": "images/03_evacuation_props.png",
+    "status": "current_design_reference",
+    "sha256": "2cf43ffe5b77c42a6e8f59bfd7d7f3358fc562f7a9879397e56e44cfa4ea5de2",
+    "size_px": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "file": "images/04_knight_turnaround.png",
+    "status": "superseded_history",
+    "sha256": "285a27a27a8204f897ff493577880fb0061c0032dbfaff3e63c5080567f03fb3",
+    "size_px": [
+      1672,
+      941
+    ]
+  },
+  {
+    "file": "images/07_winged_knight_master.png",
+    "status": "current_design_reference",
+    "sha256": "45a39310105dc341d6f2db62174be85f8a69a0e031779a37cebe977b9d9c5cde",
+    "size_px": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "file": "images/08_wings_armor_detail.png",
+    "status": "current_design_reference",
+    "sha256": "ce2ce238da3d8a56957a564fc5d3b3ced1a5cefcd9b3a36a99dc3600be0927d7",
+    "size_px": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "file": "images/09_walk_dash_storyboard.png",
+    "status": "current_design_reference",
+    "sha256": "58051f91fdb5cdd8314700bf29258173baf7f1914a51885c2673ec17dae3a81b",
+    "size_px": [
+      1536,
+      1024
+    ]
+  },
+  {
+    "file": "images/10_jump_attack_storyboard.png",
+    "status": "current_design_reference",
+    "sha256": "621bc7ed087e48899ddc551f877f744f7afa17ad2dfaea84d8eee8de50a3ed59",
+    "size_px": [
+      1536,
+      1024
+    ]
+  }
+]

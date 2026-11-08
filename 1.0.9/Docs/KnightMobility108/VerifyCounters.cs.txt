@@ -1,0 +1,31 @@
+try {
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var f=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+System.Action<object,string,object> set=(o,n,v)=>o.GetType().GetField(n,f).SetValue(o,v);
+System.Func<string,object[],object> call=(n,a)=>typeof(ArcaneArchive.Core.BossEncounter).GetMethod(n,f).Invoke(e,a);
+set(e,"focusLost",false); e.GetComponent<ArcaneArchive.UI.RecoveryMenu>().Resume();
+set(e.Combat,"<Health>k__BackingField",100000f);
+System.Action<float> step=dt=>{set(e,"combatTime",e.BattleTime+dt);call("TickKnight",new object[]{dt});call("PresentBoss",new object[]{dt});UnityEngine.Physics.SyncTransforms();};
+
+var results=new System.Collections.Generic.List<string>();
+System.Action<bool,string> check=(yes,label)=>{if(!yes)throw new System.Exception(label);results.Add(label);};
+System.Action<ArcaneArchive.Core.KnightMove> begin=m=>{call("ClearAttacks",new object[0]);call("SetState",new object[]{ArcaneArchive.Core.BossEncounter.State.Observe});set(e.Combat,"invulnerability",0f);set(e.Combat,"<Health>k__BackingField",100000f);e.Combat.SuppressUntilReleased();e.Arena.boss.localPosition=new Vector3(0,0,4);e.Arena.boss.localRotation=Quaternion.Euler(0,180,0);e.transform.position=e.Arena.transform.TransformPoint(new Vector3(0,.08f,-5));e.View.transform.rotation=Quaternion.identity;Physics.SyncTransforms();e.BeginKnightMove(m);while(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Telegraph)step(1f/60);};
+begin(ArcaneArchive.Core.KnightMove.LeapCleave);set(e.Combat,"<Guarding>k__BackingField",true);float health=e.Combat.Health;float guard=e.Combat.Guard;step(.73f);
+check(e.Combat.Health==health && e.Combat.Guard<guard,"Leap can be blocked using shared stamina");
+begin(ArcaneArchive.Core.KnightMove.BlinkChase);set(e.Combat,"<Guarding>k__BackingField",true);set(e.Combat,"parryRemaining",.5f);health=e.Combat.Health;step(.26f);
+check(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Stagger && e.Combat.Health==health,"Blink slash can be parried and cancelled");
+begin(ArcaneArchive.Core.KnightMove.LeapCleave);e.transform.position+=Vector3.right*6;Physics.SyncTransforms();health=e.Combat.Health;step(.73f);
+check(e.Combat.Health==health,"Leaving locked landing footprint avoids leap damage");
+begin(ArcaneArchive.Core.KnightMove.BlinkChase);e.transform.position+=Vector3.right*6;Physics.SyncTransforms();health=e.Combat.Health;step(.26f);
+check(e.Combat.Health==health,"Leaving committed slash sector avoids blink damage");
+begin(ArcaneArchive.Core.KnightMove.BlinkBarrage);call("ResolveKnightImpacts",new object[0]);set(e,"stateTime",.13f);call("ResolveKnightImpacts",new object[0]);
+var shots=(System.Collections.IList)typeof(ArcaneArchive.Core.BossEncounter).GetField("shots",f).GetValue(e);
+object projectile=shots[2];var go=(GameObject)projectile.GetType().GetField("go").GetValue(projectile);
+e.View.transform.rotation=Quaternion.LookRotation(go.transform.position-e.View.transform.position);
+go.transform.position=e.View.transform.position+e.View.transform.forward;
+projectile.GetType().GetField("velocity").SetValue(projectile,-e.View.transform.forward*10);
+set(e.Combat,"absorbRemaining",.3f);float power=e.Combat.Power;int before=shots.Count;call("TickShots",new object[]{.02f});
+check(e.Combat.Power>power && shots.Count<before,"Barrage projectile uses existing absorption path");
+System.IO.File.AppendAllLines("Docs/KnightMobility108/Verification.txt",results);
+return results;
+}catch(System.Exception ex){return ex.GetBaseException().ToString();}

@@ -1,0 +1,21 @@
+{
+  "added_meshes": 35,
+  "left_finger_segments": 12,
+  "left_thumb": "single bent armored mesh",
+  "shield_handle_radius_m": 0.018,
+  "finger_center_radius_m": 0.03,
+  "finger_radius_m": 0.009,
+  "shield_anchors": [
+    [
+      -0.6850000023841858,
+      0.33579936623573303,
+      1.2000000476837158
+    ],
+    [
+      -0.51500004529953,
+      0.2919056713581085,
+      1.2000000476837158
+    ]
+  ],
+  "scope": "Fixed rigid grasp poses, not independent finger articulation or collision certification"
+}

@@ -1,3 +1,11 @@
+# 当前整合：1.0.9（2026-11-08）
+
+主场景 `1.0.9/Assets/Scenes/IMMonster_ThreeBoss_Book.unity` 保留书本、装备和原玩家。第一章 CampaignDefinition.externalScene 指向 SoulbinderComplete；SoulbinderCampaignBridge 挂起原场景根对象并附加加载大厅，结束后卸载大厅并恢复原对象。失败重试留在大厅；放弃回书本；只有胜利且完成控制台决定才累计一次章节胜利。后两关保持原 BossEncounter 流程。
+
+新构建器 FullGame109Builder 显式包含两个场景。发布目录 `完整版/1.0.9`；旧版源码与运行包保持原字节，版本索引将其标记为 1.0.8 历史版。三关流程已由 244 项检查覆盖。
+
+以下均为历史架构记录。
+
 # 当前整合增量：三 Boss 书本流程（2026-11-08）
 
 已实现：`CampaignDefinition` 配置章节、Boss、场地及前后对白；`BookCampaign` 管理书页选关、连续挑战、胜利推进、失败重试、最终结尾与重开重置。`RecoveryMenu.Campaign` 展示书页/叙事/结果；切换关卡通过现有战斗退出流程回收 HUD、场地、玩家状态和光照。

@@ -1,0 +1,304 @@
+{
+  "scope": "R16 broad armor form refinement; no final resemblance or full contact acceptance",
+  "before_rest_mesh_bounds_m": {
+    "shoulders": {
+      "min": [
+        -0.5251855254173279,
+        -0.19099999964237213,
+        1.5863043069839478
+      ],
+      "max": [
+        0.5251855254173279,
+        0.20700721442699432,
+        1.9276952743530273
+      ],
+      "size": [
+        1.0503710508346558,
+        0.39800721406936646,
+        0.3413909673690796
+      ]
+    },
+    "breastplate": {
+      "min": [
+        -0.2902962565422058,
+        0.0,
+        1.315000057220459
+      ],
+      "max": [
+        0.2902962565422058,
+        0.1788800060749054,
+        1.8600000143051147
+      ],
+      "size": [
+        0.5805925130844116,
+        0.1788800060749054,
+        0.5449999570846558
+      ]
+    },
+    "greaves": {
+      "min": [
+        -0.28600001335144043,
+        -0.11500000208616257,
+        0.14000000059604645
+      ],
+      "max": [
+        0.28600001335144043,
+        0.11500000208616257,
+        0.5600000023841858
+      ],
+      "size": [
+        0.5720000267028809,
+        0.23000000417232513,
+        0.42000000178813934
+      ]
+    }
+  },
+  "after_rest_mesh_bounds_m": {
+    "shoulders": {
+      "min": [
+        -0.4685521423816681,
+        -0.1489800065755844,
+        1.631117343902588
+      ],
+      "max": [
+        0.4685521423816681,
+        0.1614656299352646,
+        1.897402286529541
+      ],
+      "size": [
+        0.9371042847633362,
+        0.310445636510849,
+        0.2662849426269531
+      ]
+    },
+    "breastplate": {
+      "min": [
+        -0.272878497838974,
+        0.0,
+        1.315000057220459
+      ],
+      "max": [
+        0.272878497838974,
+        0.19915130734443665,
+        1.8600000143051147
+      ],
+      "size": [
+        0.545756995677948,
+        0.19915130734443665,
+        0.5449999570846558
+      ]
+    },
+    "greaves": {
+      "min": [
+        -0.2712000012397766,
+        -0.11024999618530273,
+        0.11800000071525574
+      ],
+      "max": [
+        0.2712000012397766,
+        0.11024999618530273,
+        0.5600000023841858
+      ],
+      "size": [
+        0.5424000024795532,
+        0.22049999237060547,
+        0.44200000166893005
+      ]
+    }
+  },
+  "changed": [
+    {
+      "object": "R03_LayeredShoulderShell",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.001",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderOuterGoldBand",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_LayeredShoulderShell.001",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.002",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.003",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderOuterGoldBand.001",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_LayeredShoulderShell.002",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.004",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.005",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderOuterGoldBand.002",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_LayeredShoulderShell.003",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.006",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.007",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderOuterGoldBand.003",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_LayeredShoulderShell.004",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.008",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.009",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderOuterGoldBand.004",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_LayeredShoulderShell.005",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.010",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderGoldEdge.011",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_ShoulderOuterGoldBand.005",
+      "form": "shoulder"
+    },
+    {
+      "object": "R02_CurvedBreastShell",
+      "form": "torso"
+    },
+    {
+      "object": "R02_SeparateBackShell",
+      "form": "torso"
+    },
+    {
+      "object": "R05_PointKneeShield",
+      "form": "knee"
+    },
+    {
+      "object": "R05_KneeGoldBorder",
+      "form": "knee"
+    },
+    {
+      "object": "R05_KneeCenterRidge",
+      "form": "knee"
+    },
+    {
+      "object": "R05_TaperedGreave",
+      "form": "greave"
+    },
+    {
+      "object": "R05_GreaveGoldKeel",
+      "form": "greave"
+    },
+    {
+      "object": "R05_GreaveEdge",
+      "form": "greave"
+    },
+    {
+      "object": "R05_GreaveEdge.001",
+      "form": "greave"
+    },
+    {
+      "object": "R05_PointKneeShield.001",
+      "form": "knee"
+    },
+    {
+      "object": "R05_KneeGoldBorder.001",
+      "form": "knee"
+    },
+    {
+      "object": "R05_KneeCenterRidge.001",
+      "form": "knee"
+    },
+    {
+      "object": "R05_TaperedGreave.001",
+      "form": "greave"
+    },
+    {
+      "object": "R05_GreaveGoldKeel.001",
+      "form": "greave"
+    },
+    {
+      "object": "R05_GreaveEdge.002",
+      "form": "greave"
+    },
+    {
+      "object": "R05_GreaveEdge.003",
+      "form": "greave"
+    },
+    {
+      "object": "R03_R11_ShoulderShell",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_R11_ShoulderGoldBorder",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_R11_ShoulderGoldKeel",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_R11_ShoulderShell.001",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_R11_ShoulderGoldBorder.001",
+      "form": "shoulder"
+    },
+    {
+      "object": "R03_R11_ShoulderGoldKeel.001",
+      "form": "shoulder"
+    }
+  ],
+  "removed_meshes": 27,
+  "added_meshes": 7,
+  "rig_bones": 72,
+  "skinned_meshes": 360,
+  "retained_actions": [
+    "A01_SlowWalk",
+    "A02_Dash",
+    "A03_JumpAttack"
+  ]
+}

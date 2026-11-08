@@ -1,0 +1,26 @@
+[
+  {
+    "clip": "A01_SlowWalk",
+    "frames": 34,
+    "fps": 30,
+    "duration_authoring_s": 1.1,
+    "camera": "actor-tracking; root movement must be reviewed separately",
+    "render": "Workbench geometry preview, not final materials"
+  },
+  {
+    "clip": "A02_Dash",
+    "frames": 30,
+    "fps": 30,
+    "duration_authoring_s": 0.95,
+    "camera": "actor-tracking; root movement must be reviewed separately",
+    "render": "Workbench geometry preview, not final materials"
+  },
+  {
+    "clip": "A03_JumpAttack",
+    "frames": 49,
+    "fps": 30,
+    "duration_authoring_s": 1.6,
+    "camera": "actor-tracking; root movement must be reviewed separately",
+    "render": "Workbench geometry preview, not final materials"
+  }
+]

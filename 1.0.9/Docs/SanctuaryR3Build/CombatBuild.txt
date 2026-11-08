@@ -1,0 +1,5 @@
+R3 first combat wiring; NOT final acceptance.
+Radius=28, player=-22Z, boss=25Z, scale=1.
+Removed root position curves=9
+Combat alone owns movement.
+Other attack presentation, folded wings and VFX sockets need refinement.

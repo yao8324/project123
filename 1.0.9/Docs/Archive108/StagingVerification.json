@@ -1,0 +1,21 @@
+{
+  "baseCommit": "19d8d46bdb0d277e094441030344b2f15f1ba253",
+  "targetBranch": "lixiang",
+  "archiveVersion": "1.0.8",
+  "stagedFileCountBeforeThisReport": 6875,
+  "expectedFinalStagedFileCount": 6876,
+  "unexpectedPaths": [],
+  "unexpectedStatuses": [],
+  "symlinksOrSubmodules": [],
+  "excludedCachesPresent": false,
+  "lfsFileCountIn108": 921,
+  "requiredLargeFilesMissingLFS": [],
+  "diffCheckExitCode": 2,
+  "inheritedWhitespace": {
+    "records": 4491,
+    "files": 317,
+    "allIssueFilesByteIdenticalToApprovedSource": true,
+    "note": "Full directory add exposes pre-existing whitespace in original Unity serialized files and third-party sources. Those sources are preserved without cosmetic rewrites."
+  },
+  "newAndEditedDocumentationDiffCheckExitCode": 0
+}

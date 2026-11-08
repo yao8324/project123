@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c716842c216a14c883aa36c53a2cd4, type: 3}
+  m_Name: Sanctuary Knight
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneArchive.Core.KnightDefinition
+  combat: {fileID: 11400000, guid: 3bfa07e69ccd1554c840620ed2451d9f, type: 2}
+  arena: {fileID: 8282123302606944443, guid: ecb69c8ada9a94b3fbfb00300d488250, type: 3}
+  blockable: {fileID: 2100000, guid: cc0af27f16bb2b245a140d7790e270b4, type: 2}
+  unblockable: {fileID: 2100000, guid: 169f20173a3e3d740b239da4ca740ebd, type: 2}
+  absorbable: {fileID: 2100000, guid: 4bf5e86a403999a4fa0bfe41fc341ddb, type: 2}
+  phaseThreshold: 0.55
+  storyThreshold: 0.2
+  observeTime: 0.55
+  phaseTwoObserve: 0.38
+  walkSpeed: 3.6
+  guardDamageMultiplier: 0.2
+  guardArc: 120
+  thrustTravel: 6
+  projectileSpeed: 14
+  projectileDamage: 12
+  projectileInterval: 0.32
+  danceStyle: 1
+  retreatDistance: 2.2
+  orbitTravel: 3.2
+  leapHeight: 1.15
+  pursuitLeapHeight: 2.6
+  pursuitLeapTravel: 9
+  blinkTravel: 9
+  sideBlinkTravel: 5.5
+  moves:
+  - move: 0
+    title: "\u8A93\u821E\u8FDE\u950B"
+    hint: "\u8A93\u821E\u8FDE\u950B \xB7 \u8FDE\u7EED\u626B\u65A9\uFF0C\u5F39\u53CD\u6216\u7ED5\u4FA7"
+    warning: 0.9
+    lockTime: 0.25
+    duration: 1.25
+    recovery: 1.15
+    damage: 18
+    reach: 5.4
+    width: 0
+    arc: 150
+    impacts:
+    - 0.18
+    - 0.95
+  - move: 1
+    title: "\u8D2F\u95E8\u7A81\u523A"
+    hint: "\u8D2F\u95E8\u7A81\u523A \xB7 \u91D1\u7EBF\u9501\u5B9A\u540E\u4FA7\u95EA"
+    warning: 1.15
+    lockTime: 0.35
+    duration: 0.65
+    recovery: 1.35
+    damage: 30
+    reach: 9
+    width: 1.8
+    arc: 0
+    impacts:
+    - 0.44
+  - move: 2
+    title: "\u5C01\u5370\u98DE\u77DB"
+    hint: "\u5C01\u5370\u98DE\u77DB \xB7 \u4FA7\u79FB\u6216\u6B63\u9762\u541E\u5370"
+    warning: 1
+    lockTime: 0.3
+    duration: 0.95
+    recovery: 1.1
+    damage: 12
+    reach: 0
+    width: 0
+    arc: 360
+    impacts:
+    - 0.1
+    - 0.42
+    - 0.74
+  - move: 3
+    title: "\u5730\u8109\u96F7\u88C1"
+    hint: "\u5730\u8109\u96F7\u88C1 \xB7 \u79BB\u5F00\u91D1\u8272\u5730\u5E26\u6216\u8D77\u8DF3"
+    warning: 1.25
+    lockTime: 0.5
+    duration: 0.55
+    recovery: 1.5
+    damage: 28
+    reach: 15
+    width: 2.1
+    arc: 0
+    impacts:
+    - 0.15
+  - move: 4
+    title: "\u6536\u950B\u683C\u5FA1"
+    hint: "\u6536\u950B\u683C\u5FA1 \xB7 \u7ED5\u4FA7\u6216\u76FE\u51FB\uFF0C\u8FDE\u6253\u6B63\u9762\u4F1A\u53CD\u5236"
+    warning: 0.65
+    lockTime: 0.25
+    duration: 1.8
+    recovery: 0.8
+    damage: 0
+    reach: 2.3
+    width: 0
+    arc: 120
+    impacts: []
+  - move: 5
+    title: "\u9000\u754C\u76FE\u51FB"
+    hint: "\u9000\u754C\u76FE\u51FB \xB7 \u62AC\u76FE\u540E\u9000\uFF0C\u4FDD\u6301\u8DDD\u79BB"
+    warning: 0.65
+    lockTime: 0.3
+    duration: 0.5
+    recovery: 1
+    damage: 16
+    reach: 3.5
+    width: 0
+    arc: 130
+    impacts:
+    - 0.2
+  - move: 6
+    title: "\u56DE\u8EAB\u65CB\u950B"
+    hint: "\u56DE\u8EAB\u65CB\u950B \xB7 \u4E24\u6B21\u56DE\u65CB\uFF0C\u7ED5\u5230\u8EAB\u540E\u6216\u5F39\u53CD"
+    warning: 1
+    lockTime: 0.3
+    duration: 1.4
+    recovery: 1.25
+    damage: 17
+    reach: 6.5
+    width: 0
+    arc: 300
+    impacts:
+    - 0.24
+    - 1.06
+  - move: 7
+    title: "\u60AC\u8A93\u843D\u96F7"
+    hint: "\u60AC\u8A93\u843D\u96F7 \xB7 \u4E09\u5904\u843D\u70B9\u4F9D\u6B21\u7206\u53D1\uFF0C\u79BB\u5F00\u5149\u5708"
+    warning: 1.7
+    lockTime: 0.55
+    duration: 1.95
+    recovery: 1.55
+    damage: 24
+    reach: 2.2
+    width: 0
+    arc: 0
+    impacts:
+    - 0.16
+    - 0.86
+    - 1.56
+  - move: 8
+    title: "\u8E0F\u5149\xB7\u8DF3\u5288"
+    hint: "\u843D\u70B9\u5149\u73AF\u9501\u5B9A\u540E\u4FA7\u95EA\uFF1B\u843D\u5730\u91CD\u5288\u53EF\u4E3E\u76FE"
+    warning: 0.95
+    lockTime: 0.4
+    duration: 1.08
+    recovery: 1.2
+    damage: 28
+    reach: 3.8
+    width: 0
+    arc: 360
+    impacts:
+    - 0.72
+  - move: 9
+    title: "\u8FFD\u8A93\xB7\u77AC\u65A9"
+    hint: "\u5149\u73AF\u9884\u544A\u77AC\u79FB\u843D\u70B9\uFF1B\u663E\u5F62\u540E\u4FA7\u95EA\u6216\u5F39\u53CD"
+    warning: 1.2
+    lockTime: 0.65
+    duration: 0.66
+    recovery: 1.05
+    damage: 24
+    reach: 4.8
+    width: 0
+    arc: 140
+    impacts:
+    - 0.25
+  - move: 10
+    title: "\u6298\u5149\xB7\u5C01\u5370\u5E55"
+    hint: "\u4FA7\u95EA\u540E\u91CA\u653E\u4E00\u8F6E\u5C01\u5370\u5F39\uFF0C\u8FDE\u7EED\u4E09\u6B21\uFF1B\u6A2A\u79FB\u6216\u541E\u5370"
+    warning: 1.35
+    lockTime: 0.8
+    duration: 0.55
+    recovery: 1.25
+    damage: 8
+    reach: 18
+    width: 0
+    arc: 56
+    impacts:
+    - 0.12
+  streamlinedKit: 1
+  orbitPursuitSpeed: 6.5
+  orbitTurnSpeed: 140
+  barrageAimSpeed: 110
+  barrageHomingSpeed: 120
+  barrageHomingBudget: 55

@@ -1,0 +1,5 @@
+Result: Succeeded
+Errors: 0
+Warnings: 18
+Bytes: 1189779428
+Output: Builds/IMMonster_1.0.9_Windows/IMMonster.exe

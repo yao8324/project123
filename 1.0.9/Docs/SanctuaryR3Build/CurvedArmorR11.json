@@ -1,0 +1,7 @@
+{
+  "new_meshes": 30,
+  "shoulder_shells": 2,
+  "hip_shells": 8,
+  "thickness_m": 0.004,
+  "scope": "Curved geometry and fitted border; not final visual/contact acceptance"
+}

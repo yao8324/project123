@@ -1,0 +1,4 @@
+Actual Play Mode, three sequential clips. Not combat acceptance.
+Paladin_R3_Rig|A01_SlowWalk: elapsed=1.099, actor displacement=(0.00, 0.00, 0.00), bone displacement=(0.00, 0.00, 2.20)
+Paladin_R3_Rig|A02_Dash: elapsed=0.949, actor displacement=(0.00, 0.00, 0.00), bone displacement=(0.00, 0.00, 8.00)
+Paladin_R3_Rig|A03_JumpAttack: elapsed=1.599, actor displacement=(0.00, 0.00, 0.00), bone displacement=(0.00, 0.00, 10.00)

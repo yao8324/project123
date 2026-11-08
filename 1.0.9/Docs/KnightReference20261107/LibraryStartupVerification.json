@@ -1,0 +1,11 @@
+{
+  "scene": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+  "frame": 1199,
+  "bossState": "Inactive",
+  "bossActive": false,
+  "arenaPresent": false,
+  "libraryActive": true,
+  "menuPage": "Explore",
+  "testLaunchers": 0,
+  "bookKnightConfigured": true
+}

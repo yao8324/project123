@@ -1,0 +1,1 @@
+First chapter routes to SoulbinderComplete. Five minion prefabs, boss, font and scene scripts verified. Both scenes in build. Original 1.0.8 preserved.

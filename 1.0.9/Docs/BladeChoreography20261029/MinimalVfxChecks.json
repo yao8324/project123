@@ -1,0 +1,37 @@
+{
+  "skills": [
+    {
+      "skill": 1,
+      "started": true,
+      "particles": 128,
+      "ribbons": 18,
+      "pausedCorrectly": true,
+      "pass": true
+    },
+    {
+      "skill": 2,
+      "started": true,
+      "particles": 128,
+      "ribbons": 18,
+      "pausedCorrectly": true,
+      "pass": true
+    },
+    {
+      "skill": 3,
+      "started": true,
+      "particles": 128,
+      "ribbons": 18,
+      "pausedCorrectly": true,
+      "pass": true
+    },
+    {
+      "skill": 4,
+      "started": true,
+      "particles": 176,
+      "ribbons": 18,
+      "pausedCorrectly": true,
+      "pass": true
+    }
+  ],
+  "effectsAwaitingGameFrameAtStart": 2
+}

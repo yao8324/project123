@@ -1,0 +1,52 @@
+using ArcaneArchive.Player;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+namespace ArcaneArchive.UI
+{
+    public sealed partial class RecoveryMenu
+    {
+        bool equipmentFromMenu;
+        public void ToggleEquipment()
+        {
+            if(Encounter && Encounter.IsFinished)return;
+            if(CurrentPage==Page.Equipment){if(equipmentFromMenu)Open();else Resume();return;}
+            equipmentFromMenu=IsOpen;ShowPage(Page.Equipment);
+        }
+        void BuildEquipment(Transform parent)
+        {
+            var melee=GetComponent<PlayerMelee>();
+            if(!melee || !melee.loadout){Label(parent,"尚未装备剑盾",Vector2.zero,new Vector2(800,50),28,paper);return;}
+            var data=melee.loadout;bool battle=Encounter && Encounter.IsActive;
+            Label(parent,"行者档案",new Vector2(-262,165),new Vector2(330,45),30,brass);
+            Label(parent,"逆誓剑  /  缄眼盾",new Vector2(-262,126),new Vector2(340,32),18,paper);
+            var preview=new GameObject("EquipmentPreview",typeof(RectTransform),typeof(RawImage));preview.transform.SetParent(parent,false);
+            var rect=(RectTransform)preview.transform;rect.sizeDelta=new Vector2(330,320);rect.anchoredPosition=new Vector2(-262,-54);
+            preview.AddComponent<EquipmentPreview>().Initialize(data);
+            Label(parent,"拖动模型查看正背面",new Vector2(-262,-229),new Vector2(330,24),14,new Color(.72f,.67f,.58f));
+            float health=battle?Encounter.Combat.Health:Encounter.Definition.playerHealth;
+            EquipmentText(parent,"生命",health.ToString("F0")+" / "+Encounter.Definition.playerHealth,165);
+            EquipmentText(parent,"体力",melee.Stamina.ToString("F0")+" / "+data.maxStamina,129);
+            EquipmentText(parent,"防御","共用体力 / 耗尽破防",93);
+            EquipmentText(parent,"剑伤 / 斩距",data.lightDamage+" / "+data.lightReach.ToString("F1")+" 米",57);
+            Label(parent,"近战技艺",new Vector2(155,8),new Vector2(480,34),23,brass);
+            for(int i=0;i<4;i++)
+            {
+                var skill=data.skills[i];float y=-37-i*42;
+                var title=Label(parent,(i+1)+"  "+skill.title,new Vector2(42,y),new Vector2(222,34),19,paper);title.alignment=TextAlignmentOptions.Left;
+                var values=Label(parent,skill.damage+" 伤害   "+skill.stamina+" 体力   "+skill.cooldown+"s",new Vector2(275,y),new Vector2(236,34),16,new Color(.78f,.73f,.65f));values.alignment=TextAlignmentOptions.Right;
+                var line=Panel(parent,"SkillRule",new Vector2(155,y-19),new Vector2(480,1),new Color(brass.r,brass.g,brass.b,.22f));
+                line.GetComponent<Image>().raycastTarget=false;
+            }
+            Label(parent,"左键连斩 · 右键持盾 / 弹反 / 吞印",new Vector2(155,-216),new Vector2(485,28),17,paper);
+            footer.text="I 关闭档案  ·  Esc 返回  ·  查看期间暂停角色与战斗";
+        }
+        void EquipmentText(Transform parent,string title,string value,float y)
+        {
+            var left=Label(parent,title,new Vector2(20,y),new Vector2(210,30),19,new Color(.76f,.70f,.59f));left.alignment=TextAlignmentOptions.Left;
+            var right=Label(parent,value,new Vector2(270,y),new Vector2(260,30),21,paper);right.alignment=TextAlignmentOptions.Right;
+            Panel(parent,"AttributeRule",new Vector2(155,y-18),new Vector2(480,1),new Color(brass.r,brass.g,brass.b,.23f));
+        }
+    }
+}

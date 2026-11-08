@@ -1,0 +1,252 @@
+Play Mode: real WASD input and autonomous AI smoke checks, followed by controlled repeated-melee and campaign flow checks. Not a first-time human playthrough or Windows native runtime check.
+PASS Exactly three data-driven book chapters
+PASS Startup opens the campaign book without auto-launching knight
+PASS Book exposes continuous story start
+PASS Book exposes single challenge: 第一章 · 缚魂者
+PASS Book exposes single challenge: 第二章 · 典狱长
+PASS Book exposes single challenge: 第三章 · 圣骑士
+PASS Invalid chapter indices rejected
+PASS Story is shown before first combat
+PASS Escape cannot bypass pending story
+PASS Cannot replace a chapter while its introduction is open
+PASS Sequential order chapter 0
+PASS Introduction launches actual encounter 0
+PASS Original player suspended during additive first chapter
+PASS One active audio listener in new hall
+PASS Unfinished first chapter cannot advance
+PASS All five minion types spawn in integrated chapter
+PASS First chapter loss cannot advance
+PASS First chapter retry succeeds
+PASS Retry restores legion and player
+PASS Actual projectile ray hits defeat integrated first boss
+PASS Console decision restores original player and first aftermath
+PASS New arena unloaded after victory
+PASS First aftermath advances to second chapter
+PASS Sequential order chapter 1
+PASS Introduction launches actual encounter 1
+MOVE_DIAGNOSTIC pos=(160.00, 0.07, -5.21) start=(160.00, 0.07, -10.00) dt=0.01669567 input=(0.00, 0.00) enabled=True locked=True paused=False release=False page=Explore
+PASS Real WASD moves character with collision 1
+PASS Unmodified enemy AI telegraphs and attacks 1
+PASS Enemy actively repositions 1
+LIVE AI chapter 1 player health 100 -> 53
+PASS Live encounter active 1
+PASS Correct combat type 1
+PASS Correct boss identity 1
+PASS Only one active arena 1
+PASS Only one combat HUD 1
+PASS Cannot advance while battle unfinished 1
+PASS Player spawn has walkable support 1
+PASS Player damage causes loss 1
+PASS Loss cannot advance chapter 1
+PASS Loss has no next-level button 1
+PASS Retry restores player and boss health 1
+PASS Retry stays in current chapter without repeating story 1
+PASS Player can begin melee 1/0
+PASS Actual melee collision damages boss 1/0
+PASS Player can begin melee 1/1
+PASS Actual melee collision damages boss 1/1
+PASS Player can begin melee 1/2
+PASS Actual melee collision damages boss 1/2
+PASS Player can begin melee 1/3
+PASS Actual melee collision damages boss 1/3
+PASS Player can begin melee 1/4
+PASS Actual melee collision damages boss 1/4
+PASS Player can begin melee 1/5
+PASS Actual melee collision damages boss 1/5
+PASS Player can begin melee 1/6
+PASS Actual melee collision damages boss 1/6
+PASS Player can begin melee 1/7
+PASS Actual melee collision damages boss 1/7
+PASS Player can begin melee 1/8
+PASS Actual melee collision damages boss 1/8
+PASS Player can begin melee 1/9
+PASS Actual melee collision damages boss 1/9
+PASS Player can begin melee 1/10
+PASS Actual melee collision damages boss 1/10
+PASS Player can begin melee 1/11
+PASS Actual melee collision damages boss 1/11
+PASS Player can begin melee 1/12
+PASS Actual melee collision damages boss 1/12
+PASS Player can begin melee 1/13
+PASS Actual melee collision damages boss 1/13
+PASS Player can begin melee 1/14
+PASS Actual melee collision damages boss 1/14
+PASS Player can begin melee 1/15
+PASS Actual melee collision damages boss 1/15
+PASS Player can begin melee 1/16
+PASS Actual melee collision damages boss 1/16
+PASS Player can begin melee 1/17
+PASS Actual melee collision damages boss 1/17
+PASS Player can begin melee 1/18
+PASS Actual melee collision damages boss 1/18
+PASS Player can begin melee 1/19
+PASS Actual melee collision damages boss 1/19
+PASS Player can begin melee 1/20
+PASS Actual melee collision damages boss 1/20
+PASS Player can begin melee 1/21
+PASS Actual melee collision damages boss 1/21
+PASS Player can begin melee 1/22
+PASS Actual melee collision damages boss 1/22
+PASS Player can begin melee 1/23
+PASS Actual melee collision damages boss 1/23
+PASS Player can begin melee 1/24
+PASS Actual melee collision damages boss 1/24
+PASS Player can begin melee 1/25
+PASS Actual melee collision damages boss 1/25
+PASS Player can begin melee 1/26
+PASS Actual melee collision damages boss 1/26
+PASS Player can begin melee 1/27
+PASS Actual melee collision damages boss 1/27
+PASS Player can begin melee 1/28
+PASS Actual melee collision damages boss 1/28
+PASS Player can begin melee 1/29
+PASS Actual melee collision damages boss 1/29
+PASS Player can begin melee 1/30
+PASS Actual melee collision damages boss 1/30
+PASS Player can begin melee 1/31
+PASS Actual melee collision damages boss 1/31
+PASS Player can begin melee 1/32
+PASS Actual melee collision damages boss 1/32
+PASS Player can begin melee 1/33
+PASS Actual melee collision damages boss 1/33
+PASS Melee crosses phase threshold 1
+PASS Real repeated melee reaches victory 1
+PASS Victory freezes input and opens result 1
+PASS Victory exposes progression button 1
+PASS Victory progression cleans combat and opens aftermath 1 story=True active=False attacks=0 message=封印失衡 · 近身追击 position=(-8.00, 0.10, -0.80)
+PASS Repeated progression cannot double-advance 1
+PASS Old arena and HUD destroyed 1
+PASS Aftermath advances story 1
+PASS Sequential order chapter 2
+PASS Introduction launches actual encounter 2
+MOVE_DIAGNOSTIC pos=(160.00, 0.07, -17.21) start=(160.00, 0.08, -22.00) dt=0.01669371 input=(0.00, 0.00) enabled=True locked=True paused=False release=False page=Explore
+PASS Real WASD moves character with collision 2
+PASS Unmodified enemy AI telegraphs and attacks 2
+PASS Enemy actively repositions 2
+LIVE AI chapter 2 player health 100 -> 100
+PASS Live encounter active 2
+PASS Correct combat type 2
+PASS Correct boss identity 2
+PASS Only one active arena 2
+PASS Only one combat HUD 2
+PASS Cannot advance while battle unfinished 2
+PASS Player spawn has walkable support 2
+PASS Player damage causes loss 2
+PASS Loss cannot advance chapter 2
+PASS Loss has no next-level button 2
+PASS Retry restores player and boss health 2
+PASS Retry stays in current chapter without repeating story 2
+PASS Player can begin melee 2/0
+PASS Actual melee collision damages boss 2/0
+PASS Player can begin melee 2/1
+PASS Actual melee collision damages boss 2/1
+PASS Player can begin melee 2/2
+PASS Actual melee collision damages boss 2/2
+PASS Player can begin melee 2/3
+PASS Actual melee collision damages boss 2/3
+PASS Player can begin melee 2/4
+PASS Actual melee collision damages boss 2/4
+PASS Player can begin melee 2/5
+PASS Actual melee collision damages boss 2/5
+PASS Player can begin melee 2/6
+PASS Actual melee collision damages boss 2/6
+PASS Player can begin melee 2/7
+PASS Actual melee collision damages boss 2/7
+PASS Player can begin melee 2/8
+PASS Actual melee collision damages boss 2/8
+PASS Player can begin melee 2/9
+PASS Actual melee collision damages boss 2/9
+PASS Player can begin melee 2/10
+PASS Actual melee collision damages boss 2/10
+PASS Player can begin melee 2/11
+PASS Actual melee collision damages boss 2/11
+PASS Player can begin melee 2/12
+PASS Actual melee collision damages boss 2/12
+PASS Player can begin melee 2/13
+PASS Actual melee collision damages boss 2/13
+PASS Player can begin melee 2/14
+PASS Actual melee collision damages boss 2/14
+PASS Player can begin melee 2/15
+PASS Actual melee collision damages boss 2/15
+PASS Player can begin melee 2/16
+PASS Actual melee collision damages boss 2/16
+PASS Player can begin melee 2/17
+PASS Actual melee collision damages boss 2/17
+PASS Player can begin melee 2/18
+PASS Actual melee collision damages boss 2/18
+PASS Player can begin melee 2/19
+PASS Actual melee collision damages boss 2/19
+PASS Player can begin melee 2/20
+PASS Actual melee collision damages boss 2/20
+PASS Player can begin melee 2/21
+PASS Actual melee collision damages boss 2/21
+PASS Player can begin melee 2/22
+PASS Actual melee collision damages boss 2/22
+PASS Player can begin melee 2/23
+PASS Actual melee collision damages boss 2/23
+PASS Player can begin melee 2/24
+PASS Actual melee collision damages boss 2/24
+PASS Player can begin melee 2/25
+PASS Actual melee collision damages boss 2/25
+PASS Player can begin melee 2/26
+PASS Actual melee collision damages boss 2/26
+PASS Player can begin melee 2/27
+PASS Actual melee collision damages boss 2/27
+PASS Player can begin melee 2/28
+PASS Actual melee collision damages boss 2/28
+PASS Player can begin melee 2/29
+PASS Actual melee collision damages boss 2/29
+PASS Player can begin melee 2/30
+PASS Actual melee collision damages boss 2/30
+PASS Player can begin melee 2/31
+PASS Actual melee collision damages boss 2/31
+PASS Player can begin melee 2/32
+PASS Actual melee collision damages boss 2/32
+PASS Player can begin melee 2/33
+PASS Actual melee collision damages boss 2/33
+PASS Player can begin melee 2/34
+PASS Actual melee collision damages boss 2/34
+PASS Player can begin melee 2/35
+PASS Actual melee collision damages boss 2/35
+PASS Player can begin melee 2/36
+PASS Actual melee collision damages boss 2/36
+PASS Player can begin melee 2/37
+PASS Actual melee collision damages boss 2/37
+PASS Player can begin melee 2/38
+PASS Actual melee collision damages boss 2/38
+PASS Player can begin melee 2/39
+PASS Actual melee collision damages boss 2/39
+PASS Player can begin melee 2/40
+PASS Actual melee collision damages boss 2/40
+PASS Player can begin melee 2/41
+PASS Actual melee collision damages boss 2/41
+PASS Player can begin melee 2/42
+PASS Actual melee collision damages boss 2/42
+PASS Player can begin melee 2/43
+PASS Actual melee collision damages boss 2/43
+PASS Player can begin melee 2/44
+PASS Actual melee collision damages boss 2/44
+PASS Player can begin melee 2/45
+PASS Actual melee collision damages boss 2/45
+PASS Player can begin melee 2/46
+PASS Actual melee collision damages boss 2/46
+PASS Melee crosses phase threshold 2
+PASS Real repeated melee reaches victory 2
+PASS Victory freezes input and opens result 2
+PASS Victory exposes progression button 2
+PASS Victory progression cleans combat and opens aftermath 2 story=True active=False attacks=0 message=封印失衡 · 近身追击 position=(-8.00, 0.10, -0.80)
+PASS Repeated progression cannot double-advance 2
+PASS Old arena and HUD destroyed 2
+PASS Aftermath advances story 2
+PASS Three actual victories reach final story
+PASS Ending contains completion and evacuation resolution
+PASS Ending returns to replayable book
+PASS Single-chapter selection works after full completion
+PASS Selected Warden chapter starts
+PASS Single chapter has aftermath
+PASS Single victory does not claim full-game completion
+PASS New campaign resets progress
+PASS No runtime error / exception during the full campaign
+ERRORS
+
+Failure: none

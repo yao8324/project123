@@ -1,0 +1,412 @@
+[
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeStrike.anim",
+    "sha256": "CA69AE81FF1A606EEA2A4D1869187D6815229339442E6134BD8EBAA8C864DF03",
+    "bytes": 1868967
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Animations/AA_MeleeWindup.anim",
+    "sha256": "7186FC9E20F7C10CAE7967B801EC04C9F65BA01F742B6DA1F5F6FE65DB35ECC7",
+    "bytes": 2260405
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/BladeLight.shader",
+    "sha256": "4C8737F8ED919CA10268F628A775D76582C28C9458B794C6A825B56F24910C08",
+    "bytes": 1642
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Gold.mat",
+    "sha256": "D075821209846939903C8744649460BD729C1671A615348B38602E083C4C6EE3",
+    "bytes": 3876
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Gold.mat.meta",
+    "sha256": "AC0DB09E81559CC5758BF16FE8D1FAE0F40D853BD843C5FF4F865AEE7C9E8FEF",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Leather.mat",
+    "sha256": "36251B051D956E32DF7574B364362667C76C9228F9EBD582FE95B6474F9EC4CF",
+    "bytes": 4071
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Leather.mat.meta",
+    "sha256": "206CDE71A7B2DB9B482347F9145318B27FC07A32FF8A5BB4DF5D85AA2517C0C8",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_LeatherGrain.png",
+    "sha256": "93CEE186338979B8436D53E323F3B4AF63617964A1355B93992DD1AC196EDCB8",
+    "bytes": 20577
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_LeatherGrain.png.meta",
+    "sha256": "4DC92CD063B2FAA2C0109B5B6DE204B9C34F220BBBB833426B7E6B5FD18928B6",
+    "bytes": 2652
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_LeatherNormal.png",
+    "sha256": "00F82087F3AED1CD355AF927F3B6AEA7DD5A206D35C56417B0AE0B3030F9B9D3",
+    "bytes": 52204
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_LeatherNormal.png.meta",
+    "sha256": "8322EB71CE3617C1A33B57977CB8DF41481D71A5046FE58AFEFAE29B4B1B26D4",
+    "bytes": 2652
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Palm.mat",
+    "sha256": "74B924D5E619DFFC38571910962231EF5527BCC753004DA8A4090BE802054F07",
+    "bytes": 4056
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Palm.mat.meta",
+    "sha256": "37E51773B5461700091568053BF99C046CFCFF61EBB36F135C16E8DD4D977E95",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Seal.mat",
+    "sha256": "067F30970B354F935C4B873231033BAC7A2E0DC27CB0F4CDEF8C65459BBAC198",
+    "bytes": 3874
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Seal.mat.meta",
+    "sha256": "384547710190F8495F419D7A3442E45754C3AB1BA51ABC3E1C841D3F8A1634B1",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Steel.mat",
+    "sha256": "9390328265809991B149DCD6A8B34176E0D504682273E2DC9486FA271C6BE608",
+    "bytes": 3882
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Steel.mat.meta",
+    "sha256": "32FD8B226B0D5D477D059A78F9A9F1DEA30C2FFD99A5647164B219FEF773A52D",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Thread.mat",
+    "sha256": "46F4043F339830F1C48C77DDFE4A99625821FC7C53126516B467271E421A5E45",
+    "bytes": 3878
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Materials/Gauntlet_Thread.mat.meta",
+    "sha256": "5F7DED107DCB1D38BCB85CC95679BB2C2654C6B7AA6CD469F3FD75FE510F3ED7",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Oathbound_LeftHand.asset",
+    "sha256": "B311F322AFCE8BC1EB5DCB388CB4BA50909DF4407B0DDBAF8CA640607D6D1ADC",
+    "bytes": 1380491
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Oathbound_LeftHand.asset.meta",
+    "sha256": "883B7104A77B0A16972665DD503875093F7601EEE14B067B6FF9E171FF62EB67",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Oathbound_RightHand.asset",
+    "sha256": "7AF412CBFAE95D2D60EFAA1E0053816A47605805F4B4CDF3EFF2413EA64C9044",
+    "bytes": 1380486
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Models/Oathbound_RightHand.asset.meta",
+    "sha256": "72FE0BA4113277A9BE953FAD383612AE9C8EBA8D8BE125724B5E272663D0DA62",
+    "bytes": 188
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset",
+    "sha256": "45EC90F39EF8D5CEF3FD57BA4E0DDF99CF63AE7D95F59FD3FECE1C639B66A1FE",
+    "bytes": 2663
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/Oathbound_LeftHand.prefab",
+    "sha256": "6A0D7E58843B44EDBBB4616D290DD698F5C81D5432DC25CC188E2099E1FE5AF2",
+    "bytes": 4872
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/Oathbound_LeftHand.prefab.meta",
+    "sha256": "AE22D7FA45B72B0D0924AC2103C6B298BA7C370C652A6765EB9390E8344EAF69",
+    "bytes": 154
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/Oathbound_RightHand.prefab",
+    "sha256": "22F753B69CC616004C60D94B5EA2D70148FF877E6C20C1F8344D4F50A1D7C98E",
+    "bytes": 4868
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/Prefabs/Oathbound_RightHand.prefab.meta",
+    "sha256": "17BCCFBA636F3E497C65B22ADFBDE2EAAA2F4FBD245D9A16287A01B3217C6540",
+    "bytes": 154
+  },
+  {
+    "path": "Assets/Scenes/MilanLibrary_Magic_V6.unity",
+    "sha256": "A8636FED616C40D8674D119D019BB941C3CFCCCA2D503F94B85E60DDAD8BD70E",
+    "bytes": 3695745
+  },
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs",
+    "sha256": "3D07DFD28E16691B46932C7F085F6AE9FBCD689148E34B6BFC19AAD49FAB5ABA",
+    "bytes": 2430
+  },
+  {
+    "path": "Assets/Scripts/Player/MeleeFeedback.cs",
+    "sha256": "4CC1582C7CC519D41139F9DF0FE7008D3AFA3B975F05E01203C6848F4899834E",
+    "bytes": 5763
+  },
+  {
+    "path": "Assets/Scripts/Player/MeleeFeedback.cs.meta",
+    "sha256": "2B05BC66B43E46A54C34F090BACEBBA927610161F7CF7AB3E635BA8B7A0E2D16",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerCombat.cs",
+    "sha256": "406741CEB85F758A79880A7B546C449217EC2B8DC16F4891EED0EA021C47D9AD",
+    "bytes": 8138
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerMelee.cs",
+    "sha256": "E4F63180F56DBA6A52BF5A590C7A008A4513845C84592C99667E85148F98FCB4",
+    "bytes": 9971
+  },
+  {
+    "path": "Assets/Scripts/Player/SwordShieldView.cs",
+    "sha256": "DFFCE4E9AD68FEDCC6C9E1838920EE1CADD2F2473A8053E61ABF6E1F1D0985B6",
+    "bytes": 11959
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BladeRibbon.cs",
+    "sha256": "575B0D84533A75A9894D6979DA5397329FB697C61C9A1F71DC4E6FFD77C7F43A",
+    "bytes": 5209
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/OathboundHandsBuilder.cs",
+    "sha256": "BB8EF19E10F4582A1ABC1B43235F603B059DBBCC3F6DD11F479EEEA80C8ADAD1",
+    "bytes": 25485
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/OathboundHandsBuilder.cs.meta",
+    "sha256": "6338378E11EED2E801385E9C1E0E7344EB1C6F0D97FAC113159456E8EDA50F56",
+    "bytes": 59
+  },
+  {
+    "path": "Assets/Scripts/Visuals/Editor/SwordShieldSetup.cs",
+    "sha256": "E761EFD78D5BCDD8350DF68268913457B8D705F702A15B67A165A43674CF87EB",
+    "bytes": 15292
+  },
+  {
+    "path": "Assets/Scripts/Visuals/MeleeEffects.cs",
+    "sha256": "51E012CD6FB12EEE6FADA18867F4AB56FC12A1EFA40AD3735C23FADA94255539",
+    "bytes": 13990
+  },
+  {
+    "path": "Blender/PlayerSwordShield/HandsV2/Oathbound_Hands.mtl",
+    "sha256": "64885F016382B8F57A2C47ADFA57D3D3E1BA693E60F08B1482DF7CCD566ACEF6",
+    "bytes": 331
+  },
+  {
+    "path": "Blender/PlayerSwordShield/HandsV2/Oathbound_LeftHand.obj",
+    "sha256": "48C31B697129F9C18CE208C749D32C265B3F8BF09D8BB9D956A5B97FAA1F00D9",
+    "bytes": 1084842
+  },
+  {
+    "path": "Blender/PlayerSwordShield/HandsV2/Oathbound_RightHand.obj",
+    "sha256": "AA4D5CC661B1EE3456EF5AE770264901C567403F7BE8B3A5A7E8131066057738",
+    "bytes": 1081336
+  },
+  {
+    "path": "Blender/PlayerSwordShield/HandsV2/README.md",
+    "sha256": "33C1A79F31D122453001C18F941833294D78E3D65708A4631B6637DB2EB1F46A",
+    "bytes": 989
+  },
+  {
+    "path": "CHANGELOG.md",
+    "sha256": "3F6709712FB9FCC521DF17E358EFC95C12C545465E76A95D5BB0BEB7617B71D8",
+    "bytes": 10243
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Art__PlayerSwordShield__BladeLight.shader.txt",
+    "sha256": "717B1C9465208141932252FAE8C3348D8161E49785BB85AF7FF17A5D3B6FCC04",
+    "bytes": 1235
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Art__PlayerSwordShield__OathboundLoadout.asset.txt",
+    "sha256": "6EAC34DEB4D6162A16E006093339A97378EB67DD81A28EEBCB5CAEAE46DC4362",
+    "bytes": 2624
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scenes__MilanLibrary_Magic_V6.unity.txt",
+    "sha256": "6A34D60205D12FAC0CE3A01E355D0426E1F9E92909D5B782E6004B4640D59008",
+    "bytes": 3695912
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scripts__Core__MeleeLoadout.cs.txt",
+    "sha256": "E03B9EE425E72EE5A2D41F1B930A81B4DEF8F6C7FA097B0AAE6BAB89B0237AF7",
+    "bytes": 2320
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scripts__Player__PlayerCombat.cs.txt",
+    "sha256": "100EE1B6BF78BEB1E371363FC3C34249C86269C61660A261233497210FC03A79",
+    "bytes": 8044
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scripts__Player__PlayerMelee.cs.txt",
+    "sha256": "D2EEB48DEDC86CC974765318D98F0CE7AEE3AB08893CB8C9314A587B2A0039BC",
+    "bytes": 7827
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scripts__Player__SwordShieldView.cs.txt",
+    "sha256": "B85ED4D1D50435F569669B96C2F920211F8CF0FFE7A5F11E9B338303B1B5A86A",
+    "bytes": 7027
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scripts__Visuals__BladeRibbon.cs.txt",
+    "sha256": "0597737CF99D8C19B14C43AB9E5C233A3612F6F76C265250DEEE02791010E20C",
+    "bytes": 2348
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scripts__Visuals__Editor__SwordShieldSetup.cs.txt",
+    "sha256": "25F9D400B310807436D19C930B1471AC67B1579D6F8779CCF95AB3047DFB59FA",
+    "bytes": 18736
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/Assets__Scripts__Visuals__MeleeEffects.cs.txt",
+    "sha256": "77F5832C9ABDBBA0CF450B071A56D3624E924EBEA89D1E8BDF67B5FC909CA467",
+    "bytes": 4320
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/CHANGELOG.md.txt",
+    "sha256": "6E133CA9785DFEB1549317E9F9D94E322E4DCA6F2FC4DABB5752B250B65D2EF8",
+    "bytes": 9712
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Before/README.md.txt",
+    "sha256": "ECF5D29312645605A8EA8B2CC485B3CDAB11C2FA4006DD8F5D72D88D45FFC48C",
+    "bytes": 13117
+  },
+  {
+    "path": "Docs/MeleePolish20261029/BeforeHashes.json",
+    "sha256": "1DB32ADE908C93332B63CF889C9269B9CFB28EDF58D02A92DF2CB23B9D36EEF7",
+    "bytes": 1756
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Captures/03_ConnectedForearm.png",
+    "sha256": "5C02E928734E63D26006468B1EA25A2A2C54552AEDEA56A627DDDD9897D928F3",
+    "bytes": 1499658
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Captures/04_HeavyBlade_Final.png",
+    "sha256": "D585F801EB2CB79A86B0D046E4F42A50A9E11113B1ECAA26FEEDDA613254313E",
+    "bytes": 1348455
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Captures/05_ShieldImpact.png",
+    "sha256": "829FC485514BCF047742D615D234857D89A5E18357ADF5AC4B11753C83F40C76",
+    "bytes": 1285882
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Captures/06_Thrust.png",
+    "sha256": "317556A8CE8C602CC378B5DA04A251CA3BD2E057FA49FB69FE4374E8AF52FD91",
+    "bytes": 1548802
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Captures/07_OrbitCut.png",
+    "sha256": "40AE9ABF9AA8A434FEB4A2B00CE648C4C7AD1D69D48FB1227896963B04FC15F3",
+    "bytes": 1460347
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Captures/08_FinalReady.png",
+    "sha256": "196F606E534129F7356BE578DFD2CF5F32CDFC19194DF66BD058B440961CCD0C",
+    "bytes": 3619169
+  },
+  {
+    "path": "Docs/MeleePolish20261029/FinalState.json",
+    "sha256": "C3FC51E2366F284B2D7C8F930ADE4114C532FECDF905A7A757B45CBBF63B2B88",
+    "bytes": 601
+  },
+  {
+    "path": "Docs/MeleePolish20261029/MinimalChecks.json",
+    "sha256": "0FC4663E80C7929A7C8F9D52ED0C38C4CAC6AE8A7D89CC3385CF526D32C97A48",
+    "bytes": 1243
+  },
+  {
+    "path": "Docs/MeleePolish20261029/PresentationReset.json",
+    "sha256": "EFB8241F75CB21B6EA77B8E390883EEC15A23548E4C38DD930ECD4DC2DBDF835",
+    "bytes": 151
+  },
+  {
+    "path": "Docs/MeleePolish20261029/README.md",
+    "sha256": "657BEF2712E9CB17993990F9D27410AC9BD66E7CFA20D013C455649533B0D55B",
+    "bytes": 6169
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Combat_380.jpg",
+    "sha256": "86A0567956845EFE4817CE1655B899E73549E31A952E9C0F057F218FD20DFBD1",
+    "bytes": 593556
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Combat_580.jpg",
+    "sha256": "2A55A0E2B59C84D04FE43AB96C61E4046A94FFA31B625898C4C2ED32054827CB",
+    "bytes": 628222
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Combat_900.jpg",
+    "sha256": "800BE81DC3056CD5056D384ED441A87DDCEB272B1BD98FCD2D6DF9D71A88F1C8",
+    "bytes": 654852
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Grip_06m21s.jpg",
+    "sha256": "9E3829E689C5A43DAC52332B9A1F3CA0FA76B8ABF9A337653DED76F2AE24D2A1",
+    "bytes": 59941
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Hand_00m40s.jpg",
+    "sha256": "8CE5F8215A3938093BF46D9D6F0E923A2CBECA239824911F292BDB831B0D9459",
+    "bytes": 52995
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Impact_09m44s2.jpg",
+    "sha256": "E73B61DB3A25F82DDCB2BD3DA56F3551775A9D687BD60CEE08B0515E53F2457A",
+    "bytes": 72014
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Overview_V1.jpg",
+    "sha256": "1151638D70ACFDD4961558046E791B8D5F9196F7231657B3FC3325F4A459B152",
+    "bytes": 191369
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Overview_V2.jpg",
+    "sha256": "7C1D4DCD1AE3638F95865BEF78C20F8AD340656141AC6056F436A55414DC709D",
+    "bytes": 171793
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Overview_V3.jpg",
+    "sha256": "85226AA21146A00C1D32D58C760208C5CABA1A4AE32F021FC64164B9834A998E",
+    "bytes": 331356
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/README.md",
+    "sha256": "A4B332FBAB478DB2A8D0E65D66999E2BEE3A601E9BDCAD3F61D4772ED3896C5F",
+    "bytes": 4215
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Slash_09m41s8_10fps.jpg",
+    "sha256": "8BDBFFDDE54795EA61D2676A9ABD6A5CE10A8537E6D3F32AEC1BFCECB4476E8B",
+    "bytes": 304038
+  },
+  {
+    "path": "Docs/MeleePolish20261029/Reference/Slash_09m43s9.jpg",
+    "sha256": "2676967D91908BC98EB5EEE93DEDE481BE62DC2F2C2ED34B43713ECB34B3242C",
+    "bytes": 136581
+  },
+  {
+    "path": "Docs/MeleePolish20261029/ScreenshotToolIssue.txt",
+    "sha256": "4FB0A2DF6BE9BE25511047FBFDE02178CCF463B864DDE214061DEBC7ED36F0BB",
+    "bytes": 3969
+  },
+  {
+    "path": "README.md",
+    "sha256": "2526A99F1FC1AC4221FD88F4C0DEB7CE6C523888BC30E5C318C4208CEFFE7B41",
+    "bytes": 13499
+  }
+]

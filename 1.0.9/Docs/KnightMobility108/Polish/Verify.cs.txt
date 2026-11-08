@@ -1,0 +1,46 @@
+try{
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();var ui=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();var f=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+System.Action<object,string,object> set=(o,n,v)=>o.GetType().GetField(n,f).SetValue(o,v);
+System.Func<string,object[],object> call=(n,a)=>typeof(ArcaneArchive.Core.BossEncounter).GetMethod(n,f).Invoke(e,a);
+var results=new System.Collections.Generic.List<string>();System.Action<bool,string> check=(ok,s)=>{if(!ok)throw new System.Exception(s);results.Add(s);};
+bool had=PlayerPrefs.HasKey(ArcaneArchive.Core.BossPresentationSettings.HintsKey);int original=PlayerPrefs.GetInt(ArcaneArchive.Core.BossPresentationSettings.HintsKey,1);
+try{
+ui.ShowPage(ArcaneArchive.UI.RecoveryMenu.Page.Settings);
+var button=ui.GetComponentsInChildren<UnityEngine.UI.Button>(true).First(x=>x.name=="BossHintsToggle");
+bool before=ArcaneArchive.Core.BossPresentationSettings.ShowHints;button.onClick.Invoke();check(ArcaneArchive.Core.BossPresentationSettings.ShowHints!=before,"Settings button changes preference");check(PlayerPrefs.GetInt(ArcaneArchive.Core.BossPresentationSettings.HintsKey)==(before?0:1),"Toggle writes persisted PlayerPrefs value");
+ui.ShowPage(ArcaneArchive.UI.RecoveryMenu.Page.Menu);ui.ShowPage(ArcaneArchive.UI.RecoveryMenu.Page.Settings);
+button=ui.GetComponentsInChildren<UnityEngine.UI.Button>(true).First(x=>x.name=="BossHintsToggle");check(button.GetComponentInChildren<TMPro.TMP_Text>().text.Contains(before?"关闭":"开启"),"Reopened settings reflects stored choice");
+var book=UnityEditor.AssetDatabase.FindAssets("t:DemoBookRecord").Select(g=>UnityEditor.AssetDatabase.LoadAssetAtPath<ArcaneArchive.Knowledge.DemoBookRecord>(UnityEditor.AssetDatabase.GUIDToAssetPath(g))).First(x=>x.opensTrial);
+ui.ShowBook(book);ui.StartSelectedEncounter(true);e.enabled=false;e.GetComponent<ArcaneArchive.Player.FirstPersonController>().enabled=false;e.GetComponent<ArcaneArchive.Player.FirstPersonController>().SetGameplayInputEnabled(false);ui.Resume();set(e,"focusLost",false);set(e.Combat,"<Health>k__BackingField",10000f);call("SetState",new object[]{ArcaneArchive.Core.BossEncounter.State.Observe});
+var hud=e.GetComponent<ArcaneArchive.UI.BossCombatHUD>();
+System.Func<string,TMPro.TMP_Text> label=n=>(TMPro.TMP_Text)typeof(ArcaneArchive.UI.BossCombatHUD).GetField(n,f).GetValue(hud);
+e.Feedback("测试提示",10);ArcaneArchive.Core.BossPresentationSettings.ShowHints=false;hud.Refresh();
+check(!label("message").gameObject.activeSelf && !label("instruction").gameObject.activeSelf,"Disabled hints hide message and input instructions");
+check(label("life").gameObject.activeSelf && label("bossName").gameObject.activeSelf,"Combat vitals remain visible");
+e.BeginKnightMove(ArcaneArchive.Core.KnightMove.LeapCleave);
+check(e.Arena.effectRoot.GetComponentsInChildren<LineRenderer>().Any(x=>x.name=="Locked mobility destination"&&x.enabled),"Attack footprint remains visible with hints off");
+ArcaneArchive.Core.BossPresentationSettings.ShowHints=true;hud.Refresh();check(label("message").gameObject.activeSelf && label("instruction").gameObject.activeSelf,"Re-enabling hints updates HUD immediately");
+System.Action<float> step=dt=>{set(e,"combatTime",e.BattleTime+dt);e.Combat.Tick(dt);call("TickKnight",new object[]{dt});call("TickShots",new object[]{dt});call("PresentBoss",new object[]{dt});Physics.SyncTransforms();};
+var visual=e.Arena.boss.GetComponent<ArcaneArchive.Visuals.KnightVisuals>();float maxGrip=0;
+foreach(var move in ui.bookKnight.moves.Where(m=>ui.bookKnight.IsMoveEnabled(m.move)).Select(m=>m.move)){
+call("ClearAttacks",new object[0]);call("SetState",new object[]{ArcaneArchive.Core.BossEncounter.State.Observe});
+e.Arena.boss.localPosition=new Vector3(0,0,4);e.Arena.boss.localRotation=Quaternion.Euler(0,180,0);e.transform.position=e.Arena.transform.TransformPoint(new Vector3(0,.08f,-5));Physics.SyncTransforms();e.BeginKnightMove(move);
+int frames=0;while(e.CurrentState!=ArcaneArchive.Core.BossEncounter.State.Recovery && frames++<300){step(1f/60);maxGrip=Mathf.Max(maxGrip,visual.productionRig.RightGripError);}
+check(e.CurrentState==ArcaneArchive.Core.BossEncounter.State.Recovery && !float.IsNaN(visual.weapon.position.x),"Finite continuous presentation through recovery: "+move);
+if(move==ArcaneArchive.Core.KnightMove.BlinkBarrage){
+var projectiles=e.Arena.effectRoot.GetComponentsInChildren<ArcaneArchive.Visuals.KnightBoltVisual>();check(projectiles.Length>0,"Barrage uses new rune blade presentation");
+check(projectiles.All(x=>x.GetComponentsInChildren<Collider>().All(c=>c.enabled)),"Projectile colliders remain enabled");
+}
+if(move==ArcaneArchive.Core.KnightMove.Heavenfall){
+var bursts=(System.Collections.IList)typeof(ArcaneArchive.Visuals.KnightRefinedEffects).GetField("bursts",f).GetValue(visual.refinedEffects);
+check(bursts.Count>0,"Impact afterglow survives transition into recovery");
+float clock=e.BattleTime;var pose=visual.weapon.rotation;ui.ShowPage(ArcaneArchive.UI.RecoveryMenu.Page.Menu);call("Update",new object[0]);check(e.BattleTime==clock && visual.weapon.rotation==pose,"Pause freezes animation and effect clock");ui.Resume();set(e,"focusLost",false);
+for(int i=0;i<48;i++)step(1f/60);check(bursts.Count==0,"Recovery afterglow naturally expires");
+}
+}
+check(maxGrip<.03f,"All six moves keep right grip error below 3 cm");
+e.Finish(false);check(e.ActiveAttackCount==0,"Defeat clears all combat hazards");check(e.ReturnToLibrary(),"Knight returns to library");
+ui.ShowBook(book);ui.StartSelectedEncounter(false);e.enabled=false;ui.Resume();set(e,"focusLost",false);hud=e.GetComponent<ArcaneArchive.UI.BossCombatHUD>();ArcaneArchive.Core.BossPresentationSettings.ShowHints=false;hud.Refresh();check(!label("message").gameObject.activeSelf,"Hint preference also applies to Warden");e.Finish(false);check(e.ReturnToLibrary(),"Warden returns to library");
+}finally{if(had)PlayerPrefs.SetInt(ArcaneArchive.Core.BossPresentationSettings.HintsKey,original);else PlayerPrefs.DeleteKey(ArcaneArchive.Core.BossPresentationSettings.HintsKey);PlayerPrefs.Save();}
+System.IO.Directory.CreateDirectory("Docs/KnightMobility108/Polish");System.IO.File.WriteAllLines("Docs/KnightMobility108/Polish/Verification.txt",results);ui.ShowPage(ArcaneArchive.UI.RecoveryMenu.Page.Settings);return results;
+}catch(System.Exception ex){return ex.GetBaseException().ToString();}

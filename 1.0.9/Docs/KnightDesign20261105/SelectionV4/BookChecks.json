@@ -1,0 +1,30 @@
+[
+  {
+    "knight": false,
+    "entered": true,
+    "retry": true,
+    "returned": true,
+    "boss": "缄默典狱长 · 维纶"
+  },
+  {
+    "knight": true,
+    "entered": true,
+    "retry": true,
+    "returned": true,
+    "boss": "封印圣骑士"
+  },
+  {
+    "knight": false,
+    "entered": true,
+    "retry": true,
+    "returned": true,
+    "boss": "缄默典狱长 · 维纶"
+  },
+  {
+    "knight": true,
+    "entered": true,
+    "retry": true,
+    "returned": true,
+    "boss": "封印圣骑士"
+  }
+]

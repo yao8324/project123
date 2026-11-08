@@ -1,0 +1,13 @@
+{
+  "stage": "dimension foundation, not final art",
+  "floor_dimensions": [
+    64.0,
+    72.0,
+    0.3499999940395355
+  ],
+  "column_count": 12,
+  "main_arches": 6,
+  "objects": 174,
+  "combat_diameter": 56,
+  "required_remaining": "all detailed surfaces/props/character/rig/animation/Unity/acceptance"
+}

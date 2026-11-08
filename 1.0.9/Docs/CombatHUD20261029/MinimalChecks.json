@@ -1,0 +1,154 @@
+[
+  {
+    "skill": 1,
+    "icon": "01_Oathbreaker",
+    "pass": true,
+    "samples": [
+      {
+        "recovery": 0.0,
+        "clockAngle": 0.0,
+        "countdown": "4",
+        "pass": true
+      },
+      {
+        "recovery": 0.25,
+        "clockAngle": 270.0,
+        "countdown": "3",
+        "pass": true
+      },
+      {
+        "recovery": 0.5,
+        "clockAngle": 180.0,
+        "countdown": "2",
+        "pass": true
+      },
+      {
+        "recovery": 0.75,
+        "clockAngle": 90.0,
+        "countdown": "1",
+        "pass": true
+      },
+      {
+        "recovery": 1.0,
+        "clockAngle": -1.00179122E-05,
+        "countdown": "",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "skill": 2,
+    "icon": "02_VeiledGuard",
+    "pass": true,
+    "samples": [
+      {
+        "recovery": 0.0,
+        "clockAngle": 0.0,
+        "countdown": "6",
+        "pass": true
+      },
+      {
+        "recovery": 0.25,
+        "clockAngle": 270.0,
+        "countdown": "5",
+        "pass": true
+      },
+      {
+        "recovery": 0.5,
+        "clockAngle": 180.0,
+        "countdown": "3",
+        "pass": true
+      },
+      {
+        "recovery": 0.75,
+        "clockAngle": 90.0,
+        "countdown": "2",
+        "pass": true
+      },
+      {
+        "recovery": 1.0,
+        "clockAngle": -1.00179122E-05,
+        "countdown": "",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "skill": 3,
+    "icon": "03_ShadowThrust",
+    "pass": true,
+    "samples": [
+      {
+        "recovery": 0.0,
+        "clockAngle": 0.0,
+        "countdown": "5",
+        "pass": true
+      },
+      {
+        "recovery": 0.25,
+        "clockAngle": 270.0,
+        "countdown": "4",
+        "pass": true
+      },
+      {
+        "recovery": 0.5,
+        "clockAngle": 180.0,
+        "countdown": "3",
+        "pass": true
+      },
+      {
+        "recovery": 0.75,
+        "clockAngle": 90.0,
+        "countdown": "2",
+        "pass": true
+      },
+      {
+        "recovery": 1.0,
+        "clockAngle": -1.00179122E-05,
+        "countdown": "",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "skill": 4,
+    "icon": "04_SealOrbit",
+    "pass": true,
+    "samples": [
+      {
+        "recovery": 0.0,
+        "clockAngle": 0.0,
+        "countdown": "9",
+        "pass": true
+      },
+      {
+        "recovery": 0.25,
+        "clockAngle": 270.0,
+        "countdown": "7",
+        "pass": true
+      },
+      {
+        "recovery": 0.5,
+        "clockAngle": 180.0,
+        "countdown": "5",
+        "pass": true
+      },
+      {
+        "recovery": 0.75,
+        "clockAngle": 90.0,
+        "countdown": "3",
+        "pass": true
+      },
+      {
+        "recovery": 1.0,
+        "clockAngle": -1.00179122E-05,
+        "countdown": "",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "name": "Pause preserves real cooldown",
+    "pass": true
+  }
+]

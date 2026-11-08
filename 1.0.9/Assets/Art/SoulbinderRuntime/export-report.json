@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Hall",
+    "source": "Blender/SceneBuild20261107/SoulbinderHall/SoulbinderHall_Detailed_R10.blend",
+    "objects": 42,
+    "source_triangles": 1279024,
+    "fbx_bytes": 14550956
+  },
+  {
+    "name": "Soulbinder",
+    "source": "Blender/CharacterRebuild20261107/Models/Soulbinder_TargetRebuild_R18.blend",
+    "objects": 1,
+    "source_triangles": 2669633,
+    "fbx_bytes": 4426876
+  },
+  {
+    "name": "Cleaver",
+    "source": "Blender/CharacterRebuild20261107/Models/Cleaver_TargetRebuild_R10.blend",
+    "objects": 1,
+    "source_triangles": 762022,
+    "fbx_bytes": 3209980
+  },
+  {
+    "name": "SwordShield",
+    "source": "Blender/CharacterRebuild20261107/Models/SwordShield_TargetRebuild_R9.blend",
+    "objects": 1,
+    "source_triangles": 1361908,
+    "fbx_bytes": 3236156
+  },
+  {
+    "name": "Archer",
+    "source": "Blender/CharacterRebuild20261107/Models/Archer_TargetRebuild_R14.blend",
+    "objects": 1,
+    "source_triangles": 1135824,
+    "fbx_bytes": 3306428
+  },
+  {
+    "name": "Hammer",
+    "source": "Blender/CharacterRebuild20261107/Models/Hammer_TargetRebuild_R10.blend",
+    "objects": 1,
+    "source_triangles": 1295844,
+    "fbx_bytes": 3315244
+  },
+  {
+    "name": "Wraith",
+    "source": "Blender/CharacterRebuild20261107/Models/Wraith_TargetRebuild_R15.blend",
+    "objects": 1,
+    "source_triangles": 1217251,
+    "fbx_bytes": 3199196
+  }
+]

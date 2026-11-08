@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-06",
+  "unity": "6000.3.25f1",
+  "project": "1.0.8",
+  "mode": "Fresh isolated project import and script compilation; batchmode, nographics, quit",
+  "success": true,
+  "exitCodeReported": 0,
+  "compilerErrors": [],
+  "exceptionLines": [],
+  "environmentDiagnostics": [
+    "Licensing access token unavailable at startup; entitlement subsequently resolved; Unity exited successfully."
+  ],
+  "sourceLogSha256": "35254607bb58512f125dfc36ef1a5cb01980531403da917a8fdbb3f13265fd33",
+  "sourceLog": "Logs/Archive108Compile.log (local generated log; excluded from Git)",
+  "scope": "This archive run imports and compiles only; no new Play Mode, standalone build or human combat/performance claim."
+}

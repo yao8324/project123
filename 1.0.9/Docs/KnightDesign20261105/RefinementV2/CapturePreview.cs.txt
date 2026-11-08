@@ -1,0 +1,33 @@
+// Controlled production-clock preview; game view frames, not a live human playthrough.
+string clip="Orbit";bool aerial=false;
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();var launcher=e.GetComponent<ArcaneArchive.Core.KnightTrialLauncher>();var p=e.GetComponent<ArcaneArchive.Player.FirstPersonController>();
+if(!e.IsActive){e.combatFont=launcher.font;if(!e.BeginKnight(launcher.definition))throw new System.Exception("Cannot prepare visual preview");}
+e.enabled=false;p.enabled=false;Application.runInBackground=true;
+e.GetComponent<ArcaneArchive.Player.PlayerMelee>().view.gameObject.SetActive(true);
+var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+e.GetType().GetField("focusLost",flags).SetValue(e,false);e.GetComponent<ArcaneArchive.UI.RecoveryMenu>().Resume();e.GetType().GetMethod("ResetBattle",flags).Invoke(e,null);
+e.GetType().GetMethod("SetState",flags).Invoke(e,new object[]{ArcaneArchive.Core.BossEncounter.State.Observe});
+if(aerial)e.GetType().GetProperty("Phase").GetSetMethod(true).Invoke(e,new object[]{2});
+p.TryReturnToSpawn(e.Arena.boss.position+e.Arena.boss.forward*(aerial?5.5f:7f),Quaternion.LookRotation(-e.Arena.boss.forward));
+e.View.transform.rotation=Quaternion.LookRotation(e.Arena.boss.position+Vector3.up*1.9f-e.View.transform.position);
+e.GetType().GetField("combatTime",flags).SetValue(e,30f);
+e.BeginKnightMove(aerial?ArcaneArchive.Core.KnightMove.Heavenfall:ArcaneArchive.Core.KnightMove.OrbitSweep);
+int frame=0,total=aerial?64:44;float dt=1f/12;double next=UnityEditor.EditorApplication.timeSinceStartup;
+string folder="Docs/KnightDesign20261105/RefinementV2/"+clip+"Frames";System.IO.Directory.CreateDirectory(folder);
+UnityEditor.EditorApplication.CallbackFunction advance=null;
+advance=()=>{
+ if(!UnityEditor.EditorApplication.isPlaying){UnityEditor.EditorApplication.update-=advance;return;}
+ if(UnityEditor.EditorApplication.timeSinceStartup<next)return;
+ if(frame>0 && !System.IO.File.Exists(folder+"/frame_"+(frame-1).ToString("D3")+".png"))return;
+ next=UnityEditor.EditorApplication.timeSinceStartup+.09;
+ e.GetType().GetField("combatTime",flags).SetValue(e,e.BattleTime+dt);
+ e.GetType().GetMethod("TickKnight",flags).Invoke(e,new object[]{dt});UnityEngine.Physics.SyncTransforms();
+ if(aerial && frame==14)
+ {
+   p.TryReturnToSpawn(e.Arena.transform.position+new Vector3(2.6f,.08f,-5.1f),Quaternion.identity);
+   e.View.transform.rotation=Quaternion.LookRotation(e.Arena.boss.position+Vector3.up*1.9f-e.View.transform.position);
+ }
+ e.GetType().GetMethod("PresentBoss",flags).Invoke(e,new object[]{dt});e.GetComponent<ArcaneArchive.UI.BossCombatHUD>().Refresh();
+ ScreenCapture.CaptureScreenshot(folder+"/frame_"+frame.ToString("D3")+".png");frame++;
+ if(frame>=total){UnityEditor.EditorApplication.update-=advance;System.IO.File.WriteAllText(folder+"/Capture.json",Newtonsoft.Json.JsonConvert.SerializeObject(new{clip=clip,frames=total,framesPerBattleSecond=12,source="Production TickKnight + PresentBoss with controlled frame stepping",aerialPlayerRepositionedAfterLock=aerial}));}
+};UnityEditor.EditorApplication.update+=advance;return "Capturing "+clip+" in "+total+" controlled frames.";

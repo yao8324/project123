@@ -1,0 +1,9 @@
+{
+  "archive": "/Users/jack/.codex/worktrees/three-boss-book/圣骑士场地_20261107/完整版/三Boss剧情整合_20261108/IMMonster_ThreeBoss_Windows_20261108.zip",
+  "bytes": 850113179,
+  "sha256": "0e91f676ac60849ad75a4d9b7e73b511fab85f13a7b44f9e1da167424916518c",
+  "files": 181,
+  "zip_crc": "passed",
+  "pe_machine": "0x8664",
+  "dependencies": "present"
+}

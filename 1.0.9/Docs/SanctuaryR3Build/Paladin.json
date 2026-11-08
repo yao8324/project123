@@ -1,0 +1,7 @@
+{
+  "stage": "first full character pass, not accepted",
+  "rig_bones": 22,
+  "feather_meshes": 38,
+  "rigged_meshes": 142,
+  "pending": "individual feather bones, fold/animation, weapons fitting, anatomy silhouette and detail refinement, export/Unity"
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "Rest-open right primary feather X-projection at35% length only; not full surface overlap/collision certification",
+  "pairs": [
+    {
+      "pair": [
+        "W01_R_Primary_01",
+        "W01_R_Primary_02"
+      ],
+      "projected_overlap_fraction": 0.16836717985569766
+    },
+    {
+      "pair": [
+        "W01_R_Primary_02",
+        "W01_R_Primary_03"
+      ],
+      "projected_overlap_fraction": 0.17198922020545457
+    },
+    {
+      "pair": [
+        "W01_R_Primary_03",
+        "W01_R_Primary_04"
+      ],
+      "projected_overlap_fraction": 0.17506386686495776
+    },
+    {
+      "pair": [
+        "W01_R_Primary_04",
+        "W01_R_Primary_05"
+      ],
+      "projected_overlap_fraction": 0.17757761704672423
+    },
+    {
+      "pair": [
+        "W01_R_Primary_05",
+        "W01_R_Primary_06"
+      ],
+      "projected_overlap_fraction": 0.1795216718804339
+    },
+    {
+      "pair": [
+        "W01_R_Primary_06",
+        "W01_R_Primary_07"
+      ],
+      "projected_overlap_fraction": 0.18087740434555896
+    },
+    {
+      "pair": [
+        "W01_R_Primary_07",
+        "W01_R_Primary_08"
+      ],
+      "projected_overlap_fraction": 0.1816281771143265
+    }
+  ]
+}

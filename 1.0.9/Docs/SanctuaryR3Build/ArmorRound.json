@@ -1,0 +1,11 @@
+{
+  "added_objects": 66,
+  "rig_bones": 22,
+  "gilt_strip_width_m": [
+    0.008,
+    0.014
+  ],
+  "gilt_thickness_m": 0.002,
+  "ivory_metallic": 0,
+  "pending": "Full silhouette against master, clipping under all poses, plate curvature, hands/grip, knee details, cloth, final dimensions and all-part >=90 evaluation."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "path": "Assets/Scripts/Player/PlayerDash.cs",
+    "kind": "modified",
+    "beforeSha256": "11402686f3494dab063aa4c3f91fb9cdf6ed4a8d723b9b10fa55c7c795a04380",
+    "afterSha256": "a48dbdbdf0bdbb5e38eec87cadd70e68acbc9dcb9c932fa7659393a5fd6a9628"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/DashAfterimageVfx.cs",
+    "kind": "modified",
+    "beforeSha256": "bb0d6badfe28b24e46e1df5cf1ded959cf98543fd5507e3140ed417ef8c57043",
+    "afterSha256": "bac7ba7f86280007b93c4de58f73ad250fa6dd2152156b467c051ec1ff78c8ec"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "kind": "modified",
+    "beforeSha256": "a02acd0be09fc17bca82351a3188514e7bdec4fafb7b74a01f103d31438990b3",
+    "afterSha256": "1d450794614586cc036789a9570e6368c0d23bdff1b36c60c328f0a93bd11c4f"
+  },
+  {
+    "path": "Docs/PerfectDodge20261030/README.md",
+    "kind": "modified",
+    "beforeSha256": "ddfbd4941aaa7619335c0f0c19e77c78d217a7e829bff20f9e0d9bd212324972",
+    "afterSha256": "13bd80c6a55c0de176e0292df9e28aaa7c4fbd882f86e92e27805e8ce4e9122a"
+  },
+  {
+    "path": "README.md",
+    "kind": "modified",
+    "beforeSha256": "a1b1a8f0ebafdb2385124ce0a1c4a872919a7d6d583fa73f766fb1edc8fbac25",
+    "afterSha256": "d9f64e8238912c5a99f9a606f12e1424c854098fe21a79e629f96e5733ecc02c"
+  }
+]

@@ -1,0 +1,17 @@
+var e=UnityEngine.Object.FindFirstObjectByType<ArcaneArchive.Core.BossEncounter>();
+var p=e.GetComponent<ArcaneArchive.Player.FirstPersonController>();var d=p.Dash;var m=e.GetComponent<ArcaneArchive.Player.PlayerMelee>();var c=e.Combat;var controller=e.GetComponent<CharacterController>();var menu=e.GetComponent<ArcaneArchive.UI.RecoveryMenu>();
+var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+System.Action<string,object> set=(n,v)=>e.GetType().GetField(n,flags).SetValue(e,v);
+System.Action<string,object[]> call=(n,a)=>e.GetType().GetMethod(n,flags).Invoke(e,a);
+System.Action<ArcaneArchive.Core.BossEncounter.State> state=s=>call("SetState",new object[]{s});
+System.Action<Vector3> place=position=>{controller.enabled=false;e.transform.SetPositionAndRotation(position,Quaternion.identity);controller.enabled=true;Physics.SyncTransforms();p.GetType().GetField("<IsGrounded>k__BackingField",flags).SetValue(p,true);};
+System.Action reset=()=>{d.Cancel(true);menu.Resume();set("focusLost",false);p.SetGameplayInputEnabled(true);c.ResetCombat(e);call("ClearAttacks",new object[0]);state(ArcaneArchive.Core.BossEncounter.State.Observe);set("combatTime",0f);e.Arena.boss.position=new Vector3(160,0,0);e.Arena.boss.rotation=Quaternion.Euler(0,180,0);place(new Vector3(160,.08f,-4.5f));};
+System.Action<float> step=dt=>{d.Tick(dt);CollisionFlags collision;d.Move(out collision);Physics.SyncTransforms();};
+System.Action strike=()=>{set("attack",5);state(ArcaneArchive.Core.BossEncounter.State.Attack);set("stateTime",e.definition.meleeImpact);set("meleeResolved",false);call("TickMeleeStrike",new object[0]);d.ConfirmPerfect();};
+
+// Run after CoreChecks. Laser and rush queries need a subsequent Editor frame following manual Move.
+var lines=new System.Collections.Generic.List<string>();
+reset();call("SpawnWave",new object[0]);var waves=(System.Collections.IList)e.GetType().GetField("waves",flags).GetValue(e);waves[0].GetType().GetField("radius").SetValue(waves[0],4.15f);d.TryStart(Vector2.left);step(.08f);uint before=d.PerfectSequence;call("TickWaves",new object[]{.01f});d.ConfirmPerfect();lines.Add((d.PerfectSequence==before+1?"PASS ":"FAIL ")+"live expanding wave");
+reset();call("StartFractureLine",new object[0]);set("riftHead",e.transform.position+new Vector3(0,-.054f,.4f));set("riftDirection",Vector3.back);call("ExtendFractureLine",new object[0]);d.TryStart(Vector2.left);step(.08f);before=d.PerfectSequence;set("combatTime",e.definition.fractureLeadTime+.001f);call("TickFractures",new object[0]);d.ConfirmPerfect();lines.Add((d.PerfectSequence==before+1?"PASS ":"FAIL ")+"live fracture polygon at eruption");
+reset();var laser=UnityEngine.Object.Instantiate(e.Arena.laserEffect,e.Arena.effectRoot);set("laser",laser);set("laserOrigin",e.transform.position+new Vector3(0,1,3));set("laserDirection",Vector3.back);set("nextLaserTick",0f);set("stateTime",.02f);d.TryStart(Vector2.left);step(.08f);
+return string.Join("\n",lines.ToArray())+"\nNext call: LaserVerifyRushPrepare.cs.txt";

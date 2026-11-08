@@ -1,0 +1,56 @@
+{
+  "scope": "Rest-pose apertures and attachment checks; no action collisions/final acceptance",
+  "checks": {
+    "eye_right": true,
+    "eye_left": true,
+    "central_slit": true,
+    "cheek": true,
+    "forehead": true,
+    "detail_attachment_bones_exist": true,
+    "detail_armature_targets_correct": true
+  },
+  "ray_samples": [
+    {
+      "location": [
+        0.08,
+        2.065
+      ],
+      "front_shell_hit": false,
+      "liner_hit": true
+    },
+    {
+      "location": [
+        -0.08,
+        2.065
+      ],
+      "front_shell_hit": false,
+      "liner_hit": true
+    },
+    {
+      "location": [
+        0,
+        2.02
+      ],
+      "front_shell_hit": false,
+      "liner_hit": true
+    },
+    {
+      "location": [
+        0.08,
+        2.0
+      ],
+      "front_shell_hit": true,
+      "liner_hit": true
+    },
+    {
+      "location": [
+        0.05,
+        2.15
+      ],
+      "front_shell_hit": true,
+      "liner_hit": true
+    }
+  ],
+  "evaluated_helmet_top_m": 2.2800283432006836,
+  "detail_meshes": 32
+}

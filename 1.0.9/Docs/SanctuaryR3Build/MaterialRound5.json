@@ -1,0 +1,39 @@
+{
+  "materials": [
+    {
+      "material": "R3_Antique_Gold_Foundation",
+      "maps": "Gold"
+    },
+    {
+      "material": "R3_Bluegrey_Marble_Foundation",
+      "maps": "Slate"
+    },
+    {
+      "material": "R3_FloorVariation_1",
+      "maps": "Slate"
+    },
+    {
+      "material": "R3_FloorVariation_2",
+      "maps": "Slate"
+    },
+    {
+      "material": "R3_FloorVariation_3",
+      "maps": "Slate"
+    },
+    {
+      "material": "R3_FloorVariation_4",
+      "maps": "Slate"
+    },
+    {
+      "material": "R3_Gunmetal_Foundation",
+      "maps": "GateSteel"
+    },
+    {
+      "material": "R3_Ivory_Marble_Foundation",
+      "maps": "Marble"
+    }
+  ],
+  "texture_size": 2048,
+  "uv_cycles_per_m": 0.34,
+  "scope": "Native inputs and Unity maps aligned; lighting/normal mapping differ by renderer. No final material acceptance."
+}

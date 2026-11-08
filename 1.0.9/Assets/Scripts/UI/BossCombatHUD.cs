@@ -1,0 +1,116 @@
+using ArcaneArchive.Core;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace ArcaneArchive.UI
+{
+    public sealed class BossCombatHUD : MonoBehaviour
+    {
+        private BossEncounter encounter;
+        private GameObject root;
+        private TMP_FontAsset font;
+        private SkillCooldownBadge[] skillBadges;
+        private Image staminaFill;
+        private TMP_Text staminaText;
+        private ArcaneArchive.Player.PlayerMelee melee;
+        private TMP_Text bossName, life, power, instruction, message,staminaStatus;
+        private Image bossFill, playerFill, hurt;
+        private Image entryFade;
+        private Sprite barSprite;
+        private float hurtAt = -10;
+        private static readonly Color Gold = new Color(.74f, .60f, .33f);
+        private static readonly Color Paper = new Color(.94f, .90f, .81f);
+        public void Initialize(BossEncounter owner, TMP_FontAsset typeface)
+        {
+            encounter = owner; font = typeface;melee=owner.GetComponent<ArcaneArchive.Player.PlayerMelee>();
+            barSprite = Sprite.Create(Texture2D.whiteTexture, new Rect(0,0,Texture2D.whiteTexture.width,Texture2D.whiteTexture.height),new Vector2(.5f,.5f));
+            root = new GameObject("BossCombatHUD", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler));
+            root.transform.SetParent(transform, false);
+            var canvas = root.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 300;
+            var scaler = root.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
+            bossName = Text("", new Vector2(.5f, 1), new Vector2(0, -38), new Vector2(700, 34), 24, Gold);
+            bossFill = Bar(new Vector2(.5f, 1), new Vector2(0, -68), new Vector2(660, 9), Gold);
+            playerFill = Bar(new Vector2(0, 0), new Vector2(154, 91), new Vector2(230, 9), new Color(.64f, .25f, .25f));
+            life = Text("", new Vector2(0, 0), new Vector2(154, 114), new Vector2(270, 28), 18, Paper);
+            staminaStatus=Text("",new Vector2(0,0),new Vector2(154,17),new Vector2(300,23),13,Paper);
+            power = Text("", new Vector2(1, 0), new Vector2(-185, 72), new Vector2(330, 50), 18, Paper);
+            instruction = Text("", new Vector2(.5f, 0), new Vector2(0, 26), new Vector2(700, 30), 16, Paper);
+            message = Text("", new Vector2(.5f, 1), new Vector2(0, -112), new Vector2(900, 40), 21, Paper);
+            staminaFill=Bar(new Vector2(0,0),new Vector2(154,39),new Vector2(230,9),new Color(.36f,.67f,.50f));
+            staminaText=Text("",new Vector2(0,0),new Vector2(154,62),new Vector2(300,28),17,Paper);
+            skillBadges=new SkillCooldownBadge[4];
+            for(int i=0;i<4;i++)
+            {
+                var slot=new GameObject("Melee skill "+(i+1),typeof(RectTransform),typeof(SkillCooldownBadge));
+                slot.transform.SetParent(root.transform,false);
+                var rect=(RectTransform)slot.transform;rect.anchorMin=rect.anchorMax=new Vector2(.5f,0);
+                rect.sizeDelta=new Vector2(100,110);rect.anchoredPosition=new Vector2((i-1.5f)*112,101);
+                skillBadges[i]=slot.GetComponent<SkillCooldownBadge>();
+                if(melee && melee.loadout)skillBadges[i].Initialize(melee.loadout.skills[i],i+1,font,melee.loadout.skillTimerRing);
+            }
+            hurt = Box("HurtEdge", new Vector2(.5f, 0), new Vector2(0, 4), new Vector2(1280, 8), Color.clear);
+            entryFade=Box("EntryFade",new Vector2(.5f,.5f),Vector2.zero,Vector2.zero,Color.black);
+            var fadeRect=entryFade.rectTransform;fadeRect.anchorMin=Vector2.zero;fadeRect.anchorMax=Vector2.one;fadeRect.offsetMin=fadeRect.offsetMax=Vector2.zero;
+        }
+        public void Refresh()
+        {
+            if (!root || !encounter || !encounter.Combat) return;
+            root.SetActive(!encounter.IsPaused && !encounter.IsFinished);
+            entryFade.color=new Color(0,0,0,Mathf.Clamp01(1-encounter.BattleTime/.45f));
+            bossName.text = encounter.Definition.displayName + encounter.PhaseLabel;
+            bossFill.fillAmount = encounter.BossHealth / encounter.Definition.health;
+            playerFill.fillAmount = encounter.Combat.Health / encounter.Definition.playerHealth;
+            staminaStatus.text=melee && melee.Exhausted?"体力耗尽  "+melee.ExhaustionRemaining.ToString("F1")+"s":encounter.Combat.GuardBroken?"破防  "+encounter.Combat.GuardBreakRemaining.ToString("F1")+"s":encounter.Combat.GuardNeedsRelease?"松开防御键 · 重新格挡":encounter.Combat.Guarding?"格挡中 · 攻防共用体力":"突进 / 攻击 / 防御共用体力";
+            life.text = "生命  " + Mathf.CeilToInt(encounter.Combat.Health) + " / " + encounter.Definition.playerHealth;
+            var b = GetComponent<LibraryInputBindings>();
+            string absorb = b ? b.Display("Absorb") : "右键";
+            string fire = b ? b.Display("Attack") : "左键";
+            power.text = "封印力量  " + Mathf.RoundToInt(encounter.Combat.Power) + "%\n吞印  " +
+                (encounter.Combat.AbsorbCooldown > 0 ? encounter.Combat.AbsorbCooldown.ToString("F1") + "s" : "就绪");
+            instruction.text = (b ? b.Display("Sprint") : "Shift") + " 突进    " + fire + " 连斩    " + absorb + " 举盾    I 装备    Esc 暂停";
+            if(melee && melee.loadout)
+            {
+                staminaFill.fillAmount=melee.Stamina/melee.loadout.maxStamina;
+                staminaFill.color=melee.Exhausted || encounter.Combat.GuardBroken || melee.Stamina<24?new Color(.9f,.28f,.18f):encounter.Combat.Guarding?Gold:new Color(.36f,.67f,.50f);
+                staminaText.text="体力  "+Mathf.CeilToInt(melee.Stamina)+" / "+melee.loadout.maxStamina;
+                for(int i=0;i<4;i++)
+                {
+                    var skill=melee.loadout.skills[i];float cooldown=melee.Cooldown(i);
+                    skillBadges[i].Refresh(cooldown,skill.cooldown,!melee.Exhausted && melee.Stamina>=skill.stamina,encounter.BattleTime);
+                }
+            }
+            message.text = encounter.Message ?? "";
+            bool showHints=BossPresentationSettings.ShowHints;
+            message.gameObject.SetActive(showHints);
+            instruction.gameObject.SetActive(showHints);
+            if(!showHints && !(melee && melee.Exhausted) && !encounter.Combat.GuardBroken)staminaStatus.text="";
+            hurt.color = new Color(.85f, .15f, .12f, Mathf.Clamp01(1 - (Time.unscaledTime - hurtAt) / .35f));
+        }
+        public void Hurt() => hurtAt = Time.unscaledTime;
+        public void Hide() { if (root) root.SetActive(false); }
+        private Image Bar(Vector2 anchor, Vector2 pos, Vector2 size, Color color)
+        {
+            Box("BarBackground", anchor, pos, size + new Vector2(4, 4), new Color(.12f, .09f, .12f, .95f));
+            var fill = Box("BarFill", anchor, pos, size, color);
+            fill.sprite = barSprite;
+            fill.type = Image.Type.Filled; fill.fillMethod = Image.FillMethod.Horizontal; fill.fillOrigin = 0;
+            return fill;
+        }
+        private Image Box(string name, Vector2 anchor, Vector2 pos, Vector2 size, Color color)
+        {
+            var go = new GameObject(name, typeof(RectTransform), typeof(Image)); go.transform.SetParent(root.transform, false);
+            var rect = (RectTransform)go.transform; rect.anchorMin = rect.anchorMax = anchor; rect.sizeDelta = size; rect.anchoredPosition = pos;
+            var image = go.GetComponent<Image>(); image.color = color; image.raycastTarget = false; return image;
+        }
+        private TMP_Text Text(string value, Vector2 anchor, Vector2 pos, Vector2 size, int fontSize, Color color)
+        {
+            var go = new GameObject("Text", typeof(RectTransform), typeof(TextMeshProUGUI)); go.transform.SetParent(root.transform, false);
+            var rect = (RectTransform)go.transform; rect.anchorMin = rect.anchorMax = anchor; rect.sizeDelta = size; rect.anchoredPosition = pos;
+            var text = go.GetComponent<TextMeshProUGUI>(); text.font = font; text.text = value; text.fontSize = fontSize;
+            text.color = color; text.alignment = TextAlignmentOptions.Center; text.raycastTarget = false; text.extraPadding = true; return text;
+        }
+        private void OnDestroy() { if (root) Destroy(root); if(barSprite) Destroy(barSprite); }
+    }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "path": "Assets/Scripts/Core/MeleeLoadout.cs",
+    "sha256": "d5c699ce43fdfc28de677e2e6dd5738490412ffac13de41d0e3564b315d00941"
+  },
+  {
+    "path": "Assets/Art/PlayerSwordShield/OathboundLoadout.asset",
+    "sha256": "ac4ae963c4cdba9bd9f957dbe5ee6497472eb8eab426eef6cf278b6b0b49bedf"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerMelee.cs",
+    "sha256": "851eab0edced4394794bf49abc8c349cc3235767790872cb8488c2d62d406494"
+  },
+  {
+    "path": "Assets/Scripts/Player/PlayerCombat.cs",
+    "sha256": "9eaee98d087480b3e11acecbb199915bf2600eb421e2d83e8e294658714190aa"
+  },
+  {
+    "path": "Assets/Scripts/UI/BossCombatHUD.cs",
+    "sha256": "93c347f8411a2cbe7696a367da3bd4b6778c66b8215466c6af509995d5cb5119"
+  },
+  {
+    "path": "Assets/Scripts/Core/BossEncounter.cs",
+    "sha256": "ee14b7163f22a8040b0f7758290202a2fe9f7d1ef2785d4dfbfd3e67c8a0274a"
+  },
+  {
+    "path": "README.md",
+    "sha256": "19092721943af342e91e139c2f1c15be0da2b89c3b334f875230f9c4d55cb2d3"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "sha256": "393f772586162654386dc6bc8d82bfa4b9365dc7db64886e7eb7080bde59444d"
+  },
+  {
+    "path": "Docs/PerfectDodge20261030/README.md",
+    "sha256": "f9957d80d0e0e4ae5dc8aabce8ed8b84c39c6db56e93c86f17c4747f0d5531f9"
+  },
+  {
+    "path": "Docs/StaminaDodge20261030/README.md",
+    "sha256": "de659f6b4ef176cca8fdb159e31335e8d123d425da29110389e615912196313a"
+  }
+]
