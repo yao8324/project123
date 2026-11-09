@@ -1,7 +1,0 @@
-wood_table_001 — Poly Haven
-https://polyhaven.com/a/wood_table_001
-License: CC0
-Used maps: diffuse, OpenGL normal, roughness, 2K JPG. Color adjusted in Blender nodes.
-
-V5_Original_Manuscript.png — original procedural typographic and astronomical illustration produced for this project.
-Existing V4 textures and original Maynooth emblem retained from the supplied project. No replacement or altered provenance claim.

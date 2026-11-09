@@ -1,6 +1,0 @@
-MCP / Unity 6000.3.25f1
-12 minimal checks passed; 0 failures.
-Final C# compilation complete; Console inspection: 0 Error, 0 Warning.
-Visual review: suction, expanding wave, frontal crescent; 109-frame animated preview.
-Edit mode: True; scene dirty: False; compiling: False.
-No full regression, standalone build or long-session performance testing.

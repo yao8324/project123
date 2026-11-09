@@ -1,7 +1,0 @@
-{
-  "scope": "static geometry with physical UVs; not final engine fidelity",
-  "mesh_count": 4776,
-  "vertices": 3327200,
-  "polygons": 3263804,
-  "remaining": "LOD, batching, final shader matching, collision and engine performance"
-}

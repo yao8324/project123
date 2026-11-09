@@ -1,4 +1,0 @@
-PASS unchanged: Assets/Scripts/Core/MeleeLoadout.cs SHA256=a02757aac316aeff143bb8bd005bd03351825dd0c9c361f9625ccefb553c3b23
-PASS unchanged: Assets/Scripts/Player/PlayerMelee.cs SHA256=b37f94d7d39d3b64c1a8cef8db83dba08fd4bec980742ed1aef8686192757c21
-PASS unchanged: Assets/Scripts/Visuals/MeleeSkillVfx.cs SHA256=0d6e6d8dee2105a51727604cdd916d8fd2c47159e223640fcb53c2377a07f1ca
-PASS unchanged: Assets/Art/PlayerSwordShield/OathboundLoadout.asset SHA256=cfc7ebed69b428ed90568cb233ce999ffd887148fab26df55b3fbd19484490aa

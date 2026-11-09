@@ -1,2 +1,0 @@
-80 runtime assertions passed
-Physics ray, nav placement, AI damage, pause, ten retries, no-absorb win, save success/failure, pending reload, contract, exit.

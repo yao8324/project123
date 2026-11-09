@@ -1,2 +1,0 @@
-PASS crescent radius=4.800001m; blade axis deviation=0.4869847 degrees (within 1 degree breathing-pose allowance).
-Final C# compile and Console inspected after axis refinement.

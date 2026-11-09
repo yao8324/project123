@@ -1,8 +1,0 @@
-2026-10-29 / Unity 6000.3.25f1 / MCP
-Minimal runtime assertions: 22 PASS, 0 FAIL.
-Final C# compilation: complete, no errors.
-Final Console inspection: 0 Error, 0 Warning entries.
-Visual review: shared stamina HUD, Chinese glyphs, retreat, chest-height slash, laser and rift.
-Whitespace check: git diff --check exit 0 (repository line-ending notices only).
-Editor restored: edit mode; active scene not dirty; original runInBackground restored.
-Scope: no standalone build, long session performance test or full regression.

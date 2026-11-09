@@ -1,6 +1,0 @@
-Return to library=True
-Time scale=1
-Fixed delta=0.01999999
-Reward protection=False
-World echoes=False
-Quality=6

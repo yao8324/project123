@@ -1,7 +1,0 @@
-Editor play=False
-Compiling=False
-Scene dirty=False
-Echo shader errors=False
-Console after play: 0 errors / 0 warnings
-Time scale=1
-Fixed delta=0.01999999

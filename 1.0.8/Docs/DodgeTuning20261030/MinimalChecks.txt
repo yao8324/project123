@@ -1,9 +1,0 @@
-PASS dash travels 4.8m in 0.24s, costs 20, ordinary dash has no reward
-PASS repeat press blocked during cooldown, accepted after 0.85s
-PASS shared stamina still gates dash below 20
-PASS real melee dodge at 200ms now grants reward
-PASS hold lasts 0.45s; slow time and spectral echoes still active at 0.63s
-PASS reward restores time and physics after 0.75s
-PASS 221ms is outside new 220ms window; no automatic reward
-PASS dash into actual melee still takes damage and receives no reward
-PASS Esc cleans extended reward immediately

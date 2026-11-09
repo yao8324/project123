@@ -1,9 +1,0 @@
-{
-  "new_parts": 71,
-  "cloth_bones": 12,
-  "pre_animation_total_bones": 34,
-  "foot_envelope_length_m": 0.34,
-  "front_cloth_bottom_m": 0.35,
-  "rear_cloth_bottom_m": 0.15,
-  "pending": "Cloth/leg collision, foot IK, cloth embroidered ornament, underarmor textures and final resemblance"
-}

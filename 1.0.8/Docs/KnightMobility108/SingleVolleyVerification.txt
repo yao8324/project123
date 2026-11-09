@@ -1,5 +1,0 @@
-Phase 1: exactly one teleport, one release, five projectiles, ready blades hidden, recovery reached
-Phase 1: no second/third release in recovery
-Phase 2: exactly one teleport, one release, five projectiles, ready blades hidden, recovery reached
-Phase 2: no second/third release in recovery
-Finish/return clears volley

@@ -1,4 +1,0 @@
-Return to library=True
-Time.timeScale=1
-Time.fixedDeltaTime=0.01999999
-Background input restored=ResetAndDisableNonBackgroundDevices / PointersAndKeyboardsRespectGameViewFocus

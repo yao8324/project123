@@ -1,4 +1,0 @@
-Boss rush: WON; actual physics shots=111; game seconds=40.2; HP=100; absorption=0; direct damage injection=0
-Close anchors + legion: WON; actual physics shots=146; game seconds=52.3; HP=100; absorption=0; direct damage injection=0
-Boss rush: WON; actual physics shots=111; game seconds=40.1; HP=100; absorption=0; direct damage injection=0
-Close anchors + legion: WON; actual physics shots=158; game seconds=56.5; HP=100; absorption=0; direct damage injection=0
